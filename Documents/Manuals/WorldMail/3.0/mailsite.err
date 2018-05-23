@@ -1,0 +1,124 @@
+-------------------------------- Layout : WinHelp 4 --------------------------------
+Starting compilation...
+WinHelp preprocessor 13.10.606
+
+Compiling C:\Documents and Settings\datwood\Desktop\Eudora for Windows documentation\Worldmail 3\Coltrane_Techpubs\!SSL!\WinHelp_4\mailsite.hlp ...
+
+Preparing to create WinHelp...
+Clearing output folder...
+Filtering out conditional text...
+	Processing mailsite.rtf...
+	Processing HtmlWh.rtf...
+Removing watermarks...
+	Processing mailsite.rtf...
+	Processing HtmlWh.rtf...
+Collecting Topics' Information...
+	Processing mailsite.rtf...
+	Processing HtmlWh.rtf...
+Removing broken jumps...
+Finished preparing in 2 sec(s)
+
+Generating WinHelp system...Microsoft (R) Help Compiler
+HCRTF 4.03.0002
+Copyright (c) Microsoft Corp 1990 - 1995. All rights reserved.
+mailsite.hpj
+    HC4010: Warning: 
+	There are more opening braces than closing braces.
+    HC1012: Note: topic #14 of mailsite.rtf : 
+	Table cell borders are not supported.
+    HC1012: Note: topic #17 of mailsite.rtf : 
+	Table cell borders are not supported.
+    HC3110: Warning: topic #18 of mailsite.rtf : 
+	A title has already been defined for this topic.
+    HC3107: Warning: topic #18 of mailsite.rtf : 
+	A browse sequence has already been defined for this topic.
+    HC1012: Note: topic #23 of mailsite.rtf : 
+	Table cell borders are not supported.
+    HC1012: Note: topic #25 of mailsite.rtf : 
+	Table cell borders are not supported.
+    HC1012: Note: topic #33 of mailsite.rtf : 
+	Table cell borders are not supported.
+    HC1012: Note: topic #35 of mailsite.rtf : 
+	Table cell borders are not supported.
+    HC1012: Note: topic #36 of mailsite.rtf : 
+	Table cell borders are not supported.
+    HC1012: Note: topic #58 of mailsite.rtf : 
+	Table cell borders are not supported.
+    HC1012: Note: topic #104 of mailsite.rtf : 
+	Table cell borders are not supported.
+    HC1012: Note: topic #105 of mailsite.rtf : 
+	Table cell borders are not supported.
+    HC1012: Note: topic #110 of mailsite.rtf : 
+	Table cell borders are not supported.
+    HC1012: Note: topic #112 of mailsite.rtf : 
+	Table cell borders are not supported.
+    HC1012: Note: topic #113 of mailsite.rtf : 
+	Table cell borders are not supported.
+    HC1012: Note: topic #118 of mailsite.rtf : 
+	Table cell borders are not supported.
+    HC1012: Note: topic #121 of mailsite.rtf : 
+	Table cell borders are not supported.
+    HC1012: Note: topic #140 of mailsite.rtf : 
+	Table cell borders are not supported.
+    HC1012: Note: topic #141 of mailsite.rtf : 
+	Table cell borders are not supported.
+    HC1012: Note: topic #142 of mailsite.rtf : 
+	Table cell borders are not supported.
+    HC1012: Note: topic #143 of mailsite.rtf : 
+	Table cell borders are not supported.
+    HC1012: Note: topic #146 of mailsite.rtf : 
+	Table cell borders are not supported.
+    HC1012: Note: topic #149 of mailsite.rtf : 
+	Table cell borders are not supported.
+    HC1012: Note: topic #150 of mailsite.rtf : 
+	Table cell borders are not supported.
+    HC1012: Note: topic #151 of mailsite.rtf : 
+	Table cell borders are not supported.
+    HC1010: Note: 
+	The following mapped Topic IDs were not used in any topic:
+	DomainAliasesPage
+    HC2002: Note: 
+	The keywords "Database Mail List plugin" and "Database Mail List Plugin" are identical except for case. Help Workshop has modified one keyword to match the other.
+    HC2002: Note: 
+	The keywords "Database Mail List plugin" and "Database Mail List Plugin" are identical except for case. Help Workshop has modified one keyword to match the other.
+    HC2002: Note: 
+	The keywords "Database Mailbox plugin" and "Database Mailbox Plugin" are identical except for case. Help Workshop has modified one keyword to match the other.
+    HC2002: Note: 
+	The keywords "Database Mailbox plugin" and "Database Mailbox Plugin" are identical except for case. Help Workshop has modified one keyword to match the other.
+    HC2002: Note: 
+	The keywords "Disk maintenance" and "Disk Maintenance" are identical except for case. Help Workshop has modified one keyword to match the other.
+    HC2002: Note: 
+	The keywords "Mail lists" and "Mail Lists" are identical except for case. Help Workshop has modified one keyword to match the other.
+    HC2002: Note: 
+	The keywords "Mail Spool directory" and "Mail Spool Directory" are identical except for case. Help Workshop has modified one keyword to match the other.
+    HC2002: Note: 
+	The keywords "Mailbox directories" and "Mailbox Directories" are identical except for case. Help Workshop has modified one keyword to match the other.
+    HC2002: Note: 
+	The keywords "SMTP authentication" and "SMTP Authentication" are identical except for case. Help Workshop has modified one keyword to match the other.
+    HC2002: Note: 
+	The keywords "Synonym domains" and "Synonym Domains" are identical except for case. Help Workshop has modified one keyword to match the other.
+    HC2002: Note: 
+	The keywords "Virtual domains" and "Virtual Domains" are identical except for case. Help Workshop has modified one keyword to match the other.
+    HC2002: Note: 
+	The keywords "Virus scanning" and "Virus Scanning" are identical except for case. Help Workshop has modified one keyword to match the other.
+    HC3031: Warning: 
+	Help Workshop does not support compressed BMP files: C:\DOCUMENTS AND SETTINGS\DATWOOD\DESKTOP\EUDORA FOR WINDOWS DOCUMENTATION\WORLDMAIL 3\COLTRANE_TECHPUBS\RHTEMP\GRAPHICS\MAILSITE\WINDOWS CONSOLE - SECURITY - 256C.BMP.
+    HC3031: Warning: 
+	Help Workshop does not support compressed BMP files: C:\DOCUMENTS AND SETTINGS\DATWOOD\DESKTOP\EUDORA FOR WINDOWS DOCUMENTATION\WORLDMAIL 3\COLTRANE_TECHPUBS\RHTEMP\GRAPHICS\MAILSITE\WINDOWS CONSOLE - DB PLUGIN - 256C.BMP.
+346	Topics
+309	Jumps
+683	Keywords
+133	Bitmaps
+
+
+Created C:\Documents and Settings\datwood\Desktop\Eudora for Windows documentation\Worldmail 3\Coltrane_Techpubs\RHTemp\mailsite.hlp, 1,367,910 bytes
+Bitmaps: 1,002,262 bytes
+Hall+Zeck compression decreased help file by 455,688 bytes.
+Compile time: 0 minutes, 59 seconds
+36 notes, 5 warnings
+Finished compiling WinHelp in 62 sec(s)
+
+Compilation complete.
+WinHelp (WinHelp 4) was built successfully: 
+C:\Documents and Settings\datwood\Desktop\Eudora for Windows documentation\Worldmail 3\Coltrane_Techpubs\!SSL!\WinHelp_4\mailsite.hlp
+

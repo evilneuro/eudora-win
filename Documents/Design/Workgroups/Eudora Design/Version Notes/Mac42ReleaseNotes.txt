@@ -1,0 +1,1440 @@
+42 Changes
+	4.2b84
+		Fixed rfork sanity checker to act better if it fails to read resource maps.
+		Properly dealing with double-byte input methods.
+		Fixed mailbox selection after pencil-edit
+		Check QT importer subtype instead of filetype when blocking QT from importing text files
+		Another QuickTime graphic display performance improvement
+		Fixed rare crash when closing Out box during sending messages with addressing errors
+		Fixed reply quoting selection from preview pane in search window.
+		Allowing <BASE> tags outside of the HTML header (to help broken HTML)
+		IMAP - Save As/Print/Filter Print now work on IMAP minimal headers
+	4.2b83
+		Fixed file not found error when replying to messages with missing graphics
+		Searching "search results" was broken when searching for "Anything contains..."
+		IMAP - fixed potential crash transfering multiple POP messages to an IMAP mailbox.
+		Fixed another auto-expand memory leak
+	4.2b82
+		IMAP - Inline parts of IMAP messages saved during transfer.
+		IMAP - new mail alert displayed even 
+		Fixed problems with 68K and older OT's.
+		Fixed transfer to IMAP mailbox in local filter.
+		Disabled nickname autocomplete in directory services for now.
+		A few tweaks to settings dialogs.
+		Fixed entry for &szlig; (german double-s) in HTML
+		Fixed case where PPP/MacSLIP could be hung up between POP mail checks.
+	4.2b81
+		Fixed linking problem in b80
+		Fixed potential nil deref if have no nicknames.
+	4.2b80
+		 IMAP - cleaned up progress bar when fetching full messages during resync.
+		 IMAP transfers (spooling) no longer duplicating MIME headers.
+		 IMAP - Fixed problems displaying long subject lines with extended characters.
+		 IMAP - New Mail Dialog now appears even if no filters match new messages. 
+		 IMAP - Now displaying single mail alert after mail checks.
+		 Fixed memory leak when "expand nicknames immediately" is on.
+		 Fixed occasional non-interpretation of HTML literals
+		 Graphics did not display properly in both preview and message.
+		 nbsp's after returns now become spaces.
+		 No longer doing format=flowed space-stuffing on output when word wrap is off.
+		 Fixed up some debug stuff, including making sure MyFSpDelete actually returns something.
+	4.2b79
+		Extra returns between nested quotes fixed.
+		Creating and modifying messages with AppleScript can modify wrong
+		Fixed <html> not starting on a line.
+		Fixed extra returns between excerpts.
+		Couldn't change capitalization of personality name in personalities window
+		Moving tabbed windows can cause loss of scroll bars in Mailboxes window
+		Don't allow attachment icons to display in search window text fields
+		Don't enter selected text as search string unless doing turbo search.
+		Fixed incorrect date in title bar of search window when searching by date
+		Fix for option-delete crashing.
+		"Open Selection in Browser" no longer sends empty HTML pages.
+		Fixed wrong expiration warning date
+		Fixed infinite loop issue when sending x-eudora-setting URLs through Internet Pest.
+		Added extra newline to uuencoded files for benefit of Windows Eudora.
+		IMAP - sped up mailbox resync when fetching more than minimal headers.
+		IMAP - Fixed problem selecting the IMAP Trash mailbox.
+		IMAP - Fixed memory leak when updating IMAP mailboxes
+		IMAP - Removed error message when cancelling IMAP mailbox resync
+		Fixed problem with flowed double spaces at ends of lines.
+		No more warning when transferring attachments to IMAP.
+		New HTML literal interpretation using new resource
+		Avoid redoing spool mailboxes; minor performance improvement.
+		Now can undo transfer even if all windows closed. (#2480)
+		Fixed the trailing-space trimmer.
+		IMAP - fixed problem where attachments could end up in the trash after an IMAP->POP transfer.
+		Faster opening of certain format=flowed messages, especially on 68K. (#2555)
+		Fixed problem with mixing text/enriched and text/plain in one message.
+		Fixed print selection from the preview pane (#2534)
+		Address syntax errors now dequeue the message involved. (#2492)
+		"Recovered" in Status popup had no icon in the Search and Filters windows
+		Fixed reversed help for indent/outdent buttons. (#2518)
+		Betas that expire allow saving changes. (#2515, #2516)
+		"bulletin" added to list of errors that do not invalidate password.
+		IMAP - Fixed problems deleting IMAP messages from a search results window.
+		IMAP - Fixed problems transferring IMAP messages from search results window.
+		Don't report missing mailbox error when trying to open deleted IMAP message from search window
+		IMAP - Added workaround for deleting mailboxes off stupid IMAP servers.
+		IMAP hybrid mailboxes in toolbar weren't working after restarting Eudora
+		IMAP - BODY filter matching now working for IMAP messages.
+		Another inline GIF performance enhancement
+		IMAP - Fixed progress message when opening connection and downloading IMAP attachments.
+		Performance improvements for displaying inline graphics.
+		Displaying animated GIF images is now off by default.
+		Mailboxes window update problem after cmd-click in message title
+		Import HTML images only once into QuickTime for images that appear multiple times.
+		Tabbed window tabs highlighting incorrectly when clicked (only with MacOS 8.5+)
+		Optimization to prevent redraw on opening messages.
+		Added workaround for deleting mailboxes off stupid IMAP servers.
+		Fixed resource chain issues (remember the Resource Chain, Apple?) involving speech.
+		Fixed potential crashes in message duplicate deletion.
+		Slight improvement on bad resource file detection.
+		Being careful when reporting personality name after error doing personality save.
+		Fixed 'Pers' TMPL.
+		Fixed spoken quote level when speaking composition messages
+		Fixed problem speaking acronym ad the end of a sentence.
+		Speak silence when before "quote/unquote" instead of inserting a '.' (which
+	4.2b78
+		Slightly improved thruput stats.
+		Fixed GetAEBool to more carefully get the data from an AppleEvent
+		Patched up credits.
+		No longer waiting for html graphics download to complete when cancelled. 
+		Indent/outdent properly incrementing (bug 2520).
+		Tweaked progress message when downloading an IMAP message.
+		Fixed extra para break in replies et. al.
+		Animated GIF's were not sizing correctly
+		All animated GIF's were looping, even those that aren't supposed to
+		Tabbed Task Progress Window flickered background colors during updates
+		Support for speaking common acronymns (BTW, IMHO, AFAIK, etc).
+		Couldn't drag a message onto an IMAP hybrid mailbox.
+		Fixed potential crashes when automatically fetching HTML graphics.
+		Fixed progress messages during IMAP->POP transfers.
+		Two fonts were checked in formatting toolbar Font menu for certain fonts.
+		Pressing Return while focus in Date control wouldn't start search
+		IMAP - Now resynching dest mailbox after a transfer even if the transfer 
+fails partway through.
+		Fixed some paragraph format paste issues.
+		Fixed password-clearing to get rid of whole password.
+		Fixed bug that caused some IMAP messages to be fetched twice when 
+transferred to a local mailbox.
+		Find in Addressbook fails if cursor is in address(es) field
+		IMAP - Wrong message was being selected in sorted IMAP mailboxes.
+		IMAP - displaying "INBOX" mailbox as "Inbox" again.
+		Undo insert recipient no longer undoes just nickname expansion.
+		Don't remove a malformed nickname from old address book if we've failed 
+tosuccessfully drop it into a new address book (because, of course, it's 
+malformed).
+	4.2b77
+		Fixed flowed unwrapper when last word of flowed line is a single letter.
+		Fixed context-menu spelling that was broken in 76.
+		Fixed help for setting 97.
+		Fixed small memory leak in copy/paste
+		Support for Speaking composition windows
+		More defenses against bad styles on clipboard
+		Protect resource chain from speech routines
+		Tweaks to speech
+		Added passive spoken alert for reply-to.
+	4.2b76
+		Fixed overzealous space-stuffing of initial “F” for format=flowed.
+		Fixed auto-expansion from Insert Recipient
+		Added “Speak” to Edit menu and related settings
+		Fixed some recalculation bugs in editor
+		Fixed misbehavior when hitting return on a terminal blank excerpt line
+		Fixed potential crashes when documents change in the background
+		Fixed activation of formerly-frontmost message after handling mailto URL
+		Improved speller behavior when auto-checking off
+		Fixed problem getting 1st para uncolored after un-excerpting
+		Fixed double-clicking in many wazoos
+		IMAP
+			Fixed handling of embedded UUCP envelopes
+			Sped switching of IMAP personalities in settings
+	4.2b75
+		Wasn’t deleting enough charcters from a nickname that's to be 
+expanded.
+		Fixed bizzaro attachments-in-the-To-field expansion bug.
+		Forwarding messages that begin with styled paras caused para style to be 
+applied to forwarded headers.
+		Fixed problem opening messages with multiple adjoining HTML parts.
+		Changes to bring us up to latest format=flowed draft.
+		Filters did not update properly when moving multiple mailboxes.
+		Improved networking code that fetches inline images.
+		Added balloon help for load images button
+		Display filename under attachments that are displayed as graphics or 
+movies.
+		Fixed crasher on message ending with a return.
+		Added capability to speak the contents of messages from msg windows and 
+mailboxes.
+		Fixed a problem with task progress window activation redraws.
+		Fixed Undo & activation issue in mailboxes without preview panes.
+		Fixed partition size estimator for fat version.
+		Stationery was unlocking the wrong stuff if it had header text.
+		Fixed redraw problem when dragging wazoos out of main wazoo
+		Double-click Eudora Folder in search window no longer opens all mailboxes
+		Fixed search crash that could occur when clicking on a search window 
+during a search.
+		Make sure to close and delete any files created by URLAccess when 
+aborting download.
+		Mailbox updates were showing through results in search window when mailbox 
+unread status changes.
+		Fixed jumping scrolls in 8.5.
+		Added x-webtv to list of ignored headers.
+		Disable scrollbar when no scrolling needed under 8.5.
+		Added scrolling throttle to editor.
+		IMAP
+			Fixed bug that prevented transfers between two personalities that 
+connect to the same server.
+			No longer emptying trash on quit when Offline without warning.
+			New IMAP personalities were defaulting to never authenticate if the 
+Dominant POP personality was set to use some other authentication other 
+than Passwords.
+			Fixed problems remembering mail check passwords for secondary IMAP 
+personalities.
+			Fixed problem that would cause return-path: header to be displayed at the 
+bottom of IMAP
+			New IMAP mailbox names were not automatically highlighted.
+	4.2b74
+		Fixed splash screen to say “4.2”
+	42b73
+		Renamed to “4.2” to match Windows Eudora version #.  Honest, this isn’t a plot, we just can’t keep things straight internally otherwise.
+		Added unspeakable <x-eudora-setting:283> for the benefit of Jeroen.  Run 
+for your lives!
+		<x-eudora-setting:132=y> now causes mailbox compaction temp files to be 
+overwritten before being removed.
+		Fixed apparent attachment cloning when typing and attachments have their 
+last word misspelled.
+		Preview divider control was being disposed twice.
+		Was passing nil MenuHandle to CountMItems for Eudora Folder when getting 
+selected search mailboxes
+		Sorting a mailbox by label containing a label 15 could potentially cause 
+memory corruption.
+		Fixed help file listing for search shortcut.
+		Making sure we remove ALL url helper records when changing, in case 
+duplicates exist for some reason.
+		Was pretending to allow users to create nicknames in read-only files.
+		Mailbox view in search window not updating mailbox changes and unread 
+status
+		Proportional scrollbars for text regions.
+		Fixed scrollbar redraw problems.
+		Fixed search results not updating properly
+		Stationery Save As wasn’t updating Stationery window
+		Graphics in stationery was not working when creating new stationery with 
+"Save As"
+		If there was an error with an HTML graphic file when sending a message,
+it would prohibit all outgoing messages from being sent.
+		Fixed a bug previewing IMAP messages for the first time.
+		Better behavior when attempting to delete messages from a read-only 
+mailbox
+		Changed References: handling to 822bis.
+		Fixed blank lines disappearing before excerpt with HTML.
+		Slack URL's were handling parens suboptimally.
+		Wasn't paying attention to errors sending attachments.
+		Allowing return to open message even if focus in preview.
+		Fixed crash trying to print text document.
+		Possible fix for InvalRect crash when closing search window.
+		Fix confused makefilter dialog when transferring to a mailbox with a 
+non-unique name.
+		Fixed rare problems with URL escaping.
+		Fixed personality popup drawing over scroll bar.
+		Enter key wasn't useful in nickname edit fields.
+		Saving/restoring search window position was broken
+		Re-enable bulk searching on regular expressions
+		Fixed problem where case did not match when tabbing out of a highlighted 
+nickname
+		Find couldn't find mailboxes in a closed mailfolder whose name started 
+with a space
+		Added a couple more "no invalidate password" strings.
+		Shift-reply and preview pane wasn't working, along with otherstuff that 
+needed to know if a message was being previewed.
+		Make sure dialogs have legitimate function pointers before handing hit 
+and key events.
+		Cmd-click in some lists was losing selection
+		Fixed non-standard window dragging behavior; windows now activated first
+		IMAP
+			No longer running Incoming filters on Inbox after a transfer
+			Fixed a bug where Eudora lost track of a connection when filtering was 
+cancelled.
+			Fixed problems returning all search hits from IMAP mailboxes.
+			Fixed crash during mutlple inter-server message transfers
+			Fixed double-disposed handle
+			Wasn't doing on-server searching of IMAP hybrid mailboxes
+			Fixed problems deleting mailboxes from some servers.
+			"Match All" searches in IMAP mailboxes now working.
+			Smarter connections handle now allowing only one APPEND transfer at a 
+time.
+			No longer assuming IMAP servers know what they're doing when it comes to 
+partial fetches.
+			Fixed another possible cause of IMAP attachments and body parts showing 
+up incorrectly in downloaded IMAP messages.
+			Fixed problems forgetting password when authenticating to IMAP server 
+fails.
+			Fixed problems with IMAP cache creation when new IMAP personality is 
+added while <<dominant>> is set to IMAP.
+			Fixed ugly warning string when converting/deleting IMAP personality.
+			Fixed problems trying to search non-SELECTable IMAP mailboxes.
+			Couldn’t add mailbox with children to toolbar
+			Now allowing removal of deleted messages via size box click regardless of 
+Fancy Trash Mode.
+			Now closing IMAP mailbox and associated messages when the mailbox is 
+deleted.
+			
+	41b72
+		Fixed problem with preview pane not distinguishing messages and stubs
+		Fixed balloon help for preview pane controls
+		Added busy cursor when rendering graphics
+		Fixed minor display problem when HTML didn’t end with newline
+		Fixed regex searching by disabling bulk search when regex used.  Will refix to be faster in later version.
+		Fixed crash opening messages
+		Fixed problem putting styles on clipboard even for plain text
+		Fixed Search button flicker
+		Using default font when font is changed to something unknown
+		Fixed some tiny memory leaks
+		Fixed date parser which was broken in 71
+		Fixed excerpt leaking past end of flowed segment into attachments
+		Fixed nickname completion when only hiliting turned on
+		Fixed dragging messages to aliases of folders
+		Fixed crashes with toolbar if toolbar contains task progress
+		IMAP
+			Fixed strange selection after resync
+			Fixed locked connection after filtering
+			Better detection of failed transfer errors so that we don’t delete messages inappropriately
+			Aborting filtering if connection dies
+			Fixed redraw problem once filtering completes
+	41b71
+		Handling some non-standard Date: formats
+		Fixed problem with duplicate preview controls
+		Fixed memory leak in keychain handling
+		Enabled URLAccess for image downloads
+		<x-eudora-setting:282=y> for animated GIF’s
+		Fixed potential heap corruption problem when dealing with lists
+		Reduced redraw in search window when editing criteria
+		Fixed problems with redirect including graphics with multiple references
+		Fixed problem with links saved in stationery
+		Performance improvement for bulk search, especially with multiple criteria
+		Tweaked Make Nickname dialog
+		Fixed problem with selected text and nickname completion popup
+		Improved display when finding in filters window
+		Don’t drag-expand folders if can’t drop things into them
+		Hostnames can now be used for cmd-clicking
+		Cleaned up nickname autocompletion internals, including autoexpansion problems with Forward To & friends
+		Fixed crash after doing plug-in settings when plug-in has composition button
+		Fixed insertion point location after mailto url
+		Empty header no longer matches all messages in filters
+		toc rebuilder now recognizes text/enriched again
+		IMAP
+			Fixed connection cleanup problem
+			Fixed problem with IMAP->POP transfers
+			Reporting error when fetching missing message
+			Fixed crashes doing transfers of multiple messages IMAP->POP
+			No longer downloading attachments before replying
+			First stab at Kerberos V4 authentication
+			Fixed yet more problems with yet more nonstandard IMAP servers--this time it was stupid responses to BODYSTRUCTURE.
+			Fixed menu enabling after using Trash
+	41b70
+		Really fixed the message selection/open bug, Alan promises
+		Fixed URL scanner not noticing things after intact URL
+		Using personality of message when printing
+		Fixed hang when failing to Find in mailbox window
+		Added <x-eudora-setting:281=y> to allow users who have QuickTime movie importers that think text files are tasty to use them
+		Added mappings to deal with nonstandard APPLICATION/rtf binary files
+		Added a couple of MS junk headers to header hide list
+		Added “currently in use” to list of POP3 errors not causing password invalidation
+		Fixed crash opening HTML messages with unfetched images
+		Fixed problem causing some text drags to fail
+		Fixed default folder when doing save from Nav Svcs
+		Cleaning up empty files after downloading HTML images
+		Fixed potential search crash
+		Added ability to set folder from missing attachment folder alert
+		Unlinked anchors not blue-underlining forever
+		Fixed problem with composition window placement under K-scope
+		Fixed memory management problem in nicknames
+		Pasting formatted text a little more smoothly
+		IMAP
+			Fixed potential mail check crash
+			Improved attachment download cancel
+			Fixed corruption problem on downloads
+			Removing cache also removed decoding errors
+			Stopped pretending to do tree moves with mailboxes window
+			Improved reliability of a bunch of message operations
+	41b69
+		Rolled back bad “fix” to encoded-word code that was causing joined headers.
+		Fixed spacing past end of previewed message
+		Fixed “open next if unread”
+		Improved “missing graphic” display
+		Tweak to partition-size estimator for 68K
+		Fixed minor memory snafus
+		Fixed crash when getting particular errors from SMTP server
+		Added <x-eudora-setting:17> for unwrapping options
+		Fixed problem with links in replies when quote color is non-black
+		Fixed problem searching beyond end of message
+		Fixed conflict between search and compact
+		shift-opt-cmd-v does paste as quote w/out styles, not just paste w/out styles
+		Search window titling improved
+		Preserving more toc items during toc rebuild
+		<x-eudora-setting:279=y> disables display of alert when find text not 
+found
+		IMAP
+			Improved connection management stability
+			Fixed memory issue in mailbox-level actions
+			Added debug option to collect flags
+			Cleaning up after attachments better
+			Fixed problem doing POP->IMAP xfer from search window
+			Fixed problem getting all messages in inbox filtered
+	41b68
+		Fixed problem with extra returns in html
+		Fixed problem sending pasted graphics with html
+		Fixed problem with nickname scanner causing crashes on sending mail
+		Fixed problem filtering manually from search window
+		Fixed mail notification when threading off & no filters
+		Fixed disabled menu items after mailbox maintenance
+		Fixed sloppy toolbar insterstice calculations
+		Fixed problems with change password & keychain
+		Fixed open of wrong message after delete from search window
+		Fixed wazoo activation problem
+		Fixed dragging single-wazoo window by its tab
+		Performance tweak to transfer filters for IMAP
+		Added “rtsp” to list of URL’s to color even when people don’t surround them with <>’s though god knows leaving <>’s off URL’s is a DUMB DUMB DUMB thing to do.
+	41b67
+		Made a change that might help with typeahead crashes
+		Made a change to address inappropriate locking in replies
+		New window placement code happier with K-scope
+		Fixed some search focus problems
+		Fixed crash enabling menus when plugwindows open
+		Fixed minor html bugs wrt blank lines, extra bullets, graphic url’s
+		Fixed problem with searching & all caps if bulk search disabled
+		Updating search window message count when removing hits
+		Fixed a serial number problem after toc rebuild
+		IMAP
+			Performance tweaks for filtering
+			Fixed problems copying messages with big UID’s
+			Open Message, Mailbox filter actions working better
+			Problem updating destination mailbox after transfer
+			Fixed some problems with manual filtering
+	41b66
+		Even more fixes for crashing dialogs (Appearance 1.0.x bug?)
+		Fixed locking problem w/stationery
+		Fixed window position validater to use GetWindowRegion to figure out if window can be moved
+		Fixed format=flowed in emsapi-translated text
+		IMAP
+			Fixed filter loop by quicker mailbox updating
+			Fixed problem with two simultaneous attachment dowloads
+			No longer allowing trash for one server to reside on different server
+	41b65
+		Fixed crashing in dialogs introduced in 64
+		Gave paste-as-quote attribution its own string (7320)
+		Fixed tab stops after wrap/unwrap text
+		Fixed problem typing into plugwindows
+		Made uncomma-er understand group syntax, @ signs, capitalization
+		Fixed Make Nickname, which broke in 63
+		Got 68K version running again
+		IMAP
+			Fixed unlocking problem
+			Fixed problem skipping messages during filtering
+	41b64
+		Expanded nickname hiliting/autocomplete to more places
+		Fixed problem with IMAP and some application startup processes, like registration
+		Fixed crash modifying messages in restored search windows
+		Better handling of enabled/disabled Search button
+		Better message references from search and for preview, easy open
+		Setting dirty flag when changing attributes in stationery window
+		IMAP
+			Fixed problem with locked streams
+			Fixed generating too many threads for filter xfers
+			Fixed potential hang during filtering from IMAP->Local boxes
+			Fixed problem fetching digests
+			Fixed progress windows during filters
+			Fixed <<any headers>> searching message bodies
+			Fixed some server->server copies from some servers
+			Fixed problem moving IMAP folders at startup
+	41b63
+		IMAP
+			fixed problems deleting messages after trash mailbox is renamed from 
+another machine
+			fixed hang changing max # of connections during IMAP activity from IMAP 
+panel
+			Some mailbox resync speedup
+			Now selecting a message after a delete
+			fixed bug that prevented Trash mailbox from being updated/emptied after 
+"Empty Trash" command
+			removed debug progress messages displayed during certain IMAP operations
+			fixed problem with Offline dialog popping up before filter transfers
+			Change to condensing wazoo tabs for benefit of k-scope
+			fixed IMAP settings panel so settings change on per-personality basis
+			now grabbing password from keychain if enabled
+			fixed TCP/IP error -3155 when performing IMAP operations after a period 
+of idleness
+		AE window position changes now get saved
+		Using list text color when finder list colors in use
+		Fixed bug 2319 that allowed the attachment 'Insert' button to be clicked 
+when dim
+		<x-eudora-setting:52> to control what is selected when mailboxes opened 
+manually
+		Plugin window interaction with fast typing ("No text to type into") 
+fixed.
+		Fields in filter window no longer wrap.
+		AddIntelligentPasteSpace hang fixed.
+		Don't remove HTML markup when searching HTML messages.This is a 
+temporary until Pete writes a good, fast HTML stripper.
+		Paste-as-quote of something copied from a message now pastes an 
+attribution, too.
+		Couldn't drag-and-drop or insert certain movies
+	41b62
+		Enabled keychain support
+		Sending for multiple personalities in one swell foop now works again
+		Problem with return receipts & IMAP fixed
+		Moved Find/Search cmd keys AGAIN
+		Fixed minor problems with mailbox display prefs
+		Fixed memory problem fetching IMAP attachments
+		Fixed memory problem searching on IMAP servers
+		Fixed memory problem moving IMAP mailboxes
+		Fixed memory problem stopping speaking filters
+		Changed volume handling when opening toc’s
+		No longer permitting alpha characters in numeric search fields
+		Updating other search windows when xfer happens from one search window
+		Fixed dragging of graphics during pencil-edit
+		Fixed problem with app icon
+		Fixed emsapi plug-ins on previewed message
+		Fixed “open file” error when opening message from mailbox being searched
+		Fixed problem displaying inline graphics in emsapi-processed mail
+		Clicking top-level Eudora Folder icon now selects all in mailboxes pane of search window
+		Minor IMAP performance tweaks
+		Fixed terminal excerpt line stomping in incoming mail
+		Icon tweaks
+		Fixed newline-remover around quoted words in headers
+		Tweaked IMAP settings panel
+		Search windows smarter about mailbox moves
+		Can tab-focus on mailbox/result pane in search windows
+		Fixed problem starting search with return
+		Using theme separator when drawing finder list views
+		Tweaked IMAP behavior when Offline
+		Fixed problem pasting from IE & other apps that do weirdo things with style runs
+		Made nickname bolding/autocomplete work in Addresses field of nicknames window
+	41b61
+		Fixed nil deref in BinHex decoder
+		Fixed wazoo redraw for OS’s earlier than 8.5
+		Fixed crash opening messages with images from search window
+		Fixed a couple of missing cicn resources
+		Fixed separator line when replying to message with no body
+		Fixed problem with triple-click then drag
+		URL scanner working better in quoted text
+		Tweaked placement of finish nickname popup
+		IMAP - emptying trash of recently used servers when emptying trash on quit
+		IMAP - fixed problem with fetching AppleDouble attachments
+		IMAP - fixed problem getting parts from Simeon servers
+		IMAP - attachments now download when attachment folder is on other volume
+		IMAP - allowing fetch from summaries if any appropriate summaries selected
+		IMAP - Fixed error message on case-change rename
+		Unsorting column redraws if using Finder color scheme
+		Fixed problem with content-type, format=flowed, and emsapi translators
+		Located missing character when previewing long messages
+	41b60
+		<x-eudora-setting:277> When checked, Eudora list views will use a color  scheme like the Finder’s. Works only for mailbox windows right now.
+		Quote scanner running even if quote color is black, so speller has clue.
+		2280 Controls not being displayed with proper backgrounds on first open of wazoo'ed window.
+		Reduced flicker in redrawing wazoo'ed windows by not erasing area covered by tab control.
+		IMAP - fixed potential crash when aborting a message fetch.
+		IMAP - fixed a problem that could cause the wrong message to be downloaded into an IMAP mailbox if the mailbox's UIDValidity changes
+		IMAP - no longer SELECTing an imap mailbox if Eudora is already  connected to it.
+		IMAP -removed a debug string from the imap connection handling code
+		IMAP - fixed a problem that could cause mailbox contents to be redownloaded every time a mailbox is opened, and cause bogus "Couldn't write table of contents" errors.
+		IMAP - fixed problems creating local cache for mailboxes with ":" in their names.
+		IMAP - displaying server response after failed mailbox operations
+		IMAP - hack for #mh users (and others) to use Inbox inside location prefix directory as main inbox.
+		IMAP - removed bogus no new mail alert when checking only IMAP personalities.
+		IMAP - now allow moving of multiple IMAP mailboxes.
+		Fixed drag & drop improperly autoscrolling past top of document
+		A few icon tweaks.
+		Remembering selection when reopening mailboxes, except filtering doing fumlub if mailbox closed.
+		Fixed some mailbox zooming problems.
+		Fixed crash in menu enabling code
+		Squeeze icons together if comp window very narrow.
+		Startup check for shift key was failing because of activate events.
+		Fixed missing attachments error so it won't hold up SMTP session.
+	41b59
+		No longer saving multiple copies of pasted pictures
+		Fixed reply-to coloring in preview
+		Better noticing when PPP switch occurs.
+		Fixed broken choose mailbox in b58
+		Cancel now more aggressive with threaded checks
+		Better detection of PPP open from Eudora
+		Put in Host: parameter as sop to BillSoft http server
+		Fixed heap corruption problem in rich text searches
+		IMAP
+			Fixed a bug that might cause an extra download on reply
+			More progress messages
+			Fixed problems noticing attachments/signatures from some servers
+	41b58
+		Turned off keychain support on hearing that the api will change incompatibly.
+		More wazoo tab fixes.
+		Make nickname from selection wasn't working from preview pane.
+		Fixed teensy grunge in selecting personalities, mailboxes for emsapi.
+		Fixed drag stuck and overscrolling problems.
+		Minor cleanup for newlines & replies to very short messages.
+		SMTP 554, 503 also per-message errors.
+		Tweaked width of speakable filter poupup to not grow larger than the 
+width of its text.
+		Don't enter find/search selection if string is > 80 chars or contains a <return>
+		Open signature windows are not closed by mail send process.
+		Editor projects were not importing DragLib weakly.
+		Page up/down, home, end keys weren't working in search window results.
+		IMAP
+			Fixed a bug that prevented connections from returning to the pool after 
+a cancelled transfer.
+			fixed a bug that could cause attachments to show up inline and encoded.
+			Fixed a bug that would cause EUdora to forget which messages have been 
+downloaded.
+			IMAP to POP transfers now properly remove transferred IMAP message.
+			Fetch message text now fetches all selected message bodies in a single 
+background thread.
+	41b57
+		Oops, user break in 41b56
+	41b56
+		Fixed some problems with nickname selection
+		Fixed many “NQD crashes”
+		IMAP
+			Fixed read/unread status for some servers
+			Progress info for more operations
+			Fixed problem with attachments with long/duplicate names
+			Worked around server weirdness regarding spaces in search command
+		Fixed minor wazoo tab display problems
+		Treating missing attachments as per-message errors, not stopping queue run
+		Added geek string for setting 183
+		Change password displaying server message, not user password, if save password set
+		“autourl” links now inserted as plain text, not links
+		Got IMAP out of hair of startup process for non-IMAP mailboxes
+		Improved timeout behavior of connection open
+		Cmd-clicking in ph window fixed
+		Less graphic file duplication
+		Fixed drag-xfer of selected message in non-frontmost mailbox
+		Repairing PC Exchange’s careless handling of CurResFile during TrackDrag.
+		Changing label using message label control was changing selected messages rather than current message. 
+		Fixed scrolling getting stuck
+		Fixed bug deselecting check or send in opt-cmd-M
+	41b55
+		IMAP
+			Smarter connection strategy with max connection #’s and such
+			Faster cancels of searches
+			Fixed filtering  of <<any recip>> matching <<any header>>
+			Fixed bug with simeon and multipart/bloat
+			Better salvage of IMAP toc’s
+			Fixed crash when quitting with open IMAP connections
+			Added setting to use cleartext passwords only
+			Task progress interactions improved
+			Improved error messages
+			Fixed more top-level mailbox with same name as personality problems
+			Fixed problem with large UID’s & attachments
+			Improved file type and creator guesses
+		Renamed OT/PPP and MacSLIP settings panel
+		SMTP auth invalidating password if require password set
+		Fixed meta-chars in filenames in mailbox window popups
+		Setting proper preview pane height in new search windows
+		Search no longer collapsing mail folders in its mailboxes view
+		Fixed problem with URL parsing for graphic download
+		Fixed false-positives on html tags in search
+		Updating summaries in search window when changing originals
+		Making sure recip menus properly enabled
+		Supporting mangle and x-mangle
+		<x-eudora-setting:273=y> to enable filters to pass on list mail (for 
+those whose overweening pride makes them think they're not going to make 
+loops...)
+		Fixed cursor placement over message divider
+		Using tab control for wazoo tabs
+		Displaying custom mailbox icons in toolbar, mailboxes window
+		Fixed memory problem with task progress window and patterned themes
+		Fixed adding nicknames to collapsed nick file
+		Dimming Search button if no mailboxes selected
+	41b54
+		Shift-click was off by one in filters
+		Enabling search button after first char typed
+		Search defaults to current mailbox; cmd-a for all
+		Fix to stop option-arrows from crashing
+		Preview pane locking fixed some more
+		Fixed problem adding nicknames when plug-in has nickname file
+		Trimming leading and trailing spaces from graphic url’s for hashing
+		Removing messages from search pane when emptied from trash
+	41b53
+		Making sure not to reset theme state in dialogs (you’d think the dialog manager...)
+	41b52
+		Resetting graphic state to normal before update (8.5 hilite problem?)
+		Fixed selection flash
+		Removed option for still-press CMM
+		Fixed notification when all mail filtered away from In
+		Reduced ae timeout at startup
+		cmd-a does select all text if focus on text field in search window
+		IMAP
+			Settings panel moved to Esoteric Settings
+			Fixed bug that could cause partial downloads
+			Fixed bug where cancelling download could result in message marked as downloaded
+			Tweaked settings panels
+	41b51
+		<x-eudora-setting:174> and <x-eudora-setting:140> for control drag & drop now working or enhanced
+		Made gworld bitmaps non-purgeable in attempt to pacify NQD
+		Removed irrelevant “lock whole program” setting
+		Added default colors for new labels
+		Reordered settings panels
+		Unreasonably long “words” no longer considered misspelled
+		Speller understands quotes even if quote color is black
+		Fixed problem with open message actions if no other notification is done
+		Shortened wrap spot for format=flowed
+		Added “or scrolled” to def’n of one of the preview mark as read options
+		Removed inappropriate error message when cancelling Mailbox->Other...
+		Made label strip live in message windows; gives label popup
+		Removed “steve’s favorite” sort item
+		Fixed problem with excerpting return after quote
+	41b50
+		Tweaked MessPlainBytes to get right behavior at end of large excerpt
+		Revised “missing link” alert
+		Fixed moving toolbar button pointing to file
+		opt-cmd-a for “select same”
+		Tweaked personality popup placement/sizing
+		Fixed problem interpreting non-numeric strings as non-zero
+		Making sure sent messages are locked
+		IMAP
+			Make filter works with minimal headers
+			Delaying resync during filtering
+			Fixed crash transferring multiple messages from local mailbox to IMAP mailbox
+			Fixed bug creating mailboxes from Make Filter
+			Better warning when removing IMAP mailbox
+			Fixed bug with bozo inboxes appearing twice
+			Proper enabling of Mailboxes window buttons
+			Newly created mailboxes weren’t showing up in mailboxes window
+			Messages can now be dragged to mailbox in mailboxes window while other IMAP stuff happening
+		Fixed minor nickname hilite/selection bug
+		Fixed another problem with copy/paste of paragraph styles, including excerpt
+		Menu cmd-key change string not copied to settings file anymore
+		Updating summary in search window when message moves
+		Fixed problem with applFont & html
+		Stopped mad stripper from wrapping attached text files
+		Fixed send again from Search window
+		Not counting trailing whitespace when doing wrap calculations
+		Fixed next/previous message after opening message from search window and closing search window.
+		Added a few more settings help strings
+		Paying attention to change in automatic spelling pref more quickly
+		Added <x-eudora-setting:12706> for mail2news.
+		Fixed timezone calculation for CD modification-date
+		Autosizing Mom.
+		Fixed crash when cmd-delete open message
+		Fixed problem with ae get of field of unsaved comp window
+		Mailbox windows support proportional thumbs
+	41b49
+		IMAP
+			Fixed bug with location prefix & other inbox
+			Fixed problem with mailbox rename & filters
+			Added setting to disable filtering
+			Removing underline promptly when all mail is read
+			Fixed problem with attachments with funny names
+			Fixed progress display when filtering from POP to IMAP mailbox
+			Fixed no/new mail alerts when pop & imap checks both at same time
+			Fixed marking as read if filtering done
+		Removed option to use control key for drag manager
+		Fixed changing server status on multiple messages
+		Revised behavior when can’t find Word Services server application.  Also can use option-menu item to remove.
+		Drag & drop editing working better with excerpt bars
+		<x-eudora-setting:267=y> for special reply-to handling in lists (When enabled and message is bulk, reply goes to From: address (not Reply-To:), reply all includes From: address (and Reply-To:)
+		Expanded idea of bulk mail to include list- and errors-to:
+		Can open mailboxes from search window mailboxes list
+		No longer filtering out non-mailbox TEXT files when Mailbox->Other... for performance reasons
+		Disabling “with bullets” menu item when using text/enriched
+		Fixed undo of excerpt level change when insertion point is at start of line
+		Added support for multiple attachments when using Nav services
+		No longer allowing drag of messages to search window results tab
+		Fixed help for nav services setting
+		Fixed some more excerpt editing problems
+		Protecting ourselves from various hostile Nav services behaviors
+		Fixed undo of transfers from search window
+	41b48
+		IMAP
+			Fixed problem with search && any recipient
+			Fixed deletion of last IMAP personality leaving garbage in menus
+			Fixed new mail alert when no filters
+			Fixed problem delivering mail to closed In boxes
+			Fixed problem cancelling POP->IMAP transfers
+			IMAP filtering up and running
+			Couldn’t remove mailfolder
+			Minimal headers/skip attachments settings were reversed
+		Tolerating bizarre lyris [list] behavior
+		Fixed problem with nav services and automounting servers
+		Fixed an excerpt glitch on the end of forwards
+		Find in mailboxes window now looking in closed folders
+		Added setting to Misc settings panel to turn off flaky Nav Services
+		Changed way pixmaps are accessed; may help NQD crashes
+		Using IMG height and width when laying out HTML messages
+		Fixed speller when quote color turned off
+		Fixed problem with hiliting fully-typed nickname
+		Fixed redraw problem with nickname wazoo
+	41b47
+		IMAP
+			Server status column help balloon fixed
+			Fixed RR display
+			Fixed hang cancelling a resync
+			Fixed bugs with delete/reply
+			Search beginning to work
+		Added map for Word files sent as .mcw
+		Fixed double-search of mail folder when no IMAP personalities
+		changing search criteria now cancels search
+		Reduced memory requirements for dox with lots of images
+		Formatting toolbar divider now doesn’t deactivate
+		Fixed initial selection of search text
+		Fixed problem with search window not being able to open some messages
+		Looking at a few display-oriented settings sooner
+	41b46
+		Goodbye and good riddance to speller delay fiasco
+		Search size box no longer pretending to do something
+		Making sure to removed dominant overrides when setting settings
+		Using local or sender time when date searching
+		Using local time when age searching
+		Disabled insertion of HTML items into text files
+		Fixed insertion point snafu in autocomplete
+		Added geek strings for reversed prefs
+		Disabling Check Spelling menu item once spellcheck has run to completion
+	41b45
+		Fixed crash in enriched interpreter in 44
+		Fixed problem recognizing HTML in IMAP
+		Enhanced IMAP server status column
+		Greying out IMAP stubs in attachment menu in summary
+	41b44
+		Spell-as-you-type working again
+		A wazoo updated problem fixed
+		Fixed problems with IMAP individual attachment downloads
+		Fixed problem with IMAP appledouble content
+		Fixed stray excerpt in empty preview pane
+		Fixed button enabling after personality edit from personality window
+		Changed default quote for format=flowed to ‘> ‘ per new (mumble) format=flowed spec
+		Fixed problem with bold leaking from boldened nicknames on copy/paste
+		Fixed copy/paste of html links
+		No longer double-beautifying Who fields of outgoing messages
+		Forcing toolbar reload after changing reply options
+		Fixed extra blank line if rich text began with para style change
+		Fixed scrolling problem in editor
+		option-delete for word delete
+		Spaces after commas in message titles
+		Fixed problem parsing some http headers on graphic downloads
+		Added <x-eudora-setting:12519> and <x-eudora-setting:12520> for outgoing message Who field strings
+		Fixed guesses after doing manual spelling and making a correction
+		Fixed shift-tab in ph window
+		Fixed fcc to IMAP mailbox
+		Saving mail folder expand status for search window
+		Fixed some Transfer menu problems with IMAP messages
+		Fixed problem with replying to unfetched IMAP messages.
+		Option-click to fetch all IMAP attachments
+		f5 sometimes treated as normal char instead of being routed to toolbar
+		Server mailbox header button no longer pretends it does something
+		Partial messages opt-click separately from tiny ones
+		Fixed spell-checking of stationery
+		Exists AE working for personalities
+	41b43
+		Opt+2click title bar/title bar menu -> select all with same subject
+		URL helper select working for standard file
+		Allowing GIF files with trailing crap
+		Blue outline for images that are links
+		IMAP - transfer working for open messages
+		IMAP - mailboxes with same names as parent folder ok
+		Fixed another return/excerpt issue
+		Moved spelling delay to resource (10103) and made short
+		Fixed mis-recognition of attachments
+		Turning off recalc when wrap/unwrap
+	41b42
+		Fixed the icon!  You’ll leave me alone now!
+		Can type at date control in search
+		<x-eudora-setting:266> for where mailboxes open
+	41b41
+		Fixed an updated problem in the task progress window
+		More lenient when selecting near locked text
+		Icon tweaks
+		Somehow CW decided to hard-link some shared libraries and turn off optimizations
+		IMAP indicates more clearly when Offline
+		Spell scanner waits 2 seconds after typing
+		Sort by mailbox disabled unless search window
+		Fixed enter when mailbox tab has focus in search window
+		Search performance improvement if must use bulk
+		QuickTime cfm-68k mods
+		IMAP fixed fetch with headers during resync
+		IMAP individual attachment download now really working
+		Fixed a couple of HTML display problems
+		Making sure quote scanner scans whole paragraphs
+	41b40
+		Better job of being polite when doing threaded checks in background
+		Fixed option-space leaking out of html interpreter
+		Completely Plain ignores excerpt if using f=f excerpt handling
+		IMAP
+			Individual attachment download
+			Replied status stored on server
+			Fixed leftover “-” mailbox when IMAP goes away
+			Can transfer message from local mailboxes to IMAP mailbox
+			Fixed a hole in cache folder creation
+		Mailboxes not selecting things on activate/deactivate
+		32-bit icon for app
+		Better icon for miscellaneous settings
+		Fixed problem displaying attachments in preview pane
+		Tweaked behavior when hitting return to terminal selection including excerpt
+		Correct rescan offset after paste as quote
+		Fixed extra checkmark on format bar size popup
+		Nav services warning shuts up after first time
+		Fixed nav services cancel
+		shift- or opt- return to avoid return processing in excerpt
+		f=f tweaks; no wrap before >, after “-- “
+		No longer sending http-downloaded graphics
+		Disable search button when nothing searchable
+		Fixed problem interpreting AppleSingle files whose name maps aren’t first
+		Fixed start of Find operation to be insertion point
+		cmd-delete/cmd-del now delete messages
+		Improved memory usage for graphics
+		Fixed problems with Find inside search results
+		Fixed problem generating paragraphs in headers.
+		Fixed crash when opening old mailbox sorted by subject
+		Reduced header flicker on activations
+		Wrapped graphics no longer throwing off line-height calculation
+		Making sure empty preview pane is locked
+		Added mappings for .bmp files
+		Can use cmd-. to stop speaking
+		Copying all cat info when duplicating files
+		Inlining textual non-text/* parts unless marked as attachment
+	41b39
+		Fixed bug where failure to write to In box could lose incoming mail
+		Eschewing housekeeping tasks if keystrokes pending
+		Improved editing of excerpted sections
+		Added support for (tho not yet many of) geek strings for x-eudora-setting url’s
+		Moved cmd-F to search
+		Improved interactions between Find, Search, and Enter Selection
+		Some performance improvement to search
+		Fixed possible memory corruption bug in Make Filter
+		IMAP
+			Refresh button now appears immediately when switching POP->IMAP
+			Turned off smart downloads for now
+			Displaying errors on bad encodings
+			Cleaning up attachments/stubs when deleting mail
+			Improved warning on deleting mail
+			CRAM-MD5 authentication supported
+			Fixed problem selecting Trash mailbox
+		Quote scanner will now deign to look at first line of text
+		Baboons on more and less excerpt buttons
+		Search window underlines mailboxes with unread mail in mailboxes tab
+		Fixed messy redraw when quote/unquote
+		Fixed problem with case of URL’s when downloading graphics
+		Not doing excerpt on forward if forward quote character is empty
+		Fixed bad redraw after nickname autocomplete accept
+		Disabling talking alerts when memory low
+		Fixed download of HTML graphics in preview pane
+	41b38
+		Compensating for Metrowerks CFM-68K varargs bug
+		Fixed things not being quote-colored when they should be
+		Fixed quote flashing on un-blah-blah-blah
+		Worked voodoo on 8.1 Finder for wazoo & other drags
+		IMAP
+			Better guess as to when messages ha
+			Fetching child mailboxes if Inbox properly
+			No longer bringing synched mailboxes to front
+			Remembering open mailboxes at startup
+		Using excerpt bars on reply, forward unless outgoing format=flowed turned off.
+		Added quote & unquote commands (cmd-’ and opt-cmd-’)
+		Changed paste as quote to opt-cmd-v
+		Fixed new & remove buttons in sig window
+		Fixed sort by mailbox to be alphabetic
+		Fixed group syntax autocomplete on comma
+		Will only use Nav Services 1.1 or better (1.0 too buggy)
+		Making sure old-style emsapi plugins get expanded addresses, not nicknames
+	41b37
+		Default fixed-width size empty instead of 0
+		Taught Insert System Configuration about new processors
+		Fixed context-menu spelling (broken 36)
+		Dealt with invalid HTML font size values
+		Drag mailboxes to/from IMAP servers (experimental)
+		Fixed problem creating IMAP mailboxes for unsynched personalities
+		IMAP mailbox list built with first mail check
+		IMAP forgets password if login fails
+		IMAP attachment handling
+		GURL suite 1.1 - “attaching” parameter
+		Icons for search in toolbar
+		Fixed hang/crash in search
+		Fixed URL scanner/quote scanner/flowed interaction
+		Handling error 302 when downloading HTML graphics
+		Stopped AUTH command from generating multi-line responses
+		Making sure editor event filter not called before editor exists
+	41b36
+		Fixed occasionally crashing when doing format=flowed
+		Fixed problem auto-completing nicknames after groups
+		Dim Edit button when multiple personalities selected
+		First crack at SMTP AUTH
+		Improved speaking when memory low
+		setting 263 for trashing attachments anywhere inside attachments folder tree
+	41b35
+		Fix for wrap selection wrapping too much since b30
+		Fix for crash when trying to undo above
+	41b34
+		Avoiding CW Pro 4 reduce in strength bug (again), because they changed their optimization panel to cater to drooling idiots and made it impossible to avoid the bug without using #pragmas.
+		Fixed mis-enabling of Edit menu when only toolbar open
+		Insert button available for text files when styled text set to enriched
+		Fixed problem when make nickname with no addresses available
+	41b33
+		Fixed “Send Plain” button on styled warning alert bug in b30-32
+		Fixed problem speaking alerts in default voice
+	41b32
+		Weak-link of Nav Services in 68K
+		Fixed Save As... of incoming messages
+		Fixed Find Again when find window closed
+		Fixed problem changing hostname only
+		Popup menu for mailbox in search results
+	41b31
+		Wrap Selection now converts quotes, too
+		Problem with drag-hilite of last file in nickname list
+		Can save graphics with stationery
+		Nav services
+		Timeout for No New Mail alert
+		Fixed text order problem with format=flowed and attachments
+		Fixed problems with ON_ARRIVAL translator results not being saved if NOT_NOW returned by subsequent translator
+		Improved speller memory usage somewhat
+	41b30
+		Added interactions between format=flowed and excerpt bars
+			Format=flowed displays with excerpt bars
+			Otherwise plain messages with excerpt are sent format=flowed
+			<x-eudora-setting:260=1> turns off all format=flowed
+			<x-eudora-setting:260=2> turns off all incoming format=flowed
+			<x-eudora-setting:260=4> turns off all outgoing format=flowed
+			<x-eudora-setting:260=8> turns off conversion of quotes to excerpt bars on incoming messages
+			<x-eudora-setting:260=16> turns off conversion of excerpt bars to quotes on otherwise plain outgoing messages
+		Moved ;format=flowed up to same line as content-type to avoid bug in EMSAPI SDK
+		Fixed problem with setting dialog and 8.5 bogus enable of text field
+		Cleaning up placard garbage after closing preview pane
+		Fixed enabling of buttons after arrowing in personalities
+		AE “open window” working for wazoos
+		Fixed weekend connection hours
+		Fixed AE crash dealing with Task Progress window
+		Fixed wrong save dialog after making nickname from directory service
+		Fixed balloon help crash for emsapi plugwindows
+		Fixed cursor in search window
+	41b29
+		Fixed problem with broken style sheets and HTML
+		Using Contextual Menu Manager for spelling popup
+		Find working in most windows now
+		IMAP attachments worked on
+		Revised placards behind preview controls
+		Open files problem with search
+		Fixed crash when searching top-level mailbox
+	41b28
+		Context menu for spelling
+		Search window interactivity improvements
+		Really using standard linking for LDAP
+		Find works better with localized button names
+		Out box preview transliterates properly
+		Improved preview for UUPC messages
+		Fixed reopen of preview after close by resize control
+		Styled messages locked properly
+		Buildtoc problem setting flowed flag fixed
+		IMAP bug that caused hang when responding to partially-downloaded message
+		Tweaked help balloons for benefit of IMAP
+		Improved IMAP mailbox/folder creation
+		Location prefix working in settings
+		Redraw problems fixed in search window when more/fewer
+		IMAP attachment fetch worked on
+		Fixed problem remembering expand/collapse of mailboxes window
+		Format=flow not using rich text flag anymore
+		Keeping IMAP mailbox trees from being renamed
+		Mailbox list not refreshed immediately after changing to IMAP
+		Worked around problem with Appearance ThemeState routines ignoring text face
+		Allowing cancel in LDAPResultsToText
+		Working with URLAccess instead of SubWoofer
+	41b27
+		New image downloader
+		Fixed problems displaying images and rules
+		Fixed problems displaying images with spaces in their names
+		8.5 url clippings handled
+		Fixed crash opening mailbox on some systems
+		Fixed problems creating folders on some IMAP servers
+		Preview scroll spot sensitive to preview size
+		Fixed problem with long addresses to emsapi translators
+		Fixed disappearance of value field after changing second match verb
+		Emasculated default FUBARDAP filter
+		Protecting ourselves from silent speech channel allocation failures
+		Fix for weird removeresource bug
+	41b26
+		Using standard linking for LDAP shared library
+		More fixes for patterned themes and appearance 1.1
+		IMAP opt-Empty Trash now expunges if fancy trash off
+		IMAP toc size box click expunges
+		Unread status propagates to Eudora Folder in mailboxes window if IMAP personalites
+		Search window stop button working
+		Search window won’t search for nothing
+		Fixed potential problem with simultaneous POP3 check/XTND XMIT
+		Changed spell default to less guessing
+		IMAP - shift-empty for local trash, empty for connected trash, opt-empty for all trash
+		Auto mailbox resorting limitted to once per 3 seconds
+		IMAP error message for failing to create a mailbox
+	41b25
+		Fixed pixpat problem in b24
+	41b24
+		Fixed IMAP cache delete problem
+		Empty Trash now empties IMAP trashes
+		IMAP messages work correctly in search preview
+		More fixes to mailbox menu for 8.5
+		Fixes for patterned themes under 8.5
+		Support x-persona and x-eudora-signature url’s
+		Fixed search mailbox selection when mailbox list collapsed
+		Fixed preview pane disclosure misdisplay in search
+		Fixed HTML ignoring of styles
+		Fixed problem with incremental filtering and server options
+	41b23
+		Disabling spell-on-queue for turbo redirect
+		Minor performance tweaks
+		Text windows opbey autospell pref
+		Fixed placement of Pete value regions
+		Fixed coloring of quoted HTML links
+		More forgiving selecting near locked text
+		Mailbox menu problems under 8.5
+		IMAP fancy trash on by default
+		Bringing up mailbox selection first in search window
+		Fixed problem searching without mailbox list expanded
+		Rearranged Find window slightly
+	41b22
+		No longer eating first line of format=flowed
+		Removed html graphic download from feature list (stability of subwoofer)
+		No longer attempting to finish “nicknames” of all whitespace
+		Making sure toolbar updates when modifier keys change
+		Using proper color transformation for text in summaries
+		Fixed crash previewing a message in search results without uidHash
+		option-refresh now refreshes all IMAP trees
+	41a21
+		100 subfolder limit removed under Appearance 1.1 (OS 8.5)
+		Initial implementation of format=flowed
+		Worked on IMAP error reporting
+		Newsgroups: handling for Larry
+		Fixed problem with toolbar disabling during startup
+		Updated online help
+		Added speakable alert support
+		Fixed zooming of search window
+		Fixed “searching in” string in search window
+		shift-refresh now refreshes all IMAP trees (will be option-refresh soon)
+		Fixed problem with long IMAP mailbox names
+		Search mailbox/mailfolder with no selection now acts properly
+		Fixed reliability problem with IMAP downloads
+		PREF_SMALL_COLOR now obeys area lightening setting
+		Tweaked incremental filtering some more
+		<x-eudora-setting:68=y> now forces cmd-delete to be used to delete a selected summary
+		AE mods to get hidden header fields
+		AE “whole text” message property to get raw text and hidden fields
+		Undoing of paragraph styles fixed
+		Dragging after triple-click fixed
+		Fix to FXInfo sending/receiving
+		Using “In” icon for IMAP Inbox
+		<x-eudora-setting:justanumber> now is reasonable
+		Allowed better customization of mail from: arguments
+		Speller closes dictionaries after 30 seconds of no spelling
+		Fixed problem sending mail from IMAP personality
+		Tweaked case of INBOX for IMAP
+	41a20
+		Setting XFInfo on receipt
+		Fixed Print Selection for composition windows
+		More fixes for <mailto:>
+		IMAP server-to-server transfers
+		Fixed problem moving selection after message delete
+		Fixed problem with Wrap Selection and initial periods
+		Fixed memory leak during IMAP resync
+		Fixed problem speaking sender from filters
+		Implemented PREF_SMALL_COLOR (<x-eudora-setting:94=y>) for patches of color instead of coloring whole summaries
+		Changed way transfer/delete works in search results
+		Fixed problem using default voice if no voice selected in filters
+		IMAP memory issues worked on
+		Fixed problem with Search & IMAP mailboxes
+		Fixed style apply/unapply at insertion point
+		Making sure virtualTOC flag ignored when reading TOC; was leading to spurious out-of-date toc’s
+		More messing with hybrid IMAP mailbox/folder things
+		Fixed marking as read in Search window
+		Promoted search into interface.  Added search all/mailbox/folder.
+		Moving mailboxes around on a single IMAP server
+		Moved translator cleanup call early in quit process
+		More control over weekends in Connection Hours
+		More idle processing reduction
+		Changed delivery process to be more incremental
+		Get Attachment appleevent no longer opens message window
+		Renaming IMAP mailboxes works
+	41a19
+		More tweaks to delivery process to reduce idle processing
+		Checking for IMAP mail on check mail
+		Fixed type on packed executables
+		Resync IMAP mailboxes on open and show
+		Fixed problem getting fileid of file on afp server
+		Fixed problem with very long find string causing crash
+		Fixed problem using ph wazoo after save changes and cancel
+		Fixed problem opening missing aliased mailbox with real .toc file
+		IMAP cache management
+		Fixed size display for IMAP mailboxes
+		Cmd-click in IMAP mailbox title bar
+		Hybrid IMAP box/folder things treated as plain mailboxes unless they actually have embedded mailboxes
+		Avoiding IMAP refresh during POP mail checks
+		Fix for empty <mailto:>
+		Not processing GURL when mailto frontmost
+		Fixed plugwindow enabling of Select All
+		Fixed problem with delete , return, & undo at end of message
+		Fixed clicking of emsapi mailbox context menu
+		Fixed nil deref in menus under IMAP
+		<x-eudora-setting:258=y> now causes http url’s to be opened in the background and in a new window.  Double-clicking is unaffected.
+		Timezone in attributions fixed to sender’s.
+		Added fancy alert to <x-eudora-setting:> processing
+		Fixed transfer from IMAP to POP mailbox
+		Some thing I don’t understand involving IMAP and sentinel nodes
+		Command keys for delete, undelete, expunge for IMAP mailbox
+		Fixed problem with preview pane scroll bar
+		Fixed bug preventing transfer to “This Mailbox” IMAP mailbox
+		Fixed wrong icon for finder label 7 in toolbar
+		Fixed progress saying Checking when it meant Sending
+		Disallowing click in empty preview pane
+		Balloon help for preview controls
+		Transfer between IMAP servers now preserving flags
+		Fixed problem that might lead to POP check on IMAP mailbox
+	41a18
+		Appearance text color for toolbar text
+		Search window tweaks; column click during search, better keyboard focus
+		Leading and trailing whitespace doesn’t underline anymore
+		Added “Speak” filter action; requires Speech Manager
+		Extended APPL protection to control panels, etc
+		Tweaked background checking for less drain on system, esp. disk
+		Fixed redraw problem from clicking To: in nicknames
+		Fixed minimum width problem for wazooed nicknames
+		Fixed find in preview pane
+		Doing less redundant processing at idle
+		Improved filter keyword alert
+		Got proper icons on standard alerts
+		Fixed problem with paste generating styled text
+		Page up/down/home/end working in search
+		Fixed problem with tabs in editor
+		Fixed problem with find in nicknames
+		Fixed opt-cmd-m and uncheck “check mail”
+		Fixed opt-cmd-minus
+		Fixed typos in Connection Hours
+		Minor enabling cleanup here and there
+		Fixed cancel from Save As...
+		8.1 fileid bug worked around permanently
+		Fixed problem with checkmarks in priority menu
+		Fixed problem with ignoring bold -> ignoring italics
+		Fixed window size creep when opening/closing preview
+		Tightened attachment suffix match rules
+		Fixed problem in search for multiple criteria
+		Initial IMAP support
+	41a17
+		Upped memory limit for compressed dictionaries
+		Copying priority on send again
+		Shift-ph working for selected text in preview pane
+		Fixed timeout of new mail alert
+		Fixed what happens when user fails to init reply with action
+		No longer spellchecking receipts
+		Fixed problem dropping mailbox onto Eudora Folder in mailboxes window
+		Prettied task progress window title
+		Fixed problem with undo after returns in composition windows
+		Tweaked suffix matching for incoming attachments
+		XTND XMIT errors handled as per-message errors
+		Cleaned up modeless emsapi stuff
+		More poking at OS 8.1 fileid bug
+		Fixed problem with play sound popup being too wide
+		multipart/alternative where later parts were worse was leaving droppings in the attachments folder
+		Fixed extra newline when sending hard-wrapped rich text of specific line length that ends with space
+		Fixed crash when closing window with QTVR movie
+		Fixed nil deref in RecordAttachment
+		Misc search window ui fixes
+		Fixed problem with locked tab handle and search
+		Made room for a fourth digit in progress dialog
+		No longer hiliting nicknames inside of fcc’s
+		Added ability to limit mailchecks to certain hours (must install Connection Hours plug-in).
+		Lengthened PRAM access time to 10 seconds (from 1).
+	41a16
+		Fixed insertion point (broken in a15)
+		Fixed APOP (broken in a15)
+	41a15
+		Made way to avoid sending CAPA
+		Added setting (194, # days) after which folders in spool folder may be deleted
+		Took shot at making sure age-sensitive dates do their thing after midnight.
+		shift-opt-cmd-control-Settings... to reset all but essential settings
+		Fixes for modeless emsapi stuff
+		Workaround to 8.0/8.1 fileid bug
+		Search for all or search for any
+		Faster search performance, especially for summaries only
+		Logging of searches
+		HTML optimization for nbsp
+		Hiliting and sizing problems in search window
+		Fixed open in browser for selected summary
+		Removed even more subwoofer user breaks
+		Avoiding problems with initial ‘From ‘ in HTML
+		Making sure function keys are never fast-typed
+		Fixed problem in RedoTOC that might have caused crashes
+		Faster check for graphic import
+		Fixed redraw after last message deleted from mailbox
+		Fixed problem getting new nickname files to show up in current session after closing and reopening nicknames window
+		Fixed preview pane in search window
+		Fixed Steve’s Favorite sort to get order correct.
+	41a14
+		Fixed problem with CWPro3 68k optimizer
+		Removed “show fmt bar on format command” pref
+		Fixed hang switching categories in Search
+		Fixed return values for modeless emsapi calls
+		Made shift-cmd-Y work on selected summaries, nicknames
+		Made shift-cmd-Y do immediate lookup
+		Fixed problem with extra line when hitting return in excerpt
+		Fixed problem with undo of above
+		Fixed crash/leak with subwoofer
+		Translators now have access to old properties in ems_queued_properties
+		Fixed progress bar for foreground sends
+		Fixed Open Selection when HTML link selected
+		Fixed problem opening In box unnecessarily after mail fetch
+		Fixed problem drawing drag hilite in list boxes
+		Fixed problems cancelling drag between two nickname files
+		Added x-eudora-setting url protocol
+		Fixed text/html tlMimeInfo for outgoing emsapi translators
+		Added $User$ to list of vars we support in mailto
+		Improved cancellation of printing
+		Changed Search window to use tab control
+		Fixed problem with speller and curly apostrophes
+		Changed Search criteria
+	41a13
+		Placard behind hscroll in mailbox to avoid ugly white background on preview controls
+		Search got fancier (not all working yet; may crash; beware)
+		Fixed Find causing tabs no longer to be inserted into comp window bodies
+		Fixed problem with SetResLoad after AE stop notifying
+		Fixed random inappropriate pastes into address fields causing crashes.
+		Initial underlining of In/Out/Trash fixed
+		Whacked enabling of Register button
+		Fixed clicks in preview pane being mistaken for divider drags
+		Fixed label display when starting message from labelled stationery
+		Tweaked beautification of Who field on composition
+		Flushing events after delivering mail if caused window state to change
+		Fixed problem opening messages from search window.
+		Fixed help balloons for mailbox columns
+		Fixed cursor after ldap lookup
+		Fixed problem reading pre and post filters if file types wrong
+		No longer auto-installing WS speller
+		Fixed problem with nicknames expanding on incoming mail when dealing with emsapi translators
+		Nicknames with -WorkGroup always use group syntax
+		Fixed problem with mail notification if topmost window invisible and next window comp window
+		Spell-checking subjects
+		Allowing shift-tab to also switch focus from preview to list or vice-versa
+		Support for modeless emsapi windows.  Probably doesn’t work, but we won’t know until the plug-in authors catch up.
+	41a12
+		shift-cmd-F brings up preliminary “search” window
+		Added “Steve’s Favorite” to sort menu.  Will be removed before shipping, but ability for custom sorts will remain.
+		Fixed drawing problem of tp window if open but not top at startup
+		Added emsapi calls for getpersonalityinfo and getmailboxtag
+		Added personality name to getpersonality emsapi callback
+		Fixed screwed-up sort items in edit menu.
+	41a11
+		Fixed balloons for checked items in check mail specially
+		Disposing of mailbox alias after emsapi context menu
+		Fixed problem dealing with empty recip menu
+		Fixed comment-handling in HTML
+		Problem with 68K version & message-id’s fixed
+		Fixed failure to delete mailbox context menu -> crashes
+		Trimming nulls from sig files
+		Fixed problem where pasting returns into headers would cause subsequent headers to be spell-checked
+		Mailbox type-to-select reverts to selecting most recent item
+		Latest in a long line of absolutely vital life-or-death speller tweaks
+		Sped up autokey, some typing
+		Changes “Purchasing Info” & friends to go to website
+		Changed about box to send to website
+		Fixed interaction between typing url & speller
+		Fixed words cut off in spelling settings
+		Escaping URL’s in ph recent host list
+		Fixed problem with pencil-edit followed by redirect
+		Fixed undo after tow-truck to toolbar.  Watching me do this bored my daughter so much she later vomitted.
+	41a10
+		Taught speller about --
+		Workaround for Adam’s evil untyped files
+		Button in message window for graphic download
+		Scrolling to misspelled word when finding next misspelling
+		Added mappings for office98
+		Move quote blend % to resrouce
+		Fixed partial-spelling of contractions
+		Underpinnings for reassignable command keys
+	41a9
+		Improved performance by eliminating rescans
+		Added Find Next Misspelling, cmd-opt-6
+		Added shift-cmd-opt-6 to Add to Dictionary
+		Fixed crash if spell library not installed
+		Fixed problem that caused speller to check parts of words
+	41a8
+		Internal speller
+	41a7
+		Change to drag of QT movies
+		Blending quote colors
+		Changes to make sure filters get reinitialized properly
+		Fixed problem coloring last char of excerpt
+		Fixed make nickname crash on long name
+		TOC rebuild sees x-html; fixes digests, rebuilds
+		Preventing live queries when typing LDAP search filter
+		Added autosave seconds (setting 11520)
+		Auto-opening windows below last comp window on top--like?
+		Translators getting all headers from preview pane
+		Fixed problem allowing digests to transfer into themselves
+		Fixed overzealous trimming blowing away trailing graphics in preview
+		Fixed DelAttachment not to change selection
+		Fixed problem with transfer menu enabling when preview has focus
+		Fix for mark-as-read timer in preview pane
+	41a6
+		Fixed translations that want headers from preview pane
+		Expanding $Name$ and $Email$ in mailto urls
+		Allowing <mailto:>
+		Getting proper headers to translator for multipart/alternative
+		Switched to CFM-68K
+		Switched editor to be internal
+		Tweaks to make previewing interruptible and to get data faster.
+		Bullet max sizes
+		Fixed outgoing mail recognition in ReadSum
+		Quoting special chars in related filenames
+		Making sure multiple priority marks won’t happen
+		Fixed problems with toc peeking if toc open or in data fork
+		No longer showing RETR and TOP in progress window
+		Fixed problem scrolling when summary list does not have focus
+		Tweaked mailbox type2select to prefer non-alpha chars to the left
+		Expanding nicknames before passing addresses to translators
+		Fixed problems dragging dividers in filters, nicknames
+		Fixed default ring around OK in New Mail alert
+		Generating type= param to multipart/related
+		Added “types” to list of known attributes
+		Fixed problem with MacSLIP
+		Fixed problem with deletion of translated items
+		Preview now paying attention to easy open prefs
+		Emptying preview instantly if message deleted
+		Added “mark read if deleted from preview”
+	41a5
+		Fixed problem using data fork toc’s with new threading
+		Fixed dangling alias leading to “100 folders” error
+		Fixed attachment names display with text style
+		Fixed problem with wazoos failing to come to the front
+		Fixed problem dragging files from preview
+		Changed RedoTOC to be more robust if TOCList changes
+		Fixed multiple problems with dragging nicknames to text
+		Stephan’s g*** d*** post-send editing worked on
+		Fixed sense of preview test for selection change when new mail arrives
+		Tweaked list view resize quantization
+		Made sure “intersects nicknames” filters don’t cache too much
+	41a4
+		Wazoo redraw problem when switching to previously-open wazoo
+		Clicks on attachments in bg windows not bringing win to foreground
+		New preferences for preview mark as read
+		Oiled sticky preview panes in 41a3
+	41a3
+		Fixed problem opening mailboxes if no mail delivered to In
+		Fixed problem with bg color in modeless dialogs when pasting
+		Fixed divide by zero in throughput measurement
+		Mouse must be still for n ticks before message is previewed
+		Cmd keys were doing type-2-select in settings dialog
+		Killed warning when filters respond to styled mail
+		Added “locked” to no-clear-password string
+		Fixed bits for paying attention to size and color
+		Fixed filter param block not being initialized when threading off
+		Using mangling on top command (your server doesn’t support it)
+		Fixed edit menu when preview pane has focus
+		Fixed disk activity when previewing message with images
+		Pre-labelling quoted text in plaintext replies (yes, mistakenly does attribution lines, too)
+		Fixed problems with fonts & links
+		Shift-cmd-reply now works for preview pane
+	41a2
+		Preview focus problems worked on
+		Preview toggle off then on wasn’t redisplaying message
+		Fixed shift-paste
+		Fixed problem with extra returns when using HTML
+		Splash screen says 4.1
+		Balloon help for wazoo tabs
+		Making sure button 1 hilited in dialogs
+		Fixed erroneous default font when typing at end of document with changed font.
+		Improved performance on HTML with lots of long words
+		Fixed problem with size of text for missing image in HTML
+		Better subject grouping with long subjects
+		Fixed some problems with icons & missing images/attachments
+		Updating translator flags after translator settings
+		Only one cancel needed for unavailable aliased mailbox

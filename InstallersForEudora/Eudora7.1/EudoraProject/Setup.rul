@@ -1,0 +1,2926 @@
+// Include header files
+
+
+#include "ifx.h"
+
+
+////////////////////// string defines ////////////////////////////
+
+
+
+// ----- DLL function prototypes -----
+prototype cdecl INT AppData.FindAppDataPath(BYREF STRING);
+prototype Shell32.ShellExecuteA(HWND,BYREF STRING,BYREF STRING,BYREF STRING,BYREF STRING,INT);
+prototype cdecl INT InstallerHelp.CheckStatus(INT);
+
+
+// ---- script function prototypes -----
+prototype ShowDialogSdWelcome();
+prototype ShowDialogSdLicense();
+prototype ShowDialogSdFeatureDialog();
+prototype ShowAskDestPath();
+prototype ShowDialogSdAskDestPath(BYREF STRING);
+prototype ChooseDataFolder();
+prototype ShowDialogChooseDataFolder();
+prototype ShowExitSetupDialog();
+prototype GetINIOptions();
+prototype SetupInstall();
+prototype SetupScreen();
+prototype ShowDialogs();
+prototype ShowDialogInfo();
+prototype CheckRequirements();
+prototype ShowDialogOtherOptions();
+prototype LaunchDefaultBrowser();
+prototype WriteINIFile();
+prototype CopyOptionalIniFiles(); 
+prototype RemoveEmoticonFiles();
+prototype InstallFeatures();
+prototype CleanUpInstall();
+prototype SetupRegistry();
+prototype CleanupRegistry();
+prototype CleanUpAddRemovePrograms();
+prototype CheckReleaseVersion();
+prototype ConditionalWarningBox( STRING );
+prototype IsEudoraRunning();
+
+
+//site license
+prototype LaunchCustomBrowser();
+prototype WriteCustomSettings(STRING);
+prototype WriteINISettings(STRING);
+prototype DoSilentInstall();
+
+// ----- Global Variables -----
+BOOL   bEudoraSelection, bImportersSelection;
+BOOL   bWinNT, bIsShellExplorer, bInstallAborted, bIs32BitSetup, bWin2k, bAdmin;
+BOOL   bUseAppDataFolder,  bUseCustomDataFolder, bCustomDataDir, bChooseAppDir;
+STRING szDataDir, szAppDataPath, szTmpDataDir, svDir, svTarget;
+BOOL   bSiteVolumeInstaller, bElectronicInstaller, bVolumeInstaller;
+
+
+
+// ----- INI File Variables -----
+STRING          szURL, szINIFile, szAppName, szUserFile1, szUserFile2, szUserFile3, szUserFileMode;
+BOOL            bMailDirPrompt, bDefaultURL;
+BOOL            bWarningsSuppressed, bCreateShortcut;
+STRING      szSilentInstallDir, szIconName, sz3rdPartyHeader, sz3rdPartyFooter;
+STRING      szCustomURL, szCustomFolder, szCustomValues;
+
+
+
+//------- constants ---------------
+
+
+#define  RES_APP_PATH_DIALOG_ID   12005  // resource ID for the Dialog sdAskDestPath
+#define  RES_APP_DIALOG_NEXT      1      // resource ID for the Next button
+#define  RES_APP_DIALOG_BACK      12     // resource ID for the Back button
+#define  RES_APP_DIALOG_CANCEL    9      // resource ID for the Cancel button
+#define  RES_APP_DIALOG_BROWSE    196    // resource ID for the Browse button
+#define  RES_APP_DIALOG_APP_PATH  715    // resource ID for the static text where the path to the
+                                                                         //application is displayed                                                     
+                                                                
+#define RES_DATA_FOLDER_DIALOG_ID       9000 // ID of the data folder options dialog
+#define RES_DATA_DIALOG_APP_FOLDER      40   // ID of data folder dialog's 'App Folder' label
+#define RES_DATA_DIALOG_CUSTOM_FOLDER   43   // ID of data folder dialog's 'Custom Folder' label
+#define RES_DATA_DIALOG_BACK            37   // ID of data folder dialog's 'Back' button
+#define RES_DATA_DIALOG_NEXT            41   // ID of data folder dialog's 'Next' button
+#define RES_DATA_DIALOG_CANCEL          42   // ID of data folder dialog's 'Cancel' button
+#define RES_DATA_DIALOG_BROWSE          36   // ID of data folder dialog's 'Browse' button
+#define RES_DATA_DIALOG_RADIO_APP       12   // ID of data folder daialog's 'App' Radio Button
+#define RES_DATA_DIALOG_RADIO_CUSTOM    13   // ID of data folder daialog's 'Custom' Radio Button
+                                                                
+                                                                
+#define RES_EXIT_DIALOG_ID  9001    // ID of the custom Exit Setup dialog
+#define RES_RESUME_SETUP    15      // ID of exit setup dialog's 'Resume Setup' button
+#define RES_EXIT_SETUP      16      // ID of exit setup dialog's 'Exit Setup' button
+
+
+#define RES_WELCOME_DIALOG_ID  12006  //ID of the Welcome dialog
+#define RES_WELCOME_MESSAGE    50     //ID of the text field of the Welcome message
+#define RES_WELCOME_BTN_CANCEL 9      //ID of the Cancel button in the welcome dialog
+#define RES_WELCOME_BTN_NEXT   1      //ID of the Next button in the welcome dialog
+
+
+///////////////////////////////////////////////////////////////////////////////
+//
+// Function:  GetINIOptions
+//
+//  Purpose:  Here we get all the info from the INI file that controls what
+//                        our installer will do, what the options are called, etc.
+//            The INI file is called instopt.ini, and lives in the installer dir
+//
+///////////////////////////////////////////////////////////////////////////////
+function GetINIOptions()
+        number nvValue, nVerGet, nvType, nvSize;
+        STRING szSectionName, svValue, szKeyName, svResult, szNewTemp, szKey, szName, svVersionNumber;
+        STRING svValue1, svVersionNumber1, svValue2, svVersionNumber2, szInstallerType;
+
+
+begin
+
+
+        //temporarily initalize the bool values. later get the values from DEudora.ini file
+    bUseAppDataFolder = TRUE;
+    bUseCustomDataFolder = FALSE;
+
+
+        // The INI file we're using
+        szINIFile = SRCDIR^"instopt.ini";
+
+
+        /*--------------------*/
+        /* [General] Section  */
+        /*--------------------*/
+        szSectionName = "General";
+        
+        // APP_NAME Key
+        szKeyName = "APP_NAME";
+        GetProfString(szINIFile, szSectionName, szKeyName, svResult);
+        szAppName = svResult;
+        
+        /*----------------------*/
+        /* [User_Info] Section  */
+        /*----------------------*/
+        szSectionName = "User_Info";
+
+
+        // Site License
+        // Silent Install
+        szSilentInstallDir = "";
+        szKeyName = "SILENT_INSTALL_DIRECTORY";
+        GetProfString(szINIFile, szSectionName, szKeyName, szSilentInstallDir);
+        if(szSilentInstallDir != "") then
+                MODE = SILENTMODE;
+        endif;
+        
+        // USER_FILE1 Key
+        szKeyName = "USER_FILE1";
+        GetProfString(szINIFile, szSectionName, szKeyName, svResult);
+        szUserFile1 = svResult;
+
+
+        // USER_FILE2 Key
+        szKeyName = "USER_FILE2";
+        GetProfString(szINIFile, szSectionName, szKeyName, svResult);
+        szUserFile2 = svResult;
+
+
+        // USER_FILE3 Key
+        szKeyName = "USER_FILE3";
+        GetProfString(szINIFile, szSectionName, szKeyName, svResult);
+        szUserFile3 = svResult;
+
+
+        // USER_FILE_MODE Key (see instopt.ini for details)
+        szKeyName = "USER_FILE_MODE";
+        GetProfString(szINIFile, szSectionName, szKeyName, svResult);
+        szUserFileMode = svResult;
+
+
+
+        // SUPPRESS_REGISTRY_WARNINGS key
+        GetProfInt(szINIFile, szSectionName, "SUPPRESS_REGISTRY_WARNINGS", nvValue);
+        if (nvValue = 1) then
+                bWarningsSuppressed = TRUE;
+        else
+                bWarningsSuppressed = FALSE;
+        endif;
+        
+        // CREATE_SHORTCUT Key  
+        GetProfInt(szINIFile, szSectionName, "CREATE_SHORTCUT", nvValue);
+        if (nvValue = 1) then
+                bCreateShortcut = TRUE;
+        else
+                bCreateShortcut = FALSE;
+        endif;
+
+
+        // ICON_SHORTCUT_NAME Key
+        GetProfString(szINIFile, szSectionName, "ICON_SHORTCUT_NAME", szIconName);
+        
+        // MAIL_DIRECTORY_PATH key
+        szDataDir = "";
+        GetProfString(szINIFile, szSectionName, "MAIL_DIRECTORY_PATH", szDataDir);
+        if(szDataDir != "") then
+              bUseCustomDataFolder = TRUE;
+              bUseAppDataFolder = FALSE;
+        endif;
+
+
+        // MAIL_DIRECTORY_PROMPT Key    
+        GetProfInt(szINIFile, szSectionName, "MAIL_DIRECTORY_PROMPT", nvValue);
+        if ((nvValue = 1) && (szSilentInstallDir == "")) then
+                bMailDirPrompt = TRUE;
+        else
+                bMailDirPrompt = FALSE;
+        endif;
+        
+
+
+        /*---------------------*/
+        /* [Included] Section  */
+        /*---------------------*/
+        szSectionName = "Included";
+        
+        // THIRD_PARTY_DIALOG_HEADER key
+        GetProfString(szINIFile, szSectionName, "THIRD_PARTY_DIALOG_HEADER",
+                                        sz3rdPartyHeader);      
+        
+        // THIRD_PARTY_DIALOG_FOOTER key        
+        GetProfString(szINIFile, szSectionName, "THIRD_PARTY_DIALOG_FOOTER",
+                                        sz3rdPartyFooter);      
+
+
+        // DEFAULT_URL Key
+        GetProfInt(szINIFile, szSectionName, "DEFAULT_URL", nvValue);
+        if (nvValue = 1) then
+                bDefaultURL = TRUE;     
+        else
+                bDefaultURL = FALSE;
+        endif;
+        
+        // CUSTOM_URL Key
+        GetProfString(szINIFile, szSectionName, "CUSTOM_URL", szCustomURL);
+
+
+        // CUSTOM_FOLDER Key
+        GetProfString(szINIFile, szSectionName, "CUSTOM_FOLDER", szCustomFolder);               
+        
+
+        // For Site License
+        /*---------------------*/
+        /* [Custom] Section  */
+        /*---------------------*/
+        szSectionName = "Custom";
+        // The Custom settings put in by the InstTool.
+        szCustomValues = "";
+        GetProfString(szINIFile, szSectionName, "", szCustomValues);
+        
+        //depending on the Last Name written to the eudora.ini file we determine if
+        //we have a Site/Volume Installer
+        GetProfString(szINIFile, szSectionName, "RegLastNamePro", szInstallerType);
+        if(szInstallerType = "Volume License") then
+                    bVolumeInstaller = TRUE;
+        endif;
+
+
+        // Our default URL
+        // Add other items to the URL
+        // t  = type of installer
+        // os = operating system
+        szURL = "http://www.eudora.com/download/other/?v=6.0&o=";
+        if (bElectronicInstaller) then
+                szURL = szURL + "&t=elec&os=win";
+        endif;
+        
+        return 0;
+end;
+
+
+
+///////////////////////////////////////////////////////////////////////////////
+//
+// Function:  CheckRequirements
+//
+//  Purpose:  This function checks all minimum requirements for the
+//            application being installed.  If any fail, then the user
+//            is informed and the setup is terminated.
+//
+///////////////////////////////////////////////////////////////////////////////
+function CheckRequirements()
+    NUMBER  nvDx, nvDy, nvResult;
+    STRING  svResult;
+
+
+begin
+
+
+    bWinNT           = FALSE;
+    bIsShellExplorer = FALSE;
+
+
+    // Check screen resolution.
+    GetExtents( nvDx, nvDy );
+
+
+    if (nvDy < 480) then
+        MessageBox( @ERROR_VGARESOLUTION, WARNING );
+        abort;
+    endif;
+
+
+    // set 'setup' operation mode
+    bIs32BitSetup = TRUE;
+    GetSystemInfo( ISTYPE, nvResult, svResult );
+    if (nvResult = 16) then
+        bIs32BitSetup = FALSE; // running 16-bit setup
+        return 0; // no additional information required
+    endif;
+
+
+    // --- 32-bit testing after this point ---
+
+
+    // Determine the target system's operating system.
+    GetSystemInfo( OS, nvResult, svResult );
+
+
+    if (nvResult =  IS_WINDOWSNT) then
+        // Running Windows NT.
+        bWinNT = TRUE;
+
+
+        // Check to see if the shell being used is EXPLORER shell.
+        if (GetSystemInfo( OSMAJOR, nvResult, svResult ) = 0) then
+            if (nvResult >= 4) then
+                bIsShellExplorer = TRUE;
+            endif;
+
+
+        endif;
+        
+                // Admin rights?
+                if (Is(USER_ADMINISTRATOR, "") = 0) then
+                        bAdmin = FALSE;
+                else
+                        bAdmin = TRUE;
+                endif;
+
+
+    elseif (nvResult = IS_WINDOWS95 ) then
+        bIsShellExplorer = TRUE;
+
+
+    endif;
+
+
+// For Appl Data Stuff
+        GetSystemInfo(OSMAJOR, nvResult, svResult);
+        if(nvResult >= 5) then
+                bWin2k = TRUE;
+        endif;
+// For Appl Data Stuff
+
+
+end;
+
+
+
+
+///////////////////////////////////////////////////////////////////////////////
+//
+// Function: SetupInstall
+//
+//  Purpose: This will initialize the setup.
+//
+///////////////////////////////////////////////////////////////////////////////
+function SetupInstall()
+
+
+begin
+
+
+    Enable( CORECOMPONENTHANDLING );
+
+
+    bInstallAborted = FALSE;
+    bCustomDataDir = FALSE;
+    bChooseAppDir = FALSE;
+
+
+    SdProductName( @PRODUCT_NAME );
+
+
+    Enable( DIALOGCACHE );
+
+
+    return 0;
+end;
+
+
+///////////////////////////////////////////////////////////////////////////////
+//
+// Function:  SetupScreen
+//
+//  Purpose:  This function establishes the screen look.  This includes
+//            colors, fonts, and text to be displayed.
+//
+///////////////////////////////////////////////////////////////////////////////
+function SetupScreen()
+
+
+begin
+
+
+        SetColor ( BACKGROUND , RGB(0,0,240) | BK_SMOOTH );
+    Enable( FULLWINDOWMODE );
+    Enable( INDVFILESTATUS );
+    SetTitle( @TITLE_MAIN, 24, WHITE );
+
+
+    SetTitle( @TITLE_CAPTIONBAR, 0, BACKGROUNDCAPTION ); // Caption bar text.
+
+
+    Enable( BACKGROUND );
+
+
+    Delay( 1 );
+
+
+end;
+
+
+
+///////////////////////////////////////////////////////////////////////////////
+//
+// Function:  ShowDialogs
+//
+//  Purpose:  This function manages the display and navigation of
+//            the standard dialogs that exist in a setup.
+//
+///////////////////////////////////////////////////////////////////////////////
+function ShowDialogs()
+
+
+NUMBER nResult;
+
+
+begin
+
+
+    Dlg_Start:
+    // beginning of dialogs label
+
+
+    Dlg_SdWelcome:
+    nResult = ShowDialogSdWelcome();
+    if (nResult = BACK) goto Dlg_Start;
+        
+    Dlg_SdLicense:
+    nResult = ShowDialogSdLicense();
+        if (nResult = BACK) goto Dlg_SdWelcome;
+
+
+        Dlg_Options:
+        nResult = ShowDialogSdFeatureDialog();
+        if (nResult = BACK) goto Dlg_SdLicense;
+
+
+    Dlg_SdAskDestPath:
+    nResult = ShowAskDestPath();
+    if (nResult = BACK) then
+                goto Dlg_Options;
+        endif;
+        
+        Dlg_SdChooseDataFolder:
+    nResult = ChooseDataFolder();
+    if (nResult = BACK) then
+                goto Dlg_SdAskDestPath;
+        endif;  
+        
+    Dlg_SdDisplayTopics:
+    nResult = ShowDialogInfo();
+    if(nResult = BACK) then
+        goto Dlg_SdChooseDataFolder;
+    endif;
+
+
+    return 0;
+end;
+
+
+
+//////////////////////////////////////////////////////////////////////////////
+//
+//  FUNCTION:   OnFirstUIBefore
+//
+//  EVENT:      FirstUIBefore event is sent when installation is run for the first
+//              time on given machine. In the handler installation usually displays
+//              UI allowing end user to specify installation parameters. After this
+//              function returns, FeatureTransferData is called to perform file
+//              transfer.
+//
+///////////////////////////////////////////////////////////////////////////////
+
+
+function OnFirstUIBefore()
+
+
+begin   
+
+
+        InstallFeatures();
+
+
+end;
+
+
+//////////////////////////////////////////////////////////////////////////////
+//
+//  FUNCTION:   OnFirstUIAfter
+//
+//  EVENT:      FirstUIAfter event is sent after file transfer, when installation
+//              is run for the first time on given machine. In this event handler
+//              installation usually displays UI that will inform end user that
+//              installation has been completed successfully.
+//
+///////////////////////////////////////////////////////////////////////////////
+function OnFirstUIAfter()
+
+
+begin
+
+
+        CleanUpInstall();
+
+
+end;
+
+
+
+
+///////////////////////////////////////////////////////////////////////////////
+//
+//  FUNCTION:   OnMaintUIBefore
+//
+//  EVENT:      MaintUIBefore event is sent when end user runs installation that
+//              has already been installed on the machine. It is called when the
+//                              user clicks on Add/Remove programs
+//
+///////////////////////////////////////////////////////////////////////////////
+function OnMaintUIBefore()
+    NUMBER nResult, nType;
+    STRING szMsg, svResult, szCaption;
+begin
+
+
+        if( IsEudoraRunning() != NULL) then
+                // OK User is running Eudora
+                szMsg = "Uninstall has detected that Eudora is in use. Please close the application and launch Uninstall again" ;
+                MessageBox(szMsg, INFORMATION);
+                exit;
+        endif;
+
+
+        svResult = "Are you   sure you want to completely remove 'Eudora' and all of its components";
+        szCaption = "Confirm File Deletion";
+        nResult = SprintfBox(YES|NO,szCaption,"%s",svResult);
+        if (nResult = OK) then;
+                Enable(STATUSEX);
+                FeatureRemoveAll();
+        endif;
+
+
+end;
+
+
+///////////////////////////////////////////////////////////////////////////////
+//
+//  FUNCTION:   OnMaintUIAfter
+//
+//  EVENT:      MaintUIAfter event is sent after file transfer, when end user runs
+//              installation that has already been installed on the machine. Usually
+//              this happens through Add/Remove Programs.
+//              In the handler installation usually displays UI that will inform
+//              end user that uninstallation has been completed successfully.
+//
+///////////////////////////////////////////////////////////////////////////////
+function OnMaintUIAfter()
+
+
+STRING szMsg;
+
+
+begin
+
+
+        if(BATCH_INSTALL) then
+                szMsg = "Eudora has been removed from your system. It is recommended that you restart your machine to remove files that were in use during uninstall";
+            MessageBox(szMsg, INFORMATION);
+        endif;
+        
+    Disable(STATUSEX);
+
+
+end;
+
+
+///////////////////////////////////////////////////////////////////////////////
+//
+//  FUNCTION:   OnMoveData
+//
+//  EVENT:      Function called before files are transferred
+//
+///////////////////////////////////////////////////////////////////////////////
+function OnMoveData()
+
+
+STRING szMsg; 
+
+begin
+		if( (szSilentInstallDir != "") && (REMOVEALLMODE = 0) ) then	
+        	Disable (STATUSEX);
+        endif;             
+        
+        Enable(LOGGING);
+        CreateInstallationInfo( );   
+        MaintenanceStart ( );
+        FeatureTransferData(MEDIA); 
+        
+end;
+
+
+
+///////////////////////////////////////////////////////////////////////////////
+//
+// Function: InstallFeatures
+//
+//  Purpose: This function handles the entire setup dialogs.
+//
+//
+///////////////////////////////////////////////////////////////////////////////
+function InstallFeatures()
+
+
+NUMBER nBuffer;
+STRING szDLLPath;  
+STRING szProgramPath;
+NUMBER nvResult; 
+STRING svResult;
+
+begin
+
+
+    Disable( BACKGROUND );
+        
+    SetupInstall();        
+
+    if(szSilentInstallDir = "") then
+
+
+        SetupScreen();
+        if (ShowDialogs()<0) goto end_install;
+
+		//install the capicom.dll file in the
+		//System32 directory required by SMIME
+		//and register the dll with regsvr32
+   		XCopyFile(SUPPORTDIR ^ "capicom.dll", WINSYSDIR, COMP_NORMAL);
+  		szProgramPath = WINSYSDIR ^ "regsvr32";
+  		szDLLPath = WINSYSDIR ^ "capicom.dll";  
+  		if (LaunchAppAndWait (szProgramPath, "/s " + szDLLPath, LAAW_OPTION_WAIT) < 0) then
+    	   MessageBox ("Unable to register dll file for SMIME",INFORMATION);
+    	endif;  
+    	
+    	//Determine the target system's operating system. 
+    	//copy the ifsmon.vxd only if user is running
+    	//Win 95/98/ME    
+    	if(SYSINFO.WIN9X.bWin9X) then
+    		XCopyFile(SUPPORTDIR ^ "ifsmon.vxd", TARGETDIR, COMP_NORMAL);
+    	endif;
+    	
+ 
+        //set up the registry values
+        if ((bIs32BitSetup) && (bIsShellExplorer)) then
+           RegDBSetItem( REGDB_APPPATH, TARGETDIR );
+          RegDBSetItem( REGDB_APPPATH_DEFAULT, TARGETDIR ^ @PRODUCT_KEY );
+         RegDBSetItem( REGDB_UNINSTALL_NAME, @UNINST_DISPLAY_NAME );
+        endif;
+
+
+        SetStatusWindow( 0, "" );
+        Disable( DIALOGCACHE );
+        Enable( STATUS );
+        StatusUpdate( ON, 100 );
+        
+        else
+        
+            //admin specified a silent install
+                DoSilentInstall();
+
+
+    endif;
+
+
+    // If an unrecoverable error occurred, clean up
+    // the partial installation. Otherwise, exit normally.
+    end_install:
+    if (bInstallAborted) then
+        abort;
+    endif;      
+
+
+end;
+        
+///////////////////////////////////////////////////////////////////////////////
+//
+// Function: ShowDialogSdWelcome
+//
+//  Purpose: This function handles the standard welcome dialog.
+//
+//
+///////////////////////////////////////////////////////////////////////////////
+function ShowDialogSdWelcome()
+
+
+    NUMBER nResult, nRunningResult;
+    NUMBER nChk, nWillHaveToRepay;
+    STRING szTitle, szMsg, szDialogName, svMsg;
+
+
+    NUMBER nCmdValue;
+    BOOL bDone;
+
+
+begin
+
+    
+    if(MODE != SILENTMODE) then
+    	szDialogName = "WelcomeDialog";
+    	//This is a custom dialog box that was created in Install Shield.
+     	   nResult = EzDefineDialog (szDialogName, "", "", RES_WELCOME_DIALOG_ID);
+
+
+      	  szMsg = "Welcome to the " + szAppName + " setup program.  " +
+                        "This Setup program will install " + szAppName + " on your computer.\n";
+        
+    	  // Initialize the indicator used to control the while loop.
+    	  bDone = FALSE;
+        
+    	  // Loop until done.
+    	  repeat
+
+
+          // Display the dialog and return the next dialog event.
+        	nCmdValue = WaitOnDialog(szDialogName);
+
+
+        	// Respond to the event.
+        	switch (nCmdValue)
+            	case DLG_CLOSE:
+                	ShowExitSetupDialog();
+                	nCmdValue = -1;
+            	case DLG_ERR:
+                     nCmdValue = -1;
+                     abort;
+            	case DLG_INIT: ;
+                	CtrlSetText( szDialogName, 50, szMsg );
+            	case RES_WELCOME_BTN_CANCEL:
+                	ShowExitSetupDialog();
+            	case RES_WELCOME_BTN_NEXT:
+                	bDone = TRUE;
+                	nCmdValue = NEXT;
+        	endswitch;
+
+
+    	until bDone;
+
+
+    	// Close the dialog box.
+    	EndDialog (szDialogName);
+
+
+    	// Free the dialog box from memory.
+    	ReleaseDialog (szDialogName);
+        
+
+
+        	//if the user running setup is not the admin, display the error message
+        	if(!bAdmin && bWinNT && !bWarningsSuppressed) then
+                	szMsg = "Eudora Setup has detected that you do not have Administrator rights to this machine.\n" +
+                  	              " If you are running NTFS and you do not have rights to the Windows system directory, the\n" +
+                   	     " setup may not be able to update some key system level files if needed. Do you still wish\n" +
+                   	     " to continue?\n" ;
+                	if(AskYesNo(szMsg, NO) = NO) then
+                   	     exit;
+                	endif;                          
+        	endif;
+
+
+        	//if the user is running an electronic version we check and warn the user
+        	//if he is going to install in sponsored mode
+        	if(bElectronicInstaller) then
+                	nChk = UseDLL(SUPPORTDIR ^ "InstallerHelp.dll");
+                	if (nChk = 0) then
+                        	//      Make sure that parameter to CheckStatus below matches
+                        	//      the build month of the version of Eudora to be installed
+                        	nWillHaveToRepay = InstallerHelp.CheckStatus(80);
+                        	nChk = UnUseDLL(SUPPORTDIR ^ "InstallerHelp.dll");
+                
+                        	if (nWillHaveToRepay == 1) then;
+                                szMsg = "Your current Paid Mode registration number will not allow you to use this version of Eudora in Paid Mode.\n" +
+                                                "If you wish to use this version of Eudora in Paid Mode, you will have to pay to renew your registration.\n" +
+                                                "The new version of Eudora will guide you through the renewal process, which is quick and easy.\n\n" +
+                                                "Or, if you prefer, you can use this version of Eudora in Sponsored Mode and get all of the improvements for free.\n\n" +
+                                                "If you would like more information on purchasing Eudora before you install this version please visit our website\n" +
+                                                "at www.eudora.com/upgrade.\n\n" +
+                                                "Do you wish to continue the installation?";
+                                if(AskYesNo(szMsg, YES) = NO) then
+                                        exit;
+                                endif;
+                        	endif;
+                	endif;
+        	endif;
+
+
+        	// Ask if they want to shut down Eudora
+        	if( IsEudoraRunning() != NULL) then
+                	// OK User is running Eudora
+                	szMsg = "Eudora setup has detected that you are currently running a copy of Eudora.\n" +
+                     	   "We highly recommend that you shut it down before proceeding.\n" +
+                        	"Would you like to abort the setup so that you can shut Eudora down?\n" ;
+                	szTitle = "Eudora Currently Running";
+                	SetDialogTitle(DLG_ASK_YESNO, szTitle);
+                	nRunningResult = AskYesNo(szMsg, YES);
+        
+                	if (nRunningResult = YES) then
+                 	       abort;
+                	endif;
+        	endif;
+        
+    	return nCmdValue;    
+    endif;
+end;
+
+
+
+///////////////////////////////////////////////////////////////////////////////
+//
+// Function: ShowDialogSdLicense
+//
+//  Purpose: This function displays the license agreement dialog.
+//
+//
+///////////////////////////////////////////////////////////////////////////////
+function ShowDialogSdLicense()
+    NUMBER nResult;
+    STRING szTitle, szMsg, szQuestion, szLicenseFile;
+
+
+begin
+
+
+        szLicenseFile = SUPPORTDIR ^ "license.txt";
+    szTitle    = "";
+    szMsg      = "";
+    szQuestion = "";
+    nResult    = SdLicense( szTitle, szMsg, szQuestion, szLicenseFile );
+    return nResult;
+end;
+
+
+
+///////////////////////////////////////////////////////////////////////////////
+//
+// Function:  ShowDialogSdFeatureDialog
+//
+//  Purpose:  This dialog asks the user which features to install
+//
+//
+///////////////////////////////////////////////////////////////////////////////
+
+
+function ShowDialogSdFeatureDialog()
+NUMBER nRet;
+STRING szMsg, szTitle;
+STRING tmp;
+
+
+begin
+        
+        szTitle = "Choose Components";
+        szMsg   = "From the list below, please select the items you wish to install.";
+
+        ShowComp:
+        bEudoraSelection    = FALSE;
+        bImportersSelection = FALSE;
+
+        
+        //nRet = SdFeatureDialog2(szTitle, szMsg, TARGETDIR, "");
+        nRet = SdFeatureTree(szTitle, szMsg, TARGETDIR, "", 1);
+
+
+        if(nRet = BACK) then
+                return nRet;
+        endif;
+
+
+        if(FeatureIsItemSelected(MEDIA, "Eudora") = TRUE) then
+                bEudoraSelection = TRUE;
+        endif;
+        if(FeatureIsItemSelected(MEDIA, "Importers") = TRUE) then
+                bImportersSelection = TRUE;
+        endif;
+        
+        if(!bEudoraSelection && !bImportersSelection) then
+                MessageBox("Please select at least one of the Components to continue with the Installation", INFORMATION);
+                goto ShowComp;
+        endif;
+        
+        return nRet;
+
+
+end;
+
+
+
+///////////////////////////////////////////////////////////////////////////////
+//
+// Function: ShowAskDestPath
+//
+//  Purpose: This function asks the user for the destination folder.
+//
+///////////////////////////////////////////////////////////////////////////////
+function ShowAskDestPath()
+    NUMBER nResult, nValid, nvType, nvSize, nCharIndex;
+    STRING szTitle, szMsg, svPathString, svDefaultFolderSave, svSystemRoot;
+    STRING szKey, szName, svValue, svAppName, szTemp;
+    STRING svMainRegPathString, svCommandLineRegPathString;
+    STRING svDeEudoraEntry, szDeEudINIFile;
+    BOOL bEudoraFound;
+
+
+begin
+
+
+
+    if(!bChooseAppDir) then
+                // Default folder has to be in \program files\
+                // This sets the svDir var to initially be the right directory, but anything the
+                // user types in otherwise will get used instead
+                // Also, you can't install Eudora to root
+        
+                //      If we can't find anything better, then we'll use the default location for Eudora
+                bEudoraFound = FALSE;
+                
+                //      Check the current user command line registry key for
+                //      the location of the most recently run copy of Eudora
+                RegDBSetDefaultRoot(HKEY_CURRENT_USER);
+                szKey = "Software\\Qualcomm\\Eudora\\CommandLine";
+                szName = "Current";
+                nvType = REGDB_STRING;
+                RegDBGetKeyValueEx(szKey, szName, nvType, svValue, nvSize);
+        
+                if (svValue = "") then
+                        //      Check the root command line registry key for
+                        //      the location of the most recently run copy of Eudora
+                        //      (yes the key is apparently slightly different than the current
+                        //      user version - <sigh>)
+                        RegDBSetDefaultRoot(HKEY_CLASSES_ROOT);
+                        szKey = "Software\\Qualcomm\\Eudora\\CommandLine\\Current";
+                        szName = "";
+                        nvType = REGDB_STRING;
+                        RegDBGetKeyValueEx(szKey, szName, nvType, svValue, nvSize);
+                endif;
+                
+                if ( (svValue != "") && (svValue[1] = ":") ) then
+                        //      We need to chop off the .ini file path from the command line
+                        //      Find the next ":" after the first one
+                        svValue[1] = ";";
+                        nCharIndex = StrFind (svValue, ":");
+                        svValue[1] = ":";
+                                
+                        if (nCharIndex > 0) then
+                                //      Back up before the drive letter and look for a space
+                                nCharIndex = nCharIndex - 2;
+                                if (svValue[nCharIndex] = " ") then
+                                        //      Chop off the .ini file path
+                                        StrSub(svValue, svValue, 0, nCharIndex);
+                                        
+                                        //      Look for Eudora in the location specified
+                                        ParsePath(svAppName, svValue, FILENAME);
+                                        ParsePath(svCommandLineRegPathString, svValue, PATH);
+                                        svPathString = svCommandLineRegPathString;
+                                        bEudoraFound = ( FindFile(svPathString, svAppName, szTemp) == 0 );
+                                endif;
+                        endif;
+                endif;
+
+
+                if (bEudoraFound = FALSE) then
+                        //      Check for the "official" registry key for the location of Eudora
+                        RegDBSetDefaultRoot(HKEY_LOCAL_MACHINE);
+                        szKey = "SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\Eudora.exe";
+                        szName = "";
+                        nvType = REGDB_STRING;
+                        RegDBGetKeyValueEx(szKey, szName, nvType, svValue, nvSize);
+        
+                        if (svValue != "") then
+                                //      Look for Eudora in the location specified
+                                ParsePath(svAppName, svValue, FILENAME);
+                                ParsePath(svMainRegPathString, svValue, PATH);
+                                svPathString = svMainRegPathString;                             
+                                bEudoraFound = ( FindFile(svPathString, svAppName, szTemp) == 0 );
+                        endif;
+                endif;
+        
+                if (bEudoraFound = FALSE) then
+                        //      We didn't find any copy of Eudora yet,
+                        //      look where some old versions of Eudora (versions 2 & 3) installed by default.
+                        svPathString = "C:\Eudora";
+                        svAppName = "Eudora.exe";
+                        bEudoraFound = ( FindFile(svPathString, svAppName, szTemp) == 0 );
+                endif;
+        
+                if (bEudoraFound = TRUE) then
+                        //      We found Eudora - use the path where we found it
+                        svDir = svPathString;
+                elseif (svMainRegPathString != "") then
+                        //      We didn't actual find Eudora, but the main registry entry had a value
+                        //      so we'll use that
+                        svDir = svMainRegPathString;
+                elseif (svCommandLineRegPathString != "") then
+                        //      We didn't actual find Eudora, but the command line registry entry had a value
+                        //      so we'll use that
+                        svDir = svCommandLineRegPathString;
+                else
+                        //      We didn't find squat - use the default path for Eudora
+                        svDir = PROGRAMFILES^"Qualcomm\\Eudora";
+                endif;
+
+
+
+                //      Some of the above registry entries are stored as a short path, so
+                //      convert to be sure that the user will see the long path.
+                //      The documentation for LongPathFromShortPath doesn't guarantee that it
+                //      will leave svDir untouched in the case of an error so reset the value
+                //      if an error occurs.
+                svPathString = svDir;
+                StrRemoveLastSlash(svDir);
+                if ( LongPathFromShortPath(svDir) < 0 ) then
+                        svDir = svPathString;
+                endif;
+        
+        endif;
+        
+        svDefaultFolderSave = svDir;
+    szTitle = "Choose Program Folder";
+    szMsg   = "Setup will install Eudora in the Destination Program Folder shown below.\n\n" +
+              "To install to this folder, click Next.\n\n" +
+              "To install to a different Program Folder, click Browse and select another folder.\n\n" +
+              "You can choose not to install Eudora by clicking Cancel to exit Setup.";
+        nResult = ShowDialogSdAskDestPath(svDir);
+        
+                
+        ParsePath(svSystemRoot, WINDIR, DISK);
+        while (svDir=svSystemRoot||svDir=svSystemRoot+"\\")
+            SprintfBox(WARNING, "Setup Cannot Install Eudora in the System Root!" ,
+                                            "The folder you have selected: \n %s \nis the system root directory. " +
+                                            "Eudora cannot be installed to the system root.  Please " +
+                                            "select a different folder.", svDir );
+        svDir = svDefaultFolderSave;
+        nResult = ShowDialogSdAskDestPath(svDir);       
+        endwhile;
+
+
+
+    //change back the TARGETDIR to the value chosen by the user so that
+    //Install Shield correctly installs the files to the chosen folder.
+        TARGETDIR = svDir;
+        
+        //this check is because incase we change the value for szDataDir in the custom
+        //data options dialog and then hit back button... we should not reinitialize
+        //if(!bCustomDataDir) then
+        //      szDataDir  = TARGETDIR;
+        //endif;
+
+
+        //this check is because incase we change the value for szDataDir in the custom
+        //data options dialog and then hit back button... we should not reinitialize
+        if(!bCustomDataDir) then
+        
+            if(szDataDir = "") then
+        
+                        szDeEudINIFile  = TARGETDIR^"deudora.ini";
+                        svDeEudoraEntry = "";
+        
+                        GetProfString(szDeEudINIFile, "Settings", "DataFolder", svDeEudoraEntry);
+                        if ( (svDeEudoraEntry != "") && (ExistsDir(svDeEudoraEntry) == 0) ) then
+                                //      We have a good DataFolder setting in DEudora.ini
+                                szDataDir = svDeEudoraEntry;
+                
+                                //      We're not defaulting to the app data dir
+                                bUseAppDataFolder = FALSE;
+                                bUseCustomDataFolder = TRUE;
+                        else
+                                //      The custom directory will be the same as the program folder
+                                szDataDir  = TARGETDIR;
+
+
+                        endif;
+
+
+                endif;
+
+
+        endif;
+
+
+        
+    return nResult;
+end;
+
+
+
+///////////////////////////////////////////////////////////////////////////////
+//
+// Function: ShowDialogSdAskDestPath
+//
+//  Purpose: This function shows the dialog allowing the user to choose the
+//               folder to put his application files
+//
+///////////////////////////////////////////////////////////////////////////////
+function ShowDialogSdAskDestPath(svDir)
+
+
+STRING  szDialogName, szDLLName, szDialog, szApplPath, szTmpDir, szTreeControlStatusText;
+NUMBER  nDialog, nResult, nCmdValue;
+BOOL    bDone;
+HWND    hInstance, hwndParent;
+
+STRING svSection;  
+NUMBER nvProgDialog;
+
+begin
+
+    if(MODE = SILENTMODE) then
+		SdMakeName (svSection, "DialogId_12005", "", nvProgDialog);
+        
+        SilentReadData (svSection, "szDir", DATA_STRING, svDir, nResult);
+  
+    else
+
+    	szDialogName = "AskDestPathDialog";
+
+
+    	//This is a custom dialog box that was created in Install Shield.
+        	nResult = EzDefineDialog (szDialogName, "", "", RES_APP_PATH_DIALOG_ID);
+
+
+    	bDone = FALSE;
+
+
+   		repeat
+
+
+        	nCmdValue = WaitOnDialog(szDialogName);
+        	switch (nCmdValue)
+
+
+            	case DLG_CLOSE:
+                	nCmdValue = -1;
+                	ShowExitSetupDialog();
+
+
+            	case DLG_ERR:
+                    nCmdValue = -1;
+                    abort;
+
+
+            	case DLG_INIT:
+                	CtrlSetText( szDialogName, RES_APP_DIALOG_APP_PATH, svDir );
+
+
+            	case RES_APP_DIALOG_CANCEL:
+                	ShowExitSetupDialog();
+
+
+            	case RES_APP_DIALOG_NEXT:
+                	bDone = TRUE;
+                	bChooseAppDir = TRUE;
+                	nCmdValue = NEXT;
+
+
+            	case RES_APP_DIALOG_BACK:
+                	bDone = TRUE;
+                	nCmdValue = BACK;
+
+
+            	case RES_APP_DIALOG_BROWSE:
+                	szTmpDir = svDir;
+                                if(SelectDirEx ( "", "", szApplPath, szTreeControlStatusText, BIF_EDITBOX, szTmpDir ) = IDOK) then
+                                        if (ExistsDir (szTmpDir) = NOTEXISTS) then
+                                                if( SdConfirmNewDir ( "", szTmpDir, 0 ) = YES) then
+                                                        svDir = szTmpDir;
+                                                endif;
+                                        else
+                                                svDir = szTmpDir;
+                                        endif;
+                                CtrlSetText( szDialogName, RES_APP_DIALOG_APP_PATH, svDir );
+                        endif;
+                
+       	 	endswitch;
+
+
+    	until bDone;
+
+
+    	// Close the dialog box.
+    	EndDialog (szDialogName);
+
+
+    	// Free the dialog box from memory.
+    	ReleaseDialog (szDialogName);  
+    	
+	//SILENT WRITE 
+      
+      SdMakeName (svSection, "DialogId_12005", "", nvProgDialog);
+
+      SilentWriteData (svSection, "szDir", DATA_STRING,
+                       svDir, nResult);
+
+
+	//END SILENT WRITE
+
+
+        return nCmdValue;
+  endif;
+end;
+
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Function: ChooseDataFolder()
+//
+// Purpose : Display the choice for the user to choose the Data directory.
+//
+////////////////////////////////////////////////////////////////////////////
+function ChooseDataFolder()
+NUMBER nResult, nChk, nValid;
+BOOL   bShellOk;
+STRING szDisplay, szSaveDir;
+
+
+begin
+
+
+    if( bMailDirPrompt ) then
+
+
+        bShellOk    = FALSE;
+        szAppDataPath = "";
+                nChk = UseDLL(SUPPORTDIR ^ "AppData.dll");
+                
+                if(nChk = 0) then
+                        nValid = AppData.FindAppDataPath(szAppDataPath);
+                        if(nValid = 0 || szAppDataPath = "") then
+                                bShellOk = FALSE;
+                        else    
+                                bShellOk = TRUE;
+                        endif;
+                        nChk = UnUseDLL(SUPPORTDIR ^ "AppData.dll");
+                endif;
+
+
+                if(bWin2k = TRUE || bShellOk = TRUE) then
+                        //      Sometimes FindAppDataPath returns a short path, so convert to be sure
+                        //      that the user will see the long path.
+                        //      The documentation for LongPathFromShortPath doesn't guarantee that it
+                        //      will leave svDir untouched in the case of an error so reset the value
+                        //      if an error occurs.
+                        szSaveDir = szAppDataPath;
+                        StrRemoveLastSlash(szAppDataPath);
+                        if ( LongPathFromShortPath(szAppDataPath) < 0 ) then
+                                szAppDataPath = szSaveDir;
+                        endif;
+
+
+                        // For Win2k users / users having Shell32.dll 4.72 or higher, display the Appl Data Folder.
+                        szAppDataPath = szAppDataPath + "\\Qualcomm\\Eudora";
+        
+                        nResult = ShowDialogChooseDataFolder();
+                
+                else
+        
+                  nResult = AskDestPath("Choose Data Folder", "", szDataDir, 0);
+                
+                endif;
+        
+                return nResult;
+
+
+        else
+        
+                if (CreateDir(szDataDir) < 0) then
+                        szDataDir   = TARGETDIR;
+                endif;
+            bUseAppDataFolder = FALSE;
+                bUseCustomDataFolder = TRUE;
+        
+        endif;
+
+
+end;
+
+
+//////////////////////////////////////////////////////////////////////////////
+//
+//  Function : ShowDialogChooseDataFolder
+//  Purpose  : Shows the Data Folder options to the User
+//
+//////////////////////////////////////////////////////////////////////////////
+function ShowDialogChooseDataFolder()
+
+
+STRING          szDialogName, szCustomDataFolderPath, szTreeControlStatusText;
+NUMBER          nId;
+BOOL            bDone;
+
+STRING 		svSection, szTmp;
+NUMBER		nvAppDialog, nResult, nCustomDataDir; 
+
+begin
+	if(MODE = SILENTMODE) then
+		SdMakeName (svSection, "ChooseDataFolderDialog", "", nvAppDialog);
+        
+        SilentReadData (svSection, "nCustomDataDir", DATA_NUMBER, szTmp, nCustomDataDir);
+        if(nCustomDataDir = 0) then
+            bUseAppDataFolder = TRUE;        
+    	    bUseCustomDataFolder = FALSE;
+        elseif(nCustomDataDir = 1)  then
+            bUseAppDataFolder = FALSE;        
+    	    bUseCustomDataFolder = TRUE;
+        endif;
+        
+        SilentReadData (svSection, "szDataDir", DATA_STRING, szDataDir, nResult);
+  
+    else     
+
+        szDialogName = "DataFolderOptionsDialog";
+
+
+        if (EzDefineDialog (szDialogName, "", "", RES_DATA_FOLDER_DIALOG_ID) = DLG_ERR) then
+                return -1;
+        endif;
+
+
+        // Loop in dialog until the user selects a standard button
+        bDone = FALSE;
+                
+        repeat
+        nId = WaitOnDialog (szDialogName);
+        switch (nId)
+            case DLG_CLOSE:
+
+
+                case DLG_ERR:
+                                nId   = -1;
+                                bDone = TRUE;
+                                
+                        case DLG_INIT:
+
+
+                                CtrlSetText( szDialogName, RES_DATA_DIALOG_APP_FOLDER, szAppDataPath );
+                                CtrlSetText( szDialogName, RES_DATA_DIALOG_CUSTOM_FOLDER, szDataDir );
+                                if(bUseAppDataFolder = TRUE) then
+                        CtrlSetState( szDialogName, RES_DATA_DIALOG_RADIO_APP, BUTTON_CHECKED ); // Default as app data dir
+                elseif(bUseCustomDataFolder = TRUE) then
+                        CtrlSetState( szDialogName, RES_DATA_DIALOG_RADIO_CUSTOM, BUTTON_CHECKED ); // Default as custom data dir
+                endif;
+
+
+                    case RES_DATA_DIALOG_BACK:
+                if(BUTTON_CHECKED = CtrlGetState( szDialogName, RES_DATA_DIALOG_RADIO_APP)) then
+                       bUseAppDataFolder = TRUE;
+                       bUseCustomDataFolder = FALSE;
+                elseif(BUTTON_CHECKED = CtrlGetState( szDialogName, RES_DATA_DIALOG_RADIO_CUSTOM)) then
+                       bUseCustomDataFolder = TRUE;
+                       bUseAppDataFolder = FALSE;
+                endif;                  
+                
+                                nId   = BACK;
+                                bDone = TRUE;
+                                
+                        case RES_DATA_DIALOG_NEXT:
+                if(BUTTON_CHECKED = CtrlGetState( szDialogName, RES_DATA_DIALOG_RADIO_APP)) then
+                       bUseAppDataFolder = TRUE;
+                       bUseCustomDataFolder = FALSE;
+                       CtrlGetText( szDialogName, RES_DATA_DIALOG_APP_FOLDER, szTmpDataDir );
+                elseif(BUTTON_CHECKED = CtrlGetState( szDialogName, RES_DATA_DIALOG_RADIO_CUSTOM)) then
+                       bUseCustomDataFolder = TRUE;
+                       bUseAppDataFolder = FALSE;
+                       CtrlGetText( szDialogName, RES_DATA_DIALOG_CUSTOM_FOLDER, szTmpDataDir );
+                endif;
+                bCustomDataDir = TRUE;                  
+                                nId = NEXT;
+                                bDone = TRUE;
+                                
+                        case RES_DATA_DIALOG_BROWSE:
+                                szTmpDataDir = szDataDir;
+                                if(SelectDirEx ( "", "", szCustomDataFolderPath, szTreeControlStatusText, BIF_EDITBOX, szTmpDataDir ) = IDOK) then
+                                        if (ExistsDir (szTmpDataDir) = NOTEXISTS) then
+                                                if( SdConfirmNewDir ( "", szTmpDataDir, 0 ) = YES) then
+                                                        szDataDir = szTmpDataDir;
+                                                        bCustomDataDir = TRUE;
+                                                endif;
+                                        else
+                                                szDataDir = szTmpDataDir;
+                                                bCustomDataDir = TRUE;
+                                        endif;
+                                CtrlSetText( szDialogName, RES_DATA_DIALOG_CUSTOM_FOLDER, szDataDir );
+                        endif;
+                                                
+                case RES_DATA_DIALOG_CANCEL:
+                        ShowExitSetupDialog();
+                        
+                endswitch;
+
+
+    until bDone;
+        
+    EndDialog (szDialogName);
+    ReleaseDialog (szDialogName);
+
+     SdMakeName (svSection, "ChooseDataFolderDialog", "", nvAppDialog);
+          
+        if(bCustomDataDir = TRUE) then
+      		SilentWriteData (svSection, "nCustomDataDir", DATA_NUMBER,
+                       szTmp, 1);
+        else
+        	SilentWriteData (svSection, "nCustomDataDir", DATA_NUMBER,
+                       szTmp, 0);
+        endif;
+        
+      	SilentWriteData (svSection, "szDataDir", DATA_STRING,
+                       szDataDir, nResult);
+
+        return nId;
+   endif;
+
+end;
+
+
+//////////////////////////////////////////////////////////////////////////////
+//
+//  Function : WriteINIFile
+//  Purpose  : Confirm Folder info. This function writes the path to the data
+//                         folder chosen by the user. If the user chooses a custom folder then the
+//                         String - "DataFolder" with the path is written out to the INI file
+//                         If the user chooses the default application folder then the String -
+//                         UseAppData = 1 is written out
+//
+//////////////////////////////////////////////////////////////////////////////
+function WriteINIFile()
+
+
+STRING szFileName, svResult, szDeEud, svResult1;
+NUMBER nvResult;
+
+begin
+        szFileName = "deudora.ini";
+        svResult   = "";
+        szDeEud     = TARGETDIR ^ szFileName;   
+               
+        //first check if the file exists before writing out to the file
+        if(FindFile(TARGETDIR, szFileName, svResult) = 0) then // Deudora.ini exists, so just write the new Setting into it.
+        
+      			if (GetFileInfo (TARGETDIR^szFileName, FILE_ATTRIBUTE, nvResult, svResult1) = 0) then
+      				if (FILE_ATTR_READONLY & nvResult) then
+      					SetFileInfo ( TARGETDIR^szFileName, FILE_ATTRIBUTE, FILE_ATTR_NORMAL, "" );
+      				endif;
+      			endif;  
+      			      
+                if(bUseAppDataFolder) then              
+                        WriteProfString(szDeEud, "SETTINGS", "UseAppData", "1");
+                        WriteProfString(szDeEud, "SETTINGS", "DataFolder", "");                 
+                elseif(bUseCustomDataFolder) then
+                        WriteProfString(szDeEud, "SETTINGS", "UseAppData", "");                 
+                        WriteProfString(szDeEud, "SETTINGS", "DataFolder", szDataDir);
+                endif;
+                //flush out what we have written out earlier to the file.
+                //InstallShield recomends this feature
+                WriteProfString ("", "", "", "");
+        endif;
+end;
+
+
+
+//////////////////////////////////////////////////////////////////////////////
+//
+//  Function : ShowDialogInfo
+//  Purpose  : Confirm Folder info
+//
+//////////////////////////////////////////////////////////////////////////////
+function ShowDialogInfo()
+LIST   listInfoTopics, listInfoDetail;
+STRING szDisp, szTopic1, szTopic2;
+NUMBER nResult;
+
+
+begin  
+	if(MODE!=SILENTMODE) then
+        listInfoTopics = ListCreate (STRINGLIST);
+        listInfoDetail = ListCreate (STRINGLIST);
+        if (listInfoTopics = LIST_NULL) || (listInfoDetail = LIST_NULL) then
+      		// Report the error; then terminate.
+      		MessageBox("Installation error. Please re-install again", INFORMATION);
+      		abort;
+    	endif;
+
+
+    	szTopic1 = "Program files for Eudora will be installed to :";
+    	szTopic2 = "User data (mail, address book, filters) will be stored in :";
+        ListAddString(listInfoTopics, szTopic1, AFTER);
+    	ListAddString(listInfoTopics, szTopic2, AFTER);
+
+
+    	ListAddString(listInfoDetail, TARGETDIR, AFTER);
+    	if(bMailDirPrompt) then
+        	ListAddString(listInfoDetail, szTmpDataDir, AFTER);
+    	else
+            ListAddString(listInfoDetail, szDataDir, AFTER);
+        endif;
+        
+        szDisp = "These are the folders you have selected for this installation :\n\n";
+        nResult = SdDisplayTopics("Your Selections", szDisp, listInfoTopics, listInfoDetail, 0);
+        
+        //we do not create if user has chosen cutom application data folder. so code
+        //is commented out
+        if(bMailDirPrompt) then
+                if(nResult = NEXT) then
+                        szDataDir = szTmpDataDir;
+                        /*if(bUseAppDataFolder) then
+                                if (ExistsDir (szDataDir) = NOTEXISTS) then
+                                        CreateDir(szDataDir);
+                                endif;
+                        endif;*/
+                endif;
+        endif;
+        
+        ListDestroy(listInfoTopics);
+    	ListDestroy(listInfoDetail);
+
+    endif;
+    return nResult;
+end;
+
+
+//////////////////////////////////////////////////////////////////////////////
+//
+//  FUNCTION:   OnCanceling
+//
+//  EVENT:      Canceling event is sent when installation is being canceled,
+//              usually as result of end user clicking Cancel button or pressing
+//              Esc key. Execution of Do(EXIT) will also trigger this event.
+//
+///////////////////////////////////////////////////////////////////////////////
+function OnCanceling()
+
+
+begin
+       ShowExitSetupDialog();
+
+
+end;
+
+
+//////////////////////////////////////////////////////////////////////////////
+//
+//  Function : ShowExitSetupDialog
+//  Purpose  : Show Exit Setup Dialog Box
+//
+//////////////////////////////////////////////////////////////////////////////
+function ShowExitSetupDialog()
+
+
+STRING szDialogName;
+NUMBER nResult, nCmdValue;
+BOOL bDone;
+
+
+begin
+
+
+        szDialogName = "ExitSetupDialog";
+        
+        //this is a custom dialog box that was created
+        nResult = EzDefineDialog (szDialogName, "", "", RES_EXIT_DIALOG_ID);
+
+
+        bDone = FALSE;
+
+
+        repeat
+          nCmdValue = WaitOnDialog (szDialogName);
+          switch (nCmdValue)
+        case DLG_CLOSE:
+             Do (EXIT);
+        case DLG_ERR:
+            abort;
+        case RES_RESUME_SETUP:
+                 // The user clicked the Resume Setup Button
+             bDone = TRUE;
+        case RES_EXIT_SETUP:
+            // The user clicked the Exit Setup button.
+            exit;
+        endswitch;
+
+
+    until bDone;
+
+
+    EndDialog (szDialogName);
+    ReleaseDialog (szDialogName);
+end;
+
+
+
+///////////////////////////////////////////////////////////////////////////////
+//
+// Function: ShowDialogOtherOptions
+//
+//  Purpose: This displays info about options that have been turned on in the
+//           ini file and have not been detected on the system.
+//           This dialog appears just before the very last ShowFinishReboot().
+//
+///////////////////////////////////////////////////////////////////////////////
+function ShowDialogOtherOptions()
+    NUMBER nResult, nvType;
+    STRING szMsg, szKey, szName, svValue, szString, szPremiumServicesDirMessage;
+    LIST listTopics, listDetails;
+
+
+    STRING szTitle, szMsg1, szMsg2, szOpt1, szOpt2, szWinPath, szPath, szApp, szReadme;
+    BOOL bvOpt1, bvOpt2;
+
+
+begin
+        
+        szPath = TARGETDIR;
+        szWinPath = WINDIR;
+        szApp = szWinPath^"notepad.exe";
+        szReadme = szPath^"readme.txt";
+        szTitle = "Additional Eudora Services";
+        
+        szPremiumServicesDirMessage = "The Premium Services Directory contains paid listings from companies who make products " +
+                                                                  "designed to enhance the Eudora email client, and/or the email experience in general.\n" +
+                                                                  "Visit http://www.eudora.com/download/other/";
+
+
+    if (sz3rdPartyHeader != "") then
+                szMsg1 = sz3rdPartyHeader;
+        else
+                // The site didn't specify a header - place our message here in the header
+                szMsg1 = szPremiumServicesDirMessage;
+        endif;
+
+
+        if (sz3rdPartyFooter != "") then
+                szMsg2 = sz3rdPartyFooter;
+        elseif (sz3rdPartyHeader != "") then
+                // The site specified a header, but not a footer - place our message here in the footer.
+                szMsg2 = szPremiumServicesDirMessage;
+        endif;
+
+
+        bvOpt1 = TRUE;
+        if (bDefaultURL) then
+                szOpt1 = "Take me to the Premium Services Directory Page.";
+        elseif (szCustomURL != "") then
+                szOpt1 = "Take me to the accessory download page.";
+        elseif (szCustomFolder != "") then
+                szOpt1 = "Open the accessory download folder.";
+        else
+                // let's hide the checkmark altogether
+                bvOpt1 = FALSE;
+                szOpt1 = "";
+                
+                // also, our default messages aren't too applicable,
+                // so we resort to IS's (unless the user specified one)
+                if (sz3rdPartyHeader = "") then
+                        szMsg1 = "Setup has finished installing Eudora on your computer.\n\n" +
+                                        "Setup can optionally launch the README file.  Select this " +
+                                                "option below.";
+                endif;
+                if (sz3rdPartyFooter = "") then szMsg2 = "";
+                endif;
+        endif;
+
+
+        bvOpt2 = TRUE;
+        szOpt2 = "I would like to view the " + @PRODUCT_NAME + " readme file.";
+        nResult = SdFinish(szTitle, szMsg1, szMsg2, szOpt1, szOpt2, bvOpt1, bvOpt2);
+
+
+        // Show them the readme if they checked the box
+        if (bvOpt2) then
+                LaunchApp(szApp, szReadme);
+        endif;
+
+
+        if (bvOpt1) then
+                if (bDefaultURL) then
+                        LaunchDefaultBrowser();
+                elseif (szCustomURL != "") then
+                        LaunchCustomBrowser();
+                elseif (szCustomFolder != "") then
+                        ShowProgramFolder( szCustomFolder, SW_SHOW );
+                endif;
+        endif;
+
+
+        if(BATCH_INSTALL) then
+        nResult = SdFinishReboot("", "", SYS_BOOTMACHINE, "", 0 );
+    endif;
+
+
+        return nResult; 
+        
+        
+end;
+
+
+///////////////////////////////////////////////////////////////////////////////
+//
+//  Function: LaunchDefaultBrowser
+//
+//  Purpose: Launches the default browser to page that has MSIE, QT downloads
+//
+///////////////////////////////////////////////////////////////////////////////
+function LaunchDefaultBrowser()
+    STRING      svTemp1, svTemp2;
+        HWND hInstall;
+    LONG lResult;
+begin
+
+
+        // We got the URL when we first ran and detected all the installed apps
+
+
+        // Launch Browser
+    hInstall=GetWindowHandle(HWND_INSTALL);
+    UseDLL(WINSYSDIR ^ "Shell32.dll");
+    svTemp1 = "open";
+    svTemp2 = "";
+        lResult = Shell32.ShellExecuteA(hInstall,svTemp1,szURL,svTemp2,svTemp2,SW_SHOW);
+        UnUseDLL(WINSYSDIR ^ "Shell32.dll");
+
+
+        return lResult;
+end;
+
+
+
+///////////////////////////////////////////////////////////////////////////////
+//
+//  Function: LaunchCustomBrowser
+//
+//  Purpose: Launches the custom browser to page that has 3rd party downloads
+//
+///////////////////////////////////////////////////////////////////////////////
+function LaunchCustomBrowser()
+        HWND hInstall;
+    LONG lResult;
+    STRING      svTemp1, svTemp2;
+
+
+begin
+
+
+        // We got the URL when we first ran and detected all the installed apps
+
+
+        // Launch Browser
+    svTemp1 = "open";
+    svTemp2 = "";
+    hInstall = GetWindowHandle(HWND_INSTALL);
+    UseDLL(WINSYSDIR ^ "Shell32.dll");
+        lResult = Shell32.ShellExecuteA(hInstall,svTemp1,szCustomURL,svTemp2,svTemp2,SW_SHOW);
+        UnUseDLL(WINSYSDIR ^ "Shell32.dll");
+
+
+        return lResult;
+end;
+
+//CODE TEMP TO FIX EMOTICON :/ PROBLEM
+//REMOVE WHEN BUG IS FIXED
+//FOR NOW REMOVE THE :/ EMOTICON IF PREVIOUSLY
+//INSTALLED IN EMOTICONS/EMOTICONS24/EMOTICONS32 DIR
+function RemoveEmoticonFiles()
+
+STRING szFileName, szDir, svResult;
+NUMBER nvResult;
+
+begin     
+
+  Disable(LOGGING);            
+      
+      szFileName = "-!3a!2f Undecided.png";
+      
+      szDir = "Emoticons";    
+      if (GetFileInfo (TARGETDIR^szDir^szFileName, FILE_ATTRIBUTE, nvResult, svResult) = 0) then
+      	if (FILE_ATTR_READONLY & nvResult) then
+      		SetFileInfo ( TARGETDIR^szDir^szFileName, FILE_ATTRIBUTE, FILE_ATTR_NORMAL, "" );
+      	endif;
+      	DeleteFile(TARGETDIR^szDir^szFileName);
+      endif;
+      
+      szDir = "Emoticons24";
+      if (GetFileInfo (TARGETDIR^szDir^szFileName, FILE_ATTRIBUTE, nvResult, svResult) = 0) then
+      	if (FILE_ATTR_READONLY & nvResult) then
+      		SetFileInfo ( TARGETDIR^szDir^szFileName, FILE_ATTRIBUTE, FILE_ATTR_NORMAL, "" );
+      	endif;
+      	DeleteFile(TARGETDIR^szDir^szFileName);
+      endif;
+      
+      szDir = "Emoticons32";
+      if (GetFileInfo (TARGETDIR^szDir^szFileName, FILE_ATTRIBUTE, nvResult, svResult) = 0) then
+      	if (FILE_ATTR_READONLY & nvResult) then
+      		SetFileInfo ( TARGETDIR^szDir^szFileName, FILE_ATTRIBUTE, FILE_ATTR_NORMAL, "" );
+      	endif;
+      	DeleteFile(TARGETDIR^szDir^szFileName);
+      endif;
+      
+   Enable(LOGGING);
+   
+end;
+
+
+
+///////////////////////////////////////////////////////////////////////////////
+//
+// Function: CopyOptionalIniFiles
+//
+//  Purpose: This function is used to copy various uncompressed ini files, but
+//           only if they are not found in the target directory.
+//           Doing this allows end users to optionally include their own ini
+//           files in the setup without having to build the installer.
+//
+///////////////////////////////////////////////////////////////////////////////
+function CopyOptionalIniFiles()
+
+
+STRING szFileName, svResult, szUignore;
+NUMBER nOpt;
+
+
+begin
+
+
+    if(bUseCustomDataFolder) then
+        //Turn off Logging so that the eudora.ini file is not unistalled
+                Disable(LOGGING);
+                
+                szFileName = "eudora.ini";
+                FindFile(szDataDir, szFileName, svResult);
+                if(svResult = "") then  // We didn't find eudora.ini
+                        XCopyFile(SUPPORTDIR ^ szFileName, szDataDir, COMP_NORMAL); // XCopyFile() uses SUPPORTDIR, TARGETDIR as default directories
+                else
+                        if(bSiteVolumeInstaller) then
+                                CopyFile("Eudora.ini", "Eudora_ini.old");
+                        endif;
+                endif;  
+                
+                if(bSiteVolumeInstaller) then
+                        WriteINISettings(szDataDir^szFileName);
+                endif;
+                
+                // Turn loggin back on so that Uignore.tlx can be uninstalled.
+                Enable(LOGGING);
+                
+                
+                // Install Uignore.tlx to Data Dir
+                szUignore = "UIGNORE.TLX";
+                svResult  = "";
+                FindFile(szDataDir, szUignore, svResult);
+                if(svResult = "") then  // We didn't find Uignore.tlx   
+                        XCopyFile(SUPPORTDIR ^ szUignore, szDataDir, COMP_NORMAL);              
+                endif;  
+
+
+        endif;  
+                
+        Disable(LOGGING); // Disable Logging again so that Deudora.ini will not get uninstalled.                
+                
+        // Install deudora.ini also in the TARGETDIR now and put the DataFolder entry.
+        szFileName = "deudora.ini";
+        svResult   = "";
+        if(FindFile(TARGETDIR, szFileName, svResult) = 0) then
+                if(bSiteVolumeInstaller) then
+                        WriteINISettings(TARGETDIR^szFileName);
+                endif;          
+        endif;
+
+
+        Enable(LOGGING);
+        
+        // We need to land our installer info file
+        XCopyFile("install.ini", "", COMP_NORMAL);          
+        
+        //CODE TEMP TO FIX SSL PROBLEM
+        //REMOVE WHEN DONE
+        //WARNING DO NOT USE ALWAYS   
+        //REMOVE THE FILE FROM THE INSTALL PATH AND THE
+        //DATA FILE DIRECTORY SO THAT IT IS NOT 
+        //ALWAYS INSTALLED - FILE - usercerts.p7b
+        /*Disable(LOGGING);
+        szFileName = "usercerts.p7b";
+        svResult   = "";
+        FindFile(TARGETDIR, szFileName, svResult);
+        if(svResult = "") then  // We didn't find Uignore.tlx   
+        	XCopyFile(SUPPORTDIR ^ szFileName, "", COMP_NORMAL);              
+        endif;          
+        Enable(LOGGING); */
+        //END TEMP CODE
+        
+        
+        // szUserFile(n) -- these are an optional files that OEMs and such can include in the installer.
+        // They are specified in instopt.ini.
+        // szUserFileMode determines how the files are copied; see instopt.ini for details.
+        if (szUserFileMode = "AlwaysOverwrite") then
+                nOpt = COMP_NORMAL;
+        elseif (szUserFileMode = "OverwriteNewer") then
+                nOpt = COMP_UPDATE_DATE;
+        else
+                nOpt = -1;                                      // NeverOverwrite
+        endif;
+
+
+        if (nOpt = -1) then                             // NeverOverwrite
+                if(szUserFile1 != "") then
+                        FindFile(TARGETDIR, szUserFile1, svResult);
+                        if(svResult = "") then
+                                XCopyFile(SRCDIR^szUserFile1, "", COMP_NORMAL);
+                        endif;
+                endif;
+
+
+                if(szUserFile2 != "") then
+                        FindFile(TARGETDIR, szUserFile2, svResult);
+                        if(svResult = "") then
+                                XCopyFile(SRCDIR^szUserFile2, "", COMP_NORMAL);
+                        endif;
+                endif;
+
+
+                if(szUserFile3 != "") then
+                        FindFile(TARGETDIR, szUserFile3, svResult);
+                        if(svResult = "") then
+                                XCopyFile(SRCDIR^szUserFile3, "", COMP_NORMAL);
+                        endif;
+                endif;
+        else                                                    // Overwrite Conditionally
+                if(szUserFile1 != "") then
+                        XCopyFile(SRCDIR^szUserFile1, "", nOpt);
+                endif;
+
+
+                if(szUserFile2 != "") then
+                        XCopyFile(SRCDIR^szUserFile2, "", nOpt);
+                endif;
+
+
+                if(szUserFile3 != "") then
+                        XCopyFile(SRCDIR^szUserFile3, "", nOpt);
+                endif;
+        endif;  
+        
+end;            
+
+
+
+
+//////////////////////////////////////////////////////////////////////////////
+//
+//  FUNCTION:   OnBegin
+//
+//  EVENT:      Begin event is always sent as the first event during installation.
+//
+//////////////////////////////////////////////////////////////////////////////
+function OnBegin()
+
+
+NUMBER nResult;
+
+
+begin
+        
+        TARGETDIR = PROGRAMFILES^"Qualcomm\\Eudora";
+                
+        CheckReleaseVersion();
+        
+        GetINIOptions();        
+        
+        CheckRequirements();
+
+
+end;
+
+
+
+
+//////////////////////////////////////////////////////////////////////////////
+//
+//  FUNCTION:   CleanUpInstall
+//
+//  EVENT:      Begin event is always sent as the first event during installation.
+//
+//////////////////////////////////////////////////////////////////////////////
+function CleanUpInstall()
+        
+STRING szTitle, szMsg1, szMsg2, szOption1, szOption2, szQuestion, szProgram, svResult, svShortcutName;
+NUMBER bOpt1, bOpt2;
+
+
+begin
+
+
+
+    Disable( STATUS );
+
+
+    if (bCreateShortcut) then
+
+
+                if (szIconName = "") then
+                        szIconName = "Eudora";
+                endif;                                  
+
+
+                ProgDefGroupType(COMMON);                               // This sets the NT folder to personal
+
+
+                if(bUseCustomDataFolder) then           
+                        szProgram = "\"" + TARGETDIR^"eudora.exe" + "\"" + " " + "\"" + szDataDir + "\"";
+                elseif(bUseAppDataFolder) then
+                        szProgram = "\"" + TARGETDIR^"eudora.exe" + "\"";
+                endif;  
+
+
+                if (szSilentInstallDir = "") then
+                        szTitle    = "Create a Shortcut to " + szAppName + "?";
+                        szQuestion = "Would you like to create a shortcut to " + szAppName +
+                                                 " on your desktop? \n\n" + "Please Note:\nIf you are running multiple " +
+                                                 "installations of Eudora in different folders, you will need to create shortcuts for each " +
+                                                 "installation you perform.";
+
+
+                        SetDialogTitle(DLG_ASK_YESNO, szTitle);
+                        if (AskYesNo(szQuestion, YES) = YES) then
+                                SdShowDlgEdit1 ( "", "", "", szIconName );
+                                ProgDefGroupType(PERSONAL);
+                                DeleteFolderIcon(FOLDER_DESKTOP, szIconName);
+								ProgDefGroupType(COMMON);
+                                DeleteFolderIcon(FOLDER_DESKTOP, szIconName);                                
+                                ProgDefGroupType(COMMON);
+                                if(AddFolderIcon(FOLDER_DESKTOP, szIconName, szProgram, TARGETDIR, "", 0, "", REPLACE) < 0) then
+                                   ProgDefGroupType(PERSONAL);
+                                    AddFolderIcon(FOLDER_DESKTOP, szIconName, szProgram, TARGETDIR, "", 0, "", REPLACE);   
+                                endif;
+                        endif;
+                else
+                        ProgDefGroupType(PERSONAL);
+                        DeleteFolderIcon(FOLDER_DESKTOP, szIconName); 
+						ProgDefGroupType(COMMON);
+                        DeleteFolderIcon(FOLDER_DESKTOP, szIconName);                        
+                        ProgDefGroupType(COMMON);
+                        if(AddFolderIcon(FOLDER_DESKTOP, szIconName, szProgram, TARGETDIR, "", 0, "", REPLACE) < 0) then  
+                            ProgDefGroupType(PERSONAL);
+                            AddFolderIcon(FOLDER_DESKTOP, szIconName, szProgram, TARGETDIR, "", 0, "", REPLACE);   
+                        endif;                        
+            endif;
+        
+        endif;
+        
+    WriteINIFile();
+    CopyOptionalIniFiles();
+    RemoveEmoticonFiles();
+
+    CleanupRegistry();   
+    CleanUpAddRemovePrograms();
+
+
+    if (SetupRegistry()<0) then
+        abort;
+    endif;
+
+
+    if (szSilentInstallDir = "") then   
+                ShowDialogOtherOptions();
+        endif;
+
+
+end;
+
+
+
+///////////////////////////////////////////////////////////////////////////////
+//
+// Function: SetupRegistry
+//
+//  Purpose: This function makes the registry entries.
+//
+///////////////////////////////////////////////////////////////////////////////
+function SetupRegistry()
+    NUMBER nResult, nType, nSize, nvType, nvSize;
+    STRING szPath, szKey, szName, szStringName, szStringValue, szMsg, temp;
+    STRING szProgram, szUninstProgram, szStartMenuPath;
+
+
+begin
+
+
+
+        //////////////////////
+        //  Registry Stuff  //
+        //////////////////////  
+
+
+
+        // Set default root key, default path
+        RegDBSetDefaultRoot( HKEY_CLASSES_ROOT );
+        szPath = TARGETDIR;
+
+
+        /*-------------------------*/
+        /* Create DefaultIcon key  */
+        /*-------------------------*/
+        // RegDBCreateKeyEx is called to set a ("parent") key name
+        szKey      = "Eudora";
+        szMsg = "Setup has failed to create a parent key for Eudora.\n" +
+            "This is most likely because you do not have administrator rights to your machine.\n" +
+            "Please note that this will NOT have an effect on Eudora's operation in any way.\n";
+        
+        if ( RegDBKeyExist(szKey)<0 ) then
+                if (RegDBCreateKeyEx(szKey, "") < 0) then ConditionalWarningBox(szMsg);
+                endif;
+        else
+                if (RegDBCreateKeyEx(szKey + "\\DefaultIcon", "") < 0) then ConditionalWarningBox(szMsg);
+                endif;
+        endif;
+
+
+        szMsg = "Setup has failed to register the default icon for the Eudora executable.\n" +
+            "This is most likely because you do not have administrator rights to your machine.\n" +
+            "Please note that this will NOT have an effect on Eudora's operation in any way.\n";
+
+
+   // Here's our key info
+   szStringName  = "";
+   szStringValue = szPath ^ "\\Eudora.exe";     
+   nType      = REGDB_STRING;                           //This means it's a string (text) -- p. 366
+   nSize      = -1;
+
+
+   // RegDBSetKeyValueEx is called to set a sub-key name and a value associated with it.
+   szKey      = "Eudora\\DefaultIcon";
+   if (RegDBSetKeyValueEx(szKey, szStringName, nType, szStringValue, nSize) < 0) then
+      ConditionalWarningBox(szMsg);
+   endif;
+
+
+
+   /*--------------------------*/
+   /* Create Command Line key  */
+   /*--------------------------*/
+   // RegDBCreateKeyEx is called to set a ("parent") key name
+        szMsg      = "Setup has failed to create the key for the Eudora command line.\n" +
+                                 "This is most likely because you do not have administrator rights to your machine.\n" +
+                 "Please note that this will NOT have an effect on Eudora's operation in any way.\n";
+   //szKey      = "Software\\Qualcomm\\Eudora\\CommandLine\\current";
+
+
+        szKey      = "Software";
+        if ( RegDBKeyExist(szKey)<0 ) then
+                if (RegDBCreateKeyEx(szKey, "") < 0) then ConditionalWarningBox(szMsg);
+                endif;
+        else
+                if (RegDBCreateKeyEx(szKey + "\\Qualcomm", "") < 0) then ConditionalWarningBox(szMsg);
+                endif;
+        endif;
+
+
+   // Here's our key info
+        szStringName  = "";
+        szStringValue = "\"" + szPath^"\\Eudora.exe" + "\"" + " " + "\"" + szDataDir + "\"" + " " + "\"" + szDataDir^"\\eudora.ini" + "\"";
+        nType      = REGDB_STRING;                              //This means it's a string (text) -- p. 366
+        nSize      = -1;
+        szKey      = "Software\\Qualcomm\\Eudora\\CommandLine\\current";
+        if (RegDBSetKeyValueEx(szKey, szStringName, nType, szStringValue, nSize) < 0) then
+                ConditionalWarningBox(szMsg);
+        endif;
+
+
+
+        /*------------------------*/
+        /* Create Stationery key  */
+        /*------------------------*/
+        szMsg      = "Setup has failed to create the Stationery key for Eudora.\n" +
+                 "This is most likely because you do not have administrator rights to your machine.\n" +
+                 "Please note that this will NOT have an effect on Eudora's operation in any way.\n";
+
+
+        szKey      = ".sta";
+        if ( RegDBKeyExist(szKey)<0 ) then
+                if (RegDBCreateKeyEx(szKey, "") < 0) then ConditionalWarningBox(szMsg);
+                endif;
+        else
+                if (RegDBCreateKeyEx(szKey + "\\shell", "") < 0) then ConditionalWarningBox(szMsg);
+                endif;
+        endif;
+
+
+        // Here's our key info
+        szStringName  = "";
+        szStringValue = szPath^"\\Eudora.exe %1";       
+        nType      = REGDB_STRING;                              //This means it's a string (text) -- p. 366
+        nSize      = -1;
+
+
+        szKey      = ".sta\\shell\\open\\command";
+        if (RegDBSetKeyValueEx(szKey, szStringName, nType, szStringValue, nSize) < 0) then
+        ConditionalWarningBox(szMsg);
+        endif;
+
+
+
+
+        // We're in HKEY_CURRENT_USER now
+        RegDBSetDefaultRoot( HKEY_CURRENT_USER );
+
+
+   /*--------------------------*/
+   /* Create Command line key  */
+   /*--------------------------*/
+        szMsg      = "Setup has failed to create the command line key for Eudora in HKEY_CURRENT_USER.\n" +
+                 "Please note that this will NOT have an effect on Eudora's operation in any way.\n";
+
+
+        szKey      = "Software\\Qualcomm";
+        if ( RegDBKeyExist(szKey)<0 ) then
+                if (RegDBCreateKeyEx(szKey, "") < 0) then ConditionalWarningBox(szMsg);
+                endif;
+        else
+                if (RegDBCreateKeyEx(szKey + "\\Eudora", "") < 0) then ConditionalWarningBox(szMsg);
+                endif;
+        endif;
+
+
+        // Here's our key info
+        szStringName  = "current";
+        szStringValue = "\"" + szPath^"\\Eudora.exe" + "\"" + " " + "\"" + szDataDir + "\"" + " " + "\"" + szDataDir^"\\eudora.ini" + "\"";     
+        nType      = REGDB_STRING;                              //This means it's a string (text) -- p. 366
+        nSize      = -1;
+
+
+        szKey      = "Software\\Qualcomm\\Eudora\\CommandLine";
+        if (RegDBSetKeyValueEx(szKey, szStringName, nType, szStringValue, nSize) < 0) then
+                ConditionalWarningBox(szMsg);
+        endif;
+
+
+
+   /*--------------------*/
+   /* Create MailTo key  */
+   /*--------------------*/
+        // We're in HKEY_LOCAL_MACHINE now
+        RegDBSetDefaultRoot( HKEY_LOCAL_MACHINE );
+        
+        
+        szMsg        = "Setup has failed to create the Display Icon key for Eudora.\n" +
+                   "Please note that this will NOT have an effect on Eudora's operation in any way.\n"; 
+   //Here we set the display icon for our Add/Remove page
+   // Here's our key info
+   szStringName  = "DisplayIcon";
+   szStringValue = szPath^"\\Eudora.exe,0";
+   nType         = REGDB_STRING;                                //This means it's a string (text) -- p. 366
+   nSize         = -1;
+
+
+   szKey = "SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\"^ INSTANCE_GUID;
+   if (RegDBSetKeyValueEx(szKey, szStringName, nType, szStringValue, nSize) < 0) then
+      ConditionalWarningBox(szMsg);
+   endif;       
+
+
+        szMsg        = "Setup has failed to create the mailto: key for Eudora.\n" +
+                   "Please note that this will NOT have an effect on Eudora's operation in any way.\n";
+        //szKey      = "Software\\Clients\\Mail\\Eudora";
+
+
+        szKey = "Software\\Clients";
+        if ( RegDBKeyExist(szKey)<0 ) then
+                if (RegDBCreateKeyEx(szKey, "") < 0) then ConditionalWarningBox(szMsg);
+                endif;
+        else
+                szKey = "Software\\Clients\\Mail";
+                if ( RegDBKeyExist(szKey)<0 ) then
+                        if (RegDBCreateKeyEx(szKey, "") < 0) then ConditionalWarningBox(szMsg);
+                        endif;
+                else            
+                        if (RegDBCreateKeyEx(szKey + "\\Eudora", "") < 0) then ConditionalWarningBox(szMsg);
+                        endif;
+                endif;
+        endif;
+        
+   // Here's our key info
+   szStringName  = "";
+   szStringValue = "Eudora";    
+   nType         = REGDB_STRING;                                //This means it's a string (text) -- p. 366
+   nSize         = -1;
+
+
+   szKey         = "Software\\Clients\\Mail\\Eudora";
+   if (RegDBSetKeyValueEx(szKey, szStringName, nType, szStringValue, nSize) < 0) then
+      ConditionalWarningBox(szMsg);
+   endif;
+
+
+   // Here's our key info
+   szStringName  = "";
+   szStringValue = "URL:MailTo Protocol";       
+   nType                 = REGDB_STRING;                                //This means it's a string (text) -- p. 366
+   nSize         = -1;
+
+
+   szKey         = "Software\\Clients\\Mail\\Eudora\\Protocols\\mailto";
+   if (RegDBSetKeyValueEx(szKey, szStringName, nType, szStringValue, nSize) < 0) then
+      ConditionalWarningBox(szMsg);
+   endif;
+
+
+   // Here's our key info
+   szStringName  = "EditFlags";
+   szStringValue = "2";         
+   nType         = REGDB_BINARY;                                //This means it's binary -- p. 366
+   nSize         = 1;                                                   //This says it's one byte of data
+
+
+   szKey         = "Software\\Clients\\Mail\\Eudora\\Protocols\\mailto";
+   if (RegDBSetKeyValueEx(szKey, szStringName, nType, szStringValue, nSize) < 0) then
+      ConditionalWarningBox(szMsg);
+   endif;
+
+
+   // Here's our key info
+   szStringName  = "URL Protocol";
+   szStringValue = "";  
+   nType         = REGDB_STRING;                                //This means it's a string -- p. 366
+   nSize         = -1;                  
+
+
+   szKey         = "Software\\Clients\\Mail\\Eudora\\Protocols\\mailto";
+   if (RegDBSetKeyValueEx(szKey, szStringName, nType, szStringValue, nSize) < 0) then
+      ConditionalWarningBox(szMsg);
+   endif;
+
+
+   // Here's our key info
+   szStringName  = "";
+   szStringValue = szPath^"\\Eudora.exe";
+   nType         = REGDB_STRING;                                //This means it's a string (text) -- p. 366
+   nSize         = -1;
+
+
+   szKey         = "Software\\Clients\\Mail\\Eudora\\Protocols\\mailto\\DefaultIcon";
+   if (RegDBSetKeyValueEx(szKey, szStringName, nType, szStringValue, nSize) < 0) then
+      ConditionalWarningBox(szMsg);
+   endif;
+
+
+   // Here's our key info
+   szStringName  = "";
+   szStringValue = szPath^"\\Eudora.exe" + " /m %1";
+   nType         = REGDB_STRING;                                //This means it's a string (text) -- p. 366
+   nSize         = -1;
+
+
+   szKey         = "Software\\Clients\\Mail\\Eudora\\Protocols\\mailto\\shell\\open\\command";
+   if (RegDBSetKeyValueEx(szKey, szStringName, nType, szStringValue, nSize) < 0) then
+      ConditionalWarningBox(szMsg);
+   endif;
+
+
+   // Here's our key info
+   szStringName  = "";
+   szStringValue = szPath^"\\Eudora.exe";
+   nType      = REGDB_STRING;                           //This means it's a string (text) -- p. 366
+   nSize      = -1;
+
+
+   szKey      = "Software\\Clients\\Mail\\Eudora\\shell\\open\\command";
+   if (RegDBSetKeyValueEx(szKey, szStringName, nType, szStringValue, nSize) < 0) then
+      ConditionalWarningBox(szMsg);
+   endif;
+
+
+
+        ///////////////////////////
+        //  PureVoice Reg Stuff  //
+        ///////////////////////////
+        
+        // Install PureVoice or not?
+//        if (bInstallPureVoice = TRUE) then
+           /*--------------------------*/
+           /* Create PureVoice qcp key */
+           /*--------------------------*/
+                RegDBSetDefaultRoot( HKEY_CLASSES_ROOT );
+
+
+                szMsg      = "Setup has failed to create the QCP extension key for PureVoice.\n" +
+                         "This is most likely because you do not have administrator rights to your machine.\n" +
+                     "Please note that this will NOT have an effect on PureVoice's operation in any way.\n";
+
+
+                szKey      = ".qcp";
+                if ( RegDBKeyExist(szKey)<0 ) then
+                        if (RegDBCreateKeyEx(szKey, "") < 0) then ConditionalWarningBox(szMsg);
+                        endif;
+                endif;
+
+
+                // Here's our key info
+                szStringName  = "";
+                szStringValue = "PureVoice";    
+                nType      = REGDB_STRING;                              //This means it's a string (text) -- p. 366
+                nSize      = -1;
+
+
+                szKey      = ".qcp";
+                if (RegDBSetKeyValueEx(szKey, szStringName, nType, szStringValue, nSize) < 0) then
+                ConditionalWarningBox(szMsg);
+                endif;
+
+
+           /*---------------------------*/
+           /* Create PureVoice name key */
+           /*---------------------------*/
+                szMsg      = "Setup has failed to create the key for PureVoice name.\n" +
+                         "This is most likely because you do not have administrator rights to your machine.\n" +
+                         "Please note that this will NOT have an effect on PureVoice's operation in any way.\n";
+
+
+                szKey      = "PureVoice";
+                if ( RegDBKeyExist(szKey)<0 ) then
+                        if (RegDBCreateKeyEx(szKey, "") < 0) then ConditionalWarningBox(szMsg);
+                        endif;
+                endif;
+
+
+                // Here's our key info
+                szStringName  = "";
+                szStringValue = "QUALCOMM PureVoice File";      
+                nType      = REGDB_STRING;                              
+                nSize      = -1;
+
+
+                szKey      = "PureVoice";
+                if (RegDBSetKeyValueEx(szKey, szStringName, nType, szStringValue, nSize) < 0) then
+                ConditionalWarningBox(szMsg);
+                endif;
+
+
+           /*-----------------------------------*/
+           /* Create PureVoice Default Icon key */
+           /*-----------------------------------*/
+                szMsg      = "Setup has failed to create the key for PureVoice Default icon.\n" +
+                         "This is most likely because you do not have administrator rights to your machine.\n" +
+                     "Please note that this will NOT have an effect on PureVoice's operation in any way.\n";
+
+
+                szStringName  = "";
+                szStringValue = TARGETDIR^"plugins\\PureVoice.exe, 1";  
+                nType      = REGDB_STRING;                              
+                nSize      = -1;
+
+
+                szKey      = "PureVoice\\DefaultIcon";
+                if (RegDBSetKeyValueEx(szKey, szStringName, nType, szStringValue, nSize) < 0) then
+                ConditionalWarningBox(szMsg);
+                endif;
+
+
+
+           /*---------------------------------*/
+           /* Create PureVoice stationery key */
+           /*---------------------------------*/
+                szMsg      = "Setup has failed to create stationery key for PureVoice.\n" +
+                         "This is most likely because you do not have administrator rights to your machine.\n" +
+                         "Please note that this will NOT have an effect on PureVoice's operation in any way.\n";
+
+
+                szStringName  = "";
+                szStringValue = TARGETDIR^"plugins\\PureVoice.exe %1";  
+                nType      = REGDB_STRING;                              
+                nSize      = -1;
+
+
+                szKey      = "PureVoice\\shell\\open\\command";
+                if (RegDBSetKeyValueEx(szKey, szStringName, nType, szStringValue, nSize) < 0) then
+                ConditionalWarningBox(szMsg);
+                endif;
+  //      endif;
+  
+
+   // Set it back to the root key
+   RegDBSetDefaultRoot( HKEY_CLASSES_ROOT );
+
+
+   return nResult;
+ end;
+
+
+
+///////////////////////////////////////////////////////////////////////////////
+//
+// Function: CheckReleaseVersion
+//
+//  Purpose: This function checks to see whether we are doing a Electronic
+//           or Site Installer
+//
+///////////////////////////////////////////////////////////////////////////////
+
+
+ function CheckReleaseVersion()
+
+
+ STRING szRelFileName, svResult;
+
+
+ begin
+
+
+   bSiteVolumeInstaller = FALSE;
+   bElectronicInstaller = FALSE;
+   bVolumeInstaller = FALSE;
+
+
+   /*szRelFileName = "NSImport.eif";
+
+
+   if (FindFile(SRCDIR, szRelFileName, svResult) = 0) then
+                bElectronicInstaller = TRUE;
+   else
+                bSiteVolumeInstaller = TRUE;
+   endif;*/
+
+
+   if(Is(SETUP_PACKAGE, "")) then
+                bElectronicInstaller = TRUE;
+   else
+                bSiteVolumeInstaller = TRUE;
+   endif;
+
+
+ end;
+
+
+
+ ///////////////////////////////////////////////////////////////////////////////
+//
+// Function: CleanupRegistry
+//
+//  Purpose: Since we are using the Multi Instance mode, Install Shield
+//                       makes a separate registry entry under the uninstall key
+//                       this makes multiple Eudora to be displayed the Add/Remove
+//                       progs dialog. We want to get rid of this and have only one
+//                       entry for Eudora even if the user reinstalls over the same path
+//                       Only if Eudora is installed in different paths we should have
+//           multiple entries for Eudora in the Add/Remove progs dialog.
+//                       Hence we go manually and remove the multiple entries that are
+//                       created by Install Shield.
+//
+///////////////////////////////////////////////////////////////////////////////
+function CleanupRegistry()
+        STRING szWinUninstallKey, szAppUninstallKey, szInstallLocation;
+        STRING szExeLocation, szEudoraUninstallKey, szEudoraExeKey;
+        LIST   listSubKeys;
+        NUMBER nReturn, nKeyResult, nSize, nvType, nOp;
+        STRING szRegInstallValue, szCurrentInstallLoc, szExePath;
+begin
+
+
+   // Create the lists to hold values returned by RegDBQueryKey.
+    listSubKeys  = ListCreate(STRINGLIST);
+
+
+   if (listSubKeys  != LIST_NULL) then
+        
+           RegDBSetDefaultRoot(HKEY_LOCAL_MACHINE);
+
+
+            // Get the list of subkeys.
+            szWinUninstallKey = "SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall";
+                nReturn = RegDBQueryKey(szWinUninstallKey, REGDB_KEYS, listSubKeys );
+        if (nReturn >= 0) then
+
+
+                        nKeyResult = ListGetFirstString(listSubKeys, szAppUninstallKey);
+                        while (nKeyResult != END_OF_LIST)
+                        
+                                if(szAppUninstallKey != INSTANCE_GUID) then
+                                        szRegInstallValue = "InstallLocation";
+                                        nvType = REGDB_STRING;
+                                        szAppUninstallKey = szWinUninstallKey + "\\" + szAppUninstallKey;
+                                        if( RegDBGetKeyValueEx(szAppUninstallKey, szRegInstallValue, nvType, szInstallLocation, nSize) >= 0) then
+                                                 StrRemoveLastSlash(szInstallLocation);
+                                                 LongPathFromShortPath(szInstallLocation);
+                                             szCurrentInstallLoc = TARGETDIR;
+                                         StrRemoveLastSlash(szCurrentInstallLoc);
+                                         LongPathFromShortPath(szCurrentInstallLoc);
+                                         if(StrCompare(szCurrentInstallLoc, szInstallLocation) = 0) then
+                                                RegDBDeleteKey(szAppUninstallKey);
+                                         endif;
+                                        endif;
+                                endif;
+                                
+                                nKeyResult = ListGetNextString(listSubKeys, szAppUninstallKey);
+                   endwhile;
+        endif;
+
+
+        ListDestroy (listSubKeys );
+   endif;
+
+
+   RegDBSetDefaultRoot(HKEY_LOCAL_MACHINE);
+   szEudoraUninstallKey = "SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\Eudora";
+   if(RegDBKeyExist(szEudoraUninstallKey) == 1) then
+                szEudoraExeKey = "SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\Eudora.exe";
+                nvType = REGDB_STRING;
+                if(RegDBGetKeyValueEx(szEudoraExeKey, "", nvType, szExeLocation, nSize) >= 0) then
+                        nOp = PATH;
+                        ParsePath(szExePath, szExeLocation, nOp);
+                        StrRemoveLastSlash(szExePath);
+                        LongPathFromShortPath(szExePath);
+                        szCurrentInstallLoc = TARGETDIR;
+                        StrRemoveLastSlash(szCurrentInstallLoc);
+                        LongPathFromShortPath(szCurrentInstallLoc);     
+                        if(StrCompare(szCurrentInstallLoc, szExePath) == 0) then
+                                RegDBDeleteKey(szEudoraUninstallKey);
+                        endif;
+                endif;
+   endif;
+end;
+        
+ 
+ ////////////////////////////////////////////////////////////////
+ // Installing mfc dlls and merge modules creates seperate entries
+ // in the Add/remove programs panel with no change/remove button 
+ // called EudoraProject under
+ // HKEY_LOCAL_MACHINE\SOFTWARE\Classes\Installer\Products\<guid>
+ // Unfortnately the guid is generated dynamically, so we parse 
+ // all the guids and delete any of the guids with a product name
+ // of EudoraProject
+ ////////////////////////////////////////////////////////////////
+ function CleanUpAddRemovePrograms ()
+ 
+ STRING szWinProductKey, szAppProductKey, szRegKeyName, szProductValue; 
+ LIST   listSubKeys;
+ NUMBER nReturn, nKeyResult, nSize, nvType;
+ 
+ begin
+   // Create the lists to hold values returned by RegDBQueryKey.
+    listSubKeys  = ListCreate(STRINGLIST);
+
+
+   if (listSubKeys  != LIST_NULL) then
+        
+           RegDBSetDefaultRoot(HKEY_LOCAL_MACHINE);
+
+
+            // Get the list of subkeys.   
+            szWinProductKey = "SOFTWARE\\Classes\\Installer\\Products";
+            nReturn = RegDBQueryKey(szWinProductKey, REGDB_KEYS, listSubKeys );
+        	if (nReturn >= 0) then
+
+
+                        nKeyResult = ListGetFirstString(listSubKeys, szAppProductKey);
+                        while (nKeyResult != END_OF_LIST)
+                        
+                                //if(szAppProductKey != INSTANCE_GUID) then
+                                        szRegKeyName = "ProductName";
+                                        nvType = REGDB_STRING;
+                                        szAppProductKey = szWinProductKey + "\\" + szAppProductKey;
+                                        if( RegDBGetKeyValueEx(szAppProductKey, szRegKeyName, nvType, szProductValue, nSize) >= 0) then
+                                            if(StrCompare(szProductValue, "EudoraProject") = 0) then
+                                                RegDBDeleteKey(szAppProductKey);
+                                            endif;
+                                        endif;
+                                //endif;
+                                
+                                nKeyResult = ListGetNextString(listSubKeys, szAppProductKey);
+                        endwhile;
+               endif;
+
+
+        ListDestroy (listSubKeys );
+   endif;
+
+ end;
+  
+
+ ///////////////////////////////////////////////////////////////////////////////
+ // Function: ConditionalWarningBox
+ //
+ // Function: Displays a given warning message, only if bWarningsSupressed is FALSE
+ //
+ ///////////////////////////////////////////////////////////////////////////////
+
+
+ function ConditionalWarningBox( szMsg )
+
+
+ begin
+
+
+        if (!bWarningsSuppressed) then MessageBox( szMsg, WARNING );
+        endif;
+
+
+ end;
+
+
+
+ // For Site License
+///////////////////////////////////////////////////////////////////////////////
+//Function : WriteCustomSettings
+//
+//Purpose  : Write the [Custom] Settings to the Eudora.ini and/or
+//           DeEudora.ini. These are taken from the Instopt.ini file originally.
+//
+///////////////////////////////////////////////////////////////////////////////
+function WriteCustomSettings(szWriteFilePath)
+
+
+STRING   szDelimiter, szInstKey, szInstValue;
+LIST     listIni;
+NUMBER   nResult;
+
+
+begin
+
+
+// Read from the szCustomValues variable and write to Eudora.ini file
+if(szCustomValues != "") then
+        listIni = ListCreate(STRINGLIST);
+        if (listIni = LIST_NULL) then
+                MessageBox("Installation error. Please re-install again", SEVERE);
+            abort;
+        else
+            szDelimiter = "";
+                StrGetTokens(listIni, szCustomValues, szDelimiter);
+                // Traverse the list, fetch the values from instopt.ini and write to Eudora.ini
+                nResult = ListGetFirstString(listIni, szInstKey);                                       
+                while (nResult != END_OF_LIST)                                          
+                        GetProfString(szINIFile, "Custom", szInstKey, szInstValue);
+                        WriteProfString(szWriteFilePath, "Settings", szInstKey, szInstValue);
+                        WriteProfString ("","","",""); // Flush the Buffer                              
+                        nResult = ListGetNextString (listIni, szInstKey);                                       
+                endwhile;
+        endif; // if(listIni != LIST_NULL)
+        
+        ListDestroy(listIni);
+ endif; // if(bCustomValues)
+
+
+end;
+
+
+ // For Site License
+///////////////////////////////////////////////////////////////////////////////
+//Function : WriteINISettings
+//
+//Purpose  : Write the Site/Volume related Settings to the Eudora.ini /
+//           DEudora.ini.
+//
+///////////////////////////////////////////////////////////////////////////////
+
+
+function WriteINISettings(szFileName)
+
+
+STRING szSite;
+
+
+begin
+
+
+        szSite     = "1";
+        WriteProfString(szFileName, "SETTINGS", "NeverRegister", szSite);
+        
+        //only the volume installer show update nags
+        //sites do not nag
+        if(!bVolumeInstaller) then
+                WriteProfString(szFileName, "SETTINGS", "DontShowUpdates", szSite);                     
+        endif;
+        
+        WriteProfString(szFileName, "SETTINGS", "DontShowAudit", szSite);
+        WriteProfString(szFileName, "SETTINGS", "Mode", "2");
+        WriteProfString(szFileName, "SETTINGS", "SeenIntro", szSite);
+        WriteProfString ("","","",""); // Flush the Buffer      
+        WriteCustomSettings(szFileName);
+end;
+
+
+///////////////////////////////////////////////////////////////////////////////
+//
+//  Function: DoSilentInstall
+//
+//  Purpose:  Does a Silent Install.
+//
+///////////////////////////////////////////////////////////////////////////////
+function DoSilentInstall()
+   NUMBER nResult, nvSize, nvType, nOp;
+   STRING szTitle, svDefaultFolderSave, szKey, szName, svValue;
+   STRING svReturnString, svFile, szTemp, svPathString;
+   STRING svTmpDir, svSearchPath, szMsg, szProgram;
+   BOOL   bvOpt1, bvOpt2;
+begin
+        
+        //Check if Eudora is running.
+        if(IsEudoraRunning() != NULL) then
+                // OK User is running Eudora
+                szMsg = "Eudora setup has detected that you are currently running a copy of Eudora.\n\n" +
+                        "Please shut down Eudora and run this setup again.\n" ;
+                MessageBox(szMsg, INFORMATION);
+                abort; // Bail out
+        endif;
+        
+        Enable(LOGGING);
+
+
+        RegDBSetDefaultRoot(HKEY_LOCAL_MACHINE);
+        szKey = "SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\Eudora.exe";
+        szName = "";
+        nvType = REGDB_STRING;
+
+
+        RegDBGetKeyValueEx(szKey, szName, nvType, svValue, nvSize);
+        if (svValue = "") then
+                svDir = PROGRAMFILES^"Qualcomm\\Eudora";
+                FeatureSetTarget(MEDIA, "<svTarget>", svDir);
+        else
+                nOp = PATH;
+                ParsePath(svReturnString, svValue, nOp);
+                svDir = svReturnString;
+                FeatureSetTarget(MEDIA, "<svTarget>", svTarget);
+        endif;
+                
+        TARGETDIR = szSilentInstallDir;
+        
+        if ((szDataDir = "") || (CreateDir(szDataDir) < 0)) then
+                bUseAppDataFolder = TRUE;
+			    bUseCustomDataFolder = FALSE;  
+		else
+		       bUseAppDataFolder = FALSE;
+			   bUseCustomDataFolder = TRUE;  
+        endif;                  
+                        
+        end_silent_install:
+    if (bInstallAborted) then
+        abort; // Bail out
+    endif;
+
+
+        // Get shortcut title; if blank, use "Eudora" as default
+        if (szIconName = "") then
+                szIconName = "Eudora";
+        endif;
+                        
+        //ProgDefGroupType(COMMON);                             // This sets the NT folder to personal  
+        szProgram = "\"" + TARGETDIR^"eudora.exe" + "\"" + " " + "\"" + szDataDir + "\"";
+        ProgDefGroupType(PERSONAL);
+        DeleteFolderIcon(FOLDER_DESKTOP, szIconName);
+		ProgDefGroupType(COMMON);
+        DeleteFolderIcon(FOLDER_DESKTOP, szIconName);        
+        ProgDefGroupType(COMMON);       
+        if(AddFolderIcon( FOLDER_DESKTOP, szIconName, szProgram, TARGETDIR, "", 0, "", REPLACE ) < 0) then
+        	ProgDefGroupType(PERSONAL);
+            AddFolderIcon(FOLDER_DESKTOP, szIconName, szProgram, TARGETDIR, "", 0, "", REPLACE);           
+        endif;
+
+
+    if (BATCH_INSTALL) then // ensure locked files are properly transferred
+                SdFinishReboot("", "", SYS_BOOTMACHINE, "", 0 );
+    endif;
+
+
+    return 0;   
+end;
+
+
+///////////////////////////////////////////////////////////////////////////////
+//
+//  Function: IsEudoraRunning
+//
+//  Purpose:  Checks to see if a copy of Eudora is running during an installation
+//
+///////////////////////////////////////////////////////////////////////////////
+function IsEudoraRunning()
+
+
+STRING szMainWndClass, szMainWndName;
+HWND            hwndDlg;
+
+
+begin
+
+
+    szMainWndClass      =       "EudoraMainWindow" ;
+        szMainWndName   =       "";
+        hwndDlg                 =       FindWindow( szMainWndClass, szMainWndName);
+        return hwndDlg;
+
+
+end;

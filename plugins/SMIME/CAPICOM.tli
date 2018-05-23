@@ -1,0 +1,1889 @@
+// Created by Microsoft (R) C/C++ Compiler Version 12.00.8964.0 (9450e897).
+//
+// c:\code\capicom 2.1.0.1\samples\cpp\store\CAPICOM.tli
+//
+// Wrapper implementations for Win32 type library CAPICOM.dll
+// compiler-generated file created 05/18/05 at 19:04:05 - DO NOT EDIT!
+
+#pragma once
+
+//
+// interface ISettings wrapper method implementations
+//
+
+inline VARIANT_BOOL ISettings::GetEnablePromptForCertificateUI ( ) {
+    VARIANT_BOOL _result;
+    HRESULT _hr = get_EnablePromptForCertificateUI(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void ISettings::PutEnablePromptForCertificateUI ( VARIANT_BOOL pVal ) {
+    HRESULT _hr = put_EnablePromptForCertificateUI(pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline enum CAPICOM_ACTIVE_DIRECTORY_SEARCH_LOCATION ISettings::GetActiveDirectorySearchLocation ( ) {
+    enum CAPICOM_ACTIVE_DIRECTORY_SEARCH_LOCATION _result;
+    HRESULT _hr = get_ActiveDirectorySearchLocation(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void ISettings::PutActiveDirectorySearchLocation ( enum CAPICOM_ACTIVE_DIRECTORY_SEARCH_LOCATION pVal ) {
+    HRESULT _hr = put_ActiveDirectorySearchLocation(pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+//
+// interface IEKU wrapper method implementations
+//
+
+inline enum CAPICOM_EKU IEKU::GetName ( ) {
+    enum CAPICOM_EKU _result;
+    HRESULT _hr = get_Name(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void IEKU::PutName ( enum CAPICOM_EKU pVal ) {
+    HRESULT _hr = put_Name(pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline _bstr_t IEKU::GetOID ( ) {
+    BSTR _result;
+    HRESULT _hr = get_OID(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline void IEKU::PutOID ( _bstr_t pVal ) {
+    HRESULT _hr = put_OID(pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+//
+// interface IEKUs wrapper method implementations
+//
+
+inline _variant_t IEKUs::GetItem ( long Index ) {
+    VARIANT _result;
+    VariantInit(&_result);
+    HRESULT _hr = get_Item(Index, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _variant_t(_result, false);
+}
+
+inline long IEKUs::GetCount ( ) {
+    long _result;
+    HRESULT _hr = get_Count(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline IUnknownPtr IEKUs::Get_NewEnum ( ) {
+    IUnknown * _result;
+    HRESULT _hr = get__NewEnum(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return IUnknownPtr(_result, false);
+}
+
+//
+// interface IKeyUsage wrapper method implementations
+//
+
+inline VARIANT_BOOL IKeyUsage::GetIsPresent ( ) {
+    VARIANT_BOOL _result;
+    HRESULT _hr = get_IsPresent(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline VARIANT_BOOL IKeyUsage::GetIsCritical ( ) {
+    VARIANT_BOOL _result;
+    HRESULT _hr = get_IsCritical(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline VARIANT_BOOL IKeyUsage::GetIsDigitalSignatureEnabled ( ) {
+    VARIANT_BOOL _result;
+    HRESULT _hr = get_IsDigitalSignatureEnabled(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline VARIANT_BOOL IKeyUsage::GetIsNonRepudiationEnabled ( ) {
+    VARIANT_BOOL _result;
+    HRESULT _hr = get_IsNonRepudiationEnabled(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline VARIANT_BOOL IKeyUsage::GetIsKeyEnciphermentEnabled ( ) {
+    VARIANT_BOOL _result;
+    HRESULT _hr = get_IsKeyEnciphermentEnabled(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline VARIANT_BOOL IKeyUsage::GetIsDataEnciphermentEnabled ( ) {
+    VARIANT_BOOL _result;
+    HRESULT _hr = get_IsDataEnciphermentEnabled(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline VARIANT_BOOL IKeyUsage::GetIsKeyAgreementEnabled ( ) {
+    VARIANT_BOOL _result;
+    HRESULT _hr = get_IsKeyAgreementEnabled(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline VARIANT_BOOL IKeyUsage::GetIsKeyCertSignEnabled ( ) {
+    VARIANT_BOOL _result;
+    HRESULT _hr = get_IsKeyCertSignEnabled(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline VARIANT_BOOL IKeyUsage::GetIsCRLSignEnabled ( ) {
+    VARIANT_BOOL _result;
+    HRESULT _hr = get_IsCRLSignEnabled(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline VARIANT_BOOL IKeyUsage::GetIsEncipherOnlyEnabled ( ) {
+    VARIANT_BOOL _result;
+    HRESULT _hr = get_IsEncipherOnlyEnabled(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline VARIANT_BOOL IKeyUsage::GetIsDecipherOnlyEnabled ( ) {
+    VARIANT_BOOL _result;
+    HRESULT _hr = get_IsDecipherOnlyEnabled(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+//
+// interface IExtendedKeyUsage wrapper method implementations
+//
+
+inline VARIANT_BOOL IExtendedKeyUsage::GetIsPresent ( ) {
+    VARIANT_BOOL _result;
+    HRESULT _hr = get_IsPresent(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline VARIANT_BOOL IExtendedKeyUsage::GetIsCritical ( ) {
+    VARIANT_BOOL _result;
+    HRESULT _hr = get_IsCritical(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline IEKUsPtr IExtendedKeyUsage::GetEKUs ( ) {
+    struct IEKUs * _result;
+    HRESULT _hr = get_EKUs(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return IEKUsPtr(_result, false);
+}
+
+//
+// interface IBasicConstraints wrapper method implementations
+//
+
+inline VARIANT_BOOL IBasicConstraints::GetIsPresent ( ) {
+    VARIANT_BOOL _result;
+    HRESULT _hr = get_IsPresent(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline VARIANT_BOOL IBasicConstraints::GetIsCritical ( ) {
+    VARIANT_BOOL _result;
+    HRESULT _hr = get_IsCritical(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline VARIANT_BOOL IBasicConstraints::GetIsCertificateAuthority ( ) {
+    VARIANT_BOOL _result;
+    HRESULT _hr = get_IsCertificateAuthority(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline VARIANT_BOOL IBasicConstraints::GetIsPathLenConstraintPresent ( ) {
+    VARIANT_BOOL _result;
+    HRESULT _hr = get_IsPathLenConstraintPresent(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline long IBasicConstraints::GetPathLenConstraint ( ) {
+    long _result;
+    HRESULT _hr = get_PathLenConstraint(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+//
+// interface ICertificateStatus wrapper method implementations
+//
+
+inline VARIANT_BOOL ICertificateStatus::GetResult ( ) {
+    VARIANT_BOOL _result;
+    HRESULT _hr = get_Result(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum CAPICOM_CHECK_FLAG ICertificateStatus::GetCheckFlag ( ) {
+    enum CAPICOM_CHECK_FLAG _result;
+    HRESULT _hr = get_CheckFlag(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void ICertificateStatus::PutCheckFlag ( enum CAPICOM_CHECK_FLAG pVal ) {
+    HRESULT _hr = put_CheckFlag(pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline IEKUPtr ICertificateStatus::EKU ( ) {
+    struct IEKU * _result;
+    HRESULT _hr = raw_EKU(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return IEKUPtr(_result, false);
+}
+
+//
+// interface ICertificateStatus2 wrapper method implementations
+//
+
+inline DATE ICertificateStatus2::GetVerificationTime ( ) {
+    DATE _result;
+    HRESULT _hr = get_VerificationTime(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void ICertificateStatus2::PutVerificationTime ( DATE pVal ) {
+    HRESULT _hr = put_VerificationTime(pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline long ICertificateStatus2::GetUrlRetrievalTimeout ( ) {
+    long _result;
+    HRESULT _hr = get_UrlRetrievalTimeout(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void ICertificateStatus2::PutUrlRetrievalTimeout ( long pVal ) {
+    HRESULT _hr = put_UrlRetrievalTimeout(pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline IOIDsPtr ICertificateStatus2::CertificatePolicies ( ) {
+    struct IOIDs * _result;
+    HRESULT _hr = raw_CertificatePolicies(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return IOIDsPtr(_result, false);
+}
+
+inline IOIDsPtr ICertificateStatus2::ApplicationPolicies ( ) {
+    struct IOIDs * _result;
+    HRESULT _hr = raw_ApplicationPolicies(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return IOIDsPtr(_result, false);
+}
+
+//
+// interface ICertificateStatus3 wrapper method implementations
+//
+
+inline ICertificatesPtr ICertificateStatus3::GetValidationCertificates ( ) {
+    struct ICertificates * _result;
+    HRESULT _hr = get_ValidationCertificates(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return ICertificatesPtr(_result, false);
+}
+
+//
+// interface IOIDs wrapper method implementations
+//
+
+inline _variant_t IOIDs::GetItem ( const _variant_t & Index ) {
+    VARIANT _result;
+    VariantInit(&_result);
+    HRESULT _hr = get_Item(Index, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _variant_t(_result, false);
+}
+
+inline long IOIDs::GetCount ( ) {
+    long _result;
+    HRESULT _hr = get_Count(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline IUnknownPtr IOIDs::Get_NewEnum ( ) {
+    IUnknown * _result;
+    HRESULT _hr = get__NewEnum(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return IUnknownPtr(_result, false);
+}
+
+inline HRESULT IOIDs::Add ( struct IOID * pVal ) {
+    HRESULT _hr = raw_Add(pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IOIDs::Remove ( const _variant_t & Index ) {
+    HRESULT _hr = raw_Remove(Index);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IOIDs::Clear ( ) {
+    HRESULT _hr = raw_Clear();
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+//
+// interface IOID wrapper method implementations
+//
+
+inline enum CAPICOM_OID IOID::GetName ( ) {
+    enum CAPICOM_OID _result;
+    HRESULT _hr = get_Name(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void IOID::PutName ( enum CAPICOM_OID pVal ) {
+    HRESULT _hr = put_Name(pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline _bstr_t IOID::GetFriendlyName ( ) {
+    BSTR _result;
+    HRESULT _hr = get_FriendlyName(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline void IOID::PutFriendlyName ( _bstr_t pVal ) {
+    HRESULT _hr = put_FriendlyName(pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline _bstr_t IOID::GetValue ( ) {
+    BSTR _result;
+    HRESULT _hr = get_Value(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline void IOID::PutValue ( _bstr_t pVal ) {
+    HRESULT _hr = put_Value(pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+//
+// interface ICertificates wrapper method implementations
+//
+
+inline _variant_t ICertificates::GetItem ( long Index ) {
+    VARIANT _result;
+    VariantInit(&_result);
+    HRESULT _hr = get_Item(Index, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _variant_t(_result, false);
+}
+
+inline long ICertificates::GetCount ( ) {
+    long _result;
+    HRESULT _hr = get_Count(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline IUnknownPtr ICertificates::Get_NewEnum ( ) {
+    IUnknown * _result;
+    HRESULT _hr = get__NewEnum(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return IUnknownPtr(_result, false);
+}
+
+//
+// interface ICertificate wrapper method implementations
+//
+
+inline long ICertificate::GetVersion ( ) {
+    long _result;
+    HRESULT _hr = get_Version(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline _bstr_t ICertificate::GetSerialNumber ( ) {
+    BSTR _result;
+    HRESULT _hr = get_SerialNumber(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline _bstr_t ICertificate::GetSubjectName ( ) {
+    BSTR _result;
+    HRESULT _hr = get_SubjectName(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline _bstr_t ICertificate::GetIssuerName ( ) {
+    BSTR _result;
+    HRESULT _hr = get_IssuerName(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline DATE ICertificate::GetValidFromDate ( ) {
+    DATE _result;
+    HRESULT _hr = get_ValidFromDate(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline DATE ICertificate::GetValidToDate ( ) {
+    DATE _result;
+    HRESULT _hr = get_ValidToDate(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline _bstr_t ICertificate::GetThumbprint ( ) {
+    BSTR _result;
+    HRESULT _hr = get_Thumbprint(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline VARIANT_BOOL ICertificate::HasPrivateKey ( ) {
+    VARIANT_BOOL _result;
+    HRESULT _hr = raw_HasPrivateKey(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline _bstr_t ICertificate::GetInfo ( enum CAPICOM_CERT_INFO_TYPE InfoType ) {
+    BSTR _result;
+    HRESULT _hr = raw_GetInfo(InfoType, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline ICertificateStatusPtr ICertificate::IsValid ( ) {
+    struct ICertificateStatus * _result;
+    HRESULT _hr = raw_IsValid(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return ICertificateStatusPtr(_result, false);
+}
+
+inline IKeyUsagePtr ICertificate::KeyUsage ( ) {
+    struct IKeyUsage * _result;
+    HRESULT _hr = raw_KeyUsage(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return IKeyUsagePtr(_result, false);
+}
+
+inline IExtendedKeyUsagePtr ICertificate::ExtendedKeyUsage ( ) {
+    struct IExtendedKeyUsage * _result;
+    HRESULT _hr = raw_ExtendedKeyUsage(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return IExtendedKeyUsagePtr(_result, false);
+}
+
+inline IBasicConstraintsPtr ICertificate::BasicConstraints ( ) {
+    struct IBasicConstraints * _result;
+    HRESULT _hr = raw_BasicConstraints(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return IBasicConstraintsPtr(_result, false);
+}
+
+inline _bstr_t ICertificate::Export ( enum CAPICOM_ENCODING_TYPE EncodingType ) {
+    BSTR _result;
+    HRESULT _hr = raw_Export(EncodingType, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline HRESULT ICertificate::Import ( _bstr_t EncodedCertificate ) {
+    HRESULT _hr = raw_Import(EncodedCertificate);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT ICertificate::Display ( ) {
+    HRESULT _hr = raw_Display();
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+//
+// interface ICertificate2 wrapper method implementations
+//
+
+inline VARIANT_BOOL ICertificate2::GetArchived ( ) {
+    VARIANT_BOOL _result;
+    HRESULT _hr = get_Archived(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void ICertificate2::PutArchived ( VARIANT_BOOL pVal ) {
+    HRESULT _hr = put_Archived(pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline ITemplatePtr ICertificate2::Template ( ) {
+    struct ITemplate * _result;
+    HRESULT _hr = raw_Template(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return ITemplatePtr(_result, false);
+}
+
+inline IPublicKeyPtr ICertificate2::PublicKey ( ) {
+    struct IPublicKey * _result;
+    HRESULT _hr = raw_PublicKey(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return IPublicKeyPtr(_result, false);
+}
+
+inline IPrivateKeyPtr ICertificate2::GetPrivateKey ( ) {
+    struct IPrivateKey * _result;
+    HRESULT _hr = get_PrivateKey(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return IPrivateKeyPtr(_result, false);
+}
+
+inline void ICertificate2::PutPrivateKey ( struct IPrivateKey * pVal ) {
+    HRESULT _hr = put_PrivateKey(pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline IExtensionsPtr ICertificate2::Extensions ( ) {
+    struct IExtensions * _result;
+    HRESULT _hr = raw_Extensions(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return IExtensionsPtr(_result, false);
+}
+
+inline IExtendedPropertiesPtr ICertificate2::ExtendedProperties ( ) {
+    struct IExtendedProperties * _result;
+    HRESULT _hr = raw_ExtendedProperties(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return IExtendedPropertiesPtr(_result, false);
+}
+
+inline HRESULT ICertificate2::Load ( _bstr_t FileName, _bstr_t Password, enum CAPICOM_KEY_STORAGE_FLAG KeyStorageFlag, enum CAPICOM_KEY_LOCATION KeyLocation ) {
+    HRESULT _hr = raw_Load(FileName, Password, KeyStorageFlag, KeyLocation);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT ICertificate2::Save ( _bstr_t FileName, _bstr_t Password, enum CAPICOM_CERTIFICATE_SAVE_AS_TYPE SaveAs, enum CAPICOM_CERTIFICATE_INCLUDE_OPTION IncludeOption ) {
+    HRESULT _hr = raw_Save(FileName, Password, SaveAs, IncludeOption);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+//
+// interface ITemplate wrapper method implementations
+//
+
+inline VARIANT_BOOL ITemplate::GetIsPresent ( ) {
+    VARIANT_BOOL _result;
+    HRESULT _hr = get_IsPresent(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline VARIANT_BOOL ITemplate::GetIsCritical ( ) {
+    VARIANT_BOOL _result;
+    HRESULT _hr = get_IsCritical(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline _bstr_t ITemplate::GetName ( ) {
+    BSTR _result;
+    HRESULT _hr = get_Name(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline IOIDPtr ITemplate::GetOID ( ) {
+    struct IOID * _result;
+    HRESULT _hr = get_OID(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return IOIDPtr(_result, false);
+}
+
+inline long ITemplate::GetMajorVersion ( ) {
+    long _result;
+    HRESULT _hr = get_MajorVersion(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline long ITemplate::GetMinorVersion ( ) {
+    long _result;
+    HRESULT _hr = get_MinorVersion(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+//
+// interface IPublicKey wrapper method implementations
+//
+
+inline IOIDPtr IPublicKey::GetAlgorithm ( ) {
+    struct IOID * _result;
+    HRESULT _hr = get_Algorithm(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return IOIDPtr(_result, false);
+}
+
+inline long IPublicKey::GetLength ( ) {
+    long _result;
+    HRESULT _hr = get_Length(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline IEncodedDataPtr IPublicKey::GetEncodedKey ( ) {
+    struct IEncodedData * _result;
+    HRESULT _hr = get_EncodedKey(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return IEncodedDataPtr(_result, false);
+}
+
+inline IEncodedDataPtr IPublicKey::GetEncodedParameters ( ) {
+    struct IEncodedData * _result;
+    HRESULT _hr = get_EncodedParameters(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return IEncodedDataPtr(_result, false);
+}
+
+//
+// interface IEncodedData wrapper method implementations
+//
+
+inline _bstr_t IEncodedData::GetValue ( enum CAPICOM_ENCODING_TYPE EncodingType ) {
+    BSTR _result;
+    HRESULT _hr = get_Value(EncodingType, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline _bstr_t IEncodedData::Format ( VARIANT_BOOL bMultiLines ) {
+    BSTR _result;
+    HRESULT _hr = raw_Format(bMultiLines, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline IDispatchPtr IEncodedData::Decoder ( ) {
+    IDispatch * _result;
+    HRESULT _hr = raw_Decoder(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return IDispatchPtr(_result, false);
+}
+
+//
+// interface IPrivateKey wrapper method implementations
+//
+
+inline _bstr_t IPrivateKey::GetContainerName ( ) {
+    BSTR _result;
+    HRESULT _hr = get_ContainerName(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline _bstr_t IPrivateKey::GetUniqueContainerName ( ) {
+    BSTR _result;
+    HRESULT _hr = get_UniqueContainerName(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline _bstr_t IPrivateKey::GetProviderName ( ) {
+    BSTR _result;
+    HRESULT _hr = get_ProviderName(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline enum CAPICOM_PROV_TYPE IPrivateKey::GetProviderType ( ) {
+    enum CAPICOM_PROV_TYPE _result;
+    HRESULT _hr = get_ProviderType(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline enum CAPICOM_KEY_SPEC IPrivateKey::GetKeySpec ( ) {
+    enum CAPICOM_KEY_SPEC _result;
+    HRESULT _hr = get_KeySpec(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline VARIANT_BOOL IPrivateKey::IsAccessible ( ) {
+    VARIANT_BOOL _result;
+    HRESULT _hr = raw_IsAccessible(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline VARIANT_BOOL IPrivateKey::IsProtected ( ) {
+    VARIANT_BOOL _result;
+    HRESULT _hr = raw_IsProtected(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline VARIANT_BOOL IPrivateKey::IsExportable ( ) {
+    VARIANT_BOOL _result;
+    HRESULT _hr = raw_IsExportable(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline VARIANT_BOOL IPrivateKey::IsRemovable ( ) {
+    VARIANT_BOOL _result;
+    HRESULT _hr = raw_IsRemovable(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline VARIANT_BOOL IPrivateKey::IsMachineKeyset ( ) {
+    VARIANT_BOOL _result;
+    HRESULT _hr = raw_IsMachineKeyset(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline VARIANT_BOOL IPrivateKey::IsHardwareDevice ( ) {
+    VARIANT_BOOL _result;
+    HRESULT _hr = raw_IsHardwareDevice(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline HRESULT IPrivateKey::Open ( _bstr_t ContainerName, _bstr_t ProviderName, enum CAPICOM_PROV_TYPE ProviderType, enum CAPICOM_KEY_SPEC KeySpec, enum CAPICOM_STORE_LOCATION StoreLocation, VARIANT_BOOL bCheckExistence ) {
+    HRESULT _hr = raw_Open(ContainerName, ProviderName, ProviderType, KeySpec, StoreLocation, bCheckExistence);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IPrivateKey::Delete ( ) {
+    HRESULT _hr = raw_Delete();
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+//
+// interface IExtensions wrapper method implementations
+//
+
+inline _variant_t IExtensions::GetItem ( const _variant_t & Index ) {
+    VARIANT _result;
+    VariantInit(&_result);
+    HRESULT _hr = get_Item(Index, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _variant_t(_result, false);
+}
+
+inline long IExtensions::GetCount ( ) {
+    long _result;
+    HRESULT _hr = get_Count(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline IUnknownPtr IExtensions::Get_NewEnum ( ) {
+    IUnknown * _result;
+    HRESULT _hr = get__NewEnum(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return IUnknownPtr(_result, false);
+}
+
+//
+// interface IExtendedProperties wrapper method implementations
+//
+
+inline _variant_t IExtendedProperties::GetItem ( long Index ) {
+    VARIANT _result;
+    VariantInit(&_result);
+    HRESULT _hr = get_Item(Index, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _variant_t(_result, false);
+}
+
+inline long IExtendedProperties::GetCount ( ) {
+    long _result;
+    HRESULT _hr = get_Count(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline IUnknownPtr IExtendedProperties::Get_NewEnum ( ) {
+    IUnknown * _result;
+    HRESULT _hr = get__NewEnum(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return IUnknownPtr(_result, false);
+}
+
+inline HRESULT IExtendedProperties::Add ( struct IExtendedProperty * pVal ) {
+    HRESULT _hr = raw_Add(pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IExtendedProperties::Remove ( enum CAPICOM_PROPID PropID ) {
+    HRESULT _hr = raw_Remove(PropID);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+//
+// interface IExtendedProperty wrapper method implementations
+//
+
+inline enum CAPICOM_PROPID IExtendedProperty::GetPropID ( ) {
+    enum CAPICOM_PROPID _result;
+    HRESULT _hr = get_PropID(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void IExtendedProperty::PutPropID ( enum CAPICOM_PROPID pVal ) {
+    HRESULT _hr = put_PropID(pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline _bstr_t IExtendedProperty::GetValue ( enum CAPICOM_ENCODING_TYPE EncodingType ) {
+    BSTR _result;
+    HRESULT _hr = get_Value(EncodingType, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline void IExtendedProperty::PutValue ( enum CAPICOM_ENCODING_TYPE EncodingType, _bstr_t pVal ) {
+    HRESULT _hr = put_Value(EncodingType, pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+//
+// interface ICertContext wrapper method implementations
+//
+
+inline long ICertContext::GetCertContext ( ) {
+    long _result;
+    HRESULT _hr = get_CertContext(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void ICertContext::PutCertContext ( long ppCertContext ) {
+    HRESULT _hr = put_CertContext(ppCertContext);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline HRESULT ICertContext::FreeContext ( long pCertContext ) {
+    HRESULT _hr = raw_FreeContext(pCertContext);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+//
+// interface ICertificates2 wrapper method implementations
+//
+
+inline ICertificates2Ptr ICertificates2::Find ( enum CAPICOM_CERTIFICATE_FIND_TYPE FindType, const _variant_t & varCriteria, VARIANT_BOOL bFindValidOnly ) {
+    struct ICertificates2 * _result;
+    HRESULT _hr = raw_Find(FindType, varCriteria, bFindValidOnly, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return ICertificates2Ptr(_result, false);
+}
+
+inline ICertificates2Ptr ICertificates2::Select ( _bstr_t Title, _bstr_t DisplayString, VARIANT_BOOL bMultiSelect ) {
+    struct ICertificates2 * _result;
+    HRESULT _hr = raw_Select(Title, DisplayString, bMultiSelect, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return ICertificates2Ptr(_result, false);
+}
+
+inline HRESULT ICertificates2::Add ( struct ICertificate2 * pVal ) {
+    HRESULT _hr = raw_Add(pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT ICertificates2::Remove ( const _variant_t & Index ) {
+    HRESULT _hr = raw_Remove(Index);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT ICertificates2::Clear ( ) {
+    HRESULT _hr = raw_Clear();
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT ICertificates2::Save ( _bstr_t FileName, _bstr_t Password, enum CAPICOM_CERTIFICATES_SAVE_AS_TYPE SaveAs, enum CAPICOM_EXPORT_FLAG ExportFlag ) {
+    HRESULT _hr = raw_Save(FileName, Password, SaveAs, ExportFlag);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+//
+// interface ICCertificates wrapper method implementations
+//
+
+inline HRESULT ICCertificates::_ExportToStore ( void * hCertStore ) {
+    HRESULT _hr = raw__ExportToStore(hCertStore);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+//
+// interface IChain wrapper method implementations
+//
+
+inline ICertificatesPtr IChain::GetCertificates ( ) {
+    struct ICertificates * _result;
+    HRESULT _hr = get_Certificates(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return ICertificatesPtr(_result, false);
+}
+
+inline long IChain::GetStatus ( long Index ) {
+    long _result;
+    HRESULT _hr = get_Status(Index, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline VARIANT_BOOL IChain::Build ( struct ICertificate * pICertificate ) {
+    VARIANT_BOOL _result;
+    HRESULT _hr = raw_Build(pICertificate, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+//
+// interface IChain2 wrapper method implementations
+//
+
+inline IOIDsPtr IChain2::CertificatePolicies ( ) {
+    struct IOIDs * _result;
+    HRESULT _hr = raw_CertificatePolicies(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return IOIDsPtr(_result, false);
+}
+
+inline IOIDsPtr IChain2::ApplicationPolicies ( ) {
+    struct IOIDs * _result;
+    HRESULT _hr = raw_ApplicationPolicies(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return IOIDsPtr(_result, false);
+}
+
+inline _bstr_t IChain2::ExtendedErrorInfo ( long Index ) {
+    BSTR _result;
+    HRESULT _hr = raw_ExtendedErrorInfo(Index, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+//
+// interface IChainContext wrapper method implementations
+//
+
+inline long IChainContext::GetChainContext ( ) {
+    long _result;
+    HRESULT _hr = get_ChainContext(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void IChainContext::PutChainContext ( long pChainContext ) {
+    HRESULT _hr = put_ChainContext(pChainContext);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline HRESULT IChainContext::FreeContext ( long pChainContext ) {
+    HRESULT _hr = raw_FreeContext(pChainContext);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+//
+// interface IStore wrapper method implementations
+//
+
+inline ICertificatesPtr IStore::GetCertificates ( ) {
+    struct ICertificates * _result;
+    HRESULT _hr = get_Certificates(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return ICertificatesPtr(_result, false);
+}
+
+inline HRESULT IStore::Open ( enum CAPICOM_STORE_LOCATION StoreLocation, _bstr_t StoreName, enum CAPICOM_STORE_OPEN_MODE OpenMode ) {
+    HRESULT _hr = raw_Open(StoreLocation, StoreName, OpenMode);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IStore::Add ( struct ICertificate * pVal ) {
+    HRESULT _hr = raw_Add(pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IStore::Remove ( struct ICertificate * pVal ) {
+    HRESULT _hr = raw_Remove(pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline _bstr_t IStore::Export ( enum CAPICOM_STORE_SAVE_AS_TYPE SaveAs, enum CAPICOM_ENCODING_TYPE EncodingType ) {
+    BSTR _result;
+    HRESULT _hr = raw_Export(SaveAs, EncodingType, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline HRESULT IStore::Import ( _bstr_t EncodedStore ) {
+    HRESULT _hr = raw_Import(EncodedStore);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+//
+// interface IStore2 wrapper method implementations
+//
+
+inline HRESULT IStore2::Load ( _bstr_t FileName, _bstr_t Password, enum CAPICOM_KEY_STORAGE_FLAG KeyStorageFlag ) {
+    HRESULT _hr = raw_Load(FileName, Password, KeyStorageFlag);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+//
+// interface IStore3 wrapper method implementations
+//
+
+inline _bstr_t IStore3::GetName ( ) {
+    BSTR _result;
+    HRESULT _hr = get_Name(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline enum CAPICOM_STORE_LOCATION IStore3::GetLocation ( ) {
+    enum CAPICOM_STORE_LOCATION _result;
+    HRESULT _hr = get_Location(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline VARIANT_BOOL IStore3::Delete ( ) {
+    VARIANT_BOOL _result;
+    HRESULT _hr = raw_Delete(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline HRESULT IStore3::Close ( ) {
+    HRESULT _hr = raw_Close();
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+//
+// interface ICertStore wrapper method implementations
+//
+
+inline long ICertStore::GetStoreHandle ( ) {
+    long _result;
+    HRESULT _hr = get_StoreHandle(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void ICertStore::PutStoreHandle ( long phCertStore ) {
+    HRESULT _hr = put_StoreHandle(phCertStore);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline enum CAPICOM_STORE_LOCATION ICertStore::GetStoreLocation ( ) {
+    enum CAPICOM_STORE_LOCATION _result;
+    HRESULT _hr = get_StoreLocation(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void ICertStore::PutStoreLocation ( enum CAPICOM_STORE_LOCATION pStoreLocation ) {
+    HRESULT _hr = put_StoreLocation(pStoreLocation);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline HRESULT ICertStore::CloseHandle ( long hCertStore ) {
+    HRESULT _hr = raw_CloseHandle(hCertStore);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+//
+// interface IAttribute wrapper method implementations
+//
+
+inline enum CAPICOM_ATTRIBUTE IAttribute::GetName ( ) {
+    enum CAPICOM_ATTRIBUTE _result;
+    HRESULT _hr = get_Name(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void IAttribute::PutName ( enum CAPICOM_ATTRIBUTE pVal ) {
+    HRESULT _hr = put_Name(pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline _variant_t IAttribute::GetValue ( ) {
+    VARIANT _result;
+    VariantInit(&_result);
+    HRESULT _hr = get_Value(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _variant_t(_result, false);
+}
+
+inline void IAttribute::PutValue ( const _variant_t & pVal ) {
+    HRESULT _hr = put_Value(pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+//
+// interface IAttributes wrapper method implementations
+//
+
+inline _variant_t IAttributes::GetItem ( long Index ) {
+    VARIANT _result;
+    VariantInit(&_result);
+    HRESULT _hr = get_Item(Index, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _variant_t(_result, false);
+}
+
+inline long IAttributes::GetCount ( ) {
+    long _result;
+    HRESULT _hr = get_Count(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline IUnknownPtr IAttributes::Get_NewEnum ( ) {
+    IUnknown * _result;
+    HRESULT _hr = get__NewEnum(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return IUnknownPtr(_result, false);
+}
+
+inline HRESULT IAttributes::Add ( struct IAttribute * pVal ) {
+    HRESULT _hr = raw_Add(pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IAttributes::Remove ( long Index ) {
+    HRESULT _hr = raw_Remove(Index);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IAttributes::Clear ( ) {
+    HRESULT _hr = raw_Clear();
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+//
+// interface ISigner wrapper method implementations
+//
+
+inline ICertificatePtr ISigner::GetCertificate ( ) {
+    struct ICertificate * _result;
+    HRESULT _hr = get_Certificate(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return ICertificatePtr(_result, false);
+}
+
+inline void ISigner::PutCertificate ( struct ICertificate * pVal ) {
+    HRESULT _hr = put_Certificate(pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline IAttributesPtr ISigner::GetAuthenticatedAttributes ( ) {
+    struct IAttributes * _result;
+    HRESULT _hr = get_AuthenticatedAttributes(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return IAttributesPtr(_result, false);
+}
+
+//
+// interface ISigner2 wrapper method implementations
+//
+
+inline IChainPtr ISigner2::GetChain ( ) {
+    struct IChain * _result;
+    HRESULT _hr = get_Chain(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return IChainPtr(_result, false);
+}
+
+inline enum CAPICOM_CERTIFICATE_INCLUDE_OPTION ISigner2::GetOptions ( ) {
+    enum CAPICOM_CERTIFICATE_INCLUDE_OPTION _result;
+    HRESULT _hr = get_Options(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void ISigner2::PutOptions ( enum CAPICOM_CERTIFICATE_INCLUDE_OPTION pVal ) {
+    HRESULT _hr = put_Options(pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline HRESULT ISigner2::Load ( _bstr_t FileName, _bstr_t Password ) {
+    HRESULT _hr = raw_Load(FileName, Password);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+//
+// interface ICSigner wrapper method implementations
+//
+
+inline long ICSigner::GetAdditionalStore ( ) {
+    long _result;
+    HRESULT _hr = get_AdditionalStore(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void ICSigner::PutAdditionalStore ( long phAdditionalStore ) {
+    HRESULT _hr = put_AdditionalStore(phAdditionalStore);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+//
+// interface ISigners wrapper method implementations
+//
+
+inline _variant_t ISigners::GetItem ( long Index ) {
+    VARIANT _result;
+    VariantInit(&_result);
+    HRESULT _hr = get_Item(Index, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _variant_t(_result, false);
+}
+
+inline long ISigners::GetCount ( ) {
+    long _result;
+    HRESULT _hr = get_Count(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline IUnknownPtr ISigners::Get_NewEnum ( ) {
+    IUnknown * _result;
+    HRESULT _hr = get__NewEnum(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return IUnknownPtr(_result, false);
+}
+
+//
+// interface ISignedData wrapper method implementations
+//
+
+inline void ISignedData::PutContent ( _bstr_t pVal ) {
+    HRESULT _hr = put_Content(pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline _bstr_t ISignedData::GetContent ( ) {
+    BSTR _result;
+    HRESULT _hr = get_Content(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline ISignersPtr ISignedData::GetSigners ( ) {
+    struct ISigners * _result;
+    HRESULT _hr = get_Signers(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return ISignersPtr(_result, false);
+}
+
+inline ICertificatesPtr ISignedData::GetCertificates ( ) {
+    struct ICertificates * _result;
+    HRESULT _hr = get_Certificates(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return ICertificatesPtr(_result, false);
+}
+
+inline _bstr_t ISignedData::Sign ( struct ISigner * pSigner, VARIANT_BOOL bDetached, enum CAPICOM_ENCODING_TYPE EncodingType ) {
+    BSTR _result;
+    HRESULT _hr = raw_Sign(pSigner, bDetached, EncodingType, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline _bstr_t ISignedData::CoSign ( struct ISigner * pSigner, enum CAPICOM_ENCODING_TYPE EncodingType ) {
+    BSTR _result;
+    HRESULT _hr = raw_CoSign(pSigner, EncodingType, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline HRESULT ISignedData::Verify ( _bstr_t SignedMessage, VARIANT_BOOL bDetached, enum CAPICOM_SIGNED_DATA_VERIFY_FLAG VerifyFlag ) {
+    HRESULT _hr = raw_Verify(SignedMessage, bDetached, VerifyFlag);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+//
+// interface IAlgorithm wrapper method implementations
+//
+
+inline enum CAPICOM_ENCRYPTION_ALGORITHM IAlgorithm::GetName ( ) {
+    enum CAPICOM_ENCRYPTION_ALGORITHM _result;
+    HRESULT _hr = get_Name(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void IAlgorithm::PutName ( enum CAPICOM_ENCRYPTION_ALGORITHM pVal ) {
+    HRESULT _hr = put_Name(pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline enum CAPICOM_ENCRYPTION_KEY_LENGTH IAlgorithm::GetKeyLength ( ) {
+    enum CAPICOM_ENCRYPTION_KEY_LENGTH _result;
+    HRESULT _hr = get_KeyLength(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void IAlgorithm::PutKeyLength ( enum CAPICOM_ENCRYPTION_KEY_LENGTH pVal ) {
+    HRESULT _hr = put_KeyLength(pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+//
+// interface IRecipients wrapper method implementations
+//
+
+inline _variant_t IRecipients::GetItem ( long Index ) {
+    VARIANT _result;
+    VariantInit(&_result);
+    HRESULT _hr = get_Item(Index, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _variant_t(_result, false);
+}
+
+inline long IRecipients::GetCount ( ) {
+    long _result;
+    HRESULT _hr = get_Count(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline IUnknownPtr IRecipients::Get_NewEnum ( ) {
+    IUnknown * _result;
+    HRESULT _hr = get__NewEnum(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return IUnknownPtr(_result, false);
+}
+
+inline HRESULT IRecipients::Add ( struct ICertificate * pVal ) {
+    HRESULT _hr = raw_Add(pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IRecipients::Remove ( long Index ) {
+    HRESULT _hr = raw_Remove(Index);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT IRecipients::Clear ( ) {
+    HRESULT _hr = raw_Clear();
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+//
+// interface IEnvelopedData wrapper method implementations
+//
+
+inline void IEnvelopedData::PutContent ( _bstr_t pVal ) {
+    HRESULT _hr = put_Content(pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline _bstr_t IEnvelopedData::GetContent ( ) {
+    BSTR _result;
+    HRESULT _hr = get_Content(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline IAlgorithmPtr IEnvelopedData::GetAlgorithm ( ) {
+    struct IAlgorithm * _result;
+    HRESULT _hr = get_Algorithm(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return IAlgorithmPtr(_result, false);
+}
+
+inline IRecipientsPtr IEnvelopedData::GetRecipients ( ) {
+    struct IRecipients * _result;
+    HRESULT _hr = get_Recipients(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return IRecipientsPtr(_result, false);
+}
+
+inline _bstr_t IEnvelopedData::Encrypt ( enum CAPICOM_ENCODING_TYPE EncodingType ) {
+    BSTR _result;
+    HRESULT _hr = raw_Encrypt(EncodingType, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline HRESULT IEnvelopedData::Decrypt ( _bstr_t EnvelopedMessage ) {
+    HRESULT _hr = raw_Decrypt(EnvelopedMessage);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+//
+// interface IEncryptedData wrapper method implementations
+//
+
+inline void IEncryptedData::PutContent ( _bstr_t pVal ) {
+    HRESULT _hr = put_Content(pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline _bstr_t IEncryptedData::GetContent ( ) {
+    BSTR _result;
+    HRESULT _hr = get_Content(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline IAlgorithmPtr IEncryptedData::GetAlgorithm ( ) {
+    struct IAlgorithm * _result;
+    HRESULT _hr = get_Algorithm(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return IAlgorithmPtr(_result, false);
+}
+
+inline HRESULT IEncryptedData::SetSecret ( _bstr_t newVal, enum CAPICOM_SECRET_TYPE SecretType ) {
+    HRESULT _hr = raw_SetSecret(newVal, SecretType);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline _bstr_t IEncryptedData::Encrypt ( enum CAPICOM_ENCODING_TYPE EncodingType ) {
+    BSTR _result;
+    HRESULT _hr = raw_Encrypt(EncodingType, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline HRESULT IEncryptedData::Decrypt ( _bstr_t EncryptedMessage ) {
+    HRESULT _hr = raw_Decrypt(EncryptedMessage);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+//
+// interface INoticeNumbers wrapper method implementations
+//
+
+inline _variant_t INoticeNumbers::GetItem ( long Index ) {
+    VARIANT _result;
+    VariantInit(&_result);
+    HRESULT _hr = get_Item(Index, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _variant_t(_result, false);
+}
+
+inline long INoticeNumbers::GetCount ( ) {
+    long _result;
+    HRESULT _hr = get_Count(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline IUnknownPtr INoticeNumbers::Get_NewEnum ( ) {
+    IUnknown * _result;
+    HRESULT _hr = get__NewEnum(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return IUnknownPtr(_result, false);
+}
+
+//
+// interface IQualifier wrapper method implementations
+//
+
+inline IOIDPtr IQualifier::GetOID ( ) {
+    struct IOID * _result;
+    HRESULT _hr = get_OID(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return IOIDPtr(_result, false);
+}
+
+inline _bstr_t IQualifier::GetCPSPointer ( ) {
+    BSTR _result;
+    HRESULT _hr = get_CPSPointer(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline _bstr_t IQualifier::GetOrganizationName ( ) {
+    BSTR _result;
+    HRESULT _hr = get_OrganizationName(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline INoticeNumbersPtr IQualifier::GetNoticeNumbers ( ) {
+    struct INoticeNumbers * _result;
+    HRESULT _hr = get_NoticeNumbers(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return INoticeNumbersPtr(_result, false);
+}
+
+inline _bstr_t IQualifier::GetExplicitText ( ) {
+    BSTR _result;
+    HRESULT _hr = get_ExplicitText(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+//
+// interface IQualifiers wrapper method implementations
+//
+
+inline _variant_t IQualifiers::GetItem ( long Index ) {
+    VARIANT _result;
+    VariantInit(&_result);
+    HRESULT _hr = get_Item(Index, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _variant_t(_result, false);
+}
+
+inline long IQualifiers::GetCount ( ) {
+    long _result;
+    HRESULT _hr = get_Count(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline IUnknownPtr IQualifiers::Get_NewEnum ( ) {
+    IUnknown * _result;
+    HRESULT _hr = get__NewEnum(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return IUnknownPtr(_result, false);
+}
+
+//
+// interface IPolicyInformation wrapper method implementations
+//
+
+inline IOIDPtr IPolicyInformation::GetOID ( ) {
+    struct IOID * _result;
+    HRESULT _hr = get_OID(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return IOIDPtr(_result, false);
+}
+
+inline IQualifiersPtr IPolicyInformation::GetQualifiers ( ) {
+    struct IQualifiers * _result;
+    HRESULT _hr = get_Qualifiers(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return IQualifiersPtr(_result, false);
+}
+
+//
+// interface ICertificatePolicies wrapper method implementations
+//
+
+inline _variant_t ICertificatePolicies::GetItem ( long Index ) {
+    VARIANT _result;
+    VariantInit(&_result);
+    HRESULT _hr = get_Item(Index, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _variant_t(_result, false);
+}
+
+inline long ICertificatePolicies::GetCount ( ) {
+    long _result;
+    HRESULT _hr = get_Count(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline IUnknownPtr ICertificatePolicies::Get_NewEnum ( ) {
+    IUnknown * _result;
+    HRESULT _hr = get__NewEnum(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return IUnknownPtr(_result, false);
+}
+
+//
+// interface IExtension wrapper method implementations
+//
+
+inline IOIDPtr IExtension::GetOID ( ) {
+    struct IOID * _result;
+    HRESULT _hr = get_OID(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return IOIDPtr(_result, false);
+}
+
+inline VARIANT_BOOL IExtension::GetIsCritical ( ) {
+    VARIANT_BOOL _result;
+    HRESULT _hr = get_IsCritical(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline IEncodedDataPtr IExtension::GetEncodedData ( ) {
+    struct IEncodedData * _result;
+    HRESULT _hr = get_EncodedData(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return IEncodedDataPtr(_result, false);
+}
+
+//
+// interface ICPrivateKey wrapper method implementations
+//
+
+inline struct _CRYPT_KEY_PROV_INFO * ICPrivateKey::_GetKeyProvInfo ( ) {
+    struct _CRYPT_KEY_PROV_INFO * _result;
+    HRESULT _hr = raw__GetKeyProvInfo(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline struct _CERT_KEY_CONTEXT * ICPrivateKey::_GetKeyContext ( ) {
+    struct _CERT_KEY_CONTEXT * _result;
+    HRESULT _hr = raw__GetKeyContext(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+//
+// interface ISignedCode wrapper method implementations
+//
+
+inline _bstr_t ISignedCode::GetFileName ( ) {
+    BSTR _result;
+    HRESULT _hr = get_FileName(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline void ISignedCode::PutFileName ( _bstr_t pVal ) {
+    HRESULT _hr = put_FileName(pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline _bstr_t ISignedCode::GetDescription ( ) {
+    BSTR _result;
+    HRESULT _hr = get_Description(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline void ISignedCode::PutDescription ( _bstr_t pVal ) {
+    HRESULT _hr = put_Description(pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline _bstr_t ISignedCode::GetDescriptionURL ( ) {
+    BSTR _result;
+    HRESULT _hr = get_DescriptionURL(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline void ISignedCode::PutDescriptionURL ( _bstr_t pVal ) {
+    HRESULT _hr = put_DescriptionURL(pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline ISigner2Ptr ISignedCode::GetSigner ( ) {
+    struct ISigner2 * _result;
+    HRESULT _hr = get_Signer(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return ISigner2Ptr(_result, false);
+}
+
+inline ISigner2Ptr ISignedCode::GetTimeStamper ( ) {
+    struct ISigner2 * _result;
+    HRESULT _hr = get_TimeStamper(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return ISigner2Ptr(_result, false);
+}
+
+inline ICertificates2Ptr ISignedCode::GetCertificates ( ) {
+    struct ICertificates2 * _result;
+    HRESULT _hr = get_Certificates(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return ICertificates2Ptr(_result, false);
+}
+
+inline HRESULT ISignedCode::Sign ( struct ISigner2 * pISigner2 ) {
+    HRESULT _hr = raw_Sign(pISigner2);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT ISignedCode::Timestamp ( _bstr_t URL ) {
+    HRESULT _hr = raw_Timestamp(URL);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+inline HRESULT ISignedCode::Verify ( VARIANT_BOOL bUIAllowed ) {
+    HRESULT _hr = raw_Verify(bUIAllowed);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+//
+// interface IHashedData wrapper method implementations
+//
+
+inline _bstr_t IHashedData::GetValue ( ) {
+    BSTR _result;
+    HRESULT _hr = get_Value(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline enum CAPICOM_HASH_ALGORITHM IHashedData::GetAlgorithm ( ) {
+    enum CAPICOM_HASH_ALGORITHM _result;
+    HRESULT _hr = get_Algorithm(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline void IHashedData::PutAlgorithm ( enum CAPICOM_HASH_ALGORITHM pVal ) {
+    HRESULT _hr = put_Algorithm(pVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+inline HRESULT IHashedData::Hash ( _bstr_t newVal ) {
+    HRESULT _hr = raw_Hash(newVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+//
+// interface IUtilities wrapper method implementations
+//
+
+inline _bstr_t IUtilities::GetRandom ( long Length, enum CAPICOM_ENCODING_TYPE EncodingType ) {
+    BSTR _result;
+    HRESULT _hr = raw_GetRandom(Length, EncodingType, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline _bstr_t IUtilities::Base64Encode ( _bstr_t SrcString ) {
+    BSTR _result;
+    HRESULT _hr = raw_Base64Encode(SrcString, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline _bstr_t IUtilities::Base64Decode ( _bstr_t EncodedString ) {
+    BSTR _result;
+    HRESULT _hr = raw_Base64Decode(EncodedString, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline _bstr_t IUtilities::BinaryToHex ( _bstr_t BinaryString ) {
+    BSTR _result;
+    HRESULT _hr = raw_BinaryToHex(BinaryString, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline _bstr_t IUtilities::HexToBinary ( _bstr_t HexString ) {
+    BSTR _result;
+    HRESULT _hr = raw_HexToBinary(HexString, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline _variant_t IUtilities::BinaryStringToByteArray ( _bstr_t BinaryString ) {
+    VARIANT _result;
+    VariantInit(&_result);
+    HRESULT _hr = raw_BinaryStringToByteArray(BinaryString, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _variant_t(_result, false);
+}
+
+inline _bstr_t IUtilities::ByteArrayToBinaryString ( const _variant_t & varByteArray ) {
+    BSTR _result;
+    HRESULT _hr = raw_ByteArrayToBinaryString(varByteArray, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline DATE IUtilities::LocalTimeToUTCTime ( DATE LocalTime ) {
+    DATE _result;
+    HRESULT _hr = raw_LocalTimeToUTCTime(LocalTime, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+inline DATE IUtilities::UTCTimeToLocalTime ( DATE UTCTime ) {
+    DATE _result;
+    HRESULT _hr = raw_UTCTimeToLocalTime(UTCTime, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}

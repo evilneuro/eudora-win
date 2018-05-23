@@ -1,0 +1,166 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\r\n"
+    "\r\n"
+    "#include ""ImapVer.rc""\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_NETWORK_TIMEOUT DIALOG DISCARDABLE  0, 0, 190, 90
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Eudora Network Timeout"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "&OK",IDOK,36,69,50,14
+    PUSHBUTTON      "&Cancel",IDCANCEL,102,69,50,14
+    LTEXT           "Eudora is tired of waiting for the system to respond.\n\nPress OK if you wish to continue waiting.\n\nCancel will terminate this connection.",
+                    IDC_ALERT_TEXT,14,8,174,55
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_ERR_GETHOSTBYADDR   "Error getting name for address ""%s"""
+    IDS_ERR_GETHOSTBYNAME   "Error getting network address for ""%s"""
+    IDS_ERR_EUDORA_NET_TO   "Eudora got tired of waiting for the server."
+    IDS_NET_ERR_FORMAT      "%s\r\n\r\nCause: %s (%d)"
+    IDS_ERR_NET_READING     "Error reading from network"
+    IDS_ERR_NET_WRITING     "Error writing to network"
+    IDS_ERR_OFFLINE         "Connection Method set to Offline.  Go to the Options dialog under the Special menu to change the Connection Method."
+    IDS_START_NET_CONNECTION "Establishing Network Connection..."
+    IDS_ERR_USER_ABORTED    "Operation aborted by the user."
+    IDS_ERR_CONNECTION_BROKEN 
+                            "IMAP connection to server ""%s"" has been broken."
+    IDS_ERR_UNEXPECTED_UNTAGGED_RESPONSE 
+                            "Unexpected tagged response: %s %s %s"
+    IDS_ERR_BAD_KEY         "IMAP protocol error: %s %s"
+    IDS_ERR_BAD_RESPONSE    "%s %s"
+    IDS_ERR_NETWORK_ERROR   "Network Error."
+    IDS_ERR_NETWORK_DISCONNECTED 
+                            "The network has been disconnected. Error number: %d"
+    IDS_IMAP_ERROR          "Imap Error"
+	IDS_SSL_NOSUPPORT		"IMAP server does not support SSL"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_ERR_CONNECTION_CLOSED 
+                            "The network connection to host ""%s"" has been aborted."
+    IDS_MIME_BINHEX         "MAC-BINHEX40"
+    IDS_ERR_NETWORK_UNINITIALIZED 
+                            "Eudora internal error: Network not initialized."
+    IDS_ERR_NETWORK_DOWN    "The network is down"
+    IDS_KRB4_LIBNAME        "kerberos32.dll"
+    IDS_IMAP_SERVICE        "imap"
+    IDS_GSSAPI_LIBNAME      "gssapi32.dll"
+    IDS_DES_LIBNAME         "des32.dll"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_ERR_WSK_INIT_FAILED "Failed to initialize Winsock DLL"
+    IDS_ERR_INVALID_MACHINE_ADDRESS "Invalid machine name or address: %s"
+    IDS_ERR_GETTING_SOCKET  "Error getting a socket"
+    IDS_ERR_SERVER_CONNECT  "Failed to connect to %s"
+    IDS_ERR_NET_NOT_READY   "Your network is not ready.  You will not be able to connect to the network at this time."
+    IDS_ERR_NO_WINSOCK_DLL  "Required network WINSOCK.DLL not found or inappropriate.  You will not be able to connect to the network at this time."
+    IDS_ERR_WRONG_WINSOCK_VER 
+                            "Version 1.1 of Winsock is not supported by your network package.  You will be unable to perform network operations."
+    IDS_ERR_GETSERVBYNAME   "Error getting service name ""%s"", code 0x%04x"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_ERR_LOADING_LIBRARY "Could not load the DLL ""%s""."
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif
+#include "afxres.rc"         // Standard components
+#endif
+
+#include "ImapVer.rc"
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

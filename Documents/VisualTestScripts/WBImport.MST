@@ -1,0 +1,1200 @@
+'**********************************************************************************
+'
+'  WBImport.MST
+'  Description      :  WBImport Script
+'  Programmer       :  Richard J. Wartner
+'                   :  7610 North Via De Manana
+'                   :  Scottsdale, Arizona 85258
+'                   :  RWartner@aol.com
+'                   :  July 1997
+'
+'  In order for this program to run
+'  it must have an INI file nominated in the Command Line.
+'
+'  Syntax: \FullPATH\mtrun.exe \FullPATH\WBImport.pcd /C WBImport.INI
+'
+'
+'  Sample:
+'
+'	 C:\MSDEV\BIN\MTRUN.EXE C:\WBIMPORT\WBIMPORT.PCD /C C:\WBIMPORT\WBIMPORT.INI
+'
+'
+'
+'
+'**********************************************************************************
+'
+' HISTORY:
+' 07/97   Rev 1.0 Initial program creation.
+'
+'**********************************************************************************
+'============================================================
+' Program Variables
+'============================================================
+Global fh                   As Integer    ' File handle
+Global StringArray (1 To 1) As String     ' Array
+Global LogPath              As String     ' Error.log
+Global CritErrPath          As String     ' Criterr.log
+Global SMLogPath            As String     ' Status.log
+Global SystemError          As Integer    ' System Error
+Global RevNumber            As String     ' Revision Number
+Global TheIniFile           As String     ' INI file
+Global CurPrgName           As String     ' Current Program
+Global SourceDir            As String     ' Import directory
+Global TargetDir            As String     ' Target directory                  
+Global DeleteOldFiles       As String     ' Delete import files?
+
+' Set Error Log paths and names
+LogPath     = CurDir+"\ERROR.LOG"
+CritErrPath = CurDir+"\CRITERR.LOG"
+SMLogPath   = Curdir+"\STATUS.LOG"
+
+' Sets Virtual Key for KeyPress event to terminate program
+Const VK_ESCAPE     = &H1B&
+
+' Set trap for escape key to end program
+On KeyPress(VK_ESCAPE) Call StopScripts
+
+'============================================================
+' Subroutine/Function Declarations
+'============================================================
+Declare Function CheckCommandLine() As Integer
+Declare Function ReadINI(TheIniFile$,TheSection$,TheVariable$) As String
+Declare Function SetWBDefaults(SectionName$,TheIniFile$) As Integer
+Declare Function GetFiles() As Integer
+Declare Function WBImport(FileName1$,FileName2$)
+Declare Function CountCommas(InputString$,CountTo%) As Integer
+Declare Function CompressString(TheString$) As String
+Declare Function ParseDN(DName$) As String
+Declare Sub StopScripts(vKeyInfo As Variant)
+Declare Sub LogOpen(LogPath$,CritErrPath$)
+Declare Sub LogClose(LogPath$,CritErrPath$)
+Declare Sub LogEnter(Message$,LogPath$,CritErrPath$)
+Declare Sub LogWrite(Message$,LogPath$,CritErrPath$)
+Declare Sub LogOnly(Message$,LogPath$,CritErrPath$)
+Declare Sub LogError(Message$,ApplicationToClose%,LogPath$,CritErrPath$)
+Declare Sub TestLogVars(LogPath$)
+Declare Sub MakeDirs(DirName$)
+Declare Sub UAEErrorTrap(UAEErrMsg As Variant)
+Declare Sub CloseOnSystemError(ApplicationToClose&,LogPath$,CritErrPath$)
+'============================================================
+' API Declarations
+'============================================================
+Declare Function GetPrivateProfileString Lib "kernel32.dll" Alias "GetPrivateProfileStringA" (lpAppName$, lpKeyName As Any, lpDefault$, lpReturnedString$, nSize&, lpFileName$) As Long
+'*************************************************************************
+'*************************************************************************
+'*  START OF SCRIPT
+'*************************************************************************
+'*************************************************************************
+' Initial setups
+CurPrgName = "WBImport.PCD"          ' Current program name
+RevNumber  = "Rev 1.0"               ' Revision Number
+Dim ReturnInteger As Integer
+
+' Retrieve INI file name and path from Command Line
+ReturnInteger = CheckCommandLine() 
+' Test Return Value
+If ReturnInteger = False Then
+	LogError("Error Retrieving Command Line!",0,LogPath,CritErrPath)
+End If
+
+' Retrieve INI file defaults
+ReturnInteger = SetWBDefaults("Defaults",TheIniFile)
+' Test Return Value
+If ReturnInteger = False Then
+	LogError("Error Setting Defaults!",0,LogPath,CritErrPath)
+End If
+
+LogOpen(LogPath,CritErrPath)             ' Open Script Log
+On UnhandledException Call UAEErrorTrap	 ' Unhandled Exception Error
+On Error GoTo ErrorHandler               ' Error Handler routine
+StatusBox Close
+
+' Get the files to fix
+ReturnInteger = GetFiles()
+' Test Return Value
+If ReturnInteger = False Then
+	LogError("Error Fixing Files!",0,LogPath,CritErrPath)
+Else
+	LogWrite("0     Successfully Fixed Files.",LogPath,CritErrPath)
+End If
+
+'*************************************************************************
+'*************************************************************************
+'*  END OF SCRIPT
+'*************************************************************************
+'*************************************************************************
+LogClose(LogPath,CritErrPath)
+LogWrite("",LogPath,CritErrPath)
+End
+'=========================================================================
+' Procedures and Functions Follow
+'=========================================================================
+'*************************************************************************
+' Function GetFiles()
+'
+' Fix Import files and send to new directory
+'
+' Richard J. Wartner
+'*************************************************************************
+Function GetFiles() As Integer
+
+    Dim FileName      As String
+    Dim TargetName    As String
+    Dim ReturnInteger As Integer
+
+	GetFiles = True
+
+	' Make sure TargetDir exists
+	If Not Exists(Mid(TargetDir,1,Len(TargetDir)-1),"+d") Then
+		MakeDirs(TargetDir)
+	End If
+
+    ' Find import files and put into list
+	FileList Clear
+	FileList Add SourceDir + "WBImport*.csv","?AR-D"
+
+    ' Loop through import files
+	For FileName In FileList
+
+        If Exists(FileName) Then
+
+            ' Extrapolate Target Name
+            TargetName = TargetDir+Mid(FileName,Len(SourceDir)+1)
+
+            LogWrite("0     Fixing file:  "+FileName+".",LogPath,CritErrPath)
+            StatusBox "Fixing file:  "+FileName+"."
+            Sleep .5
+
+            ' Fix Import file and send to new directory
+            ReturnInteger = WBImport(FileName,TargetName)
+
+            ' Test Return Value
+            If ReturnInteger = False Then
+				GetFiles = False
+	            LogWrite("1     Error changing file: "+FileName+"!",LogPath,CritErrPath)
+                Exit Function
+            End If
+  
+		Else
+            LogWrite("1     File: "+FileName+" doesn't exist!",LogPath,CritErrPath)
+        End If
+
+	Next
+
+    ' Delete old import file
+    If UCase$(DeleteOldFiles) = "YES" Then
+
+	    For FileName In FileList
+            If Exists(FileName) Then
+                Kill FileName
+                LogWrite("0     Deleted file: "+FileName+".",LogPath,CritErrPath)
+            End If
+	    Next
+
+    End If
+
+	FileList Clear
+
+End Function
+'*************************************************************************
+' Function WBImport
+' Fix our files
+' Richard J. Wartner
+'
+' Parameters:
+'
+' FileName1$  - Source File Name
+'
+' FileName2$  - Target File Name
+'
+' The function converts the Source into the Target
+'
+'*************************************************************************
+Function WBImport(FileName1$,FileName2$)
+
+    Dim RdBuffer      As String     ' Buffer to hold input records
+    Dim LineCounter   As Integer    ' Counter
+	Dim ArrayCounter  As Integer
+    Dim NonePos       As Integer
+    Dim EndNonePos    As Integer
+    Dim FNPos         As Integer
+    Dim LNPos         As Integer
+    Dim EndLNPos      As Integer
+    Dim FNString      As String
+    Dim LNString      As String
+    Dim StartString   As String
+    Dim EndString     As String
+    Dim PrintString   As String
+
+    WBImport = True
+
+    ' Make sure file exists
+    If Not Exists(FileName1) Then
+        LogWrite("1     Can't Find "+FileName1+"!",LogPath,CritErrPath)
+        WBImport = False
+        Exit Function 
+    End If
+
+    ' get a free file handle
+    fh = FreeFile
+
+    ' open file
+    Open FileName1 For Input As #fh   
+
+    Do
+
+        ' Read string into buffer variable
+		Line Input #fh, RdBuffer
+  
+        If Len(RdBuffer) > 1 Then
+
+            ' Increment counter
+		    LineCounter = LineCounter + 1
+
+            ' Test for String signifying need to change
+            NonePos = Instr(1,RdBuffer,"none")
+
+        End If
+  
+
+        If NonePos > 0 Then
+
+            ' Find end position of none
+            EndNonePos = CountCommas(RdBuffer,3)
+
+            ' Test Return Value
+            If EndNonePos < 1 Then
+	            LogWrite("1     Error counting commas !",LogPath,CritErrPath)
+                WBImport = False
+                Exit Function 
+            End If
+
+            ' Find position of first name
+            FNPos = CountCommas(RdBuffer,22)
+
+            ' Test Return Value
+            If FNPos < 1 Then
+	            LogWrite("1     Error counting commas !",LogPath,CritErrPath)
+                WBImport = False
+                Exit Function 
+            End If
+
+            ' Find position of last name
+            LNPos = CountCommas(RdBuffer,23)
+
+            ' Test Return Value
+            If LNPos < 1 Then
+	            LogWrite("1     Error counting commas !",LogPath,CritErrPath)
+                WBImport = False
+                Exit Function 
+            End If
+
+            ' Find end position of last name
+            EndLNPos = CountCommas(RdBuffer,24)
+  
+            ' Test Return Value
+            If EndLNPos < 1 Then
+	            LogWrite("1     Error counting commas !",LogPath,CritErrPath)
+                WBImport = False
+                Exit Function 
+            End If
+
+            ' Create first name string
+            FNString = Mid(RdBuffer,FNPos+2,(LNPos-1)-(FNPos+2))
+
+            ' Test Return Value
+            If Len(FNString) < 1 Then
+	            LogWrite("1     Error creating first name string !",LogPath,CritErrPath)
+                WBImport = False
+                Exit Function 
+            End If
+
+            ' Create last name string
+            LNString = Mid(RdBuffer,LNPos+2,(EndLNPos-1)-(LNPos+2))
+
+            ' Test Return Value
+            If Len(LNString) < 1 Then
+	            LogWrite("1     Error creating last name string !",LogPath,CritErrPath)
+                WBImport = False
+                Exit Function 
+            End If
+
+            ' Create string from beginning to word none
+            StartString = Mid(RdBuffer,1,NonePos-1)
+
+            ' Test Return Value
+            If Len(StartString) < 1 Then
+	            LogWrite("1     Error creating start string !",LogPath,CritErrPath)
+                WBImport = False
+                Exit Function 
+            End If
+
+            ' Create string from none to end
+            EndString = Mid(RdBuffer,EndNonePos-1)
+
+            ' Test Return Value
+            If Len(EndString) < 1 Then
+	            LogWrite("1     Error creating end string !",LogPath,CritErrPath)
+                WBImport = False
+                Exit Function 
+            End If
+
+            ' Put all the strings together
+            PrintString = StartString + LNString + ", "+ FNString + EndString
+
+            ' Test Return Value
+            If Len(PrintString) < 1 Then
+	            LogWrite("1     Error creating print string !",LogPath,CritErrPath)
+                WBImport = False
+                Exit Function 
+            End If
+
+'          	LogOnly(PrintString,LogPath,CritErrPath)
+
+            ' Redim array to hold new string
+            ReDim Preserve StringArray(1 To LineCounter) As String
+          
+            ' Put final string into array
+            StringArray(LineCounter) = PrintString
+
+        ' Put strings without word none into array
+        ElseIf Len(RdBuffer) > 1 Then
+
+            ' Redim array to hold new string
+            ReDim Preserve StringArray(1 To LineCounter) As String
+          
+            ' Put string into array
+            StringArray(LineCounter) = RdBuffer
+
+        End If
+
+    Loop While Not EOF(fh)
+
+	' Close file
+    Close #fh
+
+    ' get a free file handle
+    fh = FreeFile
+
+    ' open file
+    Open FileName2 For Append As #fh   
+
+    ' Write array to new file
+    For ArrayCounter = 1 To UBound(StringArray)
+
+		Print #fh, StringArray(ArrayCounter)
+
+    '	LogOnly(StringArray(ArrayCounter),LogPath,CritErrPath)
+
+    Next
+
+    LogWrite("0     Created file: "+FileName2+".",LogPath,CritErrPath)
+    StatusBox "Created file:  "+FileName2+"."
+    Sleep .5
+
+    Close #fh
+
+End Function
+'***************************************************************
+' CountCommas(InputString$)	As Integer
+' Counts the number of commas  (",")  in a string
+'***************************************************************
+Function CountCommas(InputString$,CountTo%) As Integer
+
+    Dim CommaPosition  As Integer
+    Dim CommaCounter   As Integer
+
+	CommaPosition = 1
+    Do While CommaPosition <> 0 And CommaCounter < CountTo                         
+		' Find Comma                       
+        CommaPosition=Instr(CommaPosition,InputString,Chr(34)+","+Chr(34)) 
+		' Found Then
+        If CommaPosition <> 0 Then 
+			' Increment past ','
+            CommaPosition=CommaPosition+1
+			' Remember comma count
+            CommaCounter=CommaCounter+1                  
+        End If
+    Loop ' Do it again
+
+	' Return Comma position
+    CountCommas=CommaPosition  
+
+End Function
+'*************************************************************************
+' Function SetWBDefaults(SectionName$,TheIniFile$)
+'
+' Retrieves default values from INI file.
+'
+'*************************************************************************
+Function SetWBDefaults(SectionName$,TheIniFile$) As Integer
+
+	Dim tmpLogDir      As String
+	Dim tmpLogPath     As String
+	Dim tmpCritErrPath As String
+
+	SetWBDefaults = True
+
+	' Test parameters
+	If SectionName = "" Then
+		tmpLogDir		= CurDir+"\"
+		tmpLogPath		= tmpLogDir + "ERROR.LOG"
+		tmpCritErrPath  = tmpLogDir + "CRITERR.LOG"
+		SetWBDefaults = False
+		LogWrite("1     Bad Section Name parameter passed to SetDefaults()!",tmpLogPath,tmpCritErrPath)
+		Exit Function
+	End If
+
+	' Create temporary defaults
+	tmpLogDir		= CurDir+"\"
+	tmpLogPath		= TheIniFile
+	tmpCritErrPath  = tmpLogDir + "CRITERR.LOG"
+
+	' Retrieve INI file variables
+	' ---------------------------
+	LogPath = ReadIni(TheIniFile,SectionName,"LogPath")
+	' Test value returned
+	If LogPath = "NotFnd" Then
+		SetWBDefaults = False
+		LogWrite("1     Can't find LogPath in: " + TheIniFile+"!",tmpLogPath,tmpCritErrPath)
+		Exit Function
+	End If
+
+	CritErrPath = ReadIni(TheIniFile,SectionName,"CritErrPath")
+	' Test value returned
+	If CritErrPath = "NotFnd" Then
+		SetWBDefaults = False
+		LogWrite("1     Can't find CritErrPath in: " + TheIniFile+"!",tmpLogPath,tmpCritErrPath)
+		Exit Function
+	End If
+
+	SourceDir = ReadIni(TheIniFile,SectionName,"SourceDir")
+	' Test value returned
+	If SourceDir = "NotFnd" Then
+		SetWBDefaults = False
+		LogWrite("1     Can't find SourceDir in: " + TheIniFile+"!",LogPath,CritErrPath)
+		Exit Function
+	End If
+
+	TargetDir = ReadIni(TheIniFile,SectionName,"TargetDir")
+	' Test value returned
+	If TargetDir = "NotFnd" Then
+		SetWBDefaults = False
+		LogWrite("1     Can't find TargetDir in: " + TheIniFile+"!",LogPath,CritErrPath)
+		Exit Function
+	End If
+
+	DeleteOldFiles = ReadIni(TheIniFile,SectionName,"DeleteOldFiles")
+	' Test value returned
+	If DeleteOldFiles = "NotFnd" Then
+		SetWBDefaults = False
+		LogWrite("1     Can't find DeleteOldFiles in: " + TheIniFile+"!",LogPath,CritErrPath)
+		Exit Function
+	End If
+
+End Function
+'*************************************************************************
+' Sub StopScripts(vKeyInfo As Variant)
+'*************************************************************************
+Sub StopScripts(vKeyInfo As Variant)
+		
+	Dim EndProgram As Integer
+		
+	EndProgram = MsgBox("Escape pressed."+ Chr(10)+"Click OK to end program, Cancel to continue.",1 OR 64 OR 0 OR 4096,"End "+CurPrgName)
+
+	If EndProgram = 1 Then
+
+		LogWrite("0     'Escape' Pressed, Ending "+CurPrgName+".",LogPath,CritErrPath)
+
+		' End program
+		StatusBox "Ending "+CurPrgName
+		Sleep 2
+		LogClose(LogPath,CritErrPath)
+		LogWrite("",LogPath,CritErrPath)
+		End
+
+	End If
+
+End Sub
+'*************************************************************************
+'  CheckCommandLine() Parse command line for INI file
+'*************************************************************************
+Function CheckCommandLine() As Integer
+
+    Dim CommandCounter  As Integer
+    Dim Dummy           As String
+
+	CheckCommandLine = True
+
+	' Create dummy string from command line
+    Dummy = UCase$(Command$)
+
+	' Check for parameter separator - comma
+    CommandCounter = InStr(1, Dummy, ",")
+
+    If CommandCounter = 0 Then
+        TheIniFile = Dummy
+        If TheIniFile = "" Or Not Exists(TheIniFile) Then
+            LogWrite("1     Ini file not passed to program or it does not exist!",LogPath,CritErrPath)
+			CheckCommandLine = False
+            Exit Function
+        End If
+    Else
+        TheIniFile = Mid$(Dummy, 1, CommandCounter - 1)
+        If TheIniFile = "" Or Not Exists(TheIniFile) Then
+            LogWrite("1     Ini file not passed to program or it does not exist!",LogPath,CritErrPath)
+			CheckCommandLine = False
+            Exit Function
+        End If
+	End If
+
+End Function
+'*****************************************************
+'  TestLogVars() - Test to make sure logfile
+'                  Variables are initialized
+'
+'*****************************************************
+Sub TestLogVars(LogPath$)
+
+	Dim LogDir As String
+
+	' Detail Error Log File path and name
+	If Len(LogPath) = 0 Then
+		LogPath = Curdir+"\ERROR.LOG"
+	End If
+
+	' Critical Error Log File
+	If Len(CritErrPath) = 0 Then
+		CritErrPath = Curdir+"\CRITERR.LOG"
+	End If
+
+	' Status Log File e.g. the suite manager log file
+	If Len(SMLogPath) = 0 Then
+		SMLogPath = Curdir+"\STATUS.LOG"
+	End If
+
+	' Detail Error Log File path only
+	If Len(LogDir) = 0 Then
+		LogDir = Curdir+"\"
+	End If
+
+	' Make sure Logging Directory exists
+	If Not Exists(Mid(LogDir,1,Len(LogDir)-1),"+d") Then
+		MakeDirs(LogDir)
+	End If
+
+End Sub
+'*****************************************************
+'  MakeDirs() - Create directories from a string
+'
+'  Parameters:
+'
+'  DirName$  The directory path that you wish to create.
+'
+'    \MSDEV\PROJECTS\TESTDIR\PROJECT          
+'
+'	 creates the following directories:
+'	 \msdev
+'	 \msdev\projects
+'	 \msdev\projects\testdir
+'	 \msdev\projects\testdir\project
+'
+'*****************************************************
+Sub MakeDirs(DirName As String)
+
+	Dim SlashInString As Integer
+	Dim NewDirString  As String
+	Dim DirCounter    As Integer
+	Dim LoopCounter   As Integer
+
+	' Create Array to store directory names
+	Dim DirArray(50) As String 
+
+	NewDirString  = DirName
+	SlashInString = Instr(2,NewDirString,"\")
+
+	' Parse elements from DirName
+	' and put each element into an array
+	Do Until SlashInString = 0
+		NewDirString  = ParseDN(NewDirString)
+		SlashInString = Instr(2,NewDirString,"\")
+		If Len(NewDirString) > 2 Then
+			DirCounter = DirCounter + 1
+			DirArray(DirCounter) = NewDirString 
+		End If
+	Loop
+
+	' Create directories from array starting at the end
+	If DirCounter > 0 Then
+		For LoopCounter = DirCounter To 1 Step -1
+			If Not Exists(DirArray(LoopCounter),"+d") Then
+				MkDir(DirArray(LoopCounter))
+			End If
+		Next
+	End If
+
+	' Write directories created to Log File
+	If DirCounter > 0 Then
+		For LoopCounter = DirCounter To 1 Step -1
+			If Exists(DirArray(LoopCounter),"+d") Then
+				LogWrite("0     Created Directory: "+DirArray(LoopCounter)+".",LogPath,CritErrPath)
+			End If
+		Next
+	End If
+
+End Sub
+'*****************************************************
+'  LogOpen() - Create and initialize Error log
+'              Open file and write one record
+'*****************************************************
+Sub LogOpen(LogPath$,CritErrPath$)
+
+	Dim LogFH      As Integer
+
+	' Notify user
+	StatusBox CurPrgName+" Started. "+RevNumber
+
+	' Clear Viewport
+ 	Viewport Clear
+
+	' Make sure log file variables are initialized
+	TestLogVars(LogPath)
+
+	' Write opening message to Error Log
+	LogFH=FREEFILE            ' get next available file handle
+    Open LogPath For Append As #LogFH
+    Print #LogFH, Date$ + " " + Time$ + "  0   "+CurPrgName+" STARTED. "+RevNumber
+    Close #LogFH
+
+	' Write opening message to Critical Error Log
+	LogFH=FREEFILE            ' get next available file handle
+    Open CritErrPath For Append As #LogFH
+    Print #LogFH, Date$ + " " + Time$ + "  0   "+CurPrgName+" STARTED. "+RevNumber
+    Close #LogFH
+
+End Sub
+'**********************************************************
+'  LogClose() - Write last record and close Error Log file
+'**********************************************************
+Sub LogClose(LogPath$,CritErrPath$)
+    
+	Dim LogFH      As Integer
+
+	' Make sure log file variables are initialized
+	TestLogVars(LogPath)
+
+	' Write closing message to Error Log
+    LogFH=FREEFILE            ' get next available file handle
+    Open LogPath For Append As #LogFH
+    Print #LogFH, Date$ + " " + Time$ + "  0   "+CurPrgName+" ENDED."
+    Close #LogFH
+
+	' Write closing message to Critical Error Log
+	LogFH=FREEFILE            ' get next available file handle
+    Open CritErrPath For Append As #LogFH
+    Print #LogFH, Date$ + " " + Time$ + "  0   "+CurPrgName+" ENDED."
+    Close #LogFH
+
+	' Notify user
+	StatusBox CurPrgName+" Ended."
+	Sleep 2
+	StatusBox Close
+
+End Sub
+'***********************************************************
+'  LogEnter() - Write Entry to the Error Log - no date/time
+'***********************************************************
+Sub LogEnter(Message$,LogPath$,CritErrPath$)
+
+	Dim LogFH      As Integer
+	Dim LogMessage As String
+
+	' Make sure log file variables are initialized
+	TestLogVars(LogPath)
+
+	' get next available file handle
+    LogFH=FREEFILE 
+
+	' open file and append message
+    Open LogPath for Append As #LogFH
+    Print #LogFH, + "   "+ Message
+    Close #LogFH
+
+	' Write message to Suite Manager Log (Status Log)
+	LogMessage = Mid(Message,2,Len(Message))
+
+	Select Case	Left$(Message,1)
+
+		Case ""
+
+		Case " "
+			Log #0,+LogMessage
+		Case "0"
+			Log #0,+LogMessage
+		Case "1"
+			Log #1,+LogMessage
+			' Write Error message to Critical Error Log
+			LogFH=FREEFILE 
+			Open CritErrPath for Append As #LogFH
+		    Print #LogFH, Date$ + " " + Time$ + "  "+ Message
+			Close #LogFH
+		Case "2"
+			Log #2,+LogMessage
+			' Write Error message to Critical Error Log
+			LogFH=FREEFILE 
+			Open CritErrPath for Append As #LogFH
+		    Print #LogFH, Date$ + " " + Time$ + "  "+ Message
+			Close #LogFH
+		Case "3"
+			Log #3,+LogMessage
+			' Write Error message to Critical Error Log
+			LogFH=FREEFILE 
+			Open CritErrPath for Append As #LogFH
+		    Print #LogFH, Date$ + " " + Time$ + "  "+ Message
+			Close #LogFH
+		Case Else
+			Log #3,+LogMessage
+	End Select
+
+End Sub
+'*************************************************************
+'  LogWrite() - Write Entry to the Error Log - with date/time
+'
+'
+'  Message$     - What is the message you want to write.
+'                 The first character of the message is the
+'                 Severity level of the message.
+'  LogPath$     - Error.log path and name.
+'  CritErrPath$ - CritErr.log path and name.
+'
+'*************************************************************
+Sub LogWrite(Message$,LogPath$,CritErrPath$)
+ 
+	Dim LogFH      As Integer
+ 	Dim LogMessage As String
+
+	' Make sure log file variables are initialized
+	TestLogVars(LogPath)
+
+	' get next available file handle
+	LogFH=FREEFILE
+
+	' open file and append message
+    Open LogPath for Append As #LogFH
+    Print #LogFH, Date$ + " " + Time$ + "  "+ Message
+    Close #LogFH
+
+	' Write message to Suite Manager Log (Status Log)
+	LogMessage = Mid(Message,2,Len(Message))
+
+	Select Case	Left$(Message,1)
+
+		Case ""
+
+	'	Case " "
+	'		Log #0,+LogMessage
+		Case "0"
+			Log #0,+LogMessage
+		Case "1"
+			Log #1,+LogMessage
+			' Write Error message to Critical Error Log
+			LogFH=FREEFILE 
+			Open CritErrPath for Append As #LogFH
+		    Print #LogFH, Date$ + " " + Time$ + "  "+ Message
+			Close #LogFH
+		Case "2"
+			Log #2,+LogMessage
+			' Write Error message to Critical Error Log
+			LogFH=FREEFILE 
+			Open CritErrPath for Append As #LogFH
+		    Print #LogFH, Date$ + " " + Time$ + "  "+ Message
+			Close #LogFH
+		Case "3"
+			Log #3,+LogMessage
+			' Write Error message to Critical Error Log
+			LogFH=FREEFILE 
+			Open CritErrPath for Append As #LogFH
+		    Print #LogFH, Date$ + " " + Time$ + "  "+ Message
+			Close #LogFH
+		Case Else
+			Log #4,+LogMessage
+			' Write Error message to Critical Error Log
+			LogFH=FREEFILE 
+			Open CritErrPath for Append As #LogFH
+		    Print #LogFH, Date$ + " " + Time$ + "  "+ Message
+			Close #LogFH
+
+	End Select
+
+End Sub
+'*************************************************************
+'  LogOnly() - Write Entry to the Error Log - no date/time
+'*************************************************************
+Sub LogOnly(Message$,LogPath$,CritErrPath$)
+ 
+	Dim LogFH      As Integer
+ 	Dim LogMessage As String
+	
+	' Make sure log file variables are initialized
+	TestLogVars(LogPath)
+
+	' get next available file handle
+	LogFH=FREEFILE
+    
+	' open file and append message
+	Open LogPath for Append As #LogFH
+    Print #LogFH, Message
+    Close #LogFH
+
+	Select Case	Left$(Message,1)
+		Case "1"
+			' Write Error message to Critical Error Log
+			LogFH=FREEFILE 
+			Open CritErrPath for Append As #LogFH
+		    Print #LogFH, Message
+			Close #LogFH
+		Case "2"
+			' Write Error message to Critical Error Log
+			LogFH=FREEFILE 
+			Open CritErrPath for Append As #LogFH
+		    Print #LogFH, Message
+			Close #LogFH
+		Case "3"
+			' Write Error message to Critical Error Log
+			LogFH=FREEFILE 
+			Open CritErrPath for Append As #LogFH
+		    Print #LogFH, Message
+			Close #LogFH
+		Case Else
+			' Write Error message to Critical Error Log
+			LogFH=FREEFILE 
+			Open CritErrPath for Append As #LogFH
+		    Print #LogFH, Message
+			Close #LogFH
+	End Select
+
+
+End Sub
+'*****************************************************
+' LogError() - Write Fatal Error to the Error Log
+'
+' Parameters:
+'
+'	1) Error message to write
+'
+'	2) ApplicationToClose
+'
+'		0 None
+'		1 close routine for application 1
+'		2 close routine for application 2
+'
+'*****************************************************
+Sub LogError(Message$,ApplicationToClose%,LogPath$,CritErrPath$)
+
+	Dim LogFH     As Integer
+    Dim lcVisible As String
+    Dim lcEnabled As String
+	
+	Dim lpInfo As Info
+    WGetInfo (WGetActWnd(0), lpInfo)
+
+	If lpInfo.Visible = 1 Then
+		lcVisible = "TRUE"
+	Else
+		lcVisible = "FALSE"
+	End If
+
+	If lpInfo.Enabled = 1 Then
+		lcEnabled = "TRUE"
+	Else
+		lcEnabled = "FALSE"
+	End If
+
+	' Set SystemError variable to True
+	SystemError = True
+
+	' Make sure log file variables are initialized
+	TestLogVars(LogPath)
+
+    LogFH=FREEFILE      ' get next available file handle
+    Open LogPath For Append As #LogFH
+    Print #LogFH, Date$ + " " + Time$ + "  1 ********************************************************"
+    Print #LogFH, Date$ + " " + Time$ + "  1 ***               FATAL ERROR!"
+    Print #LogFH, Date$ + " " + Time$ + "  1 *** " + Curdir$+"\"+CurPrgName+" Could Not Continue!"
+    Print #LogFH, Date$ + " " + Time$ + "  1 *** " + Message
+    Print #LogFH, Date$ + " " + Time$ + "  1 *** Current Window Information Follows: "
+    Print #LogFH, Date$ + " " + Time$ + "  1 *** Window Handle:         "lpInfo.hWnd
+    Print #LogFH, Date$ + " " + Time$ + "  1 *** Window ID:             "lpInfo.Id
+    Print #LogFH, Date$ + " " + Time$ + "  1 *** Visible:               "+lcVisible
+    Print #LogFH, Date$ + " " + Time$ + "  1 *** Enabled:               "+lcEnabled
+    Print #LogFH, Date$ + " " + Time$ + "  1 *** Window Caption:        "+CompressString(lpInfo.Text)
+    Print #LogFH, Date$ + " " + Time$ + "  1 *** Window Classname:      "+lpInfo.Class
+    Print #LogFH, Date$ + " " + Time$ + "  1 *** Name of Owning Module: "+lpInfo.Module
+    Print #LogFH, Date$ + " " + Time$ + "  1 *** Associated Label:      "+lpInfo.Label
+    Print #LogFH, Date$ + " " + Time$ + "  1 ********************************************************"
+    Close #LogFH
+
+    LogFH=FREEFILE      ' get next available file handle
+    Open CritErrPath For Append As #LogFH
+    Print #LogFH, Date$ + " " + Time$ + "  1 ********************************************************"
+    Print #LogFH, Date$ + " " + Time$ + "  1 ***               FATAL ERROR!"
+    Print #LogFH, Date$ + " " + Time$ + "  1 *** " + Curdir$+"\"+CurPrgName+" Could Not Continue!"
+    Print #LogFH, Date$ + " " + Time$ + "  1 *** " + Message
+    Print #LogFH, Date$ + " " + Time$ + "  1 *** Current Window Information Follows: "
+    Print #LogFH, Date$ + " " + Time$ + "  1 *** Window Handle:         "lpInfo.hWnd
+    Print #LogFH, Date$ + " " + Time$ + "  1 *** Window ID:             "lpInfo.Id
+    Print #LogFH, Date$ + " " + Time$ + "  1 *** Visible:               "+lcVisible
+    Print #LogFH, Date$ + " " + Time$ + "  1 *** Enabled:               "+lcEnabled
+    Print #LogFH, Date$ + " " + Time$ + "  1 *** Window Caption:        "+CompressString(lpInfo.Text)
+    Print #LogFH, Date$ + " " + Time$ + "  1 *** Window Classname:      "+lpInfo.Class
+    Print #LogFH, Date$ + " " + Time$ + "  1 *** Name of Owning Module: "+lpInfo.Module
+    Print #LogFH, Date$ + " " + Time$ + "  1 *** Associated Label:      "+lpInfo.Label
+    Print #LogFH, Date$ + " " + Time$ + "  1 ********************************************************"
+    Close #LogFH
+
+	' Display Error notice
+	StatusBox "Fatal Error! "+Message,0,0,0,0,True,True,"MS Sans Serif", 12, 900
+	Sleep 3
+	StatusBox Close
+
+	' Write message to Suite Manager Log (Status Log)
+	Log #1,+Space(5)+Message
+	Sleep 2
+	
+	' Close desired application
+	Select Case	ApplicationToClose
+
+		Case 0
+			' Do nothing
+		Case 1
+			'Run Close application 1 procedure
+		Case 2
+			'Run Close application 2 procedure
+			' Do nothing
+
+	End Select
+
+	' End Program
+	LogClose(LogPath,CritErrPath)
+	LogWrite("",LogPath,CritErrPath)
+	End
+
+End Sub
+'************************************************************
+' Sub CloseOnSystemError - Reports and closes on System Error
+'                          Called by Error Handler Routine.
+'
+' Parameters:
+'
+'	1) ApplicationToClose
+'
+'		0 None
+'		1 close routine for application 1
+'		2 close routine for application 2
+'
+'************************************************************
+Sub CloseOnSystemError(ApplicationToClose&,LogPath$,CritErrPath$)
+
+    Dim ErrFileNum    As Integer
+	Dim ReturnInteger As Integer
+	Dim DialogInteger As Integer
+
+    ' Get next available handle for Error Log
+	ErrFileNum = FREEFILE
+
+	' Append to Error Log
+    Open LogPath For Append As #ErrFileNum
+
+	' If error exists write to Error Log
+    If Err > 0 Then
+
+        BEEP
+        Print #ErrFileNum, Date$ + " " + Time$ + " "+ Str$(Err)+"  ********************************************************"
+        Print #ErrFileNum, Date$ + " " + Time$ + " "+ Str$(Err)+"  *** MS-TEST Reports the following ERROR:"
+        Print #ErrFileNum, Date$ + " " + Time$ + " "+ Str$(Err)+"  *** "+Error$(Err)+" On Line: "Trim$(Str$(Erl(0)))
+        Print #ErrFileNum, Date$ + " " + Time$ + " "+ Str$(Err)+"  *** In Program: "+Erf(0)
+        Print #ErrFileNum, Date$ + " " + Time$ + " "+ Str$(Err)+"  *** This may cause unexpected results."
+        Print #ErrFileNum, Date$ + " " + Time$ + " "+ Str$(Err)+"  *** Attempting to end "+CurPrgName+"!"
+        Print #ErrFileNum, Date$ + " " + Time$ + " "+ Str$(Err)+"  ********************************************************"
+
+    End If
+
+	' Close Error Log
+    Close #ErrFileNum
+
+	' Append to Critical Error Log
+    Open CritErrPath For Append As #ErrFileNum
+
+	' If error exists write to Critical Error Log
+    If Err > 0 Then
+
+        BEEP
+        Print #ErrFileNum, Date$ + " " + Time$ + " "+ Str$(Err)+"  ********************************************************"
+        Print #ErrFileNum, Date$ + " " + Time$ + " "+ Str$(Err)+"  *** MS-TEST Reports the following ERROR:"
+        Print #ErrFileNum, Date$ + " " + Time$ + " "+ Str$(Err)+"  *** "+Error$(Err)+" On Line: "Trim$(Str$(Erl(0)))
+        Print #ErrFileNum, Date$ + " " + Time$ + " "+ Str$(Err)+"  *** In Program: "+Erf(0)
+        Print #ErrFileNum, Date$ + " " + Time$ + " "+ Str$(Err)+"  *** This may cause unexpected results."
+        Print #ErrFileNum, Date$ + " " + Time$ + " "+ Str$(Err)+"  *** Attempting to end "+CurPrgName+"!"
+        Print #ErrFileNum, Date$ + " " + Time$ + " "+ Str$(Err)+"  ********************************************************"
+
+    End If
+
+	' Close Critical Error Log
+    Close #ErrFileNum
+
+	' Write error notice to Status Log
+	Log #1, "     SYSTEM ERROR "+ Trim$(Str$(Err))+": Check "+LogPath+"!"
+	StatusBox "SYSTEM ERROR "+Error$(Err)+"!"
+	Sleep 3
+	StatusBox Close
+
+	' Close desired application
+	Select Case	ApplicationToClose
+		Case 0
+			' Do nothing
+		Case 1
+			' Run Close application 1 procedure
+			' Do nothing
+		Case 2
+			' Run Close application 2 procedure
+			' Do nothing
+	End Select
+
+	' End program
+    LogClose(LogPath,CritErrPath)
+	LogWrite("",LogPath,CritErrPath)
+    End
+
+End Sub
+'***************************************************************
+' CompressString - Removes Tabs and extra spaces from a string
+'***************************************************************
+Function CompressString(TheString As String) As String
+
+    Dim Spacer As Integer
+	Dim NewString As String
+
+	' Remove Tabs
+	Spacer = 1
+	Do
+		Spacer = Instr(Spacer,TheString,Chr(9))
+		If Spacer <> 0 Then
+			TheString = Mid$(TheString,1,Spacer-1)+" "+Mid$(TheString,Spacer+1)
+			Spacer = Spacer+1
+		End If
+	Loop While Spacer <> 0
+
+	' Remove Carriage Returns
+	Spacer = 1
+	Do
+		Spacer = Instr(Spacer,TheString,Chr(13))
+		If Spacer <> 0 Then
+			TheString = Mid$(TheString,1,Spacer-1)+" "+Mid$(TheString,Spacer+1)
+			Spacer = Spacer+1
+		End If
+	Loop While Spacer <> 0
+
+	' Remove Line Feeds
+	Spacer = 1
+	Do
+		Spacer = Instr(Spacer,TheString,Chr(10))
+		If Spacer <> 0 Then
+			TheString = Mid$(TheString,1,Spacer-1)+" "+Mid$(TheString,Spacer+1)
+			Spacer = Spacer+1
+		End If
+	Loop While Spacer <> 0
+
+	' Remove Spaces
+	Spacer = 1
+	Do
+		Spacer = Instr(1,TheString,Space(2))
+		If Spacer <> 0 Then
+			TheString = Mid$(TheString,1,Spacer-1)+Mid$(TheString,Spacer+1)
+			Spacer = Spacer+1
+		End If
+	Loop While Spacer <> 0
+
+	CompressString = TheString
+
+End Function
+'***************************************************************
+
+'  ParseDN() - Parse Directory name from explicit filename
+'              c:\dirname\dirname\data.dat = c:\dirname\dirname
+'***************************************************************
+Function ParseDN(DName As String) As String
+
+    Dim backslash As Integer
+    Dim LdName    As String
+
+    backslash=1                                ' init backslash found var
+
+    Do While backslash <> 0                    ' search until last '\'
+        backslash=Instr(backslash,DName,"\")   ' find backslash
+        If backslash <> 0 Then                 ' found Then
+            LdName=Mid$(DName,1,backslash-1)   ' substr remaining String
+            backslash=backslash+1              ' increment past '\'
+        End If
+    Loop                                       ' do it again
+    ParseDN=LdName                             ' return just the directory name
+
+End Function
+'*************************************************************************
+' Function ReadINI()
+'	Retrieve variables from INI file
+' 	Parameters:
+'		TheIniFile  - The name of the INI file
+'		TheSection  - The section within the INI file
+'		TheVariable	- The variable name within the Section
+'   Returns retrieved variable or NotFnd
+'*************************************************************************
+Function ReadINI(TheIniFile As String,TheSection As String,TheVariable As String) As String
+
+Dim ReturnBuffer    As String 
+Dim ReturnInteger   As Integer
+Dim ReturnString    As String 
+
+ReturnBuffer  = String$(256,0)
+ReturnInteger = GetPrivateProfileString(TheSection,TheVariable,"NotFnd",ReturnBuffer,Len(ReturnBuffer),TheIniFile)
+ReturnString  = Left$(ReturnBuffer,ReturnInteger)
+
+ReadINI = ReturnString
+
+End Function
+'************************************************************
+'  UAEErrorTrap() - Trap and Report Unhandled Exception Errors
+'************************************************************
+Sub UAEErrorTrap(UAEErrMsg As Variant)
+
+	' Write to error logs
+	LogWrite("1 **************************************",LogPath,CritErrPath)
+	LogWrite("1   Unhandled Exception Error Message Follows:",LogPath,CritErrPath)
+	LogWrite("1   "+UAEErrMsg,LogPath,CritErrPath)
+	LogWrite("1   Ending Program!",LogPath,CritErrPath)
+	LogWrite("1 **************************************",LogPath,CritErrPath)
+
+	StatusBox "Unhandled Exception Error: "+ UAEErrMsg,0,0,0,0,True,True,"MS Sans Serif", 12, 900
+	Sleep 3
+	StatusBox Close
+
+	' Write to status log
+	Log #1, "*****************************************"
+	Log #1, "Unhandled Exception Error Message Follows:"
+	Log #1,  UAEErrMsg
+	Log #1, "*****************************************"
+
+	LogClose(LogPath,CritErrPath)
+	LogWrite("",LogPath,CritErrPath)
+	End
+
+End Sub
+'*****************************************************
+' Error Handler
+'
+'*****************************************************
+ErrorHandler:
+
+    Close #fh
+
+	' Run CloseOnSystemError procedure
+	CloseOnSystemError(0,LogPath,CritErrPath)

@@ -1,0 +1,11 @@
+; EuShellExt.def : Declares the module parameters for the DLL.
+
+LIBRARY      "EuShlExt"
+DESCRIPTION  'EuShlExt Windows Dynamic Link Library'
+
+EXPORTS
+    ; Explicit exports can go here
+	DllCanUnloadNow PRIVATE
+	DllGetClassObject PRIVATE
+	DllRegisterServer PRIVATE
+	DllUnregisterServer PRIVATE

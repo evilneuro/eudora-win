@@ -1,0 +1,21 @@
+[OPTIONS]
+root=C:\Coltrane_Techpubs
+bmroot=C:\Coltrane_Techpubs\graphics\MailSite
+errorlog=C:\Coltrane_Techpubs\mailsite (.err
+title=MailSite Help
+copyright=Made with EasyHelp/Web (www.easyhelp.com)
+compress=no
+[FILES]
+mailsite (.rtf
+[WINDOWS]
+main="MailSite Help",(46,53,922,913),0,,(255,255,192), 0
+aux="Title Here",(346,353,422,413),,,, 0
+third="EasyHelp/Web",(346,353,422,413),,,, 0
+fourth="EasyHelp/Web",(346,353,422,413),,,, 0
+[CONFIG]
+BrowseButtons()
+#include <C:\EASYHELP\macros\32bit.mac>
+
+
+[MAP]
+#include <C:\Coltrane_Techpubs\mailsite (.h>

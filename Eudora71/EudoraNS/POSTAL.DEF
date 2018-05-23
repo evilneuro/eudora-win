@@ -1,0 +1,11 @@
+DESCRIPTION "Eudora's implemenation of Netscape Postal Services API"
+VERSION 1.0
+EXPORTS
+	RegisterMailClient
+	UnRegisterMailClient
+	OpenMailSession
+	CloseMailSession
+	ComposeMailMessage
+	ShowMailBox
+	ShowMessageCenter
+	GetMenuItemString

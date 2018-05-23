@@ -1,0 +1,8 @@
+esoteric.epi:
+When placed in the same directory as Eudora, esoteric.epi
+provides an interface to some extra settings.
+
+
+EudoraOldIcons.epi:
+When placed in the same directory as Eudora, EudoraOldIcons.epi
+causes Eudora to use the older Eudora 5 style icons.

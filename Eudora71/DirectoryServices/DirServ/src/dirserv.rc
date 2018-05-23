@@ -1,0 +1,138 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+#include "..\..\VersionBeg.inc"
+
+VALUE "InternalName",     "DirServ\0"
+VALUE "OriginalFilename", "DirServ.dll\0"
+VALUE "FileDescription",  "Eudora Directory Services Engine\0"
+VALUE "Comments",         "Eudora Directory Services Engine\0"
+
+#include "..\..\VersionEnd.inc"
+
+#endif    // !_MAC
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_ERR_OLE             "Ole Error"
+    IDS_ERR_LOADPROTO       "Error Loading Protocol Module"
+    IDS_REGPATH             "Software\\Qualcomm\\Shared\\DirServices"
+    IDS_DS_NAME             "Name"
+    IDS_DS_COMPANY          "Company"
+    IDS_DS_DIVISION         "Division"
+    IDS_DS_POSITION         "Title"
+    IDS_DS_LOCATION         "Location"
+    IDS_DS_ADDRESS          "Street(w)"
+    IDS_DS_CITY             "City(w)"
+    IDS_DS_STATE            "State(w)"
+    IDS_DS_ZIPCODE          "Zip Code(w)"
+    IDS_DS_PHONE            "Phone(w)"
+    IDS_DS_CELL             "Cell Phone(w)"
+    IDS_DS_PAGER            "Pager(w)"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_DS_PEMAIL           "Pager Email(w)"
+    IDS_DS_FAX              "Fax(w)"
+    IDS_DS_EMAIL            "Email(w)"
+    IDS_DS_PGPKEY           "PGP Key(w)"
+    IDS_DS_PAGERTYPE        "Pager Type(w)"
+    IDS_DS_PAGERPIN         "Pager Pin(w)"
+    IDS_DS_HADDRESS         "Street(h)"
+    IDS_DS_HCITY            "City(h)"
+    IDS_DS_HSTATE           "State(h)"
+    IDS_DS_HZIPCODE         "Zip Code(h)"
+    IDS_DS_HPHONE           "Phone(h)"
+    IDS_DS_HCELL            "Cell Phone(h)"
+    IDS_DS_HPAGER           "Pager(h)"
+    IDS_DS_HPEMAIL          "Pager Email(h)"
+    IDS_DS_HFAX             "Fax(h)"
+    IDS_DS_HEMAIL           "Email(h)"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_DS_HPGPKEY          "PGP Key(h)"
+    IDS_DS_HPAGERTYPE       "Pager Type(h)"
+    IDS_DS_HPAGERPIN        "Pager Pin(h)"
+    IDS_DS_USERDEFINED      "User Defined"
+    IDS_DS_UNKNOWN          "Unknown"
+    IDS_DS_COMMENTS         "Comments"
+    IDS_DS_EMAILALIAS       "Email Alias"
+    IDS_DS_NULL             "Not displayed"
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

@@ -1,0 +1,46 @@
+1.0 50 Profile Changes
+	1.1 In a nutshell, we will allow client and server to exchange profile id’s in the playlist process, and allow the profile id policy to be controlled from the server
+2.0 Server
+	2.1 Profileid assignment and tracking
+		2.1.1 Assign profileid to any adware mode client without one
+		2.1.2 Send <profile> tag in clientinfo
+		2.1.3 Count playlist fetches from the given profile in table on the server until user profiles
+	2.2 Nagging
+		2.2.1 At certain playlist count intervals (FSOA, 3,7,3,1), direct the client to nag the user
+		2.2.2 Send <nag> tag around 255 max characters of explanation
+		2.2.3 Send “level” attribute.
+			2.2.3.1 value = 0; show simple “please profile” dialog
+			2.2.3.2 value = 1; show variant on “light downgrade” alert
+	2.3 Devolvement
+		2.3.1 send <clientmode>3</clientmode> tag in clientinfo if user has made more than prescribed # (FSOA, 14) of playlist fetches without profiling
+		2.3.2 if get clientmode of 3 from profiled user, reset clientmode to 0
+	2.4 ProfileID mail may go away
+3.0 Client
+	3.1 Accept <profile> tag from server
+	3.2 Protect profileID better
+	3.3 Parse <nag> tag
+		3.3.1 level 0 - put up simple “Please profile” dialog with server text as explanation
+		3.3.2 level 1 - put up variant of light downgrade dialog
+		3.3.3 “Profile” button goes to “customize the ads you see” jump
+	3.4 Accept <clientmode> 
+		3.4.1 Clientmode 3 is deadbeat
+			3.4.1.1 Equivalent to Light
+			3.4.1.2 If hit “adware” button, client will
+				3.4.1.2.1 Preflight profile URL
+				3.4.1.2.2 Send user to profile page
+				3.4.1.2.3 Put up dialog:
+					3.4.1.2.3.1 You must profile to use Eudora in Adware mode.  Hit OK when you have finished profiling.
+				3.4.1.2.4 After user hits ok
+					3.4.1.2.4.1 Make immediate playlist fetch
+					3.4.1.2.4.2 Let server change mode to adware if it chooses
+	3.5 Display nag to user at next convenient opportunity
+	3.6 Note: Continue to accept profileid mail as now, just in case.
+4.0 Playlist Changes
+	4.1 <Profile> tag is bi-directional
+	4.2 <ClientMode> tag is bi-directional
+	4.3 New clientmode of 3
+	4.4 New <nag> tag, with <heading> and <body> subsections
+5.0 Biz Stuff
+	5.1 Must write new intro about requiring profiles
+	5.2 Must amend privacy policy
+	5.3 Must amend license agreement

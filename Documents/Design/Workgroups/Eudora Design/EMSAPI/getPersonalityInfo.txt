@@ -1,0 +1,109 @@
+Change 887 by sdorner@sd8500e on 1998/05/27 09:14:52
+
+	Added GetPersonalityInfo emsapi call.
+
+Affected files ...
+
+... //depot/projects/eudora/mac/Current/Include/emsapi-MacGlue.h#6 edit
+... //depot/projects/eudora/mac/Current/Include/emsapi-mac.h#7 edit
+... //depot/projects/eudora/mac/Current/trans.c#18 edit
+
+Differences ...
+
+==== //depot/projects/eudora/mac/Current/Include/emsapi-MacGlue.h#6 (text) ====
+
+178a179,189
+> typedef struct emsGetPersonalityInfoDataS *emsGetPersonalityInfoDataP, **emsGetPersonalityInfoDataH;
+> #if GENERATINGCFM
+> typedef UniversalProcPtr emsGetPersonalityInfo;
+> enum { uppemsGetPersonalityInfoProcInfo = kPascalStackBased
+>         | RESULT_SIZE(SIZE_CODE(sizeof(short)))
+>         | STACK_ROUTINE_PARAMETER(1, SIZE_CODE(sizeof(emsGetPersonalityInfoDataP))) };
+> #else
+> typedef pascal short (*emsGetPersonalityInfo)(emsGetPersonalityInfoDataP getPersonalityData);
+> #endif
+> typedef emsGetPersonalityInfo emsGetPersonalityInfoUPP;
+> 
+260a272
+>     emsGetPersonalityInfo    EMSGetPersonalityInfoFunction;
+355a368,373
+> /* ----- NEW - GetPersonalityInfo Data ---------------------------- */
+> typedef struct emsGetPersonalityInfoDataS{
+>     long                size;           /* IN: Size of this data structure */
+>     StringHandle        personalityName;/* IN: name of personality */
+>     emsAddress          personality;    /* OUT: Address info for selected personality */
+> } emsGetPersonalityInfoData;
+
+==== //depot/projects/eudora/mac/Current/Include/emsapi-mac.h#7 (text) ====
+
+189a190,206
+> typedef struct emsGetPersonalityInfoDataS *emsGetPersonalityInfoDataP, **emsGetPersonalityInfoDataH;
+> #if GENERATINGCFM
+> typedef UniversalProcPtr emsGetPersonalityInfo, emsGetPersonalityInfoUPP;
+> enum { uppemsGetPersonalityInfoProcInfo = kPascalStackBased
+>         | RESULT_SIZE(SIZE_CODE(sizeof(short)))
+>         | STACK_ROUTINE_PARAMETER(1, SIZE_CODE(sizeof(emsGetPersonalityInfoDataP))) };
+> #define NewEMSGetPersonalityInfoProc(userRoutine)		\
+> 		(uppemsGetPersonalityInfoProcInfo) NewRoutineDescriptor((ProcPtr)(userRoutine), \
+> 		emsGetPersonalityInfoProcInfo, GetCurrentArchitecture())
+> #define CallEMSGetPersonalityInfoProc(userRoutine, data)		\
+> 		CallUniversalProc((UniversalProcPtr)(userRoutine), uppemsGetPersonalityInfoProcInfo, (data))
+> #else
+> typedef pascal short (*emsGetPersonalityInfo)(emsGetPersonalityInfoDataP getPersonalityData);
+> #define NewEMSGetPersonalityInfoProc(userRoutine) ((uppemsGetPersonalityInfoProcInfo)(userRoutine))
+> #define CallEMSGetPersonalityInfoProc(userRoutine, data) (*(userRoutine))((data))
+> #endif
+> 
+291a309
+>     emsGetPersonalityInfo    EMSGetPersonalityInfoFunction;
+380a399,404
+> /* ----- NEW - GetPersonalityInfo Data ---------------------------- */
+> typedef struct emsGetPersonalityInfoDataS{
+>     long                size;           /* IN: Size of this data structure */
+>     StringHandle        personalityName;/* IN: name of personality */
+>     emsAddress          personality;    /* OUT: Address info for selected personality */
+> } emsGetPersonalityInfoData;
+
+==== //depot/projects/eudora/mac/Current/trans.c#18 (text) ====
+
+125a126,127
+> typedef pascal short ETLGetPersonalityInfoType(emsGetPersonalityInfoDataP getPersonalityData); 
+> SIMPLE_UPP(ETLGetPersonalityInfo,emsGetPersonalityInfo);
+614a617
+> 	mailConfig->callBacks.EMSGetPersonalityInfoFunction = ETLGetPersonalityInfoUPP;
+1291a1295,1329
+> 	
+> 	CurPers = oldCur;
+> 	
+> 	return result;
+> }
+> 
+> /**********************************************************************
+>  * ETLGetPersonalityInfo - allow user to select a personality
+>  **********************************************************************/
+> static pascal short ETLGetPersonalityInfo(emsGetPersonalityInfoDataP pData)
+> {
+> 	short		result = EMSR_OK;
+> 	Str255	scratch;
+> 	PersHandle oldCur = CurPers;
+> 	long oldSize = pData->size;
+> 	
+> 	Zero(pData->personality);
+> 	SetSize(pData->personality);
+> 
+> 	PCopy(scratch,*pData->personalityName);
+> 	if (CurPers = FindPersByName(scratch))
+> 	{
+> 		//	Return address info from personality
+> 		GetReturnAddr(scratch,false);
+> 		if (scratch[*scratch]=='>') --*scratch;
+> 		if (*scratch && scratch[1]=='<')
+> 		{
+> 			--*scratch;
+> 			BMD(scratch+2,scratch+1,*scratch);
+> 		}
+> 		pData->personality.address = NewString(scratch);
+> 		pData->personality.realname = NewString(GetPref(scratch,PREF_REALNAME));
+> 	}
+> 	else
+> 		result = EMSR_NO_ENTRY;

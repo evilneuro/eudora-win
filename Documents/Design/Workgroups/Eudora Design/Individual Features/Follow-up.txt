@@ -1,0 +1,31 @@
+1.0 Follow-up
+	1.1 For motivation and spec, see <http://pobox.com/~djb/proto/replyto.html>
+	1.2 Proposal
+		1.2.1 Add the follow-up operation
+			1.2.1.1 We will then have three operations:
+Reply to Author
+Reply
+Reply to All
+				1.2.1.1.1 Reply to Author is our current Reply
+				1.2.1.1.2 Reply to All stays the same
+				1.2.1.1.3 Reply is the follow-up operation.
+			1.2.1.2 Accellerators
+				1.2.1.2.1 The user should be able to put <R> on Reply to Author or Reply, but not Reply All.
+				1.2.1.2.2 Existing users who have Reply to All as <R> should get cmd-R mapped to Reply.
+				1.2.1.2.3 modifier-<R> will do Reply if <R> is mapped to Reply to Author
+				1.2.1.2.4 There will be no accellerator for Reply To All
+		1.2.2 Figuring out the address list for replies
+			1.2.2.1 For each operation, addresses taken from first header found in list.
+			1.2.2.2 Reply to Author
+				1.2.2.2.1 Mail-Reply-To:
+				1.2.2.2.2 Reply-To:
+				1.2.2.2.3 From:
+			1.2.2.3 Reply
+				1.2.2.3.1 Mail-Followup-To:
+				1.2.2.3.2 <Reply to All>
+			1.2.2.4 Reply to All
+				1.2.2.4.1 <Reply-To-Author>+To:+Cc:
+		1.2.3 Generation
+			1.2.3.1 We will not generate Mail-Reply-To.
+			1.2.3.2 We will generate Mail-Followup-To iff any of the addresses in the message belong to a mailing list that MLM knows will send posted mail to the user.
+			1.2.3.3 When we generate MFT, it will contain To: and Cc:, duplicate-deleted.

@@ -1,0 +1,17 @@
+// QCSocketVer.rc
+
+// DO NOT USE DEV STUDIO TO EDIT THIS FILE
+//
+
+#ifdef APSTUDIO_INVOKED
+#error DO NOT USE DEV STUDIO TO EDIT THIS FILE
+#endif
+
+#include "..\..\VersionBeg.inc"
+
+VALUE "InternalName",     "QCSOCKET\0"
+VALUE "OriginalFilename", "QCSOCKET.DLL\0"
+VALUE "FileDescription",  "Socket Library\0"
+VALUE "Comments",         "Socket Library\0"
+
+#include "..\..\VersionEnd.inc"

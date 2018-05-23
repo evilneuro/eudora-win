@@ -1,0 +1,17 @@
+// EuMemMgrVer.rc
+
+// DO NOT USE DEV STUDIO TO EDIT THIS FILE
+//
+
+#ifdef APSTUDIO_INVOKED
+#error DO NOT USE DEV STUDIO TO EDIT THIS FILE
+#endif
+
+#include "..\..\..\VersionBeg.inc"
+
+VALUE "InternalName",     "EuMemMgr\0"
+VALUE "OriginalFilename", "EuMemMgr.dll\0"
+VALUE "FileDescription",  "EuMemMgr\0"
+VALUE "Comments",         "The Qualcomm Memory Manager DLL. Subhashis Mohanty\0"
+
+#include "..\..\..\VersionEnd.inc"

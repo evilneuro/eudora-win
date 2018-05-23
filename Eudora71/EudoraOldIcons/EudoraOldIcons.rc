@@ -1,0 +1,300 @@
+//Microsoft Developer Studio generated resource script.
+//
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "..\\eudora\\resource.h"
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDD_SETTINGS_FIRST_CAT  ICON    DISCARDABLE     "RES\\ICONS\\SETCAT.ICO"
+IDD_SETTINGS_VIEWING_MAIL ICON    DISCARDABLE     "res\\icons\\viewmail.ico"
+IDD_SETTINGS_GET_START  ICON    DISCARDABLE     "RES\\ICONS\\GETSTART.ICO"
+IDD_SETTINGS_CHECKING   ICON    DISCARDABLE     "RES\\ICONS\\CHECKING.ICO"
+IDD_SETTINGS_INCOMING   ICON    DISCARDABLE     "RES\\ICONS\\CHECKING.ICO"
+IDD_SETTINGS_SENDING    ICON    DISCARDABLE     "RES\\ICONS\\SENDING.ICO"
+IDD_SETTINGS_REPLYING   ICON    DISCARDABLE     "RES\\ICONS\\REPLYING.ICO"
+IDD_SETTINGS_ATTACH     ICON    DISCARDABLE     "RES\\ICONS\\ATTACH.ICO"
+IDD_SETTINGS_FONTS      ICON    DISCARDABLE     "RES\\ICONS\\FONTDISP.ICO"
+IDD_SETTINGS_DISPLAY    ICON    DISCARDABLE     "res\\icons\\display.ico"
+IDD_SETTINGS_MAILBOXES  ICON    DISCARDABLE     "res\\icons\\mboxes.ico"
+IDD_SETTINGS_STYLED_TEXT ICON    DISCARDABLE     "res\\icons\\styltext.ico"
+IDD_SETTINGS_SPELL      ICON    DISCARDABLE     "RES\\ICONS\\SPELLING.ICO"
+IDD_SETTINGS_DATE_DISPLAY ICON    DISCARDABLE     "res\\icons\\datedisp.ico"
+IDD_SETTINGS_LABELS     ICON    DISCARDABLE     "RES\\ICONS\\LABELS.ICO"
+IDD_SETTINGS_GET_ATTEN  ICON    DISCARDABLE     "RES\\ICONS\\GETATTEN.ICO"
+IDD_SETTINGS_EXTRA_WARNINGS ICON    DISCARDABLE     "RES\\ICONS\\ExtrWarn.ico"
+IDD_SETTINGS_ADV_NET    ICON    DISCARDABLE     "RES\\ICONS\\ANETWORK.ICO"
+IDD_SETTINGS_MAPI       ICON    DISCARDABLE     "RES\\ICONS\\MAPI.ICO"
+IDD_SETTINGS_ACAP_CLIENT ICON    DISCARDABLE     "RES\\ICONS\\ACAP.ICO"
+IDD_SETTINGS_AUTO       ICON    DISCARDABLE     "RES\\ICONS\\SETTAUTO.ICO"
+IDD_SETTINGS_KERBEROS   ICON    DISCARDABLE     "RES\\ICONS\\KERBEROS.ICO"
+IDD_SETTINGS_MISC       ICON    DISCARDABLE     "res\\icons\\miscell.ico"
+IDR_MAINFRAME           ICON    DISCARDABLE     "RES\\ICONS\\EUDORA.ICO"
+IDR_TOC                 ICON    DISCARDABLE     "RES\\ICONS\\MAILBOX.ICO"
+IDR_READMESS            ICON    DISCARDABLE     "RES\\ICONS\\READMESS.ICO"
+IDR_COMPMESS            ICON    DISCARDABLE     "RES\\ICONS\\COMPMESS.ICO"
+IDR_MAILBOXES           ICON    DISCARDABLE     "RES\\ICONS\\MAILBOXS.ICO"
+IDR_SIGNATURES          ICON    DISCARDABLE     "RES\\ICONS\\SIGNATUR.ICO"
+IDR_NICKNAMES           ICON    DISCARDABLE     "RES\\ICONS\\NICKNAME.ICO"
+IDR_DIRECTORY_SERVICES  ICON    DISCARDABLE     "RES\\ICONS\\DirectoryServices.ico"
+IDR_FILTERS             ICON    DISCARDABLE     "RES\\ICONS\\FILTERS.ICO"
+IDR_FILTER_REPORT       ICON    DISCARDABLE     "RES\\ICONS\\FILTREP.ICO"
+IDR_FILE_BROWSER        ICON    DISCARDABLE     "res\\icons\\FileBrowse.ico"
+IDR_STATIONERY          ICON    DISCARDABLE     "res\\icons\\stationery.ico"
+IDR_TEXTFILE            ICON    DISCARDABLE     "RES\\ICONS\\ICON1.ICO"
+IDR_MOREHELP            ICON    DISCARDABLE     "res\\icons\\help.ico"
+IDR_UPDATE_NAG          ICON    DISCARDABLE     "res\\icons\\eudora.ico"
+IDR_PERSONALITIES       ICON    DISCARDABLE     "RES\\ICONS\\PERSONA.ICO"
+IDI_SEND_MAIL           ICON    DISCARDABLE     "RES\\ICONS\\SENDMAIL.ICO"
+IDR_NEWFILE             ICON    DISCARDABLE     "RES\\ICONS\\NEWFILE.ICO"
+IDR_TASK_STATUS         ICON    DISCARDABLE     "res\\icons\\TaskStatus.ico"
+IDI_HAVE_MAIL           ICON    DISCARDABLE     "RES\\ICONS\\HAVEMAIL.ICO"
+IDI_HAVE_SEND_MAIL      ICON    DISCARDABLE     "RES\\ICONS\\HAVESEND.ICO"
+IDI_NO_MAIL             ICON    DISCARDABLE     "RES\\ICONS\\NOMAIL.ICO"
+IDI_NO_TRANSLATOR       ICON    DISCARDABLE     "RES\\ICONS\\NOTRANS.ICO"
+IDI_DEFAULT_PLUGIN_ATTACH ICON    DISCARDABLE     "res\\icons\\defattach.ico"
+IDI_TOWTRUCK            ICON    DISCARDABLE     "res\\icons\\towtruck.ico"
+IDI_DEFAULT_PLUGIN_TOOL ICON    DISCARDABLE     "res\\icons\\deftool.ico"
+IDI_DEFAULT_PLUGIN_REQUEST ICON    DISCARDABLE     "res\\icons\\defreq.ico"
+IDI_ATTACH_DEFAULT      ICON    DISCARDABLE     "res\\icons\\attach_d.ico"
+IDI_ATTACH_NOTFOUND     ICON    DISCARDABLE     "res\\icons\\attachnfound.ico"
+IDR_TASK_ERROR          ICON    DISCARDABLE     "res\\icons\\idr_task.ico"
+IDD_SETTINGS_TASKS      ICON    DISCARDABLE     "res\\icons\\TaskStatusSetting.ico"
+IDR_SEARCH_WND          ICON    DISCARDABLE     "res\\icons\\search.ico"
+IDD_SETTINGS_FIELD_COMP ICON    DISCARDABLE     "res\\icons\\fieldcom.ico"
+IDI_OPTIONS             ICON    DISCARDABLE     "res\\icons\\options.ico"
+IDI_ACCOUNT_PROP_HOSTS  ICON    DISCARDABLE     "res\\icons\\hosts.ico"
+IDI_ACCOUNT_PROP_MBOX   ICON    DISCARDABLE     "res\\icons\\mailbox.ico"
+IDR_IMAP_FILTERS        ICON    DISCARDABLE     "res\\icons\\IMFILTERS.ICO"
+IDR_AD_WINDOW           ICON    DISCARDABLE     "res\\icons\\Ad.ico"
+IDI_EUDORA_INFO_ATTACH  ICON    DISCARDABLE     "res\\icons\\EudoraInfo.ico"
+IDR_LINK_HISTORY        ICON    DISCARDABLE     "res\\icons\\LinkHistory.ico"
+IDI_HELP                ICON    DISCARDABLE     "res\\icons\\help.ico"
+IDD_SETTINGS_INTERNET_DIALUP ICON    DISCARDABLE     "res\\icons\\InternetDialup.ico"
+IDD_SETTINGS_MOODMAIL   ICON    DISCARDABLE     "res\\icons\\MoodCat.ico"
+IDD_SETTINGS_JUNK       ICON    DISCARDABLE     "res\\icons\\Junk.ico"
+IDD_SETTINGS_JUNK_EXTRAS ICON    DISCARDABLE     "res\\icons\\JunkExtras.ico"
+IDD_SETTINGS_CON_CON    ICON    DISCARDABLE     "res\\icons\\ContentConcentrator.ico"
+IDD_SETTINGS_STATISTICS ICON    DISCARDABLE     "res\\icons\\Stats.ico"
+IDI_MOODWATCH_SCORE2    ICON    DISCARDABLE     "res\\icons\\moodwatch_2.ico"
+IDI_MOODWATCH_SCORE1    ICON    DISCARDABLE     "res\\icons\\moodwatch_1.ico"
+IDI_MOODWATCH_SCORE3    ICON    DISCARDABLE     "res\\icons\\moodwatch_3.ico"
+IDR_USAGE_STATISTICS    ICON    DISCARDABLE     "res\\icons\\idr_Stats.ico"
+IDD_SETTINGS_COMPOSING  ICON    DISCARDABLE     "res\\icons\\CompMsgSettings.ico"
+IDI_MOODWATCH_32_SCORE1 ICON    DISCARDABLE     "res\\icons\\mw32score1.ico"
+IDI_MOODWATCH_32_SCORE2 ICON    DISCARDABLE     "res\\icons\\mw32score2.ico"
+IDI_SECURE              ICON    DISCARDABLE     "res\\icons\\secure.ico"
+IDI_MAILBOX             ICON    DISCARDABLE     "res\\icons\\MailExpl.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_SERVER_LEAVE        BITMAP  DISCARDABLE     "RES\\ICONS\\sleave.bmp"
+IDB_SERVER_FETCH        BITMAP  DISCARDABLE     "RES\\ICONS\\sfetch.bmp"
+IDB_SERVER_DELETE       BITMAP  DISCARDABLE     "RES\\ICONS\\sdelete.bmp"
+IDB_SERVER_FETCH_DELETE BITMAP  DISCARDABLE     "RES\\ICONS\\sfetchde.bmp"
+IDB_PRIOR_HIGHEST       BITMAP  DISCARDABLE     "RES\\ICONS\\PHIGHEST.BMP"
+IDB_PRIOR_HIGH          BITMAP  DISCARDABLE     "RES\\ICONS\\PHIGH.BMP"
+IDB_PRIOR_NORMAL        BITMAP  DISCARDABLE     "RES\\ICONS\\PNORMAL.BMP"
+IDB_PRIOR_LOW           BITMAP  DISCARDABLE     "RES\\ICONS\\PLOW.BMP"
+IDB_PRIOR_LOWEST        BITMAP  DISCARDABLE     "RES\\ICONS\\PLOWEST.BMP"
+IDB_PRIOR_MENU_HIGHEST  BITMAP  DISCARDABLE     "RES\\ICONS\\PMENUHIGHEST.BMP"
+IDB_PRIOR_MENU_HIGH     BITMAP  DISCARDABLE     "RES\\ICONS\\PMENUHIGH.BMP"
+IDB_PRIOR_MENU_NORMAL   BITMAP  DISCARDABLE     "RES\\ICONS\\PMENUNORMAL.BMP"
+IDB_PRIOR_MENU_LOW      BITMAP  DISCARDABLE     "RES\\ICONS\\PMENULOW.BMP"
+IDB_PRIOR_MENU_LOWEST   BITMAP  DISCARDABLE     "RES\\ICONS\\PMENULOWEST.BMP"
+IDB_ATTACHMENT          BITMAP  DISCARDABLE     "RES\\ICONS\\ATTACH.BMP"
+IDB_SIGNATURE           BITMAP  DISCARDABLE     "RES\\ICONS\\SIG.BMP"
+IDB_SIGNATURE_NONE      BITMAP  DISCARDABLE     "RES\\ICONS\\SIGNONE.BMP"
+IDB_ENCODING_MIME       BITMAP  DISCARDABLE     "RES\\ICONS\\MIME.BMP"
+IDB_ENCODING_BINHEX     BITMAP  DISCARDABLE     "RES\\ICONS\\BINHEX.BMP"
+IDB_ENCODING_UUENCODE   BITMAP  DISCARDABLE     "RES\\ICONS\\UUENCODE.BMP"
+IDB_UNREAD_STATUS       BITMAP  DISCARDABLE     "RES\\ICONS\\URSTATUS.BMP"
+IDB_LOCKED              BITMAP  DISCARDABLE     "RES\\ICONS\\LOCKED.BMP"
+IDB_NICKTREE            BITMAP  DISCARDABLE     "res\\icons\\nicktree.bmp"
+IDR_MAINFRAME16         BITMAP  DISCARDABLE     "res\\icons\\tbar16.bmp"
+IDR_MAINFRAME16A        BITMAP  DISCARDABLE     "res\\icons\\tbar16a.bmp"
+IDR_MAINFRAME16B        BITMAP  DISCARDABLE     "res\\icons\\tbar16b.bmp"
+IDR_MAINFRAME32         BITMAP  DISCARDABLE     "res\\icons\\tbar32.bmp"
+IDR_MAINFRAME32A        BITMAP  DISCARDABLE     "res\\icons\\tbar32a.bmp"
+IDR_MAINFRAME32B        BITMAP  DISCARDABLE     "res\\icons\\tbar32b.bmp"
+IDB_PROP_MULT_WIN       BITMAP  DISCARDABLE     "res\\icons\\prop_mult_win.bmp"
+IDB_PROP_MULT_WINS      BITMAP  DISCARDABLE     "res\\icons\\prop_mult_wins.bmp"
+IDB_PROP_TACK           BITMAP  FIXED IMPURE    "res\\icons\\prop_tac.bmp"
+IDB_PROP_TACK_OUT       BITMAP  FIXED IMPURE    "res\\icons\\proptacU.bmp"
+IDB_QCLOGO              BITMAP  DISCARDABLE     "res\\icons\\qclogo.bmp"
+IDB_QCLOGOMASK          BITMAP  DISCARDABLE     "res\\icons\\qclogomask.bmp"
+IDB_TRANSFER_MENU       BITMAP  DISCARDABLE     "res\\icons\\transfer.bmp"
+IDB_FILTERS             BITMAP  DISCARDABLE     "res\\icons\\filters.bmp"
+IDR_READMESS            BITMAP  DISCARDABLE     "res\\icons\\RTB1.bmp"
+IDB_SORTBYSTATUS        BITMAP  DISCARDABLE     "res\\icons\\SortByStatus.bmp"
+IDB_SORTBYPRIORITY      BITMAP  DISCARDABLE     "res\\icons\\SortByPriority.bmp"
+IDB_SORTBYATTACHMENT    BITMAP  DISCARDABLE     "res\\icons\\SortByAttachment.bmp"
+IDB_SORTBYLABEL         BITMAP  DISCARDABLE     "res\\icons\\SortByLabel.bmp"
+IDB_SORTBYSENDER        BITMAP  DISCARDABLE     "res\\icons\\SortBySender.bmp"
+IDB_SORTBYDATE          BITMAP  DISCARDABLE     "res\\icons\\SortByDate.bmp"
+IDB_SORTBYSIZE          BITMAP  DISCARDABLE     "res\\icons\\SortBySize.bmp"
+IDB_SORTBYSERVERSTATUS  BITMAP  DISCARDABLE     "res\\icons\\SortByServerStatus.bmp"
+IDB_SORTBYSUBJECT       BITMAP  DISCARDABLE     "res\\icons\\SortBySubject.bmp"
+IDB_SORTBYJUNK          BITMAP  DISCARDABLE     "res\\icons\\SortByJunk.bmp"
+IDB_STATUS_UNREAD       BITMAP  DISCARDABLE     "res\\icons\\StatusUnread.bmp"
+IDB_STATUS_READ         BITMAP  DISCARDABLE     "res\\icons\\StatusRead.bmp"
+IDB_STATUS_REPLIED      BITMAP  DISCARDABLE     "res\\icons\\StatusReplied.bmp"
+IDB_STATUS_FORWARDED    BITMAP  DISCARDABLE     "res\\icons\\StatusForwarded.bmp"
+IDB_STATUS_REDIRECT     BITMAP  DISCARDABLE     "res\\icons\\StatusRedirect.bmp"
+IDB_STATUS_UNSENDABLE   BITMAP  DISCARDABLE     "res\\icons\\StatusUnsendable.bmp"
+IDB_STATUS_SENDABLE     BITMAP  DISCARDABLE     "res\\icons\\StatusSendable.bmp"
+IDB_STATUS_QUEUED       BITMAP  DISCARDABLE     "res\\icons\\StatusQueued.bmp"
+IDB_STATUS_SENT         BITMAP  DISCARDABLE     "res\\icons\\StatusSent.bmp"
+IDB_STATUS_UNSENT       BITMAP  DISCARDABLE     "res\\icons\\StatusUnsent.bmp"
+IDB_STATUS_TIME_QUEUED  BITMAP  DISCARDABLE     "res\\icons\\StatusTimeQueued.bmp"
+IDB_NDS_DIRSERV_STATUSUN BITMAP  DISCARDABLE     "res\\icons\\statusun.bmp"
+IDR_COMPMESS            BITMAP  DISCARDABLE     "res\\icons\\comptbar.bmp"
+IDB_SAFETY_PALETTE      BITMAP  DISCARDABLE     "res\\icons\\safety.bmp"
+IDB_IL_COMMON16         BITMAP  DISCARDABLE     "res\\icons\\il_common16.bmp"
+IDB_IL_COMMON32         BITMAP  DISCARDABLE     "res\\icons\\il_common32.bmp"
+IDB_IL_MAILTREE         BITMAP  DISCARDABLE     "res\\icons\\il_mailtree.bmp"
+IDB_IL_STATUS           BITMAP  DISCARDABLE     "res\\icons\\il_status.bmp"
+IDB_IL_STATUSM          BITMAP  DISCARDABLE     "res\\icons\\il_statusm.bmp"
+IDB_IL_TASK_STATUS      BITMAP  DISCARDABLE     "res\\icons\\il_TaskStatus.bmp"
+IDB_IL_TASK_ERROR       BITMAP  DISCARDABLE     "res\\icons\\TaskError.bmp"
+IDB_TREECTRL_CHECKMARKS BITMAP  DISCARDABLE     "res\\icons\\checkmar.bmp"
+IDB_IL_STATBAR_TASK_STATUS BITMAP  DISCARDABLE     "res\\icons\\StatBarTaskStatusIL.bmp"
+IDB_AUTOCOMP            BITMAP  DISCARDABLE     "res\\icons\\autocomp.bmp"
+IDB_STATUS_RECOVERED    BITMAP  DISCARDABLE     "res\\icons\\StatusRecovered.bmp"
+IDB_IL_DIGITS_4X5       BITMAP  DISCARDABLE     "res\\icons\\Digits_4x5.bmp"
+IDB_ADWARE_BUTTON       BITMAP  DISCARDABLE     "res\\icons\\AdwareButton.bmp"
+IDB_PAID_BUTTON         BITMAP  DISCARDABLE     "res\\icons\\PaidButton.bmp"
+IDB_FREE_BUTTON         BITMAP  DISCARDABLE     "res\\icons\\FreeButton.bmp"
+IDB_REGISTER_BUTTON     BITMAP  DISCARDABLE     "res\\icons\\RegisterButton.bmp"
+IDB_DEMOGRAPHICS_BUTTON BITMAP  DISCARDABLE     "res\\icons\\DemographicsButton.bmp"
+IDB_FIND_VERSIONS_BUTTON BITMAP  DISCARDABLE     "res\\icons\\FindVersionsButton.bmp"
+IDB_CHANGE_REGISTRATION_BUTTON BITMAP  DISCARDABLE     "res\\icons\\ChangeRegistrationButton.bmp"
+IDB_FULL_FEATURE        BITMAP  DISCARDABLE     "res\\icons\\FullFeature.bmp"
+IDB_LINK_HISTORY_TYPES  BITMAP  DISCARDABLE     "res\\icons\\LinkHistoryTypes.bmp"
+ID_TOOLBAR_AD           BITMAP  DISCARDABLE     "res\\icons\\qclogo.bmp"
+IDB_IL_MOOD_MAIL        BITMAP  DISCARDABLE     "res\\icons\\MoodMail.bmp"
+IDB_SORTBYMOOD          BITMAP  DISCARDABLE     "res\\icons\\SortByMood.bmp"
+IDB_IL_MOOD_MAILM       BITMAP  DISCARDABLE     "res\\icons\\il_mood_m.bmp"
+IDC_PEANUT_TOOLBAR      BITMAP  DISCARDABLE     "res\\icons\\PeanutToolbar.bmp"
+IDB_NEWBOOK             BITMAP  DISCARDABLE     "res\\icons\\NewBook.bmp"
+IDB_NEWNICK             BITMAP  DISCARDABLE     "res\\icons\\NewNick.bmp"
+IDB_SWAP                BITMAP  DISCARDABLE     "res\\icons\\Swap.bmp"
+IDB_REMOVE              BITMAP  DISCARDABLE     "res\\icons\\Remove.bmp"
+IDB_CHILIBRUSH          BITMAP  DISCARDABLE     "res\\icons\\ChiliBrush.bmp"
+IDB_SPELLBRUSH          BITMAP  DISCARDABLE     "res\\icons\\SpellBrush.bmp"
+IDB_NONHWORDBRUSH       BITMAP  DISCARDABLE     "res\\icons\\NonHWordBrush.bmp"
+IDB_STATUS_SSL          BITMAP  DISCARDABLE     "res\\icons\\status_s.bmp"
+IDB_BITMAP_CERT_TREE    BITMAP  DISCARDABLE     "res\\icons\\certbits.bmp"
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 6,0,0,0
+ PRODUCTVERSION 6,0,0,0
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x2L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904b0"
+        BEGIN
+            VALUE "Comments", "Should be placed in the same directory as Eudora.exe\0"
+            VALUE "CompanyName", "QUALCOMM Incorporated\0"
+            VALUE "FileDescription", "Restores the old Eudora icons\0"
+            VALUE "FileVersion", "6, 0, 0, 0\0"
+            VALUE "InternalName", "Eudora Dominant Renaming\0"
+            VALUE "LegalCopyright", "Copyright © 1991-2003\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "DefPers.dll\0"
+            VALUE "PrivateBuild", "\0"
+            VALUE "ProductName", "Eudora Old Icons Dynamic Link Library\0"
+            VALUE "ProductVersion", "6, 0, 0, 0\0"
+            VALUE "SpecialBuild", "\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resrc1.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""..\\\\eudora\\\\resource.h""\r\n"
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

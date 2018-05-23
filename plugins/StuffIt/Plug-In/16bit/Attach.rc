@@ -1,0 +1,167 @@
+//Microsoft App Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+#ifdef APSTUDIO_INVOKED
+//////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif\r\n"
+    "//#include ""res\\attach.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\0"
+END
+
+/////////////////////////////////////////////////////////////////////////////////////
+#endif    // APSTUDIO_INVOKED
+
+
+//////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+FILEVERSION 1,3,0,0
+PRODUCTVERSION 1,3,0,0
+FILEFLAGSMASK 0x3fL
+FILEFLAGS 0x0L
+FILEOS 0x4L
+FILETYPE 0x2L
+FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904b0"
+        BEGIN
+            VALUE "CompanyName", "QUALCOMM Incorporated\0"
+            VALUE "FileDescription", "Eudora EMSAPI Plugin\0"
+            VALUE "FileVersion", "v1.3\0"
+            VALUE "InternalName", "Attach\0"
+            VALUE "LegalCopyright", "Copyright \251 1997\0"
+            VALUE "OriginalFilename", "Attach.dll\0"
+            VALUE "ProductName", "Attach Eudora Plugin\0"
+            VALUE "ProductVersion", "v1.3\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200 
+    END
+END
+
+
+//////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+IDI_MAIN                ICON    DISCARDABLE     "RES\\PLUGIN.ICO"
+
+//////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_OPENDLG_EXT DIALOG DISCARDABLE  0, 0, 187, 26
+STYLE WS_POPUP | WS_VISIBLE
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "This is the text!",IDC_STATIC,5,5,120,8
+END
+
+
+//////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_VERSION_STR         "v1.5.5a1"
+    IDS_STUFFIT_MENU_STR    "New Stuffit Archive"
+    IDS_STUFFIT_TITLE_STR   "Create Stuffit Archive"
+    IDS_INTERNALERR_STR     "There has been an internal error."
+    IDS_MEMORYERR_STR       "There is insufficient memory to complete the operation."
+    IDS_RESOURCEERR_STR     "Could not load required resources to complete the operation."
+    IDS_TOOMANYFILESERR_STR "There is insufficient memory to complete the operation. Please select fewer files."
+    IDS_INVALIDFILEERR_STR  "The selected filename is invalid."
+    IDS_COPYRIGHT_STR       "Portions of this software are Copyright \251 1990-97 Aladdin Systems, Inc."
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    AFX_IDS_APP_TITLE       "Aladdin Stuffit Plugin"
+    IDS_ZIP_MENU_STR        "New Zip Archive"
+    IDS_ZIP_TITLE_STR       "Create Zip Archive"
+    IDS_ARC_MENU_STR        "New ARC Archive"
+    IDS_ARC_TITLE_STR       "Create ARC Archive"
+    IDS_FILE_DIR_TITLE      "Select a directory"
+    IDS_ALL_FILES_FILTER    "All Files (*.*)|*.*|"
+    IDS_EXTRACT_HERE        "Extract Here"
+    IDS_FILE_OPEN_TITLE     "Select compressed file"
+    IDS_FOLDER_TXT          "Destination:"
+    IDS_ERR_OPENING         "There has been an error opening the selected file.\n(%1)"
+    IDS_ERR_DECODING        "There has been an error decoding the selected file.\n(%1)"
+    IDS_DECOMPRESS_MENU_TXT "Decompress Stuffit or Zip archive"
+    IDS_EXPAND_FILTER       "Compressed Files (*.sit;*.zip)|*.sit;*.zip|Stuffit Files (*.sit)|*.sit|Zip Files (*.zip)|*.zip|All Files (*.*)|*.*||"
+    IDS_FREEWARE_APPENDIX   "(Freeware)"
+    IDS_ERR_CREATING        "There has been an error creating the archive.\n(%1)"
+END
+
+
+#ifndef APSTUDIO_INVOKED
+////////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif
+//#include "res\attach.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#endif
+/////////////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

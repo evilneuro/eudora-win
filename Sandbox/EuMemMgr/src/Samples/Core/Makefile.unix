@@ -1,0 +1,98 @@
+# Author: Subhashis Mohanty
+# Date  : 01/15/98
+
+DST_D = ${TOP}/${PROJECT}/${BLD_DIR}/${DBG_DIR}
+DST_R = ${TOP}/${PROJECT}/${BLD_DIR}/${REL_DIR}
+
+###### This subsystem
+SUBSYSTEM  = CoreTest
+
+######
+DMM_CORE = Core
+
+###### AssertionServices subsystem
+AS_SUBSYSTEM = AssertionServices
+
+##### AssertionUtils subsystem
+AU_SUBSYSTEM = AssertionUtils
+
+###### Include directories
+EXTERNAL_DMM_CORE  =   ${TOP}/${PROJECT}/public/inc/${DMM_CORE}
+INTERNAL_DMM_CORE  =   ${TOP}/${PROJECT}/inc/${DMM_CORE}/public
+INTERNAL_AS_PUBINC =   ${TOP}/${PROJECT}/inc/${AS_SUBSYSTEM}/public
+EXTERNAL_AS_PUBINC =   ${TOP}/${PROJECT}/public/inc/${AS_SUBSYSTEM}
+EXTERNAL_GENERIC   =   ${TOP}/${PROJECT}/public/inc/Generic
+QCUTILS_PUBINC     =   ${TOP}/QCUtils/public/inc
+INC_DIRECTIVE      = -I${INTERNAL_DMM_CORE} -I${EXTERNAL_DMM_CORE} -I${INTERNAL_AS_PUBINC} -I${EXTERNAL_AS_PUBINC} -I${EXTERNAL_GENERIC} -I${QCUTILS_PUBINC}/
+
+SRC1 = MemCoreTest.c
+OBJ1 = MemCoreTest_C.o
+BIN1 = 
+
+SRC2 = MemCoreTest.cpp
+OBJ2 = MemCoreTest_CPP.o
+BIN2 = 
+
+OBJS_D = ${DST_D}/${OBJ1} ${DST_D}/${OBJ2}
+OBJS_R = ${DST_R}/${OBJ1} ${DST_R}/${OBJ2}
+BINS_D = 
+BINS_R = 
+AR_D   =
+AR_R   =
+
+include ${TOP}/MakeInclude
+
+##### Assertion Services files
+AS_D_FILES = ${DST_D}/${AS_SUBSYSTEM}.a
+AS_R_FILES = ${DST_R}/${AS_SUBSYSTEM}.a
+
+##### Assertion Utilities files
+AU_D_FILES = ${DST_D}/${AU_SUBSYSTEM}.a
+AU_R_FILES = ${DST_R}/${AU_SUBSYSTEM}.a
+
+##### Core files
+DMM_CORE_D_FILES = ${DST_D}/${DMM_CORE}.a
+DMM_CORE_R_FILES = ${DST_R}/${DMM_CORE}.a
+
+##### Objects.
+# Debug
+TGT_D_C_FILES    = ${DST_D}/${OBJ1} ${AS_D_FILES} ${AU_D_FILES} ${DMM_CORE_D_FILESS}
+TGT_D_CPP_FILES  = ${DST_D}/${OBJ2} ${AS_D_FILES} ${AU_D_FILES} ${DMM_CORE_D_FILESS}
+# Release
+TGT_R_C_FILES    = ${DST_R}/${OBJ1} ${AS_R_FILES} ${AU_R_FILES} ${DMM_CORE_R_FILESS}
+TGT_R_CPP_FILES  = ${DST_R}/${OBJ2} ${AS_R_FILES} ${AU_R_FILES} ${DMM_CORE_R_FILESS}
+
+##### Debug
+${TGT_D_C_O}: ${TGT_D_C_FILES}
+	echo
+	${CC_D_O_2} -o $@ ${DST_D}/${OBJ1} ${DMM_CORE_D_FILES} ${AS_D_FILES} ${AU_D_FILES}
+
+${DST_D}/${OBJ1}: ${SRC1}
+	echo
+	${CC_D} -o ${DST_D}/${OBJ1} ${SRC1}
+
+${TGT_D_CPP_O}: ${TGT_D_CPP_FILES}
+	echo
+	${CP_D_O_2} -o $@ ${DST_D}/${OBJ2} ${DMM_CORE_D_FILES} ${AS_D_FILES} ${AU_D_FILES}
+
+${DST_D}/${OBJ2}: ${SRC2}
+	echo
+	${CP_D} -o ${DST_D}/${OBJ2} ${SRC2}
+
+##### Release
+${TGT_R_C_O}: ${TGT_R_C_FILES}
+	echo
+	${CC_R_O_2} -o $@ ${DST_R}/${OBJ1} ${DMM_CORE_R_FILES}
+
+${DST_R}/${OBJ1}: ${SRC1}
+	echo
+	${CC_R} -o ${DST_R}/${OBJ1} ${SRC1}
+
+${TGT_R_CPP_O}: ${TGT_R_CPP_FILES}
+	echo
+	${CP_R_O_2} -o $@ ${DST_R}/${OBJ2} ${DMM_CORE_R_FILES}
+
+${DST_R}/${OBJ2}: ${SRC2}
+	echo
+	${CP_R} -o ${DST_R}/${OBJ2} ${SRC2}
+

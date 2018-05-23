@@ -1,0 +1,53 @@
+This file describes how you use Eudora; we might ask you for it someday to help us understand our users better. It will n e v e r contain any of your email or personal information, and it will n e v e r be sent anywhere without your permission.
+
+There is a legend below that explains what the items mean.
+
+Thank you for your help.
+
+--Jeff Beckley & the rest of the Windows Eudora development team
+
+
+
+LEGEND
+
+
+The usage statistics all begin with when the event occurred, what application it occurred in, and what sort of event it was.  For example, an entry beginning:
+
+
+9908311810 32 1
+
+
+means that at 8:10 AM on August 31, 1999 (9908311810), Eudora (32), quit (1).
+
+
+Now, that last number will change depend on what sort of event Eudora has recorded, and there will be other numbers on the line that give details about the event.  The event codes and an explanation of their details follow, with an example of each:
+
+
+Shutdown: 9911231516 32 1 1282 1088 2550 100257
+(1) means shutdown.  The next four numbers are the amount of time you used Eudora (1282 seconds), the amount of time Eudora was in the background (1088), the amount of time you were connected to the Internet (2550), and the total time Eudora was running (100257). Times in seconds.
+
+
+Timestamp: 9911181835 32 2 1939 4631 9150 9152
+(2) is a timestamp.  It gets written once in a while, so the log clearly shows Eudora is still running.  The next four numbers are the same as for shutdown.
+
+
+Ad Display: 9911201520 32 8 2.14
+(8) records the display of an ad.  The last field identifies which ad it was.
+
+
+Ad Close: 9911231914 32 9 2.18
+(9) shows the closing of an ad.  The last field identifies which ad got closed.
+
+
+Ad Click: 9911192010 32 10 2.22
+(10) is a click on an ad.  The last field identifies which ad.
+
+
+Startup: 9911191446 32 15 1 430 3
+(15) is Eudora getting going.  Next is a platform identifier (1), then the version number of Eudora (430), then the build number of that version (3).
+
+
+
+================
+INFO STARTS HERE
+================

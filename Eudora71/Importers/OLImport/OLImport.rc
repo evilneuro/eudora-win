@@ -1,0 +1,214 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,2,1
+ PRODUCTVERSION 1,0,2,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x40004L
+ FILETYPE 0x2L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904b0"
+        BEGIN
+            VALUE "Comments", "\0"
+            VALUE "CompanyName", "QUALCOMM Incorporated\0"
+            VALUE "FileDescription", "OLImport\0"
+            VALUE "FileVersion", "1, 0, 2, 1\0"
+            VALUE "InternalName", "OLImport\0"
+            VALUE "LegalCopyright", "COPYRIGHT © 2000-2005 QUALCOMM Incorporated\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "OLImport.dll\0"
+            VALUE "PrivateBuild", "\0"
+            VALUE "ProductName", "QUALCOMM Eudora - OLImport\0"
+            VALUE "ProductVersion", "1, 0, 2, 1\0"
+            VALUE "SpecialBuild", "\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_IMPORT_ADDR_OPENING_ERROR 
+                            "There was an error opening your Address Book.\nA bad address was returned by MAPI32.DLL.\nConversion cannot continue.\nVisit <http://eudora.qualcomm.com/techsupport/> for more help.\n(OAB:01)"
+    IDS_IMPORT_ADDR_OPENING_ERROR2 
+                            "There was an error opening your Address Book.\nA bad address was returned by MAPI32.DLL.\nConversion cannot continue.\nVisit <http://eudora.qualcomm.com/techsupport/> for more help.\n(OAB:02) [ %x : %x ]"
+    IDS_IMPORT_ADDR_OPENING_ERROR3 
+                            "There was an error opening your default address book.\nA bad address was returned by MAPI32.DLL.\nConversion cannot continue.\nVisit <http://eudora.qualcomm.com/techsupport/> for more help.\n(OAB:03) [ %x : %x ]"
+    IDS_IMPORT_ADDR_OPENING_ERROR4 
+                            "There was an error opening your address book.\nA bad address was returned by MAPI32.DLL.\nConversion cannot continue.\nVisit <http://eudora.qualcomm.com/techsupport/> for more help.\n(OAB:04) [ %x : %x ]"
+    IDS_IMPORT_MAPI_OPEN_ERROR 
+                            "There was an error logging on to the MAPI subsystem.\nConversion cannot continue.\nVisit <http://eudora.qualcomm.com/techsupport/> for more help.\n(ML:01) [ %x : %x ]"
+    IDS_IMPORT_MAPI_UNKNOWN_ERROR 
+                            "An unknown MAPI failure has occurred\n(IM:01)"
+    IDS_IMPORT_MAIL_READING_ERROR3 
+                            "There was an error reading your Outlook files.\nConversion cannot continue.\nVisit <http://eudora.qualcomm.com/techsupport/> for more help.\n(ODS:05) [ %x : %x ]"
+	IDS_REINSTALL_OUTLOOK	
+							"The MAPI32.dll file associated with Outlook seems to be broken. Please reinstall Microsoft Outlook or repair the Mapi32.dll to try importing from Outlook"
+
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_PROFILE_REGISTRY_ENTRY 
+                            "Software\\Microsoft\\Windows NT\\CurrentVersion\\Windows Messaging Subsystem\\Profiles"
+	IDS_PROFILE_KEY_REGISTRY
+							"9375CFF0413111d3B88A00104B2A6676"
+	IDS_IDENTITY_REGISTRY_ENTRY_1
+							"Software\\Microsoft\\Office\\8.0\\Outlook\\OMI Account Manager"
+	IDS_IDENTITY_REGISTRY_ENTRY_2
+							"Software\\Microsoft\\Office\\Outlook\\OMI Account Manager"
+	IDS_PROVIDER_NAME
+							"Microsoft Outlook"
+	IDS_DEFAULT_MAIL_REG_ENTRY
+							"Software\\Clients\\Mail"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+	IDS_ACCOUNT_NAME
+							"Account Name"
+	IDS_PROFILE_DISPLAY_NAME
+							"Display Name"
+	IDS_SMTP_SERVER
+							"SMTP Server"
+	IDS_PROFILE_EMAIL
+							"Email"
+	IDS_POP_SERVER
+							"POP3 Server"
+	IDS_PROFILE_POP_USER							
+							"POP3 User"
+	IDS_PROFILE_POP_SSL
+							"POP3 Use SSL"
+	IDS_IMAP_SERVER
+							"IMAP Server"
+	IDS_PROFILE_IMAP_USER
+							"IMAP User"
+	IDS_PROFILE_IMAP_SSL
+							"IMAP Use SSL"
+	IDS_PROFILE_IMAP_FOLDER
+							"IMAP Folder Path"
+	IDS_PROFILE_SMTP_SSL
+							"SMTP Use SSL"
+	IDS_PROFILE_LMOS
+							"Leave on Server"
+	IDS_PROFILE_SMTP_USE_AUTH
+							"SMTP Use Auth"
+	IDS_PROFILE_AUTH_METHOD
+							"SMTP Auth Method"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+	IDS_IDENTITY_SMTP_DISPLAY
+							"SMTP Display Name"
+	IDS_IDENTITY_SMTP_EMAIL
+							"SMTP Email Address"
+	IDS_IDENTITY_POP_USER
+							"POP3 User name"
+	IDS_IDENTITY_POP_SSL
+							"POP3 Secure Connection"
+	IDS_IDENTITY_IMAP_USER
+							"IMAP User name"
+	IDS_IDENTITY_IMAP_SSL
+							"IMAP Secure Connection"
+	IDS_IDENTITY_IMAP_ROOT_FOLDER
+							"IMAP Root Folder"
+	IDS_IDENTITY_SMTP_SSL
+							"SMTP Secure Connection"
+	IDS_IDENTITY_LMOS
+							"Leave Mail On Server"
+	IDS_IDENTITY_REMOVE_WHEN_DEL
+							"Remove When Deleted"
+	IDS_IDENTITY_EXP_DAYS
+							"Expired Days"
+	IDS_IDENTITY_USE_SICILY
+							"SMTP Use Sicily"
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

@@ -1,0 +1,15 @@
+; SMIME.def : Declares the module parameters for the DLL.
+
+LIBRARY      "SMIME"
+DESCRIPTION  'SMIME Windows Dynamic Link Library'
+
+EXPORTS
+	ems_plugin_version
+	ems_plugin_init
+	ems_translator_info
+	ems_can_translate
+	ems_translate_file
+	ems_plugin_finish
+	ems_free
+	ems_plugin_config
+	ems_queued_properties

@@ -1,0 +1,297 @@
+EUDORA® VERSION 7.1 SOFTWARE LICENSE AGREEMENT
+-------------------------------------------------------------
+
+QUALCOMM INCORPORATED® ("QUALCOMM") IS WILLING TO LICENSE ITS
+EUDORA VERSION 7.1 SOFTWARE INCLUDING ACCOMPANYING 
+PUREVOICE(TM) PLAYER-RECORDER AND PUREVOICE(TM) PLUG-IN (THE
+"SOFTWARE") AND THE ACCOMPANYING DOCUMENTATION TO YOU ONLY ON
+THE CONDITION THAT YOU ACCEPT AND AGREE TO ALL OF THE TERMS
+IN THIS AGREEMENT. BY CLICKING ON THE "YES" BUTTON BELOW YOU
+ACKNOWLEDGE THAT YOU HAVE READ THIS AGREEMENT, UNDERSTAND IT
+AND AGREE TO BE BOUND BY ITS TERMS AND CONDITIONS. IF YOU DO
+NOT AGREE TO THESE TERMS, QUALCOMM IS UNWILLING TO AND DOES
+NOT LICENSE THE SOFTWARE TO YOU. IF YOU DO NOT AGREE TO THESE
+TERMS YOU MUST CLICK ON THE "NO" BUTTON AND DISCONTINUE THE
+INSTALLATION PROCESS. ANY USE OF THE SOFTWARE BY YOU IS
+SUBJECT TO THE TERMS AND CONDITIONS SET FORTH HEREIN.
+
+1. LICENSE. Subject to the terms and conditions of this 
+License Agreement, QUALCOMM hereby grants you a 
+nonexclusive license to install and use the Software in 
+machine-readable form solely for testing and evaluation 
+purposes on a single personal computer, provided that if 
+you are an individual, on one or more personal computers 
+in your household or home office owned or controlled by 
+you for use by yourself and immediate family members 
+residing in the same household only. You may copy the 
+Software only for backup purposes, provided that you 
+reproduce all copyright and other proprietary notices that 
+are on the original copy of the Software.
+
+2. RESTRICTIONS. QUALCOMM retains all right, title, and
+interest in and to the Software, and any rights not expressly
+granted to you herein are reserved by QUALCOMM. You may not
+reverse engineer, disassemble, decompile, or translate the
+Software, or otherwise attempt to derive the source code of
+the Software, except to the extent (if at all) expressly
+permitted under any applicable law. If applicable law expressly
+permits such activities, any information so discovered or
+derived shall be deemed to be the confidential proprietary
+information of QUALCOMM and must be promptly disclosed by you
+to QUALCOMM. Any attempt to transfer any of the rights, duties
+or obligations hereunder is void. You may not rent, lease or
+loan the Software. You may not reproduce (except as expressly
+permitted under Section 1), distribute, publicly perform,
+publicly display, modify or create derivative works of or
+based on the Software.
+
+3. TECHNICAL SUPPORT. Limited technical support (via telephone
+or email response) may be available for a limited period of
+time if you use the Software in “Paid Mode”. Information
+regarding availability, nature and conditions of limited
+technical support may be found at www.eudora.com/techsupport.
+
+4. NO WARRANTY. YOU EXPRESSLY ACKNOWLEDGE AND AGREE THAT THE
+USE OF THE SOFTWARE IS AT YOUR SOLE RISK. THE SOFTWARE (AND
+TECHNICAL SUPPORT, IF ANY) IS PROVIDED "AS IS" AND WITHOUT ANY
+WARRANTY OF ANY KIND, EXPRESS OR IMPLIED. TO THE MAXIMUM EXTENT
+PERMITTED UNDER APPLICABLE LAWS, QUALCOMM AND ANY APPLICABLE
+LICENSORS (FOR THE PURPOSES OF SECTIONS 4, 5 AND 6, QUALCOMM
+AND QUALCOMM'S LICENSOR(S) SHALL BE COLLECTIVELY REFERRED TO
+AS QUALCOMM) EXPRESSLY DISCLAIM ALL WARRANTIES, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO IMPLIED WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND
+NONINFRINGEMENT. QUALCOMM DOES NOT WARRANT THAT THE FUNCTIONS
+CONTAINED IN THE SOFTWARE WILL MEET YOUR REQUIREMENTS, OR THAT
+THE OPERATION OF THE SOFTWARE WILL BE UNINTERRUPTED OR ERROR-
+FREE, OR THAT DEFECTS IN THE SOFTWARE WILL BE CORRECTED.
+FURTHERMORE, QUALCOMM DOES NOT WARRANT OR MAKE ANY
+REPRESENTATIONS REGARDING THE USE OR THE RESULTS OF THE USE OF
+THE SOFTWARE IN TERMS OF ITS CORRECTNESS, ACCURACY,
+RELIABILITY, OR OTHERWISE. NO ORAL OR WRITTEN INFORMATION OR
+ADVICE GIVEN BY QUALCOMM OR ITS AUTHORIZED REPRESENTATIVES
+SHALL CREATE A WARRANTY OR IN ANY WAY INCREASE THE SCOPE OF
+THIS WARRANTY. SOME JURISDICTIONS DO NOT ALLOW THE EXCLUSION
+OF IMPLIED WARRANTIES, SO THE ABOVE EXCLUSION MAY NOT APPLY
+OR MAY BE LIMITED.
+
+5. LIMITATION OF LIABILITY. TO THE MAXIMUM EXTENT PERMITTED
+UNDER APPLICABLE LAWS, UNDER NO CIRCUMSTANCES, INCLUDING
+NEGLIGENCE, SHALL QUALCOMM, ITS AFFILIATES OR THEIR DIRECTORS,
+OFFICERS, EMPLOYEES OR AGENTS BE LIABLE FOR ANY INDIRECT,
+INCIDENTAL, SPECIAL, PUNITIVE OR CONSEQUENTIAL DAMAGES
+(INCLUDING BUT NOT LIMITED TO DAMAGES FOR LOSS OF BUSINESS
+PROFITS, BUSINESS INTERRUPTION, LOSS OF BUSINESS INFORMATION
+AND THE LIKE) ARISING OUT OF THE USE OR INABILITY TO USE THE
+SOFTWARE, EVEN IF QUALCOMM OR ITS AUTHORIZED REPRESENTATIVE
+HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES. SOME
+JURISDICTIONS DO NOT ALLOW THE LIMITATION OR EXCLUSION OF
+LIABILITY FOR INCIDENTAL OR CONSEQUENTIAL DAMAGES SO THE
+ABOVE LIMITATION OR EXCLUSION MAY NOT APPLY. IN NO EVENT
+SHALL QUALCOMM'S TOTAL LIABILITY TO YOU FOR ANY AND ALL
+DAMAGES, LOSSES, CLAIMS AND CAUSES OF ACTIONS (WHETHER IN
+CONTRACT, TORT, INCLUDING NEGLIGENCE, OR OTHERWISE) EXCEED
+THE GREATER OF THE AMOUNT PAID BY YOU FOR THE SOFTWARE OR $10.
+
+6. INDEMNITY. You agree to defend and indemnify QUALCOMM
+against all any and all claims, losses, liabilities, damages,
+costs and expenses, including attorney's fees, which QUALCOMM
+may incur as a result of or in connection with your breach of
+this Agreement.
+
+7. TERM AND TERMINATION. This Agreement shall continue until
+terminated. You may terminate the Agreement at any time by
+deleting all copies of the Software and all related
+information. This Agreement terminates immediately and
+automatically, with or without notice, if you fail to comply
+with any provision hereof. Additionally, QUALCOMM may at any
+time terminate this Agreement, without cause, upon notice to
+you. Upon termination you must delete or destroy all copies
+of the Software in your possession. Sections 2, 4 through 6,
+8, 9 and 11 survive termination.
+
+8. EXPORT. The Software contains strong encryption that is
+subject to the laws and regulations of the US Government.
+Licensee agrees and certifies that neither the Software nor
+any other technical data received from QUALCOMM, nor the direct
+product thereof, will be exported, re-exported, or transferred
+except as authorized and as permitted by the laws and
+regulations of the United States Government. Prohibited exports
+include but are not limited to; the export, re-export, or
+transfer of the Software or technical data to any prohibited
+entities or destinations subject to the US Government's current
+list of restricted or embargoed countries, any parties currently
+listed on the US Government's Denied Parties or Specially
+Designated National list, and any proliferation activities
+prohibited by the US Government such as chemical, biological,
+nuclear or missile technology.
+
+9. GOVERNMENT END USERS. If you are or are acting on behalf of
+an agency or instrumentality of the United States Government, the
+Software, as applicable, is "commercial computer software" and
+"commercial computer software documentation" and pursuant to
+FAR 12.212 or DFARS 227 7202 and their successors, as applicable,
+use, reproduction and disclosure of the Software is governed by
+the terms of this Agreement.
+
+10. CONTRACTING PARTIES. If the Software is installed on any
+computer owned by a corporation or other legal entity, then this
+Agreement is formed by and between QUALCOMM and such entity. The
+individual executing this Agreement represents and warrants to
+QUALCOMM that they have the authority to bind such entity to the
+terms and conditions of this Agreement.
+
+11. GENERAL. This Agreement is governed and interpreted in
+accordance with the laws of the State of California without
+giving effect to its conflict of laws provisions. The United
+Nations Convention on Contracts for the International Sale of
+Goods is expressly disclaimed and shall not apply. Any claim
+arising out of or related to this Agreement must be brought
+exclusively in a federal or state court located in San Diego
+County, California and you consent to the jurisdiction of such
+courts. If any provision of this Agreement shall be invalid,
+the validity of the remaining provisions of this Agreement shall
+not be affected. This Agreement is the entire and exclusive
+agreement between QUALCOMM and you with respect to the Software
+and supersedes all prior agreements (whether written or oral)
+and other communications between QUALCOMM and you with respect
+to the Software.
+
+COPYRIGHT (C) 2006 BY QUALCOMM INCORPORATED. ALL RIGHTS RESERVED.
+
+QUALCOMM, EUDORA, EUDORA PRO, EUDORA LIGHT AND PUREVOICE ARE REGISTERED
+TRADEMARKS OF QUALCOMM INCORPORATED. QPOPPER AND EUDORA WORLDMAIL ARE
+TRADEMARKS OF QUALCOMM INCORPORATED. ALL OTHER TRADEMARKS AND SERVICE
+MARKS ARE THE PROPERTY OF THEIR RESPECTIVE OWNERS.
+
+This product includes software developed by the OpenSSL Project for use in the 
+OpenSSL Toolkit (http://www.openssl.org/)
+
+OPEN SSL LICENSE ISSUES
+
+The OpenSSL toolkit stays under a dual license, i.e. both the conditions of
+the OpenSSL License and the original SSLeay license apply to the toolkit.
+See below for the actual license texts. Actually both licenses are BSD-style
+Open Source licenses. In case of any license issues related to OpenSSL
+please contact openssl-core@openssl.org.
+
+OpenSSL License
+---------------
+
+====================================================================
+Copyright (c) 1998-2003 The OpenSSL Project.  All rights reserved.
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions
+are met:
+  
+ 1. Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+
+ 2. Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in
+    the documentation and/or other materials provided with the
+    distribution.
+
+ 3. All advertising materials mentioning features or use of this
+    software must display the following acknowledgment:
+    "This product includes software developed by the OpenSSL Project
+    for use in the OpenSSL Toolkit. (http://www.openssl.org/)"
+
+ 4. The names "OpenSSL Toolkit" and "OpenSSL Project" must not be used to
+    endorse or promote products derived from this software without
+    prior written permission. For written permission, please contact
+    openssl-core@openssl.org.
+
+ 5. Products derived from this software may not be called "OpenSSL"
+     nor may "OpenSSL" appear in their names without prior written
+     permission of the OpenSSL Project.
+
+ 6. Redistributions of any form whatsoever must retain the following
+     acknowledgment:
+     "This product includes software developed by the OpenSSL Project
+     for use in the OpenSSL Toolkit (http://www.openssl.org/)"
+  
+THIS SOFTWARE IS PROVIDED BY THE OpenSSL PROJECT ``AS IS'' AND ANY
+EXPRESSED OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL THE OpenSSL PROJECT OR
+ITS CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT
+NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT,
+STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED
+OF THE POSSIBILITY OF SUCH DAMAGE.
+====================================================================
+ 
+This product includes cryptographic software written by Eric Young
+(eay@cryptsoft.com).  This product includes software written by Tim
+Hudson (tjh@cryptsoft.com).
+
+Original SSLeay License
+-----------------------
+
+Copyright (C) 1995-1998 Eric Young (eay@cryptsoft.com)
+All rights reserved.
+
+This package is an SSL implementation written
+by Eric Young (eay@cryptsoft.com).
+The implementation was written so as to conform with Netscapes SSL.
+
+This library is free for commercial and non-commercial use as long as
+the following conditions are aheared to.  The following conditions
+apply to all code found in this distribution, be it the RC4, RSA,
+lhash, DES, etc., code; not just the SSL code.  The SSL documentation
+included with this distribution is covered by the same copyright terms
+except that the holder is Tim Hudson (tjh@cryptsoft.com).
+
+Copyright remains Eric Young's, and as such any Copyright notices in
+the code are not to be removed.
+If this package is used in a product, Eric Young should be given attribution
+as the author of the parts of the library used.
+This can be in the form of a textual message at program startup or
+in documentation (online or textual) provided with the package.
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions
+are met:
+
+ 1. Redistributions of source code must retain the copyright
+     notice, this list of conditions and the following disclaimer.
+ 2. Redistributions in binary form must reproduce the above copyright
+     notice, this list of conditions and the following disclaimer in the
+     documentation and/or other materials provided with the distribution.
+ 3. All advertising materials mentioning features or use of this software
+     must display the following acknowledgement:
+     "This product includes cryptographic software written by
+     Eric Young (eay@cryptsoft.com)"
+     The word 'cryptographic' can be left out if the rouines from the library
+     being used are not cryptographic related :-).
+ 4. If you include any Windows specific code (or a derivative thereof) from
+     the apps directory (application code) you must include an acknowledgement:
+     "This product includes software written by Tim Hudson (tjh@cryptsoft.com)"
+  
+THIS SOFTWARE IS PROVIDED BY ERIC YOUNG ``AS IS'' AND
+ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+ARE DISCLAIMED.  IN NO EVENT SHALL THE AUTHOR OR CONTRIBUTORS BE LIABLE
+FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+SUCH DAMAGE.
+
+The licence and distribution terms for any publically available version or
+derivative of this code cannot be changed.  i.e. this code cannot simply be
+copied and put under another distribution licence
+[including the GNU Public Licence.]
+
+BY CLICKING ON THE "YES" BUTTON YOU ACKNOWLEDGE THAT YOU HAVE
+READ THIS AGREEMENT, UNDERSTAND IT AND AGREE TO BE BOUND BY ITS
+TERMS AND CONDITIONS.
+
+06/01/06

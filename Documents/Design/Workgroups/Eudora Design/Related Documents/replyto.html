@@ -1,0 +1,150 @@
+<html>
+<body>
+<a href="../djb.html"><h1>D. J. Bernstein</h1></a>
+<a href="../proto.html"><h1>Protocols</h1></a>
+<h1>Mail-Followup-To and Mail-Reply-To</h1>
+So you've written a mail program.
+It supports two built-in response functions:
+one called
+``reply to author'' or ``reply to sender'' or ``personal reply,''
+and one called
+``follow up'' or ``reply to all'' or ``reply to sender and recipients''
+or ``wide reply'' or ``group reply.''
+<p>
+I suggest that you support the Mail-Followup-To header field.
+If a message contains this field,
+your follow-up function
+will use the contents of the field as the new message's default recipient list.
+In the absence of this field,
+use Reply-To (defaulting to From), together with To and Cc,
+just as you do now.
+<p>
+For symmetry,
+I suggest that you also support the Mail-Reply-To header field.
+If a message contains this field,
+your reply-to-author function
+will use the contents of the field as the new message's default recipient list.
+In the absence of this field,
+use Reply-To (defaulting to From),
+just as you do now.
+<h2>Why is the Mail-Followup-To field useful?</h2>
+Have you ever followed up to a message sent to a mailing list?
+Your message is sent to the original author as well as to the mailing list.
+That usually means the author receives two copies.
+<p>
+Even worse,
+his address will be in the new To line.
+It will be copied into subsequent followups,
+so he will receive two copies of future messages.
+He won't be able to escape the discussion even if he unsubscribes!
+After a long chain of followups there can be dozens of extra addresses.
+Archive space is wasted.
+The To line becomes unreadable.
+Some software breaks.
+<p>
+Your follow-up function probably eliminates duplicate addresses.
+But it can't detect the duplicate here.
+Perhaps the original author <i>isn't</i> on the mailing list,
+and <i>should</i> receive a copy.
+<p>
+If you support the Mail-Followup-To field,
+you're giving the original author a way to handle this situation.
+If he's on the mailing list,
+he'll set up a Mail-Followup-To field showing just the list,
+without his address.
+<p>
+Mail-Followup-To
+also lets people redirect discussions away from
+inappropriate mailing lists.
+<h2>How should my MUA set up Mail-Followup-To in new messages?</h2>
+Mail-Followup-To is normally the same as Reply-To (defaulting to From),
+together with To and Cc.
+You can omit it if you're using the default.
+<p>
+If To or Cc includes a mailing list that the user is subscribed to,
+create the Mail-Followup-To field from To and Cc alone.
+You need to let the user tell you which mailing lists
+he's subscribed to.
+<p>
+You may want to warn the user when he views a message
+where he's not included in Mail-Followup-To.
+This usually indicates that the user has subscribed to a mailing list
+shown in Mail-Followup-To,
+but hasn't told you about that mailing list.
+Or it may indicate that someone is redirecting the discussion.
+<h2>How should I let the user edit Mail-Followup-To?</h2>
+Add Mail-Followup-To <i>after</i> the user has finished editing the message;
+but don't add it if the user typed his own Mail-Followup-To.
+<p>
+(Figuring out Mail-Followup-To beforehand,
+and then supplying it for the user to edit,
+doesn't work well.
+When the user modifies To and Cc,
+he almost always wants Mail-Followup-To to be changed the same way.)
+<h2>Why is the Mail-Reply-To field useful?</h2>
+RFC 822 did not recognize
+reply-to-author and follow-up as separate features.
+<p>
+Most existing mailers use Reply-To, defaulting to From,
+for reply-to-author.
+<p>
+Unfortunately,
+some mailing lists set up Reply-To to point back to the mailing list.
+This is called <i>reply-to munging</i>.
+It effectively destroys the previous function of reply-to-author.
+See the
+<a href="http://www.unicom.com/FAQ/reply-to-harmful.html">Reply-To
+Munging Harmful FAQ</a>
+for further discussion.
+(Ironically, the primary excuse for reply-to munging
+is that follow-up creates duplicates.
+See the
+<a href="http://www.unicom.com/BBS/bbs_forum.cgi?forum=replyto">Reply-To
+Munging Harmful Forum</a>.
+Widespread support for the Mail-Followup-To field
+will eliminate this motivation.)
+<p>
+Mail-Reply-To is simply Reply-To without the ambiguity.
+<h2>How does Mail-Reply-To interact with followups?</h2>
+Mail-Reply-To overrides From for all responses.
+To summarize:
+Mail-Followup-To/(To+Cc+(Mail-Reply-To/Reply-To/From))
+for follow-up,
+Mail-Reply-To/Reply-To/From
+for reply-to-author.
+<h2>Should my mailing list manager set up Mail-Followup-To?</h2>
+No.
+This would prevent non-subscribers from receiving copies of messages.
+It would fragment cross-posted discussions,
+sending some followups to your list alone
+while other followups are sent to both lists.
+You should leave Mail-Followup-To control in the hands of the original author.
+<h2>Given duplicate message suppression, is Mail-Followup-To useful?</h2>
+Your mailer may support <i>duplicate suppression</i>:
+throwing away incoming messages that match messages already received.
+(Note that it's insecure to simply check Message-ID.)
+<p>
+Duplicate suppression is half of a solution
+to follow-up duplication.
+It certainly takes away some of the annoyance.
+Unfortunately, it still leaves the extra address in the To line,
+causing many of the serious problems described above.
+<p>
+Mail-Followup-To is a complete solution.
+<h2>Which programs use Mail-Followup-To?</h2>
+qmail 1.02 automatically creates Mail-Followup-To
+for messages sent to mailing lists.
+This works with any UNIX MUA;
+the user simply has to put a list of mailing lists into $QMAILMFTFILE.
+<p>
+Mutt 0.89 and above automatically create Mail-Followup-To
+for messages sent to mailing lists.
+They also understand Mail-Reply-To and Mail-Followup-To
+in incoming messages.
+<p>
+nmh 0.24 understands Mail-Reply-To and Mail-Followup-To
+in incoming messages.
+<p>
+Please let me know about any new implementations.
+</body>
+</html>

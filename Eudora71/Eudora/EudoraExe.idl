@@ -1,0 +1,332 @@
+
+// -------------------------------------------------------------------
+// Eudora Interfaces GUIDs
+// -------------------------------------------------------------------
+// EDA00000-AAAA-11d0-B3C5-00805F8AA4FB     Eudora Type Library
+// EDA00001-AAAA-11d0-B3C5-00805F8AA4FB     Eudora Application ID
+// EDA00002-AAAA-11d0-B3C5-00805F8AA4FB     Automation Manager Type Library
+// EDA00003-AAAA-11d0-B3C5-00805F8AA4FB     Automation Manager Application ID
+// -------------------------------------------------------------------
+// EDA10001-AAAA-11d0-B3C5-00805F8AA4FB     EuApplication Interface
+// EDA20001-AAAA-11d0-B3C5-00805F8AA4FB     EuApplication Class
+// EDA30001-AAAA-11d0-B3C5-00805F8AA4FB     EuApplication Events
+// EDA10002-AAAA-11d0-B3C5-00805F8AA4FB     EuDocument Interface
+// EDA20002-AAAA-11d0-B3C5-00805F8AA4FB     EuDocument Class
+// EDA10003-AAAA-11d0-B3C5-00805F8AA4FB     EuDocuments Interface
+// EDA20003-AAAA-11d0-B3C5-00805F8AA4FB     EuDocuments Class
+// EDA10004-AAAA-11d0-B3C5-00805F8AA4FB     EuMessage Interface
+// EDA20004-AAAA-11d0-B3C5-00805F8AA4FB     EuMessage Class
+// EDA10005-AAAA-11d0-B3C5-00805F8AA4FB     EuMessages Interface
+// EDA20005-AAAA-11d0-B3C5-00805F8AA4FB     EuMessages Class
+// EDA10006-AAAA-11d0-B3C5-00805F8AA4FB     
+// EDA20006-AAAA-11d0-B3C5-00805F8AA4FB     
+// EDA10007-AAAA-11d0-B3C5-00805F8AA4FB     
+// EDA20007-AAAA-11d0-B3C5-00805F8AA4FB     
+// EDA10008-AAAA-11d0-B3C5-00805F8AA4FB     
+// EDA20008-AAAA-11d0-B3C5-00805F8AA4FB     
+// EDA10009-AAAA-11d0-B3C5-00805F8AA4FB     
+// EDA20009-AAAA-11d0-B3C5-00805F8AA4FB     
+// EDA10010-AAAA-11d0-B3C5-00805F8AA4FB     
+// EDA20010-AAAA-11d0-B3C5-00805F8AA4FB     
+// EDA10011-AAAA-11d0-B3C5-00805F8AA4FB     
+// EDA20011-AAAA-11d0-B3C5-00805F8AA4FB     
+// EDA10012-AAAA-11d0-B3C5-00805F8AA4FB     
+// EDA20012-AAAA-11d0-B3C5-00805F8AA4FB     
+// EDA10013-AAAA-11d0-B3C5-00805F8AA4FB     
+// EDA20013-AAAA-11d0-B3C5-00805F8AA4FB     
+// EDA10014-AAAA-11d0-B3C5-00805F8AA4FB     EuFolder Interface
+// EDA20014-AAAA-11d0-B3C5-00805F8AA4FB     EuFolder Class
+// EDA10015-AAAA-11d0-B3C5-00805F8AA4FB     EuFolders Interface
+// EDA20015-AAAA-11d0-B3C5-00805F8AA4FB     EuFolders Class
+// EDA10016-AAAA-11d0-B3C5-00805F8AA4FB     
+// EDA20016-AAAA-11d0-B3C5-00805F8AA4FB     
+// EDA10017-AAAA-11d0-B3C5-00805F8AA4FB     
+// EDA20017-AAAA-11d0-B3C5-00805F8AA4FB     
+// EDA10018-AAAA-11d0-B3C5-00805F8AA4FB     
+// EDA20018-AAAA-11d0-B3C5-00805F8AA4FB     
+// EDA10019-AAAA-11d0-B3C5-00805F8AA4FB     
+// EDA20019-AAAA-11d0-B3C5-00805F8AA4FB     
+// EDA10020-AAAA-11d0-B3C5-00805F8AA4FB     
+// EDA20020-AAAA-11d0-B3C5-00805F8AA4FB     
+// EDA10021-AAAA-11d0-B3C5-00805F8AA4FB     
+// EDA20021-AAAA-11d0-B3C5-00805F8AA4FB     
+// EDA10022-AAAA-11d0-B3C5-00805F8AA4FB     
+// EDA20022-AAAA-11d0-B3C5-00805F8AA4FB     
+// EDA10023-AAAA-11d0-B3C5-00805F8AA4FB     
+// EDA20023-AAAA-11d0-B3C5-00805F8AA4FB     
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+// include standard interface definitions
+
+import "oaidl.idl";
+import "ocidl.idl";
+
+// -------------------------------------------------------------------
+// Forward declare all Eudora application interfaces types
+
+interface IEuApplication;
+interface IEuFolder;
+interface IEuFolders;
+dispinterface IEuApplicationEvents;
+
+// -------------------------------------------------------------------
+// Eudora application interfaces
+
+    typedef [helpstring("Message header field")]
+    enum
+	{
+		hfAttachments = 0,
+		hfBcc = 1,
+		hfCc = 2,
+		hfEmbeddedContent = 3,
+		hfFrom = 4,
+		hfHeaderDate = 5,
+		hfHeaderStatus = 6,
+		hfInReplyTo = 7,
+		hfMessageID = 8,
+		hfPersona = 9,
+		hfPrecedence = 10,
+		hfPriority = 11,
+		hfPriorityMatch = 12,
+		hfReferences = 13,
+		hfReplyTo = 14,
+		hfSubject = 15,
+		hfTo = 16
+    } enHeaderField;
+    typedef [helpstring("Message status types")]
+    enum
+	{
+		msUnread = 0,
+		msRead = 1,
+		msReplied = 2,
+		msForwarded = 3,
+		msRedirect = 4,
+		msUnsendable = 5,
+		msSendable = 6,
+		msQueued = 7,
+		msSent = 8,
+		msUnsent = 9,
+		msTimeQueued = 10
+    } enMessageStatus;
+	[
+		object,
+		uuid(EDA10001-AAAA-11d0-B3C5-00805F8AA4FB),
+		dual,
+		helpstring("IEuApplication Interface"),
+		oleautomation,
+		hidden,
+		pointer_default(unique)
+	]
+	interface IEuApplication : IDispatch
+	{
+		[propget, id(1), helpstring("property Application")] HRESULT Application([out, retval] IEuApplication** pVal);
+		[propget, id(2), helpstring("property Caption")] HRESULT Caption([out, retval] BSTR *pVal);
+		[propput, id(2), helpstring("property Caption")] HRESULT Caption([in] BSTR newVal);
+		[propget, id(3), helpstring("property Folders")] HRESULT Folders([out, retval] IEuFolders** pVal);
+		[propget, id(4), helpstring("property FullName")] HRESULT FullName([out, retval] BSTR *pVal);
+		[propget, id(5), helpstring("property Height")] HRESULT Height([out, retval] long *pVal);
+		[propput, id(5), helpstring("property Height")] HRESULT Height([in] long newVal);
+		[propget, id(6), helpstring("property InBox")] HRESULT InBox([out, retval] IEuFolder** pVal);
+		[propget, id(7), helpstring("property Interactive")] HRESULT Interactive([out, retval] BOOL *pVal);
+		[propget, id(8), helpstring("property Left")] HRESULT Left([out, retval] long *pVal);
+		[propput, id(8), helpstring("property Left")] HRESULT Left([in] long newVal);
+		[propget, id(9), helpstring("property Name")] HRESULT Name([out, retval] BSTR *pVal);
+		[propget, id(10), helpstring("property Path")] HRESULT Path([out, retval] BSTR *pVal);
+		[propget, id(11), helpstring("property Parent")] HRESULT Parent([out, retval] IEuApplication** pVal);
+		[propget, id(12), helpstring("property ProcessID"), hidden] HRESULT ProcessID([out, retval] long *pVal);
+		[propget, id(13), helpstring("property RefCount"), hidden] HRESULT RefCount([out, retval] long *pVal);
+		[propget, id(14), helpstring("property RootFolder")] HRESULT RootFolder([out, retval] IEuFolder** pVal);
+		[propget, id(15), helpstring("property StatusBar")] HRESULT StatusBar([out, retval] BSTR *pVal);
+		[propput, id(15), helpstring("property StatusBar")] HRESULT StatusBar([in] BSTR newVal);
+		[propget, id(16), helpstring("property Top")] HRESULT Top([out, retval] long *pVal);
+		[propput, id(16), helpstring("property Top")] HRESULT Top([in] long newVal);
+		[propget, id(17), helpstring("property VersionBuild")] HRESULT VersionBuild([out, retval] short *pVal);
+		[propget, id(18), helpstring("property VersionMajor")] HRESULT VersionMajor([out, retval] short *pVal);
+		[propget, id(19), helpstring("property VersionMinor")] HRESULT VersionMinor([out, retval] short *pVal);
+		[propget, id(20), helpstring("property VersionMinor2")] HRESULT VersionMinor2([out, retval] short *pVal);
+		[propget, id(21), helpstring("property Visible")] HRESULT Visible([out, retval] BOOL *pVal);
+		[propput, id(21), helpstring("property Visible")] HRESULT Visible([in] BOOL newVal);
+		[propget, id(22), helpstring("property Width")] HRESULT Width([out, retval] long *pVal);
+		[propput, id(22), helpstring("property Width")] HRESULT Width([in] long newVal);
+		[id(23), helpstring("method CloseEudora")] HRESULT CloseEudora();
+		[id(24), helpstring("method CheckMail")] HRESULT CheckMail([in, optional] VARIANT Password);
+		[id(25), helpstring("method CompactFolders")] HRESULT CompactFolders();
+		[id(26), helpstring("method EmptyTrash")] HRESULT EmptyTrash();
+		[id(27), helpstring("method Folder")] HRESULT Folder(BSTR Name, BOOL FindRecursive, [out, retval] IEuFolder** pVal);
+		[id(28), helpstring("method FolderByID")] HRESULT FolderByID(long ID, BOOL FindRecursive, [out, retval] IEuFolder** pVal);
+		[id(29), helpstring("method QueueMessage")] HRESULT QueueMessage(BSTR To, BSTR Subject, BSTR Cc, BSTR Bcc, BSTR Attach, BSTR Body);
+		[id(30), helpstring("method SendQueuedMessages")] HRESULT SendQueuedMessages();
+	};
+	[
+		object,
+		uuid(EDA10004-AAAA-11d0-B3C5-00805F8AA4FB),
+		dual,
+		helpstring("IEuMessage Interface"),
+		oleautomation,
+		hidden,
+		pointer_default(unique)
+	]
+	interface IEuMessage : IDispatch
+	{
+		[propget, id(1), helpstring("property AttachmentListAsString")] HRESULT AttachmentListAsString([out, retval] BSTR *pVal);
+		[propget, id(2), helpstring("property Body")] HRESULT Body([out, retval] BSTR *pVal);
+		[propget, id(3), helpstring("property BodyAsHTML")] HRESULT BodyAsHTML([out, retval] BSTR *pVal);
+		[propget, id(4), helpstring("property BodyAsSimpleText")] HRESULT BodyAsSimpleText([out, retval] BSTR *pVal);
+		[propget, id(5), helpstring("property Date")] HRESULT Date([out, retval] BSTR *pVal);
+		[propget, id(6), helpstring("property From")] HRESULT From([out, retval] BSTR *pVal);
+		[propget, id(7), helpstring("property HeaderInfo")] HRESULT HeaderInfo([in] enHeaderField HeaderField, [out, retval] BSTR *pVal);
+		[propget, id(8), helpstring("property ID")] HRESULT ID([out, retval] long *pVal);
+		[propget, id(9), helpstring("property Index")] HRESULT Index([out, retval] long *pVal);
+		[propget, id(10), helpstring("property RawMessage")] HRESULT RawMessage([out, retval] BSTR *pVal);
+		[propget, id(11), helpstring("property RefCount"), hidden] HRESULT RefCount([out, retval] long *pVal);
+		[propget, id(12), helpstring("property Priority")] HRESULT Priority([out, retval] BSTR *pVal);
+		[propget, id(13), helpstring("property Status")] HRESULT Status([out, retval] enMessageStatus *pVal);
+		[propput, id(13), helpstring("property Status")] HRESULT Status([in] enMessageStatus newVal);
+		[propget, id(14), helpstring("property Subject")] HRESULT Subject([out, retval] BSTR *pVal);
+		[propget, id(15), helpstring("property To")] HRESULT To([out, retval] BSTR *pVal);
+		[id(16), helpstring("method Move")] HRESULT Move(IEuFolder* NewParentFolder);
+	};
+	[
+		object,
+		uuid(EDA10005-AAAA-11d0-B3C5-00805F8AA4FB),
+		dual,
+		helpstring("IEuMessages Interface"),
+		oleautomation,
+		hidden,
+		pointer_default(unique)
+	]
+	interface IEuMessages : IDispatch
+	{
+		[propget, id(DISPID_VALUE)] HRESULT Item([in] long Index, [out, retval] VARIANT* ppFolder);
+		[propget, id(DISPID_NEWENUM), restricted] HRESULT _NewEnum([out, retval] IUnknown** ppEnum);
+		[propget, id(1), helpstring("property Count")] HRESULT Count([out, retval] long* pVal);
+		[propget, id(2), helpstring("property ItemByID")] HRESULT ItemByID([in] long ID, [out, retval] VARIANT* ppFolder);
+		[propget, id(3), helpstring("property RefCount"), hidden] HRESULT RefCount([out, retval] long *pVal);
+		[id(4), helpstring("method RemoveByID")] HRESULT RemoveByID(long ID);
+		[id(5), helpstring("method UpdateList")] HRESULT UpdateList();
+	};
+	[
+		object,
+		uuid(EDA10014-AAAA-11d0-B3C5-00805F8AA4FB),
+		dual,
+		helpstring("IEuFolder Interface"),
+		oleautomation,
+		hidden,
+		pointer_default(unique)
+	]
+	interface IEuFolder : IDispatch
+	{
+		[propget, id(1), helpstring("property bCanContainMessages")] HRESULT bCanContainMessages([out, retval] BOOL *pVal);
+		[propget, id(2), helpstring("property bCanContainSubFolders")] HRESULT bCanContainSubFolders([out, retval] BOOL *pVal);
+		[propget, id(3), helpstring("property bContainsUnreadMessages")] HRESULT bContainsUnreadMessages([out, retval] BOOL *pVal);
+		[propget, id(4), helpstring("property bIsImapFolder")] HRESULT bIsImapFolder([out, retval] BOOL *pVal);
+		[propget, id(5), helpstring("property Level")] HRESULT Level([out, retval] short *pVal);
+		[propget, id(6), helpstring("property Folders")] HRESULT Folders([out, retval] IEuFolders** pVal);
+		[propget, id(7), helpstring("property FullName")] HRESULT FullName([out, retval] BSTR *pVal);
+		[propget, id(8), helpstring("property ID")] HRESULT ID([out, retval] long *pVal);
+		[propget, id(9), helpstring("property Index"), hidden] HRESULT Index([out, retval] long *pVal);
+		[propget, id(10), helpstring("property Messages")] HRESULT Messages([out, retval] IEuMessages** pVal);
+		[propget, id(11), helpstring("property Name")] HRESULT Name([out, retval] BSTR *pVal);
+		[propget, id(12), helpstring("property Path")] HRESULT Path([out, retval] BSTR *pVal);
+		[propget, id(13), helpstring("property RefCount"), hidden] HRESULT RefCount([out, retval] long *pVal);
+		[id(14), helpstring("method Move")] HRESULT Move(IEuFolder* NewParentFolder);
+		[id(15), helpstring("method Open")] HRESULT Open();
+		[id(16), helpstring("method Resynchronize")] HRESULT Resynchronize();
+	};
+	[
+		object,
+		uuid(EDA10015-AAAA-11d0-B3C5-00805F8AA4FB),
+		dual,
+		helpstring("IEuFolders Interface"),
+		oleautomation,
+		hidden,
+		pointer_default(unique)
+	]
+	interface IEuFolders : IDispatch
+	{
+		[propget, id(DISPID_VALUE)] HRESULT Item([in] long Index, [out, retval] VARIANT* ppFolder);
+		[propget, id(DISPID_NEWENUM), restricted] HRESULT _NewEnum([out, retval] IUnknown** ppEnum);
+		[propget, id(1), helpstring("property Count")] HRESULT Count([out, retval] long* pVal);
+		[propget, id(2), helpstring("property RefCount"), hidden] HRESULT RefCount([out, retval] long *pVal);
+		[id(3), helpstring("method Add")] HRESULT Add(BSTR Name, BOOL bCanContainMessages);
+		[id(4), helpstring("method RemoveByID")] HRESULT RemoveByID(long ID);
+	};
+
+// -------------------------------------------------------------------
+// Eudora type library
+
+[
+	uuid(EDA00000-AAAA-11d0-B3C5-00805F8AA4FB),
+	version(1.0),
+	helpstring("Eudora Type Library")
+]
+library EudoraLib
+{
+	importlib("stdole32.tlb");
+	importlib("stdole2.tlb");
+
+	[
+		uuid(EDA30001-AAAA-11d0-B3C5-00805F8AA4FB),
+		helpstring("IEuApplication Events")
+	]
+	dispinterface IEuApplicationEvents
+	{
+		properties:
+		methods:
+		[id(1)] HRESULT OnClose();
+		[id(2), helpstring("method OnFolderChange")] HRESULT OnFolderChange();
+		[id(3), helpstring("method OnCheckMailComplete")] HRESULT OnCheckMailComplete();
+		[id(4), helpstring("method OnSendMailComplete")] HRESULT OnSendMailComplete();
+		[id(5), helpstring("method OnEmptyTrashComplete")] HRESULT OnEmptyTrashComplete();
+		[id(6), helpstring("method OnCompactFoldersComplete")] HRESULT OnCompactFoldersComplete();
+	};
+	[
+		uuid(EDA20001-AAAA-11d0-B3C5-00805F8AA4FB),
+		helpstring("EuApplication Class"),
+	]
+	coclass EuApplication
+	{
+		[default] interface IEuApplication;
+		[default, source] interface IEuApplicationEvents;
+	};
+	[
+		uuid(EDA20014-AAAA-11d0-B3C5-00805F8AA4FB),
+		helpstring("EuMessage Class"),
+		noncreatable
+	]
+	coclass EuMessage
+	{
+		[default] interface IEuMessage;
+	};
+	[
+		uuid(EDA20004-AAAA-11d0-B3C5-00805F8AA4FB),
+		helpstring("EuMessages Class"),
+		noncreatable
+	]
+	coclass EuMessages
+	{
+		[default] interface IEuMessages;
+	};
+	[
+		uuid(EDA20005-AAAA-11d0-B3C5-00805F8AA4FB),
+		helpstring("EuFolder Class"),
+		noncreatable
+	]
+	coclass EuFolder
+	{
+		[default] interface IEuFolder;
+	};
+	[
+		uuid(EDA20015-AAAA-11d0-B3C5-00805F8AA4FB),
+		helpstring("EuFolders Class"),
+		noncreatable
+	]
+	coclass EuFolders
+	{
+		[default] interface IEuFolders;
+	};
+};
+
+// -------------------------------------------------------------------

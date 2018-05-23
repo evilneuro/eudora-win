@@ -1,0 +1,6 @@
+; EudoraIcons.def : Declares the module parameters for the DLL.
+
+LIBRARY      "EUDORAICONS"
+DESCRIPTION  'EUDORA Windows Icons Resource DLL'
+
+EXPORTS

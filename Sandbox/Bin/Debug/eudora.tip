@@ -1,0 +1,103 @@
+You can check out the latest news and download the current updates from the official Eudora web site at <http://www.eudora.com>.  Thanks for choosing Eudora!
+In most Eudora windows, you can right-click the mouse button to display a handy menu of options tailored to that window.  [Shift]+F10 is the keyboard shortcut.
+You can find all messages from a given person in a given mailbox.  Hold down the [Alt] key, then click the person's name in the Who column.
+Eudora menus display keyboard shortcuts for many common commands.  For example, press [Ctrl]+M keys to open the File menu and choose the Check Mail command.
+Eudora was named after the Pulitzer Prize winning American author Eudora Welty.  She published the short story "Why I Live At The P.O." in 1941.  Eudora is based on the Post Office Protocol.
+You can rename a mailbox or folder by right-clicking the mouse on the item in the Mailboxes window, then choosing Rename.
+You can sort all messages in a mailbox window by clicking a column header, for example, click "Date" to sort by Date.  Press [Shift] and click to sort in reverse order.
+You can easily add a friend's e-mail address to your Address Book.  Open or select the message from your friend, open the Special menu, then choose Make Address Book Entry, or press the [Ctrl]+K keys.
+It is a good idea to save your work periodically while composing a long message.  Open the File menu and choose Save or press the [Ctrl]+S keys.
+You can press the [Esc] key while dragging an object to cancel the drag operation.
+Eudora supports HTML text formatting.  Open the Edit menu and choose Text to see the available HTML styles.
+You can use Stationery to respond with canned messages such as price lists, forms, or standard attachments.  Compose a message, then open the File menu, then choose Save As Stationery.
+You can press [Ctrl]+A keys to select all text in a text editing window or all messages in a mailbox.
+Eudora can route incoming mail from specific people to separate mailboxes automatically.  Select a message, then open the Special menu, then choose Make Filter to route all messages from that sender to a mailbox of your choice.
+You can define your own combinations of tool windows by dragging a window tab from one group to another tabbed window group.
+You can quickly find all messages in a mailbox with the same subject.  Hold down the [Alt] key, then click the subject of the message that you're interested in.
+You can press the [Ctrl]+Z keys to undo your last text edit or mailbox transfer.
+You can locate the mailbox for the current message by holding down the [Ctrl] key and double-clicking the message title bar (non-maximized windows only).
+Eudora supports multiple POP and IMAP e-mail accounts.  Open the Tools menu and choose Personalities, then right-click in the Personalities window to create a new account or to modify an existing account.
+You can organize your mailboxes in folders.  Open the Mailbox menu and choose New, type a folder name, check the "Make it a folder box," and then click OK.
+Eudora supports multiple signatures.  Open the Tools menu and choose Signatures, then right-click in the Signatures window to create a new signature or edit an existing signature.
+You can resend a message to the same (or different) recipients.  Select the message(s), then open the Message menu and choose Send Again.
+While dragging an object, you can pause the cursor over a tab in a tabbed window group or a button on the MDI task bar causing the tab or button to be selected.
+Press the [Ctrl]+1 keys to open the In mailbox.
+Double-click an item in the Stationery window to create a new message with that stationery.
+Eudora allows you to create multiple personalities for a single e-mail account.  Therefore, you can create responses with customized signatures, stationery, and return addresses.
+You can change the left-to-right order of the tabs in a tabbed window group by clicking and dragging the tab to its new location.
+You can transfer an open message to another mailbox by dragging its Tow Truck icon to a mailbox in the Mailboxes window.  Hold down the [Shift] key while dragging to copy instead of move.
+You can edit received messages.  Open the message window, then click the Pencil icon.
+URL stands for Uniform Resource Locator.
+Press the [Ctrl]+0 keys to open the Out mailbox.
+You can display the tabs for a tabbed window group in any orientation.  Right-click a tab, then choose Tab Location.
+You can now change the personality of an outgoing message on the fly!  Right-click in the composition message window, then choose Change Personality.
+When you see a URL in a message, Eudora can launch your web browser to display the URL.  Just single-click on the link.
+You can use message labels to organize your e-mail.  In the Tools menu, select Options, scroll until you find Labels. After customizing the labels, open the Message menu, choose Change then Label to apply labels to the selected message(s).
+You can compact a mailbox by clicking the button next to the horizontal scroll bar in mailbox windows.  The button label shows the number of messages, the total disk space used, and the unused disk space.
+Closed folders in the Eudora Mailboxes window open automatically if you pause over them while dragging message items.  
+To delete a mailbox or folder, first select the item in the Mailboxes window, then press the [Delete] key.
+To close all open windows, hold down the [Shift] key while opening the File menu and choosing Close.
+You can recover space taken up by deleted messages by opening the Special menu and choosing Compact Mailboxes.
+Double-click an item in the Personalities window to create a new message with that personality.
+Eudora can talk!  Use QUALCOMM's PureVoice Technology to send and receive voice mail across the Internet with high data compression and excellent sound quality.
+You can quickly find messages in a mailbox that have the same field values.  Hold down the [Alt] key, then click a message field to find all messages with the same value in that field.
+You can move a mailbox from one folder to another.  Click and drag the mailbox item to a new destination folder in the Mailboxes window.
+You can have as many address books as you want.  Open the Address Book window, click New, enter a new Address Book name, and check the Make it an Address Book box.
+You can move a filter item up or down in the filters list.  Open the Tools menu and choose Filters to display the Filters window, then drag the list item up or down as desired.
+ACAP is the Application Configuration Access Protocol.
+You can display spell checking results "inline."  Hold down the [Shift] key, run the Check Spelling command, then right-click on each highlighted word to see the spelling options for that word.
+You can add message plug-ins to your toolbar.  Right-click the toolbar, choose Customize, then select the Plugins tab.  Select the desired plug-in, then drag the plug-in button to the toolbar.
+LDAP is the Lightweight Directory Access Protocol.
+You can copy a message to another mailbox by holding down the [Shift] key while transferring the message.
+You can queue a message and have Eudora send it at a later time.  Hold down the [Shift] key while clicking the Send/Queue button to display the Change Queueing dialog box.
+You can create a new message with any combination of personality and stationery.  Hold down the [Shift] key while opening the Message menu and choosing New Message, or press the [Shift]+[Ctrl]+N keys.
+While dragging a docked or floating tabbed window group, you can hold down the [Ctrl] key to prevent the window from being docked.
+You can quickly delete or move icons in your toolbar by holding down the [Alt] key and dragging the toolbar buttons.
+You can easily send or reply to your favorite e-mail addresses using the Quick Recipient List.  Open the Special menu and choose Add as Recipient to define your list, then open the Message menu and choose New Message To.
+Eudora supports many of the most popular Internet protocols:  SMTP, POP3, IMAP4, Finger, Ph, LDAP, ACAP, and more!
+You can place address book entries on your Quick Recipient List.  Open your Address Book, right-click an entry, then, choose Add to Recipient List.
+If you create an Address Book entry called "me" and do not "Include Yourself" (Select Tools menu, then Options then Replying), then all matching addresses will be removed from the list of recipients when you Reply to All.
+You can override the default Check Mail options for any personality by holding down the [Shift] key while opening the File menu and choosing Check Mail, or by pressing the [Shift]+[Ctrl]+M keys.
+You can save typing by adding commonly used phrases to your Quick Recipient List.  Open the Special menu and choose Add as Recipient to define the text, then open the Edit menu and choose Insert Recipient to insert the text into any text window.
+You can manually filter the selected message(s) by opening the Special menu and choosing Filter Messages or by pressing the [Ctrl]+J keys.
+You can press the [Esc] key to abort a mail send/check command, a filtering command, or a directory services query.
+It is useful to add a "File menu | Save command" button to your toolbar so you can visually see that a composed message, Address Book, or Filter window has been edited and needs to be saved.
+You can download a list of all messages in your POP mail account by holding down the [Shift] key while opening the File menu and choosing Check Mail, or by pressing the [Shift]+[Ctrl]+M keys.  Then, select the Fetch All Message Headers option.
+You can press the [Ctrl]+W keys to close the current window.  Press the [Shift]+[Ctrl]+W keys to close all open windows.
+You can report a bug in Eudora by sending a message to <win-eudora-bugs@eudora.com>.  Be sure to open the Help menu and choose Insert System Configuration to automatically include your system data.
+Eudora automatically maps the [Ctrl]+R keys shortcut to Reply or Reply To All, based on the settings assigned in the Replying dialog. The Replying dialog is found in Options on the Tools menu.
+FCC stands for Folder Carbon Copy, which causes Eudora to make copies of outgoing messages in one or more mailboxes.
+Press F7 in a mailbox window to zoom in and out on the message list window.
+When composing a message, you can right-click the mouse on a message header to insert recipients, FCC to a mailbox, and attach files.
+You can attach files an outgoing message conveniently by dragging and dropping files from the built-in File Browser onto the composition window.  Open the Tools menu and choose File Browser.
+You can remove the line breaks from selected text by opening the Edit menu and choosing Message Plug-ins then Unwrap text.
+You can use Turbo Redirect command to redirect a message to somebody else, queue the outgoing message, and delete the incoming message -- all in one step.  Open the Tools menu, choose Options, then select Miscellaneous.
+While composing a message, you can press the [Ctrl]+[Space] keys to reset the character formatting back to the default values.
+When you reply to a message in a custom mailbox, the message can be automatically copied to the original message's mailbox by setting "Automatically FCC to original mailbox" in the Tools:Options menu.
+Eudora can grow!  You can add plug-ins to Eudora for compression, encryption, language translation, and many other functions.
+POP3 is Post Office Protocol, version 3.
+You can use Eudora's Directory Services window to find an old friend's e-mail address.  Try looking your friend up on the Ph server <ph.bigfoot.com>.
+You can now send and display images in your mail.  Click the Insert Object button on the composition window toolbar, then choose Picture.
+You can automatically keep a copy of all messages that you send.  Open the Tools menu, choose Options, then select Sending Mail. In the Sending Mail dialog box, check the "Keep copies" box.
+You can press the [Shift]+[Space] keys in mailbox windows to toggle the "read" vs. "unread" status of the selected message(s).
+You can resize your mailbox columns.  Place your cursor on the separator between two mailbox column headers, then click and drag when you see the resize cursor.
+Eudora can use Microsoft Dial-Up Networking to automatically dial and hangup your modem when checking or sending mail.  Open the Tools menu, choose Options, and then select Advanced Network.
+You can use Filters to automatically change the priority of a message.  For example, you can create a filter that raises the priority of all messages from your family.
+You can add a button to your toolbar to quickly transfer messages to a commonly-used archive mailbox.  Right-click on the toolbar, then choose Customize.
+You can move or copy address book entries between address books.  Click and drag one or more items to the destination address book, or right-click and choose Move To or Copy To.
+You can hold down the [Shift] key while replying to, forwarding, redirecting, or resending a message to override the default Personality and/or Stationery settings.
+You can dock the Toolbar to any edge of the main window or let it float above the main Eudora window.  Just drag the Toolbar to the desired location.
+SMTP is Simple Mail Transfer Protocol.
+You can create a new group of tool windows by dragging a tool window tab to the status bar or to an uncovered area of the main Eudora window.
+Press F6 to jump between the panes of a split window.  This includes mailbox windows, composition windows, the Address Book window, and the Filters window.
+While viewing a message, you can press the [Space] key to page down through the message.
+You can help us improve Eudora by sending your suggestions to <eudora-suggest@eudora.com>.
+You should always enclose URLs in angle brackets when composing plain text messages.  For example, <http://www.eudora.com> and <mailto:eudora-suggest@eudora.com>.
+Eudora works with other applications!  MAPI allows you to send documents from your favorite word processor, spreadsheet, and other applications.  Open the Tools menu, choose Options, then select MAPI.
+You can check spelling automatically when you queue your message.  Open the Tools menu, choose Options, then select Spell Checking. Check the "Check when message queued/sent" box.
+You can add your own tips to the standard Tip Of The Day database.  Just edit the "eudora.tip" file.
+IMAP4 is the Internet Messaging Access Protocol, version 4.
+Press F7 to zoom in and out of the header display in a message composition window.
+While addressing a message, you can press the [Ctrl]+, keys (control+comma) to complete an Address Book entry.  For example, you can turn "Joh" into "John Smith" quickly!
+You can modify the settings of your message plug-ins by opening the Special menu and choosing the Message Plug-ins Settings.
+You can override the default Send/Queue command by holding down the [Shift] key while clicking the Send/Queue button.

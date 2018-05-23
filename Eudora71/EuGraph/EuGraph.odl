@@ -1,0 +1,94 @@
+// EuGraph.odl : type library source for ActiveX Control project.
+
+// This file will be processed by the Make Type Library (mktyplib) tool to
+// produce the type library (EuGraph.tlb) that will become a resource in
+// EuGraph.ocx.
+
+#include <olectl.h>
+#include <idispids.h>
+
+[ uuid(51E2C864-367B-11D4-8554-0008C7D3B6F8), version(1.0),
+  helpfile("EuGraph.hlp"),
+  helpstring("EuGraph ActiveX Control module"),
+  control ]
+library EUGRAPHLib
+{
+	importlib(STDOLE_TLB);
+	importlib(STDTYPE_TLB);
+
+	//  Primary dispatch interface for CEuGraphCtrl
+
+	[ uuid(51E2C865-367B-11D4-8554-0008C7D3B6F8),
+	  helpstring("Dispatch interface for EuGraph Control"), hidden ]
+	dispinterface _DEuGraph
+	{
+		properties:
+			// NOTE - ClassWizard will maintain property information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_PROP(CEuGraphCtrl)
+			[id(DISPID_BACKCOLOR), bindable, requestedit] OLE_COLOR BackColor;
+			[id(1)] short DefaultGraphType;
+			[id(2)] short SeriesCount;
+			[id(3)] short XAxisNumberOfIntervals;
+			[id(DISPID_FORECOLOR), bindable, requestedit] OLE_COLOR ForeColor;
+			[id(DISPID_FONT), bindable] IFontDisp* Font;
+			//}}AFX_ODL_PROP
+
+		methods:
+			// NOTE - ClassWizard will maintain method information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_METHOD(CEuGraphCtrl)
+			[id(4)] void RedrawGraph();
+			[id(5)] long SetSeriesData(short sGraphType, long* plDataValue, short sDataValueCount, OLE_COLOR GraphColor, BSTR csLegendStrings);			
+			[id(6)] void PieGraph(long* plData, short sCount, OLE_COLOR* pColors, BSTR csLegendStrings);
+			[id(7)] void SetXAxisLabelInformation(BSTR szXAxisLabelString, short sLabelDisplayStartOffset, short sLabelDisplaySkipCount);
+			[id(8)] void SetYAxisScalingFactor(short sYAxisScaleFactor);
+			//}}AFX_ODL_METHOD
+
+			[id(DISPID_ABOUTBOX)] void AboutBox();
+	};
+
+	typedef [public] [uuid(6CB14AEB-4DF7-11d4-855F-0008C7D3B6F8),
+		helpstring("Eudora Graph Types Supported")]
+		enum {
+						  EU_GT_2D_BAR_GRAPH = 0,
+						  EU_GT_3D_BAR_GRAPH,
+						  EU_GT_POINT_AS_CIRCLE_GRAPH,
+						  EU_GT_POINT_AS_RECTANGLE_GRAPH,
+						  EU_GT_POINT_AS_DIAMOND_GRAPH,
+						  EU_GT_LINE_GRAPH,
+						  EU_GT_FLOOD_FILLED_GRAPH,
+						  EU_GT_PIE_GRAPH
+						}EU_GRAPH_TYPES;
+
+
+	//  Event dispatch interface for CEuGraphCtrl
+
+	[ uuid(51E2C866-367B-11D4-8554-0008C7D3B6F8),
+	  helpstring("Event interface for EuGraph Control") ]
+	dispinterface _DEuGraphEvents
+	{
+		properties:
+			//  Event interface has no properties
+
+		methods:
+			// NOTE - ClassWizard will maintain event information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_EVENT(CEuGraphCtrl)
+			//}}AFX_ODL_EVENT
+	};
+
+	//  Class information for CEuGraphCtrl
+
+	[ uuid(51E2C867-367B-11D4-8554-0008C7D3B6F8), licensed,
+	  helpstring("EuGraph Control"), control ]
+	coclass EuGraph
+	{
+		[default] dispinterface _DEuGraph;
+		[default, source] dispinterface _DEuGraphEvents;
+	};
+
+
+	//{{AFX_APPEND_ODL}}
+	//}}AFX_APPEND_ODL}}
+};

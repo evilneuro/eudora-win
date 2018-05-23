@@ -1,0 +1,96 @@
+// QCSSL.rc
+
+// DO NOT USE DEV STUDIO TO EDIT THIS FILE
+//
+
+#ifdef APSTUDIO_INVOKED
+#error DO NOT USE DEV STUDIO TO EDIT THIS FILE
+#endif
+#include "resource.h"
+#include "..\..\VersionBeg.inc"
+
+VALUE "InternalName",     "QCSSL\0"
+VALUE "OriginalFilename", "QCSSL.DLL\0"
+VALUE "FileDescription",  "Secure Socket Library\0"
+VALUE "Comments",         "Secure Socket Library\0"
+
+#include "..\..\VersionEnd.inc"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+	IDS_UNKNOWNERROR "Unknown Error"
+END
+
+
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+	IDS_CERTERR_NOCERT "Certificate Error: No Certificates Received from Server during SSL negotiation"
+    IDS_CERTWARN_IGNOREBCOSTRUSTED "But ignoring this error because Certificate is trusted"
+    IDS_CERT_TRYADD "Try adding this certificate to your certificate database for SSL to succeed"
+    IDS_CERT_OK "Server Certificate  : Verified OK"
+	IDS_CERTERR_CHAINBAD "Certificate Error: Server Certificate chain bad !!"
+	IDS_CERTERR_CHAINNOTTRUSTED "Certificate Error: Cert Chain not trusted."
+	IDS_CERTERR_UNKNOWNROOT "Certificate Error: Unknown and unprovided root certificate."
+	IDS_CERTERR_NAMESNOTEQUAL "Certificate Error: Names in Certificate Not Equal"
+	IDS_CERTERR_DATANOTFOUND "Certificate Error: Data not found"
+	IDS_CERTERR_UNAUTHORIZEDCA "Certificate Error: Unauthorized CA"
+	IDS_CERTERR_UNKNOWNCRITICALEXT "Certificate Error: Unknown Critical Extension"
+	IDS_CERTERR_UNAUTHORIZEDCERT "Certificate Error: Unauthorized Certificate"
+	IDS_CERTERR_UNKNOWNCHAINVALIDATION "Unknown certificate chain validation error: Code(%d)"
+    IDS_CERTERR_HOSTMISMATCH "Certificate bad: Destination Host name does not match  host name in certificate"
+	IDS_CERTERR_ONECERTEXPIRED "One certificate in the server cert chain has Expired"
+	IDS_CERTERR_MANYCERTEXPIRED "%d certificates in the server cert chain have Expired"
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+	IDS_CERTERR_OVERRIDE "But overriding this error as per the configuration setting for this personality/protocol!"
+	IDS_CERT_SUCCESSFULPATTERNNOTALLOW "Server Name(%s) and Host Name in Server Certificate(%s) have a successful pattern match.\r\nBut you have asked me to not allow regular expressions for this personality and protocol.\r\nHence this SSL negotiation is unacceptable and connection will be dropped"
+	IDS_ERR_PRIVATEKEYCONSTRUCTION "Could not construct a private key for client authentication from the password key file and decryption password"
+	IDS_ERR_VERSIONINVALID "SSL Version specified in INI file is invalid. Using default SSL version"
+	IDS_ERR_SSL2NOTOK  "The negotiated protocol version with the server was SSL_Version_2.0 ,  but you have an INI setting to not allow this version to be used in a secure negotiation.\r\n Hence this established secure channel is unacceptable. Connection will be dropped."
+	IDS_ERR_MINEXCHNONO "You have configured this personality/protocol to reject any exchange key lengths below %ld.\r\n, But the negotiated exchange key length is %ld\r\n Hence this established secure channel is unacceptable. Connection will be dropped."
+	IDS_ERR_MINENCRYPTIONNONO "You have configured this personality/protocol to reject encryption levels below %ld.,\r\n But the negotiated encryption level is %ld\r\n Hence this established secure channel is unacceptable. Connection will be dropped."
+	IDS_ERR_CERTFILE "There was an error updating your usercerts.p7b certificate file (error %ld).  Any certificate changes you made during this session will not be saved.  Please make sure you have write permission on this file."
+	IDS_ERR_CONNECTIONLOST "The connection with the server has been lost."
+END
+
+STRINGTABLE DISCARDABLE
+BEGIN
+IDS_CALG_HMAC "HMAC"
+IDS_CALG_MD2 "MD2" 
+IDS_CALG_MD4 "MD4"
+IDS_CALG_MD5 "MD5"
+IDS_CALG_SHA "SHA" 
+IDS_CALG_SHA1 "SHA1"
+IDS_CALG_MAC "MAC"
+END

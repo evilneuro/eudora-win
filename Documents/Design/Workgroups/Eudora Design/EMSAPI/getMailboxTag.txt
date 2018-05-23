@@ -1,0 +1,68 @@
+Change 882 by sdorner@sd8500e on 1998/05/26 13:25:26
+
+	Added GetMailboxTag.
+
+Affected files ...
+
+... //depot/projects/eudora/mac/Current/Include/emsapi-MacGlue.h#4 edit
+... //depot/projects/eudora/mac/Current/Include/emsapi-mac.h#5 edit
+... //depot/projects/eudora/mac/Current/trans.c#15 edit
+
+Differences ...
+
+==== //depot/projects/eudora/mac/Current/Include/emsapi-MacGlue.h#4 (text) ====
+
+158a159,166
+> #if GENERATINGCFM
+> typedef UniversalProcPtr emsGetMailBoxTag;
+> enum { uppemsGetMailBoxTagProcInfo = kPascalStackBased
+>         | STACK_ROUTINE_PARAMETER(1, SIZE_CODE(sizeof(emsSetMailBoxTagDataP))) };
+> #else
+> typedef pascal void (*emsGetMailBoxTag)(emsSetMailBoxTagDataP setMailBoxTagData); 
+> #endif
+> typedef emsGetMailBoxTag emsGetMailBoxTagUPP;
+251a260
+>     emsGetMailBoxTag    EMSGetMailBoxTagFunction;
+335a345
+>     long                oldkey;       	/* OUT: the attribute's old key, zero by default */
+
+==== //depot/projects/eudora/mac/Current/Include/emsapi-mac.h#5 (text) ====
+
+290a291
+>     emsGetMailBoxTag    EMSGetMailBoxTagFunction;
+368a370
+>     long                oldkey;       	/* OUT: the attribute's old key, zero by default */
+
+==== //depot/projects/eudora/mac/Current/trans.c#15 (text) ====
+
+121a122,123
+> typedef pascal void ETLGetMailBoxTagType(emsSetMailBoxTagDataP setMailBoxTagData); 
+> SIMPLE_UPP(ETLGetMailBoxTag,emsGetMailBoxTag);	// v5
+610a613,614
+> 	//	v5 stuff
+> 	mailConfig->callBacks.EMSGetMailBoxTagFunction = ETLGetMailBoxTagUPP;
+1069a1074,1097
+> 	}
+> }
+> 
+> /**********************************************************************
+>  * ETLGetMailBoxTag - get tag ID for a mailbox
+>  **********************************************************************/
+> static pascal void ETLGetMailBoxTag(emsSetMailBoxTagDataP pData)
+> {
+> 	FSSpec	spec,mailFolderSpec;
+> 	TOCHandle tocH;
+> 	Boolean		wasChanged;
+> 	
+> 	pData->oldkey = pData->oldvalue = 0;
+> 	
+> 	//	Alias is relative to mail folder
+> 	FSMakeFSSpec(MailRoot.vRef, MailRoot.dirId, "", &mailFolderSpec);
+> 	if (!ResolveAlias(&mailFolderSpec, pData->mailbox, &spec, &wasChanged))
+> 	{
+> 		//	get key from mailbox's TOC
+> 		if (!GetTOCByFSS(&spec,&tocH))
+> 		{
+> 			pData->oldkey = (*tocH)->pluginKey;
+> 			pData->oldvalue = (*tocH)->pluginValue;
+> 		}

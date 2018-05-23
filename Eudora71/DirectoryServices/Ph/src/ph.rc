@@ -1,0 +1,275 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_PHPROPPAGE1 DIALOG DISCARDABLE  0, 0, 244, 135
+STYLE DS_3DLOOK | WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "General"
+FONT 8, "MS Sans Serif"
+BEGIN
+    GROUPBOX        "Server name",IDC_STATIC,7,7,230,52
+    LTEXT           "Enter the name for this server the way you would like it to appear in the list of servers:",
+                    IDC_STATIC,16,18,204,17
+    EDITTEXT        IDC_NAME,17,37,209,14,ES_AUTOHSCROLL
+    GROUPBOX        "Server setup",IDC_STATIC,7,65,230,63
+    LTEXT           "Enter the network host name for this server.",
+                    IDC_STATIC,63,77,154,10
+    LTEXT           "Host name:",IDC_STATIC,17,92,37,8
+    EDITTEXT        IDC_HOSTNAME,62,88,164,14,ES_AUTOHSCROLL
+    LTEXT           "Port:",IDC_STATIC,17,109,16,8
+    EDITTEXT        IDC_PORT,62,106,28,14,ES_AUTOHSCROLL
+END
+
+IDD_EDITATTRIB DIALOG DISCARDABLE  0, 0, 183, 95
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Attribute"
+FONT 8, "MS Sans Serif"
+BEGIN
+    EDITTEXT        IDC_ATTRIBNAME,7,17,166,14,ES_AUTOHSCROLL
+    COMBOBOX        IDC_PRESENTEDAS,7,48,166,109,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    DEFPUSHBUTTON   "OK",IDOK,69,73,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,123,73,50,14
+    LTEXT           "Attribute Name:",-1,7,7,50,8
+    LTEXT           "Present As:",-1,7,38,37,8
+END
+
+IDD_PHPROPPAGE2 DIALOG DISCARDABLE  0, 0, 243, 135
+STYLE DS_3DLOOK | WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "Attributes"
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "List1",IDC_LVATTRIBUTE,"SysListView32",LVS_REPORT | 
+                    LVS_SINGLESEL | LVS_SHOWSELALWAYS | LVS_EDITLABELS | 
+                    LVS_NOSORTHEADER | WS_BORDER | WS_TABSTOP,7,7,172,121
+    PUSHBUTTON      "    &Add...",IDC_ADD,186,7,50,14,BS_LEFT
+    PUSHBUTTON      "    &Edit",IDC_EDIT,186,25,50,14,BS_LEFT
+    PUSHBUTTON      "    &Remove",IDC_REMOVE,186,43,50,14,BS_LEFT
+END
+
+IDD_FINGERPROPPAGE1 DIALOG DISCARDABLE  0, 0, 244, 135
+STYLE DS_3DLOOK | WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "General"
+FONT 8, "MS Sans Serif"
+BEGIN
+    GROUPBOX        "Server name",IDC_STATIC,7,7,230,52
+    LTEXT           "Enter the name for this server the way you would like it to appear in the list of servers:",
+                    IDC_STATIC,16,18,204,17
+    EDITTEXT        IDC_NAME,17,37,209,14,ES_AUTOHSCROLL
+    GROUPBOX        "Server setup",IDC_STATIC,7,65,230,63
+    LTEXT           "Enter the network host name for this server.",
+                    IDC_STATIC,63,77,154,10
+    LTEXT           "Host name:",IDC_STATIC,17,92,37,8
+    EDITTEXT        IDC_HOSTNAME,62,88,164,14,ES_AUTOHSCROLL
+    LTEXT           "Port:",IDC_STATIC,17,109,16,8
+    EDITTEXT        IDC_PORT,62,106,28,14,ES_AUTOHSCROLL
+END
+
+IDD_EDITATTRIB1 DIALOG DISCARDABLE  40, 40, 139, 175
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "Attribute Name:",-1,7,7,50,8
+    EDITTEXT        IDC_ATTRIBNAME,7,17,122,14,ES_AUTOHSCROLL
+    LTEXT           "Present As:",-1,7,38,37,8
+    LISTBOX         IDC_PRESENTEDAS,7,49,122,95,LBS_NOINTEGRALHEIGHT | 
+                    WS_VSCROLL | WS_TABSTOP
+    DEFPUSHBUTTON   "OK",IDOK,25,153,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,79,153,50,14
+END
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+#include "..\..\VersionBeg.inc"
+
+VALUE "InternalName",     "Ph\0"
+VALUE "OriginalFilename", "Ph.dll\0"
+VALUE "FileDescription",  "Ph Protocol Driver\0"
+VALUE "Comments",         "Eudora Ph Protocol Driver\0"
+
+#include "..\..\VersionEnd.inc"
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_PHPROPPAGE1, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 237
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 128
+    END
+
+    IDD_EDITATTRIB, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 173
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 87
+    END
+
+    IDD_PHPROPPAGE2, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 236
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 128
+    END
+
+    IDD_FINGERPROPPAGE1, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 237
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 128
+    END
+
+    IDD_EDITATTRIB1, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 129
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 167
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_PHIMAGESMALL        BITMAP  DISCARDABLE     "ph-small.bmp"
+IDB_FINGERIMAGESMALL    BITMAP  DISCARDABLE     "finger-small.bmp"
+IDB_INVISIBLE           BITMAP  DISCARDABLE     "bitmap1.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_FINGER              ICON    DISCARDABLE     "Point.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_ATTRIBNAME          "Attribute"
+    IDS_PRESENTNAME         "Present As"
+    IDS_ERRHOSTNAME         "You must enter a host name!"
+    IDS_ERRHOSTNAMEREQ      "Host name required"
+    IDS_UNNAMED             "<Unnamed>"
+    IDS_ERRPORT             "You must enter a valid port number!"
+    IDS_ERRPORTNUMREQ       "Port number required"
+    IDS_ERRORINFIELD        "Error in field!"
+    IDS_INTEGERERR          "Please enter a number between %d and %d."
+    IDS_REGHOSTNAME         ".HostName"
+    IDS_REGPORT             ".Port"
+    IDS_REGNAME             ".ServerName"
+    IDS_PH                  "Ph"
+    IDS_FINGER              "Finger"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_ERRATTRIBNAME       "You must enter an attribute name!"
+    IDS_QUERYOK             "Record complete."
+    IDS_QUERYFAILED         "Query failed"
+    IDS_WOULDBLOCK          "..."
+    IDS_DONE                "Query completed successfully."
+    IDS_CANCELLED           "Query cancelled by user."
+    IDS_EBADFORMAT          "Ph server data error."
+    IDS_ECONNECT            "Cannot connect to server."
+    IDS_EADDRESS            "..."
+    IDS_EREAD               "Read error."
+    IDS_EWRITE              "Write error."
+    IDS_EOUTOFMEMORY        "Out of memory error."
+    IDS_EPROTOCOL           "Protocol error."
+    IDS_INTEGERERRMIN       "Please enter a number greater than %d ."
+    IDS_INTEGERERRMAX       "Please enter a number less than %d ."
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

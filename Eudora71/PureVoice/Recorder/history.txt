@@ -1,0 +1,345 @@
+/*////////////////////////////////////////////////////////////////////////////
+
+NAME:
+	Qualcomm PureVoice - PureVoice
+
+PROGRAMS:	PureVoice.exe
+AUTHOR:		Livingstone Song (lss)
+COMPANY:	QUALCOMM, Inc.
+TYPE:		Win32 Platform
+
+DESCRIPTION:
+	PureVoice is a player/recorder for e-mail packages. If used alone,
+	it will attach voice recording via MAPI. If used with PureVoice32.dll,
+	an EMSAPI plugin for Eudora, it becomes better "integerated"
+
+	Note: This file is OBSOLETE. Now that the project is under source control,
+	all changes should be documented in the Perforce change history, not here.
+	This file is included for historical reference only and is NOT MAINTAINED.
+	05/07/2000 -- BPO
+
+RESCRITICTIONS:
+
+DEPENDENCIES:
+
+FILES:
+	CAWave.cpp
+	CConvert.cpp
+	CodecMnu.cpp
+	CPlugIn.cpp
+	CSndBuf.cpp
+	CWaveCon.cpp
+	CWavePCM.cpp
+	ErrorHandler.cpp
+	LsConverUnit.cpp
+	LsBmpButton.cpp
+	LsMixer.cpp
+	LsStateAction.cpp
+	LsStateEvent.cpp
+	LsStateMachine.cpp
+	MainFrm.cpp
+	mmioFile.cpp
+	NameToolBar.cpp
+	PlayDisplay.cpp
+	QVoice.cpp
+	QVoiceDoc.cpp
+	QVoiceView.cpp
+	StdAfx.cpp
+	VolumeBar.cpp
+	Recorder.rc
+
+REVISION:
+
+v1.0.0.5 (01/08/97) lss
+-----------------------
+	- Fixed exit path when exiting from realtime recording. 
+	  [LsStateAction.cpp, LsStateMachine.cpp, QVoiceView.cpp]
+  
+v1.0.0.6 (01/08/97) lss
+-----------------------
+	- The slider now moves during recording. Seems more logical
+	  to have it move than standing still.
+	  [QVoiceView.cpp]
+
+v1.0.0.7 (01/10/97) lss
+------------------------
+	- The program window starts up at the current mouse position. 
+	  [QVoiceView.cpp]
+	- If the program is started with a filename and the file
+	  is invalid or the appropriate codec is not found, then
+	  the program will exit.
+	  [QVoiceView.cpp]
+
+v1.0.0.8 (01/13/97) lss
+-----------------------
+	- Fixed the problem of menu wrapping around in Large Font Display
+	  mode. This caused scroll bars to appear and threw off the recorder
+	  display.
+	  [QVoiceView.cpp]
+
+v1.0.0.9 (01/16/97) lss
+-----------------------
+	- Added /record commandline. This will automatically start recording
+	  upon starting the QVRecorder
+	  [QVoice.cpp, QVoiceView.cpp]
+	- The program will now save the last codec used for recording into the
+	  registery
+	  [QVoice.cpp, LsStateActio.cpp]
+
+v1.0.0.10 (01/17/97) lss
+------------------------
+	- Allow QVRecorder to register itself.
+	  [QVoice.cpp]
+	- Start play whenever a file is opened.
+	  [LsStateAction.cpp, LsStateMachine.cpp, QVoiceView.cpp]
+
+v1.0.0.11 (01/17/97) lss
+------------------------
+	- Added /reg commandline. This just registers QVRecorder and quits.
+	  [QVoice.cpp]
+	- Modified text in About dialog
+	  [recorder.rc]
+
+v1.0.0.12 (01/20/97) lss
+------------------------
+	- Changed Sleep(0) to Sleep(1). Sleep for 1 ms so we don't hog the
+	  cpu 100%.
+	  [CConvert.cpp]
+
+v1.0.0.13 (01/22/97) lss
+------------------------
+	- Put a patch in the QcelpFile::process to align the last word of
+	  certain packets as byte.
+	  [mmioFile.cpp]
+
+v1.0.0.14 (02/14/97) lss
+------------------------
+	- Only allow one instance of this program.
+	  [QVoice.cpp, MainFrm.cpp]
+
+v1.1.0.1 (03/21/97) lss
+------------------------
+	- Added Volume Control Bar. Will also retain previous state
+	  [VolumeBar.cpp, QVoiceView.cpp]
+	- Combo-box of compression routines in the tool bar is now conditionally
+	  compilable via LS_TOOLBAR_COMBOBOX. (Will not use combo-box)
+	  [MainFrm.cpp, LsStateAction.cpp,  QVoiceView.cpp]
+	- Added "Open", "VolumeBar", and "Stay On Top" buttons in the tool bar.
+	  Stay On Top will retain previous state.
+	  [MainFrm.cpp]
+	- Added Peak Meter display for both the speaker and microphone
+	  [QVoiceView.cpp, PlayDisplay.cpp]
+	- Added "Save As" menu item and functionality
+	  [QVoiceDoc.cpp, LsStateAction.cpp, LsStateMachine.cpp, LsStateEvent.cpp,
+	   QVoiceView.cpp]
+
+v1.1.0.2 (03/26/97) lss
+------------------------
+	- Mixer stuff: also look in DST for controls. This was in response to
+	  Toshiba labtops listing the WaveIn peak meter in WaveIn DST instead of 
+	  microphone src.
+	  [LsMixer.cpp]
+
+v1.1.0.3 (04/02/97) lss
+------------------------
+	- Fixed minute display. Would display wrong minute whenever it went over
+	  60 minutes.
+	  [CDisplay.cpp]
+	- Beep just before recording whenever QVRecorder is started with /record
+	  [QVoiceView.cpp, LsStateAction.cpp]
+	- Show file name in the title bar
+	  [QVoiceDoc.cpp]
+	- Properly ghost out "Save As" menu item when it's not appropriate
+	  [QVoiceView.cpp]
+	- Fix in v1.0.0.13 now obsolete since codec plugin outputs and expects
+	  byte aligned data
+
+v1.1.0.4 (04/14/97) lss
+------------------------
+	- Fast playback speed now finally supported. No slow yet.
+	  [CWaveCon.cpp, LsStateAction.cpp]
+	- Overhaul of codec plugin dll. It's now based on COM.
+	- Added file format version number.
+
+v1.1.0.5 (04/23/97) lss
+------------------------
+	- Now works directly with variable rate files where as before it only 
+	  worked with fixed size packet files. This required fixed size packet
+	  temp file creation when variable rate files encountered.
+	- Rearranged menu items.
+	  [QVoice.rc]
+
+v1.1.0.6 (04/28/97) lss
+------------------------
+	- Fixed the single instance problem in that it could not find the 
+	  2nd instance window because we were using window title instead of
+	  exe name.
+	  [QVoice.cpp]
+
+v1.1.0.7 (04/30/97) lss
+------------------------
+	- No more 'No Compression' option, although playing wave file is
+	  still allowed.
+	  [LsStateAction.cpp]
+	- Added Alpha Automatic Gain Control of the microphone. This is
+	  an option under the Option menu.
+	  [CWavePCM.cpp]
+
+v1.1.0.8 (04/30/97) lss
+------------------------
+	- Changed MoveFile to MoveFileEx with MOVEFILE_COPY_ALLOWED
+	  when moving file to another volume. 
+	  [LsStateAction.cpp, mmioFile.cpp]
+	- Also have newer QVoice32.dll that handles path and file names
+	  with spaces in them.
+
+v1.1.0.9 (05/02/97) lss
+------------------------
+	- Added naming edit box and its own toolbar
+	  [NameToolBar.cpp, MainFrm.cpp]
+	- Re-arrange menu item, changes few names...
+	  [Recorder.rc]
+
+v1.2.0.1 (05/06/97) lss
+------------------------
+	- Release for Eudora QA
+	- Known bugs: May crash on NT4.0 after several uses.
+	- Also needs transparent buttons
+	- Also need to better handle "out of disk space/memory" situations
+	- Also need to handle file size display > 9999K
+
+v1.2.0.2 (05/08/97) lss
+------------------------
+	- Changed playback speed display to "bars"
+	 [PlayDisplay.cpp, QVoiceView.cpp]
+	- fast and slow now supports 3 levels of fast/slow
+	 [Qcelp.qcl]
+
+v1.2.0.3 (05/09/97) lss
+------------------------
+	- Fixed fast/slow button disabling after play is stop bug
+	 [QVoiceView.cpp]
+	- Speaker and Microphone volume setting are now saved to registery
+	 [VolumeBar.cpp]
+
+v1.2.0.4 (05/20/97) lss
+------------------------
+	- Fixed clipping problem at the end of speech during fast/slow playback
+	 [CWaveCon.cpp]
+	- Filter out "invalid" names
+	 [NameToolBar.cpp]
+	- Now remembers playback settings between sessions
+	 [LsStateAction.cpp]
+
+v1.2.0.5 (05/21/97) lss
+------------------------
+	- No instance limit if called with /eudora
+	 [QVoice.cpp]
+	- When user starts a 2nd instance with a filename, 1st instance
+	  will ask the user if he/she wishes to discard the current recording
+	  on the 1st instance before loading the filename from 2nd instance.
+	  This only happens when the recording is "dirty"
+	 [QVoiceView.cpp]
+	- Slider does not move back and forth during recording, instead the
+	  red recording indicator goes on and off.
+	- Fixed a clipping problem at the end of playback
+	 [CWaveCon.cpp]
+	- Now updates Name Edit box after save as operation
+	 [QVoiceDoc.cpp]
+	- Fixed bug in Qcelp.qpl where setting the playback to normal after
+	  fast or slow did not work correctly.
+	- Fixed potential synconization problems in CConvert
+	 [CConvert.cpp]
+
+v1.2.0.5 (05/30/97) lss
+------------------------
+	- Transparent Bitmap Buttons!!!
+	 [LsBmpButton.cpp]
+	- Transparent Bitmap for mike and speaker bmp in VolumeBar
+	 [VolumeBar.cpp]
+	- Q in LED display nows animates during playback. Has slow, normal,
+	  and fast animation corresponding to the said playback settings
+	 [QVoiceView.cpp]
+
+v1.0.0.1 Beta (06/04/97) lss
+----------------------------
+	- External Public Release!!!
+	- New Icons
+	- Fixed the slider position during record/pause sequences
+	 [QVoiceView.cpp]
+	- Better thread syncro in conversion by using events
+	 [CConvert.cpp]
+	- Better chance of selecting the correct wave[In/Out] mixer device
+	 [LsMixer.cpp]
+	- Fixed the problem of not recognizing any change of playback speed 
+	  during pause
+	 [LsStateAction.cpp]
+
+v1.0.0.2 Beta (06/09/97) lss
+----------------------------
+	- Ok, this will be the first external public release and not the Beta1
+	- Delete the temp file after attaching via MAPI
+	 [LsStateAction.cpp]
+	- Fixed syncro problem for when CConvert::Stop. Apparently I didn't
+	 do the ResetEvent for ThreadStop event after creating the thread.
+	 [CConvert.cpp]
+	- Put expiration functionality
+	 [TimeExpire.cpp, QVoice.cpp]
+
+v1.0.0.3 Beta (06/12/97) lss
+----------------------------
+	- Hopely stomped the last thread syncro problem.
+	 [CConvert.cpp]
+	- Convert all icons to clear ones
+	 [Recorder.rc]
+
+v1.0.0.4 Beta (06/19/97) lss
+----------------------------
+	- Better scaling of slider thumb so that tick marks will show
+	 [QVoiceView.cpp, VolumeBar.cpp]
+	- If attach(MAPI mode) is selected during exit and MAPI fails for
+	 some reason, PureVoice will not exit.
+	 [QVoiceDoc.cpp]
+	- Finally put the code for creating "bookmark" offsets for recordings
+	 greater than 2 hours.
+	 [mmioFile.cpp]
+
+v1.0.0.0 Release(1) (06/??/97) lss
+----------------------------------
+
+v1.1.0.0 Release(2) (08/20/97) lss
+----------------------------------
+	- Better menu width determination. This is used to abbreviate
+	  menu names if it can't fit on one line.
+	 [QVoiceView.cpp]
+	- Fixes the "solid icon background" bug.
+	 [VolumeBar.cpp]
+	- Use of mixerGetNumDevs seems to result in better success of selecting
+	  the correct mixer device for waveIn/Out. This fixes the volume control
+	  and play/record level indicator not working on some device drivers.
+	 [LsMixer.cpp]
+	- Better 3D color adaptation to the transparent bitmap.
+	 [LsBmpButton.cpp]
+	- In OverWrite mode with position at 0, if record failed, the previous
+	  recording is lost. This bug is fixed.
+
+v1.2.0.0 Internal (11/03/97) lss 
+--------------------------------
+	- Sends 'get mic' and 'release mic' msg to IBM VR program so that
+	  that PureVoice gets the sound device when IBM VR is running.
+	[QVoice.cpp, MainFrm.cpp]
+
+v1.2.0.0 Release(3) (11/20/97) lss
+----------------------------------
+	- Fixes "hang on exit" problem on some NT machines.
+	[VolumeBar.cpp]
+
+v1.2.1.0 Release(4) (12/01/97) lss
+----------------------------------
+	- The above fix broke "shadow" icon problem in some Win95 has been
+	  fixed.
+	[VolumeBar.cpp]
+	- Added Exit menu item under File Menu.
+	[QVoiceDoc.cpp]
+
+/*////////////////////////////////////////////////////////////////////////////

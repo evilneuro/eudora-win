@@ -1,0 +1,107 @@
+'**********************************************************************************
+'
+'  Eudora2-SigStat.MST
+'  Description      :  Eudora Signature And Stationary Creation Script
+'  Programmer       :  Jason Miller with includes by:
+'                      Richard J. Wartner
+
+'
+'  In order for this program to run
+'  it must have an INI file nominated in the Command Line.
+'
+'  Syntax: \FullPATH\mtrun.exe \FullPATH\Eudora2-SigStat.pc6 /C WBImport.INI
+'
+'**********************************************************************************
+'
+' HISTORY:
+' 04/00   Rev 1.0 Initial program creation.
+'
+'**********************************************************************************
+'=============================================
+' Metacommand declarations follow
+'=============================================
+'$INCLUDE 'TDECLARE.INC'
+'$INCLUDE 'C:\vt\EudoraUtil.INC'
+
+'============================================================
+' Program Variables
+'============================================================
+Dim MainReturnInteger As Integer
+'============================================================
+' Subroutine/Function Declarations
+'============================================================
+Declare Function TestViewMenu() As Integer
+Declare Function TestViewOptions() As Integer
+'*************************************************************************
+'*************************************************************************
+'*  START OF SCRIPT
+'*************************************************************************
+'*************************************************************************
+' Initial setups
+CurPrgName = "Eudora.PCD"     ' Current program name
+RevNumber  = "Rev 1.0"               ' Revision Number
+
+MainReturnInteger = EudoraIsOpen()
+If MainReturnInteger = False Then
+	' Retrieve INI file name and path from Command Line
+	MainReturnInteger = CheckCommandLine() 
+	' Test Return Value
+	If MainReturnInteger = False Then
+		LogError("Error Retrieving Command Line in "+CurPrgName+"!",0,LogPath,CritErrPath)
+	End If
+
+		' Retrieve Eudora Name and Path
+		MainReturnInteger = GetEudora("Eudora",TheIniFile)
+		' Test Return Value
+		If MainReturnInteger = False Then
+			LogError("Error Finding Eudora Name "+CurPrgName+"!",0,LogPath,CritErrPath)
+		End If
+
+
+		' Retrieve INI file defaults
+		MainReturnInteger = SetDefaults("Defaults",TheIniFile)
+		' Test Return Value
+		If MainReturnInteger = False Then
+			LogError("Error Setting Defaults "+CurPrgName+"!",0,LogPath,CritErrPath)
+		End If
+
+	'Start Eudora
+	MainReturnInteger = StartEudora()
+	' Test Return Value
+	If MainReturnInteger = False Then
+		LogError("Error Starting Eudora!",0,LogPath,CritErrPath)
+	End If
+End If
+
+MainReturnInteger = OpenSignatures()
+' Test Return Value
+If MainReturnInteger = False Then
+	LogError("Error Opening Signatures!",0,LogPath,CritErrPath)
+End If
+
+
+MainReturnInteger = CreateSignatures()
+' Test Return Value
+If MainReturnInteger = False Then
+	LogError("Error Creating Signatures!",0,LogPath,CritErrPath)
+End If
+
+MainReturnInteger = OpenStationery()
+' Test Return Value
+If MainReturnInteger = False Then
+	LogError("Error Opening Stationery window!",0,LogPath,CritErrPath)
+End If
+
+MainReturnInteger = CreateStationery()
+' Test Return Value
+If MainReturnInteger = False Then
+	LogError("Error Creating Stationery!",0,LogPath,CritErrPath)
+End If
+
+MainReturnInteger = UseStationeryandSignature()
+' Test Return Value
+If MainReturnInteger = False Then
+	LogError("Error Using Stationery and Signature!",0,LogPath,CritErrPath)
+End If
+
+

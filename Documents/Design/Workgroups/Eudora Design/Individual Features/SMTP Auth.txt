@@ -1,0 +1,54 @@
+SMTP Auth
+	Preferences
+		Even when AUTH is offered by the SMTP server, the user may not wish to do it.  AUTH may not be required, and be simply a bother, or AUTH may be broken and actively harmful.
+		AUTH_ALLOWED - the user is willing to do auth (default ON?)
+		AUTH_REQUIRED - the user wants/needs to be asked for password (default OFF)
+		Username and password will be POP username and password for now.  May be reasonable to re-claim dialup username and password (by preference) in the future.
+	Algorithms
+		Before sending:
+			if AUTH_ALLOWED && AUTH_REQUIRED
+  get user’s password
+		During SMTP introductions
+			if AUTH_ALLOWED && server offers AUTH && we have a password
+  if auth attempt fails && AUTH_REQUIRED
+    send fails
+    password invalidated
+		During any SMTP command
+			if command returns 505
+  if AUTH_ALLOWED
+    set AUTH_REQUIRED
+  send fails
+		After SMTP session
+			if send failed with 505 && !AUTH_ALLOWED
+  Ask user if they want to turn on AUTH_ALLOWED
+  if user wants to
+    set AUTH_ALLOWED
+    set AUTH_REQUIRED
+	Authentication Methods Supported
+		CRAM-MD5
+	Example
+		username: test, password: Wrloota
+		Rcvd: "220 sdorner1.qualcomm.com running Eudora Internet Mail Server 2.1\r\n"
+Sent: "EHLO [129.46.11.69]\r\n"
+Rcvd: "250-sdorner1.qualcomm.com hello [129.46.11.69]\r\n"
+Rcvd: "250-EXPN\r\n"
+Rcvd: "250-PIPELINING\r\n"
+Rcvd: "250-8BITMIME\r\n"
+Rcvd: "250-BINARYMIME\r\n"
+Rcvd: "250-CHUNKING\r\n"
+Rcvd: "250-ENHANCEDSTATUSCODES\r\n"
+Rcvd: "250-ETRN\r\n"
+Rcvd: "250-AUTH CRAM-MD5\r\n"
+Rcvd: "250 SIZE 2147483647\r\n"
+Sent: "AUTH cram-md5\r\n"
+Rcvd: "334 PDEzMDM4NTUyMzctMTAwNDYxMDFAc2Rvcm5lcjEucXVhbGNvbW0uY29tPg==\r\n"
+Sent: "dGVzdCBhNzExODZkNDY3ZTRmNjg2NzY3NGViNzlkNWMzNWFmNw==\r\n"
+Rcvd: "235 2.0.0 Authenticated\r\n"
+	Implementor’s Notes
+		Mac (Steve Dorner)
+			Had to change base64 encoder to not insert linebreaks to do CRAM-MD5 properly for SMTP
+			The base64 response is a base64 of the username, a space, and the hex-encoded digest, so it’s “double-encoded” which seemed odd to me, but that’s how it is.
+	References
+		SMTP AUTH: <ftp://ftp.isi.edu/internet-drafts/draft-myers-smtp-auth-11.txt>
+		CRAM-MD5: <ftp://ftp.isi.edu/in-notes/rfc2095.txt>
+		ESMTP:  <ftp://ftp.isi.edu/in-notes/rfc1869.txt>

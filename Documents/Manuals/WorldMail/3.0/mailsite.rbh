@@ -1,0 +1,14 @@
+[File Properties]
+BrowseString=MAILSITE:0
+BrowseType=0
+StartingWith=0
+IncrementBy=20
+Update Footnotes=2
+Update Styles=2
+DefaultBuildTag=
+AutoMapFile=0
+MapStartWith=1
+[VERSION]
+RHFile=7.0
+[.rbh]
+CopyToWasUpdated7=1

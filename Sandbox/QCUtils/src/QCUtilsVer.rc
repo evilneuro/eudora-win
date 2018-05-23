@@ -1,0 +1,17 @@
+// QCUtilsVer.rc
+
+// DO NOT USE DEV STUDIO TO EDIT THIS FILE
+//
+
+#ifdef APSTUDIO_INVOKED
+#error DO NOT USE DEV STUDIO TO EDIT THIS FILE
+#endif
+
+#include "..\..\VersionBeg.inc"
+
+VALUE "InternalName",     "QCUTILS.DLL\0"
+VALUE "OriginalFilename", "QCUTILS.DLL\0"
+VALUE "FileDescription",  "QCUTILS Library\0"
+VALUE "Comments",         "QCUTILS Library\0"
+
+#include "..\..\VersionEnd.inc"

@@ -1,0 +1,819 @@
+Microsoft (R) Help Compiler
+HCRTF 4.03.0002
+Copyright (c) Microsoft Corp 1990 - 1995. All rights reserved.
+Eudora.hpj
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDP_OLE_INIT_FAILED" is the same as the map value for "HIDR_CONTEXT_POPUPS".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDR_AUTOMATION_RESERVED05" is the same as the map value for "HIDR_AUTOMATION_RESERVED01".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDR_AUTOMATION_RESERVED06" is the same as the map value for "HIDR_AUTOMATION_RESERVED02".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDR_AUTOMATION_RESERVED07" is the same as the map value for "HIDR_AUTOMATION_RESERVED03".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDR_AUTOMATION_RESERVED08" is the same as the map value for "HIDR_AUTOMATION_RESERVED04".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDI_OPTIONS" is the same as the map value for "HIDS_DISABLE_SAVE_PASSWORD".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDC_AD_WAZOO_BAR" is the same as the map value for "HIDD_GET_PASSWORD_MP".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDD_WARN_EDIT_HTML" is the same as the map value for "HIDB_SERVER_PARTIAL".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDI_ATTACH_DEFAULT" is the same as the map value for "HIDC_NICKNAME_CUSTOM_LABEL10".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDD_INSERT_LINK" is the same as the map value for "HIDC_NICKNAME_CUSTOM_EDIT10".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDS_START_TO_END" is the same as the map value for "HIDC_NICKNAME_CUSTOM_FIELD10".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDS_START_TO_START" is the same as the map value for "HIDC_SWAPNAMES".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDS_END_TO_START" is the same as the map value for "HIDC_SWAPHOMEWITHWORK".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDS_END_TO_END" is the same as the map value for "HIDC_PRIMARYCHECK".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDC_LINE1" is the same as the map value for "HIDS_NONE".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDC_LINE2" is the same as the map value for "HIDS_TEXT".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDS_ERR_OPEN_TEMP_FILE" is the same as the map value for "HIDD_SENDING_STYLES".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDS_ERR_WRITE_TEMP_FILE" is the same as the map value for "HIDC_SEND_PLAIN".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDS_REG_IE_PAGE_SETUP" is the same as the map value for "HIDC_SEND_STYLED".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDS_REG_IE_HEADER" is the same as the map value for "HIDC_SEND_PLAIN_AND_STYLED".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDS_IE_PRINT_FOOTER_EXTRA" is the same as the map value for "HIDB_SORTBYSTATUS".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDS_PRIORITY_HIGHEST" is the same as the map value for "HIDB_PRIOR_HIGHEST".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDS_PRIORITY_HIGH" is the same as the map value for "HIDB_PRIOR_HIGH".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDS_PRIORITY_NORMAL" is the same as the map value for "HIDB_PRIOR_NORMAL".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDS_PRIORITY_LOW" is the same as the map value for "HIDB_PRIOR_LOW".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDS_PRIORITY_LOWEST" is the same as the map value for "HIDB_PRIOR_LOWEST".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDC_RR_LATER" is the same as the map value for "HIDS_FILE_CHECK_MAIL".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDC_PROP_RR" is the same as the map value for "HIDS_FILE_CHECK_MAIL".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDC_PROP_L_SORTED" is the same as the map value for "HIDS_FILE_CHECK_MAIL".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDC_PAR_ADWARE" is the same as the map value for "HIDS_FILE_CHECK_MAIL".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDC_LOST_CODE" is the same as the map value for "HIDS_FILE_CHECK_MAIL".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDC_UNSUBSCRIBE" is the same as the map value for "HIDS_INSERT_RECIPIENT".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDC_GET_BUY_EUDORA" is the same as the map value for "HIDS_INSERT_RECIPIENT".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDC_PROP_SORTED" is the same as the map value for "HIDS_INSERT_RECIPIENT".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDC_PAR_PAID" is the same as the map value for "HIDS_INSERT_RECIPIENT".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDC_FIRST_NAME" is the same as the map value for "HIDS_INSERT_RECIPIENT".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDC_PROP_L_MBXNAME" is the same as the map value for "HIDS_FCC".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDC_PAR_FREE" is the same as the map value for "HIDS_FCC".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDC_LAST_NAME" is the same as the map value for "HIDS_FCC".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDC_PRO_TEXT" is the same as the map value for "HIDS_FCC_LOST_MBOX".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDC_PROP_L_MBX_SIZE" is the same as the map value for "HIDS_FCC_LOST_MBOX".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDC_PAR_REGISTER" is the same as the map value for "HIDS_FCC_LOST_MBOX".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDC_CODE" is the same as the map value for "HIDS_FCC_LOST_MBOX".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDC_TOOL_BAR_NAME" is the same as the map value for "HIDC_PROP_SIGNATURE".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDC_PROP_ATTACH" is the same as the map value for "HIDC_PROP_SIGNATURE".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDC_PROP_L_NUM_MSGS" is the same as the map value for "HIDC_PROP_SIGNATURE".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDS_EMBEDDED_CONTENT" is the same as the map value for "HIDC_PROP_SIGNATURE".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDC_PAR_DEMOGRAPHICS" is the same as the map value for "HIDC_PROP_SIGNATURE".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDC_PROP_L_FILENAME" is the same as the map value for "HIDC_PROP_PERSON".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDS_MESSAGE_PLUGINS" is the same as the map value for "HIDC_PROP_PERSON".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDC_PAR_FIND_VERSIONS" is the same as the map value for "HIDC_PROP_PERSON".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDC_PROP_TABS" is the same as the map value for "HIDS_SYSTEM_MENU_CHECKMAIL".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDC_PROP_MBX_COMPACT" is the same as the map value for "HIDS_SYSTEM_MENU_CHECKMAIL".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDC_PROP_LOCK" is the same as the map value for "HIDS_SYSTEM_MENU_CHECKMAIL".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDC_PAR_CHANGE_REGISTRATION" is the same as the map value for "HIDS_SYSTEM_MENU_CHECKMAIL".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDC_PROP_COPIES" is the same as the map value for "HIDC_PROP_L_LOCATION".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDC_PROP_DEL_SERVER" is the same as the map value for "HIDC_PROP_L_LOCATION".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDC_PAR_REGISTRATION_NAME" is the same as the map value for "HIDC_PROP_L_LOCATION".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDC_PAR_REGISTRATION_CODE" is the same as the map value for "HIDC_PROP_SUBJECT".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDC_PROP_L_CREATED" is the same as the map value for "HIDS_DISK_SPACE_LOW".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDC_PAR_TELL_ME_MORE" is the same as the map value for "HIDS_DISK_SPACE_LOW".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDC_PROP_MBX_NAME" is the same as the map value for "HIDS_DISK_SPACE_OUT".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDC_PROP_AGING_OFF" is the same as the map value for "HIDS_DISK_SPACE_OUT".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDC_PROP_FILENAME" is the same as the map value for "HIDC_LBL_ATTACH_ENCODING".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDC_PROP_NUM_MSGS" is the same as the map value for "HIDC_PROGRESS_BAR".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDC_PROP_ATTACH_SZ" is the same as the map value for "HIDC_SERVER_COMBO".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDC_PROP_MBX_SIZE" is the same as the map value for "HIDC_SERVER_COMBO".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDC_PROP_LOCATION" is the same as the map value for "HIDC_COMMAND".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDC_PROP_CREATED" is the same as the map value for "HIDC_RESPONSE".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDC_SERVER_BUTTON" is the same as the map value for "HIDC_TREE1".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDC_PROP_MODIFIED" is the same as the map value for "HIDC_TREE1".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDC_PROP_L_ENCODING" is the same as the map value for "HIDC_COMMAND_PROMPT".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDC_PROP_MBX_DPERIOD" is the same as the map value for "HIDC_ADDRESSES_PROMPT".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDC_PROP_MBX_DNUM" is the same as the map value for "HIDC_PROP_ENCODING".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDC_PROP_MBX_ACTION" is the same as the map value for "HIDC_PROP_L_ATTACH_SZ".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDS_TOOLBAR_TITLE" is the same as the map value for "HIDC_PROP_L_ATTACH_SZ".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDC_PROP_L_MODIFIED" is the same as the map value for "HIDC_IGNORE_CAPS_BTN".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDC_PROP_ACTION_OPTION" is the same as the map value for "HIDC_IGNORE_CAPS_BTN".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDS_IN_MBOX_NAME" is the same as the map value for "HIDC_IGNORE_CAPS_BTN".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDC_RECIP_TEXT" is the same as the map value for "HIDC_PROP_INLINE".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDS_OUT_MBOX_NAME" is the same as the map value for "HIDC_PROP_INLINE".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDS_TRASH_MBOX_NAME" is the same as the map value for "HIDC_PROP_L_STATUS".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDC_PROP_BLAH" is the same as the map value for "HIDC_EDIT5".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDS_TRANSFER_NAME" is the same as the map value for "HIDC_PROP_STATUS".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDC_PROP_L_LABEL" is the same as the map value for "HIDC_ALWAYS_SUGGEST_BTN".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDC_PROP_EDIT" is the same as the map value for "HIDC_ALWAYS_SUGGEST_BTN".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDC_PROP_LABEL" is the same as the map value for "HIDC_SPELL_RULES_GRP".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDC_PROP_L_PRIORITY" is the same as the map value for "HIDC_LOGO".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDC_PROP_PRIORITY" is the same as the map value for "HIDC_BRITISH_BTN".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDC_PROP_L_SIGNATURE" is the same as the map value for "HIDS_MESSAGE_REPLY_ALL".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDC_PROP_L_PERSON" is the same as the map value for "HIDS_MESSAGE_SEND_IMMEDIATE".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDS_MESSAGE_Q4_DELIVERY" is the same as the map value for "HIDC_COMP_SPLITBAR".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDC_PROP_TRANSLATOR" is the same as the map value for "HIDC_COMP_SPLITBAR".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDS_CTRL_R" is the same as the map value for "HIDC_COMP_TO".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDC_PROP_CHANGE_Q" is the same as the map value for "HIDC_COMP_TO".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDC_PROP_WWRAP" is the same as the map value for "HIDC_COMP_FROM".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDC_PROP_QP" is the same as the map value for "HIDC_COMP_SUBJECT".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDC_PROP_L_MAILBOX" is the same as the map value for "HIDC_COMP_CC".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDC_PROP_MAILBOX" is the same as the map value for "HIDC_COMP_BCC".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDC_PROP_L_SUBJECT" is the same as the map value for "HIDC_COMP_ATTACHMENTS".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDS_IN_MBOX_MENU" is the same as the map value for "HIDC_FROM_TEXT".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDC_PERSONA_EDIT" is the same as the map value for "HIDC_FROM_TEXT".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDC_MISSINGFEATURESTEXT" is the same as the map value for "HIDC_FROM_TEXT".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDS_OUT_MBOX_MENU" is the same as the map value for "HIDC_DOWNLOAD_AS_TEXT".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDC_TITLE_EDIT" is the same as the map value for "HIDS_TRASH_MBOX_MENU".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDC_MAINTXT_EDIT" is the same as the map value for "HIDC_NOTES_PROMPT".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDC_SECTXT_EDIT" is the same as the map value for "HIDC_EDIT_DATE".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDS_ADD" is the same as the map value for "HIDC_FULLNAME_LABEL".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDS_MODIFY" is the same as the map value for "HIDC_FIRSTNAME_LABEL".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDS_EUDORA" is the same as the map value for "HIDC_LASTNAME_LABEL".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDC_MATCH" is the same as the map value for "HIDC_LASTNAME_LABEL".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDS_PROGRESS" is the same as the map value for "HIDC_ADDRESS_LABEL".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDC_COMBO1" is the same as the map value for "HIDC_ADDRESS_LABEL".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDC_ACTION" is the same as the map value for "HIDC_ADDRESS_LABEL".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDC_FILE_BROWSE_COMBO" is the same as the map value for "HIDC_ADDRESS_LABEL".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDC_MAKE_FILT_RECIP_COMBO" is the same as the map value for "HIDC_ADDRESS_LABEL".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDC_CRITERIA_CATEGORY_COMBO_1" is the same as the map value for "HIDC_ADDRESS_LABEL".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDC_US_PERIOD_CB" is the same as the map value for "HIDC_ADDRESS_LABEL".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDC_COMBO2" is the same as the map value for "HIDS_UNTITLED".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDC_HEADER0" is the same as the map value for "HIDS_UNTITLED".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDC_CRITERIA_TEXT_COMPARE_COMBO_1" is the same as the map value for "HIDS_UNTITLED".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDC_VERB0" is the same as the map value for "HIDC_COMBO3".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDS_SAVE_CHANGES" is the same as the map value for "HIDC_COMBO3".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDC_CRITERIA_STATUS_COMBO_1" is the same as the map value for "HIDC_COMBO3".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDS_CLOSE" is the same as the map value for "HIDC_HEADER1".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDC_CRITERIA_CATEGORY_COMBO_2" is the same as the map value for "HIDC_HEADER1".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDC_CRITERIA_STATUS_COMBO_2" is the same as the map value for "HIDC_INCOMING".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDS_REG_INFO_NAME" is the same as the map value for "HIDC_INCOMING".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDC_CRITERIA_TEXT_COMPARE_COMBO_2" is the same as the map value for "HIDC_OUTGOING".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDS_REG_INFO_PROGRESS" is the same as the map value for "HIDC_OUTGOING".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDC_CRITERIA_CATEGORY_COMBO_3" is the same as the map value for "HIDC_MANUAL".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDS_ATTACH_REG_INFO" is the same as the map value for "HIDC_MANUAL".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDC_CRITERIA_STATUS_COMBO_3" is the same as the map value for "HIDC_VALUE0".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDS_EUDORA_INFO" is the same as the map value for "HIDC_VALUE0".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDC_CRITERIA_TEXT_COMPARE_COMBO_3" is the same as the map value for "HIDC_VERB1".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDS_REG_INFO_STARTUPREG_NAME" is the same as the map value for "HIDC_VERB1".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDC_CRITERIA_CATEGORY_COMBO_4" is the same as the map value for "HIDC_VALUE1".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDS_REG_DIALOG_MSG_TITLE_THANKS" is the same as the map value for "HIDC_VALUE1".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDC_CRITERIA_STATUS_COMBO_4" is the same as the map value for "HIDC_CONJUNCTION".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDS_REG_DIALOG_MSG_TITLE_INVALID" is the same as the map value for "HIDC_CONJUNCTION".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDS_REG_DIALOG_MSG_NORMAL" is the same as the map value for "HIDC_CRITERIA_TEXT_COMPARE_COMBO_4".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDC_CRITERIA_CATEGORY_COMBO_5" is the same as the map value for "HIDC_RAISE_PRIOR".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDS_REG_DIALOG_MSG_AUTO" is the same as the map value for "HIDC_RAISE_PRIOR".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDC_CRITERIA_STATUS_COMBO_5" is the same as the map value for "HIDC_LOWER_PRIOR".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDS_REG_DIALOG_MSG_INVALID" is the same as the map value for "HIDC_LOWER_PRIOR".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDC_CRITERIA_TEXT_COMPARE_COMBO_5" is the same as the map value for "HIDC_TRANSFER".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDS_WEB_STEP_INFO_DIALOG_PAYMENT_DLG_TITLE" is the same as the map value for "HIDC_TRANSFER".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDS_WEB_STEP_INFO_DIALOG_REG_DLG_TITLE" is the same as the map value for "HIDC_MAILBOX".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDS_WEB_STEP_INFO_DIALOG_PAYMENT_MSG_TITLE" is the same as the map value for "HIDC_SEARCHWND_BEGIN_BTN".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDC_SEARCHWND_MATCHCASE_CHK" is the same as the map value for "HIDC_MATCH_CASE".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDS_WEB_STEP_INFO_DIALOG_REG_MSG_TITLE" is the same as the map value for "HIDC_MATCH_CASE".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDS_WEB_STEP_INFO_DIALOG_PAYMENT_MSG" is the same as the map value for "HIDC_SUMMARIES_ONLY".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDS_WEB_STEP_INFO_DIALOG_REG_MSG" is the same as the map value for "HIDC_NEXT_MESSAGE".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDC_NEXT_MBOX" is the same as the map value for "HIDS_WEB_STEP_INFO_DIALOG_PAID_MODE_REG_MSG".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDC_RIGHT_NOW" is the same as the map value for "HIDS_WEB_STEP_INFO_DIALOG_CUSTOMIZE_ADS_MSG".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDS_ATTACH_EUDORA_INFO" is the same as the map value for "HIDC_NEXT_TIME".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDS_WEB_STEP_INFO_DIALOG_UPDATE_PROFILE_DLG_TITLE" is the same as the map value for "HIDC_ON_OR_AFTER".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDS_WEB_STEP_INFO_DIALOG_UPDATE_PROFILE_MSG_TITLE" is the same as the map value for "HIDC_DONT_SEND".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDS_PROFILE_AUTO_CONFIRMATION_MSG" is the same as the map value for "HIDC_LABEL".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDC_PERSONALITY_LIST" is the same as the map value for "HIDC_FILE_BROWSE_LIST".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDC_LEAVE_FILTER" is the same as the map value for "HIDC_BUTTON1".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDC_STAT_DIR" is the same as the map value for "HIDC_BUTTON1".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDC_ONLINE_BUTTON" is the same as the map value for "HIDC_BUTTON1".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDC_EDIT_HTML" is the same as the map value for "HIDC_BUTTON1".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDC_DETAILS" is the same as the map value for "HIDC_BUTTON1".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDC_ADV_BTN" is the same as the map value for "HIDC_BUTTON1".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDC_HYPERLINK_BTN" is the same as the map value for "HIDC_BUTTON1".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDC_BROWSE_BTN" is the same as the map value for "HIDC_BUTTON1".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDC_SEARCHWND_MORE_BTN" is the same as the map value for "HIDC_BUTTON1".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDC_QUERY_DROPDOWN" is the same as the map value for "HIDC_BUTTON1".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDC_OFFLINE_LINK_VISIT_NOW" is the same as the map value for "HIDC_BUTTON1".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDC_USE_DEFAULT_SOUND" is the same as the map value for "HIDC_BUTTON1".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDC_ABOUT" is the same as the map value for "HIDC_BUTTON1".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDC_ADV_IMPORT_BROWSE1" is the same as the map value for "HIDC_BUTTON1".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDC_USE_OLD" is the same as the map value for "HIDC_STATISTICS_RESET".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDS_PRODUCT_NAME" is the same as the map value for "HIDC_STATISTICS_RESET".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDC_TERMINATE_REMOTE" is the same as the map value for "HIDC_BUTTON2".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDC_EDIT_STYLED_TEXT" is the same as the map value for "HIDC_BUTTON2".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDC_MAKE_FILT_ADD_LIST" is the same as the map value for "HIDC_BUTTON2".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDC_IMPORT_MAIL_OK" is the same as the map value for "HIDC_BUTTON2".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDC_SEARCHWND_LESS_BTN" is the same as the map value for "HIDC_BUTTON2".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDC_OFFLINE_LINK_BOOKMARK" is the same as the map value for "HIDC_BUTTON2".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDC_ADV_IMPORT_BROWSE2" is the same as the map value for "HIDC_BUTTON2".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDC_TERMINATE_LOCAL" is the same as the map value for "HIDC_BUTTON3".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDC_IMPORT_MAIL_CANCEL" is the same as the map value for "HIDC_BUTTON3".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDC_OFFLINE_LINK_REMIND_ME" is the same as the map value for "HIDC_BUTTON3".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDC_FOLDER" is the same as the map value for "HIDC_BUTTON4".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDC_IMPORT_MAIL_ADVANCED" is the same as the map value for "HIDC_BUTTON4".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDS_ERR_DIR_CREATE" is the same as the map value for "HIDS_ERR_FOLDER_CREATE".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDS_ERR_STATIONERY_EXISTS" is the same as the map value for "HIDS_ATTACH_FOLDER2".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDC_LBL_SETTINGS_ADV_WINSOCKCALLS" is the same as the map value for "HIDS_MESSAGE_EXTENSION".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDC_LBL_SETTINGS_REPLY_WHENREPLYING" is the same as the map value for "HIDS_STATIONERY_FOLDER".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDC_LBL_FILTERS_HEADER" is the same as the map value for "HIDS_STATIONERY_FOLDER16".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDS_ERR_RENAME_STATIONERY" is the same as the map value for "HIDC_LBL_FILTERS_MAKESUBJECT".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDC_LBL_FILTERS_LABEL" is the same as the map value for "HIDS_SUBJECT_CHANGE".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDS_STATIONERY_TOC_HEADER_FORMAT" is the same as the map value for "HIDC_LBL_QUEUEING_SENDMSG".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDS_SIGNATURE_EXTENSION" is the same as the map value for "HIDC_LBL_QUEUEING_TIME".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDS_SIGNATURE_FOLDER" is the same as the map value for "HIDC_LBL_QUEUEING_DATE".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDS_FILTER_DIRECTORY" is the same as the map value for "HIDC_NEWMBX_NAME".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDS_FILTER_PRE_EXT" is the same as the map value for "HIDC_LBL_NICKNAME_CALLIT".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDS_FILTER_PST_EXT" is the same as the map value for "HIDC_LBL_SETTINGS_ATTACH_METHOD".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDS_EMBEDDED_FOLDER" is the same as the map value for "HIDC_EMBEDDED_FOLDER".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDS_REG_EUDORA_OPTION" is the same as the map value for "HIDC_LBL_SETTINGS_SEND_ADDRESS".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDC_LBL_SETTINGS_SEND_DOMAIN" is the same as the map value for "HIDS_REG_SOFTWARE".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDS_REG_SOFTWARE_COMMAND" is the same as the map value for "HIDC_LBL_SETTINGS_SEND_SMTP".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDS_REG_SOFTWARE_CURRENT" is the same as the map value for "HIDC_LBL_ATTACH_DIR".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDS_REG_ICON" is the same as the map value for "HIDC_ACTION_COMBO0".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDS_REG_MAILTO" is the same as the map value for "HIDC_ACTION_COMBO1".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDS_REG_STATIONERY" is the same as the map value for "HIDC_ACTION_COMBO2".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDS_REG_HLM_MAILTO_ICON" is the same as the map value for "HIDC_ACTION_COMBO3".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDS_REG_HLM_MAILTO_PROT_COMMAND" is the same as the map value for "HIDC_ACTION_COMBO4".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDS_REG_HLM_MAILTO_PROT_ED" is the same as the map value for "HIDC_RETRIEVE_NEW_MAIL".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDS_REG_HLM_MAILTO_PROT_URL" is the same as the map value for "HIDC_SEND_QUEUED_MESSAGES".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDS_REG_HLM_MAILTO" is the same as the map value for "HIDC_DELETE_MARKED_MESSAGES".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDS_EUDORA_TAG" is the same as the map value for "HIDC_RETRIEVE_MARKED_MESSAGES".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDS_AUTOURL" is the same as the map value for "HIDC_DELETE_RETRIEVED_MESSAGES".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDS_REG_SOFTWARE_TOOLBAR" is the same as the map value for "HIDC_DELETE_ALL_MESSAGES".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDS_REG_FAILED_WRITE_ERR" is the same as the map value for "HIDC_FETCH_MESSAGE_HEADERS".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDS_REG_FAILED_OPEN_ERR" is the same as the map value for "HIDC_LEFT_OPTIONS".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDS_REG_MAILTO_ERR" is the same as the map value for "HIDC_NORMAL_OPTIONS".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDS_ERR_POP_PASSWORD_HIDE" is the same as the map value for "HIDC_CONTINUE".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDC_PERSONAS" is the same as the map value for "HIDS_PROG_GET_MAIL".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDC_VERTBAR" is the same as the map value for "HIDS_ERR_DECODE_ATTACH".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDC_PLUGINS" is the same as the map value for "HIDS_ERR_DECODE_ATTACH".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDS_POP_MESSAGES_LEFT" is the same as the map value for "HIDS_POP_GET_MESSAGE".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDS_ALERT_NEW_MAIL" is the same as the map value for "HIDC_WARN_CHECKBOX".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDS_POP_SERVICE" is the same as the map value for "HIDC_LBL_AUTO_ATTACHMENTS".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDC_WARN_ICON" is the same as the map value for "HIDS_POP_TOP".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDC_RR_NEVER" is the same as the map value for "HIDS_POP_LIST".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDS_POP_RETRIEVE" is the same as the map value for "HIDC_LBL_PERSONA_NAME".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDS_POP_LAST" is the same as the map value for "HIDC_LBL_STATIONERY".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDS_POP_DELETE" is the same as the map value for "HIDC_LBL_PERSONAS".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDS_POP_RECEIVED_HEADER" is the same as the map value for "HIDS_RECEIVED_HEADER".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDS_POP_MESSAGE_ID_HEADER" is the same as the map value for "HIDS_MESSAGEID_HEADER".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDS_KERB_GETTING_TICKET" is the same as the map value for "HIDS_POP_NET_CONNECT".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDS_POP_CHECK_NON_UIDL" is the same as the map value for "HIDC_WARN_SPELLING_CANCEL".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDS_SERVER_CONNECT" is the same as the map value for "HIDS_POP_SERVER_CONNECT".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDC_SETTINGS" is the same as the map value for "HIDS_LMOS_FILENAME".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDS_POP_LOGGING_INTO_POP" is the same as the map value for "HIDC_PROP_LEAVE_SERVER".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDC_PROP_FETCH_SERVER" is the same as the map value for "HIDS_POP_PREPARING_TRANSFER".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDC_PROP_FETCH_DEL_SERVER" is the same as the map value for "HIDS_POP_LOOKING_FOR_MAIL".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDC_FILE_BROWSE_TREE" is the same as the map value for "HIDS_POP_REQUESTING_UIDL".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDS_MULTIPLE_NEW_MESSAGES" is the same as the map value for "HIDC_SUBJECT_LABEL".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDC_MBOX_TREE" is the same as the map value for "HIDC_FROM".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDC_PROMPT_TEXT" is the same as the map value for "HIDC_RECIP".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDC_SETTINGS_CAT_TITLE" is the same as the map value for "HIDS_INI_KERB16_TITLE2".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDS_POP_STLS" is the same as the map value for "HIDC_LBL_ACAP_PASSWORD".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDC_LBL_SETTINGS_ADV_TIMEOUT2" is the same as the map value for "HIDS_HTML_EACUTE_LOWER".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDS_HTML_OUML_LOWER" is the same as the map value for "HIDC_STATIONERY".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDS_TASK_STATUS_LIST_HDRTXT_STATE" is the same as the map value for "HIDS_NO_TASKS".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDS_TASK_STATUS_LIST_HDRTXT_STATUS" is the same as the map value for "HIDS_TASK_STATUS_LIST_HDRTXT_TITLE".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDS_PROGRAM_DIALOG_TITLE" is the same as the map value for "HIDS_TEXT_FILE_FILTER2".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDS_STATIONERY_FILE_FILTER32" is the same as the map value for "HIDS_TEXT_FILE_FILTER3".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDS_HTML_BLOCKQUOTE" is the same as the map value for "HIDS_HTML_PARAINDENT".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDS_SYSINFO_WIN98" is the same as the map value for "HIDS_SYSINFO_WIN31".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDS_EMS__NO_Settings" is the same as the map value for "HIDS_EMS_PLUGIN_VERSION_CALL".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDS_EMS_NO_SETTINGS" is the same as the map value for "HIDS_EMS_PLUGIN_VERSION_CALL".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDS_NO_STATIONERY" is the same as the map value for "HIDI_NO_TRANSLATOR".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDB_IL_STATBAR_TASK_STATUS" is the same as the map value for "HIDB_BITMAP3IDB_IL_STATBAR_TASK_STATUS".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HID_BUTTON8050" is the same as the map value for "HIDC_LBL_SETTINGS_MAIL_SERVER".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HID_BUTTON8051" is the same as the map value for "HIDC_LBL_SETTINGS_LOGIN_NAME".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HID_BUTTON8052" is the same as the map value for "HIDC_LBL_PERSONA_DEFAULT_DOMAIN".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HID_BUTTON8053" is the same as the map value for "HIDI_EUDORA_INFO_ATTACH".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HID_BUTTON8055" is the same as the map value for "HIDC_LBL_PERSONA_REAL_NAME".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDB_LINK_HISTORY_TYPES" is the same as the map value for "HIDC_LBL_PERSONA_REAL_NAME".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HID_BUTTON8056" is the same as the map value for "HIDC_LBL_PERSONA_POP_ACCOUNT".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HID_BUTTON8057" is the same as the map value for "HIDC_LBL_PERSONA_SMTP_SERVER".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HID_BUTTON8058" is the same as the map value for "HIDC_LBL_PERSONA_STATIONERY".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HID_BUTTON8059" is the same as the map value for "HIDC_LBL_PERSONA_SIGNATURE".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HID_BUTTON8060" is the same as the map value for "HIDC_LBL_PERSONA_LOGIN_NAME".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HID_BUTTON8063" is the same as the map value for "HIDC_LBL_SETTINGS_SERVER_CONFIG".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HID_BUTTON8064" is the same as the map value for "HIDC_LBL_SETTINGS_MESSAGE_FONT".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDI_HELP" is the same as the map value for "HIDC_LBL_SETTINGS_MESSAGE_FONT".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HID_BUTTON8065" is the same as the map value for "HIDC_LBL_SETTINGS_MESSAGE_FIXED_FONT".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HID_BUTTON8066" is the same as the map value for "HIDC_LBL_SETTINGS_MESSAGE_FONT_SIZE".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HID_BUTTON8067" is the same as the map value for "HIDC_LBL_SETTINGS_PRINTER_FONT".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HID_BUTTON8068" is the same as the map value for "HIDC_LBL_SETTINGS_PF_SIZE".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HID_BUTTON8069" is the same as the map value for "HIDC_LBL_SETTINGS_SCREEN_FONT".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HID_BUTTON8070" is the same as the map value for "HIDC_LBL_SETTINGS_SF_SIZE".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDT_USAGE_STATS_HTML" is the same as the map value for "HIDC_LBL_SETTINGS_SF_SIZE".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDD_USAGE_STATISTICS" is the same as the map value for "HIDC_LBL_SETTINGS_DISPLAY_DATE".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HID_PROCESS_ALL" is the same as the map value for "HIDC_LBL_SETTINGS_OLD_DATE_FORMAT".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDB_IL_MOOD_MAIL" is the same as the map value for "HIDC_LBL_SETTINGS_ANCIENT_DATE_HOURS".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HID_BUTTON8078" is the same as the map value for "HIDC_LBL_PERSONALITIES".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HID_MBOXTREE_FINDMESSAGES" is the same as the map value for "HIDC_TASKVIEW_TASKLIST".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDB_SORTBYMOOD" is the same as the map value for "HIDC_TASKVIEW_TASKLIST".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDM_LH_VIEW_LINK" is the same as the map value for "HIDC_TASKVIEW_INFO_TXT".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDM_LH_REMOVE_LINK" is the same as the map value for "HID_SHAREWAREDEBUG_CHANGESTATE_LIGHT".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HID_SHAREWAREDEBUG_CHANGESTATE_PRO" is the same as the map value for "HIDC_TATIC".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDM_LH_MARK_LINK_BOOKMARKED" is the same as the map value for "HIDC_TATIC".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HID_SHAREWAREDEBUG_CHANGESTATE_ADWARE" is the same as the map value for "HIDC_TASKERR_ERRLIST".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDM_LH_MARK_LINK_NORMAL" is the same as the map value for "HIDC_TASKERR_ERRLIST".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDM_LH_EDIT_COPY" is the same as the map value for "HIDC_DETAILS_BTN".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDD_NAG_DEADBEAT2" is the same as the map value for "HIDC_DETAILS_BTN".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDM_LH_MARK_LINK_REMIND" is the same as the map value for "HIDC_ERROR_EDIT".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDB_MOODSCORE_3" is the same as the map value for "HIDC_ERROR_EDIT".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HID_WINDOW_USAGE_STATS" is the same as the map value for "HIDC_PERSONA_STATIC".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDB_MOODSCORE_2" is the same as the map value for "HIDC_PERSONA_STATIC".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDI_MOODWATCH_SCORE2" is the same as the map value for "HIDC_ERROR_RICHEDIT".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDI_MOODWATCH_SCORE1" is the same as the map value for "HIDC_PERSONA_RICHEDIT".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDI_MOODWATCH_SCORE3" is the same as the map value for "HIDC_TITLE_RICHEDIT".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDD_IMPORT_ADV" is the same as the map value for "HIDC_INFO_RICHEDIT".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDC_IMPORT_TITLE_STATIC" is the same as the map value for "HIDS_ERR_EUDORA_NET_TO".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDI_MOODWATCH_32_SCORE1" is the same as the map value for "HIDC_MAIL_CHECK".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDI_MOODWATCH_32_SCORE2" is the same as the map value for "HIDC_ADDRESS_CHECK".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDB_NEWBOOK" is the same as the map value for "HIDC_ALSO_STATIC".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDC_PERS_ICON" is the same as the map value for "HIDB_REMOVE".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDC_LBL_SETTINGS_FONTS_MESSAGE" is the same as the map value for "HIDC_LBL_SETTINGS_MESSAGE".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDC_LBL_SETTINGS_FONTS_PRINTER" is the same as the map value for "HIDC_LBL_SETTINGS_PRINTER".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDC_CRITERIA_DATE_COMPARE_COMBO_3" is the same as the map value for "HIDS_STRING8204".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDC_JUSTDOIT" is the same as the map value for "HIDC_CRITERIA_DATE_CTRL_2".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDS_INI_WARN_BAD_FILT_DIR" is the same as the map value for "HIDS_INI_BAD_FILT_DIR".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDS_INI_TASKSTATUS_STATUS_WIDTH" is the same as the map value for "HIDS_INI_TASKSTATUS_TITLE_WIDTH".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDS_INI_DO_NN_AUTOCOMPLETE" is the same as the map value for "HIDS_INI_IMAP_REMOTE_OUTFLAG".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDC_PERSONA_NAME_STATIC" is the same as the map value for "HIDC_PPP1_STATIC".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDS_LINK_HISTORY_DATE_VISITED_LABEL" is the same as the map value for "HIDB_PROP_TACK".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDS_LINK_HISTORY_NOT_DISPLAYED" is the same as the map value for "HIDB_PROP_TACK_OUT".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDS_LINK_HISTORY_NOT_DISPLAYED_STATUS" is the same as the map value for "HIDB_PROP_TACK_OUT".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDS_LINK_HISTORY_REMIND_STATUS" is the same as the map value for "HIDS_LINK_HISTORY_ASAP".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDS_LINK_HISTORY_ATTEMPTED_STATUS" is the same as the map value for "HIDS_LINK_HISTORY_ATTEMPTED".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDC_NEW_RADIO" is the same as the map value for "HIDC_RADIO1".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDC_SEARCHWND_AND_RADIO" is the same as the map value for "HIDC_RADIO1".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDC_NETSCAPE_IMPORT" is the same as the map value for "HIDC_RADIO1".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDC_IMPORT_RADIO" is the same as the map value for "HIDC_RADIO2".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDC_SEARCHWND_OR_RADIO" is the same as the map value for "HIDC_RADIO2".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDC_OUTLOOK_IMPORT" is the same as the map value for "HIDC_RADIO2".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDC_CLIENTS_TITLE_STATIC" is the same as the map value for "HIDC_STATICACCT".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDC_ACAP_RADIO" is the same as the map value for "HIDC_RADIOACAP".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDS_MAIN_WEB_URL" is the same as the map value for "HIDC_LBL_SPELLING_CHANGETO2".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HIDS_TIME_BOMB_BUY_BTN_TXT" is the same as the map value for "HIDC_LBL_SPELLING_EDITLEX_WORD".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HID_WINDOW_LINK_HISTORY" is the same as the map value for "HID_WINDOW_ALTERNATESIGNATURE".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HID_CHECK_REG_CODE_FILE" is the same as the map value for "HID_PRIORITY".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HID_SEPARATOR" is the same as the map value for "HIDR_NULL_RESOURCE".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HAFX_IDW_TOOLBAR" is the same as the map value for "HAFX_IDW_CONTROLBAR_FIRST".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HID_FILE_MRU_FILE1" is the same as the map value for "HID_FILE_MRU_FIRST".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HID_FILE_MRU_LAST" is the same as the map value for "HID_FILE_MRU_FILE16".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HAFX_IDM_WINDOW_FIRST" is the same as the map value for "HID_WINDOW_NEW".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HID_VIEW_TOOLBAR" is the same as the map value for "HAFX_IDW_CONTROLBAR_FIRST".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HID_VIEW_STATUS_BAR" is the same as the map value for "HAFX_IDW_STATUS_BAR".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HID_RECORD_FIRST" is the same as the map value for "HAFX_IDW_PANE_FIRST".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HAFX_IDS_SCSIZE" is the same as the map value for "HAFX_IDS_SCFIRST".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HAFX_IDP_DAO_ENGINE_INITIALIZATION" is the same as the map value for "HAFX_IDP_DAO_FIRST".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HAFX_IDC_LISTBOX" is the same as the map value for "HIDR_COM_MESSAGES".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HAFX_IDC_CHANGE" is the same as the map value for "HIDR_COM_FOLDER".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HAFX_IDC_PRINT_DOCNAME" is the same as the map value for "HIDS_DISABLE_SAVE_PASSWORD".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HAFX_IDC_PRINT_PRINTERNAME" is the same as the map value for "HIDB_IL_DIGITS_4X5".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HAFX_IDC_PRINT_PORTNAME" is the same as the map value for "HIDI_ATTACH_NOTFOUND".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HAFX_IDC_PRINT_PAGENUM" is the same as the map value for "HIDB_FULL_FEATURE".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HAFX_IDC_FONTPROP" is the same as the map value for "HIDS_FILE_CHECK_MAIL".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HAFX_IDC_FONTNAMES" is the same as the map value for "HIDS_INSERT_RECIPIENT".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HAFX_IDC_FONTSTYLES" is the same as the map value for "HIDS_FCC".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HAFX_IDC_FONTSIZES" is the same as the map value for "HIDS_FCC_LOST_MBOX".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HAFX_IDC_STRIKEOUT" is the same as the map value for "HIDC_PROP_SIGNATURE".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HAFX_IDC_UNDERLINE" is the same as the map value for "HIDC_PROP_PERSON".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HAFX_IDC_SAMPLEBOX" is the same as the map value for "HIDS_SYSTEM_MENU_CHECKMAIL".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HAFX_IDC_COLOR_BLACK" is the same as the map value for "HIDC_LASTNAME_LABEL".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HAFX_IDC_COLOR_WHITE" is the same as the map value for "HIDC_ADDRESS_LABEL".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HAFX_IDC_COLOR_RED" is the same as the map value for "HIDS_UNTITLED".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HAFX_IDC_COLOR_GREEN" is the same as the map value for "HIDC_COMBO3".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HAFX_IDC_COLOR_BLUE" is the same as the map value for "HIDC_HEADER1".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HAFX_IDC_COLOR_YELLOW" is the same as the map value for "HIDC_INCOMING".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HAFX_IDC_COLOR_MAGENTA" is the same as the map value for "HIDC_OUTGOING".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HAFX_IDC_COLOR_CYAN" is the same as the map value for "HIDC_MANUAL".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HAFX_IDC_COLOR_GRAY" is the same as the map value for "HIDC_VALUE0".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HAFX_IDC_COLOR_LIGHTGRAY" is the same as the map value for "HIDC_VERB1".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HAFX_IDC_COLOR_DARKRED" is the same as the map value for "HIDC_VALUE1".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HAFX_IDC_COLOR_DARKGREEN" is the same as the map value for "HIDC_CONJUNCTION".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HAFX_IDC_COLOR_DARKBLUE" is the same as the map value for "HIDC_CRITERIA_TEXT_COMPARE_COMBO_4".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HAFX_IDC_COLOR_LIGHTBROWN" is the same as the map value for "HIDC_RAISE_PRIOR".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HAFX_IDC_COLOR_DARKMAGENTA" is the same as the map value for "HIDC_LOWER_PRIOR".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HAFX_IDC_COLOR_DARKCYAN" is the same as the map value for "HIDC_TRANSFER".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HAFX_IDC_COLORPROP" is the same as the map value for "HIDC_MAILBOX".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HAFX_IDC_SYSTEMCOLORS" is the same as the map value for "HIDC_SEARCHWND_BEGIN_BTN".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HAFX_IDC_PROPNAME" is the same as the map value for "HIDS_OUT_MBOX_FILENAME".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HAFX_IDC_PICTURE" is the same as the map value for "HIDS_TRASH_MBOX_FILENAME".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HAFX_IDC_BROWSE" is the same as the map value for "HIDS_DESCMAP".
+    HC3037: Warning: C:\Eudora 5\Eudora 5 Help\eudora.hh : 
+	The map value for "HAFX_IDC_CLEAR" is the same as the map value for "HIDS_DESCMAP_TMP".
+    HC3110: Warning: topic #76 of C:\Eudora 5\Eudora 5 Help\Dialogs.rtf : 
+	A title has already been defined for this topic.
+    HC3110: Warning: topic #76 of C:\Eudora 5\Eudora 5 Help\Dialogs.rtf : 
+	A title has already been defined for this topic.
+    HC3110: Warning: topic #76 of C:\Eudora 5\Eudora 5 Help\Dialogs.rtf : 
+	A title has already been defined for this topic.
+    HC3110: Warning: topic #76 of C:\Eudora 5\Eudora 5 Help\Dialogs.rtf : 
+	A title has already been defined for this topic.
+    HC3110: Warning: topic #76 of C:\Eudora 5\Eudora 5 Help\Dialogs.rtf : 
+	A title has already been defined for this topic.
+    HC3110: Warning: topic #76 of C:\Eudora 5\Eudora 5 Help\Dialogs.rtf : 
+	A title has already been defined for this topic.
+    HC3110: Warning: topic #76 of C:\Eudora 5\Eudora 5 Help\Dialogs.rtf : 
+	A title has already been defined for this topic.
+    HC3110: Warning: topic #76 of C:\Eudora 5\Eudora 5 Help\Dialogs.rtf : 
+	A title has already been defined for this topic.
+    HC3110: Warning: topic #76 of C:\Eudora 5\Eudora 5 Help\Dialogs.rtf : 
+	A title has already been defined for this topic.
+    HC3110: Warning: topic #76 of C:\Eudora 5\Eudora 5 Help\Dialogs.rtf : 
+	A title has already been defined for this topic.
+    HC3110: Warning: topic #76 of C:\Eudora 5\Eudora 5 Help\Dialogs.rtf : 
+	A title has already been defined for this topic.
+    HC3110: Warning: topic #76 of C:\Eudora 5\Eudora 5 Help\Dialogs.rtf : 
+	A title has already been defined for this topic.
+    HC3110: Warning: topic #76 of C:\Eudora 5\Eudora 5 Help\Dialogs.rtf : 
+	A title has already been defined for this topic.
+    HC3110: Warning: topic #76 of C:\Eudora 5\Eudora 5 Help\Dialogs.rtf : 
+	A title has already been defined for this topic.
+    HC3110: Warning: topic #76 of C:\Eudora 5\Eudora 5 Help\Dialogs.rtf : 
+	A title has already been defined for this topic.
+    HC3110: Warning: topic #76 of C:\Eudora 5\Eudora 5 Help\Dialogs.rtf : 
+	A title has already been defined for this topic.
+    HC3059: Warning: topic #1 of C:\Eudora 5\Eudora 5 Help\Eudora.rtf : 
+	A hotspot was specified without a macro or Topic ID.
+    HC3108: Warning: topic #205 of C:\Eudora 5\Eudora 5 Help\Eudora.rtf : 
+	The title footnote ($) does not appear before any text.
+    HC3111: Warning: topic #205 of C:\Eudora 5\Eudora 5 Help\Eudora.rtf : 
+	This topic contains keywords but no title.
+    HC3025: Warning: topic #134 of C:\Eudora 5\Eudora 5 Help\Eudora.rtf : 
+	Jump to undefined Topic ID: ".".
+    HC3025: Warning: topic #90 of C:\Eudora 5\Eudora 5 Help\Eudora.rtf : 
+	Jump to undefined Topic ID: "Managing_your_Mail_on_a_POP_Server and".
+    HC3025: Warning: topic #235 of C:\Eudora 5\Eudora 5 Help\Eudora.rtf : 
+	Jump to undefined Topic ID: "Inviting_Members_to_Join_Your_Group.".
+    HC3025: Warning: topic #199 of C:\Eudora 5\Eudora 5 Help\Eudora.rtf : 
+	Jump to undefined Topic ID: "Regular_Expressions.".
+    HC3025: Warning: topic #219 of C:\Eudora 5\Eudora 5 Help\Eudora.rtf : 
+	Jump to undefined Topic ID: "Mood_Watch_Options_Window.".
+    HC3025: Warning: topic #124 of C:\Eudora 5\Eudora 5 Help\Eudora.rtf : 
+	Jump to undefined Topic ID: "Managing_your_Mail_on_a_POP_Server".
+    HC3025: Warning: topic #90 of C:\Eudora 5\Eudora 5 Help\Eudora.rtf : 
+	Jump to undefined Topic ID: "Managing_Your_Mail_on_the_IMAP_Server.".
+996	Topics
+229	Jumps
+849	Keywords
+0	Bitmaps
+
+
+Created C:\Eudora 5\Eudora 5 Help\Eudora.hlp, 1,037,633 bytes
+Compile time: 0 minutes, 10 seconds
+3 notes, 403 warnings

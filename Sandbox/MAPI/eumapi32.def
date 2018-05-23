@@ -1,0 +1,37 @@
+LIBRARY     MAPI32
+DESCRIPTION 'Eudora MAPI Interface'
+EXPORTS
+    IsEudoraMapiDLL
+    MAPILogon
+    MAPILogonA
+    MAPILogoff
+    MAPISendMail
+    MAPISendMailA
+    MAPISendDocuments
+    MAPISendDocumentsA
+    MAPIFindNext
+    MAPIReadMail
+    MAPISaveMail
+    MAPIDeleteMail
+    MAPIFreeBuffer
+    MAPIAddress
+    MAPIDetails
+    MAPIResolveName
+    cmc_send
+    cmc_send_documents
+    cmc_act_on
+    cmc_list
+    cmc_read
+    cmc_look_up
+    cmc_free
+    cmc_logoff
+    cmc_logon
+    cmc_query_configuration
+
+
+
+
+
+
+
+

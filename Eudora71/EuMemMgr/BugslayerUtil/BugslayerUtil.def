@@ -1,0 +1,65 @@
+;-----------------------------------------------------------------------
+; Debugging Applications for Microsoft .NET and Microsoft Windows
+; Copyright © 1997-2003 John Robbins -- All rights reserved.
+;-----------------------------------------------------------------------
+LIBRARY         EuMemMgr
+
+EXPORTS
+
+    AddClientDV
+    AddCrashHandlerLimitModule
+    AddDiagAssertModule
+    AllocAndFillProcessModuleList
+    BSUAnsi2Wide
+    BSUGetModuleBaseNameA
+    BSUGetModuleBaseNameW
+    BSUGetModuleFileNameExA
+    BSUGetModuleFileNameExW
+    BSUIsInteractiveUser
+    BSUSetCurrentThreadNameA
+    BSUSetCurrentThreadNameW
+    BSUSetThreadNameA
+    BSUSetThreadNameW
+    BSUSymInitializeA
+    BSUSymInitializeW
+    BSUWide2Ansi
+    CreateCurrentProcessCrashDumpA
+    CreateCurrentProcessCrashDumpW
+    DiagAssertA
+    DiagAssertW
+    DiagOutputA
+    DiagOutputW
+    GetFaultReason
+    GetFirstStackTraceString
+    GetLimitModuleCount
+    GetLimitModulesArray
+    GetLoadedModules
+    GetNextStackTraceString
+    GetProcessThreadIds
+    GetSuperAssertionCount
+    GetRegisterString
+    HookImportedFunctionsByNameA
+    HookImportedFunctionsByNameW
+    HookOrdinalExportA
+    HookOrdinalExportW
+    IsMiniDumpFunctionAvailable
+    IsNT
+    IsNT4
+    IsW2K
+    IsW2KorBetter
+    IsServer2003
+    IsServer2003orBetter
+    IsXP
+    IsXPorBetter
+    MemStressInitializeA
+    MemStressInitializeW
+    MemStressTerminate
+    SetCrashHandlerFilter
+    SetDiagAssertFile
+    SetDiagAssertOptions
+    SetDiagOutputFile
+    SnapCurrentProcessMiniDumpA
+    SnapCurrentProcessMiniDumpW
+    SuperAssertionA
+    SuperAssertionW
+    ValidateAllBlocks

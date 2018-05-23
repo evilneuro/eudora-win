@@ -1,0 +1,1 @@
+makehm I,HI,0x10000 resource.h > eudora.hh

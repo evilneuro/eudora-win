@@ -1,0 +1,3108 @@
+// Created by Microsoft (R) C/C++ Compiler Version 12.00.8964.0 (9450e897).
+//
+// c:\code\capicom 2.1.0.1\samples\cpp\store\CAPICOM.tlh
+//
+// C++ source equivalent of Win32 type library CAPICOM.dll
+// compiler-generated file created 05/18/05 at 19:04:05 - DO NOT EDIT!
+
+#pragma once
+#pragma pack(push, 8)
+
+#include <comdef.h>
+
+namespace CAPICOM {
+
+//
+// Forward references and typedefs
+//
+
+struct /* coclass */ Settings;
+struct __declspec(uuid("a24104f5-46d0-4c0f-926d-665565908e91"))
+/* dual interface */ ISettings;
+struct /* coclass */ EKU;
+struct __declspec(uuid("976b7e6d-1002-4051-bfd4-824a74bd74e2"))
+/* dual interface */ IEKU;
+struct /* coclass */ EKUs;
+struct __declspec(uuid("47c87cec-8c4b-4e3c-8d22-34280274efd1"))
+/* dual interface */ IEKUs;
+struct /* coclass */ KeyUsage;
+struct __declspec(uuid("41dd35a8-9ff9-45a6-9a7c-f65b2f085d1f"))
+/* dual interface */ IKeyUsage;
+struct /* coclass */ ExtendedKeyUsage;
+struct __declspec(uuid("7289d408-987d-45d1-8dee-cf9e91c2e90e"))
+/* dual interface */ IExtendedKeyUsage;
+struct /* coclass */ BasicConstraints;
+struct __declspec(uuid("4e298c47-aba6-459e-851b-993d6c626ead"))
+/* dual interface */ IBasicConstraints;
+struct /* coclass */ CertificateStatus;
+struct __declspec(uuid("a4eab890-0786-406b-9b31-2746f31f8d87"))
+/* dual interface */ ICertificateStatus3;
+struct __declspec(uuid("bf95660e-f743-4eac-9de5-960787a4606c"))
+/* dual interface */ ICertificateStatus2;
+struct __declspec(uuid("ab769053-6d38-49d4-86ef-5fa85ed3af27"))
+/* dual interface */ ICertificateStatus;
+struct __declspec(uuid("da55e8fc-8e27-451b-aea8-1470d80fad42"))
+/* dual interface */ IOIDs;
+struct __declspec(uuid("208e5e9b-58b1-4086-970f-161b582a846f"))
+/* dual interface */ IOID;
+struct __declspec(uuid("68646716-bda0-4046-ab82-4444bc93b84a"))
+/* dual interface */ ICertificates;
+struct /* coclass */ Certificate;
+struct __declspec(uuid("6fe450dc-ad32-48d4-a366-01ee7e0b1374"))
+/* dual interface */ ICertificate2;
+struct __declspec(uuid("0bba0b86-766c-4755-a443-243ff2bd8d29"))
+/* dual interface */ ICertificate;
+struct __declspec(uuid("5f10ffce-c922-476f-aa76-df99d5bdfa2c"))
+/* dual interface */ ITemplate;
+struct __declspec(uuid("72bf9ada-6817-4c31-b43e-25f7c7b091f4"))
+/* dual interface */ IPublicKey;
+struct __declspec(uuid("d3d460f2-e7f3-4af3-8ec6-8eb68c61c567"))
+/* dual interface */ IEncodedData;
+struct __declspec(uuid("659dedc3-6c85-42db-8527-efcb21742862"))
+/* dual interface */ IPrivateKey;
+struct __declspec(uuid("bc530d61-e692-4225-9e7a-07b90b45856a"))
+/* dual interface */ IExtensions;
+struct __declspec(uuid("3b096e87-6218-4a3b-a880-f6cb951e7805"))
+/* dual interface */ IExtendedProperties;
+struct __declspec(uuid("ecb8a5c8-562c-4989-b49d-fa37d40f8fc4"))
+/* dual interface */ IExtendedProperty;
+struct __declspec(uuid("9e7d3477-4f63-423e-8a45-e13b2bb851a2"))
+/* interface */ ICertContext;
+struct /* coclass */ Certificates;
+struct __declspec(uuid("7b57c04b-1786-4b30-a7b6-36235cd58a14"))
+/* dual interface */ ICertificates2;
+struct __declspec(uuid("ebdc6dc2-684d-4425-bbb7-cb4d15a088a7"))
+/* interface */ ICCertificates;
+struct /* coclass */ Chain;
+struct __declspec(uuid("ca65d842-2110-4073-aee3-d0aa5f56c421"))
+/* dual interface */ IChain2;
+struct __declspec(uuid("77f6f881-5d3a-4f2f-aef0-e4a2f9aa689d"))
+/* dual interface */ IChain;
+struct __declspec(uuid("b27ffb30-432e-4585-a3fd-72530108cbfd"))
+/* interface */ IChainContext;
+struct /* coclass */ Store;
+struct __declspec(uuid("f701f8ec-31c7-48fb-b621-5de417c3a607"))
+/* dual interface */ IStore3;
+struct __declspec(uuid("4da6abc4-bdcd-4317-b650-262075b93a9c"))
+/* dual interface */ IStore2;
+struct __declspec(uuid("e860ef75-1b63-4254-af47-960daa3dd337"))
+/* dual interface */ IStore;
+struct __declspec(uuid("bb3ecb9c-a83a-445c-bdb5-efbef691b731"))
+/* interface */ ICertStore;
+struct /* coclass */ Attribute;
+struct __declspec(uuid("b17a8d78-b5a6-45f7-ba21-01ab94b08415"))
+/* dual interface */ IAttribute;
+struct /* coclass */ Attributes;
+struct __declspec(uuid("6adc653e-d5b9-422a-991a-a2b0119cedac"))
+/* dual interface */ IAttributes;
+struct /* coclass */ Signer;
+struct __declspec(uuid("625b1f55-c720-41d6-9ecf-ba59f9b85f17"))
+/* dual interface */ ISigner2;
+struct __declspec(uuid("51017b88-1913-49ad-82be-6bb7c417dcf2"))
+/* dual interface */ ISigner;
+struct __declspec(uuid("8f83f792-014c-4e22-bd57-5c381e622f34"))
+/* interface */ ICSigner;
+struct /* coclass */ Signers;
+struct __declspec(uuid("5a0780f8-9e6b-4bb0-bf54-87cd9627a8b4"))
+/* dual interface */ ISigners;
+struct /* coclass */ SignedData;
+struct __declspec(uuid("ae9c454b-fc65-4c10-b130-cd9b45ba948b"))
+/* dual interface */ ISignedData;
+struct /* coclass */ Algorithm;
+struct __declspec(uuid("bf3d04a9-b0da-4153-b45e-6ccfa5ac715b"))
+/* dual interface */ IAlgorithm;
+struct /* coclass */ Recipients;
+struct __declspec(uuid("a694c896-fc38-4c34-ae61-3b1a95984c14"))
+/* dual interface */ IRecipients;
+struct /* coclass */ EnvelopedData;
+struct __declspec(uuid("f6cb6a20-cc18-4424-ae57-6f2aa3dc2059"))
+/* dual interface */ IEnvelopedData;
+struct /* coclass */ EncryptedData;
+struct __declspec(uuid("c4778a66-972f-42e4-87c5-5cc16f7931ca"))
+/* dual interface */ IEncryptedData;
+struct /* coclass */ OID;
+struct /* coclass */ OIDs;
+struct /* coclass */ NoticeNumbers;
+struct __declspec(uuid("ee2c051d-33a1-4157-86b4-9280e29782f2"))
+/* dual interface */ INoticeNumbers;
+struct /* coclass */ Qualifier;
+struct __declspec(uuid("3604c9dd-a22e-4a15-a469-8181c0c113de"))
+/* dual interface */ IQualifier;
+struct /* coclass */ Qualifiers;
+struct __declspec(uuid("6b5a8ab6-597d-4398-ac63-1036ef546348"))
+/* dual interface */ IQualifiers;
+struct /* coclass */ PolicyInformation;
+struct __declspec(uuid("8973710c-8411-4951-9e65-d45fd524ffdf"))
+/* dual interface */ IPolicyInformation;
+struct /* coclass */ CertificatePolicies;
+struct __declspec(uuid("cc7a72a7-c83a-4049-85f4-4292de9dbfd3"))
+/* dual interface */ ICertificatePolicies;
+struct /* coclass */ EncodedData;
+struct /* coclass */ Extension;
+struct __declspec(uuid("ed4e4ed4-fdd8-476e-aed9-5239e7948257"))
+/* dual interface */ IExtension;
+struct /* coclass */ Extensions;
+struct /* coclass */ ExtendedProperty;
+struct /* coclass */ ExtendedProperties;
+struct /* coclass */ Template;
+struct /* coclass */ PublicKey;
+struct /* coclass */ PrivateKey;
+struct __declspec(uuid("50f241b7-a8f2-4e0a-b982-4bd7df0ccf3c"))
+/* interface */ ICPrivateKey;
+struct _CRYPT_KEY_PROV_INFO;
+struct _CRYPT_KEY_PROV_PARAM;
+struct _CERT_KEY_CONTEXT;
+struct /* coclass */ SignedCode;
+struct __declspec(uuid("84fbcb95-5600-404c-9187-ac25b4cd6e94"))
+/* dual interface */ ISignedCode;
+struct /* coclass */ HashedData;
+struct __declspec(uuid("9f7f23e8-06f4-42e8-b965-5cbd044bf27f"))
+/* dual interface */ IHashedData;
+struct /* coclass */ Utilities;
+struct __declspec(uuid("eb166cf6-2ae6-44da-bd96-0c1635d183fe"))
+/* dual interface */ IUtilities;
+
+//
+// Smart pointer typedef declarations
+//
+
+_COM_SMARTPTR_TYPEDEF(ISettings, __uuidof(ISettings));
+_COM_SMARTPTR_TYPEDEF(IEKU, __uuidof(IEKU));
+_COM_SMARTPTR_TYPEDEF(IEKUs, __uuidof(IEKUs));
+_COM_SMARTPTR_TYPEDEF(IKeyUsage, __uuidof(IKeyUsage));
+_COM_SMARTPTR_TYPEDEF(IExtendedKeyUsage, __uuidof(IExtendedKeyUsage));
+_COM_SMARTPTR_TYPEDEF(IBasicConstraints, __uuidof(IBasicConstraints));
+_COM_SMARTPTR_TYPEDEF(ICertificateStatus, __uuidof(ICertificateStatus));
+_COM_SMARTPTR_TYPEDEF(ICertificateStatus2, __uuidof(ICertificateStatus2));
+_COM_SMARTPTR_TYPEDEF(ICertificateStatus3, __uuidof(ICertificateStatus3));
+_COM_SMARTPTR_TYPEDEF(IOIDs, __uuidof(IOIDs));
+_COM_SMARTPTR_TYPEDEF(IOID, __uuidof(IOID));
+_COM_SMARTPTR_TYPEDEF(ICertificates, __uuidof(ICertificates));
+_COM_SMARTPTR_TYPEDEF(ICertificate, __uuidof(ICertificate));
+_COM_SMARTPTR_TYPEDEF(ICertificate2, __uuidof(ICertificate2));
+_COM_SMARTPTR_TYPEDEF(ITemplate, __uuidof(ITemplate));
+_COM_SMARTPTR_TYPEDEF(IPublicKey, __uuidof(IPublicKey));
+_COM_SMARTPTR_TYPEDEF(IEncodedData, __uuidof(IEncodedData));
+_COM_SMARTPTR_TYPEDEF(IPrivateKey, __uuidof(IPrivateKey));
+_COM_SMARTPTR_TYPEDEF(IExtensions, __uuidof(IExtensions));
+_COM_SMARTPTR_TYPEDEF(IExtendedProperties, __uuidof(IExtendedProperties));
+_COM_SMARTPTR_TYPEDEF(IExtendedProperty, __uuidof(IExtendedProperty));
+_COM_SMARTPTR_TYPEDEF(ICertContext, __uuidof(ICertContext));
+_COM_SMARTPTR_TYPEDEF(ICertificates2, __uuidof(ICertificates2));
+_COM_SMARTPTR_TYPEDEF(ICCertificates, __uuidof(ICCertificates));
+_COM_SMARTPTR_TYPEDEF(IChain, __uuidof(IChain));
+_COM_SMARTPTR_TYPEDEF(IChain2, __uuidof(IChain2));
+_COM_SMARTPTR_TYPEDEF(IChainContext, __uuidof(IChainContext));
+_COM_SMARTPTR_TYPEDEF(IStore, __uuidof(IStore));
+_COM_SMARTPTR_TYPEDEF(IStore2, __uuidof(IStore2));
+_COM_SMARTPTR_TYPEDEF(IStore3, __uuidof(IStore3));
+_COM_SMARTPTR_TYPEDEF(ICertStore, __uuidof(ICertStore));
+_COM_SMARTPTR_TYPEDEF(IAttribute, __uuidof(IAttribute));
+_COM_SMARTPTR_TYPEDEF(IAttributes, __uuidof(IAttributes));
+_COM_SMARTPTR_TYPEDEF(ISigner, __uuidof(ISigner));
+_COM_SMARTPTR_TYPEDEF(ISigner2, __uuidof(ISigner2));
+_COM_SMARTPTR_TYPEDEF(ICSigner, __uuidof(ICSigner));
+_COM_SMARTPTR_TYPEDEF(ISigners, __uuidof(ISigners));
+_COM_SMARTPTR_TYPEDEF(ISignedData, __uuidof(ISignedData));
+_COM_SMARTPTR_TYPEDEF(IAlgorithm, __uuidof(IAlgorithm));
+_COM_SMARTPTR_TYPEDEF(IRecipients, __uuidof(IRecipients));
+_COM_SMARTPTR_TYPEDEF(IEnvelopedData, __uuidof(IEnvelopedData));
+_COM_SMARTPTR_TYPEDEF(IEncryptedData, __uuidof(IEncryptedData));
+_COM_SMARTPTR_TYPEDEF(INoticeNumbers, __uuidof(INoticeNumbers));
+_COM_SMARTPTR_TYPEDEF(IQualifier, __uuidof(IQualifier));
+_COM_SMARTPTR_TYPEDEF(IQualifiers, __uuidof(IQualifiers));
+_COM_SMARTPTR_TYPEDEF(IPolicyInformation, __uuidof(IPolicyInformation));
+_COM_SMARTPTR_TYPEDEF(ICertificatePolicies, __uuidof(ICertificatePolicies));
+_COM_SMARTPTR_TYPEDEF(IExtension, __uuidof(IExtension));
+_COM_SMARTPTR_TYPEDEF(ICPrivateKey, __uuidof(ICPrivateKey));
+_COM_SMARTPTR_TYPEDEF(ISignedCode, __uuidof(ISignedCode));
+_COM_SMARTPTR_TYPEDEF(IHashedData, __uuidof(IHashedData));
+_COM_SMARTPTR_TYPEDEF(IUtilities, __uuidof(IUtilities));
+
+//
+// Type library items
+//
+
+enum CAPICOM_ERROR_CODE
+{
+    CAPICOM_E_ENCODE_INVALID_TYPE = -2138570496,
+    CAPICOM_E_EKU_INVALID_OID = -2138570240,
+    CAPICOM_E_EKU_OID_NOT_INITIALIZED = -2138570239,
+    CAPICOM_E_CERTIFICATE_NOT_INITIALIZED = -2138570224,
+    CAPICOM_E_CERTIFICATE_NO_PRIVATE_KEY = -2138570223,
+    CAPICOM_E_CHAIN_NOT_BUILT = -2138570208,
+    CAPICOM_E_STORE_NOT_OPENED = -2138570192,
+    CAPICOM_E_STORE_EMPTY = -2138570191,
+    CAPICOM_E_STORE_INVALID_OPEN_MODE = -2138570190,
+    CAPICOM_E_STORE_INVALID_SAVE_AS_TYPE = -2138570189,
+    CAPICOM_E_ATTRIBUTE_NAME_NOT_INITIALIZED = -2138570176,
+    CAPICOM_E_ATTRIBUTE_VALUE_NOT_INITIALIZED = -2138570175,
+    CAPICOM_E_ATTRIBUTE_INVALID_NAME = -2138570174,
+    CAPICOM_E_ATTRIBUTE_INVALID_VALUE = -2138570173,
+    CAPICOM_E_SIGNER_NOT_INITIALIZED = -2138570160,
+    CAPICOM_E_SIGNER_NOT_FOUND = -2138570159,
+    CAPICOM_E_SIGNER_NO_CHAIN = -2138570158,
+    CAPICOM_E_SIGNER_INVALID_USAGE = -2138570157,
+    CAPICOM_E_SIGN_NOT_INITIALIZED = -2138570144,
+    CAPICOM_E_SIGN_INVALID_TYPE = -2138570143,
+    CAPICOM_E_SIGN_NOT_SIGNED = -2138570142,
+    CAPICOM_E_INVALID_ALGORITHM = -2138570128,
+    CAPICOM_E_INVALID_KEY_LENGTH = -2138570127,
+    CAPICOM_E_ENVELOP_NOT_INITIALIZED = -2138570112,
+    CAPICOM_E_ENVELOP_INVALID_TYPE = -2138570111,
+    CAPICOM_E_ENVELOP_NO_RECIPIENT = -2138570110,
+    CAPICOM_E_ENVELOP_RECIPIENT_NOT_FOUND = -2138570109,
+    CAPICOM_E_ENCRYPT_NOT_INITIALIZED = -2138570096,
+    CAPICOM_E_ENCRYPT_INVALID_TYPE = -2138570095,
+    CAPICOM_E_ENCRYPT_NO_SECRET = -2138570094,
+    CAPICOM_E_NOT_SUPPORTED = -2138568448,
+    CAPICOM_E_UI_DISABLED = -2138568447,
+    CAPICOM_E_CANCELLED = -2138568446,
+    CAPICOM_E_NOT_ALLOWED = -2138568445,
+    CAPICOM_E_OUT_OF_RESOURCE = -2138568444,
+    CAPICOM_E_INTERNAL = -2138568431,
+    CAPICOM_E_UNKNOWN = -2138568295,
+    CAPICOM_E_PRIVATE_KEY_NOT_INITIALIZED = -2138569984,
+    CAPICOM_E_PRIVATE_KEY_NOT_EXPORTABLE = -2138569983,
+    CAPICOM_E_ENCODE_NOT_INITIALIZED = -2138569952,
+    CAPICOM_E_EXTENSION_NOT_INITIALIZED = -2138569936,
+    CAPICOM_E_PROPERTY_NOT_INITIALIZED = -2138569920,
+    CAPICOM_E_FIND_INVALID_TYPE = -2138569904,
+    CAPICOM_E_FIND_INVALID_PREDEFINED_POLICY = -2138569903,
+    CAPICOM_E_CODE_NOT_INITIALIZED = -2138569888,
+    CAPICOM_E_CODE_NOT_SIGNED = -2138569887,
+    CAPICOM_E_CODE_DESCRIPTION_NOT_INITIALIZED = -2138569886,
+    CAPICOM_E_CODE_DESCRIPTION_URL_NOT_INITIALIZED = -2138569885,
+    CAPICOM_E_CODE_INVALID_TIMESTAMP_URL = -2138569884,
+    CAPICOM_E_HASH_NO_DATA = -2138569872,
+    CAPICOM_E_INVALID_CONVERT_TYPE = -2138569856
+};
+
+enum CAPICOM_ENCODING_TYPE
+{
+    CAPICOM_ENCODE_BASE64 = 0,
+    CAPICOM_ENCODE_BINARY = 1,
+    CAPICOM_ENCODE_ANY = -1
+};
+
+enum CAPICOM_EKU
+{
+    CAPICOM_EKU_OTHER = 0,
+    CAPICOM_EKU_SERVER_AUTH = 1,
+    CAPICOM_EKU_CLIENT_AUTH = 2,
+    CAPICOM_EKU_CODE_SIGNING = 3,
+    CAPICOM_EKU_EMAIL_PROTECTION = 4,
+    CAPICOM_EKU_SMARTCARD_LOGON = 5,
+    CAPICOM_EKU_ENCRYPTING_FILE_SYSTEM = 6
+};
+
+enum CAPICOM_CHECK_FLAG
+{
+    CAPICOM_CHECK_NONE = 0,
+    CAPICOM_CHECK_TRUSTED_ROOT = 1,
+    CAPICOM_CHECK_TIME_VALIDITY = 2,
+    CAPICOM_CHECK_SIGNATURE_VALIDITY = 4,
+    CAPICOM_CHECK_ONLINE_REVOCATION_STATUS = 8,
+    CAPICOM_CHECK_OFFLINE_REVOCATION_STATUS = 16,
+    CAPICOM_CHECK_COMPLETE_CHAIN = 32,
+    CAPICOM_CHECK_NAME_CONSTRAINTS = 64,
+    CAPICOM_CHECK_BASIC_CONSTRAINTS = 128,
+    CAPICOM_CHECK_NESTED_VALIDITY_PERIOD = 256,
+    CAPICOM_CHECK_ONLINE_ALL = 495,
+    CAPICOM_CHECK_OFFLINE_ALL = 503
+};
+
+enum CAPICOM_CERT_INFO_TYPE
+{
+    CAPICOM_CERT_INFO_SUBJECT_SIMPLE_NAME = 0,
+    CAPICOM_CERT_INFO_ISSUER_SIMPLE_NAME = 1,
+    CAPICOM_CERT_INFO_SUBJECT_EMAIL_NAME = 2,
+    CAPICOM_CERT_INFO_ISSUER_EMAIL_NAME = 3,
+    CAPICOM_CERT_INFO_SUBJECT_UPN = 4,
+    CAPICOM_CERT_INFO_ISSUER_UPN = 5,
+    CAPICOM_CERT_INFO_SUBJECT_DNS_NAME = 6,
+    CAPICOM_CERT_INFO_ISSUER_DNS_NAME = 7
+};
+
+enum CAPICOM_STORE_LOCATION
+{
+    CAPICOM_MEMORY_STORE = 0,
+    CAPICOM_LOCAL_MACHINE_STORE = 1,
+    CAPICOM_CURRENT_USER_STORE = 2,
+    CAPICOM_ACTIVE_DIRECTORY_USER_STORE = 3,
+    CAPICOM_SMART_CARD_USER_STORE = 4
+};
+
+enum CAPICOM_STORE_OPEN_MODE
+{
+    CAPICOM_STORE_OPEN_READ_ONLY = 0,
+    CAPICOM_STORE_OPEN_READ_WRITE = 1,
+    CAPICOM_STORE_OPEN_MAXIMUM_ALLOWED = 2,
+    CAPICOM_STORE_OPEN_EXISTING_ONLY = 128,
+    CAPICOM_STORE_OPEN_INCLUDE_ARCHIVED = 256
+};
+
+enum CAPICOM_ACTIVE_DIRECTORY_SEARCH_LOCATION
+{
+    CAPICOM_SEARCH_ANY = 0,
+    CAPICOM_SEARCH_GLOBAL_CATALOG = 1,
+    CAPICOM_SEARCH_DEFAULT_DOMAIN = 2
+};
+
+enum CAPICOM_STORE_SAVE_AS_TYPE
+{
+    CAPICOM_STORE_SAVE_AS_SERIALIZED = 0,
+    CAPICOM_STORE_SAVE_AS_PKCS7 = 1
+};
+
+enum CAPICOM_ATTRIBUTE
+{
+    CAPICOM_AUTHENTICATED_ATTRIBUTE_SIGNING_TIME = 0,
+    CAPICOM_AUTHENTICATED_ATTRIBUTE_DOCUMENT_NAME = 1,
+    CAPICOM_AUTHENTICATED_ATTRIBUTE_DOCUMENT_DESCRIPTION = 2
+};
+
+enum CAPICOM_SIGNED_DATA_VERIFY_FLAG
+{
+    CAPICOM_VERIFY_SIGNATURE_ONLY = 0,
+    CAPICOM_VERIFY_SIGNATURE_AND_CERTIFICATE = 1
+};
+
+enum CAPICOM_ENCRYPTION_ALGORITHM
+{
+    CAPICOM_ENCRYPTION_ALGORITHM_RC2 = 0,
+    CAPICOM_ENCRYPTION_ALGORITHM_RC4 = 1,
+    CAPICOM_ENCRYPTION_ALGORITHM_DES = 2,
+    CAPICOM_ENCRYPTION_ALGORITHM_3DES = 3,
+    CAPICOM_ENCRYPTION_ALGORITHM_AES = 4
+};
+
+enum CAPICOM_ENCRYPTION_KEY_LENGTH
+{
+    CAPICOM_ENCRYPTION_KEY_LENGTH_MAXIMUM = 0,
+    CAPICOM_ENCRYPTION_KEY_LENGTH_40_BITS = 1,
+    CAPICOM_ENCRYPTION_KEY_LENGTH_56_BITS = 2,
+    CAPICOM_ENCRYPTION_KEY_LENGTH_128_BITS = 3,
+    CAPICOM_ENCRYPTION_KEY_LENGTH_192_BITS = 4,
+    CAPICOM_ENCRYPTION_KEY_LENGTH_256_BITS = 5
+};
+
+enum CAPICOM_SECRET_TYPE
+{
+    CAPICOM_SECRET_PASSWORD = 0
+};
+
+enum CAPICOM_KEY_ALGORITHM
+{
+    CAPICOM_KEY_ALGORITHM_OTHER = 0,
+    CAPICOM_KEY_ALGORITHM_RSA = 1,
+    CAPICOM_KEY_ALGORITHM_DSS = 2
+};
+
+enum CAPICOM_OID
+{
+    CAPICOM_OID_OTHER = 0,
+    CAPICOM_OID_AUTHORITY_KEY_IDENTIFIER_EXTENSION = 1,
+    CAPICOM_OID_KEY_ATTRIBUTES_EXTENSION = 2,
+    CAPICOM_OID_CERT_POLICIES_95_EXTENSION = 3,
+    CAPICOM_OID_KEY_USAGE_RESTRICTION_EXTENSION = 4,
+    CAPICOM_OID_LEGACY_POLICY_MAPPINGS_EXTENSION = 5,
+    CAPICOM_OID_SUBJECT_ALT_NAME_EXTENSION = 6,
+    CAPICOM_OID_ISSUER_ALT_NAME_EXTENSION = 7,
+    CAPICOM_OID_BASIC_CONSTRAINTS_EXTENSION = 8,
+    CAPICOM_OID_SUBJECT_KEY_IDENTIFIER_EXTENSION = 9,
+    CAPICOM_OID_KEY_USAGE_EXTENSION = 10,
+    CAPICOM_OID_PRIVATEKEY_USAGE_PERIOD_EXTENSION = 11,
+    CAPICOM_OID_SUBJECT_ALT_NAME2_EXTENSION = 12,
+    CAPICOM_OID_ISSUER_ALT_NAME2_EXTENSION = 13,
+    CAPICOM_OID_BASIC_CONSTRAINTS2_EXTENSION = 14,
+    CAPICOM_OID_NAME_CONSTRAINTS_EXTENSION = 15,
+    CAPICOM_OID_CRL_DIST_POINTS_EXTENSION = 16,
+    CAPICOM_OID_CERT_POLICIES_EXTENSION = 17,
+    CAPICOM_OID_POLICY_MAPPINGS_EXTENSION = 18,
+    CAPICOM_OID_AUTHORITY_KEY_IDENTIFIER2_EXTENSION = 19,
+    CAPICOM_OID_POLICY_CONSTRAINTS_EXTENSION = 20,
+    CAPICOM_OID_ENHANCED_KEY_USAGE_EXTENSION = 21,
+    CAPICOM_OID_CERTIFICATE_TEMPLATE_EXTENSION = 22,
+    CAPICOM_OID_APPLICATION_CERT_POLICIES_EXTENSION = 23,
+    CAPICOM_OID_APPLICATION_POLICY_MAPPINGS_EXTENSION = 24,
+    CAPICOM_OID_APPLICATION_POLICY_CONSTRAINTS_EXTENSION = 25,
+    CAPICOM_OID_AUTHORITY_INFO_ACCESS_EXTENSION = 26,
+    CAPICOM_OID_SERVER_AUTH_EKU = 100,
+    CAPICOM_OID_CLIENT_AUTH_EKU = 101,
+    CAPICOM_OID_CODE_SIGNING_EKU = 102,
+    CAPICOM_OID_EMAIL_PROTECTION_EKU = 103,
+    CAPICOM_OID_IPSEC_END_SYSTEM_EKU = 104,
+    CAPICOM_OID_IPSEC_TUNNEL_EKU = 105,
+    CAPICOM_OID_IPSEC_USER_EKU = 106,
+    CAPICOM_OID_TIME_STAMPING_EKU = 107,
+    CAPICOM_OID_CTL_USAGE_SIGNING_EKU = 108,
+    CAPICOM_OID_TIME_STAMP_SIGNING_EKU = 109,
+    CAPICOM_OID_SERVER_GATED_CRYPTO_EKU = 110,
+    CAPICOM_OID_ENCRYPTING_FILE_SYSTEM_EKU = 111,
+    CAPICOM_OID_EFS_RECOVERY_EKU = 112,
+    CAPICOM_OID_WHQL_CRYPTO_EKU = 113,
+    CAPICOM_OID_NT5_CRYPTO_EKU = 114,
+    CAPICOM_OID_OEM_WHQL_CRYPTO_EKU = 115,
+    CAPICOM_OID_EMBEDED_NT_CRYPTO_EKU = 116,
+    CAPICOM_OID_ROOT_LIST_SIGNER_EKU = 117,
+    CAPICOM_OID_QUALIFIED_SUBORDINATION_EKU = 118,
+    CAPICOM_OID_KEY_RECOVERY_EKU = 119,
+    CAPICOM_OID_DIGITAL_RIGHTS_EKU = 120,
+    CAPICOM_OID_LICENSES_EKU = 121,
+    CAPICOM_OID_LICENSE_SERVER_EKU = 122,
+    CAPICOM_OID_SMART_CARD_LOGON_EKU = 123,
+    CAPICOM_OID_PKIX_POLICY_QUALIFIER_CPS = 124,
+    CAPICOM_OID_PKIX_POLICY_QUALIFIER_USERNOTICE = 125
+};
+
+enum CAPICOM_PROPID
+{
+    CAPICOM_PROPID_UNKNOWN = 0,
+    CAPICOM_PROPID_KEY_PROV_HANDLE = 1,
+    CAPICOM_PROPID_KEY_PROV_INFO = 2,
+    CAPICOM_PROPID_SHA1_HASH = 3,
+    CAPICOM_PROPID_HASH_PROP = 3,
+    CAPICOM_PROPID_MD5_HASH = 4,
+    CAPICOM_PROPID_KEY_CONTEXT = 5,
+    CAPICOM_PROPID_KEY_SPEC = 6,
+    CAPICOM_PROPID_IE30_RESERVED = 7,
+    CAPICOM_PROPID_PUBKEY_HASH_RESERVED = 8,
+    CAPICOM_PROPID_ENHKEY_USAGE = 9,
+    CAPICOM_PROPID_CTL_USAGE = 9,
+    CAPICOM_PROPID_NEXT_UPDATE_LOCATION = 10,
+    CAPICOM_PROPID_FRIENDLY_NAME = 11,
+    CAPICOM_PROPID_PVK_FILE = 12,
+    CAPICOM_PROPID_DESCRIPTION = 13,
+    CAPICOM_PROPID_ACCESS_STATE = 14,
+    CAPICOM_PROPID_SIGNATURE_HASH = 15,
+    CAPICOM_PROPID_SMART_CARD_DATA = 16,
+    CAPICOM_PROPID_EFS = 17,
+    CAPICOM_PROPID_FORTEZZA_DATA = 18,
+    CAPICOM_PROPID_ARCHIVED = 19,
+    CAPICOM_PROPID_KEY_IDENTIFIER = 20,
+    CAPICOM_PROPID_AUTO_ENROLL = 21,
+    CAPICOM_PROPID_PUBKEY_ALG_PARA = 22,
+    CAPICOM_PROPID_CROSS_CERT_DIST_POINTS = 23,
+    CAPICOM_PROPID_ISSUER_PUBLIC_KEY_MD5_HASH = 24,
+    CAPICOM_PROPID_SUBJECT_PUBLIC_KEY_MD5_HASH = 25,
+    CAPICOM_PROPID_ENROLLMENT = 26,
+    CAPICOM_PROPID_DATE_STAMP = 27,
+    CAPICOM_PROPID_ISSUER_SERIAL_NUMBER_MD5_HASH = 28,
+    CAPICOM_PROPID_SUBJECT_NAME_MD5_HASH = 29,
+    CAPICOM_PROPID_EXTENDED_ERROR_INFO = 30,
+    CAPICOM_PROPID_RENEWAL = 64,
+    CAPICOM_PROPID_ARCHIVED_KEY_HASH = 65,
+    CAPICOM_PROPID_FIRST_RESERVED = 66,
+    CAPICOM_PROPID_LAST_RESERVED = 32767,
+    CAPICOM_PROPID_FIRST_USER = 32768,
+    CAPICOM_PROPID_LAST_USER = 65535
+};
+
+enum CAPICOM_PROV_TYPE
+{
+    CAPICOM_PROV_RSA_FULL = 1,
+    CAPICOM_PROV_RSA_SIG = 2,
+    CAPICOM_PROV_DSS = 3,
+    CAPICOM_PROV_FORTEZZA = 4,
+    CAPICOM_PROV_MS_EXCHANGE = 5,
+    CAPICOM_PROV_SSL = 6,
+    CAPICOM_PROV_RSA_SCHANNEL = 12,
+    CAPICOM_PROV_DSS_DH = 13,
+    CAPICOM_PROV_EC_ECDSA_SIG = 14,
+    CAPICOM_PROV_EC_ECNRA_SIG = 15,
+    CAPICOM_PROV_EC_ECDSA_FULL = 16,
+    CAPICOM_PROV_EC_ECNRA_FULL = 17,
+    CAPICOM_PROV_DH_SCHANNEL = 18,
+    CAPICOM_PROV_SPYRUS_LYNKS = 20,
+    CAPICOM_PROV_RNG = 21,
+    CAPICOM_PROV_INTEL_SEC = 22,
+    CAPICOM_PROV_REPLACE_OWF = 23,
+    CAPICOM_PROV_RSA_AES = 24
+};
+
+enum CAPICOM_CERTIFICATE_SAVE_AS_TYPE
+{
+    CAPICOM_CERTIFICATE_SAVE_AS_PFX = 0,
+    CAPICOM_CERTIFICATE_SAVE_AS_CER = 1
+};
+
+enum CAPICOM_CERTIFICATES_SAVE_AS_TYPE
+{
+    CAPICOM_CERTIFICATES_SAVE_AS_SERIALIZED = 0,
+    CAPICOM_CERTIFICATES_SAVE_AS_PKCS7 = 1,
+    CAPICOM_CERTIFICATES_SAVE_AS_PFX = 2
+};
+
+enum CAPICOM_CERTIFICATE_INCLUDE_OPTION
+{
+    CAPICOM_CERTIFICATE_INCLUDE_CHAIN_EXCEPT_ROOT = 0,
+    CAPICOM_CERTIFICATE_INCLUDE_WHOLE_CHAIN = 1,
+    CAPICOM_CERTIFICATE_INCLUDE_END_ENTITY_ONLY = 2
+};
+
+enum CAPICOM_KEY_SPEC
+{
+    CAPICOM_KEY_SPEC_KEYEXCHANGE = 1,
+    CAPICOM_KEY_SPEC_SIGNATURE = 2
+};
+
+enum CAPICOM_KEY_LOCATION
+{
+    CAPICOM_CURRENT_USER_KEY = 0,
+    CAPICOM_LOCAL_MACHINE_KEY = 1
+};
+
+enum CAPICOM_KEY_STORAGE_FLAG
+{
+    CAPICOM_KEY_STORAGE_DEFAULT = 0,
+    CAPICOM_KEY_STORAGE_EXPORTABLE = 1,
+    CAPICOM_KEY_STORAGE_USER_PROTECTED = 2
+};
+
+enum CAPICOM_EXPORT_FLAG
+{
+    CAPICOM_EXPORT_DEFAULT = 0,
+    CAPICOM_EXPORT_IGNORE_PRIVATE_KEY_NOT_EXPORTABLE_ERROR = 1
+};
+
+enum CAPICOM_KEY_USAGE
+{
+    CAPICOM_DIGITAL_SIGNATURE_KEY_USAGE = 128,
+    CAPICOM_NON_REPUDIATION_KEY_USAGE = 64,
+    CAPICOM_KEY_ENCIPHERMENT_KEY_USAGE = 32,
+    CAPICOM_DATA_ENCIPHERMENT_KEY_USAGE = 16,
+    CAPICOM_KEY_AGREEMENT_KEY_USAGE = 8,
+    CAPICOM_KEY_CERT_SIGN_KEY_USAGE = 4,
+    CAPICOM_OFFLINE_CRL_SIGN_KEY_USAGE = 2,
+    CAPICOM_CRL_SIGN_KEY_USAGE = 2,
+    CAPICOM_ENCIPHER_ONLY_KEY_USAGE = 1,
+    CAPICOM_DECIPHER_ONLY_KEY_USAGE = 32768
+};
+
+enum CAPICOM_CERTIFICATE_FIND_TYPE
+{
+    CAPICOM_CERTIFICATE_FIND_SHA1_HASH = 0,
+    CAPICOM_CERTIFICATE_FIND_SUBJECT_NAME = 1,
+    CAPICOM_CERTIFICATE_FIND_ISSUER_NAME = 2,
+    CAPICOM_CERTIFICATE_FIND_ROOT_NAME = 3,
+    CAPICOM_CERTIFICATE_FIND_TEMPLATE_NAME = 4,
+    CAPICOM_CERTIFICATE_FIND_EXTENSION = 5,
+    CAPICOM_CERTIFICATE_FIND_EXTENDED_PROPERTY = 6,
+    CAPICOM_CERTIFICATE_FIND_APPLICATION_POLICY = 7,
+    CAPICOM_CERTIFICATE_FIND_CERTIFICATE_POLICY = 8,
+    CAPICOM_CERTIFICATE_FIND_TIME_VALID = 9,
+    CAPICOM_CERTIFICATE_FIND_TIME_NOT_YET_VALID = 10,
+    CAPICOM_CERTIFICATE_FIND_TIME_EXPIRED = 11,
+    CAPICOM_CERTIFICATE_FIND_KEY_USAGE = 12
+};
+
+enum CAPICOM_HASH_ALGORITHM
+{
+    CAPICOM_HASH_ALGORITHM_SHA1 = 0,
+    CAPICOM_HASH_ALGORITHM_MD2 = 1,
+    CAPICOM_HASH_ALGORITHM_MD4 = 2,
+    CAPICOM_HASH_ALGORITHM_MD5 = 3,
+    CAPICOM_HASH_ALGORITHM_SHA_256 = 4,
+    CAPICOM_HASH_ALGORITHM_SHA_384 = 5,
+    CAPICOM_HASH_ALGORITHM_SHA_512 = 6
+};
+    const long CAPICOM_MAJOR_VERSION = 2;
+    const long CAPICOM_MINOR_VERSION = 1;
+    const long CAPICOM_RELEASE_NUMBER = 0;
+    const long CAPICOM_BUILD_NUMBER = 1;
+    const LPSTR CAPICOM_VERSION_INFO = (char*) "CAPICOM v2.1";
+    const LPSTR CAPICOM_COPY_RIGHT = (char*) "Copyright (c) Microsoft Corporation 1999-2004. All rights reserved.";
+    const LPSTR CAPICOM_MY_STORE = (char*) "My";
+    const LPSTR CAPICOM_CA_STORE = (char*) "Ca";
+    const LPSTR CAPICOM_ROOT_STORE = (char*) "Root";
+    const LPSTR CAPICOM_OTHER_STORE = (char*) "AddressBook";
+    const LPSTR CAPICOM_OID_SERVER_AUTH = (char*) "1.3.6.1.5.5.7.3.1";
+    const LPSTR CAPICOM_OID_CLIENT_AUTH = (char*) "1.3.6.1.5.5.7.3.2";
+    const LPSTR CAPICOM_OID_CODE_SIGNING = (char*) "1.3.6.1.5.5.7.3.3";
+    const LPSTR CAPICOM_OID_EMAIL_PROTECTION = (char*) "1.3.6.1.5.5.7.3.4";
+    const LPSTR CAPICOM_OID_IPSEC_END_SYSTEM = (char*) "1.3.6.1.5.5.7.3.5";
+    const LPSTR CAPICOM_OID_IPSEC_TUNNEL = (char*) "1.3.6.1.5.5.7.3.6";
+    const LPSTR CAPICOM_OID_IPSEC_USER = (char*) "1.3.6.1.5.5.7.3.7";
+    const LPSTR CAPICOM_OID_TIME_STAMPING = (char*) "1.3.6.1.5.5.7.3.8";
+    const LPSTR CAPICOM_OID_CTL_USAGE_SIGNING = (char*) "1.3.6.1.4.1.311.10.3.1";
+    const LPSTR CAPICOM_OID_TIME_STAMP_SIGNING = (char*) "1.3.6.1.4.1.311.10.3.2";
+    const LPSTR CAPICOM_OID_SERVER_GATED_CRYPTO = (char*) "1.3.6.1.4.1.311.10.3.3";
+    const LPSTR CAPICOM_OID_ENCRYPTING_FILE_SYSTEM = (char*) "1.3.6.1.4.1.311.10.3.4";
+    const LPSTR CAPICOM_OID_EFS_RECOVERY = (char*) "1.3.6.1.4.1.311.10.3.4.1";
+    const LPSTR CAPICOM_OID_WHQL_CRYPTO = (char*) "1.3.6.1.4.1.311.10.3.5";
+    const LPSTR CAPICOM_OID_NT5_CRYPTO = (char*) "1.3.6.1.4.1.311.10.3.6";
+    const LPSTR CAPICOM_OID_OEM_WHQL_CRYPTO = (char*) "1.3.6.1.4.1.311.10.3.7";
+    const LPSTR CAPICOM_OID_EMBEDED_NT_CRYPTO = (char*) "1.3.6.1.4.1.311.10.3.8";
+    const LPSTR CAPICOM_OID_ROOT_LIST_SIGNER = (char*) "1.3.6.1.4.1.311.10.3.9";
+    const LPSTR CAPICOM_OID_QUALIFIED_SUBORDINATION = (char*) "1.3.6.1.4.1.311.10.3.10";
+    const LPSTR CAPICOM_OID_KEY_RECOVERY = (char*) "1.3.6.1.4.1.311.10.3.11";
+    const LPSTR CAPICOM_OID_DIGITAL_RIGHTS = (char*) "1.3.6.1.4.1.311.10.5.1";
+    const LPSTR CAPICOM_OID_LICENSES = (char*) "1.3.6.1.4.1.311.10.6.1";
+    const LPSTR CAPICOM_OID_LICENSE_SERVER = (char*) "1.3.6.1.4.1.311.10.6.2";
+    const LPSTR CAPICOM_OID_SMART_CARD_LOGON = (char*) "1.3.6.1.4.1.311.20.2.2";
+    const LPSTR CAPICOM_SERVER_AUTH_OID = (char*) "1.3.6.1.5.5.7.3.1";
+    const LPSTR CAPICOM_CLIENT_AUTH_OID = (char*) "1.3.6.1.5.5.7.3.2";
+    const LPSTR CAPICOM_CODE_SIGNING_OID = (char*) "1.3.6.1.5.5.7.3.3";
+    const LPSTR CAPICOM_EMAIL_PROTECTION_OID = (char*) "1.3.6.1.5.5.7.3.4";
+    const LPSTR CAPICOM_IPSEC_END_SYSTEM_OID = (char*) "1.3.6.1.5.5.7.3.5";
+    const LPSTR CAPICOM_IPSEC_TUNNEL_OID = (char*) "1.3.6.1.5.5.7.3.6";
+    const LPSTR CAPICOM_IPSEC_USER_OID = (char*) "1.3.6.1.5.5.7.3.7";
+    const LPSTR CAPICOM_TIME_STAMPING_OID = (char*) "1.3.6.1.5.5.7.3.8";
+    const LPSTR CAPICOM_CTL_USAGE_SIGNING_OID = (char*) "1.3.6.1.4.1.311.10.3.1";
+    const LPSTR CAPICOM_TIME_STAMP_SIGNING_OID = (char*) "1.3.6.1.4.1.311.10.3.2";
+    const LPSTR CAPICOM_SERVER_GATED_CRYPTO_OID = (char*) "1.3.6.1.4.1.311.10.3.3";
+    const LPSTR CAPICOM_ENCRYPTING_FILE_SYSTEM_OID = (char*) "1.3.6.1.4.1.311.10.3.4";
+    const LPSTR CAPICOM_EFS_RECOVERY_OID = (char*) "1.3.6.1.4.1.311.10.3.4.1";
+    const LPSTR CAPICOM_WHQL_CRYPTO_OID = (char*) "1.3.6.1.4.1.311.10.3.5";
+    const LPSTR CAPICOM_NT5_CRYPTO_OID = (char*) "1.3.6.1.4.1.311.10.3.6";
+    const LPSTR CAPICOM_OEM_WHQL_CRYPTO_OID = (char*) "1.3.6.1.4.1.311.10.3.7";
+    const LPSTR CAPICOM_EMBEDED_NT_CRYPTO_OID = (char*) "1.3.6.1.4.1.311.10.3.8";
+    const LPSTR CAPICOM_ROOT_LIST_SIGNER_OID = (char*) "1.3.6.1.4.1.311.10.3.9";
+    const LPSTR CAPICOM_QUALIFIED_SUBORDINATION_OID = (char*) "1.3.6.1.4.1.311.10.3.10";
+    const LPSTR CAPICOM_KEY_RECOVERY_OID = (char*) "1.3.6.1.4.1.311.10.3.11";
+    const LPSTR CAPICOM_DIGITAL_RIGHTS_OID = (char*) "1.3.6.1.4.1.311.10.5.1";
+    const LPSTR CAPICOM_LICENSES_OID = (char*) "1.3.6.1.4.1.311.10.6.1";
+    const LPSTR CAPICOM_LICENSE_SERVER_OID = (char*) "1.3.6.1.4.1.311.10.6.2";
+    const LPSTR CAPICOM_SMART_CARD_LOGON_OID = (char*) "1.3.6.1.4.1.311.20.2.2";
+    const LPSTR CAPICOM_ANY_APPLICATION_POLICY_OID = (char*) "1.3.6.1.4.1.311.10.12.1";
+    const LPSTR CAPICOM_ANY_CERT_POLICY_OID = (char*) "2.5.29.32.0";
+    const LPSTR CAPICOM_AUTHORITY_KEY_IDENTIFIER_OID = (char*) "2.5.29.1";
+    const LPSTR CAPICOM_KEY_ATTRIBUTES_OID = (char*) "2.5.29.2";
+    const LPSTR CAPICOM_CERT_POLICIES_95_OID = (char*) "2.5.29.3";
+    const LPSTR CAPICOM_KEY_USAGE_RESTRICTION_OID = (char*) "2.5.29.4";
+    const LPSTR CAPICOM_LEGACY_POLICY_MAPPINGS_OID = (char*) "2.5.29.5";
+    const LPSTR CAPICOM_SUBJECT_ALT_NAME_OID = (char*) "2.5.29.7";
+    const LPSTR CAPICOM_ISSUER_ALT_NAME_OID = (char*) "2.5.29.8";
+    const LPSTR CAPICOM_BASIC_CONSTRAINTS_OID = (char*) "2.5.29.10";
+    const LPSTR CAPICOM_SUBJECT_KEY_IDENTIFIER_OID = (char*) "2.5.29.14";
+    const LPSTR CAPICOM_KEY_USAGE_OID = (char*) "2.5.29.15";
+    const LPSTR CAPICOM_PRIVATEKEY_USAGE_PERIOD_OID = (char*) "2.5.29.16";
+    const LPSTR CAPICOM_SUBJECT_ALT_NAME2_OID = (char*) "2.5.29.17";
+    const LPSTR CAPICOM_ISSUER_ALT_NAME2_OID = (char*) "2.5.29.18";
+    const LPSTR CAPICOM_BASIC_CONSTRAINTS2_OID = (char*) "2.5.29.19";
+    const LPSTR CAPICOM_NAME_CONSTRAINTS_OID = (char*) "2.5.29.30";
+    const LPSTR CAPICOM_CRL_DIST_POINTS_OID = (char*) "2.5.29.31";
+    const LPSTR CAPICOM_CERT_POLICIES_OID = (char*) "2.5.29.32";
+    const LPSTR CAPICOM_POLICY_MAPPINGS_OID = (char*) "2.5.29.33";
+    const LPSTR CAPICOM_AUTHORITY_KEY_IDENTIFIER2_OID = (char*) "2.5.29.35";
+    const LPSTR CAPICOM_POLICY_CONSTRAINTS_OID = (char*) "2.5.29.36";
+    const LPSTR CAPICOM_ENHANCED_KEY_USAGE_OID = (char*) "2.5.29.37";
+    const LPSTR CAPICOM_CERTIFICATE_TEMPLATE_OID = (char*) "1.3.6.1.4.1.311.21.7";
+    const LPSTR CAPICOM_APPLICATION_CERT_POLICIES_OID = (char*) "1.3.6.1.4.1.311.21.10";
+    const LPSTR CAPICOM_APPLICATION_POLICY_MAPPINGS_OID = (char*) "1.3.6.1.4.1.311.21.11";
+    const LPSTR CAPICOM_APPLICATION_POLICY_CONSTRAINTS_OID = (char*) "1.3.6.1.4.1.311.21.12";
+    const LPSTR CAPICOM_AUTHORITY_INFO_ACCESS_OID = (char*) "1.3.6.1.5.5.7.1.1";
+    const LPSTR CAPICOM_PKIX_POLICY_QUALIFIER_CPS_OID = (char*) "1.3.6.1.5.5.7.2.1";
+    const LPSTR CAPICOM_PKIX_POLICY_QUALIFIER_USERNOTICE_OID = (char*) "1.3.6.1.5.5.7.2.2";
+    const long CAPICOM_TRUST_IS_NOT_TIME_VALID = 1;
+    const long CAPICOM_TRUST_IS_NOT_TIME_NESTED = 2;
+    const long CAPICOM_TRUST_IS_REVOKED = 4;
+    const long CAPICOM_TRUST_IS_NOT_SIGNATURE_VALID = 8;
+    const long CAPICOM_TRUST_IS_NOT_VALID_FOR_USAGE = 16;
+    const long CAPICOM_TRUST_IS_UNTRUSTED_ROOT = 32;
+    const long CAPICOM_TRUST_REVOCATION_STATUS_UNKNOWN = 64;
+    const long CAPICOM_TRUST_IS_CYCLIC = 128;
+    const long CAPICOM_TRUST_INVALID_EXTENSION = 256;
+    const long CAPICOM_TRUST_INVALID_POLICY_CONSTRAINTS = 512;
+    const long CAPICOM_TRUST_INVALID_BASIC_CONSTRAINTS = 1024;
+    const long CAPICOM_TRUST_INVALID_NAME_CONSTRAINTS = 2048;
+    const long CAPICOM_TRUST_HAS_NOT_SUPPORTED_NAME_CONSTRAINT = 4096;
+    const long CAPICOM_TRUST_HAS_NOT_DEFINED_NAME_CONSTRAINT = 8192;
+    const long CAPICOM_TRUST_HAS_NOT_PERMITTED_NAME_CONSTRAINT = 16384;
+    const long CAPICOM_TRUST_HAS_EXCLUDED_NAME_CONSTRAINT = 32768;
+    const long CAPICOM_TRUST_IS_OFFLINE_REVOCATION = 16777216;
+    const long CAPICOM_TRUST_NO_ISSUANCE_CHAIN_POLICY = 33554432;
+    const long CAPICOM_TRUST_IS_PARTIAL_CHAIN = 65536;
+    const long CAPICOM_TRUST_CTL_IS_NOT_TIME_VALID = 131072;
+    const long CAPICOM_TRUST_CTL_IS_NOT_SIGNATURE_VALID = 262144;
+    const long CAPICOM_TRUST_CTL_IS_NOT_VALID_FOR_USAGE = 524288;
+    const LPSTR CAPICOM_PROV_MS_DEF_PROV = (char*) "Microsoft Base Cryptographic Provider v1.0";
+    const LPSTR CAPICOM_PROV_MS_ENHANCED_PROV = (char*) "Microsoft Enhanced Cryptographic Provider v1.0";
+    const LPSTR CAPICOM_PROV_MS_STRONG_PROV = (char*) "Microsoft Strong Cryptographic Provider";
+    const LPSTR CAPICOM_PROV_MS_DEF_RSA_SIG_PROV = (char*) "Microsoft RSA Signature Cryptographic Provider";
+    const LPSTR CAPICOM_PROV_MS_DEF_RSA_SCHANNEL_PROV = (char*) "Microsoft RSA SChannel Cryptographic Provider";
+    const LPSTR CAPICOM_PROV_MS_DEF_DSS_PROV = (char*) "Microsoft Base DSS Cryptographic Provider";
+    const LPSTR CAPICOM_PROV_MS_DEF_DSS_DH_PROV = (char*) "Microsoft Base DSS and Diffie-Hellman Cryptographic Provider";
+    const LPSTR CAPICOM_PROV_MS_ENH_DSS_DH_PROV = (char*) "Microsoft Enhanced DSS and Diffie-Hellman Cryptographic Provider";
+    const LPSTR CAPICOM_PROV_MS_DEF_DH_SCHANNEL_PROV = (char*) "Microsoft DH SChannel Cryptographic Provider";
+    const LPSTR CAPICOM_PROV_MS_SCARD_PROV = (char*) "Microsoft Base Smart Card Crypto Provider";
+    const LPSTR CAPICOM_PROV_MS_ENH_RSA_AES_PROV = (char*) "Microsoft Enhanced RSA and AES Cryptographic Provider (Prototype)";
+
+struct __declspec(uuid("a996e48c-d3dc-4244-89f7-afa33ec60679"))
+Settings;
+    // [ default ] interface ISettings
+
+struct __declspec(uuid("a24104f5-46d0-4c0f-926d-665565908e91"))
+ISettings : IDispatch
+{
+    //
+    // Property data
+    //
+
+    __declspec(property(get=GetEnablePromptForCertificateUI,put=PutEnablePromptForCertificateUI))
+    VARIANT_BOOL EnablePromptForCertificateUI;
+    __declspec(property(get=GetActiveDirectorySearchLocation,put=PutActiveDirectorySearchLocation))
+    enum CAPICOM_ACTIVE_DIRECTORY_SEARCH_LOCATION ActiveDirectorySearchLocation;
+
+    //
+    // Wrapper methods for error-handling
+    //
+
+    VARIANT_BOOL GetEnablePromptForCertificateUI ( );
+    void PutEnablePromptForCertificateUI (
+        VARIANT_BOOL pVal );
+    enum CAPICOM_ACTIVE_DIRECTORY_SEARCH_LOCATION GetActiveDirectorySearchLocation ( );
+    void PutActiveDirectorySearchLocation (
+        enum CAPICOM_ACTIVE_DIRECTORY_SEARCH_LOCATION pVal );
+
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall get_EnablePromptForCertificateUI (
+        VARIANT_BOOL * pVal ) = 0;
+    virtual HRESULT __stdcall put_EnablePromptForCertificateUI (
+        VARIANT_BOOL pVal ) = 0;
+    virtual HRESULT __stdcall get_ActiveDirectorySearchLocation (
+        enum CAPICOM_ACTIVE_DIRECTORY_SEARCH_LOCATION * pVal ) = 0;
+    virtual HRESULT __stdcall put_ActiveDirectorySearchLocation (
+        enum CAPICOM_ACTIVE_DIRECTORY_SEARCH_LOCATION pVal ) = 0;
+};
+
+struct __declspec(uuid("8535f9a1-738a-40d0-8fb1-10cc8f74e7d3"))
+EKU;
+    // [ default ] interface IEKU
+
+struct __declspec(uuid("976b7e6d-1002-4051-bfd4-824a74bd74e2"))
+IEKU : IDispatch
+{
+    //
+    // Property data
+    //
+
+    __declspec(property(get=GetName,put=PutName))
+    enum CAPICOM_EKU Name;
+    __declspec(property(get=GetOID,put=PutOID))
+    _bstr_t OID;
+
+    //
+    // Wrapper methods for error-handling
+    //
+
+    enum CAPICOM_EKU GetName ( );
+    void PutName (
+        enum CAPICOM_EKU pVal );
+    _bstr_t GetOID ( );
+    void PutOID (
+        _bstr_t pVal );
+
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall get_Name (
+        enum CAPICOM_EKU * pVal ) = 0;
+    virtual HRESULT __stdcall put_Name (
+        enum CAPICOM_EKU pVal ) = 0;
+    virtual HRESULT __stdcall get_OID (
+        BSTR * pVal ) = 0;
+    virtual HRESULT __stdcall put_OID (
+        BSTR pVal ) = 0;
+};
+
+struct __declspec(uuid("f1800663-5bfc-4d1a-8d44-56ce02dda34f"))
+EKUs;
+    // [ default ] interface IEKUs
+
+struct __declspec(uuid("47c87cec-8c4b-4e3c-8d22-34280274efd1"))
+IEKUs : IDispatch
+{
+    //
+    // Property data
+    //
+
+    __declspec(property(get=GetItem))
+    _variant_t Item[];
+    __declspec(property(get=GetCount))
+    long Count;
+    __declspec(property(get=Get_NewEnum))
+    IUnknownPtr _NewEnum;
+
+    //
+    // Wrapper methods for error-handling
+    //
+
+    _variant_t GetItem (
+        long Index );
+    long GetCount ( );
+    IUnknownPtr Get_NewEnum ( );
+
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall get_Item (
+        long Index,
+        VARIANT * pVal ) = 0;
+    virtual HRESULT __stdcall get_Count (
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall get__NewEnum (
+        IUnknown * * pVal ) = 0;
+};
+
+struct __declspec(uuid("9226c95c-38be-4cc4-b3a2-a867f5199c13"))
+KeyUsage;
+    // [ default ] interface IKeyUsage
+
+struct __declspec(uuid("41dd35a8-9ff9-45a6-9a7c-f65b2f085d1f"))
+IKeyUsage : IDispatch
+{
+    //
+    // Property data
+    //
+
+    __declspec(property(get=GetIsPresent))
+    VARIANT_BOOL IsPresent;
+    __declspec(property(get=GetIsCritical))
+    VARIANT_BOOL IsCritical;
+    __declspec(property(get=GetIsDigitalSignatureEnabled))
+    VARIANT_BOOL IsDigitalSignatureEnabled;
+    __declspec(property(get=GetIsNonRepudiationEnabled))
+    VARIANT_BOOL IsNonRepudiationEnabled;
+    __declspec(property(get=GetIsKeyEnciphermentEnabled))
+    VARIANT_BOOL IsKeyEnciphermentEnabled;
+    __declspec(property(get=GetIsDataEnciphermentEnabled))
+    VARIANT_BOOL IsDataEnciphermentEnabled;
+    __declspec(property(get=GetIsKeyAgreementEnabled))
+    VARIANT_BOOL IsKeyAgreementEnabled;
+    __declspec(property(get=GetIsKeyCertSignEnabled))
+    VARIANT_BOOL IsKeyCertSignEnabled;
+    __declspec(property(get=GetIsCRLSignEnabled))
+    VARIANT_BOOL IsCRLSignEnabled;
+    __declspec(property(get=GetIsEncipherOnlyEnabled))
+    VARIANT_BOOL IsEncipherOnlyEnabled;
+    __declspec(property(get=GetIsDecipherOnlyEnabled))
+    VARIANT_BOOL IsDecipherOnlyEnabled;
+
+    //
+    // Wrapper methods for error-handling
+    //
+
+    VARIANT_BOOL GetIsPresent ( );
+    VARIANT_BOOL GetIsCritical ( );
+    VARIANT_BOOL GetIsDigitalSignatureEnabled ( );
+    VARIANT_BOOL GetIsNonRepudiationEnabled ( );
+    VARIANT_BOOL GetIsKeyEnciphermentEnabled ( );
+    VARIANT_BOOL GetIsDataEnciphermentEnabled ( );
+    VARIANT_BOOL GetIsKeyAgreementEnabled ( );
+    VARIANT_BOOL GetIsKeyCertSignEnabled ( );
+    VARIANT_BOOL GetIsCRLSignEnabled ( );
+    VARIANT_BOOL GetIsEncipherOnlyEnabled ( );
+    VARIANT_BOOL GetIsDecipherOnlyEnabled ( );
+
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall get_IsPresent (
+        VARIANT_BOOL * pVal ) = 0;
+    virtual HRESULT __stdcall get_IsCritical (
+        VARIANT_BOOL * pVal ) = 0;
+    virtual HRESULT __stdcall get_IsDigitalSignatureEnabled (
+        VARIANT_BOOL * pVal ) = 0;
+    virtual HRESULT __stdcall get_IsNonRepudiationEnabled (
+        VARIANT_BOOL * pVal ) = 0;
+    virtual HRESULT __stdcall get_IsKeyEnciphermentEnabled (
+        VARIANT_BOOL * pVal ) = 0;
+    virtual HRESULT __stdcall get_IsDataEnciphermentEnabled (
+        VARIANT_BOOL * pVal ) = 0;
+    virtual HRESULT __stdcall get_IsKeyAgreementEnabled (
+        VARIANT_BOOL * pVal ) = 0;
+    virtual HRESULT __stdcall get_IsKeyCertSignEnabled (
+        VARIANT_BOOL * pVal ) = 0;
+    virtual HRESULT __stdcall get_IsCRLSignEnabled (
+        VARIANT_BOOL * pVal ) = 0;
+    virtual HRESULT __stdcall get_IsEncipherOnlyEnabled (
+        VARIANT_BOOL * pVal ) = 0;
+    virtual HRESULT __stdcall get_IsDecipherOnlyEnabled (
+        VARIANT_BOOL * pVal ) = 0;
+};
+
+struct __declspec(uuid("42c18607-1b4b-4126-8f1b-76e2dc7f631a"))
+ExtendedKeyUsage;
+    // [ default ] interface IExtendedKeyUsage
+
+struct __declspec(uuid("7289d408-987d-45d1-8dee-cf9e91c2e90e"))
+IExtendedKeyUsage : IDispatch
+{
+    //
+    // Property data
+    //
+
+    __declspec(property(get=GetIsPresent))
+    VARIANT_BOOL IsPresent;
+    __declspec(property(get=GetIsCritical))
+    VARIANT_BOOL IsCritical;
+    __declspec(property(get=GetEKUs))
+    IEKUsPtr EKUs;
+
+    //
+    // Wrapper methods for error-handling
+    //
+
+    VARIANT_BOOL GetIsPresent ( );
+    VARIANT_BOOL GetIsCritical ( );
+    IEKUsPtr GetEKUs ( );
+
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall get_IsPresent (
+        VARIANT_BOOL * pVal ) = 0;
+    virtual HRESULT __stdcall get_IsCritical (
+        VARIANT_BOOL * pVal ) = 0;
+    virtual HRESULT __stdcall get_EKUs (
+        struct IEKUs * * pVal ) = 0;
+};
+
+struct __declspec(uuid("c05aac6e-3a58-45a9-a203-56952e961e48"))
+BasicConstraints;
+    // [ default ] interface IBasicConstraints
+
+struct __declspec(uuid("4e298c47-aba6-459e-851b-993d6c626ead"))
+IBasicConstraints : IDispatch
+{
+    //
+    // Property data
+    //
+
+    __declspec(property(get=GetIsPresent))
+    VARIANT_BOOL IsPresent;
+    __declspec(property(get=GetIsCritical))
+    VARIANT_BOOL IsCritical;
+    __declspec(property(get=GetIsCertificateAuthority))
+    VARIANT_BOOL IsCertificateAuthority;
+    __declspec(property(get=GetIsPathLenConstraintPresent))
+    VARIANT_BOOL IsPathLenConstraintPresent;
+    __declspec(property(get=GetPathLenConstraint))
+    long PathLenConstraint;
+
+    //
+    // Wrapper methods for error-handling
+    //
+
+    VARIANT_BOOL GetIsPresent ( );
+    VARIANT_BOOL GetIsCritical ( );
+    VARIANT_BOOL GetIsCertificateAuthority ( );
+    VARIANT_BOOL GetIsPathLenConstraintPresent ( );
+    long GetPathLenConstraint ( );
+
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall get_IsPresent (
+        VARIANT_BOOL * pVal ) = 0;
+    virtual HRESULT __stdcall get_IsCritical (
+        VARIANT_BOOL * pVal ) = 0;
+    virtual HRESULT __stdcall get_IsCertificateAuthority (
+        VARIANT_BOOL * pVal ) = 0;
+    virtual HRESULT __stdcall get_IsPathLenConstraintPresent (
+        VARIANT_BOOL * pVal ) = 0;
+    virtual HRESULT __stdcall get_PathLenConstraint (
+        long * pVal ) = 0;
+};
+
+struct __declspec(uuid("0ef24d18-bd9b-47d4-9458-e05b489fb7ba"))
+CertificateStatus;
+    // [ default ] interface ICertificateStatus3
+    // interface ICertificateStatus2
+    // interface ICertificateStatus
+
+struct __declspec(uuid("ab769053-6d38-49d4-86ef-5fa85ed3af27"))
+ICertificateStatus : IDispatch
+{
+    //
+    // Property data
+    //
+
+    __declspec(property(get=GetResult))
+    VARIANT_BOOL Result;
+    __declspec(property(get=GetCheckFlag,put=PutCheckFlag))
+    enum CAPICOM_CHECK_FLAG CheckFlag;
+
+    //
+    // Wrapper methods for error-handling
+    //
+
+    VARIANT_BOOL GetResult ( );
+    enum CAPICOM_CHECK_FLAG GetCheckFlag ( );
+    void PutCheckFlag (
+        enum CAPICOM_CHECK_FLAG pVal );
+    IEKUPtr EKU ( );
+
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall get_Result (
+        VARIANT_BOOL * pVal ) = 0;
+    virtual HRESULT __stdcall get_CheckFlag (
+        enum CAPICOM_CHECK_FLAG * pVal ) = 0;
+    virtual HRESULT __stdcall put_CheckFlag (
+        enum CAPICOM_CHECK_FLAG pVal ) = 0;
+    virtual HRESULT __stdcall raw_EKU (
+        struct IEKU * * pVal ) = 0;
+};
+
+struct __declspec(uuid("bf95660e-f743-4eac-9de5-960787a4606c"))
+ICertificateStatus2 : ICertificateStatus
+{
+    //
+    // Property data
+    //
+
+    __declspec(property(get=GetVerificationTime,put=PutVerificationTime))
+    DATE VerificationTime;
+    __declspec(property(get=GetUrlRetrievalTimeout,put=PutUrlRetrievalTimeout))
+    long UrlRetrievalTimeout;
+
+    //
+    // Wrapper methods for error-handling
+    //
+
+    DATE GetVerificationTime ( );
+    void PutVerificationTime (
+        DATE pVal );
+    long GetUrlRetrievalTimeout ( );
+    void PutUrlRetrievalTimeout (
+        long pVal );
+    IOIDsPtr CertificatePolicies ( );
+    IOIDsPtr ApplicationPolicies ( );
+
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall get_VerificationTime (
+        DATE * pVal ) = 0;
+    virtual HRESULT __stdcall put_VerificationTime (
+        DATE pVal ) = 0;
+    virtual HRESULT __stdcall get_UrlRetrievalTimeout (
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall put_UrlRetrievalTimeout (
+        long pVal ) = 0;
+    virtual HRESULT __stdcall raw_CertificatePolicies (
+        struct IOIDs * * pVal ) = 0;
+    virtual HRESULT __stdcall raw_ApplicationPolicies (
+        struct IOIDs * * pVal ) = 0;
+};
+
+struct __declspec(uuid("a4eab890-0786-406b-9b31-2746f31f8d87"))
+ICertificateStatus3 : ICertificateStatus2
+{
+    //
+    // Property data
+    //
+
+    __declspec(property(get=GetValidationCertificates))
+    ICertificatesPtr ValidationCertificates;
+
+    //
+    // Wrapper methods for error-handling
+    //
+
+    ICertificatesPtr GetValidationCertificates ( );
+
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall get_ValidationCertificates (
+        struct ICertificates * * pVal ) = 0;
+};
+
+struct __declspec(uuid("da55e8fc-8e27-451b-aea8-1470d80fad42"))
+IOIDs : IDispatch
+{
+    //
+    // Property data
+    //
+
+    __declspec(property(get=GetItem))
+    _variant_t Item[];
+    __declspec(property(get=GetCount))
+    long Count;
+    __declspec(property(get=Get_NewEnum))
+    IUnknownPtr _NewEnum;
+
+    //
+    // Wrapper methods for error-handling
+    //
+
+    _variant_t GetItem (
+        const _variant_t & Index );
+    long GetCount ( );
+    IUnknownPtr Get_NewEnum ( );
+    HRESULT Add (
+        struct IOID * pVal );
+    HRESULT Remove (
+        const _variant_t & Index );
+    HRESULT Clear ( );
+
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall get_Item (
+        VARIANT Index,
+        VARIANT * pVal ) = 0;
+    virtual HRESULT __stdcall get_Count (
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall get__NewEnum (
+        IUnknown * * pVal ) = 0;
+    virtual HRESULT __stdcall raw_Add (
+        struct IOID * pVal ) = 0;
+    virtual HRESULT __stdcall raw_Remove (
+        VARIANT Index ) = 0;
+    virtual HRESULT __stdcall raw_Clear ( ) = 0;
+};
+
+struct __declspec(uuid("208e5e9b-58b1-4086-970f-161b582a846f"))
+IOID : IDispatch
+{
+    //
+    // Property data
+    //
+
+    __declspec(property(get=GetName,put=PutName))
+    enum CAPICOM_OID Name;
+    __declspec(property(get=GetFriendlyName,put=PutFriendlyName))
+    _bstr_t FriendlyName;
+    __declspec(property(get=GetValue,put=PutValue))
+    _bstr_t Value;
+
+    //
+    // Wrapper methods for error-handling
+    //
+
+    enum CAPICOM_OID GetName ( );
+    void PutName (
+        enum CAPICOM_OID pVal );
+    _bstr_t GetFriendlyName ( );
+    void PutFriendlyName (
+        _bstr_t pVal );
+    _bstr_t GetValue ( );
+    void PutValue (
+        _bstr_t pVal );
+
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall get_Name (
+        enum CAPICOM_OID * pVal ) = 0;
+    virtual HRESULT __stdcall put_Name (
+        enum CAPICOM_OID pVal ) = 0;
+    virtual HRESULT __stdcall get_FriendlyName (
+        BSTR * pVal ) = 0;
+    virtual HRESULT __stdcall put_FriendlyName (
+        BSTR pVal ) = 0;
+    virtual HRESULT __stdcall get_Value (
+        BSTR * pVal ) = 0;
+    virtual HRESULT __stdcall put_Value (
+        BSTR pVal ) = 0;
+};
+
+struct __declspec(uuid("68646716-bda0-4046-ab82-4444bc93b84a"))
+ICertificates : IDispatch
+{
+    //
+    // Property data
+    //
+
+    __declspec(property(get=GetItem))
+    _variant_t Item[];
+    __declspec(property(get=GetCount))
+    long Count;
+    __declspec(property(get=Get_NewEnum))
+    IUnknownPtr _NewEnum;
+
+    //
+    // Wrapper methods for error-handling
+    //
+
+    _variant_t GetItem (
+        long Index );
+    long GetCount ( );
+    IUnknownPtr Get_NewEnum ( );
+
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall get_Item (
+        long Index,
+        VARIANT * pVal ) = 0;
+    virtual HRESULT __stdcall get_Count (
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall get__NewEnum (
+        IUnknown * * pVal ) = 0;
+};
+
+struct __declspec(uuid("9171c115-7dd9-46ba-b1e5-0ed50affc1b8"))
+Certificate;
+    // [ default ] interface ICertificate2
+    // interface ICertificate
+    // interface ICertContext
+
+struct __declspec(uuid("0bba0b86-766c-4755-a443-243ff2bd8d29"))
+ICertificate : IDispatch
+{
+    //
+    // Property data
+    //
+
+    __declspec(property(get=GetVersion))
+    long Version;
+    __declspec(property(get=GetSerialNumber))
+    _bstr_t SerialNumber;
+    __declspec(property(get=GetSubjectName))
+    _bstr_t SubjectName;
+    __declspec(property(get=GetIssuerName))
+    _bstr_t IssuerName;
+    __declspec(property(get=GetValidFromDate))
+    DATE ValidFromDate;
+    __declspec(property(get=GetValidToDate))
+    DATE ValidToDate;
+    __declspec(property(get=GetThumbprint))
+    _bstr_t Thumbprint;
+
+    //
+    // Wrapper methods for error-handling
+    //
+
+    long GetVersion ( );
+    _bstr_t GetSerialNumber ( );
+    _bstr_t GetSubjectName ( );
+    _bstr_t GetIssuerName ( );
+    DATE GetValidFromDate ( );
+    DATE GetValidToDate ( );
+    _bstr_t GetThumbprint ( );
+    VARIANT_BOOL HasPrivateKey ( );
+    _bstr_t GetInfo (
+        enum CAPICOM_CERT_INFO_TYPE InfoType );
+    ICertificateStatusPtr IsValid ( );
+    IKeyUsagePtr KeyUsage ( );
+    IExtendedKeyUsagePtr ExtendedKeyUsage ( );
+    IBasicConstraintsPtr BasicConstraints ( );
+    _bstr_t Export (
+        enum CAPICOM_ENCODING_TYPE EncodingType );
+    HRESULT Import (
+        _bstr_t EncodedCertificate );
+    HRESULT Display ( );
+
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall get_Version (
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall get_SerialNumber (
+        BSTR * pVal ) = 0;
+    virtual HRESULT __stdcall get_SubjectName (
+        BSTR * pVal ) = 0;
+    virtual HRESULT __stdcall get_IssuerName (
+        BSTR * pVal ) = 0;
+    virtual HRESULT __stdcall get_ValidFromDate (
+        DATE * pVal ) = 0;
+    virtual HRESULT __stdcall get_ValidToDate (
+        DATE * pVal ) = 0;
+    virtual HRESULT __stdcall get_Thumbprint (
+        BSTR * pVal ) = 0;
+    virtual HRESULT __stdcall raw_HasPrivateKey (
+        VARIANT_BOOL * pVal ) = 0;
+    virtual HRESULT __stdcall raw_GetInfo (
+        enum CAPICOM_CERT_INFO_TYPE InfoType,
+        BSTR * pVal ) = 0;
+    virtual HRESULT __stdcall raw_IsValid (
+        struct ICertificateStatus * * pVal ) = 0;
+    virtual HRESULT __stdcall raw_KeyUsage (
+        struct IKeyUsage * * pVal ) = 0;
+    virtual HRESULT __stdcall raw_ExtendedKeyUsage (
+        struct IExtendedKeyUsage * * pVal ) = 0;
+    virtual HRESULT __stdcall raw_BasicConstraints (
+        struct IBasicConstraints * * pVal ) = 0;
+    virtual HRESULT __stdcall raw_Export (
+        enum CAPICOM_ENCODING_TYPE EncodingType,
+        BSTR * pVal ) = 0;
+    virtual HRESULT __stdcall raw_Import (
+        BSTR EncodedCertificate ) = 0;
+    virtual HRESULT __stdcall raw_Display ( ) = 0;
+};
+
+struct __declspec(uuid("6fe450dc-ad32-48d4-a366-01ee7e0b1374"))
+ICertificate2 : ICertificate
+{
+    //
+    // Property data
+    //
+
+    __declspec(property(get=GetArchived,put=PutArchived))
+    VARIANT_BOOL Archived;
+    __declspec(property(get=GetPrivateKey,put=PutPrivateKey))
+    IPrivateKeyPtr PrivateKey;
+
+    //
+    // Wrapper methods for error-handling
+    //
+
+    VARIANT_BOOL GetArchived ( );
+    void PutArchived (
+        VARIANT_BOOL pVal );
+    ITemplatePtr Template ( );
+    IPublicKeyPtr PublicKey ( );
+    IPrivateKeyPtr GetPrivateKey ( );
+    void PutPrivateKey (
+        struct IPrivateKey * pVal );
+    IExtensionsPtr Extensions ( );
+    IExtendedPropertiesPtr ExtendedProperties ( );
+    HRESULT Load (
+        _bstr_t FileName,
+        _bstr_t Password,
+        enum CAPICOM_KEY_STORAGE_FLAG KeyStorageFlag,
+        enum CAPICOM_KEY_LOCATION KeyLocation );
+    HRESULT Save (
+        _bstr_t FileName,
+        _bstr_t Password,
+        enum CAPICOM_CERTIFICATE_SAVE_AS_TYPE SaveAs,
+        enum CAPICOM_CERTIFICATE_INCLUDE_OPTION IncludeOption );
+
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall get_Archived (
+        VARIANT_BOOL * pVal ) = 0;
+    virtual HRESULT __stdcall put_Archived (
+        VARIANT_BOOL pVal ) = 0;
+    virtual HRESULT __stdcall raw_Template (
+        struct ITemplate * * pVal ) = 0;
+    virtual HRESULT __stdcall raw_PublicKey (
+        struct IPublicKey * * pVal ) = 0;
+    virtual HRESULT __stdcall get_PrivateKey (
+        struct IPrivateKey * * pVal ) = 0;
+    virtual HRESULT __stdcall put_PrivateKey (
+        struct IPrivateKey * pVal ) = 0;
+    virtual HRESULT __stdcall raw_Extensions (
+        struct IExtensions * * pVal ) = 0;
+    virtual HRESULT __stdcall raw_ExtendedProperties (
+        struct IExtendedProperties * * pVal ) = 0;
+    virtual HRESULT __stdcall raw_Load (
+        BSTR FileName,
+        BSTR Password,
+        enum CAPICOM_KEY_STORAGE_FLAG KeyStorageFlag,
+        enum CAPICOM_KEY_LOCATION KeyLocation ) = 0;
+    virtual HRESULT __stdcall raw_Save (
+        BSTR FileName,
+        BSTR Password,
+        enum CAPICOM_CERTIFICATE_SAVE_AS_TYPE SaveAs,
+        enum CAPICOM_CERTIFICATE_INCLUDE_OPTION IncludeOption ) = 0;
+};
+
+struct __declspec(uuid("5f10ffce-c922-476f-aa76-df99d5bdfa2c"))
+ITemplate : IDispatch
+{
+    //
+    // Property data
+    //
+
+    __declspec(property(get=GetIsPresent))
+    VARIANT_BOOL IsPresent;
+    __declspec(property(get=GetIsCritical))
+    VARIANT_BOOL IsCritical;
+    __declspec(property(get=GetName))
+    _bstr_t Name;
+    __declspec(property(get=GetOID))
+    IOIDPtr OID;
+    __declspec(property(get=GetMajorVersion))
+    long MajorVersion;
+    __declspec(property(get=GetMinorVersion))
+    long MinorVersion;
+
+    //
+    // Wrapper methods for error-handling
+    //
+
+    VARIANT_BOOL GetIsPresent ( );
+    VARIANT_BOOL GetIsCritical ( );
+    _bstr_t GetName ( );
+    IOIDPtr GetOID ( );
+    long GetMajorVersion ( );
+    long GetMinorVersion ( );
+
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall get_IsPresent (
+        VARIANT_BOOL * pVal ) = 0;
+    virtual HRESULT __stdcall get_IsCritical (
+        VARIANT_BOOL * pVal ) = 0;
+    virtual HRESULT __stdcall get_Name (
+        BSTR * pVal ) = 0;
+    virtual HRESULT __stdcall get_OID (
+        struct IOID * * pVal ) = 0;
+    virtual HRESULT __stdcall get_MajorVersion (
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall get_MinorVersion (
+        long * pVal ) = 0;
+};
+
+struct __declspec(uuid("72bf9ada-6817-4c31-b43e-25f7c7b091f4"))
+IPublicKey : IDispatch
+{
+    //
+    // Property data
+    //
+
+    __declspec(property(get=GetAlgorithm))
+    IOIDPtr Algorithm;
+    __declspec(property(get=GetLength))
+    long Length;
+    __declspec(property(get=GetEncodedKey))
+    IEncodedDataPtr EncodedKey;
+    __declspec(property(get=GetEncodedParameters))
+    IEncodedDataPtr EncodedParameters;
+
+    //
+    // Wrapper methods for error-handling
+    //
+
+    IOIDPtr GetAlgorithm ( );
+    long GetLength ( );
+    IEncodedDataPtr GetEncodedKey ( );
+    IEncodedDataPtr GetEncodedParameters ( );
+
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall get_Algorithm (
+        struct IOID * * pVal ) = 0;
+    virtual HRESULT __stdcall get_Length (
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall get_EncodedKey (
+        struct IEncodedData * * pVal ) = 0;
+    virtual HRESULT __stdcall get_EncodedParameters (
+        struct IEncodedData * * pVal ) = 0;
+};
+
+struct __declspec(uuid("d3d460f2-e7f3-4af3-8ec6-8eb68c61c567"))
+IEncodedData : IDispatch
+{
+    //
+    // Property data
+    //
+
+    __declspec(property(get=GetValue))
+    _bstr_t Value[];
+
+    //
+    // Wrapper methods for error-handling
+    //
+
+    _bstr_t GetValue (
+        enum CAPICOM_ENCODING_TYPE EncodingType );
+    _bstr_t Format (
+        VARIANT_BOOL bMultiLines );
+    IDispatchPtr Decoder ( );
+
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall get_Value (
+        enum CAPICOM_ENCODING_TYPE EncodingType,
+        BSTR * pVal ) = 0;
+    virtual HRESULT __stdcall raw_Format (
+        VARIANT_BOOL bMultiLines,
+        BSTR * pVal ) = 0;
+    virtual HRESULT __stdcall raw_Decoder (
+        IDispatch * * pVal ) = 0;
+};
+
+struct __declspec(uuid("659dedc3-6c85-42db-8527-efcb21742862"))
+IPrivateKey : IDispatch
+{
+    //
+    // Property data
+    //
+
+    __declspec(property(get=GetContainerName))
+    _bstr_t ContainerName;
+    __declspec(property(get=GetUniqueContainerName))
+    _bstr_t UniqueContainerName;
+    __declspec(property(get=GetProviderName))
+    _bstr_t ProviderName;
+    __declspec(property(get=GetProviderType))
+    enum CAPICOM_PROV_TYPE ProviderType;
+    __declspec(property(get=GetKeySpec))
+    enum CAPICOM_KEY_SPEC KeySpec;
+
+    //
+    // Wrapper methods for error-handling
+    //
+
+    _bstr_t GetContainerName ( );
+    _bstr_t GetUniqueContainerName ( );
+    _bstr_t GetProviderName ( );
+    enum CAPICOM_PROV_TYPE GetProviderType ( );
+    enum CAPICOM_KEY_SPEC GetKeySpec ( );
+    VARIANT_BOOL IsAccessible ( );
+    VARIANT_BOOL IsProtected ( );
+    VARIANT_BOOL IsExportable ( );
+    VARIANT_BOOL IsRemovable ( );
+    VARIANT_BOOL IsMachineKeyset ( );
+    VARIANT_BOOL IsHardwareDevice ( );
+    HRESULT Open (
+        _bstr_t ContainerName,
+        _bstr_t ProviderName,
+        enum CAPICOM_PROV_TYPE ProviderType,
+        enum CAPICOM_KEY_SPEC KeySpec,
+        enum CAPICOM_STORE_LOCATION StoreLocation,
+        VARIANT_BOOL bCheckExistence );
+    HRESULT Delete ( );
+
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall get_ContainerName (
+        BSTR * pVal ) = 0;
+    virtual HRESULT __stdcall get_UniqueContainerName (
+        BSTR * pVal ) = 0;
+    virtual HRESULT __stdcall get_ProviderName (
+        BSTR * pVal ) = 0;
+    virtual HRESULT __stdcall get_ProviderType (
+        enum CAPICOM_PROV_TYPE * pVal ) = 0;
+    virtual HRESULT __stdcall get_KeySpec (
+        enum CAPICOM_KEY_SPEC * pVal ) = 0;
+    virtual HRESULT __stdcall raw_IsAccessible (
+        VARIANT_BOOL * pVal ) = 0;
+    virtual HRESULT __stdcall raw_IsProtected (
+        VARIANT_BOOL * pVal ) = 0;
+    virtual HRESULT __stdcall raw_IsExportable (
+        VARIANT_BOOL * pVal ) = 0;
+    virtual HRESULT __stdcall raw_IsRemovable (
+        VARIANT_BOOL * pVal ) = 0;
+    virtual HRESULT __stdcall raw_IsMachineKeyset (
+        VARIANT_BOOL * pVal ) = 0;
+    virtual HRESULT __stdcall raw_IsHardwareDevice (
+        VARIANT_BOOL * pVal ) = 0;
+    virtual HRESULT __stdcall raw_Open (
+        BSTR ContainerName,
+        BSTR ProviderName,
+        enum CAPICOM_PROV_TYPE ProviderType,
+        enum CAPICOM_KEY_SPEC KeySpec,
+        enum CAPICOM_STORE_LOCATION StoreLocation,
+        VARIANT_BOOL bCheckExistence ) = 0;
+    virtual HRESULT __stdcall raw_Delete ( ) = 0;
+};
+
+struct __declspec(uuid("bc530d61-e692-4225-9e7a-07b90b45856a"))
+IExtensions : IDispatch
+{
+    //
+    // Property data
+    //
+
+    __declspec(property(get=GetItem))
+    _variant_t Item[];
+    __declspec(property(get=GetCount))
+    long Count;
+    __declspec(property(get=Get_NewEnum))
+    IUnknownPtr _NewEnum;
+
+    //
+    // Wrapper methods for error-handling
+    //
+
+    _variant_t GetItem (
+        const _variant_t & Index );
+    long GetCount ( );
+    IUnknownPtr Get_NewEnum ( );
+
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall get_Item (
+        VARIANT Index,
+        VARIANT * pVal ) = 0;
+    virtual HRESULT __stdcall get_Count (
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall get__NewEnum (
+        IUnknown * * pVal ) = 0;
+};
+
+struct __declspec(uuid("3b096e87-6218-4a3b-a880-f6cb951e7805"))
+IExtendedProperties : IDispatch
+{
+    //
+    // Property data
+    //
+
+    __declspec(property(get=GetItem))
+    _variant_t Item[];
+    __declspec(property(get=GetCount))
+    long Count;
+    __declspec(property(get=Get_NewEnum))
+    IUnknownPtr _NewEnum;
+
+    //
+    // Wrapper methods for error-handling
+    //
+
+    _variant_t GetItem (
+        long Index );
+    long GetCount ( );
+    IUnknownPtr Get_NewEnum ( );
+    HRESULT Add (
+        struct IExtendedProperty * pVal );
+    HRESULT Remove (
+        enum CAPICOM_PROPID PropID );
+
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall get_Item (
+        long Index,
+        VARIANT * pVal ) = 0;
+    virtual HRESULT __stdcall get_Count (
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall get__NewEnum (
+        IUnknown * * pVal ) = 0;
+    virtual HRESULT __stdcall raw_Add (
+        struct IExtendedProperty * pVal ) = 0;
+    virtual HRESULT __stdcall raw_Remove (
+        enum CAPICOM_PROPID PropID ) = 0;
+};
+
+struct __declspec(uuid("ecb8a5c8-562c-4989-b49d-fa37d40f8fc4"))
+IExtendedProperty : IDispatch
+{
+    //
+    // Property data
+    //
+
+    __declspec(property(get=GetPropID,put=PutPropID))
+    enum CAPICOM_PROPID PropID;
+    __declspec(property(get=GetValue,put=PutValue))
+    _bstr_t Value[];
+
+    //
+    // Wrapper methods for error-handling
+    //
+
+    enum CAPICOM_PROPID GetPropID ( );
+    void PutPropID (
+        enum CAPICOM_PROPID pVal );
+    _bstr_t GetValue (
+        enum CAPICOM_ENCODING_TYPE EncodingType );
+    void PutValue (
+        enum CAPICOM_ENCODING_TYPE EncodingType,
+        _bstr_t pVal );
+
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall get_PropID (
+        enum CAPICOM_PROPID * pVal ) = 0;
+    virtual HRESULT __stdcall put_PropID (
+        enum CAPICOM_PROPID pVal ) = 0;
+    virtual HRESULT __stdcall get_Value (
+        enum CAPICOM_ENCODING_TYPE EncodingType,
+        BSTR * pVal ) = 0;
+    virtual HRESULT __stdcall put_Value (
+        enum CAPICOM_ENCODING_TYPE EncodingType,
+        BSTR pVal ) = 0;
+};
+
+struct __declspec(uuid("9e7d3477-4f63-423e-8a45-e13b2bb851a2"))
+ICertContext : IUnknown
+{
+    //
+    // Property data
+    //
+
+    __declspec(property(get=GetCertContext,put=PutCertContext))
+    long CertContext;
+
+    //
+    // Wrapper methods for error-handling
+    //
+
+    long GetCertContext ( );
+    void PutCertContext (
+        long ppCertContext );
+    HRESULT FreeContext (
+        long pCertContext );
+
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall get_CertContext (
+        long * ppCertContext ) = 0;
+    virtual HRESULT __stdcall put_CertContext (
+        long ppCertContext ) = 0;
+    virtual HRESULT __stdcall raw_FreeContext (
+        long pCertContext ) = 0;
+};
+
+struct __declspec(uuid("17e3a1c3-ea8a-4970-af29-7f54610b1d4c"))
+Certificates;
+    // [ default ] interface ICertificates2
+    // interface ICertificates
+    // interface ICCertificates
+
+struct __declspec(uuid("7b57c04b-1786-4b30-a7b6-36235cd58a14"))
+ICertificates2 : ICertificates
+{
+    //
+    // Wrapper methods for error-handling
+    //
+
+    ICertificates2Ptr Find (
+        enum CAPICOM_CERTIFICATE_FIND_TYPE FindType,
+        const _variant_t & varCriteria,
+        VARIANT_BOOL bFindValidOnly );
+    ICertificates2Ptr Select (
+        _bstr_t Title,
+        _bstr_t DisplayString,
+        VARIANT_BOOL bMultiSelect );
+    HRESULT Add (
+        struct ICertificate2 * pVal );
+    HRESULT Remove (
+        const _variant_t & Index );
+    HRESULT Clear ( );
+    HRESULT Save (
+        _bstr_t FileName,
+        _bstr_t Password,
+        enum CAPICOM_CERTIFICATES_SAVE_AS_TYPE SaveAs,
+        enum CAPICOM_EXPORT_FLAG ExportFlag );
+
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall raw_Find (
+        enum CAPICOM_CERTIFICATE_FIND_TYPE FindType,
+        VARIANT varCriteria,
+        VARIANT_BOOL bFindValidOnly,
+        struct ICertificates2 * * pVal ) = 0;
+    virtual HRESULT __stdcall raw_Select (
+        BSTR Title,
+        BSTR DisplayString,
+        VARIANT_BOOL bMultiSelect,
+        struct ICertificates2 * * pVal ) = 0;
+    virtual HRESULT __stdcall raw_Add (
+        struct ICertificate2 * pVal ) = 0;
+    virtual HRESULT __stdcall raw_Remove (
+        VARIANT Index ) = 0;
+    virtual HRESULT __stdcall raw_Clear ( ) = 0;
+    virtual HRESULT __stdcall raw_Save (
+        BSTR FileName,
+        BSTR Password,
+        enum CAPICOM_CERTIFICATES_SAVE_AS_TYPE SaveAs,
+        enum CAPICOM_EXPORT_FLAG ExportFlag ) = 0;
+};
+
+struct __declspec(uuid("ebdc6dc2-684d-4425-bbb7-cb4d15a088a7"))
+ICCertificates : IUnknown
+{
+    //
+    // Wrapper methods for error-handling
+    //
+
+    HRESULT _ExportToStore (
+        void * hCertStore );
+
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall raw__ExportToStore (
+        void * hCertStore ) = 0;
+};
+
+struct __declspec(uuid("550c8ffb-4dc0-4756-828c-862e6d0ae74f"))
+Chain;
+    // [ default ] interface IChain2
+    // interface IChain
+    // interface IChainContext
+
+struct __declspec(uuid("77f6f881-5d3a-4f2f-aef0-e4a2f9aa689d"))
+IChain : IDispatch
+{
+    //
+    // Property data
+    //
+
+    __declspec(property(get=GetCertificates))
+    ICertificatesPtr Certificates;
+    __declspec(property(get=GetStatus))
+    long Status[];
+
+    //
+    // Wrapper methods for error-handling
+    //
+
+    ICertificatesPtr GetCertificates ( );
+    long GetStatus (
+        long Index );
+    VARIANT_BOOL Build (
+        struct ICertificate * pICertificate );
+
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall get_Certificates (
+        struct ICertificates * * pVal ) = 0;
+    virtual HRESULT __stdcall get_Status (
+        long Index,
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall raw_Build (
+        struct ICertificate * pICertificate,
+        VARIANT_BOOL * pVal ) = 0;
+};
+
+struct __declspec(uuid("ca65d842-2110-4073-aee3-d0aa5f56c421"))
+IChain2 : IChain
+{
+    //
+    // Wrapper methods for error-handling
+    //
+
+    IOIDsPtr CertificatePolicies ( );
+    IOIDsPtr ApplicationPolicies ( );
+    _bstr_t ExtendedErrorInfo (
+        long Index );
+
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall raw_CertificatePolicies (
+        struct IOIDs * * pVal ) = 0;
+    virtual HRESULT __stdcall raw_ApplicationPolicies (
+        struct IOIDs * * pVal ) = 0;
+    virtual HRESULT __stdcall raw_ExtendedErrorInfo (
+        long Index,
+        BSTR * pVal ) = 0;
+};
+
+struct __declspec(uuid("b27ffb30-432e-4585-a3fd-72530108cbfd"))
+IChainContext : IUnknown
+{
+    //
+    // Property data
+    //
+
+    __declspec(property(get=GetChainContext,put=PutChainContext))
+    long ChainContext;
+
+    //
+    // Wrapper methods for error-handling
+    //
+
+    long GetChainContext ( );
+    void PutChainContext (
+        long pChainContext );
+    HRESULT FreeContext (
+        long pChainContext );
+
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall get_ChainContext (
+        long * pChainContext ) = 0;
+    virtual HRESULT __stdcall put_ChainContext (
+        long pChainContext ) = 0;
+    virtual HRESULT __stdcall raw_FreeContext (
+        long pChainContext ) = 0;
+};
+
+struct __declspec(uuid("91d221c4-0cd4-461c-a728-01d509321556"))
+Store;
+    // [ default ] interface IStore3
+    // interface IStore2
+    // interface IStore
+    // interface ICertStore
+
+struct __declspec(uuid("e860ef75-1b63-4254-af47-960daa3dd337"))
+IStore : IDispatch
+{
+    //
+    // Property data
+    //
+
+    __declspec(property(get=GetCertificates))
+    ICertificatesPtr Certificates;
+
+    //
+    // Wrapper methods for error-handling
+    //
+
+    ICertificatesPtr GetCertificates ( );
+    HRESULT Open (
+        enum CAPICOM_STORE_LOCATION StoreLocation,
+        _bstr_t StoreName,
+        enum CAPICOM_STORE_OPEN_MODE OpenMode );
+    HRESULT Add (
+        struct ICertificate * pVal );
+    HRESULT Remove (
+        struct ICertificate * pVal );
+    _bstr_t Export (
+        enum CAPICOM_STORE_SAVE_AS_TYPE SaveAs,
+        enum CAPICOM_ENCODING_TYPE EncodingType );
+    HRESULT Import (
+        _bstr_t EncodedStore );
+
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall get_Certificates (
+        struct ICertificates * * pVal ) = 0;
+    virtual HRESULT __stdcall raw_Open (
+        enum CAPICOM_STORE_LOCATION StoreLocation,
+        BSTR StoreName,
+        enum CAPICOM_STORE_OPEN_MODE OpenMode ) = 0;
+    virtual HRESULT __stdcall raw_Add (
+        struct ICertificate * pVal ) = 0;
+    virtual HRESULT __stdcall raw_Remove (
+        struct ICertificate * pVal ) = 0;
+    virtual HRESULT __stdcall raw_Export (
+        enum CAPICOM_STORE_SAVE_AS_TYPE SaveAs,
+        enum CAPICOM_ENCODING_TYPE EncodingType,
+        BSTR * pVal ) = 0;
+    virtual HRESULT __stdcall raw_Import (
+        BSTR EncodedStore ) = 0;
+};
+
+struct __declspec(uuid("4da6abc4-bdcd-4317-b650-262075b93a9c"))
+IStore2 : IStore
+{
+    //
+    // Wrapper methods for error-handling
+    //
+
+    HRESULT Load (
+        _bstr_t FileName,
+        _bstr_t Password,
+        enum CAPICOM_KEY_STORAGE_FLAG KeyStorageFlag );
+
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall raw_Load (
+        BSTR FileName,
+        BSTR Password,
+        enum CAPICOM_KEY_STORAGE_FLAG KeyStorageFlag ) = 0;
+};
+
+struct __declspec(uuid("f701f8ec-31c7-48fb-b621-5de417c3a607"))
+IStore3 : IStore2
+{
+    //
+    // Property data
+    //
+
+    __declspec(property(get=GetName))
+    _bstr_t Name;
+    __declspec(property(get=GetLocation))
+    enum CAPICOM_STORE_LOCATION Location;
+
+    //
+    // Wrapper methods for error-handling
+    //
+
+    _bstr_t GetName ( );
+    enum CAPICOM_STORE_LOCATION GetLocation ( );
+    VARIANT_BOOL Delete ( );
+    HRESULT Close ( );
+
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall get_Name (
+        BSTR * pVal ) = 0;
+    virtual HRESULT __stdcall get_Location (
+        enum CAPICOM_STORE_LOCATION * pStoreLocation ) = 0;
+    virtual HRESULT __stdcall raw_Delete (
+        VARIANT_BOOL * pVal ) = 0;
+    virtual HRESULT __stdcall raw_Close ( ) = 0;
+};
+
+struct __declspec(uuid("bb3ecb9c-a83a-445c-bdb5-efbef691b731"))
+ICertStore : IUnknown
+{
+    //
+    // Property data
+    //
+
+    __declspec(property(get=GetStoreHandle,put=PutStoreHandle))
+    long StoreHandle;
+    __declspec(property(get=GetStoreLocation,put=PutStoreLocation))
+    enum CAPICOM_STORE_LOCATION StoreLocation;
+
+    //
+    // Wrapper methods for error-handling
+    //
+
+    long GetStoreHandle ( );
+    void PutStoreHandle (
+        long phCertStore );
+    enum CAPICOM_STORE_LOCATION GetStoreLocation ( );
+    void PutStoreLocation (
+        enum CAPICOM_STORE_LOCATION pStoreLocation );
+    HRESULT CloseHandle (
+        long hCertStore );
+
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall get_StoreHandle (
+        long * phCertStore ) = 0;
+    virtual HRESULT __stdcall put_StoreHandle (
+        long phCertStore ) = 0;
+    virtual HRESULT __stdcall get_StoreLocation (
+        enum CAPICOM_STORE_LOCATION * pStoreLocation ) = 0;
+    virtual HRESULT __stdcall put_StoreLocation (
+        enum CAPICOM_STORE_LOCATION pStoreLocation ) = 0;
+    virtual HRESULT __stdcall raw_CloseHandle (
+        long hCertStore ) = 0;
+};
+
+struct __declspec(uuid("54ba1e8f-818d-407f-949d-bae1692c5c18"))
+Attribute;
+    // [ default ] interface IAttribute
+
+struct __declspec(uuid("b17a8d78-b5a6-45f7-ba21-01ab94b08415"))
+IAttribute : IDispatch
+{
+    //
+    // Property data
+    //
+
+    __declspec(property(get=GetName,put=PutName))
+    enum CAPICOM_ATTRIBUTE Name;
+    __declspec(property(get=GetValue,put=PutValue))
+    _variant_t Value;
+
+    //
+    // Wrapper methods for error-handling
+    //
+
+    enum CAPICOM_ATTRIBUTE GetName ( );
+    void PutName (
+        enum CAPICOM_ATTRIBUTE pVal );
+    _variant_t GetValue ( );
+    void PutValue (
+        const _variant_t & pVal );
+
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall get_Name (
+        enum CAPICOM_ATTRIBUTE * pVal ) = 0;
+    virtual HRESULT __stdcall put_Name (
+        enum CAPICOM_ATTRIBUTE pVal ) = 0;
+    virtual HRESULT __stdcall get_Value (
+        VARIANT * pVal ) = 0;
+    virtual HRESULT __stdcall put_Value (
+        VARIANT pVal ) = 0;
+};
+
+struct __declspec(uuid("933013a9-64c8-4485-acef-4908c3692a33"))
+Attributes;
+    // [ default ] interface IAttributes
+
+struct __declspec(uuid("6adc653e-d5b9-422a-991a-a2b0119cedac"))
+IAttributes : IDispatch
+{
+    //
+    // Property data
+    //
+
+    __declspec(property(get=GetItem))
+    _variant_t Item[];
+    __declspec(property(get=GetCount))
+    long Count;
+    __declspec(property(get=Get_NewEnum))
+    IUnknownPtr _NewEnum;
+
+    //
+    // Wrapper methods for error-handling
+    //
+
+    _variant_t GetItem (
+        long Index );
+    long GetCount ( );
+    IUnknownPtr Get_NewEnum ( );
+    HRESULT Add (
+        struct IAttribute * pVal );
+    HRESULT Remove (
+        long Index );
+    HRESULT Clear ( );
+
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall get_Item (
+        long Index,
+        VARIANT * pVal ) = 0;
+    virtual HRESULT __stdcall get_Count (
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall get__NewEnum (
+        IUnknown * * pVal ) = 0;
+    virtual HRESULT __stdcall raw_Add (
+        struct IAttribute * pVal ) = 0;
+    virtual HRESULT __stdcall raw_Remove (
+        long Index ) = 0;
+    virtual HRESULT __stdcall raw_Clear ( ) = 0;
+};
+
+struct __declspec(uuid("60a9863a-11fd-4080-850e-a8e184fc3a3c"))
+Signer;
+    // [ default ] interface ISigner2
+    // interface ISigner
+    // interface ICSigner
+
+struct __declspec(uuid("51017b88-1913-49ad-82be-6bb7c417dcf2"))
+ISigner : IDispatch
+{
+    //
+    // Property data
+    //
+
+    __declspec(property(get=GetCertificate,put=PutCertificate))
+    ICertificatePtr Certificate;
+    __declspec(property(get=GetAuthenticatedAttributes))
+    IAttributesPtr AuthenticatedAttributes;
+
+    //
+    // Wrapper methods for error-handling
+    //
+
+    ICertificatePtr GetCertificate ( );
+    void PutCertificate (
+        struct ICertificate * pVal );
+    IAttributesPtr GetAuthenticatedAttributes ( );
+
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall get_Certificate (
+        struct ICertificate * * pVal ) = 0;
+    virtual HRESULT __stdcall put_Certificate (
+        struct ICertificate * pVal ) = 0;
+    virtual HRESULT __stdcall get_AuthenticatedAttributes (
+        struct IAttributes * * pVal ) = 0;
+};
+
+struct __declspec(uuid("625b1f55-c720-41d6-9ecf-ba59f9b85f17"))
+ISigner2 : ISigner
+{
+    //
+    // Property data
+    //
+
+    __declspec(property(get=GetChain))
+    IChainPtr Chain;
+    __declspec(property(get=GetOptions,put=PutOptions))
+    enum CAPICOM_CERTIFICATE_INCLUDE_OPTION Options;
+
+    //
+    // Wrapper methods for error-handling
+    //
+
+    IChainPtr GetChain ( );
+    enum CAPICOM_CERTIFICATE_INCLUDE_OPTION GetOptions ( );
+    void PutOptions (
+        enum CAPICOM_CERTIFICATE_INCLUDE_OPTION pVal );
+    HRESULT Load (
+        _bstr_t FileName,
+        _bstr_t Password );
+
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall get_Chain (
+        struct IChain * * pVal ) = 0;
+    virtual HRESULT __stdcall get_Options (
+        enum CAPICOM_CERTIFICATE_INCLUDE_OPTION * pVal ) = 0;
+    virtual HRESULT __stdcall put_Options (
+        enum CAPICOM_CERTIFICATE_INCLUDE_OPTION pVal ) = 0;
+    virtual HRESULT __stdcall raw_Load (
+        BSTR FileName,
+        BSTR Password ) = 0;
+};
+
+struct __declspec(uuid("8f83f792-014c-4e22-bd57-5c381e622f34"))
+ICSigner : IUnknown
+{
+    //
+    // Property data
+    //
+
+    __declspec(property(get=GetAdditionalStore,put=PutAdditionalStore))
+    long AdditionalStore;
+
+    //
+    // Wrapper methods for error-handling
+    //
+
+    long GetAdditionalStore ( );
+    void PutAdditionalStore (
+        long phAdditionalStore );
+
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall get_AdditionalStore (
+        long * phAdditionalStore ) = 0;
+    virtual HRESULT __stdcall put_AdditionalStore (
+        long phAdditionalStore ) = 0;
+};
+
+struct __declspec(uuid("1314c1d8-d3a8-4f8a-bed0-811fd7a8a633"))
+Signers;
+    // [ default ] interface ISigners
+
+struct __declspec(uuid("5a0780f8-9e6b-4bb0-bf54-87cd9627a8b4"))
+ISigners : IDispatch
+{
+    //
+    // Property data
+    //
+
+    __declspec(property(get=GetItem))
+    _variant_t Item[];
+    __declspec(property(get=GetCount))
+    long Count;
+    __declspec(property(get=Get_NewEnum))
+    IUnknownPtr _NewEnum;
+
+    //
+    // Wrapper methods for error-handling
+    //
+
+    _variant_t GetItem (
+        long Index );
+    long GetCount ( );
+    IUnknownPtr Get_NewEnum ( );
+
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall get_Item (
+        long Index,
+        VARIANT * pVal ) = 0;
+    virtual HRESULT __stdcall get_Count (
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall get__NewEnum (
+        IUnknown * * pVal ) = 0;
+};
+
+struct __declspec(uuid("94afffcc-6c05-4814-b123-a941105aa77f"))
+SignedData;
+    // [ default ] interface ISignedData
+
+struct __declspec(uuid("ae9c454b-fc65-4c10-b130-cd9b45ba948b"))
+ISignedData : IDispatch
+{
+    //
+    // Property data
+    //
+
+    __declspec(property(get=GetContent,put=PutContent))
+    _bstr_t Content;
+    __declspec(property(get=GetSigners))
+    ISignersPtr Signers;
+    __declspec(property(get=GetCertificates))
+    ICertificatesPtr Certificates;
+
+    //
+    // Wrapper methods for error-handling
+    //
+
+    void PutContent (
+        _bstr_t pVal );
+    _bstr_t GetContent ( );
+    ISignersPtr GetSigners ( );
+    ICertificatesPtr GetCertificates ( );
+    _bstr_t Sign (
+        struct ISigner * pSigner,
+        VARIANT_BOOL bDetached,
+        enum CAPICOM_ENCODING_TYPE EncodingType );
+    _bstr_t CoSign (
+        struct ISigner * pSigner,
+        enum CAPICOM_ENCODING_TYPE EncodingType );
+    HRESULT Verify (
+        _bstr_t SignedMessage,
+        VARIANT_BOOL bDetached,
+        enum CAPICOM_SIGNED_DATA_VERIFY_FLAG VerifyFlag );
+
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall put_Content (
+        BSTR pVal ) = 0;
+    virtual HRESULT __stdcall get_Content (
+        BSTR * pVal ) = 0;
+    virtual HRESULT __stdcall get_Signers (
+        struct ISigners * * pVal ) = 0;
+    virtual HRESULT __stdcall get_Certificates (
+        struct ICertificates * * pVal ) = 0;
+    virtual HRESULT __stdcall raw_Sign (
+        struct ISigner * pSigner,
+        VARIANT_BOOL bDetached,
+        enum CAPICOM_ENCODING_TYPE EncodingType,
+        BSTR * pVal ) = 0;
+    virtual HRESULT __stdcall raw_CoSign (
+        struct ISigner * pSigner,
+        enum CAPICOM_ENCODING_TYPE EncodingType,
+        BSTR * pVal ) = 0;
+    virtual HRESULT __stdcall raw_Verify (
+        BSTR SignedMessage,
+        VARIANT_BOOL bDetached,
+        enum CAPICOM_SIGNED_DATA_VERIFY_FLAG VerifyFlag ) = 0;
+};
+
+struct __declspec(uuid("a1eef42f-5026-4a32-bc5c-2e552b70fd96"))
+Algorithm;
+    // [ default ] interface IAlgorithm
+
+struct __declspec(uuid("bf3d04a9-b0da-4153-b45e-6ccfa5ac715b"))
+IAlgorithm : IDispatch
+{
+    //
+    // Property data
+    //
+
+    __declspec(property(get=GetName,put=PutName))
+    enum CAPICOM_ENCRYPTION_ALGORITHM Name;
+    __declspec(property(get=GetKeyLength,put=PutKeyLength))
+    enum CAPICOM_ENCRYPTION_KEY_LENGTH KeyLength;
+
+    //
+    // Wrapper methods for error-handling
+    //
+
+    enum CAPICOM_ENCRYPTION_ALGORITHM GetName ( );
+    void PutName (
+        enum CAPICOM_ENCRYPTION_ALGORITHM pVal );
+    enum CAPICOM_ENCRYPTION_KEY_LENGTH GetKeyLength ( );
+    void PutKeyLength (
+        enum CAPICOM_ENCRYPTION_KEY_LENGTH pVal );
+
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall get_Name (
+        enum CAPICOM_ENCRYPTION_ALGORITHM * pVal ) = 0;
+    virtual HRESULT __stdcall put_Name (
+        enum CAPICOM_ENCRYPTION_ALGORITHM pVal ) = 0;
+    virtual HRESULT __stdcall get_KeyLength (
+        enum CAPICOM_ENCRYPTION_KEY_LENGTH * pVal ) = 0;
+    virtual HRESULT __stdcall put_KeyLength (
+        enum CAPICOM_ENCRYPTION_KEY_LENGTH pVal ) = 0;
+};
+
+struct __declspec(uuid("96a1b8b0-8f9a-436a-84de-e23cd6818da5"))
+Recipients;
+    // [ default ] interface IRecipients
+
+struct __declspec(uuid("a694c896-fc38-4c34-ae61-3b1a95984c14"))
+IRecipients : IDispatch
+{
+    //
+    // Property data
+    //
+
+    __declspec(property(get=GetItem))
+    _variant_t Item[];
+    __declspec(property(get=GetCount))
+    long Count;
+    __declspec(property(get=Get_NewEnum))
+    IUnknownPtr _NewEnum;
+
+    //
+    // Wrapper methods for error-handling
+    //
+
+    _variant_t GetItem (
+        long Index );
+    long GetCount ( );
+    IUnknownPtr Get_NewEnum ( );
+    HRESULT Add (
+        struct ICertificate * pVal );
+    HRESULT Remove (
+        long Index );
+    HRESULT Clear ( );
+
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall get_Item (
+        long Index,
+        VARIANT * pVal ) = 0;
+    virtual HRESULT __stdcall get_Count (
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall get__NewEnum (
+        IUnknown * * pVal ) = 0;
+    virtual HRESULT __stdcall raw_Add (
+        struct ICertificate * pVal ) = 0;
+    virtual HRESULT __stdcall raw_Remove (
+        long Index ) = 0;
+    virtual HRESULT __stdcall raw_Clear ( ) = 0;
+};
+
+struct __declspec(uuid("f3a12e08-ede9-4160-8b51-334d982a9ad0"))
+EnvelopedData;
+    // [ default ] interface IEnvelopedData
+
+struct __declspec(uuid("f6cb6a20-cc18-4424-ae57-6f2aa3dc2059"))
+IEnvelopedData : IDispatch
+{
+    //
+    // Property data
+    //
+
+    __declspec(property(get=GetContent,put=PutContent))
+    _bstr_t Content;
+    __declspec(property(get=GetAlgorithm))
+    IAlgorithmPtr Algorithm;
+    __declspec(property(get=GetRecipients))
+    IRecipientsPtr Recipients;
+
+    //
+    // Wrapper methods for error-handling
+    //
+
+    void PutContent (
+        _bstr_t pVal );
+    _bstr_t GetContent ( );
+    IAlgorithmPtr GetAlgorithm ( );
+    IRecipientsPtr GetRecipients ( );
+    _bstr_t Encrypt (
+        enum CAPICOM_ENCODING_TYPE EncodingType );
+    HRESULT Decrypt (
+        _bstr_t EnvelopedMessage );
+
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall put_Content (
+        BSTR pVal ) = 0;
+    virtual HRESULT __stdcall get_Content (
+        BSTR * pVal ) = 0;
+    virtual HRESULT __stdcall get_Algorithm (
+        struct IAlgorithm * * pVal ) = 0;
+    virtual HRESULT __stdcall get_Recipients (
+        struct IRecipients * * pVal ) = 0;
+    virtual HRESULT __stdcall raw_Encrypt (
+        enum CAPICOM_ENCODING_TYPE EncodingType,
+        BSTR * pVal ) = 0;
+    virtual HRESULT __stdcall raw_Decrypt (
+        BSTR EnvelopedMessage ) = 0;
+};
+
+struct __declspec(uuid("a440bd76-cfe1-4d46-ab1f-15f238437a3d"))
+EncryptedData;
+    // [ default ] interface IEncryptedData
+
+struct __declspec(uuid("c4778a66-972f-42e4-87c5-5cc16f7931ca"))
+IEncryptedData : IDispatch
+{
+    //
+    // Property data
+    //
+
+    __declspec(property(get=GetContent,put=PutContent))
+    _bstr_t Content;
+    __declspec(property(get=GetAlgorithm))
+    IAlgorithmPtr Algorithm;
+
+    //
+    // Wrapper methods for error-handling
+    //
+
+    void PutContent (
+        _bstr_t pVal );
+    _bstr_t GetContent ( );
+    IAlgorithmPtr GetAlgorithm ( );
+    HRESULT SetSecret (
+        _bstr_t newVal,
+        enum CAPICOM_SECRET_TYPE SecretType );
+    _bstr_t Encrypt (
+        enum CAPICOM_ENCODING_TYPE EncodingType );
+    HRESULT Decrypt (
+        _bstr_t EncryptedMessage );
+
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall put_Content (
+        BSTR pVal ) = 0;
+    virtual HRESULT __stdcall get_Content (
+        BSTR * pVal ) = 0;
+    virtual HRESULT __stdcall get_Algorithm (
+        struct IAlgorithm * * pVal ) = 0;
+    virtual HRESULT __stdcall raw_SetSecret (
+        BSTR newVal,
+        enum CAPICOM_SECRET_TYPE SecretType ) = 0;
+    virtual HRESULT __stdcall raw_Encrypt (
+        enum CAPICOM_ENCODING_TYPE EncodingType,
+        BSTR * pVal ) = 0;
+    virtual HRESULT __stdcall raw_Decrypt (
+        BSTR EncryptedMessage ) = 0;
+};
+
+struct __declspec(uuid("7bf3ac5c-cc84-429a-aca5-74d916ad6b8c"))
+OID;
+    // [ default ] interface IOID
+
+struct __declspec(uuid("fd661131-d716-4d15-a187-aeaab161c8ad"))
+OIDs;
+    // [ default ] interface IOIDs
+
+struct __declspec(uuid("a6fdf22a-8e00-464b-b15d-1a891d88b6ed"))
+NoticeNumbers;
+    // [ default ] interface INoticeNumbers
+
+struct __declspec(uuid("ee2c051d-33a1-4157-86b4-9280e29782f2"))
+INoticeNumbers : IDispatch
+{
+    //
+    // Property data
+    //
+
+    __declspec(property(get=GetItem))
+    _variant_t Item[];
+    __declspec(property(get=GetCount))
+    long Count;
+    __declspec(property(get=Get_NewEnum))
+    IUnknownPtr _NewEnum;
+
+    //
+    // Wrapper methods for error-handling
+    //
+
+    _variant_t GetItem (
+        long Index );
+    long GetCount ( );
+    IUnknownPtr Get_NewEnum ( );
+
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall get_Item (
+        long Index,
+        VARIANT * pVal ) = 0;
+    virtual HRESULT __stdcall get_Count (
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall get__NewEnum (
+        IUnknown * * pVal ) = 0;
+};
+
+struct __declspec(uuid("e5f29b74-0902-4654-8a9a-21c5201dfa61"))
+Qualifier;
+    // [ default ] interface IQualifier
+
+struct __declspec(uuid("3604c9dd-a22e-4a15-a469-8181c0c113de"))
+IQualifier : IDispatch
+{
+    //
+    // Property data
+    //
+
+    __declspec(property(get=GetOID))
+    IOIDPtr OID;
+    __declspec(property(get=GetCPSPointer))
+    _bstr_t CPSPointer;
+    __declspec(property(get=GetOrganizationName))
+    _bstr_t OrganizationName;
+    __declspec(property(get=GetNoticeNumbers))
+    INoticeNumbersPtr NoticeNumbers;
+    __declspec(property(get=GetExplicitText))
+    _bstr_t ExplicitText;
+
+    //
+    // Wrapper methods for error-handling
+    //
+
+    IOIDPtr GetOID ( );
+    _bstr_t GetCPSPointer ( );
+    _bstr_t GetOrganizationName ( );
+    INoticeNumbersPtr GetNoticeNumbers ( );
+    _bstr_t GetExplicitText ( );
+
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall get_OID (
+        struct IOID * * pVal ) = 0;
+    virtual HRESULT __stdcall get_CPSPointer (
+        BSTR * pVal ) = 0;
+    virtual HRESULT __stdcall get_OrganizationName (
+        BSTR * pVal ) = 0;
+    virtual HRESULT __stdcall get_NoticeNumbers (
+        struct INoticeNumbers * * pVal ) = 0;
+    virtual HRESULT __stdcall get_ExplicitText (
+        BSTR * pVal ) = 0;
+};
+
+struct __declspec(uuid("6c8006c0-f649-4783-b4a6-617dd0b270c7"))
+Qualifiers;
+    // [ default ] interface IQualifiers
+
+struct __declspec(uuid("6b5a8ab6-597d-4398-ac63-1036ef546348"))
+IQualifiers : IDispatch
+{
+    //
+    // Property data
+    //
+
+    __declspec(property(get=GetItem))
+    _variant_t Item[];
+    __declspec(property(get=GetCount))
+    long Count;
+    __declspec(property(get=Get_NewEnum))
+    IUnknownPtr _NewEnum;
+
+    //
+    // Wrapper methods for error-handling
+    //
+
+    _variant_t GetItem (
+        long Index );
+    long GetCount ( );
+    IUnknownPtr Get_NewEnum ( );
+
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall get_Item (
+        long Index,
+        VARIANT * pVal ) = 0;
+    virtual HRESULT __stdcall get_Count (
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall get__NewEnum (
+        IUnknown * * pVal ) = 0;
+};
+
+struct __declspec(uuid("0aaf88f4-1c22-4f65-a0e3-289d97dce994"))
+PolicyInformation;
+    // [ default ] interface IPolicyInformation
+
+struct __declspec(uuid("8973710c-8411-4951-9e65-d45fd524ffdf"))
+IPolicyInformation : IDispatch
+{
+    //
+    // Property data
+    //
+
+    __declspec(property(get=GetOID))
+    IOIDPtr OID;
+    __declspec(property(get=GetQualifiers))
+    IQualifiersPtr Qualifiers;
+
+    //
+    // Wrapper methods for error-handling
+    //
+
+    IOIDPtr GetOID ( );
+    IQualifiersPtr GetQualifiers ( );
+
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall get_OID (
+        struct IOID * * pVal ) = 0;
+    virtual HRESULT __stdcall get_Qualifiers (
+        struct IQualifiers * * pVal ) = 0;
+};
+
+struct __declspec(uuid("988583c2-00c7-4d22-9241-e810e35eed1b"))
+CertificatePolicies;
+    // [ default ] interface ICertificatePolicies
+
+struct __declspec(uuid("cc7a72a7-c83a-4049-85f4-4292de9dbfd3"))
+ICertificatePolicies : IDispatch
+{
+    //
+    // Property data
+    //
+
+    __declspec(property(get=GetItem))
+    _variant_t Item[];
+    __declspec(property(get=GetCount))
+    long Count;
+    __declspec(property(get=Get_NewEnum))
+    IUnknownPtr _NewEnum;
+
+    //
+    // Wrapper methods for error-handling
+    //
+
+    _variant_t GetItem (
+        long Index );
+    long GetCount ( );
+    IUnknownPtr Get_NewEnum ( );
+
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall get_Item (
+        long Index,
+        VARIANT * pVal ) = 0;
+    virtual HRESULT __stdcall get_Count (
+        long * pVal ) = 0;
+    virtual HRESULT __stdcall get__NewEnum (
+        IUnknown * * pVal ) = 0;
+};
+
+struct __declspec(uuid("7083c0aa-e7b9-48a4-8efb-d6a109ebec13"))
+EncodedData;
+    // [ default ] interface IEncodedData
+
+struct __declspec(uuid("d2359e2c-82d6-458f-bb6f-41559155e693"))
+Extension;
+    // [ default ] interface IExtension
+
+struct __declspec(uuid("ed4e4ed4-fdd8-476e-aed9-5239e7948257"))
+IExtension : IDispatch
+{
+    //
+    // Property data
+    //
+
+    __declspec(property(get=GetOID))
+    IOIDPtr OID;
+    __declspec(property(get=GetIsCritical))
+    VARIANT_BOOL IsCritical;
+    __declspec(property(get=GetEncodedData))
+    IEncodedDataPtr EncodedData;
+
+    //
+    // Wrapper methods for error-handling
+    //
+
+    IOIDPtr GetOID ( );
+    VARIANT_BOOL GetIsCritical ( );
+    IEncodedDataPtr GetEncodedData ( );
+
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall get_OID (
+        struct IOID * * pVal ) = 0;
+    virtual HRESULT __stdcall get_IsCritical (
+        VARIANT_BOOL * pVal ) = 0;
+    virtual HRESULT __stdcall get_EncodedData (
+        struct IEncodedData * * pVal ) = 0;
+};
+
+struct __declspec(uuid("7c92e131-c1dc-4ca1-b02c-f513a08b41ed"))
+Extensions;
+    // [ default ] interface IExtensions
+
+struct __declspec(uuid("9e7ea907-5810-4fca-b817-cd0bba8496fc"))
+ExtendedProperty;
+    // [ default ] interface IExtendedProperty
+
+struct __declspec(uuid("90e7143d-1a07-438d-8f85-3dbb0b73d314"))
+ExtendedProperties;
+    // [ default ] interface IExtendedProperties
+
+struct __declspec(uuid("61f0d2bd-373e-4f3c-962e-59b7c42c1b22"))
+Template;
+    // [ default ] interface ITemplate
+
+struct __declspec(uuid("301fc658-4055-4d76-9703-aa38e6d7236a"))
+PublicKey;
+    // [ default ] interface IPublicKey
+
+struct __declspec(uuid("03acc284-b757-4b8f-9951-86e600d2cd06"))
+PrivateKey;
+    // [ default ] interface IPrivateKey
+    // interface ICPrivateKey
+
+struct __declspec(uuid("50f241b7-a8f2-4e0a-b982-4bd7df0ccf3c"))
+ICPrivateKey : IUnknown
+{
+    //
+    // Wrapper methods for error-handling
+    //
+
+    struct _CRYPT_KEY_PROV_INFO * _GetKeyProvInfo ( );
+    struct _CERT_KEY_CONTEXT * _GetKeyContext ( );
+
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall raw__GetKeyProvInfo (
+        struct _CRYPT_KEY_PROV_INFO * * pKeyProvInfo ) = 0;
+    virtual HRESULT __stdcall raw__GetKeyContext (
+        struct _CERT_KEY_CONTEXT * * pKeyContext ) = 0;
+};
+
+struct _CRYPT_KEY_PROV_INFO
+{
+    LPWSTR pwszContainerName;
+    LPWSTR pwszProvName;
+    unsigned long dwProvType;
+    unsigned long dwFlags;
+    unsigned long cProvParam;
+    struct _CRYPT_KEY_PROV_PARAM * rgProvParam;
+    unsigned long dwKeySpec;
+};
+
+struct _CRYPT_KEY_PROV_PARAM
+{
+    unsigned long dwParam;
+    unsigned char * pbData;
+    unsigned long cbData;
+    unsigned long dwFlags;
+};
+
+struct _CERT_KEY_CONTEXT
+{
+    unsigned long cbSize;
+    unsigned long hCryptProv;
+    unsigned long dwKeySpec;
+};
+
+struct __declspec(uuid("8c3e4934-9fa4-4693-9253-a29a05f99186"))
+SignedCode;
+    // [ default ] interface ISignedCode
+
+struct __declspec(uuid("84fbcb95-5600-404c-9187-ac25b4cd6e94"))
+ISignedCode : IDispatch
+{
+    //
+    // Property data
+    //
+
+    __declspec(property(get=GetFileName,put=PutFileName))
+    _bstr_t FileName;
+    __declspec(property(get=GetDescription,put=PutDescription))
+    _bstr_t Description;
+    __declspec(property(get=GetDescriptionURL,put=PutDescriptionURL))
+    _bstr_t DescriptionURL;
+    __declspec(property(get=GetSigner))
+    ISigner2Ptr Signer;
+    __declspec(property(get=GetTimeStamper))
+    ISigner2Ptr TimeStamper;
+    __declspec(property(get=GetCertificates))
+    ICertificates2Ptr Certificates;
+
+    //
+    // Wrapper methods for error-handling
+    //
+
+    _bstr_t GetFileName ( );
+    void PutFileName (
+        _bstr_t pVal );
+    _bstr_t GetDescription ( );
+    void PutDescription (
+        _bstr_t pVal );
+    _bstr_t GetDescriptionURL ( );
+    void PutDescriptionURL (
+        _bstr_t pVal );
+    ISigner2Ptr GetSigner ( );
+    ISigner2Ptr GetTimeStamper ( );
+    ICertificates2Ptr GetCertificates ( );
+    HRESULT Sign (
+        struct ISigner2 * pISigner2 );
+    HRESULT Timestamp (
+        _bstr_t URL );
+    HRESULT Verify (
+        VARIANT_BOOL bUIAllowed );
+
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall get_FileName (
+        BSTR * pVal ) = 0;
+    virtual HRESULT __stdcall put_FileName (
+        BSTR pVal ) = 0;
+    virtual HRESULT __stdcall get_Description (
+        BSTR * pVal ) = 0;
+    virtual HRESULT __stdcall put_Description (
+        BSTR pVal ) = 0;
+    virtual HRESULT __stdcall get_DescriptionURL (
+        BSTR * pVal ) = 0;
+    virtual HRESULT __stdcall put_DescriptionURL (
+        BSTR pVal ) = 0;
+    virtual HRESULT __stdcall get_Signer (
+        struct ISigner2 * * pVal ) = 0;
+    virtual HRESULT __stdcall get_TimeStamper (
+        struct ISigner2 * * pVal ) = 0;
+    virtual HRESULT __stdcall get_Certificates (
+        struct ICertificates2 * * pVal ) = 0;
+    virtual HRESULT __stdcall raw_Sign (
+        struct ISigner2 * pISigner2 ) = 0;
+    virtual HRESULT __stdcall raw_Timestamp (
+        BSTR URL ) = 0;
+    virtual HRESULT __stdcall raw_Verify (
+        VARIANT_BOOL bUIAllowed ) = 0;
+};
+
+struct __declspec(uuid("ce32abf6-475d-41f6-bf82-d27f03e3d38b"))
+HashedData;
+    // [ default ] interface IHashedData
+
+struct __declspec(uuid("9f7f23e8-06f4-42e8-b965-5cbd044bf27f"))
+IHashedData : IDispatch
+{
+    //
+    // Property data
+    //
+
+    __declspec(property(get=GetValue))
+    _bstr_t Value;
+    __declspec(property(get=GetAlgorithm,put=PutAlgorithm))
+    enum CAPICOM_HASH_ALGORITHM Algorithm;
+
+    //
+    // Wrapper methods for error-handling
+    //
+
+    _bstr_t GetValue ( );
+    enum CAPICOM_HASH_ALGORITHM GetAlgorithm ( );
+    void PutAlgorithm (
+        enum CAPICOM_HASH_ALGORITHM pVal );
+    HRESULT Hash (
+        _bstr_t newVal );
+
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall get_Value (
+        BSTR * pVal ) = 0;
+    virtual HRESULT __stdcall get_Algorithm (
+        enum CAPICOM_HASH_ALGORITHM * pVal ) = 0;
+    virtual HRESULT __stdcall put_Algorithm (
+        enum CAPICOM_HASH_ALGORITHM pVal ) = 0;
+    virtual HRESULT __stdcall raw_Hash (
+        BSTR newVal ) = 0;
+};
+
+struct __declspec(uuid("22a85ce1-f011-4231-b9e4-7e7a0438f71b"))
+Utilities;
+    // [ default ] interface IUtilities
+
+struct __declspec(uuid("eb166cf6-2ae6-44da-bd96-0c1635d183fe"))
+IUtilities : IDispatch
+{
+    //
+    // Wrapper methods for error-handling
+    //
+
+    _bstr_t GetRandom (
+        long Length,
+        enum CAPICOM_ENCODING_TYPE EncodingType );
+    _bstr_t Base64Encode (
+        _bstr_t SrcString );
+    _bstr_t Base64Decode (
+        _bstr_t EncodedString );
+    _bstr_t BinaryToHex (
+        _bstr_t BinaryString );
+    _bstr_t HexToBinary (
+        _bstr_t HexString );
+    _variant_t BinaryStringToByteArray (
+        _bstr_t BinaryString );
+    _bstr_t ByteArrayToBinaryString (
+        const _variant_t & varByteArray );
+    DATE LocalTimeToUTCTime (
+        DATE LocalTime );
+    DATE UTCTimeToLocalTime (
+        DATE UTCTime );
+
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall raw_GetRandom (
+        long Length,
+        enum CAPICOM_ENCODING_TYPE EncodingType,
+        BSTR * pVal ) = 0;
+    virtual HRESULT __stdcall raw_Base64Encode (
+        BSTR SrcString,
+        BSTR * pVal ) = 0;
+    virtual HRESULT __stdcall raw_Base64Decode (
+        BSTR EncodedString,
+        BSTR * pVal ) = 0;
+    virtual HRESULT __stdcall raw_BinaryToHex (
+        BSTR BinaryString,
+        BSTR * pVal ) = 0;
+    virtual HRESULT __stdcall raw_HexToBinary (
+        BSTR HexString,
+        BSTR * pVal ) = 0;
+    virtual HRESULT __stdcall raw_BinaryStringToByteArray (
+        BSTR BinaryString,
+        VARIANT * pVal ) = 0;
+    virtual HRESULT __stdcall raw_ByteArrayToBinaryString (
+        VARIANT varByteArray,
+        BSTR * pVal ) = 0;
+    virtual HRESULT __stdcall raw_LocalTimeToUTCTime (
+        DATE LocalTime,
+        DATE * pVal ) = 0;
+    virtual HRESULT __stdcall raw_UTCTimeToLocalTime (
+        DATE UTCTime,
+        DATE * pVal ) = 0;
+};
+
+//
+// Wrapper method implementations
+//
+
+#include "CAPICOM.tli"
+
+} // namespace CAPICOM
+
+#pragma pack(pop)

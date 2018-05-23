@@ -1,0 +1,37 @@
+; Addresses.txt
+;
+; These are the base addresses for the various DLLs of Eudora.
+; They get used by the /BASE option to the linker.
+;
+
+;Name        Base Address   Max Size
+;----        ------------   --------
+EuMAPI32     0x10000000     0x00100000
+EuShlExt     0x10000000     0x00100000
+LDAP32       0x10000000     0x00100000
+Spell32		 0x10000000     0x00100000
+XMLTok		 0x10000000     0x00100000
+XMLParse	 0x20000000     0x00500000
+SpamWatch    0x20500000     0x00500000
+SpamHeaders  0x21000000     0x00500000
+SMIME        0x21500000     0x00500000
+ESP          0x22000000     0x00500000
+QCUtils      0x60000000     0x00500000
+QCSocket     0x60500000     0x00500000
+Imap         0x61000000     0x00500000
+PlstClnt     0x61500000     0x00500000
+EudoraRes    0x62000000     0x00500000
+EuLang       0x62500000     0x00500000
+Ph           0x63000000     0x00500000
+QCSSL        0x63500000     0x00500000
+LDAP         0x64000000     0x00500000
+EudoraNS     0x64500000     0x00500000
+ISock        0x65000000     0x00500000
+EuMemMgr     0x66000000     0x00500000
+Paige32      0x66500000     0x00500000
+EudoraBk     0x67000000     0x00500000
+NSImport     0x67500000     0x00100000
+OEImport     0x67600000     0x00100000
+OLImport     0x67700000     0x00100000
+DirServ      0x68000000     0x00500000
+

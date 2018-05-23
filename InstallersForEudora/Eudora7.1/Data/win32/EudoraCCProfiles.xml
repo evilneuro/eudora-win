@@ -1,0 +1,40 @@
+<CCProfiles>
+	<profile name="Terse">
+		<element>Header<output>remove</output></element>
+		<element>Header<name>From</name><output>display</output></element>
+		<element>Separator<output>display</output></element>
+		<element>Original<output>display<trim/></output></element>
+		<element>Attribution<output>display<trim/></output></element>
+		<element>Quote<output>truncate<bytes>255</bytes><trim/></output></element>
+		<element>SigIntro<output>remove</output></element>
+		<element>Signature<output>remove</output></element>
+		<element>Forward<output>display<trim/></output></element>
+		<element>ForwardOn<output>display</output></element>
+		<element>PlainForward<output>display<quoteIncrement>1</quoteIncrement><trim/></output></element>
+		<element>ForwardOff<output>display</output></element>
+		<element>QuoteOn<output>remove</output></element>
+		<element>OutlookQuote<output>truncate<bytes>255</bytes><trim/><quoteIncrement>1</quoteIncrement></output></element>
+		<element>QuoteOff<output>remove</output></element>
+	</profile>
+
+	<profile name="Compact">
+		<element>Header<output>remove</output></element>
+		<element>Header<name>To</name><output>truncate<bytes>60</bytes></output></element>
+		<element>Header<name>From</name><output>display</output></element>
+		<element>Header<name>Subject</name><output>display</output></element>
+		<element>Header<name>Cc</name><output>truncate<bytes>60</bytes></output></element>
+		<element>Separator<output>display</output></element>
+		<element>Original<output>display<trim/></output></element>
+		<element>Attribution<output>display<trim/></output></element>
+		<element>Quote<output>truncate<bytes>255</bytes><trim/></output></element>
+		<element>SigIntro<output>remove</output></element>
+		<element>Signature<output>remove</output></element>
+		<element>Forward<output>display<trim/></output></element>
+		<element>ForwardOn<output>display</output></element>
+		<element>PlainForward<output>display<quoteIncrement>1</quoteIncrement><trim/></output></element>
+		<element>ForwardOff<output>display</output></element>
+		<element>QuoteOn<output>remove</output></element>
+		<element>OutlookQuote<output>truncate<bytes>255</bytes><quoteIncrement>1</quoteIncrement><trim/></output></element>
+		<element>QuoteOff<output>remove</output></element>
+	</profile>
+</CCProfiles>

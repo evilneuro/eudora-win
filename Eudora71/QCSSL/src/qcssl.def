@@ -1,0 +1,14 @@
+LIBRARY QCSSL
+EXPORTS
+
+  QCSSLBeginSession @1
+  QCSSLClean @2
+  QCSSLWrite @3
+  QCSSLRead @4
+  QCSSLEndSession @5
+  QCSSLGetConnectionInfo @6
+  QCSSLAddTrustedCertFromFile @7
+  QCSSLGetRootCertList @8
+  QCSSLGetUserCertList @9
+  QCSSLAddTrustedUserCert @10
+  QCSSLDeleteTrustedUserCert @11

@@ -1,0 +1,90 @@
+Microsoft (R) Help Compiler
+HCRTF 4.03.0002
+Copyright (c) Microsoft Corp 1990 - 1995. All rights reserved.
+mailsite (.hpj
+    HC1012: Note: topic #15 of C:\Coltrane_Techpubs\mailsite (.rtf : 
+	Table cell borders are not supported.
+    HC1012: Note: topic #18 of C:\Coltrane_Techpubs\mailsite (.rtf : 
+	Table cell borders are not supported.
+    HC1012: Note: topic #25 of C:\Coltrane_Techpubs\mailsite (.rtf : 
+	Table cell borders are not supported.
+    HC1012: Note: topic #27 of C:\Coltrane_Techpubs\mailsite (.rtf : 
+	Table cell borders are not supported.
+    HC1012: Note: topic #35 of C:\Coltrane_Techpubs\mailsite (.rtf : 
+	Table cell borders are not supported.
+    HC1012: Note: topic #38 of C:\Coltrane_Techpubs\mailsite (.rtf : 
+	Table cell borders are not supported.
+    HC1012: Note: topic #39 of C:\Coltrane_Techpubs\mailsite (.rtf : 
+	Table cell borders are not supported.
+    HC1012: Note: topic #61 of C:\Coltrane_Techpubs\mailsite (.rtf : 
+	Table cell borders are not supported.
+    HC1012: Note: topic #108 of C:\Coltrane_Techpubs\mailsite (.rtf : 
+	Table cell borders are not supported.
+    HC1012: Note: topic #109 of C:\Coltrane_Techpubs\mailsite (.rtf : 
+	Table cell borders are not supported.
+    HC1012: Note: topic #115 of C:\Coltrane_Techpubs\mailsite (.rtf : 
+	Table cell borders are not supported.
+    HC1012: Note: topic #117 of C:\Coltrane_Techpubs\mailsite (.rtf : 
+	Table cell borders are not supported.
+    HC1012: Note: topic #118 of C:\Coltrane_Techpubs\mailsite (.rtf : 
+	Table cell borders are not supported.
+    HC1012: Note: topic #123 of C:\Coltrane_Techpubs\mailsite (.rtf : 
+	Table cell borders are not supported.
+    HC1012: Note: topic #126 of C:\Coltrane_Techpubs\mailsite (.rtf : 
+	Table cell borders are not supported.
+    HC1012: Note: topic #145 of C:\Coltrane_Techpubs\mailsite (.rtf : 
+	Table cell borders are not supported.
+    HC1012: Note: topic #146 of C:\Coltrane_Techpubs\mailsite (.rtf : 
+	Table cell borders are not supported.
+    HC1012: Note: topic #147 of C:\Coltrane_Techpubs\mailsite (.rtf : 
+	Table cell borders are not supported.
+    HC1012: Note: topic #148 of C:\Coltrane_Techpubs\mailsite (.rtf : 
+	Table cell borders are not supported.
+    HC1012: Note: topic #151 of C:\Coltrane_Techpubs\mailsite (.rtf : 
+	Table cell borders are not supported.
+    HC1012: Note: topic #154 of C:\Coltrane_Techpubs\mailsite (.rtf : 
+	Table cell borders are not supported.
+    HC1012: Note: topic #155 of C:\Coltrane_Techpubs\mailsite (.rtf : 
+	Table cell borders are not supported.
+    HC1012: Note: topic #156 of C:\Coltrane_Techpubs\mailsite (.rtf : 
+	Table cell borders are not supported.
+    HC3026: Warning: topic #156 of C:\Coltrane_Techpubs\mailsite (.rtf : 
+	The Topic ID "SMTPProtocol" has already been defined in topic 155 in file C:\Coltrane_Techpubs\mailsite (.rtf.
+    HC3025: Warning: topic #25 of C:\Coltrane_Techpubs\mailsite (.rtf : 
+	Jump to undefined Topic ID: "SecurityPage".
+    HC3025: Warning: topic #1 of C:\Coltrane_Techpubs\mailsite (.rtf : 
+	Jump to undefined Topic ID: "WebErrorPage".
+    HC2002: Note: 
+	The keywords "Database Mail List plugin" and "Database Mail List Plugin" are identical except for case. Help Workshop has modified one keyword to match the other.
+    HC2002: Note: 
+	The keywords "Database Mailbox plugin" and "Database Mailbox Plugin" are identical except for case. Help Workshop has modified one keyword to match the other.
+    HC2002: Note: 
+	The keywords "Disk maintenance" and "Disk Maintenance" are identical except for case. Help Workshop has modified one keyword to match the other.
+    HC2002: Note: 
+	The keywords "Mail lists" and "Mail Lists" are identical except for case. Help Workshop has modified one keyword to match the other.
+    HC2002: Note: 
+	The keywords "Mail lists" and "Mail Lists" are identical except for case. Help Workshop has modified one keyword to match the other.
+    HC2002: Note: 
+	The keywords "Mail Spool directory" and "Mail Spool Directory" are identical except for case. Help Workshop has modified one keyword to match the other.
+    HC2002: Note: 
+	The keywords "Mailbox directories" and "Mailbox Directories" are identical except for case. Help Workshop has modified one keyword to match the other.
+    HC2002: Note: 
+	The keywords "Maximum message size" and "Maximum Message Size" are identical except for case. Help Workshop has modified one keyword to match the other.
+    HC2002: Note: 
+	The keywords "SMTP authentication" and "SMTP Authentication" are identical except for case. Help Workshop has modified one keyword to match the other.
+    HC2002: Note: 
+	The keywords "Synonym domains" and "Synonym Domains" are identical except for case. Help Workshop has modified one keyword to match the other.
+    HC2002: Note: 
+	The keywords "Virtual domains" and "Virtual Domains" are identical except for case. Help Workshop has modified one keyword to match the other.
+    HC2002: Note: 
+	The keywords "Virus scanning" and "Virus Scanning" are identical except for case. Help Workshop has modified one keyword to match the other.
+352	Topics
+316	Jumps
+695	Keywords
+159	Bitmaps
+
+
+Created C:\Coltrane_Techpubs\mailsite (.hlp, 5,529,609 bytes
+Bitmaps: 4,572,098 bytes
+Compile time: 0 minutes, 1 second
+35 notes, 3 warnings

@@ -1,0 +1,106 @@
+; This file is maintained by HCW. Do not modify this file directly.
+
+;* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+; Help Project File for EUDORA
+;
+;  This file is maintained by RoboHELP.  Do not modify this file directly.
+;* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+
+[OPTIONS]
+HCW=0
+;* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+; The Options section contains the following information:
+;
+; The optional BMROOT=entry sets the directories in which the Help Compiler
+; will look for graphics.
+;
+; The CONTENTS=tells WinHelp which topic contains the contents.
+;
+; The TITLE=is displayed in the Title Bar of WINHELP.EXE
+;
+; The BUILD=setting allows you to create different Help systems from
+; the same source file.
+;
+; The COMPRESS=option tells the Help Compiler how much to compress
+; the Help file.
+;* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+;BMROOT=C:\my documents\help 3.0
+NOTES=0
+LCID=0x409 0x0 0x0 ;English (United States)
+TITLE=Eudora Email 5.0 for Windows
+BUILD=WINDOWS
+
+OLDKEYPHRASE=NO
+REPORT=NO
+OPTCDROM=0
+DBCS=0
+COMPRESS=0
+COPYRIGHT=© 2000 by QUALCOMM Incorporated
+CONTENTS=Configuring_Eudora
+ERRORLOG=C:\Eudora 5\Eudora 5 Help\Eudora.err
+[FILES]
+;* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+; The Files section specifies the RTF files for a project.
+;* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+Dialogs.rtf
+Eudora.rtf
+menus.rtf
+Options.rtf
+HtmlWh.rtf
+[BUILDTAGS]
+;* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+; The Build Tags section specifies to the Help Compiler the names
+; of all the valid build tags used in this Help project.
+;* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+WINDOWS
+
+[ALIAS]
+;* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+; The Alias section sets up aliases for context strings in your Help system.
+;* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+[MAP]
+;* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+; The Map section specifies the project HH files.
+;* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+#include <eudora.hh>
+[WINDOWS]
+;* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+; The Windows section contains all of the information about the windows
+; in a Help project.
+;* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+;Gloss="Glossary",(100,100,350,350),0,(255,255,255),(255,255,255)
+main="",,29188
+(w95sec)="",,20740,(r14417919),(r14417919),f2
+
+[CONFIG]
+;* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+; The Config section defines macros which will run at startup.
+;* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+; The next line gives you browse buttons:
+;
+
+RegisterRoutine(`Inetwh32.dll',`INETWH_Initialize',`')
+RegisterRoutine(`Inetwh32.dll',`Internet',`S')
+RegisterRoutine(`Inetwh32.dll',`Inet',`S')
+INETWH_Initialize()
+RegisterRoutine(`RoboEx32.dll',`InitWinHelp2000',`')
+RegisterRoutine(`RoboEx32.dll',`JumpHtml',`s')
+InitWinHelp2000()
+BrowseButtons()
+[BAGGAGE]
+;* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+; The Baggage section specifies any additional files.
+;* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+[Config-(w95sec)]
+RegisterRoutine(`Inetwh32.dll',`INETWH_Initialize',`')
+RegisterRoutine(`Inetwh32.dll',`Internet',`S')
+RegisterRoutine(`Inetwh32.dll',`Inet',`S')
+INETWH_Initialize()
+RegisterRoutine(`RoboEx32.dll',`InitWinHelp2000',`')
+RegisterRoutine(`RoboEx32.dll',`JumpHtml',`s')
+InitWinHelp2000()

@@ -1,0 +1,347 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif\r\n"
+    "#include ""res\\esoteric.rc2""   // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 7,0,0,0
+ PRODUCTVERSION 7,0,0,0
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x2L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904b0"
+        BEGIN
+            VALUE "Comments", "Should be placed in the same directory as Eudora.exe"
+            VALUE "CompanyName", "QUALCOMM Incorporated"
+            VALUE "FileDescription", "Eudora Esoteric Options DLL"
+            VALUE "FileVersion", "7, 0, 0, 0"
+            VALUE "InternalName", "Eudora Esoteric Options"
+            VALUE "LegalCopyright", "Copyright © 1998-2005"
+            VALUE "OriginalFilename", "Esoteric.dll"
+            VALUE "ProductName", "Eudora Esoteric Options Dynamic Link Library"
+            VALUE "ProductVersion", "7, 0, 0, 0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_LOGGING_DLG DIALOGEX 0, 0, 250, 182
+STYLE DS_SETFONT | WS_CHILD | WS_CAPTION
+CAPTION "Logging"
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    LTEXT           "Log The Following:",IDC_STATIC,5,7,61,8
+    CONTROL         "&Sending Messages          \n10802\n1",IDC_LOG_SEND,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,2,22,73,10
+    CONTROL         "&Receiving Messages          \n10802\n2",IDC_LOG_REC,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,150,22,80,10
+    CONTROL         "&Dialog Messages          \n10802\n8",IDC_LOG_ALRT,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,150,66,72,10
+    CONTROL         "&Progress Messages          \n10802\n16",IDC_LOG_PROG,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,150,54,87,10
+    CONTROL         "All Bytes S&ent            \n10802\n32",
+                    IDC_LOG_ALL_SEND,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,2,
+                    36,57,10
+    CONTROL         "All B&ytes Received            \n10802\n64",
+                    IDC_LOG_ALL_REC,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    150,36,74,10
+    CONTROL         "&Corrupt mailbox TOC file messages          \n10802\n128",
+                    IDC_LOG_BAD_TOC,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,2,
+                    54,122,10
+    CONTROL         "&Basic EMSAPI translator messages              \n10802\n256",
+                    IDC_LOG_BAS_EMS,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,2,
+                    66,123,10
+    CONTROL         "Ad&vanced EMSAPI translator messages         \n10802\n512",
+                    IDC_LOG_ADV_EMS,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,2,
+                    78,139,10
+    LTEXT           "Maximum Log File Si&ze:",IDC_STATIC,5,147,74,8
+    EDITTEXT        IDC_LOG_SIZE,87,144,52,14,ES_AUTOHSCROLL | ES_NUMBER
+    LTEXT           "K",IDC_STATIC,144,147,8,8
+    CONTROL         "&Filter Actions          \n10802\n1024",IDC_LOG_FILTER,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,2,108,60,10
+    CONTROL         "&Asserts            \n10802\n2048",IDC_LOG_ASSERTS,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,150,96,36,10
+    CONTROL         "&LMOS data         \n10802\n8192",IDC_LOG_LMOS,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,150,108,60,10
+    CONTROL         "Searc&h and Search Indexing         \n10802\n16384",
+                    IDC_LOG_SEARCH,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,2,
+                    96,106,10
+    CONTROL         "Playl&ists         \n10802\n4096",IDC_LOG_PLAYLISTS,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,150,120,48,10
+    CONTROL         "&Miscellaneous         \n10802\n32768",IDC_LOG_MISC,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,2,120,64,10
+END
+
+IDD_TASK_WND_DLG DIALOG  0, 0, 168, 166
+STYLE DS_SETFONT | WS_CHILD | WS_CAPTION
+CAPTION "Task/Error windows"
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "&Blinking error icon in status bar",IDC_ERR_BLINK,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,3,7,112,10
+    CONTROL         "&Show error dialogs immediately",IDC_SHOW_ERR_IMMED,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,3,22,112,10
+    LTEXT           "&Lines to display per row in the error window:",
+                    IDC_STATIC,3,40,138,8
+    EDITTEXT        IDC_ERR_LINES,145,38,18,14,ES_AUTOHSCROLL
+    LTEXT           "&Width of progress bars (in pixels)",IDC_STATIC,3,56,
+                    102,8
+    EDITTEXT        IDC_PBAR_WIDTH,116,54,47,14,ES_AUTOHSCROLL
+    GROUPBOX        "Progress bar coloring",IDC_STATIC,3,73,161,91
+    RTEXT           "Send &Completed Color (R,G,B):",IDC_STATIC,10,91,98,8
+    EDITTEXT        IDC_SEND_COMPLETED,115,87,44,14,ES_AUTOHSCROLL
+    RTEXT           "Send &Remaining Color (R,G,B):",IDC_STATIC,10,105,98,8
+    EDITTEXT        IDC_SEND_REMAINING,115,101,44,14,ES_AUTOHSCROLL
+    RTEXT           "Recv C&ompleted Color (R,G,B):",IDC_STATIC,9,119,99,8
+    EDITTEXT        IDC_RECV_COMPLETED,115,115,44,14,ES_AUTOHSCROLL
+    RTEXT           "Recv R&emaining Color (R,G,B):",IDC_STATIC,9,133,99,8
+    EDITTEXT        IDC_RECV_REMAINING,115,129,44,14,ES_AUTOHSCROLL
+    RTEXT           "Bor&der Color (R,G,B):",IDC_STATIC,41,146,67,8
+    EDITTEXT        IDC_BORDER,115,143,44,14,ES_AUTOHSCROLL
+END
+
+IDD_SENDING_DLG DIALOG  0, 0, 168, 166
+STYLE DS_SETFONT | WS_CHILD | WS_CAPTION
+CAPTION "Sending Mail+"
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "Allow &editing of from and attach headers",
+                    IDC_ALLOW_HDR_EDIT,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    5,7,142,10
+    CONTROL         "&Show all outgoing plugins in one list",
+                    IDC_OUTGO_PLUG_IN_ONE,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,5,27,127,10
+END
+
+IDD_RAS_DLG DIALOG  0, 0, 168, 166
+STYLE DS_SETFONT | WS_CHILD | WS_CAPTION
+CAPTION "RAS Prefs"
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "Use &first connection for all actions",IDC_RAS_ONE_CONN,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,5,7,122,10
+    CONTROL         "&Close on exit",IDC_RAS_CLOSE_EXIT,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,5,23,56,10
+END
+
+IDD_THREAD_DLG DIALOG  0, 0, 168, 166
+STYLE DS_SETFONT | WS_CHILD | WS_CAPTION
+CAPTION "Threading"
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "&Ignore idle time wait on manual check/sends",
+                    IDC_IGNORE_IDLE_ON_MANUAL_CHECK,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,5,7,157,10
+    LTEXT           "&Maximum number of concurrent tasks:",IDC_STATIC,5,24,
+                    120,8
+    EDITTEXT        IDC_MAX_CONCURRENT_TASKS,129,21,27,14,ES_AUTOHSCROLL
+END
+
+IDD_MOODWATCH_EXTRAS_DLG DIALOGEX 0, 0, 250, 182
+STYLE DS_SETFONT | WS_CHILD | WS_CAPTION
+CAPTION "MoodWatch Extras"
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    LTEXT           "MoodWatch whitelist words:",IDC_STATIC,5,10,98,8
+    EDITTEXT        IDC_MOODWATCH_WHITELIST,12,129,180,43,ES_AUTOHSCROLL
+    LTEXT           "A comma-separated list of words that Moodwatch should ignore. Words entered here will NOT be flagged by Moodwatch as potentially-offensive.",
+                    IDC_STATIC,5,23,225,24
+    LTEXT           "Note:",IDC_STATIC,5,55,24,9
+    LTEXT           "Do not enter any spaces or carriage returns. Only enter words, separated by commas. For example, to whitelist 'foo' and 'bar' and 'baz', enter:",
+                    IDC_STATIC,5,66,226,29
+    LTEXT           "foo,bar,baz",IDC_STATIC,5,97,36,8
+    LTEXT           "Your list:",IDC_STATIC,5,117,28,8
+END
+
+IDD_PORTS_DLG DIALOG  0, 0, 168, 166
+STYLE DS_SETFONT | WS_CHILD | WS_CAPTION
+CAPTION "Ports"
+FONT 8, "MS Sans Serif"
+BEGIN
+    RTEXT           "&SMTP Port (25) :",IDC_STATIC,71,10,54,8
+    EDITTEXT        IDC_SMTP_PORT,129,7,24,14,ES_AUTOHSCROLL
+    RTEXT           "&POP Port (110) :",IDC_STATIC,73,27,52,8
+    EDITTEXT        IDC_POP_PORT,129,24,24,14,ES_AUTOHSCROLL
+    RTEXT           "&IMAP Port (143) :",IDC_STATIC,70,44,55,8
+    EDITTEXT        IDC_IMAP_PORT,129,41,24,14,ES_AUTOHSCROLL
+    RTEXT           "&ACAP Port (674) :",IDC_STATIC,69,61,56,8
+    EDITTEXT        IDC_ACAP_PORT,129,58,24,14,ES_AUTOHSCROLL
+    RTEXT           "&Eudora Password Change Port (106) :",IDC_STATIC,5,78,
+                    120,8
+    EDITTEXT        IDC_PASS_PORT,129,75,24,14,ES_AUTOHSCROLL
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_LOGGING             ICON                    "res\\Logging.ico"
+IDI_THREAD              ICON                    "res\\Thread.ico"
+IDI_RAS_PHONE           ICON                    "res\\RASPhone.ico"
+IDI_SENDING_EXTRAS      ICON                    "res\\Sending.ico"
+IDI_TASK_ERR_WND        ICON                    "res\\TaskError.ico"
+IDI_MOODWATCH_EXTRAS    ICON                    "res\\MoodWatchExtras.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_LOGGING_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 5
+        RIGHTMARGIN, 244
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 166
+    END
+
+    IDD_TASK_WND_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 3
+        TOPMARGIN, 7
+    END
+
+    IDD_SENDING_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 5
+        TOPMARGIN, 7
+    END
+
+    IDD_RAS_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 5
+        TOPMARGIN, 7
+    END
+
+    IDD_THREAD_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 5
+        TOPMARGIN, 7
+    END
+
+    IDD_MOODWATCH_EXTRAS_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 5
+        RIGHTMARGIN, 238
+        TOPMARGIN, 7
+    END
+
+    IDD_PORTS_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 5
+        TOPMARGIN, 7
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif
+#include "res\esoteric.rc2"   // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#endif
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

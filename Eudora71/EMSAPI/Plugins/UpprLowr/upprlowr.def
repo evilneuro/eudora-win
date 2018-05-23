@@ -1,0 +1,13 @@
+; UpprLowr.def : Declares the module parameters for the DLL.
+
+LIBRARY      "UPPRLOWR"
+DESCRIPTION  'UPPRLOWR Windows Dynamic Link Library'
+
+EXPORTS
+	ems_plugin_version
+	ems_plugin_init
+	ems_translator_info
+	ems_can_translate
+	ems_translate_file
+	ems_plugin_finish
+	ems_free

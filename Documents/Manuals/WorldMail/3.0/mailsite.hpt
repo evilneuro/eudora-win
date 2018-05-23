@@ -1,0 +1,346 @@
+RoboHelp Topic Export file
+23|Installation|Installation
+23|MailSiteCommandLineUtilities|MailSiteCommandLineUtilities
+23|MailSitePocket|MailSitePocket
+23|MailSiteExpress|MailSiteExpress
+23|MailSiteConsole|MailSiteConsole
+23|MailSiteEngine|MailSiteEngine
+23|InstallationContents|InstallationContents
+23|Requirements|Requirements
+23|MailSystemConversionUtilities|MailSystemConversionUtilities
+23|WhatsNewinVersion61|What's New in Version 6.1
+23|KeyMailSiteFeatures|Key WorldMail Features
+23|MailSiteComponents|WorldMail Components
+23|MailSitePackagingOptions|WorldMail Packaging Options
+23|Introduction|Introduction
+23|Acknowledgments|Acknowledgments
+23|TableofContents|Table of Contents
+23|Mailboxes|Mailboxes
+23|WebMailboxAdministration|WebMailboxAdministration
+23|MailboxQuotas|MailboxQuotas
+23|AutomaticForwarding|AutomaticForwarding
+23|AutomaticReplyFacility|AutomaticReplyFacility
+23|AutomaticMailHandling|AutomaticMailHandling
+23|ConvertingMailboxes|ConvertingMailboxes
+23|CatchallMailboxes|CatchallMailboxes
+23|PostmasterMailboxes|PostmasterMailboxes
+23|AddingMailboxes|AddingMailboxes
+23|MailboxTypes|MailboxTypes
+23|QuickStart|Quick Start
+23|CheckforNewMail|CheckforNewMail
+23|SendaTestMessage|SendaTestMessage
+23|ConfigureyourMailClient|ConfigureyourMailClient
+23|CheckClientConnectivity|CheckClientConnectivity
+23|StarttheMailSiteServices|StarttheMailSiteServices
+23|CheckyourDNSSetup|CheckyourDNSSetup
+23|VerifyyourDefaultDomain|VerifyyourDefaultDomain
+23|SilentInstallations|Silent Installations
+23|UnInstallingMailSite|UnInstalling WorldMail
+23|UpgradingMailSite|Upgrading WorldMail
+23|ReparingMailSite|Repairing WorldMail
+23|ModifyingMailSite|Modifying WorldMail
+23|InstallingMailSiteSELEandSP|Installing WorldMail SE, LE, and SP
+23|MailLists|Mail Lists
+23|JoiningaMailList|JoiningaMailList
+23|CreatingaMailList|CreatingaMailList
+23|MailListTasks|MailListTasks
+23|HowMailListsWork|HowMailListsWork
+23|MailListTypes|MailListTypes
+23|ArchivingListMessages|ArchivingListMessages
+23|MailListContentModeration|MailListContentModeration
+23|MailListDirectories|MailListDirectories
+23|ListAgent|ListAgent
+23|ListProcessorExamples|ListProcessorExamples
+23|MailListProcessorCommands|MailListProcessorCommands
+23|CreatingaDigestList|CreatingaDigestList
+23|RemovingaMailList|RemovingaMailList
+23|LeavingaMailList|LeavingaMailList
+23|Domains|Forwarding Domains
+23|CreatingtheDNSEntries|CreatingtheDNSEntries
+23|SettingtheDefaultDomainName|SettingtheDefaultDomainName
+23|VirtualDomainswithSharedIPAddresses|VirtualDomainswithSharedIPAddresses
+23|VirtualDomainswithSeparateIPAddresses|VirtualDomainswithSeparateIPAddresses
+23|SynonymDomains|SynonymDomains
+23|SelectingtheDomainType|SelectingtheDomainType
+23|TestingtheConfiguration|TestingtheConfiguration
+23|ForwardingDomains|ForwardingDomains
+23|AddingtheMailboxes|AddingtheMailboxes
+23|AddingtheVirtualDomains|AddingtheVirtualDomains
+23|IntermittentConnectivity|Intermittent Connectivity
+23|MailDeliverySchedules|MailDeliverySchedules
+23|DialupSatelliteServer|DialupSatelliteServer
+23|CentralHubwithDialupSatelliteServers|CentralHubwithDialupSatelliteServers
+23|DialupSupport|DialupSupport
+23|DeliveryPrecedence|Delivery Precedence
+23|Aliases|Aliases
+23|AliasesversusSynonymDomains|AliasesversusSynonymDomains
+23|ImportingandExporting|ImportingandExporting
+23|Maptableorder|Maptableorder
+23|Wildcardaliases|Wildcardaliases
+23|Deletinganalias|Deletinganalias
+23|Settingupanalias|Settingupanalias
+23|Security|Security
+23|MaximumMessageSize|MaximumMessageSize
+23|AuthenticatedETRN|AuthenticatedETRN
+23|EnablefullVRFYsupport|EnablefullVRFYsupport
+23|BasicSecuritySettings|BasicSecuritySettings
+23|SMTPSecurity|SMTPSecurity
+23|PasswordSecurity|PasswordSecurity
+23|MessageStoreSecurity|MessageStoreSecurity
+23|TransportLayerSecurity|TransportLayerSecurity
+23|SecurityForMailLists|SecurityForMailLists
+23|SecurityExamples|SecurityExamples
+23|Procedurewhenreceivingmail|Procedurewhenreceivingmail
+23|SpamPolicies|SpamPolicies
+23|Usingthemasklists|Usingthemasklists
+23|AdvancedSMTPSecurity|AdvancedSMTPSecurity
+23|DHAPSettings|DHAPSettings
+23|SMTPAuthentication|SMTPAuthentication
+23|AntiRelayPolicies|AntiRelayPolicies
+23|AntiSpamPolicies|AntiSpamPolicies
+23|AntiDenialofServicePolicies|AntiDenialofServicePolicies
+23|Backup|Backup
+23|TransferringMailSitetoanothercomputer|TransferringMailSitetoanothercomputer
+23|DirectoryStoreDatabase|DirectoryStoreDatabase
+23|MailboxDirectories|MailboxDirectories
+23|SpooledMailMessages|SpooledMailMessages
+23|RegistryConfiguration|RegistryConfiguration
+23|PerformingaComprehensiveBackup|PerformingaComprehensiveBackup
+23|MailFilters|Mail Filters
+23|NameAndDescription|NameAndDescription
+23|UsingFilters|UsingFilters
+23|FilterLevels|FilterLevels
+23|MessageQuarantine|MessageQuarantine
+23|TestingFilters|TestingFilters
+23|SetAFilterAction|SetAFilterAction
+23|AddingFilterCriteria|AddingFilterCriteria
+23|eServerSpamScanning|Server Spam Scanning
+23|SpamScanningPolicy|Spam Scanning Policy
+23|hSpamScanning|Spam Scanning
+23|ServerVirusScanning|Server Virus Scanning
+23|MailboxVirusScanning|MailboxVirusScanning
+23|DomainVirusScanning|DomainVirusScanning
+23|VirusScanning|Virus Scanning
+23|VirusScanningPolicies|VirusScanningPolicies
+23|KasperskyAntiVirus|KasperskyAntiVirus
+23|AdvancedFilterOptions|Advanced Filter Options
+23|RegularExpressions|RegularExpressions
+23|ScriptEditing|ScriptEditing
+23|Databases|Databases
+23|GenericDatabase|GenericDatabase
+23|EmeraldDatabase|EmeraldDatabase
+23|DatabaseMailboxPlugin|DatabaseMailboxPlugin
+23|SettingUpDatabaseAccess|SettingUpDatabaseAccess
+23|DatabaseMailListPlugin|DatabaseMailListPlugin
+23|Agents|Agents
+23|ArchiveAgent|ArchiveAgent
+23|ListProcessorAgents|ListProcessorAgents
+23|ListAgentExample|ListAgentExample
+23|ListAgents|ListAgents
+23|MailboxAgentExample|MailboxAgentExample
+23|MailboxAgents|MailboxAgents
+23|ServerAgent|ServerAgent
+23|gMailboxSpamScanning|Mailbox Spam Scanning
+23|SpamScoreLogging|SpamScoreLogging
+23|fDomainSpamScanning|Domain Spam Scanning
+23|MailSiteEngineChapter|WorldMail Engine
+23|SMTPReceiverService|SMTPReceiverService
+23|MailSpoolDirectory|MailSpoolDirectory
+23|MailboxDirectory|MailboxDirectory
+23|WorkingDirectories|WorkingDirectories
+23|MAILMAServer|MAILMAServer
+23|HTTPManagementServer|HTTPManagementServer
+23|LDAP3AServer|LDAP3AServer
+23|IMAP4Server|IMAP4Server
+23|POP3Server|POP3Server
+23|SMTPDeliveryService|SMTPDeliveryService
+23|MonitoringSpamTraffic|Monitoring Spam Traffic
+23|Monitoring|Monitoring
+23|DiskMaintenance|DiskMaintenance
+23|MAILMAObject|MAILMAObject
+23|HTTPMAObject|HTTPMAObject
+23|LDAP3AObject|LDAP3AObject
+23|SpamTestResultsObject|SpamTestResultsObject
+23|SMTPRAObject|SMTPRAObject
+23|SMTPDAObject|SMTPDAObject
+23|IMAP4AObject|IMAP4AObject
+23|POP3AObject|POP3AObject
+23|PerformanceMonitor|PerformanceMonitor
+23|Logging|Logging
+23|ServerFolder|Server
+23|RegisteringaNewServer|Registering a New Server
+23|DisconnectingfromaServer|DisconnectingfromaServer
+23|EditingaServer|EditingaServer
+23|DeregisteringaServer|DeregisteringaServer
+23|MailSiteSystems|WorldMail Systems
+23|WindowsConsoleReference|Windows Management Center Reference
+23|AcceptMailForRelayFromTheseHosts|Accept Mail For Relay From These Hosts
+23|AcceptMailForRelayToTheseDomains|Accept Mail For Relay To These Domains
+23|RejectAllIncomingMailFromTheseHosts|Reject All Incoming Mail From These Hosts
+23|RejectAllIncomingMailFromTheseAddresses|Reject All Incoming Mail From These Addresses
+23|AntiSpamPropertyPage|Anti-Spam Security Properties
+23|GeneralPropertyPage|General Security Settings
+23|SecurityFolder|Security
+23|BannerInsertion|Banner Insertion
+23|ConfigurationConnector|Configuration Connector
+23|AgentsPage|Agents
+23|QuotasPage|Quotas
+23|RouteDefinition|Route Definition
+23|RoutesPage|Routes
+23|AliasesPage|Aliases
+23|DirectoriesPage|Directories
+23|LicensePage|License
+23|KasperskyVirusFilter|Kaspersky Virus Filter
+23|TestingTheSieveFilter|Testing the Sieve Filter
+23|Complete|Complete
+23|Action|Action
+23|TestingARegularExpression|Testing a Regular Expression
+23|AdvancedClauseCriterion|Advanced Clause Criterion
+23|CreatingANewCriterion|Creating a New Criterion
+23|Condition|Condition
+23|Description|Description
+23|SieveFilterRules|Sieve Filter Rules
+23|AntiDoSWizard|Anti-DoS Wizard
+23|AntiSpamWizard|Anti-Spam Wizard
+23|AntiRelayWizard|Anti-Relay Wizard
+23|TlsPropertyPage|TLS Security Properties
+23|DhapPropertyPage|DHAP Security Properties
+23|SecurityMasks|Security Masks
+23|DatabaseMailboxPluginConfiguration|Database Mailbox Plugin Configuration
+23|MailboxPluginsFolder|Mailbox Plugins
+23|ServiceProperties|Service Properties
+23|ServicesFolder|Services Folder
+23|WeekdayandWeekendSchedule|Weekday and Weekend schedules
+23|TimeofDaySchedule|Time-of-Day Schedule and Dialup Configuration
+23|ElapsedTimeSchedule|Elapsed Time Schedule
+23|ScheduleManagement|Schedule Management
+23|SchedulesFolder|Schedules Folder
+23|ServerLogFlags|Server Log Flags
+23|OperationLogFlags|Operation Log Flags
+23|ErrorLogFlags|Error Log Flags
+23|FileLogPage|File Log Page
+23|AdvancedDatabaseConfiguration|Advanced Database Configuration
+23|DatabaseLogPage|Database Log Page
+23|LogFolder|Logs Folder
+23|MailboxAutoReplyPage|Mailbox AutoReply Page
+23|MailboxGeneralPage|Mailbox General Page
+23|CreateDatabaseMailboxes|Create Database Mailboxes
+23|AddNTGroup|Add NT Group
+23|AddNTUser|Add NT User
+23|MoveMailbox|Move or Copy Mailbox
+23|MailboxesFolder|Mailboxes Folder
+23|DomainVirusFilter|Domain Virus Filter
+23|RelayHostPage|RelayHostPage
+23|DomainSynonymsPage|Domain Synonyms Page
+23|DomainGeneralPage|Domain General Page
+23|DomainsFolder|Domains Folder
+23|MailListPluginsFolder|Mail List Plugins
+23|NTMailboxPluginConfiguration|NT Mailbox Plugin Configuration
+23|EmeraldDatabaseConfiguration|Emerald Database Configuration
+23|GenericDatabaseConfiguration|Generic Database Configuration
+23|ListDatabasePage|List Database Page (Database Lists)
+23|ListNTGroupPage|List NT Group Page (NT Lists)
+23|ListTextFilePage|List Text File Page (Text File Lists)
+23|ListDigestPage|List Digest Page (Digest Lists)
+23|ListWebArchivePage|List Web Archive Page
+23|ListHeaderScriptPage|List Header Script Page
+23|ListMembersPage|List Members Page
+23|ListSecurityPage|List Security Page
+23|ListMessagesPage|List Messages Page
+23|ListGeneralPage|List General Page
+23|MoveList|Move or Copy a List
+23|MailListsFolder|Mail Lists Folder
+23|MailboxSecurityPage|Mailbox Security Page
+23|MailboxHomePage|Mailbox Home Page
+23|MailboxPostalAddressPage|Mailbox Postal Address Page
+23|MailboxBusinessPage|Mailbox Business Page
+23|WebLogOffPage|Logoff Page
+23|WebReportPage|Report Page
+23|WebConfirmPage|Confirm Page
+23|WebReviewPage|Review Page
+23|WebPendingPage|Pending Page
+23|WebListModeration|List Moderation
+23|WebMailListPropertiesPage|Mail List Properties Page
+23|WebMailboxPropertiesPage|Mailbox Properties Page
+23|Changingthepassword|Changingthepassword
+23|WebDomainListsPage|Domain Mail Lists Page
+23|WebDomainMailboxesPage|Domain Mailboxes Page
+23|WebDomainGeneralPage|Domain General Page
+23|WebServerPage|Server Page
+23|WebLogonPage|Logon Page
+23|WebConsoleReference|Web Management Center Reference
+23|ListMailboxesPage|List Mailboxes Page (Server Lists)
+23|Utilities|Utilities
+23|MSLDIF|MSLDIF
+23|MSIMPORTEXPORT|MSIMPORTEXPORT
+23|MSDOMAIN|MSDOMAIN
+23|MSCVTDIR|MSCVTDIR
+23|MSBOX|MSBOX
+23|MSBACK|MSBACK
+23|MSALIAS|MSALIAS
+23|MSCONVUSER2|MSCONVUSER2
+23|MSCONVUSER|MSCONVUSER
+23|MSCONV|MSCONV
+23|MSSTART|MSSTART
+23|MSSENDMESSAGES|MSSENDMESSAGES
+23|MSSEND|MSSEND
+23|MSRETRY|MSRETRY
+23|MSQUOTA|MSQUOTA
+23|MSPURGE|MSPURGE
+23|MSPOP|MSPOP
+23|MSLIST|MSLIST
+23|LicenseAgreement|License Agreement
+23|DNSOverview|DNS Overview
+23|TroubleshootingProcedure|Troubleshooting Procedure
+23|TechnicalSupport|TechnicalSupport
+23|DebuggingwithTelnet|DebuggingwithTelnet
+23|ProblemsSendingMail|ProblemsSendingMail
+23|ProblemsReceivingMail|ProblemsReceivingMail
+23|DebuggingTCPIPConnections|DebuggingTCPIPConnections
+23|CustomizingWebAdministration|Customizing Web Administration
+23|Serverhtm|Serverhtm
+23|Loginhtm|Loginhtm
+23|SampleTemplateFiles|SampleTemplateFiles
+23|HomePage|HomePage
+23|Conditionalstatements|Conditionalstatements
+23|TabbedNoteBookEffects|TabbedNoteBookEffects
+23|AdvancedTemplates|AdvancedTemplates
+23|LogOffhtm|LogOffhtm
+23|Errorhtm|Errorhtm
+23|Confirmhtm|Confirmhtm
+23|Reporthtm|Reporthtm
+23|Reviewhtm|Reviewhtm
+23|Pendinghtm|Pendinghtm
+23|Maillisthtm|Maillisthtm
+23|Mailboxhtm|Mailboxhtm
+23|Domainhtm|Domainhtm
+23|CustomizingMailSiteExpress|Customizing Eudora Web Client
+23|ConfigurationParameters|ConfigurationParameters
+23|HTMLFiles|HTMLFiles
+23|MailSiteExpressFiles|MailSiteExpressFiles
+23|VirtualDomains|VirtualDomains
+23|AddingVirtualDirectorytoIIS|AddingVirtualDirectorytoIIS
+23|InsertingBannerAds|InsertingBannerAds
+23|FrameLayout|FrameLayout
+23|Graphics|Graphics
+23|LanguageSettings|LanguageSettings
+23|DatabaseLogging|Database Logging
+23|ConfiguringMailSite|ConfiguringMailSite
+23|Settingupthedatabase|Settingupthedatabase
+23|Retrievingtheloggedinformation|Retrievingtheloggedinformation
+23|DatabasePluginExamples|Database Plugin Examples
+23|DatabaseMailListExample|DatabaseMailListExample
+23|DatabaseMailboxPluginExample|DatabaseMailboxPluginExample
+23|ListHeaderProcessing|List Header Processing
+23|HeaderProcessingScriptSyntax|HeaderProcessingScriptSyntax
+23|CustomizingMailListArchiving|Customizing Mail List Archiving
+23|TemplateFiles|TemplateFiles
+23|Glossary|Glossary
+23|EventID|Appendix L - Event ID's
+23|SMTPProtocol|SMTP Protocol
+23|IMAP4ACLs|IMAP4 ACLs
+23|ACLfiles|ACLfiles
+23|IMAPFolders|IMAPFolders
+23|ServiceCommandLineSyntax|Service Command Line Syntax
+23|EmeraldIntegration|Emerald Integration
+23|EmeraldDatabaseExample|EmeraldDatabaseExample

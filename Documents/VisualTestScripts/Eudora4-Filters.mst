@@ -1,0 +1,87 @@
+'**********************************************************************************
+'
+'  Eudora4-Filters.MST
+'  Description      :  Eudora Filter Messages Script
+'  Programmer       :  Jason Miller with includes by:
+'                      Richard J. Wartner
+
+'
+'  In order for this program to run
+'  it must have an INI file nominated in the Command Line.
+'
+'  Syntax: \FullPATH\mtrun.exe \FullPATH\Eudora4-Filters.pc6 /C WBImport.INI
+'
+'**********************************************************************************
+'
+' HISTORY:
+' 04/00   Rev 1.0 Initial program creation.
+'
+'**********************************************************************************
+'=============================================
+' Metacommand declarations follow
+'=============================================
+'$INCLUDE 'TDECLARE.INC'
+'$INCLUDE 'C:\vt\EudoraUtil.INC'
+
+'============================================================
+' Program Variables
+'============================================================
+Dim MainReturnInteger As Integer
+'============================================================
+' Subroutine/Function Declarations
+'============================================================
+Declare Function TestViewMenu() As Integer
+Declare Function TestViewOptions() As Integer
+'*************************************************************************
+'*************************************************************************
+'*  START OF SCRIPT
+'*************************************************************************
+'*************************************************************************
+' Initial setups
+CurPrgName = "Eudora.PCD"     ' Current program name
+RevNumber  = "Rev 1.0"               ' Revision Number
+
+MainReturnInteger = EudoraIsOpen()
+If MainReturnInteger = False Then
+	' Retrieve INI file name and path from Command Line
+	MainReturnInteger = CheckCommandLine() 
+	' Test Return Value
+	If MainReturnInteger = False Then
+		LogError("Error Retrieving Command Line in "+CurPrgName+"!",0,LogPath,CritErrPath)
+	End If
+
+		' Retrieve Eudora Name and Path
+		MainReturnInteger = GetEudora("Eudora",TheIniFile)
+		' Test Return Value
+		If MainReturnInteger = False Then
+			LogError("Error Finding Eudora Name "+CurPrgName+"!",0,LogPath,CritErrPath)
+		End If
+
+
+		' Retrieve INI file defaults
+		MainReturnInteger = SetDefaults("Defaults",TheIniFile)
+		' Test Return Value
+		If MainReturnInteger = False Then
+			LogError("Error Setting Defaults "+CurPrgName+"!",0,LogPath,CritErrPath)
+		End If
+
+	'Start Eudora
+	MainReturnInteger = StartEudora()
+	' Test Return Value
+	If MainReturnInteger = False Then
+		LogError("Error Starting Eudora!",0,LogPath,CritErrPath)
+	End If
+End If
+
+MainReturnInteger = InitMakeFilters()
+' Test Return Value
+If MainReturnInteger = False Then
+	LogError("Error Opening Filters!",0,LogPath,CritErrPath)
+End If
+
+MainReturnInteger = SendFilterMails()
+' Test Return Value
+If MainReturnInteger = False Then
+	LogError("Error Opening Filters!",0,LogPath,CritErrPath)
+End If
+

@@ -1,0 +1,375 @@
+Contents:
+Declare Function GetResolutionInLong() As Long
+Declare Function EnterMessageBodyRes() As Integer
+Declare Function TextSizeRes(Size$) As Integer
+Declare Function BoldRes() As Integer
+Declare Function ItalicRes() As Integer
+Declare Function UnderlineRes() As Integer
+Declare Function ChangeColorRes(Color$, SaveLastColor%) As Integer
+Declare Function LastTextColorRes() As Integer
+Declare Function TypeWriterRes() As Integer
+Declare Function LeftTextRes() As Integer
+Declare Function CenterTextRes() As Integer
+Declare Function RightTextRes() As Integer
+Declare Function IndentInRes() As Integer
+Declare Function IndentOutRes() As Integer
+Declare Function BulletListRes() As Integer
+Declare Function InsertHyperlinkRes(URL$) As Integer
+Declare Function ClearFormattingRes() As Integer
+Declare Function ToggleQuotePrintable() As Integer
+Declare Function ToggleTextAsAttachment() As Integer
+Declare Function ToggleWordWrap() As Integer
+Declare Function ToggleTabsinBody() As Integer
+Declare Function ToggleKeepCopies() As Integer
+Declare Function ToggleReturnReceipt() As Integer
+Declare Function ToggleInvisibleChars() As Integer
+
+
+'*************************************************************************
+' Function GetResolutionInLong
+'
+'      Jason Miller
+'      jasmille@qualcomm.com
+'
+' Parameters:
+'
+' Returns a long with resolution
+' HIWORD - Horizontal
+' LOWORD - Vertical. 
+'
+'
+'*************************************************************************
+
+'*************************************************************************
+' Function EnterMessageBodyRes
+'
+'      Jason Miller
+'      jasmille@qualcomm.com
+'
+' Enters a Message Body with a click. Checks against Resolutions
+'
+' Parameters:
+'
+' Returns True/False Integer
+'
+'*************************************************************************
+
+'*************************************************************************
+' Function TextSizeRes
+'
+'      Jason Miller
+'      jasmille@qualcomm.com
+'
+' Clicks the Text Size button. Checks against Resolutions
+'
+' Parameters:
+'
+' Size$ - Size to Choose, see below
+'
+' Returns True/False Integer
+'
+'*************************************************************************
+
+'*************************************************************************
+' Function BoldRes
+'
+'      Jason Miller
+'      jasmille@qualcomm.com
+'
+' Clicks the Bold button. Checks against Resolutions
+'
+' Parameters:
+'
+' Returns True/False Integer
+'
+'*************************************************************************
+
+'*************************************************************************
+' Function ItalicRes
+
+'
+'      Jason Miller
+'      jasmille@qualcomm.com
+'
+' Clicks the Italic button. Checks against Resolutions
+'
+' Parameters:
+'
+' Returns True/False Integer
+'
+'*************************************************************************
+
+'*************************************************************************
+' Function UnderlineRes
+'
+'      Jason Miller
+'      jasmille@qualcomm.com
+'
+' Clicks the Underline button. Checks against Resolutions
+'
+' Parameters:
+'
+' Returns True/False Integer
+'
+'*************************************************************************
+
+'*************************************************************************
+' Function ChangeColorRes
+'
+'      Jason Miller
+'      jasmille@qualcomm.com
+'
+' Clicks the Color button. Checks against Resolutions
+'
+' Parameters:
+'
+' Color$ - Color to Choose, see below
+' SaveLastColor% - 0 if not, 1 if so;;; Not working yet, will figure out later
+'
+' Returns True/False Integer
+'
+'*************************************************************************
+
+'*************************************************************************
+' Function LastTextColorRes
+'
+'      Jason Miller
+'      jasmille@qualcomm.com
+'
+' Clicks the Last Text Color [Irwin's] button
+' Checks against Resolutions
+'
+' Parameters:
+'
+' Returns True/False Integer
+'
+'*************************************************************************
+
+'*************************************************************************
+' Function TypeWriterRes
+'
+'      Jason Miller
+'      jasmille@qualcomm.com
+'
+' Clicks the Typewriter print button. Checks against Resolutions
+'
+' Parameters:
+'
+' Returns True/False Integer
+'
+'*************************************************************************
+
+'*************************************************************************
+' Function LeftTextRes
+'
+'      Jason Miller
+'      jasmille@qualcomm.com
+'
+' Clicks the Left Text button. Checks against Resolutions
+'
+' Parameters:
+'
+' Returns True/False Integer
+'
+'*************************************************************************
+
+'*************************************************************************
+' Function CenterTextRes
+'
+'      Jason Miller
+'      jasmille@qualcomm.com
+'
+' Clicks the Center Text button. Checks against Resolutions
+'
+' Parameters:
+'
+' Returns True/False Integer
+'
+'*************************************************************************
+
+'*************************************************************************
+' Function RightTextRes
+'
+'      Jason Miller
+'      jasmille@qualcomm.com
+'
+' Clicks the Right Text button. Checks against Resolutions
+'
+' Parameters:
+'
+' Returns True/False Integer
+'
+'*************************************************************************
+
+'*************************************************************************
+' Function IndentInRes
+'
+'      Jason Miller
+'      jasmille@qualcomm.com
+'
+' Clicks the Indent Inbutton. Checks against Resolutions
+'
+' Parameters:
+'
+' Returns True/False Integer
+'
+'*************************************************************************
+
+'*************************************************************************
+' Function IndentOutRes
+'
+'      Jason Miller
+'      jasmille@qualcomm.com
+'
+' Clicks the Indent Out button. Checks against Resolutions
+'
+' Parameters:
+'
+' Returns True/False Integer
+'
+'*************************************************************************
+
+'*************************************************************************
+' Function BulletListRes
+'
+'      Jason Miller
+'      jasmille@qualcomm.com
+'
+' Clicks the Bulleted list button. Checks against Resolutions
+'
+' Parameters:
+'
+' Returns True/False Integer
+'
+'*************************************************************************
+
+'*************************************************************************
+' Function InsertHyperlinkRes
+'
+'      Jason Miller
+'      jasmille@qualcomm.com
+'
+' Clicks the Insert HyperLink button, Text Must be highlighted.
+' Checks against Resolutions
+'
+' Parameters:
+'
+' URL$ - URL to Link, see below
+'
+' Returns True/False Integer
+'
+'*************************************************************************
+
+'*************************************************************************
+' Function ClearFormattingRes
+'
+'      Jason Miller
+'      jasmille@qualcomm.com
+'
+' Clicks the Clear Formatting button, Text Must be highlighted 
+' and formatted.
+' Checks against Resolutions
+'
+' Parameters:
+'
+' Returns True/False Integer
+'
+'*************************************************************************
+
+'*************************************************************************
+' Function ToggleQuotePrintable
+'
+'      Jason Miller
+'      jasmille@qualcomm.com
+'
+' Clicks the Quoted Printable button. Checks against Resolutions
+'
+' Parameters:
+'
+' Returns True/False Integer
+'
+'*************************************************************************
+
+'*************************************************************************
+' Function ToggleTextAsAttachment
+'
+'      Jason Miller
+'      jasmille@qualcomm.com
+'
+' Clicks the Text as Attachment button. Checks against Resolutions
+'
+' Parameters:
+'
+' Returns True/False Integer
+'
+'*************************************************************************
+
+'*************************************************************************
+' Function ToggleWordWrap
+'
+'      Jason Miller
+'      jasmille@qualcomm.com
+'
+' Clicks the Word Wrap button. Checks against Resolutions
+'
+' Parameters:
+'
+' Returns True/False Integer
+'
+'*************************************************************************
+
+'*************************************************************************
+' Function ToggleTabsinBody
+'
+'      Jason Miller
+'      jasmille@qualcomm.com
+'
+' Clicks the Tabs in Body button. Checks against Resolutions
+'
+' Parameters:
+'
+' Returns True/False Integer
+'
+'*************************************************************************
+
+'*************************************************************************
+' Function ToggleKeepCopies
+'
+'      Jason Miller
+'      jasmille@qualcomm.com
+'
+' Clicks the Keep Copies button. Checks against Resolutions
+'
+' Parameters:
+'
+' Returns True/False Integer
+'
+'*************************************************************************
+
+'*************************************************************************
+' Function ToggleReturnReceipt
+'
+'      Jason Miller
+'      jasmille@qualcomm.com
+'
+' Clicks the Keep Copies button. Checks against Resolutions
+'
+' Parameters:
+'
+' Returns True/False Integer
+'
+'*************************************************************************
+
+'*************************************************************************
+' Function ToggleInvisibleChars
+'
+'      Jason Miller
+'      jasmille@qualcomm.com
+'
+' Clicks the Invisible Chars button. Checks against Resolutions
+'
+' Parameters:
+'
+' Returns True/False Integer
+'
+'*************************************************************************

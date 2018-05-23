@@ -1,0 +1,1519 @@
+=============================================================
+EUDORA FOR WINDOWS, VERSION 7.1 -- RELEASE NOTES
+=============================================================
+
+This document describes the changes in the software since Eudora
+6.0. Separate sections have been given to changes from each
+release since then.
+
+NOTE:  Many times we refer to <x-Eudora-option:...> to modify a
+setting.  Copy the whole text, including the < >'s, and paste it into
+a new Eudora message.  By pressing and holding down the <Alt> key, you 
+can click on a URL in a new message (a hand will display over the URL
+which means it can be used).  This will display a dialog which will allow
+the value of the particular setting to be changed.
+
+
+----------------------------------------------
+CHANGES FROM 7.0.1.0 TO 7.1.0.9
+----------------------------------------------
+
+NEW FEATURES
+------------
+
+A "Recent" submenu was added to both the Mailboxes and Transfer menus, and a
+"Recent" folder was added to the Mailboxes window.  These locations contain the
+10 most recently used mailboxes.  A mailbox goes to the beginning of the list
+when its window is opened up.  The number of mailboxes to appear on the list
+can be changed by a setting in Tools->Options->Mailboxes.  Changing the value of
+the setting to zero will remove the feature.
+
+Added the ability the play a wide variety of sound formats for the new mail
+sound and for sounds in filters.  New formats include MP3, MIDI, WMA, and even
+the audio inside of video formats such as MPEG, WMV, and AVI.  Added hidden
+setting <x-Eudora-option:PlayMediaFlags>, which allows the current sound/video
+assigned when new mail arrives or filter sound actions to show in a media
+player window.  The default value of the flags keeps the window hidden.  To get
+the player to show up use <x-Eudora-option:PlayMediaFlags=268435824>.
+
+Added the ability to save search criteria via File->Save and open the search
+criteria later via the menu arrow on the "Search" button.  There is a new
+"Find Messages Using" menu next to the "Find Messages" menu item to easily call
+up one of the saved searches.
+
+Added Edit->Insert->Downloable Picture (also added to the Insert Object button
+of composition windows).  This allows a link (e.g. http: or ftp:) to an image
+to be inserted in to a composition message.  This saves disk space because only
+a URL reference to the image is sent instead of embedding the image file.  Great
+for signatures to include a link to company logo available on web site.
+
+Two options were added for the Eudora icon in the OS system tray, both of which
+are in Tools->Options->Display.  "Minimize Eudora to the system tray" makes the
+OS taskbar item for Eudora disappear when Eudora is minimized.  When it is
+hidden from the OS taskbar, the system tray icon will appear.  This option
+defaults to being on.  "Always show icon in system tray" ensures that the Eudora
+icon always appears, but is off by default.  This keeps the behavior similar to
+previous versions of Eudora where the system tray icon would only show up when
+there are new messages.  Also, the system tray icon now has a context menu when
+you right-click on it, which includes easy access to the two options mentioned
+above and to some frequently used actions: New Message, Check Mail, Work Offline,
+and Exit.
+
+The Enter Password dialog was modified to show personality name, username, and
+server to give a better idea of which account the password is being asked for.
+Also, a checkbox to remember the password is now in the dialog.
+
+User-specified words can now be whitelisted in Mood Watch (automatically marked
+as non-offensive even though they are in the Mood Watch dictionary) via the
+setting <x-Eudora-option:MoodWatchWhitelistWords>.  This is a comma-separated,
+case insensitive list of words that should not be flagged by Mood Watch.
+
+Incoming and outgoing mail servers are now validated when creating a new
+personality.  A checkbox in the "Incoming Email Server" and "Outgoing Email
+Server" pages in the new personality wizard controls whether the appropriate
+service exists on the specified machine.  The default value of this
+"Test server" checkbox can be set via Tools->Options->Extra Warnings->Warn
+me when I: Enter and invalid server when creating a new personality.  Also, 
+there is another validation method in the Personalities window that checks
+username/password.  Select one or more personalities in the Personalities
+window, right-click and select "Test".  The account will be logged in to,
+but no mail will be downloaded or deleted.  Errors are displayed in the Task
+Errors window.
+
+The data and application directories listed in the About dialog are now
+clickable to open up an Explorer window to the corresponding directory.
+
+Added a new menu item, Tools->Reset Tools, which resets the toolbars and
+docking windows to their default state.
+
+Explore Attachment now selects the attachment file in the resulting Explorer window.
+There's a couple of options that modify this feature.  <x-Eudora-option:UseExploreVerb>
+controls whether this new behavior happens (selecting the file), or the old way occurs
+(just opening the directory that the attachment resides in, using the "explore" verb).
+The default value is off (do the file selection).  Also,
+<x-Eudora-option:ExploreAttachOptions> contains the options to use if the file
+selection method is being used.  The default value for it is "/e,/select,", which means
+open an Explorer window in the default manner (/e) and select the file (/select).
+
+
+IMAP
+----
+
+Greatly improved timing of IMAP actions requiring immediate feedback from the
+server.
+
+Fixed bug resulting in loss of data when transferring multiple messages from
+the local Out mailbox to an IMAP mailbox.
+
+Fixed sporadic crash when performing a high priority IMAP action.
+
+
+MISCELLANEOUS
+-------------
+
+Removed forced logging of indexed search.
+
+Fixed a crash when a nickname is added or removed from the BossWatch or 
+Recipient lists (only occured in Windows 98).
+
+Now preventing negative numbers from being entered in BossWatch settings.
+
+Fixed crash that could occur when inserting an image that is missing a file
+extension (e.g. GIF file without .gif extension).
+
+Fixed bug where outgoing messages created by Send Again would get two
+Message-Id: headers.
+
+In the Change Queuing dialog, 12:nn in international time (no AM/PM) was getting
+treated as 00:nn.  This has been fixed so that it is interpreted correctly.
+
+Now allowing recovered messages (those with a state of '?') to be manually marked
+as Sent, so if the Out mailbox table of contents gets rebuilt then the user can set
+the rebuilt messages back to Sent.
+
+Added <x-Eudora-option:RemoveChangePassword> for hiding the Change Password menu item
+in the Special menu.  It is on (1) by default, i.e. the menu item is hidden, because
+there are very few deployments of the password changing server.  Organizations that
+have a password changing server will want to show this functionality.
+
+The format of the From: header when doing a redirect is now controllable by a setting:
+<x-Eudora-option:RedirectFromFormat>.  The value is a format specifier that uses "%1"
+for the original sender of the message, and "%2" for the name and address of the
+personality performing the redirect.  The default value of the option is
+"%1 (by way of %2)", which makes it identical to past behavior.
+
+URL-referenced images (e.g. http:, ftp:) in messages now stay as URL references,
+instead of being converted to local files as embedded images.
+
+Fixed bug where undoing a message transfer sometimes wasn't available if the
+destination mailbox is not open.
+
+Fixed bug where Eudora could crash when displaying a message with lots of marquee
+tags in a row when "Use Microsoft's viewer" is on.
+
+Fixed crash when many words are listed on the Mood Watch whitelist.
+
+Added a new hidden setting, <x-Eudora-option:IgnoreSMTPQUITErrors>, which allows
+errors in response to a QUIT command of an SMTP session to be ignored.  The default
+value is on (1).  This is helpful for SMTP servers like GMail's, which do a hard
+close on the socket after sending the response to the QUIT command and thus make
+it appear to have errors.
+
+Better Ctrl+arrow/word-by-word navigation as multiple punctuation marks are
+considered a single word.  Fixes bug where you couldn't Ctrl+left arrow through an
+emoticon.
+
+Fixed bug where doing a "Save Attachment As" over top of an existing file that is
+larger than the attachment being saved would wind up leaving the end of the existing
+file with the new contents at the front.
+
+Fixed bug where saved searches didn't load correctly if they referenced the
+<Dominant> personality or otherwise contained either '<' or '>'.
+
+No longer putting up the "Please enter a positive integer" dialog when leaving the
+"Check mail every X minutes" field blank in Tools->Options->Checking Mail.
+
+Upgraded to OpenSSL 0.9.7l to patch several security holes.  See
+<http://www.openssl.org/news/secadv_20060905.txt> and
+<http://www.openssl.org/news/secadv_20060928.txt> for details.
+
+
+----------------------------------------------
+CHANGES FROM 7.0.0.16 TO 7.0.1.0
+----------------------------------------------
+
+IMAP
+----
+Fixed crash that could occur when a user transfers IMAP messages to a local mailbox
+then closes the local mailbox before the IMAP action has fully completed.
+
+Fixed bug where unread IMAP messages were incorrectly being marked as read after
+being transferred to a local mailbox.
+
+
+MESSAGE DISPLAY
+---------------
+Added hidden setting <x-Eudora-option:MSHTMLFocusTimer>, which controls how
+long (in milliseconds) to wait before stealing the focus back from the preview
+pane to the summary list when using the MS viewer. Default value is 400.
+
+Fixed bug where opening up a message window when using the MS viewer was not
+correctly showing some UTF-8 characters.
+
+
+MISCELLANEOUS
+-------------
+Fixed crash that could occur during junk scoring when a users email is stored in
+the same directory as the application.
+
+Fixed problem where Eudora sometimes wouldn't completely quit when another
+application was connected to Eudora via automation.
+
+The EMSAPI ems_plugin_finish() function of a plug-in is now only called when the
+plug-in returns EMSR_OK to the ems_plugin_init() function.
+
+Tooltips for Caps Lock, Num Lock, and Overwrite mode now shown.
+
+Fixed bug introduced in Eudora 7 where the progress bar sometimes didn't display
+when checking or sending mail.
+
+
+----------------------------------------------
+CHANGES FROM 6.2.5.6 TO 7.0.0.16
+----------------------------------------------
+
+NEW FEATURES
+------------
+Offline IMAP - While Eudora is offline certain actions can be performed locally
+and Eudora will notify the server the next time Eudora is online.  Supported
+offline actions are: changing the status of messages (read/unread, deleted/undeleted),
+transfering/copying messages as well as creating, renaming and deleting mailboxes.
+
+IMAP Improvements - IMAP performance has been improved by performing actions locally
+first (where possible) then communicating with the server later in the background as
+well as by reducing the number of commands Eudora must issue to the server.  Eudora
+also allows deleted IMAP messages to be hidden from view (the new default) or viewed
+along with non-deleted messages.  Eudora can now also be set to purge deleted IMAP
+messages on a schedule specified by the user: never, always or when the number of
+deleted messages reaches a certain percent of the total messages in the mailbox.
+
+Indexed Search - Eudora now offers the option of doing faster (indexed) searches
+powered by the X1 search engine.  This is available in Paid mode only.
+
+Boss Watch - Eudora can now warn you before you send mail to certain recipients,
+which could help keep you from sending a message to people you did not mean to
+include.  This is available in Paid mode only.
+
+S/MIME plug-in - Eudora now supports digital signing and encrypting of messages
+via S/MIME.
+
+LDAP with SSL - Queries can now be performed using SSL on LDAP servers
+that support SSL.
+
+
+ADDRESS BOOK
+------------
+Fixed bug handling address book entries with more than one address, one of
+which is another nickname.
+
+Fixed bug where you could not add numerous nicknames to Recipient List at the
+same time.
+
+Fixed bug where New and Del buttons are enabled in the Address Book window when
+they should not be.
+
+Fixed crash when right clicking on a readonly address book.
+
+Fixed bug where "Make Nickname" from specific messages would create a malformed
+nickname.
+
+
+MESSAGE DISPLAY & EDITING
+-------------------------
+Eudora now allows URLs to begin with "URL:" in compliance with RFC 1738.
+
+Fixed hang that could occur when displaying an invalid GIF file.
+
+Fixed case where a link that spanned multiple lines would not be loaded correctly by
+the built-in viewer.
+
+Fixed rare case where Eudora could crash when sending a specific attachment which
+involved a lot of quoted printable encoding.
+
+Added an extra parameter to the attachment mappings entries that controls whether
+or not the attachment should be deleted.  The value should be "0" (keep) or
+"1" (delete), and defaults to "0" if not present.  As an example, say you don't
+want to get any meeting notices you can add an entry to the [Mappings] section of
+the Eudora.ini (or DEudora.ini) file that looks like this:"both=ics,,,text,calendar,1"
+
+Fixed bug where composition message with styles sometimes wouldn't save.
+
+Fixed case of clipped text in attachment forwarding warning dialog.
+
+Typing when message contains a big picture is now much faster.
+
+No longer displaying error dialogs when inline images can't be loaded in
+the internal viewer.
+
+When replying, the initial selection is controlled by the options
+<x-Eudora-option:WhenReplyingSelectAll>,
+<x-Eudora-option:WhenReplyingTypeBefore>,
+<x-Eudora-option:WhenReplyingTypeAfter>
+(each is either 0 or 1; if more than one of these is set to 1, then the preference
+order is as listed).
+
+When replying, setting <x-Eudora-option:WhenReplyingSeparateWithLine> to 1 causes
+a blank line to be inserted between the cursor and the quoted message when either
+<x-Eudora-option:WhenReplyingTypeBefore> or <x-Eudora-option:WhenReplyingTypeAfter>
+is being used.
+
+When opening a composition window (i.e. for a message that hasn't been sent yet), the
+initial selection is controlled by the options
+<x-Eudora-option:WhenOpeningCompositionWindowSelectAll>,
+<x-Eudora-option:WhenOpeningCompositionWindowSelectBefore>,
+<x-Eudora-option:WhenOpeningCompositionWindowSelectAfter>
+(each is either 0 or 1; if more than one of these is set to 1, then the preference
+order is as listed)
+
+Pasting HTML with page-relative links (i.e. start with "#") in to a composition
+window now keeping the links as page-relative rather than trying to make them
+absolute with respect to their original source.
+
+
+EMOTICONS
+---------
+Insert Emoticon menu now alphabetized by meaning.
+
+Left-justified the meanings of emoticons and removed parentheses to give
+a cleaner look.
+
+
+IMAP
+----
+Fixed bug that caused messages to remain in an IMAP mailbox after they were deleted
+via another client.
+
+Fixed bug that caused incorrect reporting of how many messages are waiting to be
+downloaded.
+
+Fixed obscure problem where deleted IMAP messages that were transferred to local
+mailboxes were being hidden.
+
+Fixed problem where transferring a message from a local mailbox to an IMAP mailbox
+would lose any attachments.
+
+Fixed bug that would sometimes cause IMAP messages to move unexpectedly when being
+marked as Junk or Not Junk.
+
+Fixed bug in IMAP where EMSAPI plugins wouldn't be passed the message addresses
+correctly.
+
+Fixed wrapping of plain text messages (specifically format=flowed messages) when
+downloaded/viewed using IMAP.
+
+
+SSL
+---
+Fixed case where network issues while doing an SSL negotiation caused Eudora to give
+a bogus name mismatch error.
+
+
+SPAMWATCH/SPAMHEADERS
+---------------------
+Fixed SpamWatch crash on certain incoming messages.
+
+SpamHeaders is now case insensitive.
+
+Fixed SpamHeaders memory leak.
+
+
+SCAMWATCH
+---------
+Added some new ScamWatch settings:
+<x-Eudora-option: ScamWatchURLNotNaughtyPrefixes> controls which prefixes to strip
+before comparing host names,
+<x-Eudora-option: ScamWatchURLNotNaughtySchemes> controls which schemes Eudora
+ignores for ScamWatch warnings,
+<x-Eudora-option: ShowScamWatchDialog> controls whether or not ScamWatch will
+warn about suspicious links with a dialog, and
+<x-Eudora-option: ShowScamWatchToolTip> controls whether or not ScamWatch will
+warn about suspicious links with a ToolTip.
+
+
+EMSAPI
+------
+Description output for on-arrival translations now appear in resulting message.
+
+EMSAPI plugin function ems_attcher_info() now only getting called for translators
+that are attachers.
+
+Composition message window toolbar buttons for EMSAPI plug-ins now
+remember their previous on/off state when opened up.
+
+
+MISCELLANEOUS
+-------------
+Fixed crash on startup if Eudora.log is marked as read-only.
+
+Fixed crash on exit that could occur if "Eudora61Stats.xml" is marked read only.
+
+Fixed crash when certain files were marked readonly.
+
+Fixed crash that could occur when displaying certain invalid GIF files.
+
+Fixed crash that would occur when displaying a CMYK JPEG image.
+
+Fixed bug where rebuilding the TOC for a corrupt mailbox could cause Eudora to crash.
+
+Buffer overflow checking is now controlled by <x-Eudora-option:BufferOverflowCheck>,
+where 0 means ignore buffer overflows, 1 means quit immediately when a buffer
+overflow is detected, and 2 means ask the user (default is 2).
+
+Badly formatted Date: headers now use the arrival date/time of the message.
+
+Better error dialog information when encountering an unknown file error.
+
+Ctrl+Space accelerator now shown on Edit->Text->Clear Formatting menu item.
+
+Inline signatures (when Tools->Options->Composing Mail->"Show signature while composing"
+is on) now better protect against merging with the body of the email message while
+editing.
+
+No longer clipping text of the 'Update Filter(s)' button in filter update dialog.
+
+Replying with text selected in the preview pane will now preserve styles when quoting
+the selected text.
+
+Fixed bug where doing Send to Browser or launching a file from the File Browser or
+a composition message gave a warning on every file type. Now it warns on file types
+based on the warn launch settings.
+
+Error messages opening files sometimes state opening for "reading" when
+really opening for writing.
+
+Fixed problem where X-EmbeddedContent: lines in the body of a message
+cause phantom attachments at the end of composition messages.
+
+Added 'Delete a message from Search results' to Extra Warnings settings
+panel and re-arranged panel.
+
+File Browser size and modified date now showing for zip files under Windows XP.
+
+Fixed bug with the built in viewer where replying to a message with a small
+selection would incorrectly quote the small selection.
+
+Fixed toolbar button that is the equivalent of the Help->Technical Support
+menu item.
+
+Added 'Use separate settings from Internet Explorer' option to the 'Viewing Mail'
+settings panel so that font changes in Eudora will not affect IE, and vice versa.
+
+Inline signatures (when Tools->Options->Composing Mail->"Show signature while composing"
+is on) are now read-only.  This fixes a bug where the user could type text into the
+signature and then lose that text when changing signatures.
+
+Added support for mini dump file writing ("EudoraCrashDump.dmp") to exception
+handling code (mini dumps are more extensive crash info).
+The information that's written into the mini dump file is controlled by
+<x-Eudora-option:CrashDumpType>.
+
+
+----------------------------------------------
+CHANGES FROM 6.2.3.4 TO 6.2.5.6
+----------------------------------------------
+
+POP
+---
+No longer continuing to check mail if the LMOS.dat file can't be loaded.
+
+Extra checks added to make sure the number of messages returned in the STAT
+command is the same as the number of IDs returned in the UIDL command.  They
+should always match, and if they don't then something went wrong and we now
+stop the POP session so as not to go forward with corrupt data.
+
+Fixed case where losing the network connection during the response to the
+UIDL command would cause many of the already downloaded messages to be
+downloaded again.
+
+Fixed bug where POP personalities with no configured POP Account caused message
+redownload when emptying the Trash and the "Delete from server when emptied from
+Trash" option is turned on.
+
+Leave Mail On Server file (lmos.dat), which keeps track of what messages
+have been downloaded from the POP server, now backed up a configurable
+number of times (default 10). Can be changed with <x-Eudora-option:LMOSBackups>.
+
+More rigorous check for a valid number of messages in the repsonse to
+a STAT command.
+
+
+LOGGING
+-------
+Better logging for the reading of the LMOS.dat file.
+
+Improved EMSAPI plug-in logging to show plug-in and translator IDs.
+
+Improved logging for file I/O for mailboxes and In.mbx in particular.
+
+Now writing the log info at the start of new log files.
+
+Lined up columns and zero-padded seconds of time in log file to make it
+easier to read.
+
+Account and personality name added to logging of events in POP sessions.
+
+Improvements to error codes logged on move/rename/delete file routines.
+Now showing result from GetLastError() when system routines fail
+
+Bumped up the default log file size to 10 MB: disk is cheap.
+
+Added a line to the log file during shutdown.
+
+Improved logging of some sponsored mode failure dialogs.
+
+
+SSL
+---
+Fixed bug that would cause repeated requests for the user to trust an SSL
+certificate.
+
+
+MESSAGE DISPLAY & EDITING
+-------------------------
+Fixed crash with internal viewer trying to load some images (mainly GIF).
+
+Fixed crash when displaying improperly formatted text/enriched messages that
+are missing parameters.
+
+Attachments with special characters and character sequences in them
+(e.g. the ampersand character and multiple sequencial spaces) now displayed
+correctly and can be launched successfully.
+
+Changed URL launch operation from "open" to default, and is now controlled by
+<x-Eudora-option:LaunchURLOperation>.  This solves the problem with some users
+who click on links in messages and get nothing or an "about:blank" window.
+If this causes problems launching URLs, then change the value of this option
+to "open".
+
+
+MISCELLANEOUS
+-------------
+Fixed bug where message digest as mailbox attachment feature would use the wrong
+MIME parameter for the name of the attachment.
+
+Better error dialog information when encountering an unknown file error.
+
+Badly formatted Date: headers now use the arrival date/time of the message.
+
+Changed "Display graphics in messages" to "Show attachment images inline" in the
+Tools->Options->Display panel.
+
+Now using the domain in the Return Address for the domain part of the generated
+Message-Id.
+
+Fixed a SpamWatch crash when processing incoming messages
+(memchr function of MSVCRT.dll).
+
+SpamHeaders matching now case-insensitive.
+
+
+----------------------------------------------
+CHANGES FROM 6.2.1.2 TO 6.2.3.4
+----------------------------------------------
+
+IMAP
+----
+Fixed hang after filtering IMAP messages.
+
+Fixed problem where fetching an IMAP mailbox tree could silently fail
+when the server's SSL certificate was not trusted.
+
+Deleted IMAP junk messages in the Inbox are no longer automatically junked
+
+Fixed potential crash when certain IMAP operations failed repeatedly
+
+No longer filtering incoming IMAP messages that are marked as deleted
+
+Fixed potential crash when filtering incoming IMAP messages and one or more
+of those messages were marked as deleted.
+
+
+SSL
+---
+In "Tools|Options|Checking Mail" the "Last SSL Info" button now works for
+IMAP as well as POP
+
+Fixed bogus "certificate name does not match" when negotiating an SSL
+connection
+
+Improved wording when non-fatal certificate errors are encountered
+
+
+ADDRESS BOOK
+------------
+Now limiting nickname field in address book to 32 characters, since that's
+all we support saving
+
+Fixed case where certain address book entries could cause a crash when new
+mail was received
+
+Make Address Book Entry now works when the preview pane is turned off
+
+
+LIGHT MODE
+----------
+No longer telling Light mode users to profile
+
+Contextual filing is no longer available in light mode
+
+In light mode you can no longer check mail for other personalities via
+Ctrl+Shift+M
+
+
+mailto: URLs
+------------
+Question marks in values of mailto: parameters no longer considered field
+separators
+
+mailto: URLs with encoded characters were being decoded too soon, which
+caused them not to be parsed correctly
+
+
+MESSAGE DISPLAY & EDITING
+-------------------------
+Fixed crash that could occur when displaying a missing embedded GIF image.
+
+No longer install "noseless" emoticons because they appeared to trigger
+on non-emoticon text too often.
+
+Fixed case where images in a message would not display when replying to or
+forwarding the message.
+
+Fixed case where embedded images wouldn't display with built in viewer.
+
+Fixed case where embedded images sometimes displayed cut off.
+
+
+MISCELLANEOUS
+-------------
+Removed check for embedded top-level domains from ScamWatch
+
+Fixed bug introduced in 6.2 where Eudora could crash during launch if the
+Out mailbox needed to be rebuilt
+
+Fixed case where HTML tables in certain junk messages could cause Eudora's
+built in viewer to crash
+
+Fixed crash that would sometimes occur when checking mail and the In mailbox
+was locked by another program (e.g. a backup application).
+
+Fixed bug introduced in 6.2 where using "Find Messages" to find messages
+containing a phrase was slow and could yield less matches and/or incorrect
+matches particularly for large mailboxes
+
+Eudora now supports 9999 attachments with the same name (increased from 999)
+
+Fixed small toolbar button for "Filter Messages"
+
+Fixed bug where selected/highlighted text could be deleted during emoticon
+conversion
+
+Fixed obscure bug where text in filters would be replaced with garbage if
+the text exceeded approximately 256 characters
+
+Fixed bug where it sometimes was not possible to paste text into the "Search Bar"
+
+Fixed bug where plugin composition toolbar icons were not displayed properly
+in Eudora 6.2
+
+Added a new hidden option, <x-Eudora-option:WordWrapQPFlowed>, which controls
+how many characters before Eudora will wrap a line when sending a message if
+the message is being sent with the format=flowed parameter (has long lines)
+and quoted-printable encoding (has 8-bit characters). The default value is 50
+characters. Also, the default value for where lines get wrapped for
+non-quoted-printable text, <x-Eudora-option:WordWrapColumn>, was changed to
+70 characters.
+
+Fixed case where replying to a messages sometimes used wrong personality
+for reply.
+
+Now ensuring that docking/floating windows are big enough to be visible.
+
+Added a toolbar/docking/floating window reset mechansim by holding down
+the Ctrl and Shift keys while doing a toolbar customize
+(right-click on main toolbar and select Customize).
+
+No longer produce confusing "no such file" error message about an empty
+file name when more than 9999 of the same-named attachments are received.
+
+No longer skipping messages if set to skip messages over 0 (zero) K.
+Setting must be set to at least 1 K.
+
+Removed ACAP panel from Options dialog.
+
+Added the "Use submission port (587)" option to Tools->Options->Sending Mail
+and the "Generic Properties" tab of the personality properties.
+
+
+----------------------------------------------
+CHANGES FROM 6.2.0.14 TO 6.2.1.2
+----------------------------------------------
+
+SSL
+---
+Fixed bug that would cause Eudora to reject SSL certificate even after
+user manually marked it as trusted.
+
+
+IMAP
+----
+Fixed potential crash when an IMAP message matched a filter that
+transfered an IMAP message then changed its status.
+
+Fixed problem where IMAP mailbox cache would be lost and a mail
+resync would redownload messages that were previously downloaded.
+
+Fixed problem where some IMAP mailbox icons would not update immediately
+after the user set or reset the "Resynchronize on Mail Check" option.
+
+
+HTML
+----
+Fixed crash that could occur with the built in viewer when displaying
+an HMTL message that specified an extremely long font face.
+
+Fixed crash that could occur with the built in viewer when displaying
+an HMTL message that specified an extremely long font size.
+
+Fixed slow display of large HTML messages, which was introduced in 6.2.
+
+
+SECURITY
+--------
+Fixed case where attachments could be spoofed via two base64 encoded
+(plain-text, inline) MIME parts operating in conjuction.
+
+
+MISCELLANEOUS IMPROVEMENTS
+--------------------------
+Eudora now uses less CPU during idle time.
+
+Better at maintaining file attributes when new versions of files are
+saved when using Windows 2000 or XP.
+
+Now display second progress bar to display progress during the second phase
+of rebuilding a mailbox's TOC.
+
+Better support for lengthy values for <x-Eudora-option:TabooHeaders>
+Eudora previously supported saving only up to 256 characters for any setting -
+now there is no limit.
+
+User is now optionally warned when many messages are attempted to be
+deleted at one time. The settings to control this (whether to warn or
+not, and how many messages are required to warn) are in
+Tools->Options->Extra Warnings.
+
+
+MISCELLANEOUS BUG FIXES
+-----------------------
+Fixed crash that could occur when using stationary that specified an
+invalid long attachment name.
+
+Fixed bug with Make Address Book Entry feature.
+
+Fixed case where progress bar could draw incorrectly while rebuilding
+a mailbox's TOC if the mailbox had a lot of messages in it.
+
+No longer need to rebuild mailbox's TOC when opening a mailbox with more
+than 32767 messages in it.
+
+Fixed bug where Eudora could incorrectly convert an emoticon that was part
+of a word.
+
+Nicknames now expand to full name created from "First Name" and
+"Last Name" fields in the address book if the "Full Name" field is
+empty.
+
+Fixed bug where moving a message back into the Out mailbox did not
+remove it from the mailbox from which it was transferred.
+
+Fixed bug where a poorly formatted incoming message could cause Eudora
+to later think that it needed to rebuild the In mailbox's TOC.
+
+Fixed problem where on rare ocassions ranges of message summaries would
+disappear from the TOC file of a mailbox.
+
+Editing the justification of excerpted text no longer removes the
+excerpt bars - really.
+
+
+----------------------------------------------
+CHANGES FROM 6.1.2 TO 6.2.0.14
+----------------------------------------------
+
+NEW FEATURES
+------------
+ScamWatch - Eudora now warns with a tooltip warning when the pointer is
+moved over a suspicious link and warns with a dialog when a suspicious
+link is clicked.
+
+Emoticons - Eudora now supports sending and receiving mail with emoticons.
+
+
+SSL
+---
+Eudora now uses OpenSSL instead of Certicom's SSL Plus library for SSL
+negotiations.
+
+When a server's SSL certificate is rejected for certain reasons
+(not trusted, expired, etc.) Eudora will now present a dialog asking
+the user if they want to trust the cert instead of forcing them to
+navigate a complicated UI to manually trust the certificate.
+
+
+IMAP
+----
+Filtering of IMAP messages should now be as fully functional as filtering
+of POP messages.
+
+Manually declaring an IMAP message to be either "Junk" or "Not Junk" now
+informs the junk plugins of the change in the message's status.
+
+Improved user's ability to stop IMAP operations.
+
+IMAP users running on servers without UIDPLUS now have the option of
+allowing Eudora to score incoming messages even though it will not move
+messages to the Junk mailbox.
+
+Eudora will now only move junk messages to the Junk mailbox from
+the Inbox for IMAP accounts.
+
+Fixed problem where creating a new IMAP mailbox would cause two
+identical entries to appear in the mailbox tree.
+
+Fixed problem where Eudora would sometimes confuse two similarly
+named IMAP accounts.
+
+Automatic IMAP mail checks no longer display the "No new mail" dialog.
+
+Fixed potential crash with multiple simultaneous IMAP connections for
+the same account.
+
+Fixed crash when searching on certain IMAP accounts.
+
+Fixed crash when manually filtering an IMAP message from a message window
+(as opposed to a TOC window).
+
+Fixed case where IMAP Trash or Junk mailboxes would not be acknowledged.
+
+Eudora will no longer automatically expunge IMAP messages if fancy trash
+mode is off.
+
+Fixed problem where deleted or junked IMAP messages were not being deleted
+from the mailbox when using Fancy Trash.
+
+Fixed problem where Eudora would sometimes attempt to junk deleted
+IMAP messages.
+
+Fixed problem where junked IMAP messages were being given a score of 0
+instead of the specified manual junk score.
+
+
+SECURITY
+--------
+Fixed cases where attachments could be spoofed via base64 or quoted-printable
+encoded (plain-text, inline) MIME parts.
+
+User is now warned when forwarding an attachment not found in Eudora's
+attachment directory. See setting in Tools->Options->Extra Warnings
+"Forward files that are not in the attachment directory".
+Also controlled by <x-Eudora-option:ForwardingFilesNotInAttachDirAction>,
+where 0 means don't warn, 1 means warn (default), and 2 means don't attach.
+
+
+FILTERS
+-------
+"Open" and "Print" filter actions now work properly when they are the only
+action a given filter takes.
+
+Fixed cases where "Open Message" and "Open Mailbox" filter actions did not
+work properly.
+
+Fixed case where the "Notify User" "In Report" filter action wouldn't bring
+up the "Filters Report" window if the filter report is turned off in
+"Tools|Options|Getting Attention".
+
+Users are now prevented from making the left panel of the address book
+smaller than a specified width.  Users can specify their own width by using
+the ABookLeftPanelWidth INI setting.
+
+Fixed memory leak in filtering based on regular expressions.
+
+
+ADDRESS BOOK
+------------
+Fixed bugs related to nicknames which contained the @ character.
+
+Now only email addresses (and not nicknames) are added to the history list.
+
+Remove from recipient list now works for multiple selections.
+
+Fixed bug where the receipient list was not updated when a user discarded
+changes.
+
+Fixed bug which caused no context menu to appear in the address book window
+for Windows 95 and 98.
+
+User now has option to cancel when a duplicate nickname is found
+during the operation of "Make Address Book Entry".
+
+
+MESSAGE DISPLAY & EDITING
+-------------------------
+Content Concentrator now detects certain text digests and behaves more
+appropriately.
+
+Eudora no longer incorrectly warns when View Source is chosen and the source
+is text.
+
+Fixed crash that could occur when selecting "View Source" after recently
+changing the "Use Microsoft's viewer" setting.
+
+Fixed detection of <>'ed URL's with URL: prefix to end properly at closing >.
+
+Fixed crash that could occur when editing a message.
+
+Now correctly marks certain words misspelled, which were previously missed
+when they ended with a single quote.
+
+Fixed bug where clearing styles killed embedded images.
+
+Strip images whose size is less than 4 square pixels (web bugs) when viewed
+with Eudora's internal viewer.
+
+Can now use internal viewer for displaying GIF files, whereas previously
+QuickTime was required.
+
+Fixed a crash (by updating to libpng 1.2.7) that could occur when displaying
+an invalid PNG image.
+
+Eudora now copies text containing colons in a manner that other applications
+like WordPad will accept.
+
+Eudora now displays calendar attachments rather than incorrectly
+deleting them (POP) or displaying in the body of the message (IMAP).
+
+Fixed bug where Eudora ignored the last header listed in
+<x-Eudora-option:TabooHeaders> when using the Eudora internal viewer.
+
+
+JUNK HANDLING
+-------------
+Undoing of a Junk or Not Junk command now restores the junk score.
+
+"Not Junk" command now correctly adds to the white list when invoked in
+the "Find Messages" window.
+
+If all downloaded messages are declared junk or are filtered to trash Eudora
+will no longer play the new mail sound.
+
+Junk is now trimmed on an auto mail checks, and sooner if maximum junk age
+is only 1 day.
+
+SpamHeaders is no longer case-sensitive.
+
+Fixed bug that caused junk messages not in the Inbox to be moved to the
+Junk mailbox when recalculating junk scores.
+
+
+TABLE OF CONTENTS VIEW
+----------------------
+Eudora is now better about remembering the preview pane splitter position
+used the last time Eudora was run.
+
+Type-to-select now searches the subject when the messages are sorted by
+subject.
+
+Type-to-select now prefers messages at the end of the mailbox (unless
+<x-Eudora-option:TypeToSelectFromTop> is 1, in which case it prefers messages
+at the start of the mailbox).
+
+Type-to-select now allows punctuation and spaces.
+
+The type-to-select string can now be reset before the idle time out by
+pressing the Escape key.
+
+Content Concentrator profile menu is now hidden when the preview pane is off.
+
+
+SEARCHING
+---------
+Fixed bug where searches with "contains whole word" would not find anything
+unless the search text was all lower case.  Searches with
+"contains whole word" are now case-insensitive.
+
+Age searches now default to < 5 days, adjustable with INI settings.
+
+Attachment count searches now default to > 0, adjustable with INI settings.
+
+Find messages is now better at finding messages with phrases in certain cases.
+
+Fixed memory leak in both searching based on regular expressions.
+
+
+MISCELLANEOUS BUG FIXES/IMPROVEMENTS
+------------------------------------
+Added <x-Eudora-Option:BackspaceDelete> to control whether the Backspace key
+deletes the selected messages in a mailbox.
+
+Fixed crashing bug when loading up a nickname flie with a corrupt TOC and
+long addresses.
+
+Fixed crash that could occur when a message was right clicked and
+the mouse was moved.
+
+A setting of 0 for <x-Eudora-option:MaxConcurrentTasks> or
+<x-Eudora-option:MaxConcurrentDialupTasks> now means no limit to
+the number of concurrent tasks.
+
+Fixed bug where Eudora would not find mailfolders if any special Windows
+attributes were turned on for the mailfolders.
+
+Data and Executable directories now appear in Help|About.
+
+Fixed several memory leaks, some of which affected checking mail.
+
+Improved performance of mail checking and junk mail processing.
+
+Widened options dialog (but not yet the individual panels) and added
+"Help" button.
+
+Eudora no longer forgets the password for a personality if you look at the
+"Account Settings" for a personality and click OK.
+
+Fixed crash that would occur when drag and dropping a mail folder onto itself.
+
+Attachments that are deleted with the owning message via
+Special->Empty Trash now go into the recycle bin.
+
+Eudora now does a better job of finding and deleting attachments when
+attachments are deleted with the owning message via Special->Empty Trash.
+
+Fixed bug where Eudora could crash when sending certain styled messages
+with lots of embedded images.
+
+Eudora no longer sends an X-Sender header.
+
+Fixed bug where printing from Directory Services window only printed
+headers and footers.
+
+Fixed bug where Eudora would not finish receiving certain messages
+with non-standard MIME headers.
+
+Fixed crash that occurred after cancelling the search window while
+searching the address book.
+
+Relaxed some ad failure calculations.
+
+
+----------------------------------------------
+CHANGES FROM 6.1.1 TO 6.1.2
+----------------------------------------------
+
+
+SECURITY
+--------
+Fixed case where specially formatted URLs (typically used in spam) could
+disguise their true destination.
+
+Now warning when launching attachments or other file links when file has
+no extension.
+
+Now warning when any file link that is not in the attachment directory is
+launched.
+
+Fixed case where attachments could be spoofed via base64 encoded
+(plain-text, inline) MIME parts.
+
+Fixed case where tags allowed spoofed attachments.
+
+Now block hrefs that reference javascript when
+"Allow executables in HTML content" is turned off.
+
+Fixed crash that could occur when clicking on an invalid long URL in
+Eudora's built in viewer.
+
+
+IMAP
+----
+Fixed another case where an IMAP Junk mailbox was not being recognized as the
+official Junk mailbox.
+
+Fixed the problem where messages would mysteriously disappear from the IMAP
+Junk mailbox.
+
+
+MISCELLANEOUS BUG FIXES
+-----------------------
+Fixed problem introduced in 6.1.1 where in some cases Eudora could have
+address book related errors which manifested as warning messages about
+renaming "NNdbase.tmp" and resulted in address book TOC corruption.
+
+
+----------------------------------------------
+CHANGES FROM 6.1 TO 6.1.1
+----------------------------------------------
+
+SSL
+---
+Fixed crash when attempting SSL negotiation without a usercerts.p7b
+file.
+
+Fixed bug that caused SSL negotiations to fail on OpenSSL servers with
+the CBC countermeasure on.
+
+The user is now warned if Eudora is unable to save SSL certificate
+changes.
+
+
+SPELL CHECKING
+--------------
+Made minor change to suggestions when misspelled word begins with single
+quote character.
+
+Fixed bug where editing the subject field after choosing Edit->Check Spelling
+could be difficult.
+
+
+MISCELLANEOUS BUG FIXES
+-----------------------
+Prevent crash that could occur with a spoofed long attachment name, or overly-long URL.
+
+Fixed bug where leftover RCV files in the spool folder could prevent POP mail
+check.
+
+Fixed crash that could occur when sending message with very large address
+(over 240 characters) in the To: field.
+
+Added code to guard against attachment and URL buffer overflow issues.
+
+Fixed bug where using mouse scroll wheel while opening a message caused a
+temporary display glitch.
+
+"Skip directly to advanced account setup" on first launch now correctly
+brings up the "Advanced Account Setup" dialog.
+
+Greatly improved sorting speed, which had slowed down with the introduction
+of Content Concentrator.
+
+Fixed case junk processing problem for certain kinds of newly downloaded
+IMAP messages.
+
+Fixed bug where it was impossible to insert an image with a long pathname.
+
+If a mail check fails due to a connection error Eudora will no longer display
+the misleading "Sorry, you don't have any new mail." dialog.
+
+Limit depth of MIME interpretation to fix potential overflow for artificially
+deeply nested MIME.
+
+Improved address book performance by optimizing the file accessing.
+
+
+----------------------------------------------
+CHANGES FROM 6.0.3 TO 6.1
+----------------------------------------------
+
+NEW FEATURES
+------------
+Search Bar and Search Context Menus.  Eudora now makes it easier than
+ever to search with the introduction of a new "Search Bar" in the
+toolbars and new context menu items that search for the current
+selection.  Both allow you to search inside Eudora or start an
+Internet search.
+
+Smarter Transfer to Selection.  In 6.0 we quietly introduced
+"Transfer to Selection", which allows you to right-click on a word in a
+message and have Eudora try to figure out to which mailbox you might want
+to transfer the message.  Now in 6.1 we've improved the feature by
+presenting the choice of multiple mailboxes whose names most closely
+match the text (if there are few or no choices offered then there aren't
+any mailboxes with names sufficiently close to the selected text).
+Simply choose a mailbox name from the context menu and Eudora will
+transfer the message into that mailbox.  You can specify the maximum
+number of matches that Eudora should show via
+<x-Eudora-option:TransferToMenus>.
+
+Content Concentrator Profile Control.  The Content Concentrator feature
+in Eudora has been enhanced with the introduction of the
+"Profile Control".  The "Profile Control" allows you to change how
+Content Concentrator is concentrating your selected message(s) in the
+preview pane on the fly.  Simply click on the "Profile Control" and
+choose a new profile.  The "Profile Control" can be found above the
+"Preview Pane" between the "Mailbox Size Display" and the horizontal
+scrollbar.
+
+Better Automatic IMAP Synchronization. Eudora can now synchronize
+specific IMAP mailboxes on every mail check - just choose
+"Resynchronize on Mail Check" in the IMAP mailbox context menu.
+
+Easier Mass IMAP Synchronization. You can now resync an entire mail
+folder (a folder and all mailboxes inside of it) in one step via the new
+"Resynchronize Mail Folder" command, which can be found in the IMAP mailbox
+context menu.
+
+Statistics window now shows Junk statistics.
+
+
+IMAP
+----
+Fixed crashes and other inappropriate behaviors when attempting IMAP
+operations while offline.
+
+IMAP filters that transfer messages no longer cause two entries to appear
+in the filter report.
+
+Fixed a few more IMAP prefix issues.
+
+Fixed case where Eudora could fail to acknowledge an IMAP Junk mailbox
+as the Junk mailbox for that account.
+
+Fixed case where messages would mysteriously disappear from an
+IMAP Junk mailbox.
+
+
+SSL
+---
+Upgraded to new SSL library that addresses some compatibility issues seen
+in previous versions.
+
+
+JUNK HANDLING
+-------------
+Added Ctrl-J for Junk option to Junk Extras option panel.
+
+The Mailbox menu unread icons now obey the "Junk mailbox is never marked
+unread" option.
+
+Fixed case where Junk mailbox could be bolded even when user has
+"Junk mailbox is never marked unread" option turned on.
+
+"Junk" and "Not Junk" commands now work properly in the "Find Messages"
+window.
+
+Recalculate Junk Score now works properly with IMAP.
+
+Fixed bug where Eudora would not run third party junk plugins when
+Eudora is not in Paid Mode.
+
+
+ADDRESS BOOK
+------------
+Can no longer create an address book called "Eudora Nicknames".
+
+Changing a nickname in address book does not change it on the recipient
+list.
+
+
+MESSAGE DISPLAY & EDITING
+-------------------------
+Now support displaying attached graphics in messages.
+
+Fix for case where with certain messages Eudora's built in viewer would
+not display the complete text in the full message window.
+
+Editing the justification of excerpted text no longer removes the
+excerpt bars.
+
+Eudora no longer incorrectly displays "urn:schemas-microsoft-com"
+lines in messages sent from Outlook.
+
+Fixed bug where preview display could become confused and display nothing
+instead of the selected message when Eudora is first opened.
+
+Image types that Eudora can't display in the message (like PDFs
+from Mac Eudora) are now displayed as attachments.
+
+Composition windows now use less memory.
+
+Fixed case where text could overlap an embedded image when displayed
+with the built-in viewer.
+
+Fixed case where Eudora could crash when Insert Picture was chosen if
+QuickTime was available.
+
+Fixed case where Eudora wouldn't always offer QuickTime supported image
+types when Insert Picture was chosen.
+
+Fixed bug where Eudora could incorrectly display indented text as if it
+were excerpted text when using the Microsoft viewer.
+
+Fixed bug where Eudora could incorrectly display multiple levels of
+indentation as all singly indented when using Eudora's built in viewer.
+
+
+SPELL CHECKING
+--------------
+Eudora no longer flags words that begin with a single quote as being
+misspelled.
+
+Spell checking automatically as you type is now faster for messages with a
+lot of misspelled words.
+
+Spell checking changes made via context menu are now undoable.
+
+Spell checking context menu now works for words that were selected via
+double clicking.
+
+Adding a word to the user dictionary via the context menu now correctly
+updates all open composition windows.
+
+
+MISCELLANEOUS IMPROVEMENTS
+--------------------------
+Improved menu and control drawing with Windows XP.
+
+Changing the server status of a selection of messages now shows progress.
+
+Improved importers.
+
+Now support moving folders via drag and drop in mail tree list.
+
+Windows Eudora now supports the Importance: header.
+
+Worked around Microsoft Exchange's improper use of multipart/related for
+attachments.
+
+Added support for ignoring reg code attachments on arrival
+(still will process if manually clicked) via setting
+<x-Eudora-Option:NoRegCodeDialogOnArrival=1> (defaults to 0).
+
+Added support for detaching text/calendar mime type into .ics attachments.
+
+Now ignoring Status headers unless <x-Eudora-option:BelieveStatus=1>.
+
+Toolbar wrapping now occurs sooner and is smarter.
+
+Now support Message Plug-ins with the preview pane provided only one message
+is selected.
+
+
+MISCELLANEOUS BUG FIXES
+-----------------------
+Fixed bug that caused Eudora to think ads were failing when they were not.
+
+Fixed folder renaming in the mailbox list (this was broken in 6.0).
+
+Fix for context menus in address book edit fields.
+
+Eudora is now more tolerant of really long server and/or login names.
+
+No longer accepting directories as attachments via drag & drop.
+
+Fixed bug where a misconfigured virus scanner interfering with Eudora
+could confuse Eudora and cause it to leave subsequent messages in that
+mail check in the spool file as .tmp files.
+
+Fixed focus problem in Tools|Options dialog.
+
+Renaming or moving mailboxes or folders no longer causes problems
+with results in Search window.
+
+Tweaked sponsored toolbar border drawing.
+
+Who column is now instead of Sender.
+
+Now using Windows 2000/XP font "Tahoma" for dialogs when available.
+
+Intersect Nickname filter is no longer case sensitive.
+
+
+----------------------------------------------
+CHANGES FROM 6.0.2 TO 6.0.3
+----------------------------------------------
+
+MISCELLANEOUS BUG FIXES
+-----------------------
+
+Newly created or renamed address book entries now work again (this was
+broken in 6.0.2).
+
+
+----------------------------------------------
+CHANGES FROM 6.0.1 TO 6.0.2
+----------------------------------------------
+
+IMAP
+----
+If the user does not specify an IMAP mailbox prefix Eudora will ask the
+IMAP server which prefix should be used. This will prevent problems that
+some users have with the IMAP Junk and Trash mailboxes. Users can tell
+Eudora not to ask the server by adding the ImapIgnoreNAMESPACE=1 INI
+setting for the appropriate personality.
+
+Fixed problem where IMAP mailboxes sometimes appeared both under and beside
+their parent mailbox.
+
+
+CONTENT CONCENTRATOR
+--------------------
+Fixed crash that could occur with IMAP accounts when previewing multiple
+messages with Content Concentrator.
+
+
+MISCELLANEOUS BUG FIXES
+-----------------------
+Fix for long filenames embedded in AppleSingle.
+
+
+MISCELLANEOUS IMPROVEMENTS
+--------------------------
+Support for senders who wrap subject lines BEFORE any content.
+
+Greatly reduced delay on the first mail check of each Eudora session that
+was seen by users with address books with thousands of entries.
+
+
+----------------------------------------------
+CHANGES FROM 6.0 TO 6.0.1
+----------------------------------------------
+
+JUNK HANDLING
+-------------
+Added option to ignore the date contained in junk messages and use the
+arrival date instead.
+
+For users who don't quit very often, junk will now be trimmed periodically
+on a manual mail check.
+
+Fixed case where junk score column would sometimes be blank for individual
+messages.
+
+
+CONTENT CONCENTRATOR
+--------------------
+Fixed display of attachments when some Outlook messages are concentrated
+by Content Concentrator.
+
+Warning message is now displayed when plugin attachment is clicked and
+multiple messages are being displayed.
+
+Fixed bug where Eudora could crash when replying to multiple messages
+with the preview pane turned off.
+
+
+IMAP
+----
+Fixed case where attachments wouldn't be displayed properly when Eudora
+encountered encoded message body parts that didn't end with CRLF.
+
+Fixed adding SSL certificate to trusted list via IMAP (broken in 6.0).
+
+Fixed case where Eudora would display the wrong message in an IMAP
+mailbox.
+
+Fixed one problem where IMAP error messages were not be presented to
+the user.
+
+
+MESSAGE DISPLAY & EDITING
+-------------------------
+Format Painter now correctly handles fonts.
+
+Fixed case where sorting with "Group by Subject" could sort incorrectly
+when changing the "Sort by" column.
+
+Fixed bug where Eudora could hang when queuing or sending a reply to a
+message with an invalid URL.
+
+Fixed bug where the preview did not update to show the selected message
+if the message was selected while previewing was off.
+
+Fixed bug where the selected message was not scrolled into view when
+previewing was turned on via Tools->Options.
+
+Fixed bug where the message selected after a manual filter transferred the
+previously selected message wouldn't get marked read automatically after
+5 seconds (if appropriate given user's settings).
+
+Fixed reply and forward quoting of only the selected text in numerous cases
+(replying with stationery and the preview pane, forwarding to an address
+book entry with the preview pane, replying as a given personality with a
+message window).
+
+Fixed certain cases where "Select newly inserted messages (FUMLUB)" option
+would not scroll the new message into view correctly.
+
+
+SECURITY
+--------
+Fixed crash when displaying a message with a spoofed Attachment Converted
+line.
+
+Decrypted messages (e.g. Entrust or PGP) are now saved in a better format
+so that attachment icons are no longer broken.
+
+For security purposes, Eudora now deletes attachments and embedded images
+associated with decrypted messages if the user chooses NOT to save the
+decrypted message text.
+
+
+MISCELLANEOUS BUG FIXES
+-----------------------
+Attempt to fix continued reports of cases where certain McAfee virus
+scanning products cause Eudora to repeatedly fail to complete email
+downloading when the user receives an infected email message.
+
+Fixed "Redirect To" filter action to properly set "by way of" for "From:"
+attribution (broken in 6.0).
+
+
+MISCELLANEOUS IMPROVEMENTS
+--------------------------
+Made it easier to buy Eudora from the web or an ad in Eudora.
+
+Eudora's toolbar icons now look better, particularly on monitors with more
+than 256 colors.
+
+
+10/3/06

@@ -1,0 +1,24 @@
+// EuMapiVer.rc
+
+// DO NOT USE DEV STUDIO TO EDIT THIS FILE
+//
+
+#ifdef APSTUDIO_INVOKED
+#error DO NOT USE DEV STUDIO TO EDIT THIS FILE
+#endif
+
+#include "..\VersionBeg.inc"
+
+#ifdef WIN32
+	VALUE "FileDescription", "Eudora replacement for 32-bit MAPI clients\0"
+	VALUE "OriginalFilename", "EUMAPI32.DLL\0"
+	VALUE "InternalName", "MAPI32\0"
+	VALUE "ProductName", "Eudora MAPI32 DLL\0"
+#else
+	VALUE "FileDescription", "Eudora replacement for 16-bit MAPI clients\0"
+	VALUE "OriginalFilename", "EUMAPI.DLL\0"
+	VALUE "InternalName", "MAPI\0"
+	VALUE "ProductName", "Eudora MAPI DLL\0"
+#endif
+
+#include "..\VersionEnd.inc"

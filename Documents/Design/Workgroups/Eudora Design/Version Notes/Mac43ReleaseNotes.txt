@@ -1,0 +1,305 @@
++ 4.3
+	+ 4.3b23
+		- H-scrolling and finder list colors didn't get along
+		- Failed pop connections could sometimes lead to redownloading mail
+		- Keep Light toolbar info separate from Paid/Sponsored (so Light always uses the default toolbar)
+		- Fixed problem wherein personality autocheck flags weren't initialized following a mode switch.
+		- Support for checksumming Update nag pages
+		- New help screens
+		- Auto update checking wasn't happening because disabling pref check was incorrect
+		- Nickname expansion was not active in 4.3 Light, apparently it was in Light 3.x.  It is now.
+		- Fixed crash in Composing Mail settings panel in Light mode.
+		- Fixed problem in which a new user was mistakenly identified as an EP4 user for a short time during initialization.
+		- Added some help texts
+		- Picture  (i.e., large line) autoscroll better behaved
+		- Now properly logging manual message transfers from mailbox windows.
+		- IMAP - fixed a crash that could happen transferring a message to a bad mailbox.
+		- have reg info if (a) parameter in Splash was uncommented to show it and (b) reg/nag info was loaded before Splash was called.
+	+ 4.3b22
+		- Made caching of typed addresses a preference (default is ON)
+		- After downloading a toolbar ad, don't put it in the toolbar if in "names only" mode
+		- Don't report errors during automatic update checks
+		- Case sensitivity edits to various nags
+		- Added feature representing Tech Support for Light downgrade dialog
+		- Fixed grey ad window for old ads with 21
+	+ 4.3b21
+		- Fixed weird sending of styles when requeueing styled message with all styles turned off
+		- Revised handling of SMTP auth
+		- Fixed graphic redraw problem after drag
+		- Fixed case where Eudora would dial the phone after a mail check to fetch ads.
+		- Support for HTTP proxy server
+		- Fixed Link History icons
+		- Added IN-USE and LOGIN-DELAY to errors that don't invalidate passwords
+		- Link History - added setting to Extra Warnings panel to warn user when following an ad link while offline
+		- IMAP - ignore garbage attachments during message fetch
+		- Fixed "Ends With" filters.
+		- Lock read-only text
+		- Help text is locked
+		- Fixed balloon help for fixed-width items.
+		- Single-word subjects that end in space were wrapping early
+		- No longer falling into Light mode if the user selects "Tell me more" from Intro.
+		- Fixed bizarre but obscure problem with toc files open by other programs
+		- Silent processing of reg code info received by box users
+		- No longer putting sig intro before empty sig files
+		- Fixed day calculation bug in nag scheduling
+		- Cache cmd-clicked addresses in the History List
+		- Fixed circular nickname reference when address books contain bogositized nicknames (for Marshall)
+		- Added profiling confirmation alert
+		- Fixed staggering of windows at startup
+		- Fixed a little unnecessary mailbox dirtying
+		- More care and robustness when checking reg information and selecting the initial user state
+		- IMAP - fixed a problem deleting POP messages from a search window.
+		- Removed reference to Eudora Pro in System Configuration
+		- If toolbar is in "Names only" mode, do not put icon in ad button
+		- Co-branding spot
+		- Fixed window layering bug in nicknames window
+		- No longer including outdated 4.2 reg code in system configs
+		- IMAP - better behavior downloading registration messages
+		- IMAP - fixed problems saving passwords when pref is set to use keychain, but keychain is unavailable.
+	+ 4.3b20
+		- Fixed crash in code entry dialog when performing a major mode switch
+		- Kinder and gentler invalid reg code alert
+		- Fixed small registration leak and off-by-one when opening the reg file
+		- Re-fixed -8739 errors
+		- Save html-ishness of Update Window across launches
+		- Better error handling for illegal HTML literals
+		- Added pre-profiling dialog
+	+ 4.3b19
+		- Fixed cram-md5 smtp auth which broke in 19
+	+ 4.3b18
+		- Tweaked handling of discouraged 2-digit years.
+		- Fixed -8750 errors
+		- Display international headers in messages
+		- New reg info in About box
+		- Fixed Even More Sleep Problems.
+		- Added "visit site" buttons to expiration alerts.
+		- Works with brain-dead SMTP AUTH mechanisms & ISP's.
+		- Fixed spelling problems after a nick-with-space has been expanded in a message
+		- Always using two digit year for audit entry time stamps
+		- Fixed icon mask problems in settings dialog.
+		- No longer puke on URLs with embedded returns
+		- Fixed printing from preview pane for images, plug-ins.
+		- Worked around Suitcase 8 stomping the current res file.
+		- Fixed problem redirecting messages with comments in From: phrase.
+		- Slashes in file url's not handled properly.
+		- Toolbar no longer moves after deleting buttons.
+		- Failed to mark message read when preview scrolled if first message
+		- Fixed occasional non-display of selection counter.
+		- Settings reset wasn't preserving personality info.
+		- Fixed filter report URL's for IC users.
+		- Work around res chain bug in ICLaunchURL.
+		- IMAP - don't auto-Fcc to IMAP Inbox or Trash mailboxes.
+		- Edit->Copy now works in Mailboxes, Signature, Stationery, and Personalities windows
+		- If a mailbox is busy during a search, try again every couple of seconds until mailbox is available.
+		- Added pre-payment and pre-registration dialogs to be displayed prior to web site visits.
+		- an IMAP mailbox.
+		- Simpler language in dialup software settings panel
+		- Fixed problems activating modeless EMSAPI windows on slower machines
+		- New and improved Features dialog with mondo-boffo feature descriptions
+		- Correctly track the usage of bullet lists
+		- Support for new text (HTML) help resources
+		- Added Search, removed Redirect from the default toolbar.
+		- Shortened state warning message that was one character too long
+		- IMAP - fixed a case where passwords were erroneously forgotten after a failed login to an IMAP server.
+		- Made splash screen copyright Y2K compliant
+		- IMAP - fixed several cases where task progress errors could get stuck in the TP window after IMAP mailbox resyncs
+		- IMAP - fixed a bug that could cause resyncs to fail after a low memory situation
+		- New less-lame-but-still-not-quite-optimal feature missing icon (ooo! ahhh!)
+		- Correct search functionality in light
+		- Eliminated main cause of ButtonFit() crashes.
+		- Inline movie borders partially overlapped movie controls
+		- Search window was unable to find messages if moved mailbox after doing a search
+		- Search window was not resorting when searching again
+		- Message status wasn't updated in original summary when reading message in search window preview pane
+		- Print job was getting name of Ad or Toolbar window
+		- IMAP - <x-eudora-setting:307> now allows for better behavior with IMAP servers that require exclusive access to do an EXPUNGE operation.
+		- Fixed off by one error when registering automatically via the web
+		- IMAP - Expunge no longer starts thread if there's nothing to expunge.
+		- Update Payment & Registration as soon as the registration info is changed.
+	+ 4.3b17
+		- IMAP - <x-eudora-setting:11517> can now be used to customize kerberos service name format.
+		- Escape handle based values used to build URL's
+		- Fixed crash in _LowerText (i.e., CharacterType)
+		- Added support for "box users"
+		- Properly de-hilighting modeless EMSAPI windows.
+		- Remember that we're registered when switching between modes
+		- Fixed potential crash when printing nicknames
+		- IMAP - fixed memory leak when updating flags in an IMAP mailbox
+		- Fixed a potentially bogus SetPort call when dealing with dialogs
+		- Validate reg information when starting up, or drop back to sponsored mode.
+		- Added <x-eudora-setting:306> preference to add/remove ad window drag bar
+		- IMAP - fixed problems deleting IMAP messages from the search window.
+		- Fixed double-clicking plugin icons.
+		- AETE improperly said personality names read only.
+		- Added ability to put filter id in filter name.
+		- Escape spaces in URL query parts
+		- Fixed some sleep related problems.  
+		- IMAP - Toolbar now remembers IMAP server option menu items
+		- If no mailboxes are selected when starting a search in a Search window, select all mailboxes
+		- Fixed crash on startup when not in debug mode
+		- Removed elipsis from Speak Selection menu item and did a dance to the UI Police
+		- Fixed seemingly random To headers when expanding nicknames
+		- IMAP - only download http graphics with IMAP messages when pref is set
+		- Wasn't supporting Ad Folder alias properly
+		- IMAP Kerberos - fixed crash when cancelling KClient password dialog box
+		- Audit - timestamped and productized non-personal system info
+		- Save/restore current resource file when calling URL Access
+		- IMAP - fixed crash updating message flags while transferring a message to a mailbox that's being resynced.
+		- Don't autocheck mail immediately after switching modes.
+		- Fixed problem with hilite drawing when windows opened when Eudora in bg
+		- Facetime tracker didn't believe that years ever changed.
+		- Don't return nickname from address book on AppleEvent field queries.
+	+ 4.3b16
+		- Fixed crash at startup building menus
+	+ 4.3b15
+		- Removed elipsis from Speak Selection menu item and did a dance to the UI Police
+		- Fixed seemingly random To headers when expanding nicknames
+		- IMAP - only download http graphics with IMAP messages when pref is set
+		- IMAP Kerberos - fixed crash when cancelling KClient password dialog box
+		- Audit - timestamped and productized non-personal system info
+		- Save/restore current resource file when calling URL Access
+		- IMAP - fixed crash updating message flags while transferring a message to a mailbox that's being resynced.
+		- Don't autocheck mail immediately after switching modes.
+	+ 4.3b14
+		- Fixed problem with hilite drawing when windows opened when Eudora in bg
+		- Facetime tracker didn't believe that years ever changed.
+		- Don't return nickname from address book on AppleEvent field queries.
+	+ 4.3b13
+		- Fixed weird pgup/pgdn behavior in search window
+		- Dragging a file onto an existing toolbar button replaced the wrong button.
+		- Warn the user when an error occurs during a manual update check.
+		- Don't do low-ad fetches more than once per 4 hours.
+		- Now displays text even if there is a charset encoding err.
+		- Prevent modal dialogs (like settings) from deactivating when overlapping the ad window (flickery still, but the activation problem is okay)
+		- Fixed crash on quit
+		- Link History - fixed problem that was preventing Offline Link warning dialog from displaying
+		- Properly activating controls after a Select All in wazoo windows.
+		- IMAP - Filters->Server Options->Delete now moves IMAP messages to trash when FTM is on.
+		- IMAP - fixed case where IMAP mailbox is underlined when filter transfers a new but read message into it.
+		- Initial stab at non-personal settings audit
+		- Added "doesn't intersect nickname" just for DDT.
+		- Made registration dialog modeless. Cleaned up UI.
+		- Bug 2892, 2893 - Fixed problems with bogus wazoo tabs after switch to Light mode.
+		- Replace ETX chars with CR instead of SPACE when getting nick fields
+	+ 4.3b12
+		- No longer splitting long words in format=flowed.
+		- Fixed more reasons not to get ads
+		- Revised facetime measurement.
+		- Checking for new playlist at mailcheck if low on ads.
+		- Not checking for playlist at startup if known to be offline.
+		- No longer counted dead ads toward faceTimeLeft
+		- Using ÇICÈ in mappings to say "get creator from Internet Control Panel"
+		- Taking unknown URL helpers from Internet Control Panel if it knows
+		- IMAP - fixed inability to resync IMAP mailbox with UIDValidity of 0
+		- IMAP - fixed problems fetching IMAP messages from the search window preview pane.
+		- IMAP - fixed case where messages status changes are lost during certain IMAP operations.
+		- Die if can't create ad window.
+		- IMAP - now rebuilding damaged IMAP mailboxes when possible.
+		- Make sure to remove toolbar ads when there are none in a new playlist
+		- IMAP - now rebuilding damaged IMAP mailboxes when possible.
+		- Toolbar ads
+		- Redo the fix to the wazoo tab redrawing problem.
+		- Fixed write to nil on IMAP mailbox delete
+		- Fixed over-zealous nickname completion in Make Address Book Entry
+		- Added beefy'n'rotund "More Info" button to Payment & Registration
+		- Added "Tell me more" button to the Introduction dialog
+		- IMAP - fixed potential crash when resyncing IMAP mailbox with "Full Message" checked.
+		- No longer crashing when sorting nicknames by lengthy keys
+		- Corrected faulty version number in update query
+		- Added preference to disable automatic update checks <x-eudora-setting:305>
+	+ 4.3b11
+		- Properly escaping URL's in registration & friends.
+		- Clarified Intro dialog.
+		- Fixed initial position of ad window to avoid system floaters.
+		- Fixed random failure to correctly position ad window
+		- Registration info properly read
+		- Made the registration dialog more beautimous
+		- Exposed settings for keychain and mailbox selection count
+		- Fixed OK button in registration alert
+		- Fix Eudora Updates window.
+		- Properly handle ad "mailto" URLs
+		- Don't allow drag and drop onto ad window
+		- UsageStats no longer moved to mailfolder on first launch
+		- DownloadURL now works with classic MacTCP calls.
+		- Fixed control redraw problems after resizing tabbed windows.
+		- Fixed extremely insignificant spelling mistake in IMAP Trash Dialog.
+		- Process <fault> keyword in client update response
+		- fix for redraw problem when de-wazooing Link History
+		- Switch to Light mode no longer trashes IMAP caches for alternate personalities.
+		- IMAP - offline handling of message status changes.  Takes care of many message status bugs.
+	+ 4.3b10
+		- Another tweak to ensure dialup users get ads on first mailcheck.
+		- Playlists weren't being requested after server error on a playlist request.
+	+ 4.3a7-a9
+		- Part 2 of text/enriched de-support.
+		- Fixed case where PPP users on for less than 2 minutes wouldn't get playlists
+		- Redraw problems after deleting text & scrolling fixed.
+		- Tweak to ensure playlist and ads are fetched as soon as we're dialed in. 
+		- Set appropriate flags if fail to initiate ad download (most likely due to being offline)
+		- Added drag bar to ad window.
+		- Fixed crash when switching from ad to paid mode, then
+		- back to ad mode without quitting Eudora.
+		- Link History - option click on column header reverses sort
+		- Don't change ads unless there has been no typging for at least 5 seconds
+		- Better connection method caching for improved performance
+		- Fixed problems avoiding floaters when opening windows with app in bg.
+		- Handle malformed 2022 (8 bit leakage).
+		- Ad window (and toolbar) was still visible when switching
+		- Eudora to background when Settings dialog was open
+		- New window placement revised
+		- Link History - fixed crash aging ad entries in paid mode.
+		- Link History - added ability to customize what types of links are remembered.
+		- Offline Link dialog - fixed "Remember my choice for next time."
+		- Fix for spurious "You Can't Get There From Here" dialogs.
+		- Link History - fixed crash when clicking on links with long names.
+		- IMAP - improved performance for message deletion and same-server transfers using UID ranges.  <x-eudora-setting:304> turns this off.
+		- Added selection count for Joe. <x-eudora-setting:303=y>
+		- Link History - now storing slightly longer names for individual link entries
+		- Fixed potential loop when deleting history icon files during link history purge.
+		- Don't report false ad window obscuring when hiding Eudora
+		- from the process menu
+		- Don't asynchronously download more than 4 ads at a time
+		- Download ads safely to avoid displaying partially-downloaded ads
+		- Ad window not positioned properly at startup or after ad size change.
+	+ 4.3a6
+		- Ad window not positioned properly at startup or after ad size change.
+	+ 4.3a5
+		- Fixed crash if downloading graphics at quit time.
+	+ 4.3a4
+		- Sending text/enriched is no longer supported.
+		- Always sending page up/page down to results/mailboxes pane of search window.
+		- Balloon help for the Tabs menu item.
+		- Added legend to statistics message
+		- Alphabetized (mostly) boring headers for benefit of JD.
+		- Looking deeper in sig file for standard "-- " line before prepending ours.
+		- Fixed infinite loop when out of ads to display
+		- Link History - no longer displaying offline link and reminder for Light users.
+		- Start in Ad mode even if Eudora is launched from a settings file (for private beta)
+		- Allow ad window to be obscured by up to 500 pixels by any single object
+		- Don't switch ads while user is typing
+		- IMAP - now handles outgoing messages in IMAP mailboxes.
+		- Display Eudora logo in ad window until first ad is displayed.
+		- Fixed unresponsive Payment & Registration button under 8.1 and Appearance 1.0.3
+		- Fixed problem interacting with Settings dialog during a mail check.
+		- No longer able to drag background windows when audit is frontmost.
+		- IMAP - now using BoxInitialSelection() to select first IMAP message in mailbox
+		- Ignore clicks on floating windows that become visible when
+		- Eudora comes from the background to the front
+		- Signature modifications for Light... Show more info, just make sure it's disabled.
+		- Don't send date/time and user account name on playlist requests
+		- Fixed a bunch of initial positioning issues for docked windows
+		- Changed group box expansion to cope with OS < 8.5.
+		- Changed nudging code to nudge existing windows only if title bars completely covered.
+		- Fixed resource corruption when transitioning to or from freeware mode.
+		- Nags now activate properly when clicked in the content region (the continuing saga of
+		- Fixed menu enable probalem when switching from ads to light and back to ads.
+		- Bug 2790 - Filter Report now includes messages that are transferred to the In box from an IMAP box.
+		- Fixed heap-corrupter in GetRString due to Pestification.  Ick.
+		- fixed problems with filter report links to IMAP mailboxes.
+		- Offline Link dialog - hiding Remind Me when we're unable to tell if the user goes back online
+		- Link Window - fixed a few display oddities after a "Remind Me", label changes
+		- Remind Me dialog - added "Remind Later" button, dialog tweaks, and smarts when to display it.
+		- Fixed possible heap corruption with generating Payment & Registration URL's.
+		- Multiple playlist support.
+		- Maintaining redirectedness across personality changes.
+		- Fixed AppleEvent handling of NickFile Exists and Nickname Exists

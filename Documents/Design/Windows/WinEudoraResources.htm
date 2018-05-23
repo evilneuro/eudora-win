@@ -1,0 +1,160 @@
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1252">
+<META NAME="Generator" CONTENT="Microsoft Word 97">
+<TITLE>WinEudoraResources</TITLE>
+<META NAME="Template" CONTENT="D:\Program Files\Microsoft Office\Office\html.dot">
+</HEAD>
+<BODY LINK="#0000ff" VLINK="#800080">
+
+<I><P ALIGN="RIGHT">Jeff Beckley<BR>
+May 18, 2000</P>
+</I><H1 ALIGN="CENTER">Resources in Windows Eudora</H1>
+<P>Resources in Windows applications are extra bits of information stored separately from the code that executes the program. The advantage of resources being separated from the code is that they can be modified without having to recompile the program. There are common types that most users are familiar with (strings, dialogs, bitmaps, icons, menus, and cursors), but Resources can also contain application-specific information like global read-only data.</P>
+<P>This document describes some ways that Windows Eudora uses resources. It will primarily be of interest for those who are writing code, but QA and Tech Support people may find it useful as well.</P>
+<B><FONT FACE="Arial" SIZE=4><P>The Main Resource DLL: Eudora32.dll</P>
+</B></FONT><P>Most of Windows Eudora's resources are in a file called Eudora32.dll. This is different from most applications, which put the resources in the actual executable file. This is done for two reasons: Eudora's plug-in resource architecture and easier localization. Both of these will be described in more detail in following sections.  The EudoraRes project is what holds the resources for Eudora32.dll, and is defined by EudoraRes.rc and Resource.h.  Building the EudoraRes project will build Eudora32.dll.</P>
+<P>There actually are a couple of resources stored in Eudora.exe. There are a few string resources for error messages such as "Can't find Eudora32.dll" and "The versions of Eudora.exe and Eudora32.dll differ". There are also some icons in Eudora.exe so the shell (Explorer) can display Eudora-specific icons when that file is being viewed.  The resources in Eudora.exe are in the EudoraExe project, which uses EudoraExe.rc and Resource.h.</P>
+<B><FONT FACE="Arial" SIZE=4><P>Resource plug-ins</P>
+</B></FONT><P>Eudora stores a lot of information about the way it looks and works in resources, and we wanted to have a way to allow customization of that. Some users and sites want a dialog to be worded differently, or a bitmap to look different, or a menu item not to be present. We've even used it to solve problems for outraged users, like The Great Yin-Yang Debate of 1997.</P>
+<P>MFC has a special kind of DLL called an Extension DLL. "Extension" stands for its capability to extend the functionality of the .EXE. One way it does this is that it allows resources that are loaded from the application to be found in the Extension DLL. This is achieved by keeping a list of the Extension DLLs that have been loaded up. When the application asks to load a resource, MFC first looks in the resources of the application, and if the resource isn't found then it starts looking in each of the Extension DLLs. This is why we put most of the resources in Eudora32.dll. If we put the resources in the application, then we would never be able to override them in resource plug-ins.</P>
+<P>Resource plug-ins are housed in .EPI files (Eudora Plug-In, not to be confused with EMSAPI plug-ins). When Eudora starts up, it looks for files with a .EPI extension in the directory where Eudora.exe resides and the directory where your mail and settings are stored, and it adds those DLLs to the Extension DLL list. It's actually done by just doing a LoadLibrary() on the .EPI files, as Extension DLLs know how to add themselves to the list when they are loaded up. It adds Eudora32.dll to the end of this list so that the resource plug-ins get the first shot at defining the resources that will be loaded up.</P>
+<P>One thing to note about this is that the loading up of a resource using this list of DLLs is MFC functionality only, and not available in Win32. That means you should never use Win32 routines to load a resource, but instead use the MFC routines. If you use a Win32 function, like ::LoadString(), then the functionality of resource plug-ins won't be available for that resource. Instead you should use AfxLoadString(), an MFC routine that will use the resource DLL list to look for the resource. Fortunately, using Win32 resource-loading functions can't be done too often because it probably wouldn't work when you tested your new code. Almost all of the resources are stored in Eudora32.DLL and not in the application, so your code wouldn't find the resource that Eudora uses by default. MFC doesn't wrap all the Win32 resource-loading functions, but we have functions to do the rest. They have names like QCLoadCursor() and QCLoadIcon(), and can be found in Utils.h.</P>
+<P>There's an example of a project to create a .EPI file in the Perforce depot. It can be found at //depot/main/plugins/Esoteric. This resource plug-in shows another capability of resource plug-ins beyond merely overriding a particular resource. It allows extra categories in the Tools-&gt;Options dialog to be added. First a brief look in to how the categories for the Tools-&gt;Options dialog are implemented.</P>
+<P>Each category in the Tools-&gt;Options dialog is actually a dialog resource. Eudora looks for these special dialogs starting at resource ID 1. The caption of the dialog is the name that is used in the Category listbox. The icon displayed in that listbox is the icon that can be found with the same ID as the dialog. The settings in the right side for that category are simply controls in the dialog, and the ID of the control corresponds to the ID of the INI entry it represents (more on how INI entries are implemented as resources later). Most settings need no further help than that. The code for the Options dialog can handle checkboxes, radio buttons, and edit controls all on its own. For some specialized settings, like the button to change the attachment directory, extra code has to be added to handle it.</P>
+<P>For a resource plug-in to add extra Categories to the Options dialog, all it has to do is define dialog resources with IDs starting at 21000. Eudora will look at all resource plug-ins for these extra Categories, and add them to the end of the default Category list. Replacing a default Category can also be done via the usual mechanism of overriding resources in resource plug-ins. The resource plug-in just creates a dialog resource with the same ID as the Category it wants to override. Some sites have done this to remove settings that they think their users shouldn't have easy access to, like the Save Password option.</P>
+<B><FONT FACE="Arial" SIZE=4><P>Localization</P>
+</B></FONT><P>Eudora gets localized in to many different languages, and can be done by translating various text in resources in the Eudora32.dll. It can also be done by providing a resource plug-in file that would override the resources in Eudora32.dll (e.g. Espa&ntilde;ol.epi). Because of this, you should always put any text that the user will see in to a resource. If you hard code a string, the localization company doing the translation will not see it, and users of the localized version will see English strings for that feature. Not the polished look we want to provide for these versions.</P>
+<P>Not all resources should be translated, though. Commands to send to the POP and SMTP servers are stored as resources, and shouldn't be translated. Some names of headers that get sent in messages (e.g. Date:, Subject:, and From:) should not be translated, otherwise other mailers won't recognize them when parsing the message. I've created a document that lists what strings should and shouldn't be translated. It's kept in Perforce at //depot/main/Documents/Design/WinEudoraStrings.xls. I update it for new versions before we hand it off to the localization companies.</P>
+<P>One of the nice things about having Eudora32.dll holding almost all of the resources is that we can give a localization firm just the EudoraRes project.  They can make their changes to the "source" files (i.e. EudoraRes.rc), and then hit Compile to produce the Eudora32.dll.  We don't have to give them the really valuable thing: the source code to the Eudora application.  They could just edit the resources in Eudora32.dll directly, but that would make it much more difficult to do revisions to the later versions.</P>
+<P>There's more to localization than just translating text in string, dialog, and menu resources. Sometimes bitmaps can be locale-specific (a common one is red and green traffic lights to represent stopping and starting an operation), and need to be modified. Dialog controls (especially buttons) often need to be resized to handle the new size of the text in them. I think the German translation of "Click Here" is somewhere around 1,000 characters long. For more detailed info on localization, you can check out the book Developing International Software for Windows 95 and Windows NT, by Nadine Kano (<A HREF="http://msdn.microsoft.com/library/books/devintl/S24AF.HTM">http://msdn.microsoft.com/library/books/devintl/S24AF.HTM</A>).</P>
+<B><FONT FACE="Arial" SIZE=4><P>Resource IDs</P>
+</B></FONT><P>To keep some semblance of organization, similar types of resources get IDs in a specific range. The table below shows what the ID ranges are used for, and what the preferred prefix for the name of the ID should have. It's not perfect, and you'll see some places in which it's not followed, but try to stick to the ranges. It would be nice if we could put documentation in Resource.h about these ranges, but every time you edit the resources inside the IDE and save them out, any extraneous information in Resource.h gets wiped out.</P>
+<TABLE BORDER CELLSPACING=1 CELLPADDING=7 WIDTH=637>
+<TR><TD WIDTH="16%" VALIGN="TOP">
+<P><B>ID Range</B></TD>
+<TD WIDTH="18%" VALIGN="TOP">
+<B><P>Prefix</B></TD>
+<TD WIDTH="66%" VALIGN="TOP">
+<B><P>Type</B></TD>
+</TR>
+<TR><TD WIDTH="16%" VALIGN="TOP">
+<P>1-32</TD>
+<TD WIDTH="18%" VALIGN="TOP">
+<FONT FACE="Courier New" SIZE=2><P>IDD_SETTINGS</FONT></TD>
+<TD WIDTH="66%" VALIGN="TOP">
+<P>Dialogs for Categories in Options dialog</TD>
+</TR>
+<TR><TD WIDTH="16%" VALIGN="TOP">
+<P>33-128</TD>
+<TD WIDTH="18%" VALIGN="TOP">
+<FONT FACE="Courier New" SIZE=2><P>IDR</FONT></TD>
+<TD WIDTH="66%" VALIGN="TOP">
+<P>IDs that get used for multiple resource types</TD>
+</TR>
+<TR><TD WIDTH="16%" VALIGN="TOP">
+<P>129-9999</TD>
+<TD WIDTH="18%" VALIGN="TOP">
+<FONT FACE="Courier New" SIZE=2><P>IDB</FONT></TD>
+<TD WIDTH="66%" VALIGN="TOP">
+<P>Bitmaps</TD>
+</TR>
+<TR><TD WIDTH="16%" VALIGN="TOP">
+<P>129-9999</TD>
+<TD WIDTH="18%" VALIGN="TOP">
+<FONT FACE="Courier New" SIZE=2><P>IDC</FONT></TD>
+<TD WIDTH="66%" VALIGN="TOP">
+<P>Controls</TD>
+</TR>
+<TR><TD WIDTH="16%" VALIGN="TOP">
+<P>129-9999</TD>
+<TD WIDTH="18%" VALIGN="TOP">
+<FONT FACE="Courier New" SIZE=2><P>IDD</FONT></TD>
+<TD WIDTH="66%" VALIGN="TOP">
+<P>Dialogs</TD>
+</TR>
+<TR><TD WIDTH="16%" VALIGN="TOP">
+<P>129-9999</TD>
+<TD WIDTH="18%" VALIGN="TOP">
+<FONT FACE="Courier New" SIZE=2><P>IDI</FONT></TD>
+<TD WIDTH="66%" VALIGN="TOP">
+<P>Icons</TD>
+</TR>
+<TR><TD WIDTH="16%" VALIGN="TOP">
+<P>129-9999</TD>
+<TD WIDTH="18%" VALIGN="TOP">
+<FONT FACE="Courier New" SIZE=2><P>IDS</FONT></TD>
+<TD WIDTH="66%" VALIGN="TOP">
+<P>Strings (error message strings often use IDS_ERR)</TD>
+</TR>
+<TR><TD WIDTH="16%" VALIGN="TOP">
+<P>10000-10999</TD>
+<TD WIDTH="18%" VALIGN="TOP">
+<FONT FACE="Courier New" SIZE=2><P>IDS_INI</FONT></TD>
+<TD WIDTH="66%" VALIGN="TOP">
+<P>INI entries (check out the section below for more details)</TD>
+</TR>
+<TR><TD WIDTH="16%" VALIGN="TOP">
+<P>31000-32767</TD>
+<TD WIDTH="18%" VALIGN="TOP">
+<P>&nbsp;</TD>
+<TD WIDTH="66%" VALIGN="TOP">
+<P>Reserved for EMSAPI plug-ins</TD>
+</TR>
+<TR><TD WIDTH="16%" VALIGN="TOP">
+<P>32768-57343</TD>
+<TD WIDTH="18%" VALIGN="TOP">
+<FONT FACE="Courier New" SIZE=2><P>ID,IDM</FONT></TD>
+<TD WIDTH="66%" VALIGN="TOP">
+<P>Menu items</TD>
+</TR>
+<TR><TD WIDTH="16%" VALIGN="TOP">
+<P>57344-65535</TD>
+<TD WIDTH="18%" VALIGN="TOP">
+<P>&nbsp;</TD>
+<TD WIDTH="66%" VALIGN="TOP">
+<P>Reserved by MFC</TD>
+</TR>
+</TABLE>
+
+<P>&nbsp;</P>
+<B><FONT FACE="Arial" SIZE=4><P>INI Entries</P>
+</B></FONT><P>Eudora is famous for its ability to be customized. If you want Eudora to behave in a certain way, often times there's a way to do it, but the setting to control that behavior may not always be in the Options dialog. Settings are saved in the Eudora.ini file, most of which are under the [Settings] section.</P>
+<P>To make the programmatic use of settings easy, there are some handy routines defined in rs.h. The most commonly used ones are GetIniString(), GetIniShort(), and GetIniLong(). If you want to get the value of a particular setting, you use ones of these functions, passing in the ID of the setting. For GetIniString() there are variants to where you want the value to be stored: in a returned buffer, in a buffer you pass in, in a CString you pass in. There are routines to set INI values as well, but those are rarely used as it's best to allow the user to control when settings are changed.</P>
+<P>The above Resource ID table alludes to the fact that INI entries are implemented as string resources. The format for an INI string resource is this:</P><DIR>
+<DIR>
+
+<I><FONT FACE="Courier New"><P>INI-name</I>\n<I>Default-value</P></DIR>
+</DIR>
+
+</I></FONT><P>Here's a sample one:</P><DIR>
+<DIR>
+
+<FONT FACE="Courier New"><P>PreviewHeaders\nTo:,Subject:,Cc:,Bcc:,X-Attachments:</P></DIR>
+</DIR>
+
+</FONT><P>The name of the entry as it will appear in the Eudora.ini file is "PreviewHeaders", and the default value of the entry is "To:,Subject:,Cc:,Bcc:,X-Attachments:". The default value will be used if the entry is not found in the INI file. If the default value is blank for a string setting or zero for a numeric setting, then the "\n" and the default value can be left out.</P>
+<P>As I mentioned above, most options reside in the [Settings] section of the Eudora.ini file. Which section an INI entry belongs to is determined by the numeric value of its ID. INI IDs with a value of 10000-10799 can be found in the [Settings] section. 10800-10899 belongs to the [Debug] section. 10900-10999 holds the [Window Position] section. There are, of course, other sections used in the Eudora.ini file, but only the sections mentioned here work with the generic GetIni*() routines.</P>
+<B><FONT FACE="Arial" SIZE=4><P>Loading Strings</P>
+</B></FONT><P>Early on in developing Windows Eudora, I wrote a lot of code that looked like this:</P><DIR>
+<DIR>
+
+<FONT FACE="Courier New"><P>CString MyFormatString;<BR>
+MyString.LoadString(IDS_MY_FORMAT_STRING);<BR>
+sprintf(buffer, MyFormatString, foo);</P></DIR>
+</DIR>
+
+</FONT><P>This can get tedious when done a lot. So I came up with a class that encapsulates this behavior, called CRString. CRString (which can be found in rs.h) is a class derived from (surprise, surprise!) CString. The only difference is that it has a constructor that will take the ID of a string resource, and will load up that particular resource string (using the MFC CString::LoadString() function so it works correctly with resource plug-ins) in the constructor. With CRString, the above code can be simplified to this:</P><DIR>
+<DIR>
+
+<FONT FACE="Courier New"><P>sprintf(buffer, CRString(IDS_MY_FORMAT_STRING), foo);</P></DIR>
+</DIR>
+
+</FONT><P>One caution about CRString, which is the same caution about CString in general. CString has an implicit case to const char* (well, really LPCTSTR, but that's a fine enough distinction for now). It's a very handy cast. It made the above code easier to read because it could omit the explicit cast. However, MFC programmers can become dependent on that implicit cast, and forget that it doesn't always happen when you want it to. Here's a piece of code that has a subtle bug in it:</P><DIR>
+<DIR>
+
+<FONT FACE="Courier New"><P>sprintf(buffer, CRString(IDS_FORMAT), CRString(IDS_VALUE));</P></DIR>
+</DIR>
+
+</FONT><P>The first CRString usage is fine, because the second parameter to sprintf() is const char*, and the implicit cast will be performed. The second usage will not get the implicit cast since it is a variable argument to sprintf(). A pointer to the CString object will be used as the parameter instead of a pointer to the string data.</P></BODY>
+</HTML>

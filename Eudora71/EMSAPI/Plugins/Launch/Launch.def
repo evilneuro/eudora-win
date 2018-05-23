@@ -1,0 +1,12 @@
+; Launch.def : Declares the module parameters for the DLL.
+
+LIBRARY      "LAUNCH"
+DESCRIPTION  'Launch Windows Dynamic Link Library'
+
+EXPORTS
+	ems_plugin_version
+	ems_plugin_init
+	ems_plugin_finish
+	ems_free
+	ems_special_info
+	ems_special_hook

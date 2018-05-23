@@ -1,0 +1,16 @@
+; Junk.def : Declares the module parameters for the DLL.
+
+LIBRARY      "JUNK"
+DESCRIPTION  'Junk Windows Dynamic Link Library'
+
+EXPORTS
+	ems_plugin_version
+	ems_plugin_init
+	ems_plugin_finish
+	ems_plugin_config
+	ems_free
+	ems_special_info
+	ems_special_hook
+	ems_translator_info
+	ems_score_junk
+	ems_user_mark_junk

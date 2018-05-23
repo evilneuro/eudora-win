@@ -1,0 +1,6 @@
+; EuLang.def : Declares the module parameters for the DLL.
+
+LIBRARY      "EuLang"
+
+EXPORTS
+	LNG_GetLanguageInfo              @1

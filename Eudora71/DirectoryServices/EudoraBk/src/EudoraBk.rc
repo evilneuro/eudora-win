@@ -1,0 +1,176 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "../inc/resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+#include "..\..\VersionBeg.inc"
+
+VALUE "InternalName",     "EudoraBk\0"
+VALUE "OriginalFilename", "EudoraBk.dll\0"
+VALUE "FileDescription",  "EudoraBk\0"
+VALUE "Comments",         "Eudora Address Book - DServ Database Provider\0"
+
+#include "..\..\VersionEnd.inc"
+
+#endif    // !_MAC
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_PROPPAGE_GENERAL DIALOG DISCARDABLE  0, 0, 210, 63
+STYLE WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "General"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "This address book is stored in:",IDC_STATIC,11,13,187,9
+    LTEXT           "",IDC_BOOKPATH,11,28,187,13,SS_SUNKEN | WS_BORDER
+END
+
+IDD_PHPROPPAGE2 DIALOGEX 0, 0, 243, 135
+STYLE DS_3DLOOK | WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "Attributes"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    CONTROL         "List1",IDC_LVATTRIBUTE,"SysListView32",LVS_REPORT | 
+                    LVS_SINGLESEL | LVS_SHOWSELALWAYS | LVS_EDITLABELS | 
+                    LVS_NOSORTHEADER | WS_BORDER | WS_TABSTOP,7,7,172,121,
+                    WS_EX_CLIENTEDGE
+    PUSHBUTTON      "    &Add...",IDC_ADD,186,7,50,14,BS_LEFT
+    PUSHBUTTON      "    &Edit",IDC_EDIT,186,25,50,14,BS_LEFT
+    PUSHBUTTON      "    &Remove",IDC_REMOVE,186,43,50,14,BS_LEFT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_ABOOK               BITMAP  DISCARDABLE     "abook.bmp"
+IDB_INVISIBLE           BITMAP  DISCARDABLE     "bitmap1.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_PROPPAGE_GENERAL, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 203
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 56
+    END
+
+    IDD_PHPROPPAGE2, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 236
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 128
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_PROTOCOL_NAME       "Eudora Address Book"
+    IDS_DEFAULT_BOOK        "Eudora Nicknames"
+    IDS_COOL_STR            "Success"
+    IDS_QUERY_OK            "Success"
+    IDS_QUERY_FAILED        "Failed"
+    IDS_QUERY_WOULDBLOCK    "Operation Would Block"
+    IDS_QUERY_DONE          "Operation Complete"
+    IDS_QUERY_CANCELLED     "Operation Canceled"
+    IDS_QUERY_EBADFORMAT    "Invalid Arguments"
+    IDS_QUERY_ECONNECT      "Unable to connect to open addressbook"
+    IDS_QUERY_EADDRESS      "Invalid address book filename"
+    IDS_QUERY_EREAD         "Error reading from address book"
+    IDS_QUERY_EWRITE        "Error writing address book file"
+    IDS_QUERY_EOUTOFMEMORY  "Not enough memory available to complete the operation"
+    IDS_QUERY_EPROTOCOL     "Internal Error"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_QUERY_EEXISTS       "Entry already exists"
+    IDS_QUERY_ENOMATCH      "Not Found"
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

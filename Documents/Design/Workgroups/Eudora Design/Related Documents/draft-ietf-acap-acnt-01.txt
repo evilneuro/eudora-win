@@ -1,0 +1,450 @@
+
+
+Internet Draft                                               R. Gellens
+Document: draft-ietf-acap-email-01.txt                         QUALCOMM
+Expires: xx xxxxx 1998                                    xx xxxxx 1998
+    
+    
+                    ACAP Email Account Dataset Class
+    
+    
+Status of this Memo:
+    
+    This document is an Internet Draft.  Internet Drafts are working
+    documents of the Internet Engineering Task Force (IETF), its areas,
+    and its working groups.  Note that other groups may also distribute
+    working documents as Internet Drafts.
+    
+    Internet Drafts are draft documents valid for a maximum of six
+    months.  Internet Drafts may be updated, replaced, or obsoleted by
+    other documents at any time.  It is not appropriate to use Internet
+    Drafts as reference material or to cite them other than as a
+    "working draft" or "work in progress."
+    
+    To learn the current status of any Internet Draft, please check the
+    "1id-abstracts.txt" listing contained in the Internet Drafts shadow
+    directories on ftp.is.co.za (Africa), nic.nordu.net (Europe),
+    munnari.oz.au (Pacific Rim), ftp.ietf.org (US East Coast), or
+    ftp.isi.edu (US West Coast).
+    
+    
+    A version of this draft document is intended for submission to the
+    RFC editor as a Proposed Standard for the Internet Community.
+    Discussion and suggestions for improvement are requested.
+    
+    Public comments can be sent to the IETF ACAP mailing list,
+    <ietf-acap+@andrew.cmu.edu>.  To subscribe, send a message
+    containing SUBSCRIBE to <ietf-acap-request+@andrew.cmu.edu>.
+    Private comments should be sent to the author.
+    
+    
+Copyright Notice
+    
+    Copyright (C) The Internet Society 1998.  All Rights Reserved.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Gellens                   Expires xxxxx 1998                   [Page 1]Internet Draft        ACAP Email Account Dataset Class        xxxxx 1998
+
+Table of Contents
+    
+     1.  Abstract . . . . . . . . . . . . . . . . . . . . . . . . . .  2
+     2.  Conventions Used in this Document . . . . . . . . . . . . . . 2
+     3.  ACAP Standard Options  . . . . . . . . . . . . . . . . . . .  2
+     4.  ACAP Email Account Dataset Class  . . . . . . . . . . . . . . 3
+       4.1.  ACAP Email Account Dataset Class Prefix  . . . . . . . .  3
+       4.2.  ACAP Email Account Dataset Hierarchy  . . . . . . . . . . 3
+     5.  ACAP Email Account Dataset Attributes  . . . . . . . . . . .  3
+       5.1.  Basic Attributes  . . . . . . . . . . . . . . . . . . . . 3
+       5.2.  Specific Attributes  . . . . . . . . . . . . . . . . . .  4
+     6.  Examples  . . . . . . . . . . . . . . . . . . . . . . . . . . 6
+     7.  References . . . . . . . . . . . . . . . . . . . . . . . . .  7
+     8.  Security Considerations . . . . . . . . . . . . . . . . . . . 7
+     9.  Author's Address . . . . . . . . . . . . . . . . . . . . . .  8
+    10.  Full Copyright Statement  . . . . . . . . . . . . . . . . . . 8
+    
+    
+1.  Abstract
+    
+    It has become common for Internet mail users to have more than one
+    account where mail is received, to access multiple accounts from the
+    same machine, to access the same accounts from different machines,
+    and to use multiple programs which require account configuration
+    information.
+    
+    The Application Configuration Access Protocol [ACAP] provides an
+    ideal mechanism for storage of email account data.
+    
+    This specification defines a standard ACAP dataset class for email
+    accounts, and a common option for indicating a default email.
+    
+    
+2.  Conventions Used in this Document
+    
+    The key words "MUST", "MUST NOT", "SHOULD", "SHOULD NOT", and "MAY"
+    in this document are to be interpreted as defined in "Key words for
+    use in RFCs to Indicate Requirement Levels" [KEYWORDS].
+    
+    
+3.  ACAP Standard Options
+    
+    This specification defines the Message User Agent (MUA) Default
+    Account standard option.  This is a scaler option in the ACAP
+    Standard Option ("/option") dataset.  The entry name is
+    "mua.default.account".  The "option.value" attribute contains the
+    value, which is a URL.  Generally, this will be an ACAP URL pointing
+    to an entry in an Email Account dataset.
+    
+    The standard option dataset class is specified in [ACAP-OPTIONS].
+    ACAP URLs are defined in [ACAP].
+    
+
+
+Gellens                   Expires xxxxx 1998                   [Page 2]Internet Draft        ACAP Email Account Dataset Class        xxxxx 1998
+
+4.  ACAP Email Account Dataset Class
+    
+    The ACAP Email Account dataset class defines a set of attributes
+    which specify an email account; that is, configuration information
+    used for access to email on a POP or IMAP server.
+    
+    
+4.1.  ACAP Email Account Dataset Class Prefix
+    
+    Datasets whose names begin with "/email" are assumed to contain
+    email account entries as defined in this specification.
+    
+    
+4.2.  ACAP Email Account Dataset Hierarchy
+    
+    Each user may have a set of named email accounts.  The default is
+    pointed at by the "mua.default.account" standard option. (See
+    section 3 for more information.)
+    
+    Inheritance is likely to be useful both for inheriting site or group
+    defaults (for example, POP or IMAP servers, and initial client
+    configuration in general) as well as for inheriting user-specific
+    configuration when using different machines.
+    
+    
+5.  ACAP Email Account Dataset Attributes
+    
+    An email account entry MUST have an "entry" attribute.  All other
+    attributes are OPTIONAL.
+    
+    Attributes are specified using Augmented Backus-Naur Form [ABNF].
+    All attributes are single-valued and textual unless otherwise
+    stated.
+    
+    The ABNF defines the content of the attribute values prior to their
+    encoding as an ACAP string.  Clients MUST conform to the syntax when
+    generating these attributes, but MUST NOT assume that the attribute
+    values will conform to this syntax on access.  Servers MUST NOT
+    enforce the syntax.
+    
+    
+5.1.  Basic Attributes
+    
+    These attributes are defined in ACAP [ACAP] and have meaning in all
+    dataset classes.  The section describes how they are used in an
+    email account dataset.
+    
+    entry
+        The "entry" attribute is used to hold a unique name for the
+        email.  This name is used for inheritance, so when customizing
+        an account which has an entry in an inherited dataset, the entry
+        name needs to remain the same.  The name should also be
+
+
+Gellens                   Expires xxxxx 1998                   [Page 3]Internet Draft        ACAP Email Account Dataset Class        xxxxx 1998
+
+        descriptive.
+        
+    subdataset
+        The "subdataset" attribute indicates there is another email
+        account dataset underneath this entry.
+    
+    
+5.2.  Specific Attributes
+    
+    These attributes are specific to the Email Account dataset class.
+    
+    email.check-interval
+        This specifies the interval, in seconds, between checks (polls)
+        for new mail.
+        
+        email-check-int      = 1*DIGIT
+        
+    email.connection-type
+        This contains a token indicating the type of connection used for
+        this email.  Clients might use this information to modify their
+        use of bandwidth.
+        
+        email-conn           = "direct" / "cable-modem" / "phone-modem" / 
+                               "mobile-phone"
+        
+    email.leave-on-server.flag
+        This specifies if the client should delay deleting mail from the
+        server after downloading.  This is generally useful only with
+        [POP3] servers which support this.
+        
+        email-lmos-flag      = "0" / "1"
+        
+    email.leave-on-server.days
+        When email.leave-on-server.flag is set (value is "1"), this
+        attribute specifies the number of days messages should remain on
+        the server before being deleted by the client.  This is
+        generally useful only with [POP3] servers which support leaving
+        mail on the server.
+        
+        email-lmos-days      = 1*DIGIT
+        
+    email.maximum.download-size
+        This contains the maximum size (in octets) of messages to be
+        downloaded.  This is most useful when accessing messages via
+        [POP3].
+        
+        email-max-dsize      = 1*DIGIT
+        
+    email.personality
+        This specifies the default personality to assign to messages
+        received via this email account.  It is generally an ACAP URL to
+        an entry in an Email Personality dataset.  The ACAP Email
+
+
+Gellens                   Expires xxxxx 1998                   [Page 4]Internet Draft        ACAP Email Account Dataset Class        xxxxx 1998
+
+        Personality dataset class is specified in [ACAP-PERSONALITY].
+        ACAP-URLs are defined in [ACAP].
+        
+        email-personality    = url ;defined in [URL-BASIC]
+        
+    email.server.IMAP
+        The indicates the default IMAP server to use with this email
+        account.  It is generally an IMAP URL, as specified in
+        [URL-IMAP].
+        
+        email-imap           = url ;defined in [URL-BASIC]
+        
+    email.server.POP
+        This specifies the POP server associated with this email
+        account.  It is generally a POP URL, as defined in [URL-POP].
+        
+        email-pop            = url ;defined in [URL-BASIC]
+        
+    email.sieve.script
+        This specifies the text of a Sieve script which will be applied
+        by the delivery agent (if supported) to mail arriving at this
+        email.  Sieve is specified in [SIEVE].
+        
+        email-sieve          = 1*UTF8-CHAR
+        
+    email.sieve.syntax.errors
+        If supported by the Sieve implementation, this attribute
+        contains the count of syntax errors detected in the most
+        recently stored Sieve script.  Sieve is specified in [SIEVE].
+        
+        email-sieve-synerr  = 1*DIGIT
+        
+    email.sieve.syntax.warnings
+        If supported by the Sieve implementation, this attribute
+        contains the count of syntax warnings detected in the most
+        recently stored Sieve script.  Sieve is specified in [SIEVE].
+        
+        email-sieve-synwarn = 1*DIGIT
+        
+    email.sieve.syntax.errtxt
+        If supported by the Sieve implementation, this attribute
+        contains the text of syntax errors detected in the most recently
+        stored Sieve script.  The error text is formated into
+        CRLF-separated lines, one line per error.  Each line contains
+        named attributes of the error, in a MIME-header-like format.
+        The currently specified attributes are: line, offset, length,
+        and text.  Text MUST always be the last attribute.  Sieve is
+        specified in [SIEVE].
+        
+        The format is intended to be easy for a Sieve execution agent to
+        generate, and easy for a Sieve user agent to parse.  The Sieve
+        user agent could use the information to highlight the indicated
+
+
+Gellens                   Expires xxxxx 1998                   [Page 5]Internet Draft        ACAP Email Account Dataset Class        xxxxx 1998
+
+        section of the Sieve script text, as specified by the line,
+        offset, and length.
+        
+        email-sieve-errtxt  = *(non-text-sieve-att ";" SP) text-sieve-att
+        non-text-sieve-att  = sieve-att-line / sieve-att-off / 
+                              sieve-att-len / sieve-att-ext
+        text-sieve-att      = "text" ":" 1*UTF8-CHAR
+        sieve-att-line      = "line" ":" 1*DIGIT
+        sieve-att-off       = "offset" ":" 1*DIGIT
+        sieve-att-len       = "length" ":" 1*DIGIT
+        sieve-att-ext       = 1*UTF8-CHAR ":" 1*UTF8-CHAR
+                              ; MUST not use ":" or ";"
+        
+    email.sieve.syntax.warntxt
+        If supported by the Sieve implementation, this attribute
+        contains the text of syntax warnings detected in the most
+        recently stored Sieve script.  The warning text is formated into
+        CRLF-separated lines, one line per warning.  Each line contains
+        named attributes of the warning, in a MIME-header-like format.
+        The currently specified attributes are: line, offset, length,
+        and text.  Text MUST always be the last attribute.  Sieve is
+        specified in [SIEVE].
+        
+        email-sieve-warntxt = email-sieve-errtxt
+        
+    email.taboo-headers
+        This multi-valued attribute is a list of header prefixes.  If
+        the client has a mode where it suppresses display of certain
+        headers and/or properties of messages, headers which start with
+        a prefix included in this attribute are candidates for
+        suppression.  Prefix strings are case-insensitive.
+        
+        email-taboo          = 1*VCHAR
+    
+    
+6.  Examples
+    
+        entry                         home
+        email.connection-type         phone-modem
+        email.personality             home
+        email.server.pop              POP://jru;AUTH=APOP@pop.isp.com
+        email.sieve.script            IF SIZE OVER 100k
+                                            DISCARD;
+
+
+        entry                         work
+        email.connection-type         direct
+        email.personality             work
+        email.server.imap             IMAP://jru@mail.bigcorp.com
+        email.sieve.script            IF HEADER "FROM" IS "BOSS"
+                                            FILEINTO "STUFF"
+    
+
+
+Gellens                   Expires xxxxx 1998                   [Page 6]Internet Draft        ACAP Email Account Dataset Class        xxxxx 1998
+
+7.  References
+    
+    [ABNF] Crocker, Overell, "Augmented BNF for Syntax Specifications:
+    ABNF", RFC 2234, Internet Mail Consortium, Demon Internet Ltd.,
+    November 1997. <ftp://ftp.isi.edu/in-notes/rfc2234.txt>
+    
+    [ACAP] Newman, Myers, "ACAP -- Application Configuration Access
+    Protocol", RFC 2244, Innosoft, Netscape, November 1997.
+    <ftp://ftp.isi.edu/in-notes/rfc2244.txt>
+    
+    [ACAP-OPTIONS] Hole, "ACAP Application Options Dataset Class", The
+    Esys Corporation, Work in Progress, February 1998.
+    <ftp://ftp.isi.edu/internet-drafts/draft-ietf-acap-options-xx.txt>
+    
+    [ACAP-PERSONALITY] Gellens, "ACAP Email Personality Dataset Class",
+    QUALCOMM Incorporated, Work in Progress.
+    <ftp://ftp.isi.edu/internet-drafts/draft-ietf-acap-pers-xx.txt>
+    
+    [KEYWORDS] Bradner, "Key words for use in RFCs to Indicate
+    Requirement Levels", RFC 2119, Harvard University, March 1997.
+    <ftp://ftp.isi.edu/in-notes/rfc2119.txt>
+    
+    [POP3] Myers, Rose, "Post Office Protocol -- Version 3", RFC 1939,
+    Carnegie Mellon, Dover Beach Consulting, Inc., May 1996.
+    <ftp://ftp.isi.edu/in-notes/rfc1939.txt>
+    
+    [URL-BASIC] Berners-Lee, Masinter, McCahill, "Uniform Resource
+    Locators (URL)", RFC 1738, CERN, Xerox Corporation, University of
+    Minnesota, December 1994. <ftp://ftp.isi.edu/in-notes/rfc1738.txt>
+    
+    [URL-IMAP] Newman, "IMAP URL Scheme", RFC 2192, Innosoft, September
+    1997. <ftp://ftp.isi.edu/in-notes/rfc2192.txt>
+    
+    [URL-POP] Gellens, "POP URL Scheme", RFC 2384, QUALCOMM
+    Incorporated, August 1998. <ftp://ftp.isi.edu/in-notes/rfc2384.txt>
+    
+    [UTF8] Yergeau, F. "UTF-8, a transformation format of ISO 10646",
+    RFC 2279, Alis Technologies, January 1998.
+    <ftp://ftp.isi.edu/in-notes/rfc2279.txt>
+    
+    [SIEVE] Showalter, "Sieve -- a Mail Filtering Language", Carnegie
+    Mellon, Work in Progress.
+    <ftp://ftp.isi.edu/internet-drafts/draft-showalter-sieve-xx.txt>
+    
+    
+8.  Security Considerations
+    
+    As with ACAP datasets in general, it is important that access
+    controls are set correctly on Email Account datasets.  Besides the
+    server URLs, the Sieve script may contain highly personal
+    information which should not be disclosed except by explicit owner
+    request.
+
+
+Gellens                   Expires xxxxx 1998                   [Page 7]Internet Draft        ACAP Email Account Dataset Class        xxxxx 1998
+
+9.  Author's Address
+    
+   Randall Gellens                    +1 619 651 5115
+   QUALCOMM Incorporated              Randy@Qualcomm.Com
+   6455 Lusk Blvd.                    
+   San Diego, CA  92121-2779
+   U.S.A.
+    
+    
+10.  Full Copyright Statement
+    
+    Copyright (C) The Internet Society 1998.  All Rights Reserved.
+    
+    This document and translations of it may be copied and furnished to
+    others, and derivative works that comment on or otherwise explain it
+    or assist in its implementation may be prepared, copied, published
+    and distributed, in whole or in part, without restriction of any
+    kind, provided that the above copyright notice and this paragraph
+    are included on all such copies and derivative works.  However, this
+    document itself may not be modified in any way, such as by removing
+    the copyright notice or references to the Internet Society or other
+    Internet organizations, except as needed for the purpose of
+    developing Internet standards in which case the procedures for
+    copyrights defined in the Internet Standards process must be
+    followed, or as required to translate it into languages other than
+    English.
+    
+    The limited permissions granted above are perpetual and will not be
+    revoked by the Internet Society or its successors or assigns.
+    
+    This document and the information contained herein is provided on an
+    "AS IS" basis and THE INTERNET SOCIETY AND THE INTERNET ENGINEERING
+    TASK FORCE DISCLAIMS ALL WARRANTIES, EXPRESS OR IMPLIED, INCLUDING
+    BUT NOT LIMITED TO ANY WARRANTY THAT THE USE OF THE INFORMATION
+    HEREIN WILL NOT INFRINGE ANY RIGHTS OR ANY IMPLIED WARRANTIES OF
+    MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Gellens                   Expires xxxxx 1998                   [Page 8]

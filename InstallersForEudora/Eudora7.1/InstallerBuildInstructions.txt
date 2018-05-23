@@ -1,0 +1,78 @@
+===============================================
+WINDOWS EUDORA 7.1 INSTALLER BUILD INSTRUCTIONS
+===============================================
+
+
+Perform the following steps to produce a Windows Eudora 7.1 installer:
+
+
+1.  Install the InstallShield DevStudio 9.0 package, which can be found in the
+Eudora Perforce depot, which is at ihperforce.qualcomm.com:1667.  The file is
+//cots/InstallShield/InstallShieldCD.zip.
+The license key for it is: NYAADD-0900-A010260720.
+
+2.  Upgrade InstallShield to Service Pack 1 by running the installer for it at
+//cots/InstallShield/InstallShieldDevStudio9sp1.exe.
+Alternatively you can get SP1 inside of InstallShield DevStudio by going to the
+Tools menu and selecting Check for Updates.  Mark the checkbox next to the SP1
+update, and then click on the Install button.
+
+3.  Get the Microsoft Visual Studio .NET 2003 distribution versions of the
+following merge modules:
+
+    VC_User_CRT71_RTL_X86_---.msm   (version 7.10.3052.4)
+    VC_User_MFC71_RTL_X86_---.msm   (version 7.10.3077.0)
+    VC_User_STL71_RTL_X86_---.msm   (version 7.10.3077.0)
+
+These can be found in //cots/InstallShield.
+
+Copy those files in to C:\Program Files\Merge Modules, but first make backups
+of the existing merge modules in that directory with the same filenames.
+
+4.  Get the sources for the installer.  These can be found in the Eudora Perforce
+depot, which is at ihperforce.qualcomm.com:1667.  Sync to
+//depot/main/InstallersForEudora/Eudora/, and you must put the local files in
+C:\Eudora_Installers\Eudora for the builds to work correctly.
+
+5.  Open up the Eudora installer project inside of InstallShield DevStudio by
+going to File->Open and selecting the file
+C:\Eudora_Installers\Eudora\EudoraProject.ism.
+
+6.  Verify that you have the correct versions of the MFC/C/C++ 7.1 runtime
+merge modules by going to the Objects view in the tree on the left under
+Application Data.  In the Features pane, open up the tree to
+Eudora/Shared_DLLs/New Merge Module Holder Object 1/.  There should be three
+objects underneath that which correspond to the three merge modules you copied
+up in step #3.  Click on each object and make sure that the version numbers
+listed in the Description pane on the right correspond to the versions listed
+up in step #3.
+
+7.  Build the installer by selecting the Build menu, and then
+Build Eudora_Electronic_Release (or just hit F7).  You will see the build
+progressing in the Build output pane in the bottom of the DevStudio window.
+During the build you will get prompted for the password for signing the
+installer.  Don't enter a password (just hit Enter) as the installer will
+actually get signed in the next step.  If the build works correctly you should
+get no errors and 7 warnings. The produced installer will be found in
+C:\Eudora_Installers\Eudora\EudoraProject\Media\Eudora_Electronic_Release\Package\
+with a file name of Eudora_7.1.0.9.exe.
+
+8.  Sign the installer with the following command:
+
+//ziplock/qiswarehouse-candidates/SCM/release_automation/signtool/signtool.exe sign /f //ziplock/qiswarehouse-candidates/SCM/release_automation/signtool/mycredentials.pfx /p 1loveUIONE /d "Windows Eudora 7.1" /du http://www.eudora.com /v Eudora_7.1.0.9.exe
+
+This assumes you are in the directory containing the built installer, but you
+can specify a full path to the installer if you want to run this from another
+directory.
+
+9.  Test the new installer by installing Eudora using the original installer,
+and then using your newly built installer in to a different directory.  Use a
+diff utility to ensure that all of the files in the both installations are
+identical, e.g. "diff -r OriginalInstallDir NewInstallDir".
+
+10. Make the changes you need to make to the installer, and rebuild using steps
+#7 and #8.
+
+11. Diff the original vs. this new installer, like you did in step #9, and make
+sure the only diffs are the changes you made in step #10.
+

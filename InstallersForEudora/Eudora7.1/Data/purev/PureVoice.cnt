@@ -1,0 +1,68 @@
+:Base PureVoice.hlp
+:Title QUALCOMM PureVoice
+1 Introducing PureVoice
+2 What Is QUALCOMM's PureVoice?=What_Is_PureVoice
+2 The PureVoice Advantage: Voice Quality=The_PureVoice_Advantage
+1 Getting Started
+2 A Walk Around the PureVoice Window=A_Tour_of_The_PureVoice_Window
+1 The PureVoice Window in Depth
+2 The Title Bar=The_Title_Bar
+2 The Menu Bar=The_Menu_Bar
+2 The Toolbar=The_Toolbar
+2 The Name Box=The_Name_Box
+2 The Digital Display=The_Digital_Display
+2 The Attach Button=The_Attach_Button
+2 The Position Slider=The_Position_Slider
+2 The Record/Playback Control Buttons=The_Record_Playback_Control_Buttons
+2 The Volume Controls=The_Volume_Controls
+2 The Status Bar=The_Status_Bar
+1 The Menus in Depth
+2 The PureVoice Window Menu=The_PureVoice_Window_Menu
+2 The File Menu=The_File_Menu
+2 The Control Menu=The_Control_Menu
+2 The Options Menu=The_Options_Menu
+2 The Help Menu=The_Help_Menu
+1 How To ...
+2 Get Help=Get_Help
+2 Record a New Voice Message=Record_Message
+2 Play Back a Voice Message=Play_Back_Message
+2 Edit an Existing Voice Message=Edit_Message
+2 Save a Voice Message to a File=Save_Message
+2 Attach a Voice Message to an E-mail Message=Attach_Message
+2 Convert a PureVoice(.qcp) file to a .wav file=Save_wav_Message
+1 Special Topics
+2 Adding a PureVoice button in Eudora=Adding_a_button
+2 Setting the MAPI option in Eudora=Setting_the_MAPI_option_in_Eudora
+2 Shortcut Keys=Shortcut_Keys
+2 Recording Modes: Insert vs. Overwrite=Recording_Modes
+2 Easy Playback Methods=Easy_Playback
+1 Troubleshooting
+2 What If I Can't Record a Voice Message?=Cant_Record
+2 What If I Can't Play Back a Voice Message?=Cant_Play_Back
+2 What If my PC hangs when I select Attach?=Cant_Attach
+2 What If wrong e-mail  program launches when I select Attach?=Wrong_email
+2 PureVoice no longer records ever since Win98 was installed.=No_record_win98
+2 PureVoice skips parts of the messages when I play=Skips_parts
+2 PureVoice caused an invalid page fault in module QCELP.QCL=Invalid_page_fault
+2 PureVoice plays fine, but my recording doesn't have the same quality=Not_same_quality
+2 Selecting 'Attach' puts the attachment into a new message=Attach_new_message
+2 It sounds choppy and has a clicking/whipping sound=Choppy_clicking_sound
+2 Can't Record with Yamaha OPL3-SA sound system=No_yamaha
+2 PureVoice.exe - Unable To Locate DLL=Unable_to_locate_dll
+2 What are the MIME types and Mac file types for PureVoice files?=MIME_types
+2 How can I set PureVoice to attach to Outlook Express?=Attach_outlook_express
+2 How can I listen to a PureVoice attachment sent as "winmail.dat" sent by Outlook98?=Sent_by_outlook
+2 How do I find out what kind of Sound Card I have for my PC?=What_sound_card
+1 How to Give Us Feedback
+2 Reporting Bugs=Reporting_Bugs
+2 Requesting New Features=Requesting_New_Features
+1 Licensing/Legal Information, Acknowledgments
+2 Licensing and Legal Information=Licensing_and_Legal_Information
+2 Acknowledgments=Acknowledgments
+1 Technical Background on PureVoice and SmartRate
+2 What Are PureVoice and SmartRate?=What_Are_They
+2 How Much Signal Compression Is Offered?=Signal_Compression
+2 Where Else Are PureVoice and SmartRate Used?=Where_Else_Used
+2 How Do PureVoice and SmartRate Work?=How_Do_They_Work
+2 What Is the Voice Quality (MOS Score) Offered by This Technology?=Voice_Quality
+2 Where Can I Get More Information?=More_Info

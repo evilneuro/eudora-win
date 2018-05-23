@@ -1,0 +1,94 @@
+QUALCOMM has created this privacy statement in order to demonstrate our firm commitment to privacy.  The following discloses our information gathering and dissemination practices for this website, WWW.EUDORA.COM, and for our Eudora 4.3 sponsor-supported email client.
+Eudora will never share information about you without your permission.
+
+
+WEB SITE: www.eudora.com
+
+IP addresses of visitors to our Web site are used to help diagnose problems with our server and to administer our Web site. IP addresses are also used to compile general demographic information. We will not attempt to identify individual users through their IP addresses.
+
+Our site may use cookies in the future.  Cookies may be used to make sure you don't see the same ad repeatedly as well as to deliver content specific to your interests.
+
+Registration Forms
+
+Our site's registration form requires users to give us contact information (like their name and a valid email address).  We use customer contact information from the registration form to send the user information about our company and promotional material from some of our partners. We will only send you mail with your permission.  You will have the ability to opt-out of receiving mail from our partners or us at any time. 
+
+Order Forms
+
+Our site uses an order form for customers to request information and services and purchase products.  We collect visitor's contact information (like their name and email address). In the event the customer is making a purchase, we will also require additional financial and billing information (like credit card, shipping address, telephone, etc.). Contact information from the order form is used to send orders and information about our company and share promotional material, with your permission, from some of our partners. Users may opt-out of receiving future mailings at any time; see the choice/opt-out section below.
+
+Surveys
+
+Our online surveys ask visitors for contact information (like their name and email address). We use contact data from our surveys to send the user information about our company, products and promotional material.  If you choose to allow us, we may also mail you with special offers from our sponsors. 
+
+Demographic and profile data (like zip code, age or income level) is also collected, with your permission, from our surveys.  This information is shared with advertisers on an aggregate basis.  We will not share personally identifiable information without your permission.
+
+We will also use this information to tailor the offers we make to users who have given us permission, but we do not cross reference users' personal contact information with the general demographic information we collect.
+
+Users may opt-in to receiving information or opt-out of receiving future mailings; see the opt-out section below.  
+
+
+
+EUDORA 4.3 Sponsor-supported Email Client Software
+
+Registration Information
+
+When a user registers we collect certain contact information (like email address and first and last name) that will be used to verify the users eligibility for services and upgrades, provide services like tech. support and verify a users identity in the case of a lost registration code.  This information may also be used to contact the user with their permission. 
+
+Ad-specific Information
+
+In order to operate properly, the sponsor-supported version of Eudora 4.3 is required to collect certain information (like current operating system, monitor bit depth and size, version and mode of Eudora, Eudora use time).  This information is used to meet our requirements to our sponsors and to serve content that looks good and is appropriate and compatible with users’ systems. We also collect data on what ads you currently have and any failed attempts to receive ads.  This is used to help tech. support and our web administrators to solve any problems.  This information is also useful in determining what areas of the program need enhancement. 
+
+
+Other Information
+
+We also collect information on Eudora usage (like features used) and Internet connection time. This does not contain actual data entered by the user. Any identifying information gathered is immediately separated from this information, so that we have no idea who’s usage pattern we have.
+ 
+User Profile
+
+When users fill out an optional profiling, a profile ID is generated and sent to the Eudora client software on the user’s system.  This information is used to serve ads that are of most interest to the user. This information resides on the user’s machine and the user can choose to opt-out of this profile at any time.
+
+We will never, for any purpose whatsoever, examine the contents, addresses, subjects or attachments of your emails.  This is true of all other data you enter in your address book, personalities, filters, stationary, etc.
+
+
+Other Information
+
+Security
+        
+This site has security measures in place to protect the loss, misuse and alteration of the information under our control. During purchases and other transactions of a financial or personal nature, all data exchanged between the users’ web browser and our servers will take place via a secure server using the Secure Sockets Layer (SSL) protocol to ensure that information is encrypted while in transit.  When transactions of a similar nature are carried out by our partners, we also require them to use a secure SSL session.
+
+All personally identifying information that the user shares with us will be placed in a secure area to prevent misuse or alteration of that information.  Access to this secure area will be as restricted as practicable, and this secure area will be housed on hardware, which will have similarly restrictive access. A robust, industry-standard security policy is in place to guarantee the integrity of this secure area, and routine security audits take place to monitor these efforts and ensure compliance.  (Note: We are currently engaged in the Truste certification process www.truste.com.  Third party monitoring will occur when we receive Truste certification.)
+
+Personally identifying information about users will be stored in a database separate from that which contains information about a user’s system or usage habits.  There will be no correlation whatsoever between a user’s personally identifying information and the user’s usage or system information.  All usage and configuration information is submitted anonymously, and such information will remain anonymous at all times.
+
+Users will have the option of removing any personally identifying information at any time.  See the opt-out section below for more details. Please note that because system and usage data is anonymous and cannot be related to any particular user or system, we will not be able to honor a user’s request to delete this information.
+
+
+Opt-Out
+
+Our site provides users the opportunity to opt-in to receiving communications from us and our partners at the point where we request information about the visitor.
+
+This site gives users who opt-in to receiving communications the following options for removing their information from our database so they do not receive future communications or no longer receive our service. 
+
+You can send email to TBD 
+You can visit the following URL: TBD
+You can call the following telephone number: TBD
+
+
+
+Correct/Update Your Information
+
+This site gives users the following options for changing and modifying information previously provided.
+
+email TBD
+visit TBD
+call the following telephone number: TBD
+
+Contacting the Web Site
+
+If you have any questions about this privacy statement, the practices of this site, or your dealings with this Web site, you can contact
+
+System Administrator
+QUALCOMM Inc.
+
+
+

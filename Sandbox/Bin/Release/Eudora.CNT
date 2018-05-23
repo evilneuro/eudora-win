@@ -1,0 +1,219 @@
+:Base Eudora.HLP
+1 How To ...
+2 Get Started
+3 Configuring Eudora=Configuring_Eudora
+3 Importing Settings to Create a New Account=Importing_Settings_to_Create_a_New_Account
+3 Registering Your Copy of Eudora=Registering_Your_Copy_of_Eudora
+3 Tip of the Day=Tip_of_the_Day
+3 Online Help=Online_Help
+3 Technical Support=Technical_Support
+3 Quitting Eudora=Quitting_Eudora
+3 Uninstalling Eudora=Uninstalling_Eudora
+2 Create Messages
+3 Creating an Outgoing Message=Creating_an_Outgoing_Message
+3 Using the Composition Window=Using_the_Composition_Window
+3 Using an Alternate E-Mail Account=Using_an_Alternate_EMail_Account
+3 Setting the Message Priority=Setting_the_Message_Priority
+3 Requesting a Return Receipt=Requesting_a_Return_Receipt
+3 Inserting Objects in Message Text=Inserting_Objects_in_Message_Text
+3 Including a URL in a Message=Including_a_URL_in_a_Message
+3 Creating a Hyperlink in a Message=Creating_a_Hyperlink_in_a_Message
+3 Checking Your Spelling=Checking_Your_Spelling
+3 Check Spelling Dialog=Check_Spelling_Dialog
+3 Inline Spell Checking=Inline_Spell_Checking
+3 Saving a Message for Later Changes=Saving_a_Message_for_Later_Changes
+3 Creating an Auto-Reply Message=Creating_an_Auto-Reply_Message
+3 Stationery Files
+4 Using Stationery=Using_Stationery
+4 Changing a Stationery File=Changing_a_Stationery_File
+4 Deleting a Stationery File=Deleting_a_Stationery_File
+4 Sending a Stationery Message=Sending_a_Stationery_Message
+3 Formatting Text
+4 Formatting Text=Formatting_Text
+4 Text Editing Menu Commands=Text_Editing_Menu_Commands
+4 Word Wrap=Word_Wrap
+3 Signatures
+4 Using a Signature=Using_a_Signature
+4 Creating a Signature=Creating_a_Signature
+4 Changing a Signature=Changing_a_Signature
+4 Including a Signature in Messages=Including_a_Signature_in_Messages
+4 Deleting a Signature=Deleting_a_Signature
+4 Linking a Signature and Stationery to a Personality=Linking_a_Signature_and_Stationery_to_a_Personality
+3 Attaching Files
+4 Attaching a File to a Message=Attaching_a_File_to_a_Message
+4 Attaching a PureVoice File to a Message=Attaching_a_PureVoice_File_to_a_Message
+4 MIME=MIME
+4 BinHex=BinHex
+4 Uuencode=Uuencode
+4 Manually Decoding Attachments=Manually_Decoding_Attachments
+2 Set Your Eudora Preferences
+3 Getting Started Options Window=Getting_Started_Options_Window
+3 Checking Mail Options Window=Checking_Mail_Options_Window
+3 Incoming Mail Options Window=Incoming_Mail_Options_Window
+3 Sending Mail Options Window=Sending_Mail_Options_Window
+3 Replying Options Window=Replying_Options_Window
+3 Attachments Options Window=Attachments_Options_Window
+3 Fonts Options Window=Fonts_Options_Window
+3 Display Options Window=Display_Options_Window
+3 Viewing Mail Options Window=Viewing_Mail_Options_Window
+3 Mailboxes Options Window=Mailboxes_Options_Window
+3 Styled Text Options Window=Syled_Text_Options_Window
+3 Spell Checking Options Window=Spell_Checking_Options_Window
+3 Date Display Options Window=Date_Display_Options_Window
+3 Labels Options Window=Labels_Options_Window
+3 Getting Attention Options Window=Getting_Attention_Options_Window
+3 Background Tasks Options Window=Background_Tasks_Options_Window
+3 Extra Warnings Options Window=Extra_Warnings_Options_Window
+3 Advanced Network Options Window=Advanced_Network_Options_Window
+3 MAPI Options Window=MAPI_Options_Window
+3 Auto Configure Options Window=Auto_Configure_Options_Window
+3 Automation Options Window=Automation_Options_Window
+3 Kerberos Options Window=Kerberos_Options_Window
+3 Miscellaneous Options Window=Miscellaneous_Options_Window
+2 Send Messages
+3 Sending a Message Immediately=Sending_a_Message_Immediately
+3 Queueing a Message to Send Later=Queueing_a_Message_to_Send_Later
+3 Queueing a Message to Send at a Certain Time=Queueing_a_Message_to_Send_at_a_Certain_Time
+3 Editing a Queued Message=Editing_a_Queued_Message
+3 Taking a Message Out of the Queue=Taking_a_Message_Out_of_the_Queue
+3 Sending Queued Messages When Checking Mail=Sending_Queued_Messages_When_Checking_Mail
+3 Sending Messages with Special Server Instructions=Sending_Messages_with_Special_Server_Instructions
+3 Keeping Copies of Outgoing Messages=Keeping_Copies_of_Outgoing_Messages
+3 Using Purevoice=Using_Purevoice
+2 Receive Messages
+3 Getting Your Mail
+4 Checking for Incoming Mail=Checking_for_Incoming_Mail
+4 Checking for Mail Automatically=Checking_for_Mail_Automatically
+4 Checking for Mail Manually=Checking_for_Mail_Manually
+4 Stopping a Mail Check=Stopping_a_Mail_Check
+4 Using Your Password=Using_Your_Password
+4 Changing Your Password=Changing_Your_Password
+3 Reading Your Mail
+4 Receiving New Mail=Receiving_New_Mail
+4 The Incoming Message Window=The_Incoming_Message_Window
+4 Receiving Attachments=Receiving_Attachments
+4 Specifying an Attachment Directory=Specifying_an_Attachment_Directory
+4 Editing Incoming Messages=Editing_Incoming_Messages
+4 Using Active URLs=Using_Active_URLs
+3 Managing Mail on a POP server
+4 Managing your Mail on a POP Server=Managing_your_Mail_on_a_POP_Server.
+4 Leaving Mail on the Server=Leaving_Mail_on_the_Server
+4 Deleting a Message from the POP Server=Deleting_a_Message_from_the_POP_Server
+4 Skipping Messages Over a Certain Size=Skipping_Messages_Over_a_Certain_Size
+4 Checking for Mail with Special Server Instructions=Checking_for_Mail_with_Special_Server_Instructions
+3 Managing Mail on an IMAP Server
+4 Managing Your Mail on the IMAP Server=Managing_Your_Mail_on_the_IMAP_Server
+4 Downloading Minimal Headers vs. the Full Message=Downloading_Minimal_Headers_vs._the_Full_Message
+4 Skipping Attachments Over a Certain Size=Skipping_Attachments_Over_a_Certain_Size
+4 Deleting a Message from the IMAP Server=Deleting_a_Message_from_the_IMAP_Server
+4 Resynchronizing an IMAP Mailbox or Folder=Resynchronizing_an_IMAP_Mailbox_or_Folder
+4 Refreshing Your List of IMAP Mailboxes and Folders=Refreshing_Your_List_of_IMAP_Mailboxes_and_Folders
+2 Respond to Messages
+3 Replying to a Message=Replying_to_a_Message
+3 Replying with a Stationery File=Replying_with_a_Stationery_File
+3 Forwarding a Message=Forwarding_a_Message
+3 Redirecting a Message=Redirecting_a_Message
+3 Turbo Redirecting=Turbo_Redirecting
+3 Redirect and Signatures=Redirect_and_Signatures
+3 Sending Rejected Messages Again=Sending_Rejected_Messages_Again
+2 Work with Mailboxes
+3 Opening a Mailbox=Opening_a_Mailbox
+3 Message Summaries in Mailboxes=Message_Summaries_in_Mailboxes
+3 Displaying and Resizing Columns=Displaying_and_Resizing_Columns
+3 Using the Mailbox Size Display=Using_the_Mailbox_Size_Display
+3 The Message Preview Pane=The_Message_Preview_Pane
+3 Creating Mailboxes and Folders=Creating_Mailboxes_and_Folders
+3 Creating a Mailbox or Folder Using the Mailbox Menu=Creating_a_Mailbox_or_Folder_Using_the_Mailbox_Menu
+3 Using the Mailboxes Window
+4 Using the Mailboxes Window=Using_the_Mailboxes_Window
+4 Creating a New Mailbox or Folder=Creating_a_New_Mailbox_or_Folder
+4 Renaming a Mailbox or Folder=Renaming_a_Mailbox_or_Folder
+4 Moving a Mailbox from One Folder to Another=Moving_a_Mailbox_from_One_Folder_to_Another
+4 Removing a Mailbox or Folder=Removing_a_Mailbox_or_Folder
+4 Mailbox and Folder Management: POP vs. IMAP Server=Mailbox_and_Folder_Management:_POP_vs._IMAP_Server
+2 Organize Your Messages
+3 Deleting a Message=Deleting_a_Message
+3 Automatically Deleting Attachments=Automatically_Deleting_Attachments
+3 Sorting Messages Within Mailboxes=Sorting_Messages_Within_Mailboxes
+3 Saving a Message to a File=Saving_a_Message_to_a_File
+3 Finding Text Within Messages
+4 Finding Text Within One Message=Finding_Text_Within_One_Message
+4 Finding Text Among Multiple Messages and Mailboxes=Finding_Text_Among_Multiple_Messages_and_Mailboxes
+4 Match Case=Match_Case
+4 Summaries Only=Summaries_Only
+4 Enter Selection Command=Enter_Selection_Command
+4 Stopping a Find=Stopping_a_Find
+3 Transferring Messages
+4 Transferring Messages=Transferring_Messages
+4 Using the Transfer menu=Using_the_Transfer_menu
+4 Dragging Messages=Dragging_Messages
+4 Creating a Mailbox or Folder During Transfer=Creating_a_Mailbox_or_Folder_During_Transfer
+3 Filters
+4 Filtering Messages=Filtering_Messages
+4 Quick and Simple Filters with the Make Filter Dialog=Quick_and_Simple_Filters_with_the_Make_Filter_Dialog
+4 Detailed Filters with the Filters Window=Detailed_Filters_with_the_Filters_Window
+4 Filter Criteria (The Match Area)=Filter_Criteria_(The_Match_Area)
+4 Filter Actions=Filter_Actions
+2 Manage Your Windows
+3 Window States and Tabbed Windows=Window_States_and_Tabbed_Windows
+3 The Window Context Menu=The_Window_Context_Menu
+3 Adding, Moving, and Removing Toolbar Buttons=Adding,_Moving,_and_Removing_Toolbar_Buttons
+3 Using the Eudora Taskbar=Using_the_Eudora_Taskbar
+3 Background Tasks=Background_Tasks
+3 Window States
+4 Normal Windows=Normal_Windows
+4 Docked Windows=Docked_Windows
+4 Floating Windows=Floating_Windows
+3 Tabbed Windows
+4 Tabbed Windows=Tabbed_Windows
+4 Default Tabbed Windows=Default_Tabbed_Windows
+4 Opening and Activating Tabbed Windows=Opening_and_Activating_Tabbed_Windows
+4 Reorganizing Tabbed Windows=Reorganizing_Tabbed_Windows
+4 Creating a New Tabbed Window=Creating_a_New_Tabbed_Window
+4 Tab Display in Single-Tabbed Windows=Tab_Display_in_SingleTabbed_Windows
+4 Tab Contents, Location, Auto-Activation=Tab_Contents,_Location,_Auto-Activation
+4 Closing Tabbed Windows=Closing_Tabbed_Windows
+3 New Tool Windows
+4 Filter Report Window=Filter_Report_Window
+4 File Browser Window=File_Browser_Window
+4 Stationery Window=Stationery_Window
+4 Signatures Window=Signatures_Window
+4 Personalities Window=Personalities_Window
+4 Account Settings Dialog=Account_Settings_Dialog
+4 Task Status Window=Task_Status_Window
+4 Task Error Window=Task_Error_Window
+2 Use the Address Book and Quick Recipient List
+3 Using the Address Book=Using_the_Address_Book
+3 Addressing a Message from the Address Book=Addressing_a_Message_from_the_Address_Book
+3 The "Make Address Book Entry" Command=The_Make_Address_Book_Entry_Command
+3 The "Finish Address Book Entry" Command=The_Finish_Address_Book_Entry_Command
+3 Using Central Address Book Files on a Server=Using_Central_Address_Book_Files_on_a_Server
+3 Using Address Book Files Not Created by Eudora=Using_Address_Book_Files_Not_Created_by_Eudora
+3 Using the Quick Recipient List=Using_the_Quick_Recipient_List
+3 Nicknames
+4 Creating New Entries=Creating_New_Entries
+4 Changing, Moving, Copying, and Deleting Entries=Changing_Moving_Copying_and_Deleting_Entries
+4 Renaming a Nickname=Renaming_a_Nickname
+4 Including Nicknames on the Quick Recipient List=Including_Nicknames_on_the_Quick_Recipient_List
+2 Use Directory Services
+3 Opening Directory Services=Opening_Directory_Services
+3 Keeping the Directory Services Window on Top=Keeping_the_Directory_Services_Window_on_Top
+3 Window State Considerations=Window_State_Considerations
+3 Queries
+4 Looking Someone Up (Making a Query)=Looking_Someone_Up_(Making_a_Query)
+4 Reading Your Query Results=Reading_Your_Query_Results
+4 Addressing a Message from the Directory Services Window=Addressing_a_Message_from_the_Directory_Services_Window
+4 Making an Address Book Entry from Your Query Results=Making_an_Address_Book_Entry_from_Your_Query_Results
+4 Printing Your Query Results=Printing_Your_Query_Results
+3 Managing Directory Services
+4 Directory Service Protocols=Directory_Service_Protocols
+4 Directory Service Databases=Directory_Service_Databases
+4 Creating a New Database=Creating_a_New_Database
+4 Modifying an Existing Database=Modifying_an_Existing_Database
+4 Deleting a Database=Deleting_a_Database
+4 Adding a Finger Database=Adding_a_Finger_Database
+4 Adding an LDAP Database=Adding_an_LDAP_Database
+4 Adding a Ph Database=Adding_a_Ph_Database
+1 Feedback
+2 Suggestions=Suggest
+2 Reporting Bugs=Bugs

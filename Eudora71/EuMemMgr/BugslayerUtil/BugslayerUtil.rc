@@ -1,0 +1,214 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+#include "..\..\VersionBeg.inc"
+
+VALUE "InternalName",     "EuMemMgr\0"
+VALUE "OriginalFilename", "EuMemMgr.dll\0"
+VALUE "FileDescription",  "Eudora Email Client Support DLL\0"
+
+#include "..\..\VersionEnd.inc"
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ASSERTION DIALOGEX 0, 0, 368, 272
+STYLE DS_SYSMODAL | DS_SETFONT | WS_POPUP | WS_CAPTION | WS_SYSMENU | 
+    WS_THICKFRAME
+CAPTION "SUPERASSERT Assertion Failure"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    ICON            "",IDC_XICON,7,7,21,20
+    EDITTEXT        IDC_EXPRESSIONS,31,7,331,66,ES_MULTILINE | 
+                    ES_AUTOVSCROLL | ES_AUTOHSCROLL | ES_READONLY
+    PUSHBUTTON      "&Ignore Once",IDC_IGNOREONCE,7,76,80,14
+    PUSHBUTTON      "Abort &Program",IDC_ABORTPROGRAM,93,76,80,14
+    PUSHBUTTON      "&Break Into Debugger",IDC_BREAKINTODEBUGGER,182,76,80,
+                    14
+    PUSHBUTTON      "&Copy To Clipboard",IDC_COPYTOCLIPBOARD,7,93,80,14
+    PUSHBUTTON      "Create &Mini Dump",IDC_CREATEMINIDUMP,93,93,80,14
+    PUSHBUTTON      "&Email Assertion",IDC_EMAILASSERT,182,93,80,14
+    PUSHBUTTON      "Less&<<",IDC_LESSMORE,282,93,80,14
+    CONTROL         "",IDC_DIVIDER,"Static",SS_BLACKRECT | NOT WS_VISIBLE,7,
+                    114,355,1
+    GROUPBOX        "Ignore",IDC_IGNOREGROUP,7,108,355,26
+    PUSHBUTTON      "Ignore Assertion &Always",IDC_IGNOREALWAYS,13,117,80,14
+    LTEXT           "or next:",IDC_STATIC,95,120,28,8,0,WS_EX_RIGHT
+    EDITTEXT        IDC_IGNORECOUNT,126,118,25,12,ES_AUTOHSCROLL | ES_NUMBER
+    LTEXT           "times for",IDC_STATIC,154,120,27,8
+    PUSHBUTTON      "This Assertion O&nly",IDC_IGNORE_THIS,185,117,80,14
+    PUSHBUTTON      "All A&ssertions",IDC_IGNORE_ALL,270,117,80,14
+    GROUPBOX        "Stack",IDC_STACKGROUP,7,136,355,29
+    PUSHBUTTON      "&Walk Stack",IDC_DOSTACKTRACE,13,146,80,14
+    LTEXT           "TI&D:",IDC_THREADSTATIC,96,150,14,8,NOT WS_VISIBLE,
+                    WS_EX_RIGHT
+    COMBOBOX        IDC_THREADCOMBO,113,147,92,57,CBS_DROPDOWNLIST | NOT 
+                    WS_VISIBLE | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "L&ocals Depth:",IDC_DEPTHSTATIC,207,149,44,8,0,
+                    WS_EX_RIGHT
+    COMBOBOX        IDC_DEPTHCOMBO,254,147,36,57,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    CONTROL         "Expand A&rrays",IDC_SHOWARRAYSCHECK,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,294,149,64,8
+    EDITTEXT        IDC_STACKTRACE,7,169,355,95,ES_MULTILINE | 
+                    ES_AUTOVSCROLL | ES_AUTOHSCROLL | ES_READONLY | 
+                    WS_VSCROLL | WS_HSCROLL
+END
+
+IDD_ASSERTOPTIONS DIALOG  0, 0, 160, 162
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Global SUPERASSERT Options"
+FONT 8, "MS Sans Serif"
+BEGIN
+    GROUPBOX        "Stack Walking",IDC_STATIC,7,7,146,49
+    CONTROL         "&Always walk all threads",IDC_WALKALLTHREADSTACK,"Button",
+                    BS_AUTORADIOBUTTON,11,18,109,10
+    CONTROL         "&Walk only thread with assertion",IDC_WALKONLYACTIVE,
+                    "Button",BS_AUTORADIOBUTTON,11,31,122,10
+    CONTROL         "&Only walk stacks manually ",IDC_WALKNOTHREADS,"Button",
+                    BS_AUTORADIOBUTTON,11,44,109,10
+    GROUPBOX        "Additional Mini Dump Information",IDC_STATIC,7,61,146,
+                    47
+    CONTROL         "Data sections",IDC_DUMPDATASEGS,"Button",
+                    BS_AUTOCHECKBOX,11,71,130,10
+    CONTROL         "Full memory",IDC_DUMPFULL,"Button",BS_AUTOCHECKBOX,11,
+                    83,130,10
+    CONTROL         "Handle data",IDC_DUMPHANDLE,"Button",BS_AUTOCHECKBOX,11,
+                    95,130,10
+    CONTROL         "&Play sounds on assertions",IDC_PLAYSOUNDS,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,7,112,146,11
+    CONTROL         "&Force assertion to top",IDC_FORCEONTOP,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,7,126,146,11
+    DEFPUSHBUTTON   "OK",IDOK,7,141,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,103,141,50,14
+END
+
+IDD_INPUTBOX DIALOG  0, 0, 267, 62
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Input Box"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "Input the data:",IDC_PROMPTTEXT,7,7,253,9
+    EDITTEXT        IDC_EDITBOX,7,19,253,14,ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "OK",IDOK,77,41,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,140,41,50,14
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_ASSERTION, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 362
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 264
+    END
+
+    IDD_ASSERTOPTIONS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 88
+    END
+
+    IDD_INPUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 179
+        TOPMARGIN, 7
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_LESS                "Less&<<"
+    IDS_MORE                "More&>>"
+    IDS_OPTIONS             "&Options"
+    IDS_CENTERWINDOW        "C&enter on Monitor"
+    IDS_CREATEDUMPTITLE     "Create Mini Dump"
+    IDS_PROMPTTEXT          "Enter the complete path and name of the mini dump file:"
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

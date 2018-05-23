@@ -1,0 +1,93 @@
+' Template for 'WnObjPrg'
+' (No default template file found)
+'**********************************************************************************
+'
+'  InitEudoraOptions.MST
+'  Description      :  Eudora Options Initializiation
+'  Programmer       :  Jason Miller with includes by:
+'                      Richard J. Wartner
+'
+'  In order for this program to run
+'  it must have an INI file nominated in the Command Line.
+'
+'  Syntax: \FullPATH\mtrun.exe \FullPATH\InitEudoraOptions.pc6 /C WBImport.INI
+'
+'**********************************************************************************
+'
+' HISTORY:
+' 04/00   Rev 1.0 Initial program creation.
+'
+'**********************************************************************************
+'=============================================
+' Metacommand declarations follow
+'=============================================
+'$INCLUDE 'TDECLARE.INC'
+'$INCLUDE 'C:\vt\EudoraUtil.INC'
+
+'============================================================
+' Program Variables
+'============================================================
+Dim OptionReturnInteger As Integer
+'============================================================
+' Subroutine/Function Declarations
+'============================================================
+'*************************************************************************
+'*************************************************************************
+'*  START OF SCRIPT
+'*************************************************************************
+'*************************************************************************
+' Initial setups
+CurPrgName = "Eudora.PCD"     ' Current program name
+RevNumber  = "Rev 1.0"               ' Revision Number
+
+' Retrieve INI file name and path from Command Line
+OptionReturnInteger = CheckCommandLine() 
+
+' Test Return Value
+If OptionReturnInteger = False Then
+	LogError("Error Retrieving Command Line in "+CurPrgName+"!",0,LogPath,CritErrPath)
+End If
+
+' Retrieve INI file defaults
+OptionReturnInteger = SetDefaults("Defaults",TheIniFile)
+' Test Return Value
+If OptionReturnInteger = False Then
+	LogError("Error Setting Defaults "+CurPrgName+"!",0,LogPath,CritErrPath)
+End If
+
+' Retrieve Eudora Name and Path
+OptionReturnInteger = GetEudora("Eudora",TheIniFile)
+	' Test Return Value
+If OptionReturnInteger = False Then
+	LogError("Error Finding Eudora Name "+CurPrgName+"!",0,LogPath,CritErrPath)
+End If
+
+OptionReturnInteger = EudoraIsOpen()
+If OptionReturnInteger = False Then
+	' Retrieve Eudora Name and Path
+	OptionReturnInteger = GetEudora("Eudora",TheIniFile)
+	' Test Return Value
+	If OptionReturnInteger = False Then
+		LogError("Error Finding Eudora Name "+CurPrgName+"!",0,LogPath,CritErrPath)
+	End If
+
+
+	OptionReturnInteger = StartEudora()
+	' Test Return Value
+	If OptionReturnInteger = False Then
+		LogError("Error Starting Eudora!",0,LogPath,CritErrPath)
+	End If
+End If
+
+OptionReturnInteger = LaunchToolsOptions()
+If OptionReturnInteger = True Then
+
+		OptionReturnInteger = ChangeDefaultOptions()
+	If OptionReturnInteger = False Then
+		LogError("Error Changing Eudora Options",0,LogPath,CritErrPath)
+	End If
+Else
+	LogError("Error Launching Eudora Options",0,LogPath,CritErrPath)
+End If
+
+

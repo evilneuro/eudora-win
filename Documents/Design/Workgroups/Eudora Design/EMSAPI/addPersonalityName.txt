@@ -1,0 +1,32 @@
+Change 883 by sdorner@sd8500e on 1998/05/26 14:32:35
+
+	Added personality name to things returned in GetPersonality emsapi.
+
+Affected files ...
+
+... //depot/projects/eudora/mac/Current/Include/emsapi-MacGlue.h#5 edit
+... //depot/projects/eudora/mac/Current/Include/emsapi-mac.h#6 edit
+... //depot/projects/eudora/mac/Current/trans.c#16 edit
+
+Differences ...
+
+==== //depot/projects/eudora/mac/Current/Include/emsapi-MacGlue.h#5 (text) ====
+
+353a354
+>     StringHandle        personalityName;/* OUT: name of personality */
+
+==== //depot/projects/eudora/mac/Current/Include/emsapi-mac.h#6 (text) ====
+
+378a379
+>     StringHandle        persName;    		/* OUT: name of personality */
+
+==== //depot/projects/eudora/mac/Current/trans.c#16 (text) ====
+
+1268a1269
+> 	long oldSize = pData->size;
+1285c1286,1288
+< 		pData->persCount = PersCount();	
+---
+> 		pData->persCount = PersCount();
+> 		if (oldSize>(char*)&pData->personalityName-(char*)pData)
+> 			pData->personalityName = NewString(PCopy(scratch,(*CurPers)->name));

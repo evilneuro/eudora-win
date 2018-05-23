@@ -1,0 +1,669 @@
+SSL Notes
+
+
+Updated 10-30-02 by Dale Wiggins
+
+
+Disclaimer
+
+These notes are based largely on my personal experience diagnosing SSL
+related problems.  In particular the SSL Plus documentation is extremely vague
+when it comes to dealing with failures so the meanings of the various error
+codes are based on what I have seen and are certainly incomplete and possibly
+not entirely accurate.
+
+The interpretation of the raw data of the SSL handshake process is based on my
+taking data from an actual successful handshake and breaking it down into the
+various data fields based on RFC 2246.  Again there is room for error on my
+part.
+
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Diagnosing Failure
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Generally the most important piece of information in diagnosing an SSL failure
+is the return value Eudora gets back from SSLHandshake().  Here is a list of
+the possible return codes and partial explanations of the most commonly found
+codes.
+
+SSLHandshake() return value
+	SSLNoErr = 0
+	SSLMemoryErr = -7000
+	SSLUnsupportedErr = -6999
+	SSLOverflowErr = -6998
+	SSLUnknownErr = -6997
+	SSLProtocolErr = -6996
+	SSLNegotiationErr = -6995
+	SSLFatalAlert = -6994
+	SSLWouldBlockErr = -6993
+	SSLIOErr = -6992
+	SSLSessionNotFoundErr = -6991
+	SSLConnectionClosedGraceful = -6990
+	SSLConnectionClosedError = -6989
+	
+	ASNBadEncodingErr = -6988
+	ASNIntegerTooBigErr = -6987
+	
+	X509CertChainInvalidErr = -6986
+	X509CertExpiredErr = -6985
+	X509NamesNotEqualErr = -6984
+	X509CertChainIncompleteErr = -6983
+	X509DataNotFoundErr = -6982
+
+	SSLBadParameterErr = -6981
+	SSLIOClosedOverrideGoodbyeKiss = -6980
+	SSLFileNotFound = -6979
+	SSLDataNotFound = -6978
+	SSLDecryptFailed = -6977
+
+	X509UnauthorizedCA = -6976
+	X509UnknownCriticalExtension = -6975
+	X509UnauthorizedCertificate = -6974
+
+	SSLChildCtxOrigin = -6973
+
+
+Common SSLHandshake() return values and their meanings:
+	
+	-6996 (SSLProtocolErr) - Client and server could not negotiate a protocol.
+		This will happen if the client offers a protocol below the minimum
+		protocol the server is willing to use.  For example, if the client 
+		offers SSL3 but the server only accepts TLS1.
+	-6995 (SSLNegotiationErr) - Negotiation between client and server failed
+		after a protocol was agreed on.  One case where this will happen is if
+		the server certificate is not trusted.
+	-6994 (SSLFatalAlert) - Something went very wrong.  I only saw this one
+		once and it went away on its own before I could diagnose the problem.
+	-6993 (SSLWouldBlockErr) - Operation would block.  Not an issue in Eudora
+		since it will loop until it is no longer blocked.
+	-6992 (SSLIOErr) - Client and server could not communicate.  One case where
+		this will happen is if the client sends an SSL2 or SSL3 client hello
+		but the server will not listen to anything less than TLS1 (which is the
+		default behavior for UW's POP/IMAP server software).
+
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+SSL Plus Protocol values
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Specify via SSLReceiveVersion, SSLSendVersion, SSLAltPortReceiveVersion, SSLAltPortSendVersion.
+
+"Record" indicates which version of the SSL data format will be used to
+communicate between the client and server.  The client hello will be sent using
+this data format.  "Protocol" indicates the highest protocol the client will
+offer to the client.  The data for these two columns is taken from the SSL
+Plus API documentation.
+
+INI value	Protocol enum						Record		Protocol
+	0		SSL_Version_Undetermined			SSL2		TLS1
+	1		SSL_Version_3_0_With_2_0_Hello		SSL2		SSL3
+	2		SSL_Version_3_0_Only				SSL3		SSL3
+	3		TLS_Version_1_0_Only				TLS1		TLS1
+	4		TLS_Version_1_0_With_2_0_Hello		SSL2		TLS1
+	5		SSL_Version_2_0						SSL2		SSL2
+	6		SSL_Version_3_0						SSL2		SSL3
+	7		TLS_Version_1_0						SSL3		TLS1
+
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Handshake Process (from RFC 2246)
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Message flow for a full handshake.  * Indicates optional or situation-dependent
+messages that are not always sent.
+
+	Client                                             Server
+
+	ClientHello                -------->
+												  ServerHello
+												 Certificate*
+										   ServerKeyExchange*
+										  CertificateRequest*
+							   <--------      ServerHelloDone
+	Certificate*
+	ClientKeyExchange
+	CertificateVerify*
+	[ChangeCipherSpec]
+	Finished                   -------->
+										   [ChangeCipherSpec]
+							   <--------             Finished
+	Application Data           <------->     Application Data
+
+
+Steps in a typical Eudora handshake process:
+
+	ClientHello - Client sends a hello message to the server.  The client hello
+		specifies (among other things) the highest protocol it can support.
+		This message can be formatted using the SSL2, SSL3 or TLS1 record
+		protocol.  (SSL3 and TLS1 are identical except for the data contained
+		in the version field.)  If the client uses the SSL2 or SSL3 record
+		protocol but the server will only accept the TLS1 record protocol the
+		handshake will fail with -6992.
+	ServerHello - If the server agrees on a protocol to use it will send a
+		server hello to the client which (among other things) specifies the
+		protocol which will be used.  If the client's highest protocol is lower
+		than minimum protocol supported by the server the handshake will fail
+		with -6996.
+	Server Certificate - The server then sends its certificate to the client.
+		If the certificate is not trusted by the client the handshake will fail
+		with -6995.  If the server name does not match the name in the
+		certificate the handshake will fail with -6984.
+	ServerHelloDone - The server sends a message indicating that it is done
+		with the hello portion of the handshake.
+	ClientKeyExchange - The client sends the data necessary to set the
+		premaster secret.
+	Client ChangeCipherSpec - The client sends a message to indicate that
+		subsequent records will be protected under the newly negotiated
+		CipherSpec and keys.
+	Client Finished - The client sends a message indicating it is finished
+		with its portion of the handshake process.  This is the first client
+		message protected with the just-negotiated algorithms, keys, and
+		secrets.
+	Server ChangeCipherSpec - The server sends a message to indicate that
+		subsequent records will be protected under the newly negotiated
+		CipherSpec and keys.
+	Server Finished - The server sends a message indicating it is finished
+		with its portion of the handshake process.  This is the first server
+		message protected with the just-negotiated algorithms, keys, and
+		secrets.
+
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Sample Handshake (reflect.qualcomm.com)
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+The following raw data was gathered by placing breakpoints in Windows Eudora in
+QCWorkerSocket::SocketReadCallback() and QCWorkerSocket::SocketWriteCallback()
+and looking at the data being written or read.
+
+Note that each section represents a separate "chunk" of data sent or received
+in the callbacks above.  Note also that in the below case if the client is
+sending more than one structure without waiting for a server response it will
+always concatenate all of the structures together into one write.  Note also
+that in the below case the server will always break structures into two
+separate reads.
+
+
+Overview
+
+	C: ClientHello (116 bytes)
+	S: ServerHello (part 1) (5 bytes)
+	S: ServerHello (part 2) (74 bytes)
+	S: Server Certificate (part 1) (5 bytes)
+	S: Server Certificate (part 2) (699 bytes)
+	S: ServerHelloDone (part 1) (5 bytes)
+	S: ServerHelloDone (part 2) (4 bytes)
+	C: ClientKeyExchange/Client ChangeCipherSpec/Client Finished (190 bytes)
+	S: Server ChangeCipherSpec (part 1) (5 bytes)
+	S: Server ChangeCipherSpec (part 2) (1 byte)
+	S: Server Finished (part 1) (5 bytes)
+	S: Server Finished (part 2) (40 bytes)
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+C: ClientHello
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+	Raw data				Structures														Interpretation of data
+	--------				----------														----------------------
+							struct TLSPlaintext
+	16							ContentType type;											0x16 = handshake
+	03 01						ProtocolVersion version;									0x03 0x01 = TLS 1.0
+	00 6F						uint16 length;												0x00 0x6F = 109 bytes
+								struct Handshake
+	01								HandshakeType msg_type;									0x01 = client_hello
+	00 00 6B				        uint24 length;											0x00 0x00 0x6B = 107 bytes
+									struct ClientHello
+	03 01								ProtocolVersion client_version;						0x03 0x01 = TLS 1.0
+										Random random;
+	3D AE D6 89								uint32 gmt_unix_time;							GMT
+	DF CD 08 8C AB 02 A1 0C					opaque random_bytes[28];						random data
+	D0 B5 EE 4E 24 2D 47 6E
+	D0 66 13 FC 14 5A CC 6B
+	2F 6F 58 EA
+
+	00									SessionID session_id;								0x00 = no session (not resuming a previous session)
+	00 44								CipherSuite cipher_suites<2..2^16-1>;				0x00 0x44 = 68 bytes of cipher suite data
+	00 4A 00 50 00 0A 00 16																	list of cipher suites (e.g. 0x00 0x0A = TLS_RSA_WITH_3DES_EDE_CBC_SHA)
+	00 13 00 1B 00 48 00 4E
+	00 05 00 04 00 66 00 18
+	00 49 00 4F 00 09 00 15
+	00 12 00 1A FF 85 00 64
+	00 62 00 65 00 63 FF 84
+	00 03 00 08 00 14 00 11
+	00 19 00 17 00 02 00 01
+	00 47 00 4D
+	01									CompressionMethod compression_methods<1..2^8-1>;	0x01 = 1 byte of compression method data
+	00																						0x00 = CompressionMethod.null
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+S: ServerHello (part 1)
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+							struct TLSPlaintext
+	16							ContentType type;											0x16 = handshake
+	03 01						ProtocolVersion version;									0x03 0x01 = TLS 1.0
+	00 4A						uint16 length;												0x00 0x4A = 74 bytes
+								struct Handshake (next chunk of data)
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+S: ServerHello (part 2)
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+								struct Handshake
+	02								HandshakeType msg_type;									0x02 = server_hello
+	00 00 46						uint24 length;											0x00 0x00 0x46 = 70 bytes
+									struct ServerHello
+	03 01								ProtocolVersion server_version;						0x03 0x01 = TLS 1.0
+										Random random
+	3D AE 70 5D								uint32 gmt_unix_time;							GMT
+	F7 D3 73 90 83 40 64 0F					opaque random_bytes[28];						random data
+	F7 27 72 1A 61 B0 8B BD
+	7E AC 6F C3 40 39 FD 5F
+	8D EA 9A FF
+	20									SessionID session_id;								0x20 = 32 bytes of session ID data
+	37 DB DE FE 2E BC F3 80																	session ID
+	C6 74 B2 5B 58 A0 6D 20
+	08 FE BF 4F 3B 20 F3 A5
+	8C 78 F5 E1 07 5D 3B 2C
+	00 0A								CipherSuite cipher_suite;							0x00 0x0A = TLS_RSA_WITH_3DES_EDE_CBC_SHA
+	00									CompressionMethod compression_method;				0x00 = CompressionMethod.null
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+S: Server Certificate (part 1)
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+							struct TLSPlaintext
+	16							ContentType type;											0x16 = handshake
+	03 01						ProtocolVersion version;									0x03 0x01 = TLS 1.0
+	02 BB						uint16 length;												0x02 0xBB = 699 bytes
+								struct Handshake (next chunk of data)
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+S: Server Certificate (part 2)
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+								struct Handshake
+	0B								HandshakeType msg_type;									0x0B = certificate
+	00 02 B7						uint24 length;											0x00 0x02 0xB7 = 695 bytes
+								    struct Certificate
+	00 02 B4							ASN.1Cert certificate_list<1..2^24-1>;				0x00 0x02 0xB4 = 692 bytes
+	00 02 B1																				0x00 0x02 0xB1 = 689 bytes
+	30 82 02 AD 30 82 02 16																	certificate data
+	02 01 01 30 0D 06 09 2A
+	86 48 86 F7 0D 01 01 04
+	05 00 30 81 9A 31 0B 30
+	...
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+S: ServerHelloDone (part 1)
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+							struct TLSPlaintext
+	16							ContentType type;											0x16 = handshake
+	03 01						ProtocolVersion version;									0x03 0x01 = TLS 1.0
+	00 04						uint16 length;												0x00 0x04 = 4 bytes
+								struct Handshake (next chunk of data)
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+S: ServerHelloDone (part 2)
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+								struct Handshake
+	0E								HandshakeType msg_type;									0x0E = server_hello_done
+	00 00 00						uint24 length;											0x00 0x00 0x00 = 0 bytes
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+C: ClientKeyExchange/Client ChangeCipherSpec/Client Finished
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+							struct TLSPlaintext
+	16							ContentType type;											0x16 = handshake
+	03 01						ProtocolVersion version;									0x03 0x01 = TLS 1.0
+	00 86						uint16 length;												0x00 0x86 = 134 bytes
+								struct Handshake
+	10								HandshakeType msg_type;									0x10 = client_key_exchange
+	00 00 82						uint24 length;											0x00 0x00 0x82 = 130 bytes
+								    struct ClientKeyExchange
+	00 80								[details vary by KeyExchangeAlgorithm]				0x00 0x80 = 128 bytes
+	70 96 22 55 2A EB E2 F3																	key exchange data
+	A9 C9 11 64 B7 54 BA 2E
+	CC 28 7F D9 45 A0 0D 2D
+	B2 25 20 FF 8B A9 E5 34
+	...
+							struct TLSPlaintext
+	14							ContentType type;											0x14 = change_cipher_spec
+	03 01						ProtocolVersion version;									0x03 0x01 = TLS 1.0
+	00 01						uint16 length;												0x00 0x01 = 1 byte
+							    struct ChangeCipherSpec
+	01						        enum type;												0x01 = change_cipher_spec
+							struct TLSPlaintext
+	16							ContentType type;											0x16 = handshake
+	03 01						ProtocolVersion version;									0x03 0x01 = TLS 1.0
+	00 28						uint16 length;												0x00 0x28 = 40 bytes
+								struct Finished
+	26 4B C6 7B C5 36 7C 35			opaque verify_data[12];									Finished message data (protected under the newly negotiated CipherSpec and keys)
+	87 1B 30 E8 BC C3 11 FC
+	44 10 8A 63 97 66 FB 4B
+	94 17 A9 5C 9B D9 9A 34
+	B6 70 EB 9A 7F 18 E0 5C
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+S: Server ChangeCipherSpec (part 1)
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+							struct TLSPlaintext
+	14							ContentType type;											0x14 = change_cipher_spec
+	03 01						ProtocolVersion version;									0x03 0x01 = TLS 1.0
+	00 01						uint16 length;												0x00 0x86 = 134 bytes
+							    struct ChangeCipherSpec (next chunk of data)
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+S: Server ChangeCipherSpec (part 2)
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+							    struct ChangeCipherSpec
+	01						        enum type;												0x01 = change_cipher_spec
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+S: Server Finished (part 1)
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+							struct TLSPlaintext
+	16							ContentType type;											0x16 = handshake
+	03 01						ProtocolVersion version;									0x03 0x01 = TLS 1.0
+	00 28						uint16 length;												0x00 0x28 = 40 bytes
+								struct Finished (next chunk of data)
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+S: Server Finished (part 2)
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+							struct TLSPlaintext
+	16							ContentType type;											0x16 = handshake
+	03 01						ProtocolVersion version;									0x03 0x01 = TLS 1.0
+	00 28						uint16 length;												0x00 0x28 = 40 bytes
+								struct Finished
+	90 86 7F 12 93 33 C3 59			opaque verify_data[12];									Finished message data (protected under the newly negotiated CipherSpec and keys)
+	0C 72 93 50 C1 66 05 F4
+	A4 68 AC 7A 7B 82 D9 4E
+	C3 50 B6 18 70 85 74 4C
+	28 F0 99 3D C3 AC 05 A6
+
+
+
+
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Data Structures (from RFC 2246)
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+A. Protocol constant values
+
+   This section describes protocol types and constants.
+
+A.1. Record layer
+
+    struct {
+        uint8 major, minor;
+    } ProtocolVersion;
+
+    ProtocolVersion version = { 3, 1 };     /* TLS v1.0 */
+
+    enum {
+        change_cipher_spec(20), alert(21), handshake(22),
+        application_data(23), (255)
+    } ContentType;
+
+    struct {
+        ContentType type;
+        ProtocolVersion version;
+        uint16 length;
+        opaque fragment[TLSPlaintext.length];
+    } TLSPlaintext;
+
+    struct {
+        ContentType type;
+        ProtocolVersion version;
+        uint16 length;
+        opaque fragment[TLSCompressed.length];
+    } TLSCompressed;
+
+    struct {
+        ContentType type;
+        ProtocolVersion version;
+        uint16 length;
+        select (CipherSpec.cipher_type) {
+            case stream: GenericStreamCipher;
+            case block:  GenericBlockCipher;
+        } fragment;
+    } TLSCiphertext;
+
+    stream-ciphered struct {
+        opaque content[TLSCompressed.length];
+        opaque MAC[CipherSpec.hash_size];
+    } GenericStreamCipher;
+
+    block-ciphered struct {
+        opaque content[TLSCompressed.length];
+        opaque MAC[CipherSpec.hash_size];
+        uint8 padding[GenericBlockCipher.padding_length];
+        uint8 padding_length;
+    } GenericBlockCipher;
+
+A.2. Change cipher specs message
+
+    struct {
+        enum { change_cipher_spec(1), (255) } type;
+    } ChangeCipherSpec;
+
+A.3. Alert messages
+
+    enum { warning(1), fatal(2), (255) } AlertLevel;
+
+        enum {
+            close_notify(0),
+            unexpected_message(10),
+            bad_record_mac(20),
+            decryption_failed(21),
+            record_overflow(22),
+            decompression_failure(30),
+            handshake_failure(40),
+            bad_certificate(42),
+            unsupported_certificate(43),
+            certificate_revoked(44),
+            certificate_expired(45),
+            certificate_unknown(46),
+            illegal_parameter(47),
+            unknown_ca(48),
+            access_denied(49),
+            decode_error(50),
+            decrypt_error(51),
+            export_restriction(60),
+            protocol_version(70),
+            insufficient_security(71),
+            internal_error(80),
+            user_canceled(90),
+            no_renegotiation(100),
+            (255)
+        } AlertDescription;
+
+    struct {
+        AlertLevel level;
+        AlertDescription description;
+    } Alert;
+
+A.4. Handshake protocol
+
+    enum {
+        hello_request(0), client_hello(1), server_hello(2),
+        certificate(11), server_key_exchange (12),
+        certificate_request(13), server_hello_done(14),
+        certificate_verify(15), client_key_exchange(16),
+        finished(20), (255)
+    } HandshakeType;
+
+    struct {
+        HandshakeType msg_type;
+        uint24 length;
+        select (HandshakeType) {
+            case hello_request:       HelloRequest;
+            case client_hello:        ClientHello;
+            case server_hello:        ServerHello;
+            case certificate:         Certificate;
+            case server_key_exchange: ServerKeyExchange;
+            case certificate_request: CertificateRequest;
+            case server_hello_done:   ServerHelloDone;
+            case certificate_verify:  CertificateVerify;
+            case client_key_exchange: ClientKeyExchange;
+            case finished:            Finished;
+        } body;
+    } Handshake;
+
+A.4.1. Hello messages
+
+    struct { } HelloRequest;
+
+    struct {
+        uint32 gmt_unix_time;
+        opaque random_bytes[28];
+    } Random;
+
+    opaque SessionID<0..32>;
+
+    uint8 CipherSuite[2];
+
+    enum { null(0), (255) } CompressionMethod;
+
+    struct {
+        ProtocolVersion client_version;
+        Random random;
+        SessionID session_id;
+        CipherSuite cipher_suites<2..2^16-1>;
+        CompressionMethod compression_methods<1..2^8-1>;
+    } ClientHello;
+
+    struct {
+        ProtocolVersion server_version;
+        Random random;
+        SessionID session_id;
+        CipherSuite cipher_suite;
+        CompressionMethod compression_method;
+    } ServerHello;
+
+A.4.2. Server authentication and key exchange messages
+
+    opaque ASN.1Cert<2^24-1>;
+
+    struct {
+        ASN.1Cert certificate_list<1..2^24-1>;
+    } Certificate;
+
+    enum { rsa, diffie_hellman } KeyExchangeAlgorithm;
+
+    struct {
+        opaque RSA_modulus<1..2^16-1>;
+        opaque RSA_exponent<1..2^16-1>;
+    } ServerRSAParams;
+
+    struct {
+        opaque DH_p<1..2^16-1>;
+        opaque DH_g<1..2^16-1>;
+        opaque DH_Ys<1..2^16-1>;
+    } ServerDHParams;
+
+    struct {
+        select (KeyExchangeAlgorithm) {
+            case diffie_hellman:
+                ServerDHParams params;
+                Signature signed_params;
+            case rsa:
+                ServerRSAParams params;
+                Signature signed_params;
+        };
+    } ServerKeyExchange;
+
+    enum { anonymous, rsa, dsa } SignatureAlgorithm;
+
+    select (SignatureAlgorithm)
+    {   case anonymous: struct { };
+        case rsa:
+            digitally-signed struct {
+                opaque md5_hash[16];
+                opaque sha_hash[20];
+            };
+        case dsa:
+            digitally-signed struct {
+                opaque sha_hash[20];
+            };
+    } Signature;
+
+    enum {
+        rsa_sign(1), dss_sign(2), rsa_fixed_dh(3), dss_fixed_dh(4),
+        (255)
+    } ClientCertificateType;
+
+    opaque DistinguishedName<1..2^16-1>;
+
+    struct {
+        ClientCertificateType certificate_types<1..2^8-1>;
+        DistinguishedName certificate_authorities<3..2^16-1>;
+    } CertificateRequest;
+
+    struct { } ServerHelloDone;
+
+A.4.3. Client authentication and key exchange messages
+
+    struct {
+        select (KeyExchangeAlgorithm) {
+            case rsa: EncryptedPreMasterSecret;
+            case diffie_hellman: DiffieHellmanClientPublicValue;
+        } exchange_keys;
+    } ClientKeyExchange;
+
+    struct {
+        ProtocolVersion client_version;
+        opaque random[46];
+
+    } PreMasterSecret;
+
+    struct {
+        public-key-encrypted PreMasterSecret pre_master_secret;
+    } EncryptedPreMasterSecret;
+
+    enum { implicit, explicit } PublicValueEncoding;
+
+    struct {
+        select (PublicValueEncoding) {
+            case implicit: struct {};
+            case explicit: opaque DH_Yc<1..2^16-1>;
+        } dh_public;
+    } ClientDiffieHellmanPublic;
+
+    struct {
+        Signature signature;
+    } CertificateVerify;
+
+A.4.4. Handshake finalization message
+
+    struct {
+        opaque verify_data[12];
+    } Finished;

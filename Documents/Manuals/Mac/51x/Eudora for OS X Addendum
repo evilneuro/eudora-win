@@ -1,0 +1,42 @@
+Eudora for OS X Addendum
+
+Introduction
+Eudora running under Mac OS X is largely the same as Eudora running under MacOS 9 or earlier.  There are, however, a few differences and a few things that you should know about Eudora for OS X, listed below
+
+Installation
+Eudora for OS X will install in the /Applications folder.  The former contents of the “Eudora Application Folder” are now installed as a “bundle” or “package”.  This keeps important parts of the Eudora application, such as the help file and spelling dictionary, all in one place.  If you need to access such individual parts of Eudora (for example, if you wish to install an EMSAPI Plug-In in the “Eudora Stuff” folder, you will need to control-Click on the Eudora for OS X application icon, select "Show Package Contents", then open the Contents folder and then the MacOS folder.  The Eudora Stuff folder will appear inside that.
+
+
+Your Mail
+If you are new to Eudora, Eudora for OS X will create a folder for your mail (called the “Eudora Folder”) in the Documents folder within your home folder.  If a “Classic” version of Eudora has already been run on your computer, Eudora for OS X will make every effort to find the folder where you kept your mail.
+
+Due to the variety of ways OS X can be installed, Eudora may not always be able to find your old mail.  If you start Eudora for OS X and your mail isn’t available to you, don’t panic.  Instead, quit Eudora for OS X, find your old Eudora Folder (searching for a file called “Eudora Settings” is a good way to do this), and drag it into the Documents folder within your home folder, replacing the empty one that Eudora for OS X created.
+
+Command-Key Issues
+OS X has appropriated to itself some of the command-key equivalents Eudora users are used to.  This has forced us to be flexible about some equivalents in Eudora for OS X.  The changes are listed below:
+
+•	Command-H used to be Attach Document.  Under OS X, command-H hides application windows.  Attach Document is now shift-command-A.  If you prefer to use command-H for Attach Document, there is an item in the Miscellaneous settings panel that will allow you to do so.
+
+•	Under OS X, command-M is supposed to minimize the frontmost window.  In Eudora for OS X, it is instead used for Check Mail.  If you prefer to use command-M to minimize windows, there is an item in the Miscellaneous settings panel that will allow you to do so.  If you choose that setting, Check Mail in Eudora for OS X will become shift-command-N.
+
+OS X Services
+OS X has utilities called “Services”, that are meant to be used on selections in applications, and do things like look things up on the web or send data to/from other applications.  OS X services are available in Eudora for OS X under the Services menu.
+
+As of this writing, there are some bugs in Mac OS X services that prevent them from being fully functional with all applications.  Namely, “Cocoa” services are not able to paste data into “Carbon” applications such as Eudora for OS X.  “Cocoa” services can copy data from Eudora for OS X (for example, “Make Sticky” works fine), and “Carbon” services are fully function with Eudora for OS X.
+
+SSL
+Eudora uses the system keychain to store the certificates that are needed to use the Secure Sockets Layer.  Unfortunately, this usage of the system keychain is supported only under MacOS Classic, not under Mac OS X, at least as of version 10.1.  When Apple adds certificate support to the Mac OS X system keychain, we will release a new version of Eudora for OS X that will support SSL.
+
+New Windows Menu Commands
+There are two new commands in the Eudora for OS X Windows menu.  They are:
+
+•	Minimize - this minimizes the topmost window and sends it into the Mac OS X dock.
+
+•	Bring All to Front - this brings all Eudora windows to the front of the display.
+
+Handling of PDF Attachments
+Documents in Adobe’s “Portable Document Format” (PDF) will appear inside Eudora for OS X mail messages.  If the PDF file contains multiple pages, a movie controller will appear at the bottom of the image, which will allow you to view any page you like of the PDF file.
+
+Eudora, Eudora Pro, and Eudora Light are registered trademarks and the emailman graphic is a trademark of QUALCOMM Incorporated.
+Apple and the Apple logo are registered trademarks and Keychain, is a trademark of Apple Computer, Inc.
+Adobe, Acrobat, and Acrobat Exchange™ are trademarks of Adobe Systems Incorporated.

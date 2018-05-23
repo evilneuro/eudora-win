@@ -1,0 +1,697 @@
+Contents:
+InitStartEudora()
+StartEudora()
+EudoraIsOpen()
+StartMessage()
+SendaMessage()
+CheckDefaultClient()
+DismissIntro()
+CreateDominantPersonality()
+MaximizeEudora()
+RemoveAndDisableTips()
+ChangeDefaultOptions()
+LaunchToolsOptions()
+SetDefaultOptions()
+CheckSendingStyles()
+GetAddressBook()
+MakeNicknames()
+EnterAddressRichEdit(ClassType$,EditIdValue%,FieldName$,TextToEnter$)
+CloseAddressBook(AndSave%)
+OpenSignatures()
+CreateSignatures()
+OpenStationery()
+CreateStationery()
+SaveAsStationery(SaveName$, AndSave%)
+UseStationeryandSignature()
+OpenMailboxes()
+CreateInitialMailboxes()
+DeleteMailbox(MbxName$, DeleteIfStuff% )
+CreateMailbox(MbxName$)
+CreateMailboxFolder(FolderName$, MbxName$)
+OpenFilters()
+InitMakeFilters()
+SendFilterMessageOne()
+SendFilterMessageTwo()
+SendFilterMessageThree()
+SendFilterMails()
+OpenTopLevelMailboxByName(MbxName$)
+GetEudoraParentFolderName() as String
+SendETFMail(Recipient$, Subject$, PicturePath$)
+InsertPicture(PicturePath$)
+InsertLine()
+ParseFileName(FileAndPath$) as String
+SelectFont(FontName$)
+SetPriority(Priority$)
+SetSignature(SigName$, SigIndex%)
+SetEncoding(EncodeType$)
+HighlightLastWords(NumberOfWords%)
+
+'*************************************************************************
+' Function InitStartEudora
+'
+'      Jason Miller
+'      jasmille@qualcomm.com
+'
+' This function is for starting Eudora without an INI file.
+'
+' Returns True/False
+'
+'*************************************************************************
+
+'*************************************************************************
+' Function StartEudora
+'
+'      Jason Miller
+'      jasmille@qualcomm.com
+'
+' Start Eudora is used when you are not expecting another window to pop up 
+' with Eudora. such as nags, default email client, or account wizard
+' We do handle the tip of the day(be careful it does disable this)
+'
+' Returns True/False
+'
+'*************************************************************************
+
+'*************************************************************************
+' Function CheckDefaultClient
+'
+'      Jason Miller
+'      jasmille@qualcomm.com
+'
+' Checks for a popup window Asking for default client status. We are 
+' going to make it default if it isn't. This is called from *StartEudora
+'
+' Returns True/False
+'
+'*************************************************************************
+
+'*************************************************************************
+' Function DismissIntro
+'
+'      Jason Miller
+'      jasmille@qualcomm.com
+'
+' This Dismisses the introduction screen
+' This is called from InitStartEudora
+'
+' Returns True/False
+'
+'*************************************************************************
+
+'*************************************************************************
+' Function CreateDominantPersonality
+'
+'      Jason Miller
+'      jasmille@qualcomm.com
+'
+' Here we will walk through the introduction and create a personality
+' This personality uses Pop3 server. Uses \\Swamp and the jmiller account
+' L/P: jmiller/jmiller
+'
+' Returns True/False
+'
+'*************************************************************************
+
+'*************************************************************************
+' Function EudoraIsOpen
+'
+'      Jason Miller
+'      jasmille@qualcomm.com
+'
+' Checks if Eudora is already running
+' Handy to check for it, so you don't need to start it
+'
+' Returns True/False
+'
+'*************************************************************************
+
+'*************************************************************************
+' Function StartMessage
+'
+'      Jason Miller
+'      jasmille@qualcomm.com
+'
+' Creates a new blank Message
+'
+' Returns True/False
+'
+'*************************************************************************
+
+'*************************************************************************
+' Function MaximizeEudora
+'
+'      Jason Miller
+'      jasmille@qualcomm.com
+'
+' Finds Eudora and Maximizes it
+'
+' Returns True/False
+'
+'*************************************************************************
+
+'*************************************************************************
+' Function RemoveAndDisableTips
+'
+'      Jason Miller
+'      jasmille@qualcomm.com
+'
+' Called from StartEudora. This will remove the Tip of the Day Dialog
+' and disable it from appearing again
+'
+' Returns True/False
+'
+'*************************************************************************
+
+'*************************************************************************
+' Function SendaMessage
+'
+'      Jason Miller
+'      jasmille@qualcomm.com
+'
+' Sends a message with bold/underline/italicized text
+'
+' Returns True
+'
+'*************************************************************************
+
+'*************************************************************************
+' Function LaunchToolsOptions
+'
+'      Jason Miller
+'      jasmille@qualcomm.com
+'
+' Will Launch Eudora Options Dialog
+'
+' Returns True/False
+'
+'*************************************************************************
+
+'*************************************************************************
+' Function ChangeDefaultOptions
+'
+'      Jason Miller
+'      jasmille@qualcomm.com
+'
+' Will change Default Options for BBFT 
+'
+' Returns True/False
+'
+'*************************************************************************
+
+'*************************************************************************
+' Function SetDefaultOptions
+'
+'      Jason Miller
+'      jasmille@qualcomm.com
+'
+' Will UnSet Allow Authentication in
+' Tools -> Options -> Getting Started
+' Will Set the Save Password option in
+' Tools -> Options -> Checking Mail
+' Will UnSet Show Large Buttons in
+' Tools -> Options -> Display
+' Will unset Use Alert Dialog box in
+' Tools -> Options -> Getting Attenion
+' Will Set Turbo Redirect in
+' Tools -> Options -> Miscellaneous
+' Will set Automatically Expand Nicknames in
+' Tools -> Options -> Miscellaneous
+' Note this function is doomed to fail if extra option entries are 
+' in the listbox
+'
+' Returns True/False
+'
+'*************************************************************************
+
+'*************************************************************************
+' Function CheckSendingStyles
+'
+'      Jason Miller
+'      jasmille@qualcomm.com
+'
+' Check For Sending Styles Dialog and set it default to send
+' Plain and styled
+'
+' Returns True/False
+'
+'*************************************************************************
+
+'*************************************************************************
+' Function SetPlainAndStyled
+'
+'      Jason Miller
+'      jasmille@qualcomm.com
+'
+' Set Default to send Plain and Styled messages
+'
+' Returns True/False
+'
+'*************************************************************************
+
+'*************************************************************************
+' Function GetAddressBook
+'
+'      Jason Miller
+'      jasmille@qualcomm.com
+'
+' Launch Address book
+'
+' Returns True/False
+'
+'*************************************************************************
+
+'*************************************************************************
+' Function MakeNicknames
+'
+'      Jason Miller
+'      jasmille@qualcomm.com
+'
+' Make Nicknames to: jason, jmiller@swamp.qualcomm.com, 
+' david, dhom@swamp.qualcomm.com
+' and a combo nickname Called Both using jason and david
+'
+' Returns True/False
+'
+'*************************************************************************
+
+'*************************************************************************
+' Function EnterAddressRichEdit
+'
+'      Jason Miller
+'      jasmille@qualcomm.com
+'
+' Parameters:
+'
+' ClassType$    From WInfo i.e.	  Edit
+' IDValue%		From WInfo i.e.	  1
+' FieldName$	Screen Field Name
+' TextToEnter$  Text to enter in Edit Box
+'
+' Returns True/False Integer
+'
+' Syntax Example:
+' Enter Address1
+' ReturnInteger=EnterAddressRichEdit("Edit",1,"Address1","123 Main Street")
+'
+'*************************************************************************
+
+'*************************************************************************
+' Function CloseAddressBook
+'
+'      Jason Miller
+'      jasmille@qualcomm.com
+'
+' Parameters:
+'
+' AndSave%    Save this address Book?True = yes, False = no
+'
+' Returns True/False Integer
+'
+' Syntax Example:
+' Enter Address1
+' ReturnInteger=EnterAddressRichEdit("Edit",1,"Address1","123 Main Street")
+'
+'*************************************************************************
+
+'*************************************************************************
+' Function OpenSignatures
+'
+'      Jason Miller
+'      jasmille@qualcomm.com
+'
+' Launch Signatures
+'
+' Returns True/False
+'
+'*************************************************************************
+
+'*************************************************************************
+' Function CreateSignatures
+'
+'      Jason Miller
+'      jasmille@qualcomm.com
+'
+' Create Signatures when window is open somewhere
+'
+' Returns True/False
+'
+'*************************************************************************
+
+'*************************************************************************
+' Function OpenStationery
+'
+'      Jason Miller
+'      jasmille@qualcomm.com
+'
+' Launch Stationery
+'
+' Returns True/False
+'
+'*************************************************************************
+
+'*************************************************************************
+' Function CreateStationery
+'
+'      Jason Miller
+'      jasmille@qualcomm.com
+'
+' Create Stationery when window is open somewhere
+'
+' Returns True/False
+'
+'*************************************************************************
+
+'*************************************************************************
+' Function SaveAsStationery
+'
+'      Jason Miller
+'      jasmille@qualcomm.com
+'
+' Parameters:
+'
+' SaveName$    Filename To Save Stationery as
+' AndSave%     True/False Whether to save Stationery
+'
+' Returns True/False Integer
+'
+'*************************************************************************
+
+'*************************************************************************
+' Function UseStationeryandSignature
+'
+'      Jason Miller
+'      jasmille@qualcomm.com
+'
+' Returns True/False Integer
+'
+'*************************************************************************
+
+'*************************************************************************
+' Function OpenMailboxes
+'
+'      Jason Miller
+'      jasmille@qualcomm.com
+'
+' Returns True/False Integer
+'
+'*************************************************************************
+
+'*************************************************************************
+' Function CreateInitialMailboxes
+'
+'      Jason Miller
+'      jasmille@qualcomm.com
+'
+' Returns True/False Integer
+'
+'*************************************************************************
+
+'*************************************************************************
+' Function DeleteMailbox
+'
+'      Jason Miller
+'      jasmille@qualcomm.com
+'
+' Parameters:
+'
+' MbxName$    Mailbox Name to be deleted
+' DeleteIfStuff% Boolean Delete mailbox if there is stuff in it. True = Delete
+'
+' Returns True/False Integer
+'
+'*************************************************************************
+
+'*************************************************************************
+' Function CreateMailbox
+'
+'      Jason Miller
+'      jasmille@qualcomm.com
+'
+' Parameters:
+'
+' MbxName$    Mailbox Name to be deleted
+'
+' Returns True/False Integer
+'
+'*************************************************************************
+
+'*************************************************************************
+' Function CreateMailboxFolder
+'
+'      Jason Miller
+'      jasmille@qualcomm.com
+'
+' Parameters:
+'
+' FolderName$  Folder Name to create
+' MbxName$    Mailbox Name to create under folder
+'
+' Returns True/False Integer
+'
+'*************************************************************************
+
+'*************************************************************************
+' Function OpenFilters
+'
+'      Jason Miller
+'      jasmille@qualcomm.com
+'
+' Returns True/False Integer
+'
+'*************************************************************************
+
+'*************************************************************************
+' Function InitMakeFilters
+'
+'      Jason Miller
+'      jasmille@qualcomm.com
+'
+' Creating Initial Filters As defined by Brief Basic Functionality
+' Test Rev 2.2 by David Hom <dhom@qualcomm.com>
+'
+' Returns True/False
+'
+'*************************************************************************
+
+'*************************************************************************
+' Function SendFilterMessageOne
+'
+'      Jason Miller
+'      jasmille@qualcomm.com
+'
+' Called From InitMakeFilters () To create the first email based on
+' Brief Basic Functionality Test Rev 2.2 by David Hom <dhom@qualcomm.com>
+'
+' Returns True/False
+'
+'*************************************************************************
+
+'*************************************************************************
+' Function SendFilterMessageTwo
+'
+'      Jason Miller
+'      jasmille@qualcomm.com
+'
+' Called From InitMakeFilters () To create the second email based on
+' Brief Basic Functionality Test Rev 2.2 by David Hom <dhom@qualcomm.com>
+'
+' Returns True/False
+'
+'*************************************************************************
+
+'*************************************************************************
+' Function SendFilterMessageThree
+'
+'      Jason Miller
+'      jasmille@qualcomm.com
+'
+' Called From InitMakeFilters () To create the third email based on
+' Brief Basic Functionality Test Rev 2.2 by David Hom <dhom@qualcomm.com>
+'
+' Returns True/False
+'
+'*************************************************************************
+
+'*************************************************************************
+' Function SendFilterMails
+'
+'      Jason Miller
+'      jasmille@qualcomm.com
+'
+' Creates Mailings to match the Filters created in InitMakeFilters
+' They come from:
+' Brief Basic Functionality Test Rev 2.2 by David Hom <dhom@qualcomm.com>
+'
+' Returns True/False
+'
+'*************************************************************************
+
+'*************************************************************************
+' Function OpenTopLevelMailboxByName
+'
+'      Jason Miller
+'      jasmille@qualcomm.com
+'
+' Parameters:
+'
+' MbxName$    Mailbox Name to Open
+'
+' Returns True/False Integer
+'
+'*************************************************************************
+
+'*************************************************************************
+' Function GetEudoraParentFolderName
+'
+'      Jason Miller
+'      jasmille@qualcomm.com
+'
+' Parameters:
+'
+' Returns String of Eudora's Parent Folder. 
+' Tells what mailbox tree head is called
+'
+'*************************************************************************
+
+'*************************************************************************
+' Function SendETFMail
+'
+'      Jason Miller
+'      jasmille@qualcomm.com
+'
+' Parameters:
+'
+' Recipient$ - Recipient of this ETF message
+' Subject$ - Subject of this ETF Message
+' PicturePath$ - Path of the picture to embedd, NULL if none
+'
+' Returns True/False Integer
+'
+'*************************************************************************
+
+'*************************************************************************
+' Function SelectFont
+'
+'      Jason Miller
+'      jasmille@qualcomm.com
+'
+' Selects composition font
+'
+' Parameters:
+'
+' FontName$ - Font Name to use
+'
+' Returns True/False Integer
+'
+'*************************************************************************
+
+'*************************************************************************
+' Function SetPriority
+'
+'      Jason Miller
+'      jasmille@qualcomm.com
+'
+' Selects Message priority
+'
+' Parameters:
+'
+' Priority$ - Priority to use
+'
+' Returns True/False Integer
+'
+'*************************************************************************
+
+'*************************************************************************
+' Function SetSignature
+'
+'      Jason Miller
+'      jasmille@qualcomm.com
+'
+' Sets Signature for message
+'
+' Parameters:
+'
+' SigName$ - Signature Name to use
+'
+' Returns True/False Integer
+'
+'*************************************************************************
+
+'*************************************************************************
+' Function SetEncoding
+'
+'      Jason Miller
+'      jasmille@qualcomm.com
+'
+' Sets the encoding type of attachments
+'
+' Parameters:
+'
+' EncodeType$ - Type of encoding to use, see below
+'
+' Returns True/False Integer
+'
+'*************************************************************************
+
+'*************************************************************************
+' Function InsertPicture
+'
+'      Jason Miller
+'      jasmille@qualcomm.com
+'
+' Chooses Edit\Insert\Horizontal Line
+'
+' Parameters:
+'
+' PicturePath$ - Path of the picture and filename
+'
+' Returns True/False Integer
+'
+'*************************************************************************
+
+'*************************************************************************
+' Function InsertLine
+'
+'      Jason Miller
+'      jasmille@qualcomm.com
+'
+' Chooses Edit\Insert\Horizontal Line
+'
+' Parameters:
+'
+' Returns True/False Integer
+'
+'*************************************************************************
+
+'*************************************************************************
+' Function ParseFileName
+'
+'      Jason Miller
+'      jasmille@qualcomm.com
+'
+' Chooses Edit\Insert\Horizontal Line
+'
+' Parameters:
+'
+' FileAndPath$ - Path of the File and filename
+'
+' Returns filename.ext where filename is the filename and ext is the 
+' extension
+'
+'*************************************************************************
+
+'*************************************************************************
+' Function HighlightLastWords
+'
+'      Jason Miller
+'      jasmille@qualcomm.com
+'
+' Highlights Last Word
+'
+' Parameters:
+'
+' NumberOfWords - Number of prior words to highlight
+'
+' Returns True/False
+'
+'*************************************************************************

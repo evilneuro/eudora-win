@@ -1,0 +1,996 @@
+RoboHelp Topic Export file
+23|Creating_a_Message_with_Stationery|Creating a Message with Stationery
+23|Sending_a_Stationery_Message|Sending a Stationery Message
+23|Deleting_a_Stationery_File|Deleting a Stationery File
+23|Changing_a_Stationery_File|Changing a Stationery File
+23|Creating_a_Stationery_File|Creating a Stationery File
+23|Using_Stationery|Using Stationery
+23|Using_an_Alternate_EMail_Account|Using an Alternate E-Mail Account
+23|Using_the_Composition_Window|Using the Composition Window
+23|Creating_an_Outgoing_Message|Creating an Outgoing Message
+23|Uninstalling_Eudora|Uninstalling Eudora
+23|Starting and Quitting_Eudora|Starting and Quitting Eudora
+23|Technical_Support|Technical Support
+23|Online_Help|Online Help
+23|Tip_of_the_Day|Tip of the Day
+23|Configuring_Eudora|Configuring Eudora
+23|Uuencode|Uuencode Encoding
+23|BinHex|BinHex Encoding
+23|MIME|MIME Encoding
+23|Attaching_a_File_to_a_Message|Attaching a File to a Message
+23|Inserting_Objects_in_Message_Text|Inserting Objects in Message Text
+23|Word_Wrap|Word Wrap
+23|Text_Editing_Menu_Commands|Text Editing Menu Commands
+23|Formatting_Text|Formatting Text
+23|Requesting_a_Return_Receipt|Requesting a Return Receipt
+23|Setting_the_Message_Priority|Setting the Message Priority
+23|Including_a_Signature_in_Messages|Including a Signature in Messages
+23|Deleting_a_Signature|Deleting a Signature
+23|Changing_a_Signature|Changing a Signature
+23|Creating_a_Signature|Creating a Signature
+23|Using_a_Signature|Using a Signature
+23|Using_a_Stationery_File_for_all_Outgoing_Messages|Using a Stationery File for all Outgoing Messages
+23|Replying_with_a_Stationery_File|Replying with a Stationery File
+23|Using_the_Reply_Functions|Using the Reply Functions
+23|Replying_to_a_Message|Replying to a Message
+23|Sending_Messages_with_Special_Server_Instructions|Sending Messages with Special Server Instructions
+23|Sending_Queued_Messages_When_Checking_Mail|Sending Queued Messages When Checking Mail
+23|Taking_a_Message_Out_of_the_Queue|Taking a Message Out of the Queue
+23|Editing_a_Queued_Message|Editing a Queued Message
+23|Queueing_a_Message_to_Send_at_a_Certain_Time|Queueing a Message to Send at a Certain Time
+23|Queueing_a_Message_to_Send_Later|Queueing a Message to Send Later
+23|Sending_a_Message_Immediately|Sending a Message Immediately
+23|Saving_a_Message_for_Later_Changes|Saving a Message for Later Changes
+23|Check_Spelling_Dialog|Check Spelling Dialog
+23|Checking_Your_Spelling|Checking Your Spelling
+23|Creating_a_Hyperlink_in_a_Message|Creating a Hyperlink in a Message
+23|Including_a_URL_in_a_Message|Including a URL in a Message
+23|Manually_Decoding_Attachments|Manually Decoding Attachments
+23|Specifying_an_Attachment_Directory|Specifying an Attachment Directory
+23|Receiving_Attachments|Receiving Attachments
+23|The_Incoming_Message_Window|The Incoming Message Window
+23|Receiving_New_Mail|Receiving New Mail
+23|Changing_Your_Password|Changing Your Password
+23|Using_Your_Password|Using Your Password
+23|Stopping_a_Mail_Check|Stopping a Mail Check
+23|Checking_for_Mail_Manually|Checking for Mail Manually
+23|Checking_for_Mail_Automatically|Checking for Mail Automatically
+23|Checking_for_Incoming_Mail|Checking for Incoming Mail
+23|Sending_Rejected_Messages_Again|Sending Rejected Messages Again
+23|Keeping_Copies_of_Outgoing_Messages|Keeping Copies of Outgoing Messages
+23|Redirect_and_Signatures|Redirect and Signatures
+23|Turbo_Redirecting|Turbo Redirecting
+23|Redirecting_a_Message|Redirecting a Message
+23|Forwarding_a_Message|Forwarding a Message
+23|Message_Summaries_in_Mailboxes|Message Summaries in Mailboxes
+23|Opening_a_Mailbox|Opening a Mailbox
+23|Checking_for_Mail_with_Special_Server_Instructions|Checking for Mail with Special Server Instructions
+23|Skipping_Messages_Over_a_Certain_Size|Skipping Messages Over a Certain Size
+23|Deleting_a_Message_from_the_POP_Server|Deleting a Message from the POP Server
+23|Leaving_Mail_on_the_Server|Leaving Mail on the Server
+23|Refreshing_Your_List_of_IMAP_Mailboxes_and_Folders|Refreshing Your List of IMAP Mailboxes and Folders
+23|Resynchronizing_an_IMAP_Mailbox_or_Folder|Resynchronizing an IMAP Mailbox or Folder
+23|Deleting_a_Message_from_the_IMAP_Server|Deleting a Message from the IMAP Server
+23|Skipping_Attachments_Over_a_Certain_Size|Skipping Attachments Over a Certain Size
+23|Downloading_Minimal_Headers_vs._the_Full_Message|Downloading Minimal Headers vs. the Full Message
+23|IMAP_Tasks_Performed_Offline|IMAP Tasks Performed Offline
+23|Managing_Your_Mail_on_the_IMAP_Server|Managing Your Mail on the IMAP Server
+23|Managing_your_Mail_on_a_POP_Server.|Managing your Mail on a POP Server.
+23|Using_Active_URLs|Using Active URLs
+23|Editing_Incoming_Messages|Editing Incoming Messages
+23|Dragging_Messages|Dragging Messages
+23|Using_the_Transfer_menu|Using the Transfer menu
+23|Transferring_Messages|Transferring Messages
+23|Automatically_Deleting_Attachments|Automatically Deleting Attachments
+23|Deleting_a_Message|Deleting a Message
+23|Mailbox_and_Folder_Management:_POP_vs._IMAP_Server|Mailbox and Folder Management: POP vs. IMAP Server
+23|Removing_a_Mailbox_or_Folder|Removing a Mailbox or Folder
+23|Moving_a_Mailbox_from_One_Folder_to_Another|Moving a Mailbox from One Folder to Another
+23|Renaming_a_Mailbox_or_Folder|Renaming a Mailbox or Folder
+23|Creating_a_New_Mailbox_or_Folder|Creating a New Mailbox or Folder
+23|Using_the_Mailboxes_Window|Using the Mailboxes Window
+23|Creating_a_Mailbox_or_Folder_Using_the_Mailbox_Menu|Creating a Mailbox or Folder Using the Mailbox Menu
+23|Creating_Mailboxes_and_Folders|Creating Mailboxes and Folders
+23|The_Message_Preview_Pane|The Message Preview Pane
+23|Using_the_Mailbox_Size_Display|Using the Mailbox Size Display
+23|Displaying_and_Resizing_Columns|Displaying and Resizing Columns
+23|Tabbed_Windows|Tabbed Windows
+23|Floating_Windows|Floating Windows
+23|Docked_Windows|Docked Windows
+23|Normal_Windows|Normal Windows
+23|Window_States_and_Tabbed_Windows|Window States and Tabbed Windows
+23|Saving_a_Message_to_a_File|Saving a Message to a File
+23|Stopping_a_Find|Stopping a Find
+23|Match_Case|Match Case
+23|Finding_Text_Within_One_Message|Finding Text Within One Message
+23|Sorting_Messages_Within_Mailboxes|Sorting Messages Within Mailboxes
+23|Filter_Actions|Filter Actions
+23|Filter_Criteria_(The_Match_Area)|Filter Criteria (The Match Area)
+23|Detailed_Filters_with_the_Filters_Window|Detailed Filters with the Filters Window
+23|Quick_and_Simple_Filters_with_the_Make_Filter_Dialog|Quick and Simple Filters with the Make Filter Dialog
+23|Filtering_Messages|Filtering Messages
+23|Creating_a_Mailbox_or_Folder_During_Transfer|Creating a Mailbox or Folder During Transfer
+23|Changing_Moving_Copying_and_Deleting_Entries|Changing, Moving, Copying, and Deleting Entries
+23|Creating_New_Entries|Creating New Entries
+23|Using_the_Address_Book|Using the Address Book
+23|Account_Settings_Dialog|Account Settings Dialog
+23|Personalities_Window|Personalities Window
+23|Stationery_Window|Stationery Window
+23|File_Browser_Window|File Browser Window
+23|Filter_Report_Window|Filter Report Window
+23|Window_Context_Menu|Window Context Menu
+23|Closing_Tabbed_Windows|Closing Tabbed Windows
+23|Tab_Contents,_Location,_Auto-Activation|Tab Contents, Location, Auto-Activation
+23|Tab_Display_in_SingleTabbed_Windows|Tab Display in Single-Tabbed Windows
+23|Creating_a_New_Tabbed_Window|Creating a New Tabbed Window
+23|Reorganizing_Tabbed_Windows|Reorganizing Tabbed Windows
+23|Opening_and_Activating_Tabbed_Windows|Opening and Activating Tabbed Windows
+23|Default_Tabbed_Windows|Default Tabbed Windows
+23|Directory_Service_Protocols|Directory Service Protocols
+23|Window_State_Considerations|Window State Considerations
+23|Printing_Your_Query_Results|Printing Your Query Results
+23|Making_an_Address_Book_Entry_from_Your_Query_Results|Making an Address Book Entry from Your Query Results
+23|Addressing_a_Message_from_the_Directory_Services_Window|Addressing a Message from the Directory Services Window
+23|Reading_Your_Query_Results|Reading Your Query Results
+23|Looking_Someone_Up_(Making_a_Query)|Looking Someone Up (Making a Query)
+23|Keeping_the_Directory_Services_Window_on_Top|Keeping the Directory Services Window on Top
+23|Opening_Directory_Services|Opening Directory Services
+23|Using_the_Quick_Recipient_List|Using the Quick Recipient List
+23|Using_Address_Book_Files_Not_Created_by_Eudora|Using Address Book Files Not Created by Eudora
+23|Using_Central_Address_Book_Files_on_a_Server|Using Central Address Book Files on a Server
+23|The_Finish_Address_Book_Entry_Command|The "Finish Address Book Entry" Command
+23|The_Make_Address_Book_Entry_Command|The "Make Address Book Entry" Command
+23|Addressing_a_Message_from_the_Address_Book|Addressing a Message from the Address Book
+23|Including_Nicknames_on_the_Quick_Recipient_List|Including Nicknames on the Quick Recipient List
+23|HID_EDIT_TEXT_COLOR|Fonts and Color
+23|HIDC_CUST_TOOL_DESCRIPTION|Toolbar button description
+23|HIDC_CUST_TOOL_BUTTONS|Toolbar buttons
+23|HIDC_CUST_TOOL_CATEGORIES|Toolbar Categories
+23|Customizing_the_Toolbar|Customizing the Toolbar
+23|Putting_Multiple_Users_on_One_PC|Putting Multiple Users on One PC
+23|eudora_ini|EUDORA.INI Settings File
+23|Using_the_Eudora_Taskbar|Using the Eudora Taskbar
+23|Shortcuts|Shortcuts
+23|Modifier Keys|Modifier Keys
+23|The_Messaging_Application_Program_Interface_MAPI|The Messaging Application Program Interface (MAPI)
+23|Plugins_(Extended_Messaging_Services)|Plugins (Extended Messaging Services)
+23|Printing|Printing
+23|Deleting_a_Database|Deleting a Database
+23|Creating_a_New_Database|Creating a New Database
+23|Directory_Service_Databases|Directory Service Databases
+23|Getting_Attention_Options_Window|Getting Attention Options Window
+23|Labels_Options_Window|Labels Options Window
+23|Date_Display_Options_Window|Date Display Options Window
+23|Spell_Checking_Options_Window|Spell Checking Options Window
+23|Styled_Text_Options_Window|Styled Text Options Window
+23|Viewing_Mail_Options_Window|Viewing Mail Options Window
+23|Signatures_Window|Signatures Window
+23|Display_Options_Window|Display Options Window
+23|Fonts_Options_Window|Fonts Options Window
+23|Attachments_Options_Window|Attachments Options Window
+23|Replying_Options_Window|Replying Options Window
+23|Composing_Mail_Options_Window|Composing Mail Options Window
+23|Sending_Mail_Options_Window|Sending Mail Options Window
+23|Incoming_Mail_Options_Window|Incoming Mail Options Window
+23|Getting_Started_Options_Window|Getting Started Options Window
+23|Checking_Mail_Options_Window|Checking Mail Options Window
+23|Task_Status_Window|Task Status Window
+23|Background_Tasks|Background Tasks
+23|Adding,_Moving,_and_Removing_Toolbar_Buttons|Adding, Moving, and Removing Toolbar Buttons
+23|Creating_an_Auto-Reply_Message|Creating an Auto-Reply Message
+23|Linking_a_Signature_and_Stationery_to_a_Personality|Linking a Signature and Stationery to a Personality
+23|Importing_Settings_to_Create_a_New_Account|Importing Settings to Create a New Account
+23|Attaching_a_PureVoice_File_to_a_Message|Attaching a PureVoice File to a Message
+23|Using_Purevoice|Using Purevoice
+23|Mailboxes_Options_Window|Mailboxes Options Window
+23|Miscellaneous_Options_Window|Miscellaneous Options Window
+23|Kerberos_Options_Window|Kerberos Options Window
+23|Auto_Configure_Options_Window|Auto Configure Options Window
+23|Automation_Options_Window|Automation Options Window
+23|MAPI_Options_Window|MAPI Options Window
+23|Advanced_Network_Options_Window|Advanced Network Options Window
+23|Extra_Warnings_Options_Window|Extra Warnings Options Window
+23|Reporting_Bugs|Reporting Bugs
+23|Suggestions|Suggestions
+23|Auto_Name_Completion_in_Directory_Services|Auto Name Completion in Directory Services
+23|Auto-wrapping_Plain_Text_Messages|Auto-wrapping Plain Text Messages
+23|Match_Whole_Word_Only|Match Whole Word Only
+23|Replying_with_Selected_Text|Replying with Selected Text
+23|Automatic_Spell_Checking|Automatic Spell Checking
+23|Auto_Completion_Options_Window|Auto-Completion Options Window
+23|Finding_Messages_in_Mailboxes|Finding Messages in Mailboxes
+23|Using_Automatic_Name_Completion|Using Automatic Name Completion
+23|What_s_New_in_Eudora_Email_5.0|What's New in Eudora Email 5.0
+23|Background_Tasks_Options_Window|Background Tasks Options Window
+23|Adding_an_LDAP_Database|Adding an LDAP Database
+23|Adding_a_Finger_Database|Adding a Finger Database
+23|Adding_a_Ph_Database|Adding a Ph Database
+23|Task_Error_Window|Task Error Window
+23|Tips_on_Using_ESP|Tips on Using ESP
+23|Installing_ESP|Installing ESP
+23|Introducing_ESP|Introducing ESP
+23|Adding_a_Group_to_the_Address_Book|Adding a Group to the Address Book
+23|Using_MoodWatch|Using MoodWatch
+23|Statistics_Options_Window|Statistics Options Window
+23|Statistics|Statistics
+23|Mood_Watch_Options_Window|MoodWatch Options Window
+23|Regular_Expressions|Regular Expressions
+23|Using_SMTP_Athentication|Using_SMTP_Athentication
+23|Sorting_Messages_in_Mailboxes|Sorting Messages in Mailboxes
+23|Internet_Dialup|Internet Dialup
+23|Registering_Eudora|Registering Eudora
+23|Link_History|Link History
+23|Changing_the_Eudora_Mode|Changing the Eudora Mode
+23|Remove_or_Add_Excerpt_Bars|Remove or Add Excerpt Bars
+23|Using_the_ESP_Mailbox_and_Folder|Using the ESP Mailbox and Folder
+23|Configuring_ESP_Global_Settings|Configuring ESP Global Settings
+23|Changing_ESP_Group_Information|Changing ESP Group Information
+23|Working_with_Shared_Folders|Working with Shared Folders
+23|Leaving_an_ESP_Group|Leaving an ESP Group
+23|Joining_an_ESP_Group|Joining an ESP Group
+23|Maintaining_ESP_Group_Members|Maintaining ESP Group Members
+23|Configuring_Group_Change_Notifications|Configuring Group Change Notifications
+23|Configuring_Shared_Folder_Settings|Configuring Shared Folder Settings
+23|Inviting_Members_to_Join_Your_Group|Inviting Members to Join Your Group
+23|Creating_an_ESP_Group_Advanced_Setup_|Creating an ESP Group (Advanced Setup)
+23|Creating_an_ESP_Group|Creating an ESP Group
+23|HID_SERVER_DELETE|Trash (Outgoing message option)
+23|HID_WORD_WRAP|Word Wrap (Outgoing message option)
+23|HID_EDIT_INSERT|Insert Object (Outgoing message option)
+23|HID_EDIT_MESSAGE|Edit the Message
+23|HID_USE_FIXED_FONT|Fixed Width (Message option)
+23|HID_EDIT_TEXT_TT|Typewriter (Outgoing message option)
+23|HID_EDIT_TEXT_SIZE|Size (Outgoing message option)
+23|HID_BLAHBLAHBLAH|BLAH ,BLAH, BLAH (Outgoing message option)
+23|HIDC_PRIORITY_COMBO|Priority
+23|HID_REPORT_A_BUG|Report A Bug
+23|HID_WINDOW_ALTERNATESIGNATURE|Link History
+23|HID_HELP_PAYMENT_AND_REGISTRATION|Payment and Registration
+23|HIDM_IMPORT_MAIL|Import
+23|HID_FILE_CLOSE|Close
+23|HID_FILE_OPEN_ATTACHMENT|Open Attachment
+23|HID_FILE_OPEN|Open File
+23|HID_FILE_NEW|New File
+23|HID_PREVIOUS_MESSAGE|Open Previous Message
+23|HID_NEXT_MESSAGE|Open Next Message
+23|HID_RETURN_RECEIPT|Return Receipt (Outgoing message option)
+23|HID_KEEP_COPIES|Keep Copy (Outgoing message option)
+23|HID_TABS_IN_BODY|Tabs in Body (Outgoing message option)
+23|HID_|Word Wrap (Outgoing message option)
+23|HID_TEXT_AS_DOCUMENT|Text as Document (Outgoing message option)
+23|HID_QUOTED_PRINTABLE|Quoted-Printable Encoding (Outgoing message option)
+23|HIDC_ENCODING_COMBO|Attachment Type (Outgoing message option)
+23|HIDC_SIGNATURE_COMBO|Signature (Outgoing message option)
+23|HIDC_SUBJECT|Subject (Outgoing message option)
+23|HID_SERVER_RETRIEVE|Fetch (Outgoing message option)
+23|HID_EDIT_PASTEASQUOTATION|Paste As Quotation
+23|HID_EDIT_PASTE|Paste
+23|HID_EDIT_COPY|Copy
+23|HID_EDIT_CUT|Cut
+23|HID_EDIT_REDO|Redo
+23|HID_EDIT_UNDO|Undo
+23|HID_APP_EXIT|Exit
+23|HID_FILE_PRINT_SETUP|Print Setup
+23|HID_FILE_PRINT_DIRECT|Print One
+23|HID_FILE_PRINT_PREVIEW|Print Preview
+23|HID_FILE_PRINT|Print
+23|HID_FILE_CHECKMAIL|Check Mail
+23|HID_FILE_SENDQUEUEDMESSAGES|Send Queued Messages
+23|HID_FILE_SAVE_AS_STATIONERY|Save As Stationery
+23|HID_FILE_SAVE_AS|Save As
+23|HID_FILE_SAVE|Save
+23|HID_EDIT_INSERT_PICTURE|Picture
+23|HID_EDIT_TEXT_CLEAR|Clear Formatting
+23|HID_EDIT_INSERT_LINK|Make Hyperlink
+23|HID_BLKFMT_BULLETTED_LIST|Bulleted List
+23|HID_EDIT_TEXT_CENTER|Center
+23|HID_EDIT_TEXT_RIGHT|Right
+23|HID_EDIT_TEXT_LEFT|Left
+23|HID_EDIT_TEXT_INDENT_OUT|Indent Out
+23|HID_EDIT_TEXT_INDENT_IN|Indent In
+23|HID_EDIT_TEXT_MARGINS_NORMAL|Normal
+23|HID_EDIT_SELECT_ALL|Select All
+23|HID_EDIT_TEXT_UNDERLINE|Underline
+23|HID_EDIT_TEXT_ITALIC|Italic
+23|HID_EDIT_TEXT_BOLD|Bold
+23|HID_EDIT_TEXT_PLAIN|Plain
+23|HID_EDIT_CLEAR|Clear
+23|HID_EDIT_SORT_SORTBYSUBJECT|Sort by Subject
+23|HID_EDIT_SORT_SORTBYSERVERSTATUS|Sort by Server Status
+23|HID_EDIT_SORT_SORTBYSIZE|Sort by Size
+23|HID_EDIT_SORT_SORTBYDATE|Sort by Date
+23|HID_EDIT_SORT_SORTBYSENDER|Sort by Sender
+23|HID_EDIT_SORT_SORTBYLABEL|Sort by Label
+23|HID_EDIT_SORT_SORTBYATTACHMENT|Sort by Attachment
+23|HID_EDIT_SORT_SORTBYPRIORITY|Sort by Priority
+23|HID_EDIT_SORT_SORTBYSTATUS|Sort by Status
+23|HID_EDIT_FIND_FINDMSG|Find Messages
+23|HID_EDIT_FIND_FINDTEXTAGAIN|Find Text Again
+23|HID_EDIT_FIND_FINDTEXT|Find
+23|HID_RECIPIENT_INSERT|Insert Recipient
+23|HID_EDIT_FINISHNICKNAME|Finish Address Book Entry
+23|HID_EDIT_WRAPSELECTION|Wrap Selection
+23|HID_EDIT_INSERT_HR|Horizontal Line
+23|HID_RECIPIENT_REDIRECT|Redirect To
+23|HID_RECIPIENT_FORWARD|Forward To
+23|HID_RECIPIENT_NEW_MESSAGE|New Message To
+23|HID_MESSAGE_SENDAGAIN|Send Again
+23|HID_MESSAGE_REDIRECT|Redirect
+23|HID_MESSAGE_FORWARD|Forward
+23|HID_MESSAGE_REPLY_ALL|Reply to All
+23|HID_MESSAGE_REPLY|Reply
+23|HID_MESSAGE_NEWMESSAGE|New Message
+23|HID_TRANSFER_NEW_MBOX_IN_ROOT|New...
+23|HID_MAILBOX_USER|Your Mailbox (Mailbox menu command)
+23|HID_MAILBOX_TRASH|Trash (Mailbox menu command)
+23|HID_MAILBOX_OUT|Out (Mailbox menu command)
+23|HID_MAILBOX_IN|In (Mailbox menu command)
+23|HID_EDIT_PLUGINS|Message Plugins
+23|HID_EDIT_CHECKSPELLING|Check Spelling
+23|HID_MESSAGE_STATUS_SENT|Change... Status... Sent
+23|HID_MESSAGE_STATUS_TIME_QUEUED|Change... Status... Time Queued
+23|HID_MESSAGE_STATUS_QUEUED|Change... Status... Queued
+23|HID_MESSAGE_STATUS_SENDABLE|Change... Status... Sendable
+23|HID_MESSAGE_STATUS_UNSENDABLE|Change... Status... Unsendable
+23|HID_MESSAGE_STATUS_REDIRECTED|Change... Status... Redirected
+23|HID_MESSAGE_STATUS_FORWARDED|Change... Status... Forwarded
+23|HID_MESSAGE_STATUS_REPLIED|Change... Status... Replied
+23|HID_MESSAGE_STATUS_READ|Change... Status... Read
+23|HID_MESSAGE_STATUS_UNREAD|Change... Status... Unread
+23|HID_MESSAGE_CHANGEQUEUEING|Change... Queueing
+23|HID_MESSAGE_Q4_DELIVERY|Queue For Delivery
+23|HID_MESSAGE_SENDIMMEDIATELY|Send Immediately
+23|HID_MESSAGE_ATTACHFILE|Attach File
+23|HID_MESSAGE_REPLY_WITH|Reply With
+23|HID_MESSAGE_NEWMESSAGE_WITH|New Message With
+23|HID_TRANSFER_IN|In (Transfer menu command)
+23|HID_MESSAGE_PURGE|Purge Messages
+23|HID_MESSAGE_UNDELETE|UnDelete
+23|HID_MESSAGE_DELETE|Delete
+23|HID_MESSAGE_SERVER_FETCH_DELETE|Change... Server Status... Fetch then Delete
+23|HID_MESSAGE_SERVER_DELETE|Change... Server Status... Delete
+23|HID_MESSAGE_SERVER_FETCH|Change... Server Status... Fetch
+23|HID_MESSAGE_SERVER_LEAVE|Change... Server Status... Leave
+23|HID_MESSAGE_LABEL_7|Change Label
+23|HID_MESSAGE_LABEL_NONE|None (do not change Label)
+23|HID_MESSAGE_PRIOR_LOWEST|Change... Priority... Lowest
+23|HID_MESSAGE_PRIOR_LOW|Change... Priority... Low
+23|HID_MESSAGE_PRIOR_NORMAL|Change... Priority... Normal
+23|HID_MESSAGE_PRIOR_HIGH|Change... Priority... High
+23|HID_MESSAGE_PRIOR_HIGHEST|Change... Priority... Highest
+23|HID_MESSAGE_STATUS_UNSENT|Change... Status... Unsent
+23|HID_SPECIAL_FORGETPASSWORD|Forget Password
+23|HID_SPECIAL_COMPACTMAILBOXES|Compact Mailboxes
+23|HID_SPECIAL_EMPTYTRASH|Empty Trash
+23|HID_RECIPIENT_REMOVE|Remove Recipient
+23|HID_SPECIAL_ADDASRECIPIENT|Add as Recipient
+23|HID_SPECIAL_MAKENICKNAME|Make Address Book Entry...
+23|HIDM_VIEW_PERSONALITIES|Personalities
+23|HID_TOOLS_VIEW_SIGNATURES|Signatures
+23|HIDM_VIEW_STATIONERY|Stationery
+23|HIDM_VIEW_FILE_BROWSER|File Browser
+23|HIDM_VIEW_FILTER_REPORT|Filter Report
+23|HID_SPECIAL_FILTERMESSAGES|Filter Messages
+23|HID_TRANSFER_NEW|New... (Transfer menu command)
+23|HID_TRANSFER_USER|Your Mailbox (Transfer menu command)
+23|HID_TRANSFER_TRASH|Trash (Transfer menu command)
+23|HID_TRANSFER_OUT|Out (Transfer menu command)
+23|HID_WINDOW_SENDTOBACK|Send To Back
+23|HID_WINDOW_ARRANGE|Arrange Icons
+23|HID_WINDOW_TILE_VERT|Tile Vertical
+23|HID_WINDOW_TILE_HORZ|Tile Horizontal
+23|HID_WINDOW_CASCADE|Cascade
+23|HID_SPECIAL_SETTINGS|Options...
+23|HID_TOOL_SIGNATURE|Signatures
+23|HIDS_STANDARD_SIGNATURE|Standard Signature
+23|HID_TOOL_SIGNATURE_DELETE|Delete Signature
+23|HID_TOOL_SIGNATURE_NEW|New Signature
+23|HID_WINDOW_PH|Directory Services
+23|HID_WINDOW_NICKNAMES|Address Book
+23|HID_WINDOW_MAILBOXES|Mailboxes
+23|HID_WINDOW_FILTERS|Filters
+23|HID_ABOUT_EMS_PLUGINS|Message Plug- ins Settings...
+23|HID_SPECIAL_CHANGEPASSWORD|Change Password...
+23|HIDC_STATIONERY1|Stationery drop-down list
+23|HIDC_PERSONA_NAME|Personality (New Message dialog)
+23|HIDR_LINK_HISTORY|Link History
+23|HIDD_PAYMENT_REGISTRATION|Payment and Registration
+23|HID_WINDOW_USAGE_STATS|Statistics
+23|HID_EDIT_SORT_SORTBYMOOD|Sort by MoodWatch (in open mailbox)
+23|HID_GET_HELP|Technical Support (menu option)
+23|HID_EDIT_FINDTEXT|Find Text
+23|HID_EDIT_PASTE_SPECIAL|Paste Special
+23|HIDM_VIEW_TASK_ERROR|Task Error
+23|HIDM_VIEW_TASK_STATUS|Task Status
+23|HID_SPECIAL_MAKE_FILTER|Make Filter
+23|HID_APP_ABOUT|About Eudora
+23|HIDM_SYSTEM_CONFIGURATION|Insert System Configuration
+23|HID_CONTEXT_HELP|Context Sensitive Help
+23|HID_HELP_TOPICS|Topics
+23|HID_EDIT_FIND_NEXTMESSAGE|Next Message (Find command)
+23|HID_EDIT_FIND_NEXT|Next (Find command)
+23|HID_EDIT_FIND_BEGIN|Find
+23|HIDR_FIND|Find dialog
+23|HIDC_LBL_PERSONAS|Apply Options to Personalities (Mail Transfer Options dialog)
+23|HIDC_PERSONAS|HIDC_PERSONAS
+23|HIDC_FETCH_MESSAGE_HEADERS|Fetch all message headers to In mailbox (Mail Transfer Options dialog)
+23|HIDC_DELETE_ALL_MESSAGES|Delete all messages on server (Mail Transfer Options dialog)
+23|HIDC_DELETE_RETRIEVED_MESSAGES|Delete all messages that have been retrieved (Mail Transfer Options dialog)
+23|HIDC_RETRIEVE_MARKED_MESSAGES|Retrieve messages marked for retrieval (Mail Transfer Options dialog)
+23|HIDC_DELETE_MARKED_MESSAGES|Delete messages marked for deletion (Mail Transfer Options dialog)
+23|HIDC_SEND_QUEUED_MESSAGES|Send Queued messages (Mail Transfer Options dialog)
+23|HIDC_STATIONERY|Stationery (Save As dialog)
+23|HIDC_GUESS_PARA|Guess Paragraphs (Save As dialog)
+23|HIDC_HEADERS|Include Headers (Save As dialog)
+23|HIDC_RETRIEVE_NEW_MAIL|Retrieve new mail (Mail Transfer Options dialog)
+23|HID_EDIT_LEX2|Edit Dictionary dialog
+23|HID_EDIT_LEX1|Edit Dictionary
+23|HID_ADD_TO_LEX|Add (Checking Spelling dialog)
+23|HID_SUGGEST|Suggest (Checking Spelling dialog)
+23|HID_REPLACE_ALL|Change all (Checking Spelling dialog)
+23|HID_REPLACEIT|Change (Checking Spelling dialog)
+23|HID_IGNORE_ALL|Ignore all (Checking Spelling dialog)
+23|HID_IGNORE|Ignore (Checking Spelling dialog)
+23|HID_SUGGEST_LIST|Suggestions (Checking Spelling dialog)
+23|HID_REPLACEMENT_WORD|Change To (Checking Spelling dialog)
+23|HID_PROBLEM_WORD|Unknown (Checking Spelling dialog)
+23|HIDD_SPELL_CHECK_BLOCK|Checking Spelling dialog
+23|HIDC_SUMMARIES_ONLY|Summaries Only
+23|HIDC_MATCH_CASE|Match Case
+23|HIDC_EDIT1|Character String (Find dialog)
+23|HID_EDIT_FIND_NEXTMAILBOX|Next Mailbox (Find command)
+23|HIDC_MB_NEW_EDIT|Name the new mailbox (New Mailbox dialog)
+23|HIDD_NEW_MAILBOX|New Mailbox dialog
+23|HID_ALWAYS_SUGGEST_BTN|Always suggest (Checking Spelling Options)
+23|HID_REPORT_DOUBLED_WORDS_BTN|Report doubled words (Checking Spelling Options)
+23|HID_REPORT_MIXED_CASE_BTN|Report words with mixed case (Checking Spelling Options)
+23|HID_IGNORE_MIXED_CASE_BTN|Ignore words with mixed case (Checking Spelling Options)
+23|HID_IGNORE_MIXED_DIGITS_BTN|Ignore words with numbers (Checking Spelling Options)
+23|HID_IGNORE_CAPS_BTN|Ignore capitalized words (Checking Spelling Options)
+23|HIDD_SPELL_OPTIONS|Check Spelling Preferences (Checking Spelling Options)
+23|HID_OPTIONS|Options (Checking Spelling dialog)
+23|HID_EDIT_LEX7|Clear (Edit Dictionary dialog)
+23|HID_EDIT_LEX6|Delete (Edit Dictionary dialog)
+23|HID_EDIT_LEX5|Add (Edit Dictionary dialog)
+23|HID_EDIT_LEX4|Dictionary (Edit Dictionary dialog)
+23|HID_EDIT_LEX3|Word (Edit Dictionary dialog)
+23|HIDC_LBL_SPELL_EDIT_WORD|HIDC_LBL_SPELL_EDIT_WORD
+23|HIDC_DOWN|Down (Filters window)
+23|HIDC_UP|Up (Filters window)
+23|HIDC_FILTERS_LIST|Filter List
+23|HIDR_FILTERS|Filters
+23|HIDC_PASSWORD|Change Password
+23|HIDC_PASSWORD_PROMPT|Filters command
+23|HIDC_DONT_SEND|Don't Send (Change Queueing dialog)
+23|HIDC_EDIT_DATE|Date (Change Queueing dialog)
+23|HIDC_EDIT_TIME|Time (Change Queueing dialog)
+23|HIDC_ON_OR_AFTER|On or after (Change Queueing dialog)
+23|HIDC_NEXT_TIME|Next Time Queued Messages are Sent (Change Queueing dialog)
+23|HIDC_RIGHT_NOW|Right Now (Change Queueing dialog)
+23|HIDC_LBL_QUEUEING_SENDMSG|Send Message (Change Queueing dialog)
+23|HIDD_CHANGE_QUEUEING|Change Queueing
+23|HIDC_DONT_TRANSFER|Don't Transfer (New Mailbox dialog)
+23|HIDC_MAKE_FOLDER|Make it a folder (New Mailbox dialog)
+23|HIDC_ACTION_COMBO0|Skip rest (Filter Action)
+23|HIDC_ACTION_COMBO1|HIDC_ACTION_COMBO1
+23|HIDC_ACTION_COMBO4|HIDC_ACTION_COMBO4
+23|HIDC_ACTION_COMBO3|HIDC_ACTION_COMBO3
+23|HIDC_ACTION_COMBO2|HIDC_ACTION_COMBO2
+23|HIDC_CONJUNCTION|Conjunction (Filters window)
+23|HIDC_VALUEO|Matching Text (Filters window)
+23|HIDC_VALUE1|HIDC_VALUE1
+23|HIDC_VERB0|Match Type (Filters window)
+23|HIDC_VERB1|HIDC_VERB1
+23|HIDC_HEADER0|Header (Filters window)
+23|HIDC_LBL_FILTERS_HEADER|HIDC_LBL_FILTERS_HEADER
+23|HIDC_LBL_FILTERS_HEADER2|HIDC_LBL_FILTERS_HEADER2
+23|HIDC_HEADER1|HIDC_HEADER1
+23|HIDC_MANUAL|Manual (Filters window)
+23|HIDC_OUTGOING|Outgoing (Filters window)
+23|HIDC_INCOMING|Incoming (Filters window)
+23|HIDC_REMOVE|Remove (Filters window)
+23|HIDC_NEW|New (Filters window)
+23|HIDC_NICKNAME_RIGHT_NICKNAME_LABEL|Nickname (Address Book)
+23|HIDC_NICKNAME_RIGHT_NICKNAME|HIDC_NICKNAME_RIGHT_NICKNAME
+23|HIDC_NICKNAME_LEFT_EXPAND_NAME|Expand Nickname (Address Book)
+23|HIDC_NICKNAME_LEFT_BCC|Bcc (Address Book)
+23|HIDC_NICKNAME_LEFT_CC|Cc (Address Book)
+23|HIDC_NICKNAME_LEFT_TO|To (Address Book)
+23|HIDC_NICKNAME_LEFT_REMOVE|Remove (Address Book)
+23|HIDC_NICKNAME_LEFT_NEW|New (Address Book)
+23|HIDC_NICKNAME_LEFT_VIEWBY_LABEL|View By (Address Book)
+23|HIDC_NICKNAME_LEFT_VIEWBY|HIDC_NICKNAME_LEFT_VIEWBY
+23|HIDC_NICKNAME_LEFT_LIST|Address Book Files and Entries
+23|HIDR_MAILBOXES|Mailboxes
+23|HIDC_TREE1|Mailboxes Window
+23|HIDC_NICK_FILE_PROMPT|File (New Nickname)
+23|HIDC_NICK_FILENAME_COMBO|HIDC_NICK_FILENAME_COMBO
+23|HIDC_LBL_NICKNAME_CALLIT|What do you wish to call it? (New Nickname)
+23|HIDC_NEW_NAME|HIDC_NEW_NAME
+23|HIDD_NICKNAME_NAME|New Nickname dialog
+23|HIDC_NICKNAME_CUSTOM_LABEL3|Fax (Address Book)
+23|HIDC_NICKNAME_CUSTOM_EDIT3|HIDC_NICKNAME_CUSTOM_EDIT3
+23|HIDC_NICKNAME_CUSTOM_LABEL2|Phone (Address Book)
+23|HIDC_NICKNAME_CUSTOM_EDIT2|HIDC_NICKNAME_CUSTOM_EDIT2
+23|HIDC_NICKNAME_CUSTOM_LABEL1|Postal Address (Address Book)
+23|HIDC_NICKNAME_CUSTOM_EDIT1|HIDC_NICKNAME_CUSTOM_EDIT1
+23|HIDC_NICKNAME_CUSTOM_LABEL0|Name (Address Book)
+23|HIDC_NICKNAME_CUSTOM_EDIT0|HIDC_NICKNAME_CUSTOM_EDIT0
+23|HIDC_NICKNAME_NOTES_NOTES|Notes (Address Book)
+23|HIDC_NICKNAME_ADDRESS_ADDRESS|Address(es) (Address Book)
+23|HIDC_NICKNAME_RIGHT_RECIPLIST|Recipient List (Address Book)
+23|HIDC_LBL_PERSONA_RETURN_ADDR|Return Address
+23|HIDS_INI_PERSONA_RETURN_ADDR|HIDS_INI_PERSONA_RETURN_ADDR
+23|HIDC_LBL_PERSONA_REAL_NAME|Real Name
+23|HIDS_INI_PERSONA_REAL_NAME|HIDS_INI_PERSONA_REAL_NAME
+23|HIDC_TOOL_SIGNATURE_NEW|New Signature (New Signature dialog)
+23|HIDC_LOOKUP_KEEP_FOREGROUND|Keep on top (Directory Services)
+23|HIDC_LOOKUP_BCC|Bcc (Directory Services)
+23|HIDC_LOOKUP_CC|Cc (Directory Services)
+23|HIDC_LOOKUP_TO|To (Directory Services)
+23|HIDC_FINGER|Finger (Directory Services)
+23|HIDC_PH|Ph (Directory Services)
+23|HIDC_RESPONSE|Response (Directory Services)
+23|HIDC_COMMAND|Command (Directory Services)
+23|HIDC_SERVER_COMBO|Server field (Directory Services)
+23|HIDR_LOOKUP|Directory Services
+23|HIDC_CREATE_NICKNAME_FILE|Make it an address book (New Nickname)
+23|HIDC_RECIPIENT_LIST|Put it on the recipient list (New Nickname)
+23|HIDC_FROM|From
+23|HIDC_DELETE|Delete Message
+23|HIDC_TRAN_DIFF|Transfer to Existing Mailbox
+23|HIDC_TRAN_NEW|Transfer to New Mailbox
+23|HIDS_INI_PERSONA_CHECK_MAIL|Check Mail
+23|HIDC_LBL_PERSONA_SIGNATURE|Default Signature
+23|HIDS_INI_PERSONA_SIGNATURE|HIDS_INI_PERSONA_SIGNATURE
+23|HIDC_LBL_PERSONA_STATIONERY|Default Stationery
+23|HIDS_INI_PERSONA_STATIONERY|HIDS_INI_PERSONA_STATIONERY
+23|HIDC_LBL_PERSONA_DEFAULT_DOMAIN|Default Domain
+23|HIDS_INI_PERSONA_DEFAULT_DOMAIN|HIDS_INI_PERSONA_DEFAULT_DOMAIN
+23|HIDC_LBL_PERSONA_SMTP_SERVER|SMTP Server
+23|HIDS_INI_PERSONA_SMTP_SERVER|HIDS_INI_PERSONA_SMTP_SERVER
+23|HIDC_LBL_PERSONA_LOGIN_NAME|LoginName
+23|HIDS_INI_PERSONA_LOGIN_NAME|HIDS_INI_PERSONA_LOGIN_NAME
+23|HIDD_NDS_ST_QUERY_RESULTS_LABEL|Status
+23|HIDD_NDS_PB_QUERY_STARTSTOP|Start
+23|HIDD_NDS_ST_QUERY_LABEL|Query
+23|HIDD_NDS_EB_QUERY_INPUT|HIDD_NDS_EB_QUERY_INPUT
+23|HIDD_NDS_ST_QUERY_INPUT|HIDD_NDS_ST_QUERY_INPUT
+23|HIDR_PERSONALITIES|Personalities
+23|HIDR_FILE_BROWSER|File Browser
+23|HIDC_SIGNATURE_LIST|HIDC_SIGNATURE_LIST
+23|HIDR_FILTER_REPORT|Filter Report
+23|HIDR_DIRECTORY_SERVICES|Directory Services
+23|HIDD_NDS_PB_DELETEDATABASE|HIDD_NDS_PB_DELETEDATABASE
+23|HIDR_NICKNAMES|Address Book
+23|HIDC_NICKNAME_LEFT_GROW|HIDC_NICKNAME_LEFT_GROW
+23|HIDR_SIGNATURES|Signatures
+23|HIDR_STATIONERY|Stationery
+23|HIDC_RECIP|Any Recipient
+23|HIDR_TOC|TOC/Preview Pane
+23|HIDC_SUMLIST|HIDC_SUMLIST
+23|HIDC_COMPACT|HIDC_COMPACT
+23|HIDC_PREVIEW_PANE|HIDC_PREVIEW_PANE
+23|HIDD_NDS_GB_DATABASES|Databases
+23|HIDD_NDS_PB_DELETEDATABASE$ Databases|HIDD_NDS_PB_DELETEDATABASE$ Databases
+23|HIDD_NDS_PB_MODIFYDATABASE|HIDD_NDS_PB_MODIFYDATABASE
+23|HIDD_NDS_LC_DATABASES|HIDD_NDS_LC_DATABASES
+23|HIDD_NDS_GB_PROTOCOLS|Protocols
+23|HIDD_NDS_PB_NEWDATABASE|HIDD_NDS_PB_NEWDATABASE
+23|HIDD_NDS_LC_PROTOCOLS|HIDD_NDS_LC_PROTOCOLS
+23|HIDD_NDS_RE_RESULTS_LONG|Details List
+23|HIDD_NDS_LC_RESULTS_TOC|Results List
+23|HIDD_NDS_CB_KEEPONTOP|Keep on top
+23|HIDD_NDS_PB_MAIL_BCC|Bcc
+23|HIDD_NDS_PB_MAIL_CC|Cc
+23|HIDD_NDS_PB_MAIL_TO|To
+23|HIDC_CRITERIA_TEXT_COMPARE_COMBO_1|Conjunction drop-down list (Search messages)
+23|HIDC_CRITERIA_TEXT_COMPARE_COMBO_4|HIDC_CRITERIA_TEXT_COMPARE_COMBO_4
+23|HIDC_CRITERIA_TEXT_COMPARE_COMBO_3|HIDC_CRITERIA_TEXT_COMPARE_COMBO_3
+23|HIDC_CRITERIA_TEXT_COMPARE_COMBO_2|HIDC_CRITERIA_TEXT_COMPARE_COMBO_2
+23|HIDC_CRITERIA_TEXT_COMPARE_COMBO_5|HIDC_CRITERIA_TEXT_COMPARE_COMBO_5
+23|HIDR_SEARCH_WND|Search Messages
+23|HIDC_CRITERIA_CATEGORY_COMBO_1|Search category drop-down list
+23|HIDC_CRITERIA_CATEGORY_COMBO_5|HIDC_CRITERIA_CATEGORY_COMBO_5
+23|HIDC_CRITERIA_CATEGORY_COMBO_4|HIDC_CRITERIA_CATEGORY_COMBO_4
+23|HIDC_CRITERIA_CATEGORY_COMBO_3|HIDC_CRITERIA_CATEGORY_COMBO_3
+23|HIDC_CRITERIA_CATEGORY_COMBO_2|HIDC_CRITERIA_CATEGORY_COMBO_2
+23|HIDC_FORGET_PERSONAS|Forget Password (personalities)
+23|HIDR_TASK_STATUS|Task Status Window
+23|HIDR_TASK_ERROR|Task Error Window
+23|HID_TIP_OF_THE_DAY|Tip of the Day
+23|HID_HELP_TECHNICAL_SUPPORT|Technical Support
+23|HIDC_CRITERIA_NUM_COMPARE_COMBO_1|is/is not/is great than/is less than (Search messages)
+23|HIDC_CRITERIA_NUM_COMPARE_COMBO_5|HIDC_CRITERIA_NUM_COMPARE_COMBO_5
+23|HIDC_CRITERIA_NUM_COMPARE_COMBO_4|HIDC_CRITERIA_NUM_COMPARE_COMBO_4
+23|HIDC_CRITERIA_NUM_COMPARE_COMBO_3|HIDC_CRITERIA_NUM_COMPARE_COMBO_3
+23|HIDC_CRITERIA_NUM_COMPARE_COMBO_2|HIDC_CRITERIA_NUM_COMPARE_COMBO_2
+23|HIDC_CRITERIA_DATE_COMPARE_COMBO_1|is after/is before (Search messages)
+23|HIDC_CRITERIA_DATE_COMPARE_COMBO_5|HIDC_CRITERIA_DATE_COMPARE_COMBO_5
+23|HIDC_CRITERIA_DATE_COMPARE_COMBO_4|HIDC_CRITERIA_DATE_COMPARE_COMBO_4
+23|HIDC_CRITERIA_DATE_COMPARE_COMBO_3|HIDC_CRITERIA_DATE_COMPARE_COMBO_3
+23|HIDC_CRITERIA_DATE_COMPARE_COMBO_2|HIDC_CRITERIA_DATE_COMPARE_COMBO_2
+23|HIDC_CRITERIA_TEXT_EDIT_1|Text (Search messages)
+23|HIDC_CRITERIA_TEXT_EDIT_2|HIDC_CRITERIA_TEXT_EDIT_2
+23|HIDC_CRITERIA_TEXT_EDIT_5|HIDC_CRITERIA_TEXT_EDIT_5
+23|HIDC_CRITERIA_TEXT_EDIT_4|HIDC_CRITERIA_TEXT_EDIT_4
+23|HIDC_CRITERIA_TEXT_EDIT_3|HIDC_CRITERIA_TEXT_EDIT_3
+23|HIDC_CRITERIA_NUM_UNITS_STATIC_1|Size or Age (Search messages)
+23|HIDC_CRITERIA_NUM_UNITS_STATIC_5|HIDC_CRITERIA_NUM_UNITS_STATIC_5
+23|HIDC_CRITERIA_NUM_UNITS_STATIC_4|HIDC_CRITERIA_NUM_UNITS_STATIC_4
+23|HIDC_CRITERIA_NUM_UNITS_STATIC_3|HIDC_CRITERIA_NUM_UNITS_STATIC_3
+23|HIDC_CRITERIA_NUM_UNITS_STATIC_2|HIDC_CRITERIA_NUM_UNITS_STATIC_2
+23|HIDC_CRITERIA_NUM_SPIN_1|Select number (Search messages)
+23|HIDC_CRITERIA_NUM_SPIN_5|HIDC_CRITERIA_NUM_SPIN_5
+23|HIDC_CRITERIA_NUM_SPIN_4|HIDC_CRITERIA_NUM_SPIN_4
+23|HIDC_CRITERIA_NUM_SPIN_3|HIDC_CRITERIA_NUM_SPIN_3
+23|HIDC_CRITERIA_NUM_SPIN_2|HIDC_CRITERIA_NUM_SPIN_2
+23|HIDC_CRITERIA_NUM_EDIT_1|Number (Search messages)
+23|HIDC_CRITERIA_NUM_EDIT_5|HIDC_CRITERIA_NUM_EDIT_5
+23|HIDC_CRITERIA_NUM_EDIT_4|HIDC_CRITERIA_NUM_EDIT_4
+23|HIDC_CRITERIA_NUM_EDIT_3|HIDC_CRITERIA_NUM_EDIT_3
+23|HIDC_CRITERIA_NUM_EDIT_2|HIDC_CRITERIA_NUM_EDIT_2
+23|HIDC_CRITERIA_EQUAL_COMBO_1|is or is not (Search messages)
+23|HIDC_CRITERIA_EQUAL_COMBO_5|HIDC_CRITERIA_EQUAL_COMBO_5
+23|HIDC_CRITERIA_EQUAL_COMBO_4|HIDC_CRITERIA_EQUAL_COMBO_4
+23|HIDC_CRITERIA_EQUAL_COMBO_3|HIDC_CRITERIA_EQUAL_COMBO_3
+23|HIDC_CRITERIA_EQUAL_COMBO_2|HIDC_CRITERIA_EQUAL_COMBO_2
+23|HIDC_CRITERIA_LABEL_COMBO_1|Label (Search messages)
+23|HIDC_CRITERIA_LABEL_COMBO_2|HIDC_CRITERIA_LABEL_COMBO_2
+23|HIDC_CRITERIA_LABEL_COMBO_5|HIDC_CRITERIA_LABEL_COMBO_5
+23|HIDC_CRITERIA_LABEL_COMBO_4|HIDC_CRITERIA_LABEL_COMBO_4
+23|HIDC_CRITERIA_LABEL_COMBO_3|HIDC_CRITERIA_LABEL_COMBO_3
+23|HIDC_CRITERIA_STATUS_COMBO_1|Status (Search messages)
+23|HIDC_CRITERIA_STATUS_COMBO_5|HIDC_CRITERIA_STATUS_COMBO_5
+23|HIDC_CRITERIA_STATUS_COMBO_4|HIDC_CRITERIA_STATUS_COMBO_4
+23|HIDC_CRITERIA_STATUS_COMBO_3|HIDC_CRITERIA_STATUS_COMBO_3
+23|HIDC_CRITERIA_STATUS_COMBO_2|HIDC_CRITERIA_STATUS_COMBO_2
+23|HIDC_CRITERIA_PERSONA_COMBO_1|Personality (Search messages)
+23|HIDC_CRITERIA_PERSONA_COMBO_5|HIDC_CRITERIA_PERSONA_COMBO_5
+23|HIDC_CRITERIA_PERSONA_COMBO_4|HIDC_CRITERIA_PERSONA_COMBO_4
+23|HIDC_CRITERIA_PERSONA_COMBO_3|HIDC_CRITERIA_PERSONA_COMBO_3
+23|HIDC_CRITERIA_PERSONA_COMBO_2|HIDC_CRITERIA_PERSONA_COMBO_2
+23|HIDC_SEARCHWND_LESS_BTN|Fewer button (Search message)
+23|HIDC_SEARCHWND_MORE_BTN|More button (Search message)
+23|HIDC_SEARCHWND_BEGIN_BTN|Search button (Search message)
+23|HIDC_CRITERIA_DATE_CTRL_1|Date (Search message)
+23|HIDC_CRITERIA_DATE_CTRL_5|HIDC_CRITERIA_DATE_CTRL_5
+23|HIDC_CRITERIA_DATE_CTRL_4|HIDC_CRITERIA_DATE_CTRL_4
+23|HIDC_CRITERIA_DATE_CTRL_3|HIDC_CRITERIA_DATE_CTRL_3
+23|HIDC_CRITERIA_DATE_CTRL_2|HIDC_CRITERIA_DATE_CTRL_2
+23|HIDC_CRITERIA_PRIORITY_COMBO_1|Priority (Search message)
+23|HIDC_CRITERIA_PRIORITY_COMBO_5|HIDC_CRITERIA_PRIORITY_COMBO_5
+23|HIDC_CRITERIA_PRIORITY_COMBO_4|HIDC_CRITERIA_PRIORITY_COMBO_4
+23|HIDC_CRITERIA_PRIORITY_COMBO_3|HIDC_CRITERIA_PRIORITY_COMBO_3
+23|HIDC_CRITERIA_PRIORITY_COMBO_2|HIDC_CRITERIA_PRIORITY_COMBO_2
+23|HIDC_LBL_SETTINGS_START_NAME|Real name (Options)
+23|HIDC_LBL_SETTINGS_PERSONAL_NAME|HIDC_LBL_SETTINGS_PERSONAL_NAME
+23|HIDS_INI_REAL_NAME|HIDS_INI_REAL_NAME
+23|HIDC_LBL_SETTINGS_START_POP|Mail Server (Incoming POP/IMAP)
+23|HIDC_LBL_SETTINGS_CHECKING_POP|HIDC_LBL_SETTINGS_CHECKING_POP
+23|HIDC_LBL_SETTINGS_PERSONAL_POP|HIDC_LBL_SETTINGS_PERSONAL_POP
+23|HIDS_INI_PERSONA_POP_ACCOUNT|HIDS_INI_PERSONA_POP_ACCOUNT
+23|HIDS_INI_POP_ACCOUNT|HIDS_INI_POP_ACCOUNT
+23|HIDC_USE_DEFAULT_SOUND|Use Default
+23|HIDC_NICKNAME_LEFT_NEWBOOK|New Book (address book)
+23|HIDR_USAGE_STATISTICS|Statistics Window
+23|HID_MOOD_MAIL|Mood Watch icon button
+23|HIDC_SEARCHWND_MAILBOX_TREE|Mailbox window (Search message)
+23|HIDC_SEARCHWND_RESULTS_LIST|Results window
+23|HIDC_SEARCHWND_RESULTS_TAB|HIDC_SEARCHWND_RESULTS_TAB
+23|HIDC_SEARCHWND_RESULTS_STATIC|Results Information
+23|HIDC_SEARCHWND_OR_RADIO|Match Any (Search message)
+23|HIDC_SEARCHWND_AND_RADIO|Match All button (Search message)
+23|HIDS_INI_DONOT_CHECK_BATTERY|Don't check when using battery (Checking Mail Options)
+23|HIDC_LBL_SETTINGS_CHECKING_EVERYMIN|Check for mail every _ minutes (Checking Mail Options)
+23|HIDS_INI_CHECK_FOR_MAIL|HIDS_INI_CHECK_FOR_MAIL
+23|HIDS_INI_WARN_LAUNCH_PROGRAM|Launch a program from a message
+23|HIDC_LBL_SETTINGS_SEND_SMTP|SMTP server (Outgoing)
+23|HIDS_INI_SMTP_SERVER|HIDS_INI_SMTP_SERVER
+23|HIDC_LBL_SETTINGS_PERSONAL_ADDRESS|Return address (Options)
+23|HIDS_INI_PERSONA_RETURN_ADDRESS|HIDS_INI_PERSONA_RETURN_ADDRESS
+23|HIDC_LBL_SETTINGS_SEND_ADDRESS|HIDC_LBL_SETTINGS_SEND_ADDRESS
+23|HIDS_INI_RETURN_ADDRESS|HIDS_INI_RETURN_ADDRESS
+23|HIDC_LBL_SETTINGS_LOGIN_NAME|Login Name
+23|HIDS_INI_LOGIN_NAME|HIDS_INI_LOGIN_NAME
+23|HIDC_LBL_SETTINGS_MAIL_SERVER|Mail Server (Incoming)
+23|HIDS_INI_POP_SERVER|HIDS_INI_POP_SERVER
+23|HIDC_STAT_INCOMING_MAILBPREFIX|IMAP Mailbox Location Prefix
+23|HIDS_INI_IMAP_PREFIX|HIDS_INI_IMAP_PREFIX
+23|HIDS_INI_BIG_MESSAGE_THRESHOLD|Skip messages over _ K in size
+23|HIDS_INI_SKIP_BIG_MESSAGES|HIDS_INI_SKIP_BIG_MESSAGES
+23|HIDS_INI_IMAP_MAXSIZE|Skip Attachments over _ K
+23|HIDS_INI_IMAP_OMITATTACH|HIDS_INI_IMAP_OMITATTACH
+23|HIDS_INI_IMAP_MINDNLOAD|Minimal Headers Only (IMAP)
+23|HIDS_STAT_INCOMING_DOWNLOAD|Download Options (IMAP)
+23|HIDS_INI_USES_IMAP|IMAP (Incoming Mail Options)
+23|HIDS_INI_USES_POP|POP (Incoming Mail Options)
+23|HIDS_INI_DELETE_MAIL_FROM_SERVER|Delete from server after _ days (Incoming Mail Options)
+23|HIDS_INI_LEAVE_ON_SERVER_DAYS|HIDS_INI_LEAVE_ON_SERVER_DAYS
+23|HIDS_INI_LEAVE_MAIL_ON_SERVER|Leave mail on server (Options)
+23|HIDS_INI_PERSONA_LMOS|HIDS_INI_PERSONA_LMOS
+23|HIDS_INI_SAVE_PASSWORD|Save password (Checking Mail Options)
+23|HIDS_INI_SEND_ON_CHECK|Send on check (Checking Mail Options)
+23|HIDS_INI_KEEP_COPIES|Keep copies (Sending Mail Options)
+23|HIDS_INI_USE_QP|May use Quoted-Printable (Sending Mail Options)
+23|HIDS_INI_WORD_WRAP|Word wrap (Sending Mail Options)
+23|HIDC_SIGNATURE_LABEL|Default signature (Sending Mail Options)
+23|HIDS_INI_SIGNATURE_NAME|HIDS_INI_SIGNATURE_NAME
+23|HIDS_INI_DOMINANT_SIGNATURE|HIDS_INI_DOMINANT_SIGNATURE
+23|HIDS_INI_STATIONERY|Default stationery (Composing Mail)
+23|HIDS_INI_IMMEDIATE_SEND|Immediate send (Sending Mail Options)
+23|HIDC_LBL_SETTINGS_SEND_DOMAIN|Domain to add to unqualified names (Options)
+23|HIDS_INI_DOMAIN_QUALIFIER|HIDS_INI_DOMAIN_QUALIFIER
+23|HIDC_LBL_SETTINGS_CHECKING_AUTHENTICATION|Authentication Style (Checking Mail Options)
+23|HIDS_INI_AUTH_RPA|HIDS_INI_AUTH_RPA
+23|HIDS_INI_AUTH_APOP|HIDS_INI_AUTH_APOP
+23|HIDS_INI_AUTH_KERB|HIDS_INI_AUTH_KERB
+23|HIDS_INI_AUTH_PASS|HIDS_INI_AUTH_PASS
+23|HIDS_INI_SERVER_DELETE|Delete from server when emptied from Trash (Incoming Mail Options)
+23|HIDC_LBL_SETTINGS_MESSAGE_FONT|Proportional (Fonts & Display Options)
+23|HIDS_INI_MESSAGE_FONT|HIDS_INI_MESSAGE_FONT
+23|HIDC_LBL_SETTINGS_FONTS_PRINT|Printer Font (Fonts Options)
+23|HIDS_INI_PRINTER_FONT|HIDS_INI_PRINTER_FONT
+23|HIDC_LBL_SETTINGS_FONTS_SCREEN|Screen Font (Fonts Options)
+23|HIDS_INI_SCREEN_FONT|HIDS_INI_SCREEN_FONT
+23|HIDS_INI_AUTO_ATTACHED_DELETE_TRASH|When message emptied from Trash (Attchments Options)
+23|HIDS_INI_AUTO_ATTACHED_DELETE_SEND|After sending message (Attchments Options)
+23|HIDS_INI_AUTO_ATTACHED_DELETE_NEVER|Never (Attchments Options)
+23|HIDS_INI_TIDY_ATTACH|Delete attachments when emptying Trash (Attachments Options)
+23|HIDS_INI_AUTO_RECEIVE_DIR|Attachment Directory (Attachments Options)
+23|HIDC_PUT_TEXT_IN_BODY|Put text attachments in body of message (Attachments Options)
+23|HIDS_INI_SEND_UUENCODE|Uuencode (Attchments Options)
+23|HIDS_INI_SEND_BINHEX|BinHex (Attchments Options)
+23|HIDS_INI_SEND_MIME|MIME (Attchments Options)
+23|HIDC_LBL_SETTINGS_ATTACH_METHOD|Encoding Method (Attchments Options)
+23|HIDS_INI_TABS_IN_BODY|Tabs in body of message (Sending Mail Options)
+23|HIDS_INI_MDI_TASKBAR|Show MDI task bar (Display Options)
+23|HIDS_INI_SHOW_TOOLBAR|Show toolbar (Display Options)
+23|HIDS_INI_SHOW_LARGEBUTTONS|Show large buttons
+23|HIDS_INI_SHOW_COOLBAR|Show cool bars (Display Options)
+23|HIDC_LBL_SETTINGS_SF_SIZE|Size (screen) (Fonts Options)
+23|HIDS_INI_SF_SIZE|HIDS_INI_SF_SIZE
+23|HIDC_LBL_SETTINGS_SCREEN_FONT|Font (screen) (Fonts Options)
+23|HIDS_INI_SCREEN_FONT_|HIDS_INI_SCREEN_FONT_
+23|HIDC_LBL_SETTINGS_PF_SIZE|Size (printer) (Fonts Options)
+23|HIDS_INI_PF_SIZE|HIDS_INI_PF_SIZE
+23|HIDC_LBL_SETTINGS_MESSAGE_FONT_SIZE|Size (Fonts Options)
+23|HIDS_INI_MESSAGE_FONT_SIZE|HIDS_INI_MESSAGE_FONT_SIZE
+23|HIDS_INI_USE_PROPORTIONAL_AS_DEFAULT|Use proportional as default (Fonts Options)
+23|HIDC_LBL_SETTINGS_MESSAGE_FIXED_FONT|Fixed-width (Fonts Options)
+23|HIDS_INI_MESSAGE_FIXED_FONT|HIDS_INI_MESSAGE_FIXED_FONT
+23|HIDD_SETTINGS_LABELS|Labels (Labels Options)
+23|HIDS_INI_LABEL_COLOR_4|HIDS_INI_LABEL_COLOR_4
+23|HIDS_INI_LABEL_TEXT_3|HIDS_INI_LABEL_TEXT_3
+23|HIDS_INI_LABEL_COLOR_3|HIDS_INI_LABEL_COLOR_3
+23|HIDS_INI_LABEL_TEXT_2|HIDS_INI_LABEL_TEXT_2
+23|HIDS_INI_LABEL_COLOR_2|HIDS_INI_LABEL_COLOR_2
+23|HIDS_INI_LABEL_TEXT_1|HIDS_INI_LABEL_TEXT_1
+23|HIDS_INI_LABEL_COLOR_1|HIDS_INI_LABEL_COLOR_1
+23|HIDS_INI_LABEL_TEXT_7|HIDS_INI_LABEL_TEXT_7
+23|HIDS_INI_LABEL_COLOR_7|HIDS_INI_LABEL_COLOR_7
+23|HIDS_INI_LABEL_TEXT_6|HIDS_INI_LABEL_TEXT_6
+23|HIDS_INI_LABEL_COLOR_6|HIDS_INI_LABEL_COLOR_6
+23|HIDS_INI_LABEL_TEXT_5|HIDS_INI_LABEL_TEXT_5
+23|HIDS_INI_LABEL_COLOR_5|HIDS_INI_LABEL_COLOR_5
+23|HIDS_INI_LABEL_TEXT_4|HIDS_INI_LABEL_TEXT_4
+23|HIDS_INI_SHOW_CATEGORY_ICONS|Show category icons (Display Options)
+23|HIDS_INI_SHOW_STATUS_BAR|Show status bar (Display Options)
+23|HIDS_INI_SHOW_TOOLTIPS|Show toolbar tips (Display Options)
+23|HIDS_INI_ZOOM_WINDOWS|Zoom windows when opening (Viewing Mail Options)
+23|HIDS_INI_SET_PREVIEW_READ|Mark previewed messages as read after _ second(s) (Viewing Mail Options)
+23|HIDS_INI_SET_PREVIEW_READ_SECONDS|HIDS_INI_SET_PREVIEW_READ_SECONDS
+23|HIDS_INI_MAILBOX_PREVIEW_PANE|Show message preview pane (Viewing Mail Options)
+23|HIDS_INI_USE_BIDENT_ALWAYS|Use Microsoft Viewer (Viewing Mail Options)
+23|HIDS_INI_WARN_QUEUE_NO_SUBJECT|Queue a message with no subject (Extra Warnings Options)
+23|HIDS_INI_WARN_DELETE_UNSENT|Delete unsent mail (Extra Warnings Options)
+23|HIDS_INI_WARN_DELETE_QUEUED|Delete queued mail (Extra Warnings Options)
+23|HIDS_INI_WARN_DELETE_UNREAD|Delete unread mail (Extra Warnings Options)
+23|HIDS_INI_FILTER_REPORT|Generate Filter Report (Getting Attention Options)
+23|HIDS_INI_NEW_MAIL_SOUND|Select Sound File (Getting Attention Options)
+23|HIDS_INI_SOUND|Play a sound (Getting Attention Options)
+23|HIDS_INI_OPEN_IN_MAILBOX|Open mailbox (Getting Attention Options)
+23|HIDS_INI_ALERT|Use an alert dialog box (Getting Attention Options)
+23|HIDS_INI_MBOX_SHOW_LABEL|Show Mailbox Columns: Label (Display Options)
+23|HIDS_INI_MBOX_SHOW_ATTACHMENT|Show Mailbox Columns: Attachment (Display Options)
+23|HIDS_INI_MBOX_SHOW_PRIORITY|Show Mailbox Columns: Priority (Display Options)
+23|HIDS_INI_MBOX_SHOW_STATUS|Show Mailbox Columns: Status (Display Options)
+23|HIDS_INI_REPLY_TO_TO_CC|Put original To: recipients in Cc: field (Replying Options)
+23|HIDS_INI_INCLUDE_SELF|Include yourself (Replying Options)
+23|HIDC_LBL_SETTINGS_REPLY_WHENREPLYING|When Replying to all (Replying Options)
+23|HIDS_INI_REPLY_AUTOFCC|Automatically FCC to original mailbox (Replying Options)
+23|HIDS_INI_COPY_PRIORITY|Copy original's priority to reply (Replying Options)
+23|HIDS_INI_REPLY_TO_ALL|Map Ctrl+R to "Reply to All" (Replying Options)
+23|HIDS_INI_BIDENT_WARN_BEFORE_SWAP|Switch views for Find (Extra Warnings Options)
+23|HIDS_INI_WARN_DEFAULT_MAILTO|Start Eudora and it's not the default mailer (Extra Warnings Options)
+23|HIDS_INI_WARN_EMPTY_TRASH|Empty the Trash mailbox (Extra Warnings Options)
+23|HIDS_INI_WARN_QUEUE_BIG_MESSAGE|Queue a message bigger than _ K (Extra Warnings Options)
+23|HIDS_INI_WARN_QUIT_WITH_QUEUED|Quit with messages queued to be sent (Extra Warnings Options)
+23|HIDS_INI_WARN_QUEUE_STYLED_TEXT|Ask me each time
+23|HIDC_LBL_SETTINGS_SPELL_OUTGOING|Ignore Original Text (Spell Checking Options)
+23|HIDS_INI_IGNORE_ORIGINAL|HIDS_INI_IGNORE_ORIGINAL
+23|HIDS_INI_ALWAYS_SUGGEST|Suggest word (Spell Checking Options)
+23|HIDS_INI_SUGGEST_PHONETICS|HIDS_INI_SUGGEST_PHONETICS
+23|HIDS_INI_SUGGEST_TYPOGRAPHIC|HIDS_INI_SUGGEST_TYPOGRAPHIC
+23|HIDS_INI_SUGGEST_SPLIT_WORDS|HIDS_INI_SUGGEST_SPLIT_WORDS
+23|HIDS_INI_IGNORE_ALL_CAPS|Ignore words with all capitals (Spell Checking Options)
+23|HIDS_INI_REPORT_DOUBLED_WORDS|Report doubled words (Spell Checking Options)
+23|HIDS_INI_IGNORE_MIXED_CASE|Ignore words with mixed case (Spell Checking Options)
+23|HIDS_INI_IGNORE_MIXED_DIGITS|Ignore words with numbers (Spell Checking Options)
+23|HIDS_INI_IGNORE_CAPPED_WORDS|Ignore capitalized words (Spell Checking Options)
+23|HIDS_INI_MBOX_SHOW_SUBJECT|Show Mailbox Columns: Subject (Display Options)
+23|HIDS_INI_MBOX_SHOW_SERVER_STATUS|Show Mailbox Columns: Server status (Display Options)
+23|HIDS_INI_MBOX_SHOW_SIZE|Show Mailbox Columns: Size (Display Options)
+23|HIDS_INI_MBOX_SHOW_DATE|Show Mailbox Columns: Date (Display Options)
+23|HIDS_INI_MBOX_SHOW_SENDER|Show Mailbox Columns: Sender (Display Options)
+23|HIDC_LBL_SETTINGS_OLD_DATE_FORMAT|OLD format (Date Display Options)
+23|HIDS_INI_OLD_DATE_FORMAT|HIDS_INI_OLD_DATE_FORMAT
+23|HIDC_LBL_SETTINGS_ANCIENT_DATE_HOURS|Hours to be ANCIENT (Date Display Options)
+23|HIDS_INI_ANCIENT_DATE_HOURS|HIDS_INI_ANCIENT_DATE_HOURS
+23|HIDC_LBL_SETTINGS_OLD_DATE_HOURS|Hours to be OLD (Date Display Options)
+23|HIDS_INI_OLD_DATE_HOURS|HIDS_INI_OLD_DATE_HOURS
+23|HIDC_LBL_SETTINGS_RECENT_DATE_FORMAT|RECENT format (Date Display Options)
+23|HIDS_INI_RECENT_DATE_FORMAT|HIDS_INI_RECENT_DATE_FORMAT
+23|HIDD_LBL_SETTINGS_DATE_DISPLAY|Date formats: Age-sensitive (Date Display Options)
+23|HIDS_INI_AGE_SENSITIVE_DATE_DISPLAY|HIDS_INI_AGE_SENSITIVE_DATE_DISPLAY
+23|HIDC_LBL_SETTINGS_DATE_DISPLAY|Date Formats: Fixed (Date Display Options)
+23|HIDS_INI_FIXED_DATE_FORMAT|HIDS_INI_FIXED_DATE_FORMAT
+23|HIDS_INI_FIXED_DATE_DISPLAY|HIDS_INI_FIXED_DATE_DISPLAY
+23|HIDS_INI_LOCAL_TIME_DISPLAY|Display dates using Local's timezone (Date Display Options)
+23|HIDS_INI_SENDER_TIME_DISPLAY|Display dates using Sender's timezone (Date Display Options)
+23|HIDS_INI_SPELL_ON_QUEUE_WARN|Without completing the spell check (Spell Checking Options)
+23|HIDS_INI_SPELL_ON_QUEUE|Check when message queue/send selected (Spell Checking Options)
+23|HIDC_LBL_ACAP_SERVER_NAME|Server Name (ACAP)
+23|HIDS_INI_ACAP_SERVER|HIDS_INI_ACAP_SERVER
+23|HIDS_INI_AUTO_EXPAND_NICKNAMES|Include outdated 'Return-Receipt-To' (Miscellaneous Options)
+23|HIDS_INI_RETURN_RECEIPT|Include outdated 'Return-Receipt-To' (Miscellaneous Options)
+23|HIDS_INI_ALLOW_DRAGDROP|Allow Drag and Drop Transfers (Miscellaneous Options)
+23|HIDS_INI_TURBO_REDIRECT|Turbo redirect by default (Miscellaneous Options)
+23|HIDS_INI_AUTO_OK|Say OK to alerts after _ seconds (Miscellaneous Options)
+23|HIDS_INI_AUTO_OK_TIMEOUT|HIDS_INI_AUTO_OK_TIMEOUT
+23|HIDS_INI_EMPTY_TRASH_ON_QUIT|Empty Trash when exiting (Miscellaneous Options)
+23|HIDS_INI_MAILBOX_SUPERCLOSE|Close messages with mailbox (Miscellaneous Options)
+23|HIDS_INI_ALT_ARROWS|Alt+arrow keys (Miscellaneous Options)
+23|HIDS_INI_CONTROL_ARROWS|Ctrl+arrow keys (Miscellaneous Options)
+23|HIDS_INI_PLAIN_ARROWS|Unmodified arrow keys (Miscellaneous Options)
+23|HIDC_LBL_SETTINGS_MISC_SWITCH|Switch messages with (Miscellaneous Options)
+23|HIDC_LBL_SETTINGS_ANCIENT_DATE_FORMAT|ANCIENT format (Date Display Options)
+23|HIDS_INI_ANCIENT_DATE_FORMAT|HIDS_INI_ANCIENT_DATE_FORMAT
+23|HIDC_LBL_SETTINGS_ADV_BUFFER_B|Network buffer size of _ bytes (Advanced Network Options)
+23|HIDS_INI_NETWORK_BUFFER_SIZE|HIDS_INI_NETWORK_BUFFER_SIZE
+23|HIDC_LBL_SETTINGS_ADV_BUFFER|HIDC_LBL_SETTINGS_ADV_BUFFER
+23|HIDC_LBL_SETTINGS_ADV_TIMEOUT_B|Network timeout after _ seconds (Advanced Network Options)
+23|HIDS_INI_NETWORK_TIMEOUT|HIDS_INI_NETWORK_TIMEOUT
+23|HIDC_LBL_SETTINGS_ADV_TIMEOUT|HIDC_LBL_SETTINGS_ADV_TIMEOUT
+23|HIDC_LBL_SETTINGS_ADV_TIMEOUT2_B|Network Open timeout _ seconds (Advanced Network Options)
+23|HIDS_INI_NETWORK_OPEN_TIMEOUT|HIDS_INI_NETWORK_OPEN_TIMEOUT
+23|HIDC_LBL_SETTINGS_ADV_TIMEOUT2|HIDC_LBL_SETTINGS_ADV_TIMEOUT2
+23|HIDS_INI_ASYNC_DATABASE|Database functions (Advanced Network Options)
+23|HIDS_INI_ASYNC_WINSOCK|All non-database functions (Advanced Network Options)
+23|HIDC_LBL_SETTINGS_ADV_WINSOCKCALLS|Use asynchronous Winsock calls for (Advanced Network Options)
+23|HIDC_ACAP_BUTTON|Retrieve Settings Now
+23|HIDC_LBL_ACAP_PASSWORD|Password (ACAP)
+23|HIDS_INI_ACAP_PASSWORD|HIDS_INI_ACAP_PASSWORD
+23|HIDC_LBL_ACAP_USER_NAME|User Name (ACAP)
+23|HIDS_INI_ACAP_USER_ID|HIDS_INI_ACAP_USER_ID
+23|HIDS_INI_MAPI_DELETE_TRASH|Delete MAPI attachments: When message is emptied from trash (MAPI Options)
+23|HIDS_INI_MAPI_DELETE_SEND|Delete MAPI attachments: After sending message (MAPI Options)
+23|HIDS_INI_MAPI_DELETE_NEVER|Delete MAPI attachments: Never (MAPI Options)
+23|HIDC_LBL_SETTINGS_MAPI_DELETE|Delete MAPI attachments (MAPI Options)
+23|HIDS_INI_MAPI_USE_EUDORA|Use Eudora MAPI Server: When Eudora is running (MAPI Options)
+23|HIDS_INI_MAPI_USE_ALWAYS|Use Eudora MAPI Server: Always (MAPI Options)
+23|HIDS_INI_MAPI_USE_NEVER|Use Eudora MAPI Server: Never (MAPI Options)
+23|HIDC_LBL_SETTINGS_MAPI_SERVER|Use Eudora MAPI server (MAPI Options)
+23|HIDS_INI_AUTO_CONNECTION_SAVE_PASSWORD|Save password (Advanced Network Options)
+23|HIDS_INI_AUTO_CONNECTION_USERNAME|Username (Advanced Network Options)
+23|HIDC_LBL_SETTINGS_ADV_ENTRY|Entry
+23|HIDS_INI_AUTO_CONNECTION_NAME|HIDS_INI_AUTO_CONNECTION_NAME
+23|HIDS_INI_NET_IMMEDIATE_CLOSE|Unload Winsock DLL after closing socket(Advanced Network Options)
+23|HIDS_INI_NETWORK_CACHING|Cache network info (Advanced Network Options)
+23|HIDC_LBL_SETTINGS_FONT_WIDTH|Message window width
+23|HIDS_INI_MESSAGE_WIDTH|HIDS_INI_MESSAGE_WIDTH
+23|HIDS_INI_EASY_OPEN|Automatically open next message
+23|HIDC_LBL_SETTINGS_FONT_HEIGHT|Message window height
+23|HIDS_INI_MESSAGE_LINES|HIDS_INI_MESSAGE_LINES
+23|HIDS_INI_CONNECT_OFFLINE|Offline
+23|Add_Details|Add Details
+23|HIDS_INI_STRIP_RICH_ON_SEND|Discard style information (Styled Text Options)
+23|HIDC_LBL_SETTINGS_KERB_FORMAT|Service format (Kerberos Options)
+23|HIDS_INI_KERB_FORMAT|HIDS_INI_KERB_FORMAT
+23|HIDC_LBL_SETTINGS_KERB_SERVICE|Service name (Kerberos Options)
+23|HIDS_INI_KERB_SERVICE|HIDS_INI_KERB_SERVICE
+23|HIDC_LBL_SETTINGS_KERB_REALM|Realm (Kerberos Options)
+23|HIDS_INI_KERB_REALM|HIDS_INI_KERB_REALM
+23|HIDC_LBL_SETTINGS_KERB_PORT|Kerberos POP3 port (Kerberos Options)
+23|HIDS_INI_KERB_PORT|HIDS_INI_KERB_PORT
+23|HIDS_INI_TASKSTATUS_SHOWCOL_PROGRESS|Progress (Task Status)
+23|HIDS_INI_TASKSTATUS_SHOWCOL_DETAILS|Details (Task Status)
+23|HIDS_INI_TASKSTATUS_SHOWCOL_STATUS|Status (Task Status)
+23|HIDS_INI_TASKSTATUS_SHOWCOL_PERSONA|Persona (Task Status)
+23|HIDS_INI_TASKSTATUS_SHOWCOL_TASK|Task (Task Status)
+23|HIDS_INI_RUN_HTML_CODE|Allow executables in HTLM content
+23|HIDS_INI_AUTOMATION_ENABLED|Automation enabled from this machine
+23|HIDS_INI_INLINE_MAPI_TEXT_ATTACHMENT|Send single MAPI file attachment as inline attachment (TXT and HTML files only)
+23|HIDC_LBL_SETTINGS_SENDING_STYLED_TEXT|When sending mail with styled text (HTML)
+23|HIDS_INI_SEND_PLAIN_ONLY|HIDS_INI_SEND_PLAIN_ONLY
+23|HIDS_INI_SEND_STYLED_ONLY|HIDS_INI_SEND_STYLED_ONLY
+23|HIDS_INI_SEND_PLAIN_AND_STYLED|HIDS_INI_SEND_PLAIN_AND_STYLED
+23|HIDS_INI_SHOW_STYLED_TEXT_TOOLBAR|Show formatting toolbar
+23|HIDS_INI_DRAG_SELECT_MESSAGES|Allow drag select messages
+23|HIDS_INI_FUMLUB|Select newly inserted messages (FUMLUB)
+23|HIDS_INI_SHOW_MAILBOX_LINES|Show mailbox lines
+23|HIDC_LBL_SETTINGS_DATE_FORMATDESC|Date Display
+23|HIDC_LBL_SETTINGS_DATE_FORMAT|HIDC_LBL_SETTINGS_DATE_FORMAT
+23|HIDC_LBL_SETTINGS_CHECKING_EVERYMIN_B|Checking Mail
+23|HIDC_LBL_SETTINGS_TASKS_COLUMNS|Background Tasks (tasks columns)
+23|HIDC_LBL_SETTINGS_AUTOMATION_ICON|Automation
+23|HIDC_LBL_SETTINGS_AUTOMATION_INFO|HIDC_LBL_SETTINGS_AUTOMATION_INFO
+23|HIDC_LBL_SETTINGS_ACAP_INFO|Auto Configure
+23|HID_INVISIBLES|Show Text Symbols
+23|HIDC_DIALUP_ENTRY_NEW|New
+23|HIDC_DIALUP_ENTRY_EDIT|Edit
+23|HIDS_INI_RAS_CLOSE_ON_EXIT|Close connection on Exit
+23|HIDS_INI_RAS_CLOSE_AFTER_DONE|Hang up after receiving and sending
+23|HIDC_LBL_SETTINGS_ADV_ESTCONN|Connect using Dial-up networking
+23|HIDS_INI_AUTO_CONNECTION|HIDS_INI_AUTO_CONNECTION
+23|HIDS_INI_TASK_STATUS_BRINGTOFRONT|Bring task status window to front
+23|HIDS_INI_TASK_ERR_BRINGTOFRONT|Bring error window to front
+23|HIDS_INI_TASKMGR_WAITTIME|Wait for _ seconds of idle time before automatically delivering spooled messages
+23|HIDC_LBL_SETTINGS_VIEWMAIL_PREVIEWPANE|Viewing Mail (preview pane)
+23|HIDC_LBL_SETTINGS_VIEWMAIL_MSGWND|Viewing Mail (Message prefs)
+23|HIDC_LBL_SETTINGS_SPELL_INFO|Check Spelling (preferences)
+23|HIDC_LBL_SETTINGS_MISC_AUTO_OK_B|Miscellaneous
+23|HIDC_LBL_SETTINGS_MAILBOXES_WHENDRAG|Mailboxes (dragging messages)
+23|HIDC_LBL_SETTINGS_MAILBOXES_SHOWCOL|Mailboxes (show columns)
+23|HIDC_LBL_SETTINGS_LABELS_INFO|Labels
+23|HIDC_LBL_SETTINGS_KERB_FORMATDESC_HOSTNAME|Kerberos (host name)
+23|HIDC_LBL_SETTINGS_KERB_FORMATDESC_REALM|Kerberos (realm)
+23|HIDC_LBL_SETTINGS_KERB_FORMATDESC_POPHOST|Kerberos (POP server)
+23|HIDC_LBL_KERB_FORMATDESC_SERVNAME|Kerberos (server name)
+23|HIDC_LBL_SETTINGS_KERB_FORMATDESC|Kerberos
+23|HIDC_LBL_SETTINGS_FONTS_PRINTER|Fonts (printer)
+23|HIDC_LBL_SETTINGS_FONTS_MESSAGE|Fonts (message)
+23|HIDC_LBL_SETTINGS_EXTRAWARN_WARNWHEN|Extra Warnings
+23|HIDS_INI_SMTP_AUTH_ALLOWED|Allow authentication
+23|HIDS_INI_AUTO_SAVE_MSGS_EVERY|Auto-save messages every _ minutes
+23|HIDS_INI_MAXIMUM_HISTORY_SIZE|Maximum entries to keep in history
+23|HIDS_INI_AUTO_COMP_LISTBOX_DELAY|Time to wait before popping up - Auto-completion box (Milliseconds)
+23|HIDS_INI_ADD_FROM_LINES_TO_HISTORY|Add the from lines of replied-to messages
+23|HIDS_INI_AUTOCOMP_LIST_IN_ALPHA|Names should appear in alphabetical order
+23|HIDS_INI_POPUP_NAMECOMPLETER|Use drop down list for completion choices
+23|HIDS_INI_DO_HIST_COMP|History File (auto-completion)
+23|HIDS_INI_DO_AB_COMP|Address Book (auto-completion)
+23|HIDS_INI_INTERACTIVE_SPELL_CHECK|Only when requested
+23|HIDC_RADIO_AUTOSPELL|Automatically as you type
+23|HIDS_INI_SEND_STYLED_SIG|Send the signature with styles
+23|HIDS_INI_INCLUDE_SIG_REPLY|Include signature on reply
+23|HIDC_LBL_SETTINGS_TASKS_WAITFOR_A|Background Tasks (time)
+23|HIDC_LBL_SETTINGS_TASKS_WAITFOR_C|HIDC_LBL_SETTINGS_TASKS_WAITFOR_C
+23|HIDC_LBL_SETTINGS_TASKS_WAITFOR_B|HIDC_LBL_SETTINGS_TASKS_WAITFOR_B
+23|HIDC_LBL_SETTINGS_STATISTICS_COLOR_PREVIOUS|Color (in statistics options window)
+23|HIDC_LBL_SETTINGS_STATISTICS_COLOR_AVERAGE|HIDC_LBL_SETTINGS_STATISTICS_COLOR_AVERAGE
+23|HIDC_LBL_SETTINGS_STATISTICS_COLOR|HIDC_LBL_SETTINGS_STATISTICS_COLOR
+23|HIDC_LBL_SETTINGS_STATISTICS_COLOR_CURRENT|HIDC_LBL_SETTINGS_STATISTICS_COLOR_CURRENT
+23|HIDC_LBL_SETTINGS_STATISTICS_AVERAGE|Series (in statistics options window)
+23|HIDC_LBL_SETTINGS_STATISTICS_SERIES|HIDC_LBL_SETTINGS_STATISTICS_SERIES
+23|HIDC_LBL_SETTINGS_STATISTICS_CURRENT|HIDC_LBL_SETTINGS_STATISTICS_CURRENT
+23|HIDC_LBL_SETTINGS_STATISTICS_PREVIOUS|HIDC_LBL_SETTINGS_STATISTICS_PREVIOUS
+23|HIDS_INI_MOODCHECK_BACKGROUND|Scan stored mail in the background (MoodWatch)
+23|HIDS_INI_MOOD_MAIL_INCOMING|Scan Incoming Mail (MoodWatch)
+23|HIDS_INI_MOOD_MAIL_CHECK_ORIGINAL|Include original text (MoodWatch)
+23|HIDS_INI_MOOD_MAIL_NEVER|Never (MoodWatch)
+23|HIDS_INI_MOOD_MAIL_FIRE|If the message is on fire (MoodWatch]
+23|HIDS_INI_MOOD_MAIL_PROBABLYOFFENSE|If the message is probably offensive (MoodWatch)
+23|HIDS_INI_MOOD_MAIL_MIGHTOFFENSE|If the message seems like it might be offensive (MoodWatch)
+23|HIDC_LBL_MOOD_WARNING|Warn when queueing a message (MoodWatch)
+23|HIDS_INI_MOOD_MAIL_CHECK|Enable MoodWatch
+23|HIDS_INI_DONT_CHECK_UNCONNECTED|Don't check without a network connection
+23|HIDS_INI_WARN_COM_AUTO_SEND|Warn on Automation auto-send of messages
+23|HIDS_INI_DO_PLUG_COMP|Plug-in Addresses (Auto-completion)
+23|HIDS_INI_INLINE_SIGNATURE|Show signature when composing (Composing Mail)
+23|HIDS_INI_IMAP_STATISTICS_FOR_INBOX_ONLY|Count IMAP messages in Inbox only (in statistics options window)
+23|HIDC_LBL_SETTINGS_STATISTICS_GRAPH_AVERAGE|Graph Type (in statistics options window)
+23|HIDC_LBL_SETTINGS_STATISTICS_GRAPHTYPE|HIDC_LBL_SETTINGS_STATISTICS_GRAPHTYPE
+23|HIDC_LBL_SETTINGS_STATISTICS_GRAPH_CURRENT|HIDC_LBL_SETTINGS_STATISTICS_GRAPH_CURRENT
+23|HIDC_LBL_SETTINGS_STATISTICS_GRAPH_PREVIOUS|HIDC_LBL_SETTINGS_STATISTICS_GRAPH_PREVIOUS
+23|HIDC_STATISTICS_RESET|Reset Statistics button (in the statistical options window)

@@ -1,0 +1,288 @@
+Microsoft Developer Studio Workspace File, Format Version 5.00
+# WARNING: DO NOT EDIT OR DELETE THIS WORKSPACE FILE!
+
+###############################################################################
+
+Project: "AccountWizard"=.\AccountWizard\AccountWizard.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    AccountWizard
+    .\accountwizard
+    end source code control
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name QCUtils
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "Debugger"=.\Debugger\Debugger.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    Debugger
+    .\debugger
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "DirectoryServicesUI"=.\DirectoryServices\DirectoryServicesUI\DirectoryServicesUI.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    DirectoryServicesUI
+    .\directoryservices
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "EuImap"=.\EuImap\EuImap.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    EuImap
+    .\euimap
+    end source code control
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name imap
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "EuMemMgr"=.\EuMemMgr\EuMemMgr.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    EuMemMgr
+    .\eumemmgr
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "EudoraExe"=.\Eudora\EudoraExe.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    EudoraExe
+    .
+    end source code control
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name EudoraRes
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name NewMgr
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name QCUtils
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name EuImap
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name imap
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name DirectoryServicesUI
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name OT501
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name QCSocket
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name AccountWizard
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name SearchEngine
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name Debugger
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "EudoraRes"=.\Eudora\EudoraRes.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    EudoraRes
+    .\eudora
+    end source code control
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name OT501
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name QCUtils
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "Imap"=.\imapdll\imap.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    imap
+    .\imapdll
+    end source code control
+}}}
+
+Package=<4>
+{{{
+	Begin Project Dependency
+	Project_Dep_Name QCUtils
+	End Project Dependency
+	Begin Project Dependency
+	Project_Dep_Name NewMgr
+	End Project Dependency
+	Begin Project Dependency
+	Project_Dep_Name QCSocket
+	End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "NewMgr"=.\NewMgr\NewMgr.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    NewMgr
+    .\newmgr
+    end source code control
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name EuMemMgr
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "OT501"=.\OT501\Src\OT501.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    OT501
+    .\ot501\src
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "QCSocket"=.\QCSocket\QCSocket.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    QCSocket
+    .\qcsocket
+    end source code control
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name QCUtils
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "QCUtils"=.\QCUtils\QCUtils.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    QCUtils
+    .\qcutils
+    end source code control
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name NewMgr
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "SearchEngine"=.\SearchEngine\SearchEngine.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    SearchEngine
+    .\searchengine
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Global:
+
+Package=<5>
+{{{
+}}}
+
+Package=<3>
+{{{
+}}}
+
+###############################################################################
+

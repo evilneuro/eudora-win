@@ -1,0 +1,17 @@
+// ImapVer.rc
+
+// DO NOT USE DEV STUDIO TO EDIT THIS FILE
+//
+
+#ifdef APSTUDIO_INVOKED
+#error DO NOT USE DEV STUDIO TO EDIT THIS FILE
+#endif
+
+#include "..\..\VersionBeg.inc"
+
+VALUE "InternalName",     "IMAP.DLL\0"
+VALUE "OriginalFilename", "IMAP.DLL\0"
+VALUE "FileDescription",  "IMAP Library\0"
+VALUE "Comments",         "IMAP Library\0"
+
+#include "..\..\VersionEnd.inc"

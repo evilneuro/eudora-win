@@ -1,0 +1,53 @@
+//
+// QVOICE.RC2 - resources Microsoft Visual C++ does not edit directly
+//
+
+#ifdef APSTUDIO_INVOKED
+	#error this file is not editable by Microsoft Visual C++
+#endif //APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+// Add manually edited resources here...
+#include "LsDefines.h"
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ERROR_MM_CANT_OPEN_DEVICE "Cannot open sound device"
+    ERROR_MM_NODRIVER       "Cannot find sound driver"
+    ERROR_MM_INUSE          "Sound device is in use by another application"
+    ERROR_MM_BADDEVICEID    "Bad sound device ID"
+    ERROR_MM_BADFORMAT      "This sound format is not supported"
+    ERROR_MM_CANT_CLOSE_DEVICE "Cannot close sound device"
+    ERROR_MM_ALREADY_OPENED "Sound device already opened"
+    ERROR_MM_ALREADY_CLOSED "Sound device already closed"
+    ERROR_MM_CANT_START_RECORD "Cannot start record"
+    ERROR_MM_BUF_ADD        "Sound buffer error"
+    ERROR_FILE_CANT_OPEN    "Cannot open file"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+	LS_ERROR_INVALID_NAME	"Invalid name. Please re-enter."
+	LS_ERROR_EMPTY_NAME		"No name was specified. Please enter a name."
+	LS_ERROR_NO_CODEC		"Codec Plug-Ins were not found. Make sure *.qcl files (such as qcelp.qcl) are in the same directory as PureVoice executable."
+	LS_ERROR_OLDER_FILE_FORMAT	"This version cannot load an older file format"
+	LS_ERROR_INVALID_FILE	"Invalid file"
+	LS_ERROR_FILE_EXIST		"%s already exist. Replace existing file?"
+	LS_ERROR_INVALID_MAPI	"Valid MAPI server is not available or not enabled"
+	LS_ERROR_MAPI_SEND_FAIL	"SendMail failed to send message. Make sure a valid MAPI compliant e-mail program exists."
+	LS_ERROR_FILE_NEWER		"This version of %s cannot read this newer file format(v%d.%d). Please obtain a newer version of %s."
+	LS_ERROR_CODEC_NOT_FOUND	"Codec '%s V%d' could not be found."
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+	LS_STR_NO_CODEC			"No Codec Plug-Ins were found!"
+	LS_STR_DISCARD			"Do you wish to discard the current recording?"
+	LS_STR_ATTACH_QUIT		"Do you wish to attach the current recording before quitting?"
+	LS_STR_FILE_QCP			"QUALCOMM PureVoice Files (*.qcp)|*.qcp|"
+	LS_STR_FILE_WAV_PCM		"8 KHz (16 bits) PCM Files (*.wav)|*.wav|"
+	LS_STR_FILE_ALL			"All Files (*.*)|*.*|"
+END
+
+/////////////////////////////////////////////////////////////////////////////

@@ -1,0 +1,28 @@
+// EudoraExeVer.rc
+
+// DO NOT USE DEV STUDIO TO EDIT THIS FILE
+//
+
+
+#include <winver.h>
+#include "Resource.h"
+#include "..\Version.h"
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_VERSION             EUDORA_BUILD_DESC
+END
+
+// --------------------------------------------------------------------------
+// Now we do our tricky version stuff.
+
+#include "..\VersionBeg.inc"
+
+VALUE "InternalName",       "EUDORA32\0"
+VALUE "OriginalFilename",   "EUDORA.EXE\0"
+VALUE "FileDescription",    "EUDORA\0"
+VALUE "Comments",           "Eudora Email Client\0"
+
+#include "..\VersionEnd.inc"
+
+// --------------------------------------------------------------------------

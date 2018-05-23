@@ -1,0 +1,113 @@
+Windows Eudora LMOS Implementation.
+
+LMOS information is stored in a table of fixed size records.  Each record has information about one 
+message that exists on the server.
+
+The LMOS Entry format is as shown.
+
+70  UIDL
+128 Message ID
+16  Date
+4   Flags
+4   Hash
+4   Estimated Size
+30  Reserved
+A total of 256 bytes
+
+
+In Windows Eudora, each personality has one of these tables.  Each message in a TOC has a hash value of 
+that message.  Each message can get to the server status by the hash value and its personality.
+
+The main idea here is to create a hash value that uniquely identifies each message.  With servers that 
+support UIDL, just use the hash of the UIDL.  
+
+For Non-UIDL servers, a unique string must be created and its hash.  This unique string is the message id 
+concatenated with the date parsed from the first Received header .  To get this values from the server, a 
+TOP command is issued to retrieve the headers from which the unique string is parsed.  Fro Non-UIDL 
+servers, creating LMOS table is quite expensive due to issuing TOP command for each message and the 
+parsing need to be done therafter.
+
+Building the LMOS table:
+
+These steps are performed each time a mail check is done.
+
+For each Personality,
+
+1. Load existing LMOS table from the lmos.dat file stored on the disk.
+2. Create another LMOS table from the server.
+	If server supports UIDL command:
+	Issue UIDL command and get a listing of all messages on the server in the format of
+	Msg#    UIDL.   For each of these records, create a corresponding record in the 
+	UIDL Table. 
+
+	If Server does not support UIDL:
+	Issue TOP command on each message and create a Message Id and from which the hash 
+	is computed.
+
+3.  Reconcile the Disk Lmos table with the one built from the server.
+	Walkthrough the Disk table and remove the message records that are not in the Server Table.   
+	Later walkthrough the server table and update the message number in the Disk table to reflect the 
+	message number on the server.
+
+4. Retrieve messages based on the LMOS flags
+	If a message is marked to be retrieved
+	Update the entry with estimated message size by issuing LIST command
+	If Skip big messages control is set with a size, the estimated size determines whether the message 
+	need to be retrieved fully or only partially.  If its partial retrieve, TOP command is used to get the 
+	top 20 lines.
+
+5. Delete the message based on the LMOS flags
+	If the user sets the LMOS flag to delete the message, it is deleted.
+	If a message is skipped due to size, the message is not deleted.
+	If Leave Mail on Server flag is not set, delete the message from the server.
+	Delete the message if it is older than the number of days specified in Delete from Server days 
+	control.
+
+
+		
+Details
+
+Lmos table is implemented as a stl map with hash value as the key and data is a pointer to the 
+message record class which holds the individual Lmos entry.
+
+Windows Eudora has the following UI control to do LMOS found under the menu 
+Tools/Options/Incoming Mail.
+
+Controls:
+Control Leave Mail On Server:
+When checked, the retrieved messages are not deleted from the server.
+
+Control Delete From Server After # days:
+When checked, Eudora deletes the message if it is older than the specified number of 
+days.
+
+Control Delete from server when emptied from Trash:
+Whenever Trash is removed, the messages if exist in the Lmos table are marked to be 
+deleted.
+
+	
+In the UI, the server status flag can be manipulated to set the LMOS flags to the following states.  
+[Leave, Fetch, Delete, Fetch then Delete].  When set,  the messages flags in the LMOS table are 
+set as specified.  Remember,  the actions are only taken place when a mail check is performed.
+
+The Lmos flags used are shown below.
+
+LMOS_DELETE_FLAG	{ 	LMOS_DELETE_MESSAGE, 
+					LMOS_DONOT_DELETE, 			
+					LMOS_DELETE_SENT	
+}
+				
+LMOS_READ_FLAG	{	LMOS_HASBEEN_READ,				
+				LMOS_NOT_READ,				
+}
+
+LMOS_RETRIEVE_FLAG{	LMOS_RETRIEVE_MESSAGE,				
+				LMOS_DONOT_RETRIEVE
+}							
+
+LMOS_SKIP_FLAG	{	LMOS_LEAVE_ON_SERVER,				
+				LMOS_DONOT_LEAVE_ON_SERVER
+}
+
+
+

@@ -1,0 +1,104 @@
+//Microsoft App Studio generated resource script.
+//
+#include "mapires.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+#ifdef APSTUDIO_INVOKED
+//////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "mapires.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "\r\n"
+    "#include ""EuMapiVer.rc""\r\n"
+	"\0"
+END
+
+/////////////////////////////////////////////////////////////////////////////////////
+#endif    // APSTUDIO_INVOKED
+
+
+//////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ADDRESS DIALOG DISCARDABLE  100, 100, 302, 174
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Enter Addresses"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "Eudora &Nicknames:",IDC_STATIC,12,8,72,8
+    LISTBOX         IDC_NICKNAMES,12,20,88,124,LBS_SORT | 
+                    LBS_NOINTEGRALHEIGHT | LBS_EXTENDEDSEL | WS_VSCROLL | 
+                    WS_HSCROLL | WS_TABSTOP
+    PUSHBUTTON      "T&o ->",IDC_TO_BUTTON,108,25,28,14
+    EDITTEXT        IDC_TO_EDIT,144,20,144,36,ES_MULTILINE | ES_AUTOVSCROLL | 
+                    WS_VSCROLL
+    PUSHBUTTON      "&Cc ->",IDC_CC_BUTTON,108,68,28,14
+    EDITTEXT        IDC_CC_EDIT,144,65,144,36,ES_MULTILINE | ES_AUTOVSCROLL | 
+                    WS_VSCROLL
+    PUSHBUTTON      "&Bcc ->",IDC_BCC_BUTTON,108,113,28,14
+    EDITTEXT        IDC_BCC_EDIT,144,108,144,36,ES_MULTILINE | 
+                    ES_AUTOVSCROLL | WS_VSCROLL
+    DEFPUSHBUTTON   "OK",IDOK,168,152,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,232,152,50,14
+END
+
+
+//////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_ERR_CANNOT_FIND_EUDORA 
+                            "ERROR: Cannot find a running instance of Eudora.\nCannot complete MAPI action.\nPlease start Eudora, then try the MAPI action again."
+    IDS_WHERE_IS_EUDORA     "Where's Eudora?"
+    IDS_DEFAULT_CAPTION     "Address Book"
+    IDS_DEFAULT_ORIGINATOR  "Originator"
+    IDS_ERR_COULD_NOT_LAUNCH_PROGRAM "ERROR: Could not launch program"
+    IDS_EUDORA_MAPI         "Eudora MAPI"
+    IDS_DETAILS_MESSAGE     "No details available."
+    IDS_DETAILS_CAPTION     "Address Book Details"
+    IDS_ERR_FOUND_MULTIPLE_EUDORAS 
+                            "ERROR: Detected multiple running instances of Eudora.\nCannot complete MAPI action.\nPlease shutdown all but one copy of Eudora, then try the MAPI action again."
+    IDS_ERR_WRONG_EUDORA_VERSION
+                            "ERROR: The running instance of Eudora does not support the required MAPI services.\nCannot complete MAPI action."
+END
+
+
+#ifndef APSTUDIO_INVOKED
+////////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+#include "EuMapiVer.rc"
+
+/////////////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

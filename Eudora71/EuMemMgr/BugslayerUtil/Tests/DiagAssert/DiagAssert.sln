@@ -1,0 +1,21 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DiagAssert", "DiagAssert.vcproj", "{56CE95C5-38B8-4C1A-A3A0-3B5E1F56DACC}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{56CE95C5-38B8-4C1A-A3A0-3B5E1F56DACC}.Debug.ActiveCfg = Debug|Win32
+		{56CE95C5-38B8-4C1A-A3A0-3B5E1F56DACC}.Debug.Build.0 = Debug|Win32
+		{56CE95C5-38B8-4C1A-A3A0-3B5E1F56DACC}.Release.ActiveCfg = Release|Win32
+		{56CE95C5-38B8-4C1A-A3A0-3B5E1F56DACC}.Release.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

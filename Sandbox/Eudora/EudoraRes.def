@@ -1,0 +1,6 @@
+; EudoraRes.def : Declares the module parameters for the DLL.
+
+LIBRARY      "EUDORA32"
+DESCRIPTION  'EUDORA Windows Resource DLL'
+
+EXPORTS

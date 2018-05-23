@@ -1,0 +1,84 @@
+# Author: Subhashis Mohanty
+# Date  : 01/15/98
+
+PRJ  = NewMgr
+DPRJ = EuMemMgr
+
+all:       sane clean dbg rel c_o cpp_o
+clean_dbg: sane_dbg CLEAN_DBG
+clean_rel: sane_rel CLEAN_REL
+dbg:       sane_dbg DBG
+rel:       sane_rel REL
+sane:      sane_dbg sane_rel
+clean:     clean_dbg clean_rel
+c_cpp_o:   c_o cpp_o
+c_o:       dbg_c_o rel_c_o
+cpp_o:     dbg_cpp_o rel_cpp_o
+dbg_c_o:   dbg DBG_C_O
+rel_c_o:   rel REL_C_O
+dbg_cpp_o: dbg DBG_CPP_O
+rel_cpp_o: rel REL_CPP_O
+
+##### Debug C Out
+DBG_C_O:
+	echo
+	gmake -e -w -C ../${DPRJ} dbg_c_o
+
+##### Release C Out
+REL_C_O:
+	echo
+	gmake -e -w -C ../${DPRJ} rel_c_o
+
+##### Debug CPP Out
+DBG_CPP_O:
+	echo
+	gmake -e -w -C ../${DPRJ} dbg_cpp_o
+#	gmake -e -w PROJECT=${PRJ} -C src/Samples/Core dbg_cpp_o
+	gmake -e -w PROJECT=${PRJ} DEP_PROJECT=${DPRJ} -C src/Samples/CoreMT dbg_cpp_o
+
+##### Release CPP Out
+REL_CPP_O:
+	echo
+	gmake -e -w -C ../${DPRJ} rel_cpp_o
+#	gmake -e -w PROJECT=${PRJ} -C src/Samples/Core rel_cpp_o
+	gmake -e -w PROJECT=${PRJ} DEP_PROJECT=${DPRJ} -C src/Samples/CoreMT rel_cpp_o
+
+##### Debug
+DBG:
+	echo
+	gmake -e -w -C ../${DPRJ} dbg
+	gmake -e -w PROJECT=${PRJ} DEP_PROJECT=${DPRJ} -C src/CoreMT dbg
+	gmake -e -w PROJECT=${PRJ} DEP_PROJECT=${DPRJ} -C src/Samples/CoreMT dbg
+
+##### Release
+REL:
+	echo
+	gmake -e -w -C ../${DPRJ} rel
+	gmake -e -w PROJECT=${PRJ} DEP_PROJECT=${DPRJ} -C src/CoreMT rel
+	gmake -e -w PROJECT=${PRJ} DEP_PROJECT=${DPRJ} -C src/Samples/CoreMT rel
+
+CLEAN_DBG:
+	echo
+	gmake -e -w -C ../${DPRJ} clean_dbg
+	gmake -e -w PROJECT=${PRJ} DEP_PROJECT=${DPRJ} -C src/CoreMT clean_dbg
+	gmake -e -w PROJECT=${PRJ} DEP_PROJECT=${DPRJ} -C src/Samples/CoreMT clean_dbg
+
+CLEAN_REL:
+	echo
+	gmake -e -w -C ../${DPRJ} clean_rel
+	gmake -e -w PROJECT=${PRJ} DEP_PROJECT=${DPRJ} -C src/CoreMT clean_rel
+	gmake -e -w PROJECT=${PRJ} DEP_PROJECT=${DPRJ} -C src/Samples/CoreMT clean_rel
+
+sane_dbg:
+	echo
+	gmake -e -w -C ../${DPRJ} sane_dbg
+	gmake -e -w PROJECT=${PRJ} DEP_PROJECT=${DPRJ} -C src/CoreMT sane_dbg
+	gmake -e -w PROJECT=${PRJ} DEP_PROJECT=${DPRJ} -C src/Samples/CoreMT sane_dbg
+
+sane_rel:
+	echo
+	gmake -e -w -C ../${DPRJ} sane_rel
+	gmake -e -w PROJECT=${PRJ} DEP_PROJECT=${DPRJ} -C src/CoreMT sane_rel
+	gmake -e -w PROJECT=${PRJ} DEP_PROJECT=${DPRJ} -C src/Samples/CoreMT sane_rel
+
+

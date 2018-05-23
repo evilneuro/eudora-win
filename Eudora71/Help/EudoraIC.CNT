@@ -1,0 +1,124 @@
+:Base Eudora.HLP>howto
+1 How To ...
+2 Get More Help=mhelpic
+2 Get Started
+3 Configuring Eudora=Configuring_Eudora
+3 Registering Your Copy of Eudora=Registering_Your_Copy_of_Eudora
+3 Quitting Eudora=Quitting_Eudora
+3 Uninstalling Eudora Pro=Uninstalling_Eudora_Pro
+2 Create Messages
+3 Creating an Outgoing Message=Creating_an_Outgoing_Message
+3 Using an Alternate E-Mail Account=Using_an_Alternate_EMail_Account
+3 Using Stationery=Using_Stationery
+3 Using a Signature=Using_a_Signature
+3 Setting the Message Priority=Setting_the_Message_Priority
+3 Requesting a Return Receipt=Requesting_a_Return_Receipt
+3 Formatting Text=Formatting_Text
+3 Attaching a File to a Message=Attaching_a_File_to_a_Message
+3 Including a URL in a Message=Including_a_URL_in_a_Message
+3 Checking Your Spelling=Checking_Your_Spelling
+3 Saving a Message for Later Changes=Saving_a_Message_for_Later_Changes
+2 Send Messages
+3 Sending a Message Immediately=Sending_a_Message_Immediately
+3 Queueing a Message to Send Later=Queueing_a_Message_to_Send_Later
+3 Queueing a Message to Send at a Certain Time=Queueing_a_Message_to_Send_at_a_Certain_Time
+3 Editing a Queued Message=Editing_a_Queued_Message
+3 Taking a Message Out of the Queue=Taking_a_Message_Out_of_the_Queue
+3 Sending Queued Messages When Checking Mail=Sending_Queued_Messages_When_Checking_Mail
+3 Sending Messages with Special Server Instructions=Sending_Messages_with_Special_Server_Instructions
+3 Keeping Copies of Outgoing Messages=Keeping_Copies_of_Outgoing_Messages
+3 Sending Rejected Messages Again=Sending_Rejected_Messages_Again
+2 Receive Messages
+3 Checking for Mail Automatically=Checking_for_Mail_Automatically
+3 Checking for Mail Manually=Checking_for_Mail_Manually
+3 Stopping a Mail Check=Stopping_a_Mail_Check
+3 Using Your Password=Using_Your_Password
+3 Changing Your Password=Changing_Your_Password
+3 Receiving New Mail=Receiving_New_Mail
+3 Managing Your Mail on the POP Server=Managing_Your_Mail_on_the_POP_Server
+3 Receiving Attachments=Receiving_Attachments
+3 Specifying an Attachment Directory=Specifying_an_Attachment_Directory
+3 Using Active URLs=Using_Active_URLs
+3 Editing Incoming Messages=Editing_Incoming_Messages
+2 Respond to Messages
+3 Forwarding a Message=Forwarding_a_Message
+3 Redirecting a Message
+4 Redirecting a Message=Redirecting_a_Message
+4 Turbo Redirecting=Turbo_Redirecting
+4 Redirect and Signatures=Redirect_and_Signatures
+3 Replying to a Message
+4 Replying to a Message=Replying_to_a_Message
+4 Using the Reply Functions=Using_the_Reply_Functions
+4 Replying with a Stationery File=Replying_with_a_Stationery_File
+2 Work with Mailboxes
+3 Message Summaries in Mailboxes=Message_Summaries_in_Mailboxes
+3 Displaying and Resizing Columns=Displaying_and_Resizing_Columns
+3 Using the Mailbox Size Display=Using_the_Mailbox_Size_Display
+3 Using the Mailboxes Window
+4 Using the Mailboxes Window=Using_the_Mailboxes_Window_32
+4 Creating a New Mailbox or Folder=Creating_a_New_Mailbox_or_Folder_32
+4 Renaming a Mailbox or Folder=Renaming_a_Mailbox_or_Folder_32
+4 Moving a Mailbox (or Folder) from one Folder to Another=Moving_a_Mailbox_or_Folder_from_one_Folder_to_Another_32
+4 Removing a Mailbox or Folder=Removing_a_Mailbox_or_Folder_32
+2 Organize Your Messages
+3 Deleting a Message=Deleting_a_Message
+3 Automatically Deleting Attachments=Automatically_Deleting_Attachments
+3 Transferring Messages=Transferring_Messages
+3 Creating a Mailbox or Folder During Transfer=Creating_a_Mailbox_or_Folder_During_Transfer
+3 Filtering Messages=Filtering_Messages
+3 Sorting Messages Within Mailboxes=Sorting_Messages_Within_Mailboxes
+3 Finding Text Within One Message=Finding_Text_Within_One_Message
+3 Finding Text Among Multiple Messages and Mailboxes=Finding_Text_Among_Multiple_Messages_and_Mailboxes
+3 Saving a Message to a File=Saving_a_Message_to_a_File
+2 Use the Address Book
+3 Using the Address Book=Using_the_Address_Book
+3 Creating New Entries=Creating_New_Entries
+3 Changing, Moving, Copying, and Deleting Entries=Changing_Moving_Copying_and_Deleting_Entries
+3 Including Nicknames on the Quick Recipient List=Including_Nicknames_on_the_Quick_Recipient_List
+3 Addressing a Message from the Address Book=Addressing_a_Message_from_the_Address_Book
+3 The "Make Address Book Entry" Command=The_Make_Address_Book_Entry_Command
+3 The "Finish Address Book Entry" Command=The_Finish_Address_Book_Entry_Command
+3 Using Nicknames that were Not Created by Eudora=Using_Nicknames_that_were_Not_Created_by_Eudora
+3 Saving Your Entries to a File=Saving_Your_Entries_to_a_File
+3 Using the Quick Recipient List=Using_the_Quick_Recipient_List
+2 Use Directory Services
+3 Opening Directory Services=Opening_Directory_Services
+3 Using Ph=Using_Ph
+3 Finding Ph Servers=Finding_Ph_Servers
+3 Using Finger=Using_Finger
+3 Addressing a Message from the Directory Services Window=Addressing_a_Message_from_the_Directory_Services_Window
+1 Reference
+2 Customizing the Toolbar=Customizing_the_Toolbar
+2 Printing=Printing
+2 Plugins (Extended Messaging Services)=Extended_Messaging_Services
+2 The Messaging Application Program Interface (MAPI)=The_Messaging_Application_Program_Interface_MAPI
+2 Putting Multiple users on One PC=Putting_Multiple_users_on_One_PC
+2 Modifiers=Modifiers
+2 Shortcuts=Shortcuts
+2 EUDORA.INI Settings File=eudora_ini
+1 Feedback
+2 Reporting Bugs=Bugs
+2 Suggestions=Suggest
+1 New in this Release
+2 Creating Messages
+3 Using an Alternate E-Mail Account=Using_an_Alternate_EMail_Account
+3 Using Stationery=Using_Stationery
+3 Using a Signature=Using_a_Signature
+3 Formatting Text=Formatting_Text
+3 Requesting a Return Receipt=Requesting_a_Return_Receipt
+2 Receiving Messages
+3 Managing Your Mail on the POP Server=Managing_Your_Mail_on_the_POP_Server
+3 Editing Incoming Messages=Editing_Incoming_Messages
+2 Working with Mailboxes
+3 Using the Mailboxes Window=Using_the_Mailboxes_Window_32
+3 Message Summaries in Mailboxes=Message_Summaries_in_Mailboxes
+3 Displaying and Resizing Columns=Displaying_and_Resizing_Columns
+3 Dragging Messages=Dragging_Messages
+2 Address Book, Directory Services, and Filters
+3 Using the Address Book=Using_the_Address_Book
+3 Opening Directory Services=Opening_Directory_Services
+3 Finding Ph Servers=Finding_Ph_Servers
+3 Filtering Messages=Filtering_Messages
+2 Reference
+3 Customizing the Toolbar=Customizing_the_Toolbar
+3 Plugins (Extended Messaging Services)=Extended_Messaging_Services

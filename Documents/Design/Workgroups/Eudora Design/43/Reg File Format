@@ -1,0 +1,38 @@
+Author: Pete Resnick
+Description: Eudora registration file information
+
+The format of the Eudora registration file is a text file containing 
+RFC 822 header fields. Currently, all defined fields are 
+unstructured; that is, they may be folded, but there are no comments, 
+quoted-strings, or other parsing requirements for these fields. The 
+fields bodies should be considered without regard to case; 
+comparisons between field bodies should be done case-insensitively.
+
+The first line of the file is always a field whose field name is 
+"Eudora-File-Type". Subsequent lines are fields that appear in the 
+profile for the particular file type and are defined below. Fields 
+which do not appear in the profile for the file type should be 
+ignored unless otherwise noted below.
+
+The MIME type for these files is "application/vnd.eudora.data". Even 
+though it appears in the application top-level type, regular text 
+canonicalization rules apply to this file.
+
+The Macintosh file creator for this file is (as usual) 'CSOm'. The 
+file type is 'eReg'.
+
+Currently defined file types and profiles:
+------------------------------------------
+Eudora-File-Type: RegFile
+
+Possible Fields:
+
+Eudora-First-Name
+	Contains the textual first name of the registrant. US-ASCII.
+
+Eudora-Last-Name
+	Contains the textual last name of the registrant. US-ASCII.
+
+Eudora-Reg-Code
+	Contains the registration code as produced by the 
+registration system. US-ASCII data.

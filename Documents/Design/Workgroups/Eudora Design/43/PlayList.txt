@@ -1,0 +1,290 @@
+File: $Id: //depot/main/Documents/Design/Workgroups/Eudora Design/43/PlayList.txt#22 $
+Author(s): A. Bird, S. Dorner, B. Ogdon, W. Rhodes, R. Chandhok
+Description: XML specification for AdWare client and Playlist server
+
+
+////////////////////////////////////////////////////////////////////////////////
+// HTTP Transport Notes
+
+Checksum Header
+---------------
+
+Both the client update request and the server's response will now contain an HTTP
+header "Checksum" that is the hex encoded md5 checksum computed with a shared secret.
+This checksum is very simliar to the Content-MD5 header in rfc2616 and in MIME,
+<ftp://ftp.isi.edu/in-notes/rfc2616.txt>, but differs from a normal MD5 checksum
+by the addition of the shared secret to the payload data.
+
+IMPORTANT: Once the server and the clients implement the checksum behavior, both
+ends MUST ignore any request with an invalid OR MISSING checksum.  
+
+The server should log such failure and return a fault, 
+the client should count it towards the deadbeat timeout.  In addition,
+the client MUST ignore any ad graphic or content that does not match the checksum 
+specified -- this failure should also be factored against the deadbeat nag.
+Any playlist SRC entry without a checksum MUST also be ignored.
+
+Steve will distribute the secret.
+
+////////////////////////////////////////////////////////////////////////////////
+// Client Update Request
+
+Procedure Name:
+	clientUpdate	- method by which client fetches new playlists, and
+					- updates related state information.
+
+Parameters:
+	userAgent		- e.g. App Name/Version (Operating System)
+	clientMode		- What mode the client is curently in
+					  where 0=adware, 1=light, 2=paid, 3=deadbeat due to lack of profile, other numbers reserved for future.
+	playlist		- identifier for playlist currently held by client; may be repeated
+					+ id - unique id for playlist
+					- Inside the playlist, are ad entries
+						entry	- identifier for ad currently held by client; may be repeated
+								+ id - unique id for ad, number in form x.y, where x is server id, y is individual ad
+								+ active - set to 1 for active ads, missing for ads that are used up
+							  	  "active" means that the ad is not past its end time, and that its showForMax
+							  	  is not used up
+								+ deleted - set to 1 for deleted toolbar ads, missing for regular and sponsor ads
+							  	+ isRunout - set to 1 for runout ads, missing for regular ads
+								+ isSponsor - set to 1 for sponsor ads, missing for regular ads
+								+ isButton - set to 1 for button ads, missing for regular ads
+	screen			- info on the screen displaying ads
+					+ height - height of screen in pixels
+					+ width - width of screen in pixels
+					+ depth - depth of screen in bits
+	profile			- user profile entered from the server
+	faceTime		- Number of minutes per day for each last 7 calendar days
+					- in format: Sun,Mon,Tue,Wed,Thr,Fri,Sat
+	faceTimeLeft	- Amount of facetime (minutes) unused from current advertisements
+	faceTimeUsedToday	- Amount of facetime (minutes) that has been used by non-runout ads today
+	distributorID	- Uniquely identifies ISPs and other Eudora distributors
+	pastry			- A rose is a rose, and this is a cookie
+	playListVersion	- The version # (of this file) of the playlist spec the client implements
+	locale - the language (and possible variant) of this client.  Language codes are taken from RFC 1766.
+
+
+Example XML with HTTP headers:
+	
+POST /PlaylistHeaven HTTP/1.1
+Host: ads.eudora.com
+Content-Type: text/xml
+Content-Length: nnn
+MessageType: Call
+Checksum: d466d2058b1baf17d8af463e755d1ecd
+
+<?xml version="1.0"?>
+
+<clientUpdate>
+	<userAgent>Eudora/4.3.1 (WinNT)</userAgent>
+	<clientmode>1</clientmode>
+	<playlist id="some_unique_id">
+		<entry id="1.24" active="1"/>
+		<entry id="1.26" active="1" isRunout="1"/>
+		<entry id="1.92"/>
+	</playlist>
+	<screen height="768" width="1024" depth="8"/>
+	<faceTime>nnn,nnn,nnn,nnn,nnn,nnn,nnn</faceTime>
+	<faceTimeLeft>nnn</faceTimeLeft>
+	<faceTimeUsedToday>nnn</faceTimeUsedToday>
+	<distributorID>cornerstone_of_the_bounty_thang</distributorID>
+	<pastry id="foo" value="gabbagabbaheygabbagabbahey"/>
+	<profile>blob of profile stuff</profile>
+	<playListVersion>6</playListVersion>
+</clientUpdate>
+
+
+//////////////////////////////////////////////////////////////////////////// ////
+// Client Update Response -- Success
+
+Related Procedure:
+	clientUpdate
+
+Returns:
+	clientUpdateResponse	- Top level XML tag is a concatenation of the procedure
+							- name and "Response".
+
+Elements:
+	reset				- The client is to completely purge its entire ad mind.  All clientinfo--gone.
+						  All playlists--gone.  All ad history--gone.  All facetime records--gone.
+						  (Link History can stay.)
+						  Then it should request another playlist.
+	clientInfo			- General state -- not specific to given playlist
+		reqInterval		- Number of hours between "clientUpdate" calls [24]
+		histLength		- Number of days of old ad id's to keep.  This many days after the last time you show an ad,
+						  you no longer need to remember it. [30]
+		pastry			- Ack!
+		flush			- If present, causes client to flush the thing mentioned and start afresh
+						  + entity - either "playlist" or "entry"
+						  + id - id of the thing to flush
+		width			- Visual width, in pixels, of Ad window [144]
+		height			- Visual height of the Ad window [144]
+		faceTimeQuota	- Number of minutes of facetime to devote to non-runout ads [60]
+		rerunInterval	- Number of days since the last paid showing of an ad that the ad
+						  may be rerun.
+		clientMode - if the server wishes to change the mode of the client, it may
+		profile		- if the server wishes to install a profileID, it may
+		nag				- Requests the client nag the user
+							+ level - 0 for brief, 1 for lengthy
+							+ content - A brief message to be inserted into the nag; 255 characters max
+	playlist			- Collection of Ads with associated display attributes; may be repeated
+		playlistID		- The same format as passed in "clientUpdate" call
+		mixAlgorithm	- "mix" (default) or "block"
+							+ "mix" means to lump these ads in with other playlists also marked "mix"
+							+ "block" means to run all the ads in a block, with no ads from other playlists
+							  intermixed
+		entry			- An instance of an Ad in the playlist
+						+ isSponsor - set to 1 if ad is sponsor placard
+						+ isButton - set to 1 if ad is toolbar button
+						+ isRunout - set to 1 if ad should be shown after normal ads
+			showFor		- Number of seconds per showing [75]
+			dayMax		- Maximum times per day Ad is to be shown [2]
+			showForMax	- Maximum total # of seconds of facetime to show this ad
+			src			- URL for actual Ad - may be HTML *or* graphic format
+							For isButton ads, the graphic will be in the special t'PNG format
+							with all sizes of the graphic in one bitmap.
+						+ checksum - attribute for resource referenced by URL, aka the
+						secret (seeded md5) checksum of the image/PNG file
+			blackBefore	- Blank screen for 'n' seconds before showing Ad [0]
+			blackAfter	- Just as above, but following Ad showing [0]
+			startDT		- Date/Time of first Ad showing, in either localtime or GMT.  Use RFC 822 date format.
+			endDT		- Date/Time of last Ad showing, in either localtime or GMT
+			adID		- Unique identity for this "entry"
+			title		- Title of the ad, for use in the Link History window or other places
+			url			- URL where the user is taken when the ad is clicked.  It will contain query parts for distributor code,
+						  platform, ad id, profile, etc.
+
+Example XML with HTTP Headers:
+
+HTTP/1.1 200 OK
+Connection: close
+Content-Type: text/xml
+Content-Length: nnn
+MessageType: CallResponse
+Checksum: 919bf6fc18d9dc09ca5438447734cdba
+
+<?xml version="1.0"?>
+
+<clientUpdateResponse>
+	<clientInfo>
+		<flush entity="playlist" id="playlist_id_to_flush"/>
+		<reqInterval>nn</reqInterval>
+		<histLength>nn</histLength>
+		<pastry id="foo" value="gabbagabbaheygabbagabbahey"/>
+		<faceTimeQuota>30</faceTimeQuota>
+		<width>468</width>
+		<height>60</height>
+		<locale language="en-us">
+		<nag leve=1>If you do not profile, you will have to go to Light mode.</nag>
+	</clientInfo>
+
+	<playlist version="1.0">
+		<!-- *** see playlist example below *** -->
+		.
+		.
+		.
+	</playlist>
+</clientUpdateResponse>
+
+
+//////////////////////////////////////////////////////////////////////////// ////
+// Client Update Response -- Error
+
+Related Procedure:
+	clientUpdate
+
+Returns:
+	clientUpdateResponse	- Top level XML tag is a concatenation of the procedure
+							- name and "Response".
+
+Elements:
+	fault				- An error was encountered in either request or response
+		faultCode		- The code associate with the error (mimic HTTP codes?)
+		faultString		- Detailed error message
+
+
+Example XML with HTTP Headers:
+
+HTTP/1.1 404 NOT FOUND
+Connection: close
+Content-Type: text/xml
+Content-Length: nnn
+MessageType: CallResponse
+
+<clientUpdateResponse>
+	<fault>
+		<faultCode>404</faultCode>
+		<faultString>The playlist '/adware/playlists/foo.xml' could not be found on server.</faultString>
+	</fault>
+</clientUpdateResponse>
+
+
+//////////////////////////////////////////////////////////////////////////// ////
+// Playlist Example
+
+<?xml version="1.0"?>
+
+<playlist version="1.0">
+	<playlistID>6577</playlistID>
+	<mixAlgorithm>mix</mixAlgorithm>
+	<entry>
+		<src checksum="0ada73f880a706cf1bbbd37fb5055128">http://adserver1.qualcomm.com/adserver/ads/128x144/dell.html</src>
+		<showFor>60</showFor>
+		<showForMax>3600</showForMax>
+		<dayMax>10</dayMax>
+		<blackBefore>5</blackBefore>
+		<blackAfter>5</blackAfter>
+		<startDT>Thu, 19 Aug 1999 08:00:00 GMT</startDT>
+		<endDT>Fri, 30 Sep 1999 17:00:00 GMT</endDT>
+		<adID>0.12</adID>
+	</entry>
+	<entry>
+		<!-- Ad is a graphic, not HTML -->
+		<showFor>60</showFor>
+		<src checksum="0ada73f880a706cf1bbbd37fb5055128">http://adserver1.qualcomm.com/adserver/ads/128x144/images/headlinenews</src>
+		<dayMax>15</dayMax>
+		<adID>0.13</adID>
+		<url>http://whatever.cnn.com/headlines/</url>
+	</entry>
+	<entry>
+		<showFor>60</showFor>
+		<src checksum="0ada73f880a706cf1bbbd37fb5055128">http://adserver1.qualcomm.com/adserver/ads/128x144/imac.html</src>
+		<dayMax>30</dayMax>
+		<blackBefore>5</blackBefore>
+		<blackAfter>10</blackAfter>
+		<startDT>Thu, 19 Aug 1999 08:00:00</startDT>
+		<endDT>Fri, 30 Sep 1999 17:00:00</endDT>
+		<adID>0.123</adID>
+		<url>http://www.apple.com/imac/</url>
+	</entry>
+	<entry>
+		<showFor>60</showFor>
+		<!-- Ad is a graphic, not HTML -->
+		<src checksum="0ada73f880a706cf1bbbd37fb5055128">http://adserver1.qualcomm.com/adserver/ads/128x144/images/olean.gif</src>
+		<dayMax>10</dayMax>
+		<blackBefore>5</blackBefore>
+		<blackAfter>5</blackAfter>
+		<startDT>Thu, 19 Aug 1999 08:00:00</startDT>
+		<endDT>Fri, 30 Sep 1999 17:00:00</endDT>
+		<adID>0.34</adID>
+		<url>mailto:iwanttheruns@gf.com</url>
+	</entry>
+	<entry>
+		<showFor>3</showFor>
+		<src checksum="0ada73f880a706cf1bbbd37fb5055128">http://adserver1.qualcomm.com/adserver/ads/128x144/sprint.html</src>
+		<dayMax>9</dayMax>
+		<blackBefore>3</blackBefore>
+		<blackAfter>3</blackAfter>
+		<startDT>Thu, 19 Aug 1999 08:00:00</startDT>
+		<endDT>Fri, 30 Sep 1999 17:00:00</endDT>
+		<adID>0.56</adID>
+		<url>http://www.sprint.com/endless-telemarking</url>
+	</entry>
+	<entry>
+		<showFor>2</showFor>
+		<src checksum="0ada73f880a706cf1bbbd37fb5055128">http://adserver1.qualcomm.com/adserver/ads/128x144/viagra.html</src>
+		<dayMax>6</dayMax>
+		<adID>0.987</adID>
+		<url>http://pfizer.com/longbobdole</url>
+	</entry>
+</playlist>

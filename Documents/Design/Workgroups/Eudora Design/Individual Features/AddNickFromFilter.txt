@@ -1,0 +1,5 @@
+Add to Address Book from Filters
+	Action called “Add Sender to Address Book”, keyword “makenick”
+	If user has more than one nickname file, use popup to allow user to choose which file
+	Rely on nickname suggestion algorithm to detect duplicates
+	Silently replace duplicates (unless all info also the same)

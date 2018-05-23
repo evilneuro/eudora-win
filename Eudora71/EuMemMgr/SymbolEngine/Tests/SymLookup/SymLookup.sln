@@ -1,0 +1,40 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SymLookup", "SymLookup.vcproj", "{DD525CDC-4E04-4BEC-A09B-BC9B2ABEDACA}"
+	ProjectSection(ProjectDependencies) = postProject
+		{80F67D4C-59AE-445C-A65B-684567043616} = {80F67D4C-59AE-445C-A65B-684567043616}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SymbolEngine", "..\..\SymbolEngine.vcproj", "{80F67D4C-59AE-445C-A65B-684567043616}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Debug BSU = Debug BSU
+		Release = Release
+		Release BSU = Release BSU
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{DD525CDC-4E04-4BEC-A09B-BC9B2ABEDACA}.Debug.ActiveCfg = Debug|Win32
+		{DD525CDC-4E04-4BEC-A09B-BC9B2ABEDACA}.Debug.Build.0 = Debug|Win32
+		{DD525CDC-4E04-4BEC-A09B-BC9B2ABEDACA}.Debug BSU.ActiveCfg = Debug|Win32
+		{DD525CDC-4E04-4BEC-A09B-BC9B2ABEDACA}.Debug BSU.Build.0 = Debug|Win32
+		{DD525CDC-4E04-4BEC-A09B-BC9B2ABEDACA}.Release.ActiveCfg = Release|Win32
+		{DD525CDC-4E04-4BEC-A09B-BC9B2ABEDACA}.Release.Build.0 = Release|Win32
+		{DD525CDC-4E04-4BEC-A09B-BC9B2ABEDACA}.Release BSU.ActiveCfg = Release|Win32
+		{DD525CDC-4E04-4BEC-A09B-BC9B2ABEDACA}.Release BSU.Build.0 = Release|Win32
+		{80F67D4C-59AE-445C-A65B-684567043616}.Debug.ActiveCfg = Debug|Win32
+		{80F67D4C-59AE-445C-A65B-684567043616}.Debug.Build.0 = Debug|Win32
+		{80F67D4C-59AE-445C-A65B-684567043616}.Debug BSU.ActiveCfg = Debug BSU|Win32
+		{80F67D4C-59AE-445C-A65B-684567043616}.Debug BSU.Build.0 = Debug BSU|Win32
+		{80F67D4C-59AE-445C-A65B-684567043616}.Release.ActiveCfg = Release|Win32
+		{80F67D4C-59AE-445C-A65B-684567043616}.Release.Build.0 = Release|Win32
+		{80F67D4C-59AE-445C-A65B-684567043616}.Release BSU.ActiveCfg = Release BSU|Win32
+		{80F67D4C-59AE-445C-A65B-684567043616}.Release BSU.Build.0 = Release BSU|Win32
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

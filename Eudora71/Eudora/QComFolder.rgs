@@ -1,0 +1,22 @@
+HKCR
+{
+	Eudora.EuFolder.1 = s 'EuFolder Class'
+	{
+		CLSID = s '{EDA20014-AAAA-11d0-B3C5-00805F8AA4FB}'
+	}
+	Eudora.EuFolder = s 'EuFolder Class'
+	{
+		CurVer = s 'Eudora.EuFolder.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {EDA20014-AAAA-11d0-B3C5-00805F8AA4FB} = s 'EuFolder Class'
+		{
+			ProgID = s 'Eudora.EuFolder.1'
+			VersionIndependentProgID = s 'Eudora.EuFolder'
+			ForceRemove 'Programmable'
+			LocalServer32 = s '%MODULE%'
+			val AppID = s '{EDA00001-AAAA-11d0-B3C5-00805F8AA4FB}'
+		}
+	}
+}

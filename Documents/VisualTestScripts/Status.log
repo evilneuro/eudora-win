@@ -1,0 +1,35 @@
+  [Start Case Header]
+  [Case Name]         C:\WBIMPORT\ExpClose.mst
+  [Product Version]   1.0.0.1
+  [Language]          U.S. English
+  [Machine]           RICHSWKS
+  [Start Time]        08/17/1997 14:49:47
+  [End Case Header]
+
+    [Start Scenario] 
+    [Name]           Test Closing Explorer
+    [Test Location]  C:\WBIMPORT\ExpClose.mst (56)
+    [Start Time]     08/17/1997 14:49:47
+
+    [Detail 0]           =======================================================
+    [Detail 0]           Test Closing Explorer
+    [Detail 0]           =======================================================
+    [Detail 0]            Checking for existence of Main C:\WINDOWS\EXPLORER.EXE Window.
+    [Detail 0]            Main C:\WINDOWS\EXPLORER.EXE Window exists.
+    [Detail 0]            Found System Menu.
+    [Detail 0]            Selected System Menu.
+    [Detail 0]            Selected Menu item: File\Close.
+    [Detail 0]            Successfully Tested Closing Explorer.
+    [Detail 0]           Scenario Complete.
+    [Result]         PASS
+    [Elapsed Time]   3.231
+    [End Scenario]
+
+  [Case Result]       PASS
+  [Elapsed Time]      6.624
+  [End Case]
+
+[Suite Result]       PASS
+[Elapsed Time]       79.919
+[End Suite]
+

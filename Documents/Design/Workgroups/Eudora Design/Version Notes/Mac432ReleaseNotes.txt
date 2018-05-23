@@ -1,0 +1,52 @@
+432b2
+	IMAP - remove cached contents now unsets the nobody option
+	International searching routine
+	IMAP - connection management now always allowing at least one message text fetch per personality
+	Profiling dialog mods for updating your profile information
+	Changed update check to use reglevel instead of full reg information to allay paranoid suspicion
+	IMAP - made message selection after IMAP mailbox resync more reasonable.  No longer bring mailboxes to front, or selecting new message if a selection exists already.
+	Fixed problem with undo and linking text.
+	Ignoring amount of whitespace when comparing subjects
+	Personality change no longer adding sig on redirects
+	Fixed problem with "does not contain" filter match & body of message.
+	Fixed non-flowing of lines that end with tabs.
+	Dialled down frequence of usage stats nag.
+	Fixed problem where History List updates with the address book open dirtied the window
+432b1
+	*Handle URLs longer than 255 characters when user clicks on ad
+	30 day nag slight was actually 4 days off
+	Added attachments (y if have them) to summary copy.
+	Allow auto key in Check Mail Specially
+	Allow hex HTML literals
+	Allow selection of 'appe' as URL helper
+	Better interaction with lame Network Setup Library.
+	Dialled down frequence of usage stats nag.
+	Do the "right thing" with funky characters in registration names
+	Fixed conflict with WAPP Pro & latter help menu items.
+	Fixed crash when large amounts of text are for some reason pasted into the
+	Fixed non-flowing of lines that end with tabs.
+	Fixed problem where History List updates with the address book open dirtied the window
+	Fixed problem with "does not contain" filter match & body of message.
+	Fixed problem with co-brand image covering wazoo buttons when resizing window smaller with big vertical difference
+	IMAP - Added setting to resync opened IMAP mailboxes on the server during a mailcheck.
+	IMAP - IMAP messages transferred via filter to a POP mailbox now retain links to attachments.
+	IMAP - display progress dialog when refreshing mailbox list
+	IMAP - eliminated unneeded connection when copying a fully fetched IMAP message to a local mailbox
+	IMAP - fixed bug that could cause message status change to be lost when working with fully downloaded IMAP message
+	IMAP - fixed bug where message flags made during mailbox resync would be forgotten
+	IMAP - fixed crash when uploading messages to an IMAP mailbox.
+	IMAP - fixed flashy cursor during IMAP mailbox resync
+	IMAP - fixed hesiod quirk with first IMAP mailcheck
+	IMAP - fixed problems authenticating with Kerberos_V4 using a principal of a multiple of 8 characters in length.
+	IMAP - fixed problems settings flags on messages with huge UIDs (EIMS 2.x users were affected)
+	IMAP - message selection after IMAP mailchecks now behaves the same way as in POP mailboxes.
+	IMAP - updating message flags in chunks for better performance
+	Link History - fixed problems remembering http links to pages on same host that are invoked from messages.
+	Link History - made link history names of urls clicked on in message windows a tiny bit more useful
+	Make sure translators get real name in address params.
+	Manual filter in search window to change label, priority or status would not update original summary.
+	More careful about OT version in Insert System Configuration
+	Personality change no longer adding sig on redirects
+	Split movies into EuIM 133 to avoid ResEdit size restriction on EuIM 128
+	Un-windowshade windows when user opens them from menus
+	Use facetime values to help determine if user is not getting ads

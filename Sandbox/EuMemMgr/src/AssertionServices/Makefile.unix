@@ -1,0 +1,55 @@
+# Author: Subhashis Mohanty
+# Date  : 01/15/98
+
+DST_D = ${TOP}/${PROJECT}/${BLD_DIR}/${DBG_DIR}
+DST_R = ${TOP}/${PROJECT}/${BLD_DIR}/${REL_DIR}
+
+###### This subsystem
+SUBSYSTEM  = AssertionServices
+
+###### Include directories
+INC              =   ${TOP}/${PROJECT}/inc/${SUBSYSTEM}/private
+INTERNAL_PUBINC  =   ${TOP}/${PROJECT}/inc/${SUBSYSTEM}/public
+EXTERNAL_PUBINC  =   ${TOP}/${PROJECT}/public/inc/${SUBSYSTEM}
+EXTERNAL_GENERIC =   ${TOP}/${PROJECT}/public/inc/Generic
+QCUTILS_PUBINC   =   ${TOP}/QCUtils/public/inc
+INC_DIRECTIVE    = -I${INC}/ -I${INTERNAL_PUBINC}/ -I${EXTERNAL_PUBINC}/ -I${EXTERNAL_GENERIC} -I${QCUTILS_PUBINC}/
+
+SRC1 = MemAssertImpl.cpp
+OBJ1 = MemAssertImpl.o
+
+OBJS_D = ${DST_D}/${OBJ1}
+OBJS_R = ${DST_R}/${OBJ1}
+BINS_D = 
+BINS_R =
+AR_D=${DST_D}/${SUBSYSTEM}.a
+AR_R=${DST_R}/${SUBSYSTEM}.a
+
+include ${TOP}/MakeInclude
+
+##### Objects.
+# Debug
+TGT_D_FILES = ${DST_D}/${OBJ1}
+# Release
+TGT_R_FILES = ${DST_R}/${OBJ1}
+
+##### Debug
+${TGT_D}: ${TGT_D_FILES}
+	echo
+	${AR} ${ARFLAGS} $@ ${TGT_D_FILES}
+
+${DST_D}/${OBJ1}: ${SRC1}
+	echo
+	${CP_D} -o ${DST_D}/${OBJ1} ${SRC1}
+
+##### Release
+${TGT_R}: ${TGT_R_FILES}
+	echo
+	${AR} ${ARFLAGS} $@ ${TGT_R_FILES}
+
+${DST_R}/${OBJ1}: ${SRC1}
+	echo
+	${CP_R} -o ${DST_R}/${OBJ1} ${SRC1}
+
+
+

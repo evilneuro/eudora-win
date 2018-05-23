@@ -1,0 +1,77 @@
+422 Changes
+	422b7
+		Fixed balloon help for edit menu.
+		Fixed "in report" filter notification action.
+		Better check for Drag Manager
+		Misc balloon help fixes.
+		Fixed swapped creator/type mapping for .sit files.
+		Changing transliteration updates preview now.
+		Make sure we don't dispose empty OT streams.
+		Scrolling throttle reset after mouseup for benefit of scroll-wheel mouse.
+		Added new pref to allow disabling using URL Access for HTML graphic download
+		Can use <x-eudora-setting:298=y> to disable use of URL Access for HTML graphic download
+	422b6
+		Fixed memory leak in search window
+		IMAP - Fixed problems displaying RR button if PREF_ZOOM_OPEN is off.
+		IMAP - only zooming windows if pref is set after attachment fetch.
+		Fixed quoted chars in 822 addresses.
+		Network Setup Library no longer used by default unless running under OS 9.
+		Ignoring PPP now bypasses all NS Library and pref reading code, no matter which OS.
+		Now recognizing when the TCP/IP connection method is switched under OS 9.
+	422b5
+		Fixed crash downloading graphics on 68K machines
+	422b4
+		Fixed inline graphic display on 68K systems.
+		IMAP - Fixed potential badness when parsing partial FETCH responses from extremely stupid servers.
+		Fixed a crash that could happen when opening a message with a missing attachment.
+		Eudora Folder will now be located in Documents folder if one exists.
+		Was ignoring styles applied only to misspelled words.
+		Fixed crash in settings dialog due to optimizer bug
+	422b3
+		Fixed crash in 68K settings dialog due to optimizer bug
+		Picking up wrong address for Make Address Book Entry for outgoing messages in search window.
+		Redirecting outgoing mail was losing parts of the message body.
+		IMAP - fixed problems fetching messages in parts from UofW servers
+		IMAP - no longer fetching messages for preview pane when offline, and not allowed to connect automatically.
+		IMAP - minimal headers no longer marked as read when previewed while offline
+		IMAP - fixed progress message when waiting to download IMAP messages
+		IMAP - now opening next message after a transfer
+		IMAP - now spinning cursor when updating very large mailboxes
+		IMAP - fixed a case where an EXPUNGE command would be erroneously sent when using standard trash mode
+		Fixed problems authenticating to KERBEROS_V4 servers that require username
+		Rebuilding out toc no longer causes timed messages to be sent immediately.
+		Fixed problems with bottom of Edit menu in 68K version.
+	422b1
+		Flush cache for crashing 68040 machines
+		Fixed crash on some machines when closing connections.
+		Fixed crash option-clicking mailbox column in search results
+		Accepting bare LF in mailto URL's to mean CRLF.
+		Added Joe Toth to credits.
+		Added regcode to about box and to system configuration.
+		Added workaround for servers that don't give attachment names.
+		Avoid toc writes from multiple places
+		Fixes to react better when users perform unnatural acts in the nickname field
+		Workaround PixelToChar bug
+		Improved error message when dragging one address book into another.
+		Always checking before sending, to make certain servers happier.
+		Fixed some help balloons in the edit menu
+		Fixed finish nickname in directory services
+		Fixed problem copying from preview pane for 68K users.
+		Fixed nickname printing to print fields properly.
+		Fixed problem with -workgroup nicknames, wrapping, and trailing ;.
+		IMAP - Fixed problems opening many IMAP mailboxes at once
+		IMAP - Fetch Attachments now fetches the message and all attachments faster with one command.
+		IMAP - fixed problems after running Outgoing filters with an IMAP personality present
+		IMAP - messages now properly retaining certain flags after a resync
+		IMAP - no longer displying reply-to: in the From column of IMAP mailboxes
+		IMAP - now closing IMAP messages after they've been manually filtered.
+		IMAP - Now forgetting IMAP passwords only on BAD or NO response from server.
+		IMAP - now marking correct message when encoding errors occur
+		Insertion point was wrong when using change dictionary at end of edit region.
+		Making sure pw gets cleared when setting remember pw.
+		No longer splitting very large IMAP messages.
+		Now using Apple's Network Setup Library to read connection settings.
+		Opt-click didn't distinguish between recovered and time queued
+		Removed GX printing support.
+		Slightly improved performance for large POP->IMAP transfers
+		Trim trailing @ off UUCP maildrop path

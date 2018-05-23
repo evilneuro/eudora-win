@@ -1,0 +1,317 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "..\inc\resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_LDAP_ATTRIBPAGE DIALOG DISCARDABLE  0, 0, 220, 140
+STYLE DS_3DLOOK | WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "Attributes"
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "List1",IDC_ATTRIBLIST,"SysListView32",LVS_REPORT | 
+                    LVS_SINGLESEL | WS_BORDER | WS_TABSTOP,7,7,206,88
+    PUSHBUTTON      "&Add,,,",IDC_ADDATTRIB,7,119,50,14
+    PUSHBUTTON      "&Edit...",IDC_EDITATTRIB,64,119,50,14
+    PUSHBUTTON      "&Remove",IDC_REMOVEATTRIB,121,119,50,14
+    CONTROL         "Return listed attributes only",IDC_LISTEDATTRS_ONLY,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,21,97,106,10
+END
+
+IDD_LDAP_LOGPAGE DIALOG DISCARDABLE  0, 0, 220, 122
+STYLE DS_3DLOOK | WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "Log"
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "Protocol interactions",IDC_LOGPROTOCOL,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,21,18,80,10
+    CONTROL         "Configuration data load/store",IDC_LOGCONFIG,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,21,31,107,10
+    EDITTEXT        IDC_LOGFILE,7,61,153,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "&Browse...",IDC_FINDLOGFILE,168,61,45,14
+    CONTROL         "Overwrite existing log file",IDC_OVERWRITE,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,7,82,93,10
+    GROUPBOX        "Enable log for",IDC_STATIC,7,7,206,39
+    LTEXT           "Log file name:",IDC_STATIC,7,51,45,8
+END
+
+IDD_LDAP_NETWORKPAGE DIALOG DISCARDABLE  0, 0, 238, 188
+STYLE DS_3DLOOK | WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "Network"
+FONT 8, "MS Sans Serif"
+BEGIN
+    EDITTEXT        IDC_USERSRVNAME,15,38,204,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_HOSTNAME,57,76,164,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_PORTNUMBER,57,93,28,14,ES_AUTOHSCROLL
+    CONTROL         "This server requires me to log on",IDC_LOGONENABLE,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,17,115,145,10
+    CONTROL         "Use SSL",IDC_SSLENABLE,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,17,125,145,10
+    EDITTEXT        IDC_ACCOUNT,71,137,141,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_PASSWORD,71,158,141,14,ES_PASSWORD | ES_AUTOHSCROLL
+    LTEXT           "Host Name:",IDC_STATIC,15,79,38,8
+    LTEXT           "Port:",IDC_STATIC,15,96,16,8
+    LTEXT           "Account name:",IDC_STATIC,17,139,52,8
+    LTEXT           "Password:",IDC_STATIC,17,160,40,8
+    GROUPBOX        "Server information",IDC_STATIC,7,62,220,115
+    GROUPBOX        "",IDC_STATIC,7,8,219,50
+    LTEXT           "Type the name by which you would like to refer to this server.",
+                    IDC_STATIC,14,20,198,11
+END
+
+IDD_EDITATTRIB DIALOG DISCARDABLE  0, 0, 183, 132
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Attribute"
+FONT 8, "MS Sans Serif"
+BEGIN
+    EDITTEXT        IDC_ATTRIBNAME,9,21,164,14,ES_AUTOHSCROLL
+    COMBOBOX        IDC_PRESENTEDAS,9,52,164,69,CBS_DROPDOWN | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_DATAFORMAT,9,82,164,69,CBS_DROPDOWNLIST | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    DEFPUSHBUTTON   "OK",IDOK,65,105,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,123,105,50,14
+    LTEXT           "Attribute Name",IDC_STATIC,11,10,73,10
+    LTEXT           "Presented As",IDC_STATIC,10,41,54,8
+    LTEXT           "Data Format",IDC_STATIC,9,72,54,8
+END
+
+IDD_GET_PASSWORD DIALOGEX DISCARDABLE  100, 50, 200, 80
+STYLE DS_MODALFRAME | DS_CONTEXTHELP | WS_POPUP | WS_VISIBLE | 
+    WS_CAPTION | WS_SYSMENU
+CAPTION "Enter Password"
+FONT 8, "MS Shell Dlg"
+BEGIN
+    LTEXT           "Please enter the current password for:",
+                    IDC_PASSWORD_PROMPT,10,5,127,8
+    LTEXT           "",IDC_PASSWORD_ACCOUNT,10,18,175,8,SS_CENTER | SS_NOPREFIX
+    LTEXT           "&Password:",IDC_LBL_PASSWORD_PASSWORD,10,38,38,10
+    EDITTEXT        IDC_PASSWORD,50,35,140,13,ES_PASSWORD | ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "OK",IDOK,60,60,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,120,60,50,14
+END
+
+IDD_SEARCHOPTIONS DIALOG DISCARDABLE  0, 0, 227, 172
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Search Options"
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "Slider1",IDC_TIMEOUT,"msctls_trackbar32",TBS_NOTICKS | 
+                    WS_TABSTOP,37,19,62,11
+    EDITTEXT        IDC_MAXMATCHVALUE,7,53,56,14,ES_AUTOHSCROLL
+    CONTROL         "No Limit",IDC_NOMATCHLIMIT,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,73,56,47,10
+    EDITTEXT        IDC_SEARCHBASE,7,87,107,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_MAXMATCH,"msctls_updown32",UDS_WRAP | 
+                    UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_ARROWKEYS | 
+                    UDS_NOTHOUSANDS,55,59,11,12
+    LTEXT           "Search Base:",IDC_STATIC,7,77,91,8
+    LTEXT           "Search timeout:",IDC_STATIC,7,7,85,8
+    LTEXT           "Short",IDC_STATIC,17,20,20,8
+    LTEXT           "Long",IDC_STATIC,101,20,27,8
+    LTEXT           "",IDC_TIMEVALUE,127,20,79,8
+    LTEXT           "Maximum number of matches to return:",IDC_STATIC,7,41,
+                    145,8
+    EDITTEXT        IDC_SEARCHFILTER,7,119,213,14,ES_AUTOHSCROLL
+    LTEXT           "Word-wise Search Filter:",IDC_STATIC,7,109,91,8
+    EDITTEXT        IDC_CN_SEARCHFILTER,7,150,213,14,ES_AUTOHSCROLL
+    LTEXT           "Whole-query Search Filter:",IDC_STATIC,7,141,91,8
+END
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+#include "..\..\VersionBeg.inc"
+
+VALUE "InternalName",     "LDAP\0"
+VALUE "OriginalFilename", "LDAP.dll\0"
+VALUE "FileDescription",  "Lightweight Directory Access Protocol (LDAP)\0"
+VALUE "Comments",         "Eudora Lightweight Directory Access Protocol (LDAP)\0"
+
+#include "..\..\VersionEnd.inc"
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_LDAP_ATTRIBPAGE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 213
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 133
+    END
+
+    IDD_LDAP_LOGPAGE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 213
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 115
+    END
+
+    IDD_LDAP_NETWORKPAGE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 231
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 181
+    END
+
+    IDD_EDITATTRIB, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 176
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 125
+    END
+
+    IDD_SEARCHOPTIONS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 220
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 165
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_LDAPBITMAP          BITMAP  DISCARDABLE     "bitmap1.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_ATTRIBNAME          "Attribute Name"
+    IDS_PRESENTNAME         "Present As"
+    IDS_ALLFILES            "All Files (*.*)"
+    IDS_FINDFILE            "Select File"
+    IDS_EDITATTRIB          "Edit Attribute"
+    IDS_ADDATTRIB           "Add Attribute"
+    IDS_LDAP_ERROR1         "LDAP: Protocol Error"
+    IDS_LDAP_ERROR2         "LDAP: authentication method not supported"
+    IDS_LDAP_ERROR3         "LDAP: strong authentication required"
+    IDS_LDAP_ERROR4         "LDAP: unavailable or busy"
+    IDS_LDAP_ERROR5         "LDAP: requested operation failed"
+    IDS_LDAP_ERROR6         "LDAP: insufficient rights to perform operation"
+    IDS_LDAP_ERROR7         "LDAP server closed connection unexpectedly"
+    IDS_LDAP_ERROR8         "LDAP: operation in progress"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_LDAP_SUCCESS        "LDAP operation completed successfully"
+    IDS_LDAP_ERROR9         "Cannot resolve LDAP server name to valid network address."
+    IDS_LDAP30              "30 seconds"
+    IDS_LDAP60              "1 minute"
+    IDS_LDAP90              "1 minute 30 seconds"
+    IDS_LDAP120             "2 minutes"
+    IDS_LDAP150             "2 minutes 30 seconds"
+    IDS_LDAP180             "3 minutes"
+    IDS_LDAP210             "3 minutes 30 seconds"
+    IDS_LDAP240             "4 minutes"
+    IDS_LDAP270             "4 minutes 30 seconds"
+    IDS_LDAP300             "5 minutes"
+    IDS_LDAP0               "No Limit"
+    IDS_LDAP_ERROR10        "LDAP: configured search time limit exceeded."
+    IDS_LDAP_ERROR11        "LDAP: configured maximum number of matches returned."
+    IDS_BINARYTYPE          "Binary data"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_GIFTYPE             "GIF image"
+    IDS_JPEGTYPE            "JPEG image"
+    IDS_IMAGETYPE           "Unknown image format"
+    IDS_WORDTYPE            "Microsoft Word document"
+    IDS_EXCELTYPE           "Microsoft Excel spreadsheet"
+    IDS_URLTYPE             "URL"
+    IDS_TEXTTYPE            "Text string (in ASCII)"
+    IDS_ERR_SERVNAME        "Server name field is empty"
+	IDS_ROOT_CERT_FILE		"RootCerts\RootCerts1.cer"
+	IDS_ROOT_CERT_DIR		"RootCerts"
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

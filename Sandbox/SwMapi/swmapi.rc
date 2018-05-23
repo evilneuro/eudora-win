@@ -1,0 +1,333 @@
+//Microsoft App Studio generated resource script.
+//
+#include "swres.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+#ifdef APSTUDIO_INVOKED
+//////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "swres.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""res\\swmapi.rc2""  // non-App Studio edited resources\r\n"
+    "\r\n"
+    "#include ""afxres.rc""  // Standard components\r\n"
+    "\0"
+END
+
+/////////////////////////////////////////////////////////////////////////////////////
+#endif    // APSTUDIO_INVOKED
+
+
+//////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+IDR_MAINFRAME           ICON    DISCARDABLE     "RES\\SWMAPI.ICO"
+
+//////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MAINFRAME MENU PRELOAD DISCARDABLE 
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "&New\tCtrl+N",                ID_FILE_NEW
+        MENUITEM "&Open...\tCtrl+O",            ID_FILE_OPEN
+        MENUITEM "&Save\tCtrl+S",               ID_FILE_SAVE
+        MENUITEM "Save &As...",                 ID_FILE_SAVE_AS
+        MENUITEM SEPARATOR
+        MENUITEM "Recent File",                 ID_FILE_MRU_FILE1, GRAYED
+        MENUITEM SEPARATOR
+        MENUITEM "E&xit",                       ID_APP_EXIT
+    END
+    POPUP "&Edit"
+    BEGIN
+        MENUITEM "&Undo\tCtrl+Z",               ID_EDIT_UNDO
+        MENUITEM SEPARATOR
+        MENUITEM "Cu&t\tCtrl+X",                ID_EDIT_CUT
+        MENUITEM "&Copy\tCtrl+C",               ID_EDIT_COPY
+        MENUITEM "&Paste\tCtrl+V",              ID_EDIT_PASTE
+    END
+    POPUP "&Help"
+    BEGIN
+        MENUITEM "&About SWMAPI...",            ID_APP_ABOUT
+    END
+END
+
+
+//////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDR_MAINFRAME ACCELERATORS PRELOAD MOVEABLE PURE 
+BEGIN
+    "N",            ID_FILE_NEW,            VIRTKEY,CONTROL
+    "O",            ID_FILE_OPEN,           VIRTKEY,CONTROL
+    "S",            ID_FILE_SAVE,           VIRTKEY,CONTROL
+    "Z",            ID_EDIT_UNDO,           VIRTKEY,CONTROL
+    "X",            ID_EDIT_CUT,            VIRTKEY,CONTROL
+    "C",            ID_EDIT_COPY,           VIRTKEY,CONTROL
+    "V",            ID_EDIT_PASTE,          VIRTKEY,CONTROL
+    VK_BACK,        ID_EDIT_UNDO,           VIRTKEY,ALT
+    VK_DELETE,      ID_EDIT_CUT,            VIRTKEY,SHIFT
+    VK_INSERT,      ID_EDIT_COPY,           VIRTKEY,CONTROL
+    VK_INSERT,      ID_EDIT_PASTE,          VIRTKEY,SHIFT
+    VK_F6,          ID_NEXT_PANE,           VIRTKEY 
+    VK_F6,          ID_PREV_PANE,           VIRTKEY,SHIFT
+END
+
+
+//////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOG DISCARDABLE  34, 22, 186, 74
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About Eudora Pro MAPI Installer"
+FONT 8, "MS Sans Serif"
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,8,8,18,20
+    LTEXT           "Eudora Pro MAPI Installer 3.0",IDC_STATIC,36,8,136,8
+    LTEXT           "Copyright \251 1995-1996  QUALCOMM Inc.",IDC_STATIC,36,
+                    20,136,8
+    DEFPUSHBUTTON   "OK",IDOK,132,44,32,14,WS_GROUP
+    LTEXT           "Written by:  Willie Sakai",IDC_STATIC,8,52,100,8
+    LTEXT           "<WinVersion goes here>",IDC_WINVERSION,8,40,100,8
+END
+
+IDD_SWITCH DIALOG DISCARDABLE  50, 100, 239, 69
+STYLE DS_MODALFRAME | DS_NOIDLEMSG | WS_MINIMIZEBOX | WS_VISIBLE | 
+    WS_CAPTION | WS_SYSMENU
+CAPTION "Eudora Pro MAPI Installer"
+FONT 8, "MS Sans Serif"
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,12,8,18,20
+    DEFPUSHBUTTON   "&Install Eudora MAPI System",IDC_INSTALL,40,8,128,20
+    PUSHBUTTON      "&Uninstall Eudora MAPI System",IDC_UNINSTALL,40,36,128,
+                    20
+    PUSHBUTTON      "Close",IDCANCEL,180,8,48,14
+    PUSHBUTTON      "&About...",IDC_ABOUT,180,48,48,14
+    PUSHBUTTON      "In&fo...",IDC_INFO,180,28,48,14
+END
+
+IDD_INFO DIALOG DISCARDABLE  30, 20, 267, 193
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Eudora Pro MAPI Info"
+FONT 8, "MS Sans Serif"
+BEGIN
+    GROUPBOX        "View MAPI DLLs In Directory",IDC_STATIC,8,8,184,52
+    CONTROL         "&Windows System Directory",IDRB_WINDOWS,"Button",
+                    BS_AUTORADIOBUTTON | WS_GROUP | WS_TABSTOP,32,32,100,12
+    CONTROL         "E&udora Program Directory",IDRB_EUDORA,"Button",
+                    BS_AUTORADIOBUTTON,32,44,100,12
+    LTEXT           "<directory path goes here>",IDST_DIRECTORY,16,20,168,8
+    DEFPUSHBUTTON   "Close",IDOK,200,16,50,14
+    LTEXT           "<16-bit DLL name>",IDST_DLLNAME16,8,64,64,8
+    LTEXT           "File Version:",IDC_STATIC,16,100,56,8
+    LTEXT           "<16-bit version name goes here>",IDST_VERSION16,76,100,
+                    184,8
+    LTEXT           "File Info:",IDC_STATIC,16,88,56,8
+    LTEXT           "<16-bit file info goes here>",IDST_FILEINFO16,76,88,184,
+                    8
+    LTEXT           "Company Name:",IDC_STATIC,16,76,56,8
+    LTEXT           "<16-bit company name goes here>",IDST_COMPANY16,76,76,
+                    184,8
+    LTEXT           "File Description:",IDC_STATIC,16,112,56,8
+    LTEXT           "<16-bit description goes here>",IDST_DESCRIPTION16,76,
+                    112,184,8
+    LTEXT           "<32-bit DLL name>",IDST_DLLNAME32,8,128,64,8
+    LTEXT           "File Version:",IDC_STATIC,16,164,56,8
+    LTEXT           "<32-bit version name goes here>",IDST_VERSION32,76,164,
+                    184,8
+    LTEXT           "File Info:",IDC_STATIC,16,152,56,8
+    LTEXT           "<32-bit file info goes here>",IDST_FILEINFO32,76,152,
+                    184,8
+    LTEXT           "Company Name:",IDC_STATIC,16,140,56,8
+    LTEXT           "<32-bit company name goes here>",IDST_COMPANY32,76,140,
+                    184,8
+    LTEXT           "File Description:",IDC_STATIC,16,176,56,8
+    LTEXT           "<32-bit description goes here>",IDST_DESCRIPTION32,76,
+                    176,184,8
+    DEFPUSHBUTTON   "&Refresh",IDC_REFRESH,200,36,50,14
+    LTEXT           "<16-bit in use status goes here>",IDST_IN_USE_16,76,64,
+                    128,8
+    LTEXT           "<32-bit in use status goes here>",IDST_IN_USE_32,76,128,
+                    124,8
+END
+
+
+//////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE PRELOAD DISCARDABLE 
+BEGIN
+    IDR_MAINFRAME           "Eudora Pro MAPI Installer\nMAPI\nMAPI Document\nMAPI Files (*.dll)\n.dll"
+    IDS_ERR_CANNOT_LOAD_DLL "Could not load Eudora MAPI DLL."
+    IDS_ERR_CANNOT_QUERY_EXISTING_DLL 
+                            "Could not load Eudora MAPI DLL (unknown MAPI DLL already loaded into memory)."
+    IDS_ERR_INCOMPATIBLE_DLL 
+                            "Could not load Eudora MAPI DLL (incompatible MAPI DLL already loaded into memory)."
+    IDS_ERR_INTERNAL        "Could not load Eudora MAPI DLL (internal error)."
+    IDS_STATUS_OK           "Eudora MAPI DLL loaded successfully."
+    IDS_STATUS_NOT_LOADED   "ERROR: Eudora MAPI DLL not loaded."
+    IDS_STATUS_NONE_LOADED  "ERROR: No MAPI DLLs are loaded."
+    IDS_IN_USE              "(IN USE)"
+    IDS_NOT_IN_USE          "(not in use)"
+    IDS_BYTES               "bytes"
+END
+
+STRINGTABLE PRELOAD DISCARDABLE 
+BEGIN
+    AFX_IDS_APP_TITLE       "Eudora Pro MAPI Installer"
+    AFX_IDS_IDLEMESSAGE     "Ready"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_INDICATOR_EXT        "EXT"
+    ID_INDICATOR_CAPS       "CAP"
+    ID_INDICATOR_NUM        "NUM"
+    ID_INDICATOR_SCRL       "SCRL"
+    ID_INDICATOR_OVR        "OVR"
+    ID_INDICATOR_REC        "REC"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_FILE_NEW             "Create a new document"
+    ID_FILE_OPEN            "Open an existing document"
+    ID_FILE_CLOSE           "Close the active document"
+    ID_FILE_SAVE            "Save the active document"
+    ID_FILE_SAVE_AS         "Save the active document with a new name"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_APP_ABOUT            "Display program information, version number and copyright"
+    ID_APP_EXIT             "Quit the application; prompts to save documents"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_FILE_MRU_FILE1       "Open this document"
+    ID_FILE_MRU_FILE2       "Open this document"
+    ID_FILE_MRU_FILE3       "Open this document"
+    ID_FILE_MRU_FILE4       "Open this document"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_NEXT_PANE            "Switch to the next window pane"
+    ID_PREV_PANE            "Switch back to the previous window pane"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_EDIT_CLEAR           "Erase the selection"
+    ID_EDIT_CLEAR_ALL       "Erase everything"
+    ID_EDIT_COPY            "Copy the selection and put it on the Clipboard"
+    ID_EDIT_CUT             "Cut the selection and put it on the Clipboard"
+    ID_EDIT_FIND            "Find the specified text"
+    ID_EDIT_PASTE           "Insert Clipboard contents"
+    ID_EDIT_REPEAT          "Repeat the last action"
+    ID_EDIT_REPLACE         "Replace specific text with different text"
+    ID_EDIT_SELECT_ALL      "Select the entire document"
+    ID_EDIT_UNDO            "Undo the last action"
+    ID_EDIT_REDO            "Redo the previously undone action"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    AFX_IDS_SCSIZE          "Change the window size"
+    AFX_IDS_SCMOVE          "Change the window position"
+    AFX_IDS_SCMINIMIZE      "Reduce the window to an icon"
+    AFX_IDS_SCMAXIMIZE      "Enlarge the window to full size"
+    AFX_IDS_SCNEXTWINDOW    "Switch to the next document window"
+    AFX_IDS_SCPREVWINDOW    "Switch to the previous document window"
+    AFX_IDS_SCCLOSE         "Close the active window and prompts to save the documents"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    AFX_IDS_SCRESTORE       "Restore the window to normal size"
+    AFX_IDS_SCTASKLIST      "Activate Task List"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    AFX_ID_PREVIEW_CLOSE    "Shutting down this application will disable Eudora MAPI functions.  Do you still wish to quit?"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_READ_ONLY           "read only"
+    IDS_FILE_NOT_FOUND      "(file not found)"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_WIN_VER_FORMAT      "Windows Version: %d.%d"
+    IDS_MAPI_INSTALL        "MAPI Install"
+    IDS_MAPI_INSTALL_ERROR  "MAPI Install Error"
+    IDS_INSTALLED_OK        "Eudora MAPI components installed successfully."
+    IDS_ALREADY_INSTALLED   "Eudora MAPI components were already installed."
+    IDS_ERROR_1             "Could not install Eudora MAPI components since a MAPI component is in use.  Close all MAPI applications and try again."
+    IDS_ERROR_2             "Could not install Eudora MAPI components."
+    IDS_ERROR_3             "Could not find Eudora MAPI components to install."
+    IDS_ERROR_4             "Internal error."
+    IDS_ERROR_5             "Unrecognized status code."
+    IDS_MAPI_UNINSTALL      "MAPI Uninstall"
+    IDS_MAPI_UNINSTALL_ERROR "MAPI Uninstall Error"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_UNINSTALLED_OK      "Eudora MAPI components uninstalled successfully."
+    IDS_NOT_UNINSTALLED     "Eudora MAPI components were not installed."
+    IDS_ERROR_6             "Could not uninstall Eudora MAPI components since a MAPI component is in use.  Close all MAPI applications and try again."
+    IDS_ERROR_7             "Could not uninstall Eudora MAPI components."
+END
+
+
+#ifndef APSTUDIO_INVOKED
+////////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#include "res\swmapi.rc2"  // non-App Studio edited resources
+
+#include "afxres.rc"  // Standard components
+
+/////////////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

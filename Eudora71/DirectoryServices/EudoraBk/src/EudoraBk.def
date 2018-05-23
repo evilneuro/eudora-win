@@ -1,0 +1,8 @@
+LIBRARY 	EudoraBk
+
+EXPORTS         DllGetClassObject       PRIVATE
+		DllCanUnloadNow         PRIVATE
+;                DllRegisterServer       PRIVATE
+;                DllUnregisterServer     PRIVATE
+;                DllInstallServer        PRIVATE
+;                DllUninstallServer      PRIVATE

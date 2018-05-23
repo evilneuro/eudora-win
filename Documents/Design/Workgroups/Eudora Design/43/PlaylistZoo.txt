@@ -1,0 +1,95 @@
+PLAYLIST ZOO
+
+Note: x-eudora-option:PlayListServer doesn't work yet.  It will next week sometime.
+
+-----------------------------------------------------------------
+THE REAL DEAL  Where real users, real accounting, real blah blah blah go.
+
+<http://adserver.eudora.com/adjoin/playlists>
+Mac: <x-eudora-setting:13713=>
+Win: <x-eudora-option:PlayListServer=>
+
+-----------------------------------------------------------------
+ADWARE WEB TOOLS PAGE
+
+This page contains links to "interesting" adware stuff.
+
+<http://echo.qualcomm.com/adserver/webtools/>
+
+-----------------------------------------------------------------
+PLAYLIST SERVLETS  Test the Client with These
+
+Inside the QC firewall ONLY:
+
+Eitanzone:
+<http://echo.qualcomm.com/eitanzone/playlists>
+Mac: <x-eudora-setting:13713=http%3A//echo.qualcomm.com/eitanzone/playlists>
+Win: <x-eudora-option:PlayListServer=http%3A//echo.qualcomm.com/eitanzone/playlists>
+
+Chandhokzone:
+<http://echo.qualcomm.com/chandhokzone/playlists>
+Mac: <x-eudora-setting:13713=http%3A//echo.qualcomm.com/chandhokzone/playlists>
+Win: <x-eudora-option:PlayListServer=http%3A//echo.qualcomm.com/chandhokzone/playlists>
+
+Outside the QC firewall:
+
+Eitanzone:
+<http://adserver.eudora.com/eitanzone/playlists>
+Mac: <x-eudora-setting:13713=http%3A//adserver.eudora.com/eitanzone/playlists>
+Win: <x-eudora-option:PlayListServer=http%3A//adserver.eudora.com/eitanzone/playlists>
+
+Chandhokzone:
+<http://adserver.eudora.com/chandhokzone/playlists>
+Mac: <x-eudora-setting:13713=http%3A//adserver.eudora.com/chandhokzone/playlists>
+Win: <x-eudora-option:PlayListServer=http%3A//adserver.eudora.com/chandhokzone/playlists>
+
+
+-----------------------------------------------------------------
+TEST HARNESS SERVLETS  Use these to see sample playlists.
+
+Inside the firewall:
+
+<http://echo.qualcomm.com/chandhokzone/pltest>
+Mac: <x-eudora-setting:13713=http%3A//echo.qualcomm.com/chandhokzone/pltest>
+Win: <x-eudora-option:PlayListServer=http%3Aecho.qualcomm.com/chandhokzone/pltest>
+
+<http://echo.qualcomm.com/chandhokzone/pl17>
+This servlet returns a static playlist that has 2 (two) buttons and one sponsor ad.
+As of "//depot/main/Documents/Design/Workgroups/Eudora Design/43/PlayList.txt#17".
+
+Outside the firewall, but only from QC hosts
+
+<http://adserver.eudora.com/chandhokzone/pltest>
+Mac: <x-eudora-setting:13713=http%3A//adserver.eudora.com/chandhokzone/pltest>
+Win: <x-eudora-option:PlayListServer=http%3A//adserver.eudora.com/chandhokzone/pltest>
+
+
+-----------------------------------------------------------------
+DELIBERATELY BROKEN SERVLETS.  Use these to test errors handling.
+
+Returns a Fault (a valid XML fault):
+
+<http://echo.qualcomm.com/chandhokzone/playlistsfault>
+Mac: <x-eudora-setting:13713=http%3A//echo.qualcomm.com/chandhokzone/playlistsfault>
+Win: <x-eudora-option:PlayListServer=http%3A//echo.qualcomm.com/chandhokzone/playlistsfault>
+
+Returns a Playlist where the ad URLS are unreachable, but valid (lost ads):
+
+<http://echo.qualcomm.com/chandhokzone/playlistslostads>
+Mac: <x-eudora-setting:13713=http%3A//echo.qualcomm.com/chandhokzone/playlistslostads>
+Win: <x-eudora-option:PlayListServer=http%3A//echo.qualcomm.com/chandhokzone/playlistslostads>
+
+Returns a 500 error from HTTP:
+
+<http://adserver.eudora.com/chandhokzone/httperror>
+Mac: <x-eudora-setting:13713=http%3A//adserver.eudora.com/chandhokzone/httperror>
+Mac: <x-eudora-option:PlayListServer=http%3A//adserver.eudora.com/chandhokzone/httperror>
+
+-----------------------------------------------------------------
+TOY SERVERS.  Use these to test flushes or other old->new server transitions.
+
+Outside the firewall:
+
+<http://adserver.eudora.com/adserver/playlists>
+Mac: <x-eudora-setting:13713=http%3A//adserver.eudora.com/adserver/playlists>
+Win: <x-eudora-option:PlayListServer=http%3A//adserver.eudora.com/adserver/playlists>

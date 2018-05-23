@@ -1,0 +1,13 @@
+; testplugin.def : Declares the module parameters for the DLL.
+
+LIBRARY      "testplugin"
+DESCRIPTION  'testplugin Windows Dynamic Link Library'
+
+EXPORTS
+    ; Explicit exports can go here
+ems_plugin_version
+ems_plugin_init
+ems_translator_info
+ems_can_translate
+ems_translate_file
+ems_plugin_config

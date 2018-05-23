@@ -1,0 +1,6 @@
+; esoteric.def : Declares the module parameters for the DLL.
+
+LIBRARY      "esoteric"
+DESCRIPTION  'esoteric Windows Dynamic Link Library'
+
+EXPORTS

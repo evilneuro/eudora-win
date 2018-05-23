@@ -1,0 +1,16 @@
+; plstclnt.def : Declares the module parameters for the DLL.
+
+LIBRARY      "plstclnt"
+
+EXPORTS
+	MGR_Shutdown              @1
+	MGR_Idle                  @2
+	MGR_BeginScheduling       @3
+	MGR_UpdatePlaylists       @4
+	MGR_Init                  @5
+	MGR_Cancel                @6
+	MGR_DisposeEntryInfo      @7
+	MGR_GetClientUpdateStatus @8
+	MGR_DumpState 		      @9
+	MGR_UserTweaked			  @10
+	MGR_CheckingMail		  @11

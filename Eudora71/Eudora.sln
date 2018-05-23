@@ -1,0 +1,279 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AccountWizard", "AccountWizard\AccountWizard.vcproj", "{A3893849-E600-4229-859C-FB2E524A02AF}"
+	ProjectSection(ProjectDependencies) = postProject
+		{8153DB1A-F996-48A8-A1A6-B183C086A94D} = {8153DB1A-F996-48A8-A1A6-B183C086A94D}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DirectoryServicesUI", "DirectoryServices\DirectoryServicesUI\DirectoryServicesUI.vcproj", "{E7DEB109-6E69-405B-8178-D2E51E8BF864}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "EuImap", "EuImap\EuImap.vcproj", "{D50F60F5-CFCF-48F4-867F-EF743A8FD120}"
+	ProjectSection(ProjectDependencies) = postProject
+		{96301C25-2FE7-4A25-830F-1D7084CC12E6} = {96301C25-2FE7-4A25-830F-1D7084CC12E6}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "EuLang", "EuLang\EuLang.vcproj", "{1CDAB9E1-9D9A-4DF1-8316-FD68C439FF8C}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Eudora", "Eudora\Eudora.vcproj", "{B94694FC-1EAC-4E90-9006-E40CF1C85041}"
+	ProjectSection(ProjectDependencies) = postProject
+		{E7DEB109-6E69-405B-8178-D2E51E8BF864} = {E7DEB109-6E69-405B-8178-D2E51E8BF864}
+		{2BE84818-8850-49AD-92E6-93A2B7A6565C} = {2BE84818-8850-49AD-92E6-93A2B7A6565C}
+		{8153DB1A-F996-48A8-A1A6-B183C086A94D} = {8153DB1A-F996-48A8-A1A6-B183C086A94D}
+		{8D8CC924-3876-4418-BAFF-D08E2139FC92} = {8D8CC924-3876-4418-BAFF-D08E2139FC92}
+		{96301C25-2FE7-4A25-830F-1D7084CC12E6} = {96301C25-2FE7-4A25-830F-1D7084CC12E6}
+		{A3893849-E600-4229-859C-FB2E524A02AF} = {A3893849-E600-4229-859C-FB2E524A02AF}
+		{45B16D5B-2CF8-4B87-BD81-184523BFED8F} = {45B16D5B-2CF8-4B87-BD81-184523BFED8F}
+		{FBE55C67-E107-45C2-87BF-31E55D7FCAFC} = {FBE55C67-E107-45C2-87BF-31E55D7FCAFC}
+		{36EB689A-7C2C-4C2E-8F1C-744FDD4DDFA2} = {36EB689A-7C2C-4C2E-8F1C-744FDD4DDFA2}
+		{EB832EA8-35CF-45FD-B644-E423AFFC4FEB} = {EB832EA8-35CF-45FD-B644-E423AFFC4FEB}
+		{5039D1CB-8A81-4D6D-B131-06D88A24CBF5} = {5039D1CB-8A81-4D6D-B131-06D88A24CBF5}
+		{1CDAB9E1-9D9A-4DF1-8316-FD68C439FF8C} = {1CDAB9E1-9D9A-4DF1-8316-FD68C439FF8C}
+		{022798E2-47F3-4CA5-B4B1-391D2FA3F920} = {022798E2-47F3-4CA5-B4B1-391D2FA3F920}
+		{26FCCCEE-FFF9-4908-85A6-088944A0D1FD} = {26FCCCEE-FFF9-4908-85A6-088944A0D1FD}
+		{D50F60F5-CFCF-48F4-867F-EF743A8FD120} = {D50F60F5-CFCF-48F4-867F-EF743A8FD120}
+		{63F4F8F8-DAD9-4356-951C-4B8C929FEF74} = {63F4F8F8-DAD9-4356-951C-4B8C929FEF74}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "EudoraOldIcons", "EudoraOldIcons\EudoraOldIcons.vcproj", "{8D8CC924-3876-4418-BAFF-D08E2139FC92}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "EudoraRes", "Eudora\EudoraRes.vcproj", "{2BE84818-8850-49AD-92E6-93A2B7A6565C}"
+	ProjectSection(ProjectDependencies) = postProject
+		{8153DB1A-F996-48A8-A1A6-B183C086A94D} = {8153DB1A-F996-48A8-A1A6-B183C086A94D}
+		{36EB689A-7C2C-4C2E-8F1C-744FDD4DDFA2} = {36EB689A-7C2C-4C2E-8F1C-744FDD4DDFA2}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Imap", "imapdll\imap.vcproj", "{96301C25-2FE7-4A25-830F-1D7084CC12E6}"
+	ProjectSection(ProjectDependencies) = postProject
+		{8153DB1A-F996-48A8-A1A6-B183C086A94D} = {8153DB1A-F996-48A8-A1A6-B183C086A94D}
+		{EB832EA8-35CF-45FD-B644-E423AFFC4FEB} = {EB832EA8-35CF-45FD-B644-E423AFFC4FEB}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "NSImport", "Importers\NSImport\NSImport.vcproj", "{26FCCCEE-FFF9-4908-85A6-088944A0D1FD}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "OEImport", "Importers\OEImport\OEImport.vcproj", "{45B16D5B-2CF8-4B87-BD81-184523BFED8F}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "OLImport", "Importers\OLImport\OLImport.vcproj", "{63F4F8F8-DAD9-4356-951C-4B8C929FEF74}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "OT501", "OT501\Src\OT501.vcproj", "{36EB689A-7C2C-4C2E-8F1C-744FDD4DDFA2}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "OpenSSL", "OpenSSL\OpenSSL.vcproj", "{40AD5B45-6A83-4EA5-AA08-172D6C65BBFA}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "QCSSL", "QCSSL\QCSSL.vcproj", "{022798E2-47F3-4CA5-B4B1-391D2FA3F920}"
+	ProjectSection(ProjectDependencies) = postProject
+		{40AD5B45-6A83-4EA5-AA08-172D6C65BBFA} = {40AD5B45-6A83-4EA5-AA08-172D6C65BBFA}
+		{EB832EA8-35CF-45FD-B644-E423AFFC4FEB} = {EB832EA8-35CF-45FD-B644-E423AFFC4FEB}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "QCSocket", "QCSocket\QCSocket.vcproj", "{EB832EA8-35CF-45FD-B644-E423AFFC4FEB}"
+	ProjectSection(ProjectDependencies) = postProject
+		{8153DB1A-F996-48A8-A1A6-B183C086A94D} = {8153DB1A-F996-48A8-A1A6-B183C086A94D}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "QCUtils", "QCUtils\QCUtils.vcproj", "{8153DB1A-F996-48A8-A1A6-B183C086A94D}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SearchEngine", "SearchEngine\SearchEngine.vcproj", "{FBE55C67-E107-45C2-87BF-31E55D7FCAFC}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "plstclnt", "PlaylistClient\plstclnt_dll\plstclnt.vcproj", "{5039D1CB-8A81-4D6D-B131-06D88A24CBF5}"
+	ProjectSection(ProjectDependencies) = postProject
+		{1CDAB9E1-9D9A-4DF1-8316-FD68C439FF8C} = {1CDAB9E1-9D9A-4DF1-8316-FD68C439FF8C}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SourceCodeControl) = preSolution
+		SccNumberOfProjects = 18
+		SccProjectUniqueName0 = AccountWizard\\AccountWizard.vcproj
+		SccProjectName0 = AccountWizard
+		SccLocalPath0 = AccountWizard
+		SccProvider0 = MSSCCI:Perforce\u0020SCM
+		CanCheckoutShared = true
+		SccProjectUniqueName1 = DirectoryServices\\DirectoryServicesUI\\DirectoryServicesUI.vcproj
+		SccProjectName1 = DirectoryServicesUI
+		SccLocalPath1 = DirectoryServices
+		SccProvider1 = MSSCCI:Perforce\u0020SCM
+		CanCheckoutShared = true
+		SccProjectFilePathRelativizedFromConnection1 = DirectoryServicesUI\\
+		SccProjectUniqueName2 = EuImap\\EuImap.vcproj
+		SccProjectName2 = EuImap
+		SccLocalPath2 = EuImap
+		SccProvider2 = MSSCCI:Perforce\u0020SCM
+		CanCheckoutShared = true
+		SccProjectUniqueName3 = EuLang\\EuLang.vcproj
+		SccProjectName3 = EuLang
+		SccLocalPath3 = EuLang
+		SccProvider3 = MSSCCI:Perforce\u0020SCM
+		CanCheckoutShared = true
+		SccProjectUniqueName4 = Eudora\\Eudora.vcproj
+		SccProjectName4 = Eudora
+		SccLocalPath4 = .
+		SccProvider4 = MSSCCI:Perforce\u0020SCM
+		CanCheckoutShared = true
+		SccProjectFilePathRelativizedFromConnection4 = Eudora\\
+		SccProjectUniqueName5 = EudoraOldIcons\\EudoraOldIcons.vcproj
+		SccProjectName5 = EudoraOldIcons
+		SccLocalPath5 = EudoraOldIcons
+		SccProvider5 = MSSCCI:Perforce\u0020SCM
+		CanCheckoutShared = true
+		SccProjectUniqueName6 = Eudora\\EudoraRes.vcproj
+		SccProjectName6 = EudoraRes
+		SccLocalPath6 = Eudora
+		SccProvider6 = MSSCCI:Perforce\u0020SCM
+		CanCheckoutShared = true
+		SccProjectUniqueName7 = imapdll\\imap.vcproj
+		SccProjectName7 = Imap
+		SccLocalPath7 = imapdll
+		SccProvider7 = MSSCCI:Perforce\u0020SCM
+		CanCheckoutShared = true
+		SccProjectUniqueName8 = Importers\\NSImport\\NSImport.vcproj
+		SccProjectName8 = NSImport
+		SccLocalPath8 = Importers\\NSImport
+		SccProvider8 = MSSCCI:Perforce\u0020SCM
+		CanCheckoutShared = true
+		SccProjectUniqueName9 = Importers\\OEImport\\OEImport.vcproj
+		SccProjectName9 = OEImport
+		SccLocalPath9 = Importers\\OEImport
+		SccProvider9 = MSSCCI:Perforce\u0020SCM
+		CanCheckoutShared = true
+		SccProjectUniqueName10 = Importers\\OLImport\\OLImport.vcproj
+		SccProjectName10 = OLImport
+		SccLocalPath10 = Importers\\OLImport
+		SccProvider10 = MSSCCI:Perforce\u0020SCM
+		CanCheckoutShared = true
+		SccProjectUniqueName11 = OT501\\Src\\OT501.vcproj
+		SccProjectName11 = OT501
+		SccLocalPath11 = OT501\\Src
+		SccProvider11 = MSSCCI:Perforce\u0020SCM
+		CanCheckoutShared = true
+		SccProjectUniqueName12 = OpenSSL\\OpenSSL.vcproj
+		SccProjectName12 = \u0022//depot/main/Eudora/OpenSSL\u0022
+		SccLocalPath12 = OpenSSL
+		SccProvider12 = MSSCCI:Perforce\u0020SCM
+		CanCheckoutShared = true
+		SccProjectUniqueName13 = QCSSL\\QCSSL.vcproj
+		SccProjectName13 = QCSSL
+		SccLocalPath13 = QCSSL
+		SccProvider13 = MSSCCI:Perforce\u0020SCM
+		CanCheckoutShared = true
+		SccProjectUniqueName14 = QCSocket\\QCSocket.vcproj
+		SccProjectName14 = QCSocket
+		SccLocalPath14 = QCSocket
+		SccProvider14 = MSSCCI:Perforce\u0020SCM
+		CanCheckoutShared = true
+		SccProjectUniqueName15 = QCUtils\\QCUtils.vcproj
+		SccProjectName15 = QCUtils
+		SccLocalPath15 = QCUtils
+		SccProvider15 = MSSCCI:Perforce\u0020SCM
+		CanCheckoutShared = true
+		SccProjectUniqueName16 = SearchEngine\\SearchEngine.vcproj
+		SccProjectName16 = SearchEngine
+		SccLocalPath16 = SearchEngine
+		SccProvider16 = MSSCCI:Perforce\u0020SCM
+		CanCheckoutShared = true
+		SccProjectUniqueName17 = PlaylistClient\\plstclnt_dll\\plstclnt.vcproj
+		SccProjectName17 = plstclnt_dll
+		SccLocalPath17 = PlaylistClient
+		SccProvider17 = MSSCCI:Perforce\u0020SCM
+		CanCheckoutShared = true
+		SccProjectFilePathRelativizedFromConnection17 = plstclnt_dll\\
+	EndGlobalSection
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{A3893849-E600-4229-859C-FB2E524A02AF}.Debug.ActiveCfg = Debug|Win32
+		{A3893849-E600-4229-859C-FB2E524A02AF}.Debug.Build.0 = Debug|Win32
+		{A3893849-E600-4229-859C-FB2E524A02AF}.Release.ActiveCfg = Release|Win32
+		{A3893849-E600-4229-859C-FB2E524A02AF}.Release.Build.0 = Release|Win32
+		{E7DEB109-6E69-405B-8178-D2E51E8BF864}.Debug.ActiveCfg = Debug|Win32
+		{E7DEB109-6E69-405B-8178-D2E51E8BF864}.Debug.Build.0 = Debug|Win32
+		{E7DEB109-6E69-405B-8178-D2E51E8BF864}.Release.ActiveCfg = Release|Win32
+		{E7DEB109-6E69-405B-8178-D2E51E8BF864}.Release.Build.0 = Release|Win32
+		{D50F60F5-CFCF-48F4-867F-EF743A8FD120}.Debug.ActiveCfg = Debug|Win32
+		{D50F60F5-CFCF-48F4-867F-EF743A8FD120}.Debug.Build.0 = Debug|Win32
+		{D50F60F5-CFCF-48F4-867F-EF743A8FD120}.Release.ActiveCfg = Release|Win32
+		{D50F60F5-CFCF-48F4-867F-EF743A8FD120}.Release.Build.0 = Release|Win32
+		{1CDAB9E1-9D9A-4DF1-8316-FD68C439FF8C}.Debug.ActiveCfg = Debug|Win32
+		{1CDAB9E1-9D9A-4DF1-8316-FD68C439FF8C}.Debug.Build.0 = Debug|Win32
+		{1CDAB9E1-9D9A-4DF1-8316-FD68C439FF8C}.Release.ActiveCfg = Release|Win32
+		{1CDAB9E1-9D9A-4DF1-8316-FD68C439FF8C}.Release.Build.0 = Release|Win32
+		{B94694FC-1EAC-4E90-9006-E40CF1C85041}.Debug.ActiveCfg = Debug|Win32
+		{B94694FC-1EAC-4E90-9006-E40CF1C85041}.Debug.Build.0 = Debug|Win32
+		{B94694FC-1EAC-4E90-9006-E40CF1C85041}.Release.ActiveCfg = Release|Win32
+		{B94694FC-1EAC-4E90-9006-E40CF1C85041}.Release.Build.0 = Release|Win32
+		{8D8CC924-3876-4418-BAFF-D08E2139FC92}.Debug.ActiveCfg = Debug|Win32
+		{8D8CC924-3876-4418-BAFF-D08E2139FC92}.Debug.Build.0 = Debug|Win32
+		{8D8CC924-3876-4418-BAFF-D08E2139FC92}.Release.ActiveCfg = Release|Win32
+		{8D8CC924-3876-4418-BAFF-D08E2139FC92}.Release.Build.0 = Release|Win32
+		{2BE84818-8850-49AD-92E6-93A2B7A6565C}.Debug.ActiveCfg = Debug|Win32
+		{2BE84818-8850-49AD-92E6-93A2B7A6565C}.Debug.Build.0 = Debug|Win32
+		{2BE84818-8850-49AD-92E6-93A2B7A6565C}.Release.ActiveCfg = Release|Win32
+		{2BE84818-8850-49AD-92E6-93A2B7A6565C}.Release.Build.0 = Release|Win32
+		{96301C25-2FE7-4A25-830F-1D7084CC12E6}.Debug.ActiveCfg = Debug|Win32
+		{96301C25-2FE7-4A25-830F-1D7084CC12E6}.Debug.Build.0 = Debug|Win32
+		{96301C25-2FE7-4A25-830F-1D7084CC12E6}.Release.ActiveCfg = Release|Win32
+		{96301C25-2FE7-4A25-830F-1D7084CC12E6}.Release.Build.0 = Release|Win32
+		{26FCCCEE-FFF9-4908-85A6-088944A0D1FD}.Debug.ActiveCfg = Debug|Win32
+		{26FCCCEE-FFF9-4908-85A6-088944A0D1FD}.Debug.Build.0 = Debug|Win32
+		{26FCCCEE-FFF9-4908-85A6-088944A0D1FD}.Release.ActiveCfg = Release|Win32
+		{26FCCCEE-FFF9-4908-85A6-088944A0D1FD}.Release.Build.0 = Release|Win32
+		{45B16D5B-2CF8-4B87-BD81-184523BFED8F}.Debug.ActiveCfg = Debug|Win32
+		{45B16D5B-2CF8-4B87-BD81-184523BFED8F}.Debug.Build.0 = Debug|Win32
+		{45B16D5B-2CF8-4B87-BD81-184523BFED8F}.Release.ActiveCfg = Release|Win32
+		{45B16D5B-2CF8-4B87-BD81-184523BFED8F}.Release.Build.0 = Release|Win32
+		{63F4F8F8-DAD9-4356-951C-4B8C929FEF74}.Debug.ActiveCfg = Debug|Win32
+		{63F4F8F8-DAD9-4356-951C-4B8C929FEF74}.Debug.Build.0 = Debug|Win32
+		{63F4F8F8-DAD9-4356-951C-4B8C929FEF74}.Release.ActiveCfg = Release|Win32
+		{63F4F8F8-DAD9-4356-951C-4B8C929FEF74}.Release.Build.0 = Release|Win32
+		{36EB689A-7C2C-4C2E-8F1C-744FDD4DDFA2}.Debug.ActiveCfg = Debug|Win32
+		{36EB689A-7C2C-4C2E-8F1C-744FDD4DDFA2}.Debug.Build.0 = Debug|Win32
+		{36EB689A-7C2C-4C2E-8F1C-744FDD4DDFA2}.Release.ActiveCfg = Release|Win32
+		{36EB689A-7C2C-4C2E-8F1C-744FDD4DDFA2}.Release.Build.0 = Release|Win32
+		{40AD5B45-6A83-4EA5-AA08-172D6C65BBFA}.Debug.ActiveCfg = Debug|Win32
+		{40AD5B45-6A83-4EA5-AA08-172D6C65BBFA}.Debug.Build.0 = Debug|Win32
+		{40AD5B45-6A83-4EA5-AA08-172D6C65BBFA}.Release.ActiveCfg = Release|Win32
+		{40AD5B45-6A83-4EA5-AA08-172D6C65BBFA}.Release.Build.0 = Release|Win32
+		{022798E2-47F3-4CA5-B4B1-391D2FA3F920}.Debug.ActiveCfg = Debug|Win32
+		{022798E2-47F3-4CA5-B4B1-391D2FA3F920}.Debug.Build.0 = Debug|Win32
+		{022798E2-47F3-4CA5-B4B1-391D2FA3F920}.Release.ActiveCfg = Release|Win32
+		{022798E2-47F3-4CA5-B4B1-391D2FA3F920}.Release.Build.0 = Release|Win32
+		{EB832EA8-35CF-45FD-B644-E423AFFC4FEB}.Debug.ActiveCfg = Debug|Win32
+		{EB832EA8-35CF-45FD-B644-E423AFFC4FEB}.Debug.Build.0 = Debug|Win32
+		{EB832EA8-35CF-45FD-B644-E423AFFC4FEB}.Release.ActiveCfg = Release|Win32
+		{EB832EA8-35CF-45FD-B644-E423AFFC4FEB}.Release.Build.0 = Release|Win32
+		{8153DB1A-F996-48A8-A1A6-B183C086A94D}.Debug.ActiveCfg = Debug|Win32
+		{8153DB1A-F996-48A8-A1A6-B183C086A94D}.Debug.Build.0 = Debug|Win32
+		{8153DB1A-F996-48A8-A1A6-B183C086A94D}.Release.ActiveCfg = Release|Win32
+		{8153DB1A-F996-48A8-A1A6-B183C086A94D}.Release.Build.0 = Release|Win32
+		{FBE55C67-E107-45C2-87BF-31E55D7FCAFC}.Debug.ActiveCfg = Debug|Win32
+		{FBE55C67-E107-45C2-87BF-31E55D7FCAFC}.Debug.Build.0 = Debug|Win32
+		{FBE55C67-E107-45C2-87BF-31E55D7FCAFC}.Release.ActiveCfg = Release|Win32
+		{FBE55C67-E107-45C2-87BF-31E55D7FCAFC}.Release.Build.0 = Release|Win32
+		{5039D1CB-8A81-4D6D-B131-06D88A24CBF5}.Debug.ActiveCfg = Debug|Win32
+		{5039D1CB-8A81-4D6D-B131-06D88A24CBF5}.Debug.Build.0 = Debug|Win32
+		{5039D1CB-8A81-4D6D-B131-06D88A24CBF5}.Release.ActiveCfg = Release|Win32
+		{5039D1CB-8A81-4D6D-B131-06D88A24CBF5}.Release.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

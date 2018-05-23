@@ -1,0 +1,65 @@
+Connecting to Brown University's Test IMAP account
+
+This document is intended only for QA and Engineers for testing and support purposes.
+A generic IMAP/Kerberos document should be assembled for Tech support, with NO REFERENCES 
+to the actual login names or passwords or servers contained herein.
+
+- Follow the instructions in KerberosAndYou.txt to download MIT's KClient and install it on your machine
+
+
+Configuring Leash/KClient to connect to Brown:
+
+- Start Leash
+- Go to Options:Kerberos Properties
+
+	DNS/Realm Mapping
+
+	- Go to the DNS/Realm Mapping panel.
+	- Add the following lines using the insert button.  Pay attention to case!
+
+	.SERVICES.BRWON.EDU BROWN.EDU
+	CIS.BROWN.EDU BROWN.EDU
+	leo.services.brown.edu BROWN.EDU
+
+
+	Realm/Server Mapping
+
+	- Go to the Realm/Server Mapping panel
+	- Select the "BROWN.EDU" Realmm
+	- Add, if not already present, the following to the "Servers Hosting a KDC":
+	
+	kerberos.brown.edu
+	kerberos2.brown.edu
+
+
+	Default Realm Configuration
+
+	- Go to the Default Realm Configuration panel.
+	- Select "BROWN.EDU" as Your Kerberos Realm
+
+Leash/KClient should now be properly configured to talk to Brown's Kerberos service.
+
+
+Configuring Eudora to connect to Brown's mail server:
+
+Create a new personality with the following settings:
+
+Login Name: Test_User03
+Incoming Server: postoffice.brown.edu
+Configuration: IMAP
+Authentication Style: Kerberos
+IMAP Port: 1143
+
+
+Actually connecting:
+
+- Go to Leash, and connect to Brown (Using the Get Ticket menu item or button)
+- Enter Test_User03 as your username, tu123ut as the password.
+- Leash will display a ticket for Brown.
+
+
+Notes:
+
+Unfortunately, all versions of Eudora require you to first connect manually with KClient.  Future versions of Windows Eudora
+should use the KClient API, and avoid this issue.
+

@@ -1,0 +1,22 @@
+HKCR
+{
+	Eudora.EuMessage.1 = s 'EuMessage Class'
+	{
+		CLSID = s '{EDA20004-AAAA-11d0-B3C5-00805F8AA4FB}'
+	}
+	Eudora.EuMessage = s 'EuMessage Class'
+	{
+		CurVer = s 'Eudora.EuMessage.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {EDA20004-AAAA-11d0-B3C5-00805F8AA4FB} = s 'EuMessage Class'
+		{
+			ProgID = s 'Eudora.EuMessage.1'
+			VersionIndependentProgID = s 'Eudora.EuMessage'
+			ForceRemove 'Programmable'
+			LocalServer32 = s '%MODULE%'
+			val AppID = s '{EDA00001-AAAA-11d0-B3C5-00805F8AA4FB}'
+		}
+	}
+}

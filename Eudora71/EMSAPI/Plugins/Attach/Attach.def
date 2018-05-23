@@ -1,0 +1,12 @@
+; Attach.def : Declares the module parameters for the DLL.
+
+LIBRARY      "ATTACH"
+DESCRIPTION  'Attach Windows Dynamic Link Library'
+
+EXPORTS
+	ems_plugin_version
+	ems_plugin_init
+	ems_plugin_finish
+	ems_free
+	ems_attacher_info
+	ems_attacher_hook

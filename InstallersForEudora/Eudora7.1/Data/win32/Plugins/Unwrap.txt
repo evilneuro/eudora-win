@@ -1,0 +1,14 @@
+UNWRAP.DLL
+========
+This DLL is a plug-in for Eudora 4.0, and must be placed in one of the
+following directories to be recognized.
+
+* The sub-directory "plugins" of the directory the Eudora.exe file is in
+* The sub-directory "plugins" of your Eudora mail directory
+
+There is only one translator contained in this plug-in, which
+will only be executed when the user selects "Unwrap" from the
+Message Plugins menu under the Edit menu. When executed, the
+selected text will be scanned for paragraphs and all end-of-line
+markers within each paragraph will be removed. This allows the
+user to convert "hard-return" text into window-wrapping text.

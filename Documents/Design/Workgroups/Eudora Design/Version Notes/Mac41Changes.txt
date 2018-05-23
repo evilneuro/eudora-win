@@ -1,0 +1,102 @@
+41 Changes
+	Significant Enhancements
+		Switched to CFM-68K
+		Internal speller
+		IMAP
+		Incremental filtering (no more “Deliver” button)
+		Search command
+		Preview pane in mailbox windows
+		New Speak filter action
+	Minor Enhancements
+		No longer showing RETR and TOP in progress window
+		Using mangling on top command (your server doesn’t support it)
+		Added “locked” to no-clear-password string
+		Tweaked mailbox type2select to prefer non-alpha chars to the left
+		Auto-opening windows below last comp window on top
+		Added mappings for office98
+		Trimming nulls from sig files
+		Sped up autokey, some typing
+		100 subfolder limit removed under Appearance 1.1 (OS 8.5)
+		Initial implementation of format=flowed
+		Added speakable alert support
+		Added x-eudora-setting URL scheme
+		Making sure new OS 8.5 file bits get sent correctly
+		AE “whole text” message property to get raw text and hidden fields
+		AE mods to get hidden header fields
+		<x-eudora-setting:68=y> now forces cmd-delete to be used to delete a selected summary
+		Implemented PREF_SMALL_COLOR (<x-eudora-setting:94=y>) for patches of color instead of coloring whole summaries
+		<x-eudora-setting:258=y> now causes http url’s to be opened in the background and in a new window.  Double-clicking is unaffected.
+		Extended APPL protection to control panels, etc
+		Leading and trailing whitespace doesn’t underline anymore
+		XTND XMIT errors handled as per-message errors
+		Faster check for graphic import
+		HTML optimization for nbsp
+		shift-opt-cmd-control-Settings... to reset all but essential settings
+		Took shot at making sure age-sensitive dates do their thing after midnight.
+		Added setting (194, # days) after which folders in spool folder may be deleted
+		Expanding $User$, $Name$ and $Email$ in mailto urls
+		Made shift-cmd-Y do immediate lookup
+		Made shift-cmd-Y work on selected summaries, nicknames
+		Tweaked beautification of Who field on composition
+		Changed about box to send to website
+		Changed “Purchasing Info” & friends to go to website
+		Bullet max sizes
+	Significant Fixes
+		Fixed multiple problems with dragging nicknames to text
+		Fixed make nickname crash on long name
+		Fixed crash when closing window with QTVR movie
+		Fixed problems cancelling drag between two nickname files
+		Fixed random inappropriate pastes into address fields causing crashes.
+		Fixed divide by zero in throughput measurement
+	Minor Fixes
+		Fixed dangling alias leading to “100 folders” error
+		Making sure button 1 hilited in dialogs
+		Improved performance on HTML with lots of long words
+		Better subject grouping with long subjects
+		Only one cancel needed for unavailable aliased mailbox
+		Fixed problems with fonts & links
+		Cmd keys were doing type-2-select in settings dialog
+		Fixed problem with bg color in modeless dialogs when pasting
+		Fixed attachment names display with text style
+		Made sure “intersects nicknames” filters don’t cache too much
+		Fixed outgoing mail recognition in ReadSum
+		Quoting special chars in related filenames
+		Making sure multiple priority marks won’t happen
+		TOC rebuild sees x-html; fixes digests, rebuilds
+		Preventing live queries when typing LDAP search filter
+		Fixed DelAttachment not to change selection
+		Fixed problem allowing digests to transfer into themselves
+		Fixed balloons for checked items in check mail specially
+		Fixed problem dealing with empty recip menu
+		Fixed comment-handling in HTML
+		Fixed problem with pencil-edit followed by redirect
+		Fixed undo after tow-truck to toolbar.  Watching me do this bored my daughter so much she later vomitted.
+		Fixed drawing problem of tp window if open but not top at startup
+		Dragging after triple-click fixed
+		Fixed Print Selection for composition windows
+		More fixes for <mailto:>
+		Fixed problem with Wrap Selection and initial periods
+		Get Attachment appleevent no longer opens message window
+		Fixed style apply/unapply at insertion point
+		Fixed wrong icon for finder label 7 in toolbar
+		Timezone in attributions fixed to sender’s.
+		Tightened attachment suffix match rules
+		Fixed problem with ignoring bold -> ignoring italics
+		8.1 fileid bug worked around permanently
+		Fixed cancel from Save As...
+		Got proper icons on standard alerts
+		Improved filter keyword alert
+		Appearance text color for toolbar text
+		Lengthened PRAM access time to 10 seconds (from 1).
+		No longer hiliting nicknames inside of fcc’s
+		Fixed extra newline when sending hard-wrapped rich text of specific line length that ends with space
+		multipart/alternative where later parts were worse was leaving droppings in the attachments folder
+		Copying priority on send again
+		Fixed problem getting new nickname files to show up in current session after closing and reopening nicknames window
+		Fixed open in browser for selected summary
+		Improved cancellation of printing
+		Fixed text/html tlMimeInfo for outgoing emsapi translators
+		Fixed problem drawing drag hilite in list boxes
+		Fixed label display when starting message from labelled stationery
+		Initial underlining of In/Out/Trash fixed
+		Fixed problem with SetResLoad after AE stop notifying

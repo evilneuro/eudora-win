@@ -1,0 +1,16 @@
++ 4.2 Pro Featureset
+	+ Fancy search
+	+ Format=flowed
+	+ Continuous spell-check
+	+ Simple offline IMAP support
+	+ Speak filter action
+	+ x-eudora-settings url
+	+ Shift-reply for reply all toggle
+	+ Personality popup in composition window
+	+ Reply to selection if there is one.
+	+ Nickname autocompletion
++ Probably over someone’s dead body
+	+ SMTP AUTH
+	+ Task Error/Task Status integration
+	+ Directory services autocompletion
+	+ Sticky sort

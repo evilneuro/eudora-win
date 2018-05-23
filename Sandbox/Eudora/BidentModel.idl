@@ -1,0 +1,627 @@
+// Generated .IDL file (by the OLE/COM Object Viewer)
+// 
+// typelib filename: MSHTML.DLL
+// Forward declare all types defined in this typelib
+interface IBidentOmLocation;
+interface IBidentOmLink;
+dispinterface IBidentOmLinkEvents;
+interface IBidentOmAnchor;
+interface IBidentOmLinksCollection;
+interface IBidentOmAnchorsCollection;
+interface IBidentOmHistory;
+interface IBidentOmNavigator;
+interface IBidentOmElementsCollection;
+interface IBidentOmForm;
+dispinterface IBidentOmFormEvents;
+interface IBidentOmFormsCollection;
+interface IBidentOmDocument;
+interface IBidentOmFramesCollection;
+interface IBidentOmWindow;
+dispinterface IBidentOmWindowEvents;
+interface IBidentOmRadioButtonGroup;
+interface IBidentHTMLDocument;
+
+[
+  uuid(3E76DB61-6F74-11CF-8F20-00805F2CD064),
+  version(1.0),
+  helpstring("Internet Explorer Scripting Object Model")
+]
+library IEScriptObjectModel
+{
+    // TLib : OLE Automation : {00020430-0000-0000-C000-000000000046}
+    importlib("stdole32.tlb");
+
+    [
+      odl,
+      uuid(163BB1E0-6E00-11CF-837A-48DC04C10000),
+      helpstring("Location object"),
+      dual,
+      oleautomation
+    ]
+    interface IBidentOmLocation : IDispatch {
+        [id(00000000), propget]
+        HRESULT _stdcall href([out, retval] BSTR* retval);
+        [id(00000000), propput]
+        HRESULT _stdcall href([in] BSTR retval);
+        [id(0x60020002), propget]
+        HRESULT _stdcall protocol([out, retval] BSTR* retval);
+        [id(0x60020002), propput]
+        HRESULT _stdcall protocol([in] BSTR retval);
+        [id(0x60020004), propget]
+        HRESULT _stdcall host([out, retval] BSTR* retval);
+        [id(0x60020004), propput]
+        HRESULT _stdcall host([in] BSTR retval);
+        [id(0x60020006), propget]
+        HRESULT _stdcall hostname([out, retval] BSTR* retval);
+        [id(0x60020006), propput]
+        HRESULT _stdcall hostname([in] BSTR retval);
+        [id(0x60020008), propget]
+        HRESULT _stdcall port([out, retval] BSTR* retval);
+        [id(0x60020008), propput]
+        HRESULT _stdcall port([in] BSTR retval);
+        [id(0x6002000a), propget]
+        HRESULT _stdcall pathname([out, retval] BSTR* retval);
+        [id(0x6002000a), propput]
+        HRESULT _stdcall pathname([in] BSTR retval);
+        [id(0x6002000c), propget]
+        HRESULT _stdcall search([out, retval] BSTR* retval);
+        [id(0x6002000c), propput]
+        HRESULT _stdcall search([in] BSTR retval);
+        [id(0x6002000e), propget]
+        HRESULT _stdcall hash([out, retval] BSTR* retval);
+        [id(0x6002000e), propput]
+        HRESULT _stdcall hash([in] BSTR retval);
+        [id(0x60020010)]
+        HRESULT _stdcall reload();
+        [id(0x60020011)]
+        HRESULT _stdcall replace([in] BSTR bstr);
+    };
+
+    [
+      uuid(163BB1E1-6E00-11CF-837A-48DC04C10000)
+    ]
+    coclass IBidentOmLocation_Class {
+        [default] interface IBidentOmLocation;
+    };
+
+    [
+      odl,
+      uuid(163BB1E2-6E00-11CF-837A-48DC04C10000),
+      helpstring("Link object"),
+      dual,
+      oleautomation
+    ]
+    interface IBidentOmLink : IDispatch {
+        [id(0x60020000), propget]
+        HRESULT _stdcall href([out, retval] BSTR* retval);
+        [id(0x60020001), propget]
+        HRESULT _stdcall protocol([out, retval] BSTR* retval);
+        [id(0x60020002), propget]
+        HRESULT _stdcall host([out, retval] BSTR* retval);
+        [id(0x60020003), propget]
+        HRESULT _stdcall hostname([out, retval] BSTR* retval);
+        [id(0x60020004), propget]
+        HRESULT _stdcall port([out, retval] BSTR* retval);
+        [id(0x60020005), propget]
+        HRESULT _stdcall pathname([out, retval] BSTR* retval);
+        [id(0x60020006), propget]
+        HRESULT _stdcall search([out, retval] BSTR* retval);
+        [id(0x60020007), propget]
+        HRESULT _stdcall hash([out, retval] BSTR* retval);
+        [id(0x60020008), propget]
+        HRESULT _stdcall target([out, retval] BSTR* retval);
+    };
+
+    [
+      uuid(163BB1E3-6E00-11CF-837A-48DC04C10000),
+      helpstring("Link object events")
+    ]
+    dispinterface IBidentOmLinkEvents {
+        properties:
+        methods:
+            [id(0xfffffda2)]
+            void MouseMove(
+                            short button, 
+                            short shift, 
+                            long x, 
+                            long y);
+            [id(0xfffffda8)]
+            void onClick();
+            [id(0x00000008)]
+            void onMouseOver();
+    };
+
+    [
+      uuid(B3E43805-6DFF-11CF-837A-48DC04C10000)
+    ]
+    coclass IBidentOmLink_Class {
+        [default] interface IBidentOmLink;
+        [default, source] dispinterface IBidentOmLinkEvents;
+    };
+
+    [
+      odl,
+      uuid(163BB1E4-6E00-11CF-837A-48DC04C10000),
+      helpstring("Anchor object"),
+      dual,
+      oleautomation
+    ]
+    interface IBidentOmAnchor : IDispatch {
+        [id(0x60020000), propget]
+        HRESULT _stdcall name([out, retval] BSTR* retval);
+        [id(0x60020000), propput]
+        HRESULT _stdcall name([in] BSTR retval);
+    };
+
+    [
+      uuid(163BB1E5-6E00-11CF-837A-48DC04C10000)
+    ]
+    coclass IBidentOmAnchor_Class {
+        [default] interface IBidentOmAnchor;
+    };
+
+    [
+      odl,
+      uuid(163BB1E8-6E00-11CF-837A-48DC04C10000),
+      helpstring("Links collection"),
+      dual,
+      oleautomation
+    ]
+    interface IBidentOmLinksCollection : IDispatch {
+        [id(00000000)]
+        HRESULT _stdcall Item(
+                        [in] long i, 
+                        [out, retval] IBidentOmLink** pplinkResult);
+        [id(0x00000001)]
+        HRESULT _stdcall Count([out, retval] long* pl);
+        [id(0x00000002), propget]
+        HRESULT _stdcall length([out, retval] long* pl);
+        [id(0x60020003), hidden]
+        HRESULT _stdcall Add([in] IBidentOmLink* plink);
+    };
+
+    [
+      uuid(163BB1E9-6E00-11CF-837A-48DC04C10000)
+    ]
+    coclass IBidentOmLinksCollection_Class {
+        [default] interface IBidentOmLinksCollection;
+    };
+
+    [
+      odl,
+      uuid(163BB1EA-6E00-11CF-837A-48DC04C10000),
+      helpstring("Anchors collection"),
+      dual,
+      oleautomation
+    ]
+    interface IBidentOmAnchorsCollection : IDispatch {
+        [id(00000000)]
+        HRESULT _stdcall Item(
+                        [in] long i, 
+                        [out, retval] IBidentOmAnchor** ppanchorResult);
+        [id(0x00000001)]
+        HRESULT _stdcall Count([out, retval] long* pl);
+        [id(0x00000002), propget]
+        HRESULT _stdcall length([out, retval] long* pl);
+        [id(0x60020003), hidden]
+        HRESULT _stdcall Add([in] IBidentOmAnchor* panchor);
+    };
+
+    [
+      uuid(163BB1EC-6E00-11CF-837A-48DC04C10000)
+    ]
+    coclass IBidentOmAnchorsCollection_Class {
+        [default] interface IBidentOmAnchorsCollection;
+    };
+
+    [
+      odl,
+      uuid(FECEAAA2-8405-11CF-8BA1-00AA00476DA6),
+      helpstring("history object."),
+      dual,
+      oleautomation
+    ]
+    interface IBidentOmHistory : IDispatch {
+        [id(0x60020000), propget]
+        HRESULT _stdcall length([out, retval] short* retval);
+        [id(0x60020001)]
+        HRESULT _stdcall back([in] VARIANT* pvargdistance);
+        [id(0x60020002)]
+        HRESULT _stdcall forward([in] VARIANT* pvargdistance);
+        [id(0x60020003)]
+        HRESULT _stdcall go([in] VARIANT* pvargdistance);
+    };
+
+    [
+      uuid(FECEAAA3-8405-11CF-8BA1-00AA00476DA6)
+    ]
+    coclass IBidentOmHistory_class {
+        [default] interface IBidentOmHistory;
+    };
+
+    [
+      odl,
+      uuid(FECEAAA5-8405-11CF-8BA1-00AA00476DA6),
+      helpstring("navigator object."),
+      dual,
+      oleautomation
+    ]
+    interface IBidentOmNavigator : IDispatch {
+        [id(0x60020000), propget]
+        HRESULT _stdcall appCodeName([out, retval] BSTR* retval);
+        [id(0x60020001), propget]
+        HRESULT _stdcall appName([out, retval] BSTR* retval);
+        [id(0x60020002), propget]
+        HRESULT _stdcall appVersion([out, retval] BSTR* retval);
+        [id(0x60020003), propget]
+        HRESULT _stdcall userAgent([out, retval] BSTR* retval);
+    };
+
+    [
+      uuid(FECEAAA6-8405-11CF-8BA1-00AA00476DA6)
+    ]
+    coclass IBidentOmNavigator_class {
+        [default] interface IBidentOmNavigator;
+    };
+
+    [
+      odl,
+      uuid(0D04D289-6BEC-11CF-8B97-00AA00476DA6),
+      helpstring("Elements collection"),
+      dual,
+      oleautomation
+    ]
+    interface IBidentOmElementsCollection : IDispatch {
+        [id(00000000)]
+        HRESULT _stdcall Item(
+                        [in] VARIANT* pvarIndex, 
+                        [out, retval] IDispatch** ppeleresult);
+        [id(0x00000001)]
+        HRESULT _stdcall Count([out, retval] long* pl);
+        [id(0x00000002), propget]
+        HRESULT _stdcall length([out, retval] long* pl);
+    };
+
+    [
+      uuid(0D04D28A-6BEC-11CF-8B97-00AA00476DA6)
+    ]
+    coclass IBidentOmElementsCollection_Class {
+        [default] interface IBidentOmElementsCollection;
+    };
+
+    [
+      odl,
+      uuid(0D04D283-6BEC-11CF-8B97-00AA00476DA6),
+      helpstring("Form object"),
+      dual,
+      oleautomation
+    ]
+    interface IBidentOmForm : IDispatch {
+        [id(00000000)]
+        HRESULT _stdcall elementItem(
+                        [in] long i, 
+                        [out, retval] IDispatch** ppelement);
+        [id(0x60020001), propput]
+        HRESULT _stdcall action([in] BSTR retval);
+        [id(0x60020001), propget]
+        HRESULT _stdcall action([out, retval] BSTR* retval);
+        [id(0x60020003), propput]
+        HRESULT _stdcall encoding([in] BSTR retval);
+        [id(0x60020003), propget]
+        HRESULT _stdcall encoding([out, retval] BSTR* retval);
+        [id(0x60020005), propput]
+        HRESULT _stdcall method([in] BSTR retval);
+        [id(0x60020005), propget]
+        HRESULT _stdcall method([out, retval] BSTR* retval);
+        [id(0x60020007), propput]
+        HRESULT _stdcall target([in] BSTR retval);
+        [id(0x60020007), propget]
+        HRESULT _stdcall target([out, retval] BSTR* retval);
+        [id(0x60020009), propget]
+        HRESULT _stdcall elements([out, retval] IBidentOmElementsCollection** retval);
+        [id(0x6002000a)]
+        HRESULT _stdcall submit();
+        [id(0x6002000b), hidden]
+        HRESULT _stdcall IsItemInForm([in] long hWndElement);
+        [id(0x6002000c), hidden]
+        HRESULT _stdcall SubmitForm();
+    };
+
+    [
+      uuid(0D04D284-6BEC-11CF-8B97-00AA00476DA6),
+      helpstring("Form events")
+    ]
+    dispinterface IBidentOmFormEvents {
+        properties:
+        methods:
+            [id(0x00000003)]
+            void onSubmit();
+    };
+
+    [
+      uuid(0D04D285-6BEC-11CF-8B97-00AA00476DA6)
+    ]
+    coclass IBidentOmForm_Class {
+        [default] interface IBidentOmForm;
+        [default, source] dispinterface IBidentOmFormEvents;
+    };
+
+    [
+      odl,
+      uuid(0D04D286-6BEC-11CF-8B97-00AA00476DA6),
+      helpstring("Forms collection"),
+      dual,
+      oleautomation
+    ]
+    interface IBidentOmFormsCollection : IDispatch {
+        [id(00000000)]
+        HRESULT _stdcall Item(
+                        [in] long i, 
+                        [out, retval] IDispatch** ppformresult);
+        [id(0x00000001)]
+        HRESULT _stdcall Count([out, retval] long* pl);
+        [id(0x00000002), propget]
+        HRESULT _stdcall length([out, retval] long* pl);
+    };
+
+    [
+      uuid(0D04D287-6BEC-11CF-8B97-00AA00476DA6)
+    ]
+    coclass IBidentOmFormsCollection_Class {
+        [default] interface IBidentOmFormsCollection;
+    };
+
+    [
+      odl,
+      uuid(D48A6EC8-6A4A-11CF-94A7-444553540000),
+      helpstring("document object."),
+      dual,
+      oleautomation
+    ]
+    interface IBidentOmDocument : IDispatch {
+        [id(0x60020000), propput]
+        HRESULT _stdcall linkColor([in] BSTR retval);
+        [id(0x60020001), propput]
+        HRESULT _stdcall alinkColor([in] BSTR retval);
+        [id(0x60020002), propput]
+        HRESULT _stdcall vlinkColor([in] BSTR retval);
+        [id(0x60020003), propput]
+        HRESULT _stdcall bgColor([in] BSTR retval);
+        [id(0x60020004), propput]
+        HRESULT _stdcall fgColor([in] BSTR retval);
+        [id(0x60020000), propget]
+        HRESULT _stdcall linkColor([out, retval] BSTR* retval);
+        [id(0x60020001), propget]
+        HRESULT _stdcall alinkColor([out, retval] BSTR* retval);
+        [id(0x60020002), propget]
+        HRESULT _stdcall vlinkColor([out, retval] BSTR* retval);
+        [id(0x60020003), propget]
+        HRESULT _stdcall bgColor([out, retval] BSTR* retval);
+        [id(0x60020004), propget]
+        HRESULT _stdcall fgColor([out, retval] BSTR* retval);
+        [id(0x6002000a), propget]
+        HRESULT _stdcall anchors([out, retval] IBidentOmAnchorsCollection** retval);
+        [id(0x6002000b), propget]
+        HRESULT _stdcall links([out, retval] IBidentOmLinksCollection** retval);
+        [id(0x6002000c), propget]
+        HRESULT _stdcall forms([out, retval] IBidentOmFormsCollection** retval);
+        [id(0x6002000d), propget]
+        HRESULT _stdcall location([out, retval] BSTR* retval);
+        [id(0x6002000e), propget]
+        HRESULT _stdcall frames([out, retval] IBidentOmFramesCollection** retval);
+        [id(0x6002000f), propget]
+        HRESULT _stdcall lastModified([out, retval] BSTR* retval);
+        [id(0x60020010), propget]
+        HRESULT _stdcall title([out, retval] BSTR* retval);
+        [id(0x60020011), propget]
+        HRESULT _stdcall cookie([out, retval] BSTR* retval);
+        [id(0x60020011), propput]
+        HRESULT _stdcall cookie([in] BSTR retval);
+        [id(0x60020013), propget]
+        HRESULT _stdcall referrer([out, retval] BSTR* retval);
+        [id(0x60020014)]
+        HRESULT _stdcall open(
+                        [in] VARIANT* mimetype, 
+                        [out, retval] VARIANT* retval);
+        [id(0x60020015)]
+        HRESULT _stdcall close();
+        [id(0x60020016)]
+        HRESULT _stdcall clear();
+        [id(0x60020017), vararg]
+        HRESULT _stdcall write([in] SAFEARRAY(VARIANT) psarray);
+        [id(0x60020018), vararg]
+        HRESULT _stdcall writeln([in] SAFEARRAY(VARIANT) psarray);
+    };
+
+    [
+      uuid(D48A6EC9-6A4A-11CF-94A7-444553540000)
+    ]
+    coclass IBidentOmDocument_class {
+        [default] interface IBidentOmDocument;
+    };
+
+    [
+      odl,
+      uuid(CC95F7C0-83EA-11CF-9FA7-00AA006C42C4),
+      helpstring("Frames collection"),
+      dual,
+      oleautomation
+    ]
+    interface IBidentOmFramesCollection : IDispatch {
+        [id(00000000)]
+        HRESULT _stdcall Item(
+                        [in] VARIANT* index, 
+                        [out, retval] IBidentOmWindow** ppframeresult);
+        [id(0x00000001), propget]
+        HRESULT _stdcall Count([out, retval] long* pl);
+        [id(0x00000002), propget]
+        HRESULT _stdcall length([out, retval] long* pl);
+        [id(0x60020003)]
+        HRESULT _stdcall _Item(
+                        [in] long i, 
+                        [out, retval] IBidentOmWindow** ppframeresult);
+    };
+
+    [
+      uuid(EE2C4BA0-83EA-11CF-9FA7-00AA006C42C4)
+    ]
+    coclass IBidentOmFramesCollection_class {
+        [default] interface IBidentOmFramesCollection;
+    };
+
+    [
+      odl,
+      uuid(D48A6EC4-6A4A-11CF-94A7-444553540000),
+      helpstring("Window object."),
+      dual,
+      oleautomation
+    ]
+    interface IBidentOmWindow : IDispatch {
+        [id(0x60020000), propget]
+        HRESULT _stdcall name([out, retval] BSTR* retval);
+        [id(0x60020000), propput]
+        HRESULT _stdcall name([in] BSTR retval);
+        [id(0x60020002), propget]
+        HRESULT _stdcall parent([out, retval] IBidentOmWindow** retval);
+        [id(0x60020003), propget]
+        HRESULT _stdcall self([out, retval] IBidentOmWindow** retval);
+        [id(0x60020004), propget]
+        HRESULT _stdcall top([out, retval] IBidentOmWindow** retval);
+        [id(0x60020005), propget]
+        HRESULT _stdcall window([out, retval] IBidentOmWindow** retval);
+        [id(0x60020006), propget]
+        HRESULT _stdcall location([out, retval] IBidentOmLocation** retval);
+        [id(0x60020007), propget]
+        HRESULT _stdcall frames([out, retval] IBidentOmFramesCollection** retval);
+        [id(0x60020008), propget, restricted, hidden]
+        HRESULT _stdcall explorer([out, retval] IDispatch** retval);
+        [id(0x60020009), propget]
+        HRESULT _stdcall navigator([out, retval] IBidentOmNavigator** retval);
+        [id(0x6002000a), propget]
+        HRESULT _stdcall history([out, retval] IBidentOmHistory** retval);
+        [id(0x6002000b), propput]
+        HRESULT _stdcall defaultStatus([in] BSTR rhs);
+        [id(0x6002000c), propput]
+        HRESULT _stdcall status([in] BSTR rhs);
+        [id(0x6002000d)]
+        HRESULT _stdcall setTimeout(
+                        [in] BSTR expression, 
+                        [in] long msec, 
+                        [in] VARIANT* language, 
+                        [out, retval] long* timerID);
+        [id(0x6002000e)]
+        HRESULT _stdcall clearTimeout([in] long timerID);
+        [id(0x6002000f)]
+        HRESULT _stdcall alert([in] VARIANT* msg);
+        [id(0x60020010)]
+        HRESULT _stdcall close(
+                        [in] VARIANT* dummy1, 
+                        [in] VARIANT* dummy2);
+        [id(0x60020011)]
+        HRESULT _stdcall confirm(
+                        [in] VARIANT* msg, 
+                        [out, retval] VARIANT* confirmed);
+        [id(0x60020012)]
+        HRESULT _stdcall prompt(
+                        [in] VARIANT* msg, 
+                        [in] VARIANT* initialTxt, 
+                        [out, retval] BSTR* textdata);
+        [id(0x60020013)]
+        HRESULT _stdcall open(
+                        [in] VARIANT* url, 
+                        [in] VARIANT* windowName, 
+                        [in] VARIANT* windowFeatures, 
+                        [in] VARIANT* width, 
+                        [in] VARIANT* height, 
+                        [out, retval] IBidentOmWindow** pomWindowResult);
+        [id(0x60020014)]
+        HRESULT _stdcall get_document([out, retval] IBidentOmDocument** pomDocumentResult);
+        [id(0x60020015), hidden]
+        HRESULT _stdcall fireOnParseComplete();
+        [id(0x60020016), hidden]
+        HRESULT _stdcall fireOnLoad();
+        [id(0x60020017), hidden]
+        HRESULT _stdcall fireOnUnload();
+        [id(0x60020018)]
+        HRESULT _stdcall navigate([in] BSTR url);
+        [id(0x60020019), hidden]
+        HRESULT _stdcall GetLoadComplete();
+        [id(0x6002001a), hidden]
+        HRESULT _stdcall GetPageHandle([out, retval] long* pdwPageHandle);
+        [id(0x6002001b), hidden]
+        HRESULT _stdcall postNavigateMessage();
+        [id(0x6002001c), propget]
+        HRESULT _stdcall opener([out, retval] VARIANT* retval);
+        [id(0x6002001c), propput]
+        HRESULT _stdcall opener([in] VARIANT* retval);
+        [id(0x6002001e), hidden]
+        HRESULT _stdcall GetStream([out] IUnknown** ppstream);
+    };
+
+    [
+      uuid(96A0A4E0-D062-11CF-94B6-00AA0060275C),
+      helpstring("Window events")
+    ]
+    dispinterface IBidentOmWindowEvents {
+        properties:
+        methods:
+            [id(0x00000009)]
+            void onParseComplete();
+            [id(0x00000001)]
+            void onLoad();
+            [id(0x00000002)]
+            void onUnload();
+    };
+
+    [
+      uuid(D48A6EC6-6A4A-11CF-94A7-444553540000)
+    ]
+    coclass IBidentOmWindow_class {
+        [default] interface IBidentOmWindow;
+        [default, source] dispinterface IBidentOmWindowEvents;
+    };
+
+    [
+      odl,
+      uuid(BCC5AF22-7300-11CF-8F20-00805F2CD064),
+      helpstring("Radio Button Group"),
+      dual,
+      oleautomation
+    ]
+    interface IBidentOmRadioButtonGroup : IDispatch {
+        [id(00000000)]
+        HRESULT _stdcall Item(
+                        [in] long i, 
+                        [out, retval] IDispatch** ppeleresult);
+        [id(0x00000001)]
+        HRESULT _stdcall Count([out, retval] long* pl);
+        [id(0x00000002), propget]
+        HRESULT _stdcall length([out, retval] long* pl);
+    };
+
+    [
+      uuid(BCC5AF23-7300-11CF-8F20-00805F2CD064)
+    ]
+    coclass IBidentOmRadioButtonGroup_Class {
+        [default] interface IBidentOmRadioButtonGroup;
+    };
+
+    [
+      odl,
+      uuid(626FC520-A41E-11CF-A731-00A0C9082637),
+      helpstring("HTML Document Automation"),
+      dual,
+      oleautomation
+    ]
+    interface IBidentHTMLDocument : IDispatch {
+        [id(0x60020000), propget, helpstring("Returns the scripting automation model.")]
+        HRESULT _stdcall Script([out, retval] IDispatch** ppDisp);
+    };
+
+    [
+      uuid(25336920-03F9-11CF-8FD0-00AA00686F13)
+    ]
+    coclass IBidentHTMLDocument_class {
+        [default] interface IBidentHTMLDocument;
+    };
+};

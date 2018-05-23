@@ -1,0 +1,218 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,8
+ PRODUCTVERSION 1,0,0,8
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x2L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "000004b0"
+        BEGIN
+            VALUE "CompanyName", "QUALCOMM Incorporated"
+            VALUE "FileDescription", "Eudora S/MIME Plugin"
+            VALUE "FileVersion", "1.0.0.8"
+            VALUE "InternalName", "S/MIME"
+            VALUE "LegalCopyright", "Copyright © 2005-2006"
+            VALUE "OriginalFilename", "SMIME.DLL"
+            VALUE "ProductName", "S/MIME Eudora Plugin"
+            VALUE "ProductVersion", "1.0.0.8"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x0, 1200
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_MAIN                ICON                    "Res\\plugin.ico"
+IDI_SIGN                ICON                    "Res\\sign.ico"
+IDI_ENCRYPT             ICON                    "Res\\encrypt.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_SETTINGS_DLG DIALOGEX 0, 0, 150, 137
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "S/MIME Settings"
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,20,116,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,80,116,50,14
+    GROUPBOX        "Where to display errors",IDC_STATIC,5,8,140,61
+    CONTROL         "&Dialog",IDC_RADIO_DIALOG,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP | WS_TABSTOP,20,23,36,10
+    CONTROL         "&Message itself",IDC_RADIO_MESSAGE,"Button",
+                    BS_AUTORADIOBUTTON,20,38,61,10
+    CONTROL         "&Both",IDC_RADIO_BOTH,"Button",BS_AUTORADIOBUTTON,20,53,
+                    31,10
+    CONTROL         "&Verify signatures on message download",
+                    IDC_VERIFY_ON_DOWNLOAD,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,6,73,140,10
+    CONTROL         "&Add verified certificates to store",IDC_ADD_NEW_CERTS,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,6,86,120,10
+    CONTROL         "&Use signature for older S/MIME clients",
+                    IDC_USE_OLD_SIG_TYPE,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,6,99,140,10
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_SETTINGS_DLG, DIALOG
+    BEGIN
+        BOTTOMMARGIN, 130
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_VERSION_STR         "v1.0.0.8"
+    IDS_SIGN_DESC_STR       "S/MIME Signer"
+    IDS_VERIFY_DESC_STR     "S/MIME Signature Verifier"
+    IDS_ENCRYPT_DESC_STR    "S/MIME Encrypter"
+    IDS_DECRYPT_DESC_STR    "S/MIME Decrypter"
+    IDS_FAILED_ERR_STR      "Translator failed."
+    IDS_SIGNPASS_STR        "Signature verified"
+    IDS_SIGNFAIL_STR        "Signature verification failed"
+    IDS_ERR_WRONG_SIGNER    "Message signed by ""%s"" but sender is ""%s"""
+    IDS_BAD_VERIFY_TEXT     "The digital signature of the message could not be verified for the following reason(s): \n\n%s%s"
+    IDS_VIEW_CERTIFICATE    "\n\n\nWould you like to view the certificate of the signature?"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_SIGN_NO_MATCH_ADDRESS 
+                            "The message is being signed by ""%s"" but the sender listed in the From: address is ""%s"".\nThis will most likely cause the recipient(s) of the message to show a signing error when verifying it.\n\nDo you want to send the message anyway?"
+    IDS_DECRYPTFAIL_STR     "Decryption failed"
+    IDS_DECRYPTPASS_STR     "Decryption succeeded"
+    IDS_BAD_DECRYPT_TEXT    "The message could not be decrypted for the following reason(s): \n\n%s"
+    IDS_NO_CERTS            "Could not find certificates for the following recipients:\n\n"
+    IDS_NO_SIGNING_CERTS    "Could not find any singing certificates on the system.  The message will not be signed."
+    IDS_CAPICOM_LOAD_FAILED "Couldn't load the system security components (CAPICOM)."
+    IDS_ADD_CERT_PROMPT     "Do you want the certificate for ""%s"" added to your certificate store?\n\nThis will allow you to send encrypted messages to this user."
+END
+
+STRINGTABLE 
+BEGIN
+    AFX_IDS_APP_TITLE       "S/MIME Plugin"
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif
+#include "afxres.rc"         // Standard components
+#endif
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

@@ -1,0 +1,14 @@
+; Stuff32.def : Declares the module parameters for the DLL.
+
+LIBRARY      "Stuff32"
+DESCRIPTION  'Aladdin Stuffit Eudora Plugin'
+
+EXPORTS
+	ems_plugin_version
+	ems_plugin_init
+	ems_plugin_finish
+	ems_free
+	ems_attacher_info
+	ems_attacher_hook
+	ems_special_info
+	ems_special_hook

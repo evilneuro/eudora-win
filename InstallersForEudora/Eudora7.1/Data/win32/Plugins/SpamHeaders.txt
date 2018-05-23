@@ -1,0 +1,52 @@
+# These are the settings for SpamHeaders
+# Lines starting with a '#' are ignored
+# Each line defines a spam filter
+#	A filter scores a header, and gives a score between 0 and 100, with 0
+#		meaning "Not Spam", and 100 meaning "Spam"
+#
+# A filter consists of 5 parts:
+#	A pattern to match the entire header against
+#	Score - this is only used in the case of "kTextTag" - if the text matches use this score.
+#	Offset - offset the score from this value.
+#	Scale - Scale the value by this value.	
+#	A description of what the sub-patterns are. This takes one of four types:
+#		kTextIntMatch - value is an integer
+#		kTextFloatMatch - value is a floating point number
+#		kTextTag - value is a string literal
+#		kCharacterCount - value's length is the important thing
+#
+#	For example, Postini gives you a score that is between 0 .. 100, with low scores being spam.
+#		We give them a scale of -1, and an offset of 100; between them, this scales the scores into
+#			the range that we want. 
+
+# PerlMX - no scaling, since the scores are already 0 .. 100
+"X-PerlMx-Spam:.*Probability=([0-9]+).*" 0 0 1 kTextIntMatch
+
+# Pure Message - no scaling, since the scores are already 0 .. 100
+"X-Puremessage-Spam:.*Probability=([0-9]+).*" 0 0 1 kTextIntMatch
+
+# Spam Assassin (both forms)
+# The actual score is 0 .. 10, so we scale by a factor of 10
+"X-Spam-Score:.*\((\*+)\).*" 0 0 10 kCharacterCount
+
+"X-Spam-Level:.*Level (\*+).*" 0 0 10 kCharacterCount
+
+# If the text matches, we give it a score of 99
+"X-Spam-Flag: YES.*" 99 0 1 kTextTag
+"X-Razor-Warning: SPAM.*" 99 0 1 kTextTag
+"X-PM-Status: JUNK.*" 99 0 1 kTextTag
+"X-MsgFire-Status: JUNK.*" 99 0 1 kTextTag
+"X-DSPAM-Result: Spam.*" 99 0 1 kTextTag
+
+# Postini - several differenct scores; we picke the one that gives us the highest score.
+"X-pstn-levels: +\(C:([0-9\.]+) M:([0-9\.]+) P:([0-9\.]+) R:([0-9\.]+) +S:([0-9\.]+) \).*" 0 100 -1 kTextFloatMatch
+
+# UC Irvine uses a modified SpamAssassin
+"X-UCIRVINE-SpamCheck:.*score=([0-9]+(?:\.[0-9]+)?).*" 0 0 1 kTextFloatMatch
+
+# Brown 
+"X-Brown-MailScanner-SpamScore:.*(s+).*" 0 0 10 kCharacterCount
+
+# More UC Irvine
+"X-NACS_ES-MailScanner-SpamScore:.*(s+).*" 0 0 10 kCharacterCount
+"X-UCIRVINE-SpamScore:.*(s+).*" 0 0 10 kCharacterCount

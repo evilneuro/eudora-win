@@ -1,0 +1,31 @@
+UPPRLOWR.DLL
+============
+This DLL is a plug-in for Eudora 4.0, and must be placed in one of the
+following directories to be recognized.
+
+* The sub-directory "plugins" of the directory the Eudora.exe file is in
+* The sub-directory "plugins" of your Eudora mail directory
+
+This plug-in contains five on-request translators, which can be
+invoked by selecting the desired translator from the Message Plugins
+menu under the Edit menu.
+
+Each translator will affect the selected text as follows:
+
+Upper case:
+  Converts all letters to their uppercase equivalent
+
+Lower case:
+  Converts all letters to their lowercase equivalent
+
+Change case:
+  Converts all uppercase letters to their lowercase
+  equivalent, and visa versa.
+
+Word case:
+  Forces all words to begin with an uppercase letter,
+  followed by all lowercase letters.
+
+Sentence case:
+  Capitalizes the first word of each sentence, and
+  forces all remaining letters and words to lowercase.

@@ -1,0 +1,98 @@
+# Author: Subhashis Mohanty
+# Date  : 01/31/98
+
+###### Destination directories
+DST_D = ${TOP}/${PROJECT}/${BLD_DIR}/${DBG_DIR}
+DST_R = ${TOP}/${PROJECT}/${BLD_DIR}/${REL_DIR}
+
+###### Dependent project destination directories
+DST_D_DEP = ${TOP}/${DEP_PROJECT}/${BLD_DIR}/${DBG_DIR}
+DST_R_DEP = ${TOP}/${DEP_PROJECT}/${BLD_DIR}/${REL_DIR}
+
+###### This subsystem
+SUBSYSTEM    = CoreMT
+
+###### The NewMgr Core
+NEW_CORE_MT  = CoreMT
+
+###### DMM Core MT
+DMM_CORE_MT  = CoreMT
+
+###### DMM Core
+DMM_CORE     = Core
+
+###### AssertionServices subsystem
+AS_SUBSYSTEM = AssertionServices
+
+###### AssertionServices subsystem
+AU_SUBSYSTEM = AssertionUtils
+
+###### Include directories
+EXT_PUBINC             =   ${TOP}/${PROJECT}/public/inc/${SUBSYSTEM}
+EXT_AS_PUBINC          =   ${TOP}/${DEP_PROJECT}/public/inc/${AS_SUBSYSTEM}
+EXT_DMM_CORE_PUBINC    =   ${TOP}/${DEP_PROJECT}/public/inc/${DMM_CORE}
+EXT_DMM_CORE_MT_PUBINC =   ${TOP}/${DEP_PROJECT}/public/inc/${DMM_CORE_MT}
+EXT_GENERIC            =   ${TOP}/${DEP_PROJECT}/public/inc/Generic
+QCUTILS_PUBINC         =   ${TOP}/QCUtils/public/inc
+INC_DIRECTIVE          = -I${EXT_PUBINC}/ -I${EXT_AS_PUBINC} -I${EXT_DMM_CORE_PUBINC} -I${EXT_DMM_CORE_MT_PUBINC} -I${EXT_GENERIC} -I${QCUTILS_PUBINC}/
+
+SRC1      = NewCoreMTTest.cpp
+OBJ1      = NewCoreMTTest.o
+
+OBJS_D = ${DST_D}/${OBJ1} 
+OBJS_R = ${DST_R}/${OBJ1}
+BINS_D =
+BINS_R =
+AR_D   =
+AR_R   =
+
+include ${TOP}/MakeInclude
+
+##### Assertion Services files
+AS_D_FILES = ${DST_D_DEP}/${AS_SUBSYSTEM}.a
+AS_R_FILES = ${DST_R_DEP}/${AS_SUBSYSTEM}.a
+
+##### Assertion Utilities files
+AU_D_FILES = ${DST_D_DEP}/${AU_SUBSYSTEM}.a
+AU_R_FILES = ${DST_R_DEP}/${AU_SUBSYSTEM}.a
+
+##### Core files
+DMM_CORE_D_FILES = ${DST_D_DEP}/${DMM_CORE}.a
+DMM_CORE_R_FILES = ${DST_R_DEP}/${DMM_CORE}.a
+
+##### Core MT files
+DMM_CORE_MT_D_FILES = ${DST_D_DEP}/${DMM_CORE_MT}.a
+DMM_CORE_MT_R_FILES = ${DST_R_DEP}/${DMM_CORE_MT}.a
+
+##### New Core MT files
+NEW_CORE_MT_D_FILES = ${DST_D}/${NEW_CORE_MT}.a
+NEW_CORE_MT_R_FILES = ${DST_R}/${NEW_CORE_MT}.a
+
+##### Objects.
+# Debug
+TGT_D_CPP_FILES  = ${DST_D}/${OBJ1} ${NEW_CORE_MT_D_FILES} ${DMM_CORE_MT_D_FILES} ${DMM_CORE_D_FILES} ${AS_D_FILES} ${AU_D_FILES}
+# Release
+TGT_R_CPP_FILES  = ${DST_R}/${OBJ1} ${NEW_CORE_MT_R_FILES} ${DMM_CORE_MT_R_FILES} ${DMM_CORE_R_FILES}
+
+##### Debug
+${TGT_D_CPP_O}: ${TGT_D_CPP_FILES}
+	echo
+	${CP_D_O_MT_2} -o $@ ${TGT_D_CPP_FILES} ${MT_LIB}
+
+${DST_D}/${OBJ1}: ${SRC1}
+	echo
+	${CP_D_MT} -o ${DST_D}/${OBJ1} ${SRC1}
+
+##### Release
+${TGT_R_CPP_O}: ${TGT_R_CPP_FILES}
+	echo
+	${CP_D_O_MT_2} -o $@ ${TGT_R_CPP_FILES} ${MT_LIB}
+
+${DST_R}/${OBJ1}: ${SRC1}
+	echo
+	${CP_R_MT} -o ${DST_R}/${OBJ1} ${SRC1}
+
+
+
+
+

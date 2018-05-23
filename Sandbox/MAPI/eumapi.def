@@ -1,0 +1,43 @@
+LIBRARY     MAPI
+DESCRIPTION 'Eudora MAPI Interface'
+EXETYPE     WINDOWS
+CODE        PRELOAD MOVEABLE DISCARDABLE
+DATA        PRELOAD MOVEABLE SINGLE
+STUB	    'mapistub.exe'
+
+HEAPSIZE    4096
+
+SEGMENTS
+    WEP_TEXT FIXED PRELOAD
+
+EXPORTS
+    WEP @1 RESIDENTNAME ;; required WEP entry point (uses library WEP routine)
+    IsEudoraMapiDLL
+    MAPILogon
+    MAPILogonA
+    MAPILogoff
+    MAPISendMail
+    MAPISendMailA
+    MAPISendDocuments
+    MAPISendDocumentsA
+    MAPIFindNext
+    MAPIReadMail
+    MAPISaveMail
+    MAPIDeleteMail
+    MAPIFreeBuffer
+    MAPIAddress
+    MAPIDetails
+    MAPIResolveName
+    cmc_send
+    cmc_send_documents
+    cmc_act_on
+    cmc_list
+    cmc_read
+    cmc_look_up
+    cmc_free
+    cmc_logoff
+    cmc_logon
+    cmc_query_configuration
+
+
+

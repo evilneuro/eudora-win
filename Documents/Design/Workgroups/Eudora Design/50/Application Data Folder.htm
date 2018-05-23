@@ -1,0 +1,66 @@
+<html>
+<div align="right">
+<i>Jeff Beckley<br>
+August 23, 2000<br>
+<br>
+</i></div>
+Here's some issues to solve involving the Application Data folder, Windows 2000, installers, and other things.<br>
+<br>
+<br>
+<b>Notation:<br>
+</b>The term &quot;Application Data folder&quot; is a shortcut for the folder &quot;C:\Documents and Settings\<i>username</i>\Application Data\Qualcomm\Eudora&quot;.<br>
+<br>
+<b>Assumptions/constraints:<br>
+</b>1.&nbsp; The Application Data folder can basically only be determined under Win 98 and Win 2000.&nbsp; There may be some 95 and NT systems that have the correct version of Shell32.dll to get the Application Data folder (version 4.71), but most installs of IE 4.x/5.x do not upgrade Shell32.dll.<br>
+2.&nbsp; The Application Data folder is hidden by default.<br>
+3.&nbsp; Under Win 95/98/NT, programs can be installed by Users.<br>
+4.&nbsp; Under Win 2000, programs have to be installed by Administrators.<br>
+5.&nbsp; Under Win 2000, Administrators create files/directories that have read-only permissions for Users.<br>
+6.&nbsp; A non-insignificant number of Users want to install multiple copies of Eudora on the same machine, with each one having their own data folder.<br>
+7.&nbsp; Administrators are smart.<br>
+8.&nbsp; Users are dumb.<br>
+9.&nbsp; InstallShield is even dumber than Users.<br>
+<br>
+<br>
+<b>Problem:<br>
+</b>That led us to the conclusion that we need to provide a way in the installer to give the person doing the install a choice of where the data directory should be.&nbsp; We've wanted this for a long time now, and actually provide a way to do it in the Site Installer, but now we feel compelled to give this capability to the Great Unwashed(TM).&nbsp; We also want to do it because of #4, #5, and #8 with the current installer means that Win 2000 Users will be able to run Eudora.&nbsp; We also are being benevolent parents, and are wanting to hint to our children that the practice of separating programs and data is a good thing, but we don't want them to get hurt if they can't handle the awesome responsibility.<br>
+<br>
+<br>
+<b>Implementation:<br>
+</b>The main panel in the current installer that asks for where to install the program will be changed to look like this:<br>
+<br>
+<font color="#0000FF">Destination Folder:<br>
+C:\Program Files\Qualcomm\Eudora&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [Browse]<br>
+<br>
+Folder where Eudora will store mail, settings, address books, etc.:<br>
+(*) C:\Program Files\Qualcomm\Eudora&nbsp;&nbsp;&nbsp; [Browse]<br>
+( ) User's Application Data folder<br>
+<br>
+</font>In the setting for the data folder, the default value for the first radio button will be the same as the folder specified in the destination folder.&nbsp; The Browse button will of course allow the user to specify a particular place for data to go.&nbsp; If the user changes the destination folder, the data folder will change to that folder as well.&nbsp; Because of #9, we may not be able to leave the data folder alone if the user changes the data folder and then changes the destination folder.<br>
+<br>
+If the first radio button is selected, the installer will create a Eudora.ini file in the specified folder, and set the registry entry telling Eudora where to find the data folder.&nbsp; If the second radio button is selected, the installer will create a DEudora.ini file in the specified Destination Folder, and will clear the registry entry telling Eudora where to find the data folder.&nbsp; Either case will not overwrite an existing file.<br>
+<br>
+<br>
+<b>Reasoning:<br>
+</b>Under 95/98/NT, the default for the data folder will be the one shown: same place as the program.&nbsp; This is because of #1, #2, #3, #6, #8, and #9.&nbsp; #6 is a little subtle, but if we don't put a Eudora.ini file in the folder where the program is installed, then when the user starts up one of the specific Eudora installations, Eudora will assume to use the Application Data directory.&nbsp; This will be bad because of #6 and #8.<br>
+<br>
+Under Win 2000, the default for the data folder will be the User's Application Data folder.&nbsp; This is because of #4, #5, and #8 (as mentioned previously).<br>
+<br>
+When the person installing selects the second radio button when it is not the default, they will get a modal dialog that looks something like this:<br>
+<br>
+<font color="#0000FF">Warning!<br>
+You have chosen to have Eudora store its data in the user's<br>
+Application Data folder.&nbsp; That folder is hidden by default.<br>
+If you would like to see that folder in an Explorer window,<br>
+you must first go to Tools-&gt;Folder Options in an Explorer<br>
+window, click on the View tab, and then select &quot;Show hidden<br>
+files and folders&quot;.<br>
+<br>
+Would you like to continue with using the Application Data folder?<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [ Yes ]&nbsp;&nbsp;&nbsp; [[ No ]]<br>
+<br>
+</font>We only put this up for 95/98/NT because of #3, #4, #7 and #8.&nbsp; We would like to put the actual path to the Application Data folder, but can't because of #9.<br>
+<br>
+I thought about putting up a warning under Win 2000 if the person installing does not select the User's Application Data folder, but because of #4 and #7 I think we can let it slide.<br>
+</html>

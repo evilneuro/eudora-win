@@ -1,0 +1,32 @@
+// EudoraResVer.rc
+
+// DO NOT USE DEV STUDIO TO EDIT THIS FILE
+//
+
+#ifdef APSTUDIO_INVOKED
+#error DO NOT USE DEV STUDIO TO EDIT THIS FILE
+#endif
+
+
+#include <ver.h>
+#include "Resource.h"
+#include "..\Version.h"
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_VERSION             EUDORA_BUILD_DESC
+END
+
+// --------------------------------------------------------------------------
+// Now we do our tricky version stuff.
+
+#include "..\VersionBeg.inc"
+
+VALUE "InternalName",       "EudoraRes\0"
+VALUE "OriginalFilename",   "EudoraRes.DLL\0"
+VALUE "FileDescription",    "Eudora Resources\0"
+VALUE "Comments",           "Eudora Resources\0"
+
+#include "..\VersionEnd.inc"
+
+// --------------------------------------------------------------------------

@@ -1,0 +1,23 @@
+ALLSOURCES=\
+TAE.c\
+TAEDictionary.c\
+TAECommon.c\
+TAEText.c
+
+ALLOBJECTS=$(ALLSOURCES:%.c=%.o)
+
+CC=gcc
+CFLAGS= -DWIN32 -DSHOW_MATCH_OFFSETS
+
+taetest: $(ALLOBJECTS) main.o
+	gcc -o taetest -DUNIX main.o $(ALLOBJECTS)
+
+taexplode: $(ALLOBJECTS) taexplode.o
+	gcc -o taexplode -DUNIX taexplode.o $(ALLOBJECTS) 
+
+biteme: $(ALLOBJECTS) biteme.o
+	gcc -o biteme -DUNIX biteme.o $(ALLOBJECTS) 
+
+clean:
+	rm $(ALLOBJECTS) main.o taexplode.o
+

@@ -1,0 +1,4 @@
+LIBRARY 	LDAP
+            
+EXPORTS 	DllGetClassObject       PRIVATE
+		DllCanUnloadNow         PRIVATE

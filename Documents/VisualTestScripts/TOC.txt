@@ -1,0 +1,250 @@
+TOC.txt
+Richard J. Wartner
+7610 North Via De Manana
+Scottsdale, Arizona 85258-3517 USA
+Email RWartner@aol.com
+
+>>>>>----->
+
+	To be quickly able to have an overview of the book, 
+	a table of contents would be nice.
+	Both when you have printed the book and reading it, 
+	and when you are reading it online.
+	I helps me to navigate in the information.
+	It doesn't have to be fancy, just list the headings.
+
+	I live in Denmark, and I work for Brüel and Kjær.
+	Regards
+		Thorkild Dalsgaard
+
+>>>>>----->
+
+Thanks Thorkild for the Table of Contents you provided!
+I've added to it as we've continued.
+
+
+TABLE OF CONTENTS
+-----------------
+
+----------------------------------
+Section 1:  Procedural Programming
+----------------------------------
+
+Chapter 1.	 Overview
+    What is Visual Test (VT)?
+    Procedures
+    Windows
+	Play Statement
+    Jigsaw puzzle
+    Example of a very simple program:
+	    Program 1 Test1.mst Using a procedure:
+	    Program 2 Test2.mst Using a function:
+    Modular program design
+    Subroutines
+    What is a subroutine?
+	    Declarations
+	    Return Values
+	    Parameters
+
+Chapter 2.  The WBImport Project
+    WBImport Project
+    Objective:
+    Here is our Specification:
+    Desired Result
+    Setting up our project
+
+Chapter 3.  WBImport.mst
+    Relationships
+    INI file
+    Command Line
+	    Our entire command line syntax should look like this:
+    OUR FIRST SUBROUTINE!
+    Extracting the command line:
+    Function CheckCommandLine() As Integer
+    CheckCommandLine() will return an Integer either TRUE or FALSE.
+    KeyPress event notification
+    StopScripts procedure
+    Sub StopScripts(vKeyInfo As Variant)
+    Logging procedures
+    TestLogVars
+    Sub TestLogVars(LogPath$)
+    MakeDirs
+    Sub MakeDirs(DirName As String)
+    Logging Procedures
+    Sub LogWrite(Message$,LogPath$,CritErrPath$)
+    Back to the INI file
+	LogError()
+    Function SetWBDefaults(SectionName$,TheIniFile$) As Integer
+	Function ReadINI(TheIniFile As String,TheSection As String,TheVariable As)
+    Error Traps:
+    ErrorHandler:
+    Sub CloseOnSystemError(ApplicationToClose&,LogPath$,CritErrPath$)
+    MEAT AND POTATOES TIME!
+    Function GetFiles() As Integer
+    $ Earn The Dough $
+    Function WBImport(FileName1$,FileName2$)
+    Function CountCommas(InputString$,CountTo%) As Integer
+    Running our program
+    SUCCESS!
+	    Possible errors
+     C:\WBIMPORT\COMPLETE\WBIMPORT.CSV
+    StdAlone.mst
+
+Chapter 4.  Template Project
+    Template.mst
+    Include files
+    Precompiled Header file
+    MSTEST.INC
+    GenUtil.INC
+    GenAPI.INC
+    In Review
+
+Chapter 5.  Pointers
+	POINTERS
+	Pointers to Variables
+	Pointers to Arrays
+	Pointers to User-Defined Types
+	Procedures: Passing and Returning Pointers
+	Pointers to Procedures
+	Memory Allocation
+	Pointers to Pointers
+	Additional examples of pointers - Pointers.mst.
+
+
+-------------------------------
+Section 2:  Windows Programming
+-------------------------------
+
+Chapter 6.  Starting and Stopping an application
+    The Explorer
+    ' Program Variables
+    Starting and Closing Explorer
+    Function StartExplorer() As Integer
+    Function CloseExplorer() As Integer
+	    "How to Wait a Finite Time for a Run Process to Terminate"
+	Guide for spawning DOS commands from a VT script
+
+Chapter 7. 	Manipulating Objects
+    FOCUS - FOCUS - FOCUS
+    ' Manipulating Objects
+    Function SelectMenuItem(WindowHandle&,MenuItem$,MenuItemName$) As Integer
+    Examining our "Wrapper" functions
+    Function ClickButton(ClassType$,BtnOrdValue%,ButtonName$) As Integer
+    Function EnterEditBox(ClassType$,EditOrdValue%,FieldName$,TextToEnter$) As Integer
+    To ReCap:
+	Ordinal or ID?
+		Ordinal
+		ID
+		hWnd
+    Modular program design
+	PLAY statement revisited
+		Standard Objects
+		Grids - Non standard Objects
+			Function ClickGrid()
+		Painted Controls - Non standard Objects
+			ClsNtPad.MST - Function ClickCorrectionFactor()
+	Testing Custom Controls with OLE Control Procedures (MSTEST.OCX)
+	Function GetCrlProperties(ControlName$) As Integer
+
+Chapter 8.	TstExp01.mst
+
+Chapter 9.	TstExp02.mst
+    Function ExpandTree(ClassName$,TreeOrdinal%) As Integer
+
+Chapter 10.	TstExp03.mst
+
+--------------------------------
+Section 3:  Running Your Project
+--------------------------------
+
+Chapter 11.	TstExp04.mst
+	Microsoft Developer Studio
+		Creating the Directory Structure
+		Setting the Order
+    Suite Manager
+		Scenario Organization Example 1:
+			This is the Suite Manager Organizational Approach
+		Scenario Organization Example 2:
+			This is the Program Driver Organizational Approach
+	Compatibility issues
+	Suite Manager or Program Driver?
+	SCENARIO CLEANUP
+    Scenarios
+    LogBeginScenario ("Start Explorer Application")
+	Status Log
+	Error.log
+    So what's all the fuss about?
+
+Chapter 12.	TstExp05mst
+	LogBeginScenario ("Test Explorer View Menu")
+
+Chapter 13.	A Suite Manager Project.
+	ExpMnTst.MST
+	Scenario ("Start Explorer Application")
+	Scenario ("Test Explorer View Menu")
+	Suite Manager Command Line Translation:
+
+Chapter 14.	Program Driver to replace the Suite Manager.
+	Custom Logging Functions
+	Setting our Options
+		In Suite Manager:
+		In RunPrg.mst:
+	TheLogOutputType
+	TheMinDetailLevel
+	TheLanguage
+	TheMachineName
+	TheProductVersion
+	TrapLog()
+	LOGINITSTRUCT
+	Reviewing Setting our Options
+	The Configuration File
+	RunPrg.cfg
+	Where is the configuration file?
+	Reading the configuration file
+	Running the Programs
+
+Chapter 15.	Network Distribution.
+	Program Driver
+	The project utilizes 2 configuration files:
+	The project utilizes 1 additional INI file
+	Project Programs:
+		StartHst.Pcd
+		NetHost.Pcd
+		NetStat.Pcd
+		Timer.Pcd
+		RunPrg.Pcd
+	Project Diagram:
+	Pathing Problems
+	Share Names
+		Sample syntax examples using share names:
+			RunPrg.pcd:
+			NetStat.pcd:
+			RunPrg.cfg:
+			Timer.ini:
+	Assigning Network path variables
+	Network Distribution Variables
+	StartHst.pcd
+	Timer.pcd
+	NetHost and NetStat.pcd
+	At the Host
+	At the Client
+	Sequence of Events:
+
+
+--------------------------------
+Section 4:  More Windows programming
+--------------------------------
+
+
+ Chapter 16.	Comparing Bitmaps
+	Function CompareBitmaps
+	Function SelectRoomType
+
+
+ Chapter 17.	 DIPA (Direct In-Process Access)
+ 	Building DIPA Extensions
+ 	Using DIPA And DIPA Extensions
+ 	Misc. Info
+
+
+ 

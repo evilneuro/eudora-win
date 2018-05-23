@@ -1,0 +1,87 @@
+' Template for 'WnObjPrg'
+' (No default template file found)
+'**********************************************************************************
+'
+'  InitEudora.MST
+'  Description      :  Eudora Initial Framework Script
+'  Programmer       :  Jason Miller with includes by:
+'                      Richard J. Wartner
+
+'
+'  In order for this program to run
+'  it must have an INI file nominated in the Command Line.
+'
+'  Syntax: \FullPATH\mtrun.exe \FullPATH\InitEudora.pc6 /C WBImport.INI
+'
+'**********************************************************************************
+'
+' HISTORY:
+' 04/00   Rev 1.0 Initial program creation.
+'
+'**********************************************************************************
+'=============================================
+' Metacommand declarations follow
+'=============================================
+'$INCLUDE 'TDECLARE.INC'
+'$INCLUDE 'C:\vt\EudoraUtil.INC'
+
+'============================================================
+' Program Variables
+'============================================================
+Dim InitReturnInteger As Integer
+'============================================================
+' Subroutine/Function Declarations
+'============================================================
+'*************************************************************************
+'*************************************************************************
+'*  START OF SCRIPT
+'*************************************************************************
+'*************************************************************************
+' Initial setups
+CurPrgName = "Eudora.PCD"     ' Current program name
+RevNumber  = "Rev 1.0"               ' Revision Number
+
+' Retrieve INI file name and path from Command Line
+InitReturnInteger = CheckCommandLine() 
+
+' Test Return Value
+If InitReturnInteger = False Then
+	LogError("Error Retrieving Command Line in "+CurPrgName+"!",0,LogPath,CritErrPath)
+End If
+
+' Retrieve INI file defaults
+InitReturnInteger = SetDefaults("Defaults",TheIniFile)
+' Test Return Value
+If InitReturnInteger = False Then
+	LogError("Error Setting Defaults "+CurPrgName+"!",0,LogPath,CritErrPath)
+End If
+
+' Retrieve Eudora Name and Path
+InitReturnInteger = GetEudora("Eudora",TheIniFile)
+	' Test Return Value
+If InitReturnInteger = False Then
+	LogError("Error Finding Eudora Name "+CurPrgName+"!",0,LogPath,CritErrPath)
+End If
+
+
+InitReturnInteger = InitStartEudora()
+	' Test Return Value
+If InitReturnInteger = False Then
+	LogError("Error Starting Eudora!",0,LogPath,CritErrPath)
+End If
+
+InitReturnInteger = DismissIntro()
+If InitReturnInteger = False Then
+	LogWrite("0     There was no intro Screen", LogPath, CritErrPath)
+End If
+
+
+InitReturnInteger = CreateDominantPersonality()
+If InitReturnInteger = False Then
+	LogWrite("1     Major Problem in Creating Dominant Personality", LogPath, CritErrPath)
+EndIf
+
+InitReturnInteger = MaximizeEudora()
+If InitReturnInteger = False Then
+	LogWrite("1     Cannot Find Eudora Main Window", LogPath, CritErrPath)
+EndIf

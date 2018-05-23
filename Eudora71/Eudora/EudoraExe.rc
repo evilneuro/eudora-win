@@ -1,0 +1,129 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "RES\\ICONS\\EUDORA.ICO"
+IDI_NO_MAIL             ICON    DISCARDABLE     "RES\\ICONS\\NOMAIL.ICO"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// REGISTRY
+//
+
+IDR_COM_EUDORA          REGISTRY MOVEABLE PURE  "QComAppTypeLib.rgs"
+IDR_COM_APPLICATION     REGISTRY DISCARDABLE    "QComApplication.rgs"
+IDR_COM_FOLDER          REGISTRY DISCARDABLE    "QComFolder.rgs"
+IDR_COM_FOLDERS         REGISTRY DISCARDABLE    "QComFolders.rgs"
+IDR_COM_MESSAGE         REGISTRY DISCARDABLE    "QComMessage.rgs"
+IDR_COM_MESSAGES        REGISTRY DISCARDABLE    "QComMessages.rgs"
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""EudoraExeVer.rc""\0"
+END
+
+4 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "1 TYPELIB ""EudoraExe.tlb""\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_NEED_VERSION4       "Sorry, this version of Eudora cannot run on this version of Windows.  Eudora requires Windows 95 (or later) or Windows NT 4.0 (or later).  Please upgrade to a compatible version of Windows before running Eudora."
+    IDS_RESDLL_MISMATCH     "Eudora has loaded a Resource DLL that does not match this version of Eudora.  You may experience significant problems, including program crashes.  Do you wish to continue?"
+    IDS_NO_RESDLL           "Error Loading Resource DLL (EudoraRes.dll)"
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#include "EudoraExeVer.rc"
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 4 resource.
+//
+1 TYPELIB "EudoraExe.tlb" // OLE Automation type library
+
+// "Eudora.manifest" tells Windows XP to use "ComCtl32.dll" Version 6,
+// which makes our standard controls use the XP theme style look rather
+// than the older Windows squarish look. It is supposed to be compatible
+// with and not have any effect on our operation on older versions of
+// Windows.
+//
+// If we're compiling without the a recent version of the Microsoft SDK,
+// we'll need to define the following values so that the resource is
+// compiled with the correct IDs.
+#ifndef RT_MANIFEST
+#define RT_MANIFEST                        24
+#endif
+#ifndef CREATEPROCESS_MANIFEST_RESOURCE_ID
+#define CREATEPROCESS_MANIFEST_RESOURCE_ID  1
+#endif
+
+CREATEPROCESS_MANIFEST_RESOURCE_ID RT_MANIFEST "Eudora.manifest" 
+
+/////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

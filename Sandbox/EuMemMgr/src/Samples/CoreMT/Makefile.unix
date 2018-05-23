@@ -1,0 +1,82 @@
+# Author: Subhashis Mohanty
+# Date  : 01/15/98
+
+DST_D = ${TOP}/${PROJECT}/${BLD_DIR}/${DBG_DIR}
+DST_R = ${TOP}/${PROJECT}/${BLD_DIR}/${REL_DIR}
+
+###### This subsystem
+SUBSYSTEM  = CoreMTTest
+
+######
+DMM_CORE = Core
+
+######
+DMM_CORE_MT = CoreMT
+
+###### AssertionServices subsystem
+AS_SUBSYSTEM = AssertionServices
+
+###### AssertionUtilities subsystem
+AU_SUBSYSTEM = AssertionUtils
+
+###### Include directories
+EXTERNAL_DMM_CORE_MT  = ${TOP}/${PROJECT}/public/inc/${DMM_CORE_MT}
+EXTERNAL_DMM_CORE     = ${TOP}/${PROJECT}/public/inc/${DMM_CORE}
+EXTERNAL_AS_PUBINC    = ${TOP}/${PROJECT}/public/inc/${AS_SUBSYSTEM}
+EXTERNAL_GENERIC      = ${TOP}/${PROJECT}/public/inc/Generic
+QCUTILS_PUBINC        = ${TOP}/QCUtils/public/inc
+INC_DIRECTIVE         = -I${EXTERNAL_DMM_CORE_MT} -I${EXTERNAL_DMM_CORE} -I${EXTERNAL_AS_PUBINC} -I${EXTERNAL_GENERIC} -I${QCUTILS_PUBINC}/
+
+SRC1 = MemCoreMTTest.cpp
+OBJ1 = MemCoreMTTest_CPP.o
+BIN1 = 
+
+OBJS_D = ${DST_D}/${OBJ1} 
+OBJS_R = ${DST_R}/${OBJ1}
+BINS_D =
+BINS_R =
+AR_D   =
+AR_R   =
+
+include ${TOP}/MakeInclude
+
+##### Assertion Services files
+AS_D_FILES = ${DST_D}/${AS_SUBSYSTEM}.a
+AS_R_FILES = ${DST_R}/${AS_SUBSYSTEM}.a
+
+##### Assertion Utilities files
+AU_D_FILES = ${DST_D}/${AU_SUBSYSTEM}.a
+AU_R_FILES = ${DST_R}/${AU_SUBSYSTEM}.a
+
+##### Core files
+DMM_CORE_D_FILES = ${DST_D}/${DMM_CORE}.a
+DMM_CORE_R_FILES = ${DST_R}/${DMM_CORE}.a
+
+##### Core MT files
+DMM_CORE_MT_D_FILES = ${DST_D}/${DMM_CORE_MT}.a
+DMM_CORE_MT_R_FILES = ${DST_R}/${DMM_CORE_MT}.a
+
+##### Objects.
+# Debug
+TGT_D_CPP_FILES  = ${DST_D}/${OBJ1} ${DMM_CORE_MT_D_FILES} ${DMM_CORE_D_FILES} ${AS_D_FILES} ${AU_D_FILES}
+# Release
+TGT_R_CPP_FILES  = ${DST_R}/${OBJ1} ${DMM_CORE_MT_R_FILES} ${DMM_CORE_R_FILES}
+
+##### Debug
+${TGT_D_CPP_O}: ${TGT_D_CPP_FILES}
+	echo
+	${CP_D_O_MT_2} -o $@ ${TGT_D_CPP_FILES} ${MT_LIB}
+
+${DST_D}/${OBJ1}: ${SRC1}
+	echo
+	${CP_D_MT} -o ${DST_D}/${OBJ1} ${SRC1}
+
+##### Release
+${TGT_R_CPP_O}: ${TGT_R_CPP_FILES}
+	echo
+	${CP_D_O_MT_2} -o $@ ${TGT_R_CPP_FILES} ${MT_LIB}
+
+${DST_R}/${OBJ1}: ${SRC1}
+	echo
+	${CP_R_MT} -o ${DST_R}/${OBJ1} ${SRC1}
+

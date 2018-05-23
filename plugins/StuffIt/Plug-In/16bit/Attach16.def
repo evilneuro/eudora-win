@@ -1,0 +1,19 @@
+LIBRARY     ATTACH16
+DESCRIPTION 'Stuffit Attacher Plugin'
+EXETYPE     WINDOWS
+CODE        PRELOAD MOVEABLE DISCARDABLE
+DATA        PRELOAD MOVEABLE SINGLE
+
+HEAPSIZE    4096
+
+
+EXPORTS
+    WEP @1 RESIDENTNAME ;; required WEP entry point (uses library WEP routine)
+	ems_plugin_version
+	ems_plugin_init
+	ems_plugin_finish
+	ems_free
+	ems_attacher_info
+	ems_attacher_hook
+	ems_special_info
+	ems_special_hook

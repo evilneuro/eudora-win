@@ -1,0 +1,227 @@
+// Copyright 2004-2005 Google Inc.
+// All Rights Reserved
+//
+import "oaidl.idl";
+import "ocidl.idl";
+
+
+cpp_quote("#include <winerror.h>")
+
+// GDS API specific HRESULTs
+cpp_quote("#define E_EXTENSION_REGISTERED           MAKE_HRESULT(SEVERITY_ERROR, FACILITY_ITF, 0x0001)")
+cpp_quote("#define E_COMPONENT_NOT_REGISTERED       MAKE_HRESULT(SEVERITY_ERROR, FACILITY_ITF, 0x0002)")
+cpp_quote("#define E_NO_SUCH_SCHEMA                 MAKE_HRESULT(SEVERITY_ERROR, FACILITY_ITF, 0x0003)")
+cpp_quote("#define E_NO_SUCH_PROPERTY               MAKE_HRESULT(SEVERITY_ERROR, FACILITY_ITF, 0x0004)")
+cpp_quote("#define E_COMPONENT_DISABLED             MAKE_HRESULT(SEVERITY_ERROR, FACILITY_ITF, 0x0005)")
+cpp_quote("#define E_COMPONENT_ALREADY_REGISTERED   MAKE_HRESULT(SEVERITY_ERROR, FACILITY_ITF, 0x0006)")
+cpp_quote("#define S_INDEXING_PAUSED                MAKE_HRESULT(SEVERITY_SUCCESS, FACILITY_ITF, 0x0007)")
+cpp_quote("#define E_EVENT_TOO_LARGE                MAKE_HRESULT(SEVERITY_ERROR, FACILITY_ITF, 0x0008)")
+cpp_quote("#define E_SERVICE_NOT_RUNNING            MAKE_HRESULT(SEVERITY_ERROR, FACILITY_ITF, 0x0009)")
+cpp_quote("#define E_INVALID_EVENT_FLAGS            MAKE_HRESULT(SEVERITY_ERROR, FACILITY_ITF, 0x000A)")
+
+[
+  object,
+  uuid(151857B2-26E0-4f4d-ACED-4F7E4B2065EF),
+  dual,
+  oleautomation,
+  pointer_default(unique)
+]
+// Components interested in crawl events call this to register their
+// event interest. Components who are only interested in generating
+// events needn't concern themselves with this interface.
+interface IGoogleDesktopSearchComponentRegistration: IDispatch 
+{
+  // Must be invoked by every component interested in receiving
+  // crawler events for a file extension.
+  // @param extension_handled an extension this component wishes to handle
+  // @return S_OK on success
+  //         E_EXTENSION_REGISTERED in case the extension conflicts with an
+  //            existing registration. 
+  //         another appropriate error.
+  [id(0x00000001)]
+  HRESULT RegisterExtension(
+              [in] BSTR extension_handled);
+};
+
+[
+  object,
+  uuid(9B311E80-BC95-4518-A58C-446EC9A082B5),
+  dual,
+  oleautomation,
+  pointer_default(unique)
+]
+// Components are required to to call this interface to register
+// themselves with Google Desktop Search before they can send events
+// or receive crawl events.
+interface IGoogleDesktopSearchComponentRegister: IDispatch {
+  // Must be invoked by every component interested in generating
+  // events or receiving crawler events.
+  // @param component_guid_or_progid a string spelling out the component's GUID 
+  //        or its ProgID.
+  // @param component_description is a VARIANT containing a SAFEARRY. 
+  //        The safearray contains pairs, where element 2N is the name of 
+  //        a descriptive parameter, and element 2N+1 is the value of that
+  //        parameter. 
+  //        Mandated description parameters are:
+  //          - "Title" component title as displayed on the preference page.
+  //          - "Description", component description as displayed on the 
+  //             preferences page.
+  //          - "ICON" the component icon, which is a string pointing to an ICON
+  //             resource. This string is of the format <module>,<id>, e.g
+  //             "c:\program files\boo\comp.dll,23".
+  // @return S_OK on success, appropriate error on failure, such
+  //        as if the component's classID or appID is not registered, 
+  //        if the component is prohibited by policy or whatever.
+  // @note for executables and plugins that wish to generate events, we 
+  //        mandate that they register a classid and/or a progid, in order 
+  //        to have a guaranteed unique identifier for the event generator.
+  [id(0x00000001)]
+  HRESULT RegisterComponent(
+              [in] BSTR component_guid_or_progid,
+              [in] VARIANT component_description,
+              [out, retval] IGoogleDesktopSearchComponentRegistration **registration);
+
+  // Invoked by a component on unregistration. 
+  // Cancels the component registration, along with all file types
+  // it has registed for.
+  [id(0x00000002)]
+  HRESULT UnregisterComponent(
+              [in] BSTR component_guid_or_progid);
+};
+
+[
+  object,
+  uuid(BDAC0047-4759-43a1-BA04-B148E1679E87),
+  dual,
+  oleautomation,
+  pointer_default(unique)
+]
+// Event interface, one of these is constructed for every event generated
+// by a component
+interface IGoogleDesktopSearchEvent: IDispatch
+{
+  enum EventFlags 
+  {
+    // Set this flag on all events
+    EventFlagIndexable   = 0x00000001,
+    // Set this flag when the event is historical, i.e. generated from a crawl
+    // over files or other data generated in the past. This is as opposed to 
+    // events generated in realtime from events presently occurring
+    EventFlagHistorical  = 0x00000010
+  };
+
+  // Add a typed property.
+  // @param property_name name of the property, the name must exist in 
+  //    the selected schema.
+  // @param property_value value of the property, must be typed appropriately
+  //    for the selected schema.
+  // @return 
+  //        S_OK in success,
+  //        E_NO_SUCH_PROPERTY if property does not exist,
+  //          any of the errors returned from VariantChangeType if the 
+  //          type of the property does not match the type declared in the schema,
+  //          or cannot be coerced to the correct type.
+  //        Another appropriate error value.
+  [id(0x00000001)]
+  HRESULT AddProperty(BSTR property_name, VARIANT property_value);
+  
+  // Sends the event. 
+  // @param event_flags event flags, a bitwise OR of EventFlags enumeration
+  //        values.
+  // @note events sent as result of crawl event notifications should have 
+  //        not set the EventFlagHistorical flag, since the event might have 
+  //        been generated as result of realtime filesystem changes.
+  // @note it is not possible to resend, nor to add properties to a sent event.
+  [id(0x00000002)]
+  HRESULT Send(long event_flags);
+};
+
+[
+  object,
+  uuid(A79E51C6-DB2D-4a44-848E-A8EBB22E5337),
+  dual,
+  oleautomation,
+  pointer_default(unique)
+]
+// Factory interface to yield new events.
+interface IGoogleDesktopSearchEventFactory: IDispatch
+{
+  // Creates a new event to the specified schema.
+  // @param component_guid_or_progid a string spelling out the creating 
+  //        component's GUID or its appID.
+  // @param schema_name the requested event schema.
+  // @return S_OK on success,
+  //        E_NO_SUCH_SCHEMA if schema does not exist,
+  //        otherwise an appropriate error
+  [id(0x00000001)]
+  HRESULT CreateEvent(
+              [in] BSTR component_guid_or_progid,
+              [in ]BSTR schema_name,
+              [out, retval] IDispatch **event);
+};
+
+
+[
+  uuid(A1DE6DB8-B20F-445c-BFDE-16C8D53A2FA1)
+]
+// This is implemented by components that wish to receive crawl notifications
+// The component is responsible for instantiating the event factory and 
+// issuing the appropriate events
+dispinterface DGoogleDesktopSearchFileNotify
+{
+properties:
+methods:
+  // Invoked when the crawler comes across a file registered to this 
+  // component. Crawl components implement this function, then create and send
+  // zero or more events - as appropriate for the file.
+  // @param full_path_to_file the file to handle
+  // @param event_factory event factory for creating the events
+  // @return 
+  //      S_OK if the file was handled, 
+  //      an appropriate error otherwise.
+  // @note the crawler may do special handling for certain error values. 
+  //      In particular it may retry indexing for some specific errors, 
+  //      such as e.g.HRESULT_FROM_WIN32(ERROR_SHARING_VIOLATION), so components
+  //      should be as accurate in error reporting as possible.
+  //      The crawler may also use any error info object returned from the 
+  //      component for logging and reporting, so don't skimp on error 
+  //      eporting through SetErrorInfo.
+  [id(0x00000001)]
+  HRESULT HandleFile(
+              [in] BSTR full_path_to_file,
+              [in] IDispatch *event_factory);
+};
+
+[
+  uuid(3D056FE7-EA8E-481a-B18F-0B02EBF6B3C1),
+  version(1.0),
+  helpstring("Google Desktop Search API 1.0 Type Library")
+]
+library GoogleDesktopSearchAPILib
+{
+  importlib("stdole2.tlb");
+
+  // pull these interfaces into the typelib
+  interface DGoogleDesktopSearchFileNotify;
+  interface IGoogleDesktopSearchEvent;
+  
+  [
+    uuid(579822B3-44CD-4786-83E0-AE32BCB9E6B1),
+    helpstring("GoogleDesktopSearch Class")
+  ]
+  // Instantiate this class to get the event factory.
+  coclass GoogleDesktopSearch
+  {
+    [default] interface IGoogleDesktopSearchEventFactory;
+  };
+
+  [
+    uuid(BB8B07A0-B8D1-44e0-A262-C9B7212AEC68),
+    helpstring("GoogleDesktopSearchRegister Class")
+  ]
+  // Instantiate this class to get to the registration mechanism
+  coclass GoogleDesktopSearchRegister
+  {
+    [default] interface IGoogleDesktopSearchComponentRegister;
+  };
+};

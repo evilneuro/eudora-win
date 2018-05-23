@@ -1,0 +1,32 @@
+1.0 4.3 Freeware Featureset
+	1.1 Feature Removal Rationale
+		1.1.1 Features removed had to have a definite “upsell” value.
+		1.1.2 Freeware needs enough features to be useful in its own right.
+		1.1.3 Engineering/Marketing/Support/Whatever headaches due to feature removal should be minimized.
+	1.2 Removal Notes
+		1.2.1 4.3 Freeware will have all features of 4.3 Payware/Adware, except those listed below.
+		1.2.2 It is not a goal to have the removed features completely hidden.  It is perfectly acceptable (perhaps desireable) to dim the feature and add explanatory text/icon/tooltip that says “This feature is available only to Paid or Select users.”
+	1.3 Features Removed
+		1.3.1 Spellchecking
+		1.3.2 Multiple personalities (but the single personality can be IMAP)
+		1.3.3 Stationery (wazoo removed)
+		1.3.4 Signatures beyond Standard and Alternate (wazoo remains for editing)
+		1.3.5 Certain filter actions.
+			1.3.5.1 Personality
+			1.3.5.2 Sound
+			1.3.5.3 Open
+			1.3.5.4 Print
+			1.3.5.5 Forward
+			1.3.5.6 Reply
+			1.3.5.7 Redirect
+			1.3.5.8 Server Options
+			1.3.5.9 Label
+			1.3.5.10 Speak
+		1.3.6 Compose styles beyond font/size/bold/italic/underline
+		1.3.7 Toolbar customization
+		1.3.8 Multiple simultaneous directory service queries
+		1.3.9 Multiple nickname files
+		1.3.10 Fcc
+		1.3.11 Search Criteria except “Summaries” and “Anywhere”
+		1.3.12 Autocompletion
+		1.3.13 History List

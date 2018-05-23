@@ -1,0 +1,106 @@
+Kerberos And You
+
+This document briefly discusses how to set up MIT's KClient on your Windows NT box, 
+and configure your system to connect to a kerberized IMAP server.  The instructions
+demonstrate how to connect to mrwitaker, but can be applied to connect to any
+server anywhere.
+
+To configure Eudora to connect to a Kerberized IMAP server, you must do the
+following:
+
+- Acquire KClient (or PC-LeLand, which sucks).
+- Configure your kerberos client to connect to the kerberos server
+- Configure Eudora to use Kerbers authentication
+- Connect.
+
+
+- Acquiring a Kerberos Client:
+
+
+You can get the MIT Kerberos KClient or Leash) distribution at:
+
+http://web.mit.edu/network/kerberos-form.html
+
+Fill out the form, them download
+
+Windows NT Binaries ( mink-10-18-99.exe, 2.63 Mb)
+
+on the following page.  Run the .exe and install the Kerberos libraries.
+
+I'm not sure where PC-LeLand lives.  Dennis Poe and Joe King have installers on their
+NT boxes.  I never did figure out where it came from.
+
+
+
+- Configuring KClient (Leash)
+
+Once you've installed KClient and restarted, locate the installed Kerberos folder.
+
+Run Leash.
+
+Go to "Kerberos Properties" under "Options".
+
+Under Realm/Server Mappings, INSERT a new realm.  
+
+Enter "EUDORA.QUALCOMM.COM" as the realm.
+
+Enter "mrwitaker.qualcomm.com" as the kerberos server. 
+
+-> This tells the kerberos client where to look for the kerberos server.
+
+Go to the "DNS/Realm Mappings" section of the settings next.
+
+INSERT a new mapping.
+
+Enter "mrwitaker.qualcomm.com" as the host.
+
+Enter "EUDORA.QUALCOMM.COM" as the realm.
+
+-> This tells the kerberos client that the host "mrwitaker" is in the realm "EUDORA.QUALCOMM.COM".
+
+Once you do these two steps, go to the "Default Realm Configuration" panel, and select "EUDORA.QUALCOMM.COM" 
+as the default realm
+
+-> This tells the kerbers client which realm to use when acquiring a ticket.
+
+Now you can actually connect to the kerberos server.  
+
+Under the "Action" menu, choose "Get New Ticket".
+
+Log in, and you're good to go!
+
+Note, if you fail to log in, check with the system administrator.  If you can't log in at this point,
+there's no chance Eudora is going to be able to connect at all.
+
+
+
+- Configuring Eudora
+
+To configure Eudora to authenticate using Kerberos, you must have an IMAP account on the
+kerberized IMAP server.  The kerberos server must know about this kerberized IMAP server.
+It all seems somewhat fragile, and it's up to your network administrator to have set this
+all up right in the first place.  
+
+Before launching Eudora, open the eudora.ini file.
+
+Add the following two lines to the [Settings] section, paying attention to case:
+
+DesDllName=KRBV4W32.DLL
+Krb4Dllname=KRBV4W32.DLL 
+
+-> This tells Eudora which DES and which Kerberos4 dll to use.  If you've installed a different
+Kerberos client, these settings need to be set with the names of the dlls.  Often times they
+will have been installed into the WinNT directory.  But it seems this isn't necessary.
+
+Launch Eudora, and bring up you IMAP account.
+
+Select the "Kerberos" radio button under Authentication Style in the Incoming Mail section of
+the personality properties panel.
+
+-> This tells Eudora to authenticate using Kerberos.  This is a holdover from POP, and really should
+be removed.  IMAP authentication can take place automatically.
+
+You're good to go!
+
+
+

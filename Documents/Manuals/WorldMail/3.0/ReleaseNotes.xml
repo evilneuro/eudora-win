@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet type="text/xsl" href="ReleaseNotes.xsl"?>
+
+<document>
+	<section title="Introduction">
+		<html>
+			Welcome to MailSite 6.1.  These release notes contain valuable updated information on the latest features and improvements
+			added to MailSite.<p /> 
+			
+			<p>MailSite 6.1 offers secure messaging using Transport Layer Security (TLS) or Secure Sockets Layer (SSL) through POP, IMAP and SMTP.</p>   
+	
+			Before installing or upgrading MailSite, we highly recommend you review each section to understand all the new
+			options available to improve your MailSite experience.<p /> 
+	
+			Installing the MailSite Virus Filter is a great product choice. Please check our <a href="http://www.rockliffe.com/support/docs">knowledge base</a>
+			documents for more updated information on our anti-virus solution.<p />
+	
+			Our MailSite SPAM filter product is a comprehensive, flexible email management solution enabling organizations to
+			take control of their email traffic by protecting against spam. Safely identify and quarantine up to 98% of spam, using
+			a combination of heuristics, spam directories, and spam signatures.<p /> 
+	
+			Please check our <A HREF="http://www.rockliffe.com/support/docs">knowledge base</A> documents for more updated information on our anti-spam solution.<p />
+			
+					
+		</html>
+	</section>
+	<section title="What's New">
+		<html>
+			MailSite 6.1 includes new features, enhancements, and bug fixes. Among the new features introduced in this version
+			are the following:<p />
+	
+			<ul>
+				<li>MailSite MP (Message Protector) Gateway adds protection and defense in depth to existing mail infrastructure</li>
+				<li>Secured messaging using TLS/SSL through IMAP, POP, and SMTP</li>
+				<li>New filter created for Anti-Spam in the Mailbox delivery script</li>
+				<li>Updated fully-integrated Anti-virus Engine</li>
+				<li>Improved connection performance for POP3, IMAP and SMTP</li>
+				<li>Anti-Spam scoring at the mailbox level</li>
+				<li>Updated MSCOM Documentation API</li>
+				<li>Domain forwarding</li>
+			</ul>
+		</html>
+	</section>
+	<section title="Requirements">
+		<html>
+			MailSite 6.1 System Requirements:<p />
+	 
+			MailSite SE Platform Availability<br />
+			<ul>
+				<li>Windows XP Professional (SP1)</li>
+				<li>Windows 2000 Professional (SP4)</li>
+				<li>Windows 2000 Server (SP4)</li>
+				<li>Windows Server 2003 Standard Edition</li>
+			</ul>
+	
+			MailSite LE,SP and MP Platform Availability<br />
+			<ul>
+				<li>Windows 2000 Server (SP4)</li>
+				<li>Windows 2000 Advanced Server (SP4)</li>
+				<li>Windows Server 2003 Standard Edition</li>
+				<li>Windows Server 2003 Enterprise Edition</li>
+			</ul>
+	
+			MailSite SE,LE,SP and MP Minimum System Requirements<br />
+			<ul>
+				<li>Intel-compatible Processor (1GHz or faster CPU)</li>
+				<li>512MB Minimum (1GB or higher recommended for Anti-Virus and Anti-Spam Filtering)</li>
+				<li>Additional message filtering and scanning may require additional CPU and RAM</li>
+				<li>Internet Explorer 6.0 or higher</li>
+				<li>50MB Hard Disk space (To install)</li>
+				<li>DNS client installed and working</li>
+				<li>NTFS file system</li>
+				<li>TCP/IP transport installed and working</li>
+				<li>Microsoft SQL Server 2000 &#045; Required for versions with SQL integration</li>
+			</ul> 
+	
+			MailSite Express &amp; MailSite Pocket System Requirements<br />
+			<ul>
+				<li>Windows 2000 Server or higher</li>
+				<li>Microsoft Scripting Engine 5.0 or higher</li>
+				<li>Windows Scripting Host</li>
+				<li>Microsoft Internet Information Server 5.0 or higher</li>
+				<li>Internet Explorer 6.0</li>
+			</ul>
+	          	       	                   	
+	          	
+		</html>
+	</section>
+	<section title="Installation">
+		<html>
+			This program will install all the necessary components to run MailSite as an email server or a gateway. 
+			This program will automatically detect the installation method:<p />
+			
+			<ul>
+				<li>Major upgrade installation</li>
+				<li>Minor upgrade installation</li>
+				<li>New installation</li>
+			</ul>
+	
+			<b>MAJOR UPGRADE INSTALLATION</b><p />
+	
+			A major upgrade is an upgrade from versions 4.x or 5.x. The upgrade installation process keeps all the previous
+			settings and does not make any modifications. It will, however, add a new Windows account called MSIISUSER and will
+			add some non-intrusive permissions to this account for the use of MailSite Express running under the IIS web service.
+			This new Windows account is a standard user we have adopted which will be needed in future MailSite upgrade
+			installations. The only problem that may occur is that propagation of this new user rights can take a long time if
+			the message store is large.<p />
+	
+			The upgrade installation process does take into consideration previous MailSite Clustered installations. All
+			permissions, settings and configuration settings will be left intact.<p />
+	
+			<b>MINOR UPGRADE INSTALLATION</b><p />
+	
+			A minor upgrade is an upgrade from a previous 6.x version. The upgrade process simply updates the files for features
+			that are already installed. All permissions, settings and configuration settings will be left intact.<p />
+	
+			<b>NEW INSTALLATION</b><p />
+	
+			The new installation assumes that any previous version of MailSite has been removed or the operating system has been
+			newly installed. The installation will configure MailSite with the necessary accounts and permissions for the
+			MailSite directory and subdirectories.<p /> 
+	
+			For additional installation documentation please check:<br />
+			<a href="http://www.rockliffe.com/support/docs">http://www.rockliffe.com/support/docs</a><p />
+	
+			<b>CLUSTERED INSTALLATIONS</b><p /> 
+	
+			New clustered installations require additional configuration.  When clustering MailSite please keep the following
+			information in mind:<p /> 
+			
+			<ul>
+				<li>SQL server is required</li>
+				<li>At least 2 servers are needed for a clustered environment</li>
+				<li>A Specific MailSite user needs to be pre-configured with access to the:</li>
+				<ul>
+					<li>BOX directory location</li>
+					<li>The MailSite directory location</li>
+					<li>The MailSite Express directory location</li>
+					<li>Access to IIS for use with MailSite Express</li>
+				</ul>
+			</ul>
+	 
+			Additional information can be found at:<br />
+			<a href="http://www.rockliffe.com/support/docs">http://www.rockliffe.com/support/docs</a><p />
+	
+			If you are planning to install a new clustered environment, please request the MailSite SP Clustering White Paper
+			from your sales representative at sales@rockliffe.com.
+		</html>
+	</section>
+	<section title="Security Configurations">
+		<html>
+			The installer will set sufficient user and folder permissions for MailSite and all of its components to run in a
+			single server configuration. The following default permissions are assigned by the installer:<p /> 
+	
+			<b>Table 1 - MailSite Security Settings</b><br />
+			<table class="grid" width="500" cellspacing="0" cellpadding="0">
+				<tr>
+					<td class="grid">
+						<b>Folder</b>
+					</td>
+					<td class="grid">
+						<b>User/Group</b>
+					</td>
+					<td class="grid">
+						<b>Permission</b>
+					</td>
+				</tr>
+				<tr>
+					<td class="grid">\MailSite</td>
+					<td class="grid">SYSTEM</td>
+					<td class="grid">Modify</td>
+				</tr>
+				<tr>
+					<td class="grid">\MailSite</td>
+					<td class="grid">MSIISUSER</td>
+					<td class="grid">Modify</td>
+				</tr>
+				<tr>
+					<td class="grid">\MailSite\Express\Web\Cache</td>
+					<td class="grid">[IIS Process Identity]</td>
+					<td class="grid">Modify</td>
+				</tr>
+			</table><p />
+			
+			By default, these permissions are set explicitly on each of the listed folders and will be inherited by all files
+			and folders under the C:\program files\MailSite directory or the location you specify as the installation location.<p /> 
+	
+			Please keep these permission settings in consideration when making modifications to your installation.<p />
+		</html>
+	</section>
+	<section title="Purchase">
+		<html>
+			You can find information on purchasing Rockliffe products on our website at:<p /> 
+	
+			<a href="http://www.rockliffe.com">http://www.rockliffe.com</a> (select the 'Buy It' icon)<p /> 
+	
+			Or Call<p /> 
+			<table width="400">
+				<tr>
+					<td>Americas Sales (PST) CA</td>
+					<td>408-879-5600</td>
+				</tr>
+				<tr>
+					<td>International Sales (GMT) UK</td>
+					<td>+44 (0)113 383 0125</td>
+				</tr>
+			</table>
+		</html>
+	</section>
+	<section title="Support">
+		<html>
+			Rockliffes' online support area is available 24x7 with a wealth of solutions available directly from your web browser
+			via the World Wide Web (www).<p /> 
+	
+			<a href="http://www.rockliffe.com/support">http://www.rockliffe.com/support</a><p /> 
+	
+			Evaluators receive 30 days of free email support during their evaluation period.<p /> 
+	
+			Free access to the Support Knowledge base is provided at:<br />
+			<a href="http://www.rockliffe.com/support/docs">http://www.rockliffe.com/support/docs</a><p /> 
+	
+			To open a support case:<br />
+			<a href="http://www.rockliffe.com/userroom">http://www.rockliffe.com/userroom</a> (select Open Case)<p />
+		</html>
+	</section>
+	<section title="MailSite Changes">
+		<scr type="mailsite" />
+	</section>
+	<section title="Express Changes">
+		<scr type="express" />
+	</section>
+		<section title="Known Issues">
+		<html>
+			Within this Release of MailSite there are these known issue within the product that will be resolved in a future release :-<p></p>
+			<ul>
+				<li>The SMTPRA Service has a possible small Memory Leak on some installations which is currently under investigation.  Inititial results have shown it is likely to be Anti Virus related and only after a prolonged period of heavy use.  Rockliffe recommend monitoring the Virtual Memory usage of SMTPRA and restarting the service if it exceeds 1GB.</li>
+				<li>When using an E-mail Client and connecting via IMAP you see the correct count of messages when you log into your account but then a number of messages will disappear from the folder.  This is only a temporary issue, there is no data loss,  restarting your E-mail client will resolve this issue. It is very intermittent and will not affect all users.</li>
+			</ul>
+		</html>
+	</section>
+	<data />
+</document>

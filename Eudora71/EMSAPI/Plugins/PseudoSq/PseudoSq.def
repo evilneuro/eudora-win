@@ -1,0 +1,12 @@
+; PseudoSq.def : Declares the module parameters for the DLL.
+
+LIBRARY      "PSEUDOSQ"
+DESCRIPTION  'PSEUDOSQ Windows Dynamic Link Library'
+
+EXPORTS
+	ems_plugin_version
+	ems_plugin_init
+	ems_translator_info
+	ems_can_translate
+	ems_translate_file
+	ems_free

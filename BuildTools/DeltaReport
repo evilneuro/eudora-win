@@ -1,0 +1,41 @@
+# author: smohanty
+#
+# This script produces the delta report between two release builds.
+# It takes two arguments: arg1 is the low build numbe and arg2 is the high one.
+# It is assumed that the two args are exactly the description field of the
+# change that marks the build.
+#
+# Example: We wish to generate the delta report between Eudora 4.2 builds
+# 4.2.0.13 and 4.2.0.14
+#
+# 
+# Note that the command
+#
+#   shell> p4 changes -s submitted //depot/main/Eudora/... | grep Build-4.2.0.13
+#
+# produces
+#
+#   Change 8366 on 1998/12/15 by wrhodes@4.2.0.13 '       Build-4.2.0.13 '
+# 
+# and the command
+#
+#   shell> p4 changes -s submitted //depot/main/Eudora/... | grep Build-4.2.0.14
+#
+# produces
+#
+#   Change 8381 on 1998/12/15 by wrhodes@4.2.0.13 '       Build-4.2.0.14 '
+#
+
+if ($# != 3) then
+    echo "Usage: $0 Product Build1 Build2"
+    exit
+endif
+
+# Pickup the low build number.
+@ CHN1 = ` p4 changes -s submitted //depot/main/$1/... | grep "$2" | awk '{print $2}' | head -1`
+
+# Pickup the high build number.
+@ CHN2 = ` p4 changes -s submitted //depot/main/$1/... | grep "$3" | awk '{print $2}' | head -1`
+
+# Describe the submitted changes that happened in between.
+p4 changes -s submitted //depot/main/$1/... | awk '$2>'$CHN1' && $2<='$CHN2' {print $2}' | xargs -n 1 p4 describe -s

@@ -1,0 +1,89 @@
+Microsoft Developer Studio Workspace File, Format Version 5.00
+# WARNING: DO NOT EDIT OR DELETE THIS WORKSPACE FILE!
+
+###############################################################################
+
+Project: "BuildScript"=.\BuildScript.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name dbgen
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name plgen
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name plstclnt
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name plstclnt_test
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "dbgen"=.\dbgen\dbgen.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "plgen"=.\plgen\plgen.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "plstclnt"=.\plstclnt_dll\plstclnt.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "plstclnt_test"=.\plstclnt_test\plstclnt_test.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Global:
+
+Package=<5>
+{{{
+}}}
+
+Package=<3>
+{{{
+}}}
+
+###############################################################################
+

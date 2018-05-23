@@ -1,0 +1,61 @@
+; This file is maintained by HCW. Do not modify this file directly.
+
+[OPTIONS]
+COMPRESS=60 Hall Zeck
+ERRORLOG=..\..\..\..\..\..\Coltrane_Techpubs\mailsite.err
+LCID=0x409 0x0 0x0 ; English (United States)
+REPORT=Yes
+TITLE=WorldMail Help
+BMROOT=Graphics\MailSite
+HLP=mailsite.hlp
+
+[FILES]
+mailsite.rtf
+
+HtmlWh.rtf
+[BUILDTAGS]
+Print
+Online
+
+[MAP]
+#include <mailsite.h>
+
+[WINDOWS]
+main="WorldMail Help",(51,51,921,910),27648,,(51,102,153),
+aux="Title Here",(348,358,419,409),0,(255,255,224),(51,102,153),
+third="WorldMail Help",(348,358,419,409),0,(255,255,224),(51,102,153),
+fourth="WorldMail Help",(348,358,419,409),0,(255,255,224),(51,102,153),
+
+[CONFIG]
+RegisterRoutine(`Inetwh32.dll',`INETWH_Initialize',`')
+RegisterRoutine(`Inetwh32.dll',`Internet',`S')
+RegisterRoutine(`Inetwh32.dll',`Inet',`S')
+INETWH_Initialize()
+RegisterRoutine(`RoboEx32.dll',`InitWinHelp2000',`')
+RegisterRoutine(`RoboEx32.dll',`JumpHtml',`s')
+InitWinHelp2000()
+BrowseButtons()
+[CONFIG-aux]
+RegisterRoutine(`Inetwh32.dll',`INETWH_Initialize',`')
+RegisterRoutine(`Inetwh32.dll',`Internet',`S')
+RegisterRoutine(`Inetwh32.dll',`Inet',`S')
+INETWH_Initialize()
+RegisterRoutine(`RoboEx32.dll',`InitWinHelp2000',`')
+RegisterRoutine(`RoboEx32.dll',`JumpHtml',`s')
+InitWinHelp2000()
+[CONFIG-third]
+RegisterRoutine(`Inetwh32.dll',`INETWH_Initialize',`')
+RegisterRoutine(`Inetwh32.dll',`Internet',`S')
+RegisterRoutine(`Inetwh32.dll',`Inet',`S')
+INETWH_Initialize()
+RegisterRoutine(`RoboEx32.dll',`InitWinHelp2000',`')
+RegisterRoutine(`RoboEx32.dll',`JumpHtml',`s')
+InitWinHelp2000()
+[CONFIG-fourth]
+RegisterRoutine(`Inetwh32.dll',`INETWH_Initialize',`')
+RegisterRoutine(`Inetwh32.dll',`Internet',`S')
+RegisterRoutine(`Inetwh32.dll',`Inet',`S')
+INETWH_Initialize()
+RegisterRoutine(`RoboEx32.dll',`InitWinHelp2000',`')
+RegisterRoutine(`RoboEx32.dll',`JumpHtml',`s')
+InitWinHelp2000()

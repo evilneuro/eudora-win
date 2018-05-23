@@ -1,0 +1,81 @@
+#.............................................................................#
+# This alias sets up a new temporary log file.
+#.............................................................................#
+alias SetupNewEchoSection '@ LF_CNTR++;echo >$LOGFILE_TMP.$LF_CNTR'
+
+#.............................................................................#
+# This alias concatenates its argument(s) to the current temporary
+# log file.
+#.............................................................................#
+alias EchoThis 'echo \!:* >>$LOGFILE_TMP.$LF_CNTR'
+alias EchoThisR 'echo \!:* >>$LOGFILE.log'
+
+#.............................................................................#
+# This alias concatenates its argument(s) to the current temporary
+# log file.
+#.............................................................................#
+alias EchoThisBoth 'echo \!:* >>$LOGFILE_TMP.$LF_CNTR;echo \!:*'
+alias EchoThisBothR 'echo \!:* >>$LOGFILE.log;echo \!:*'
+
+#.............................................................................#
+# This alias concatenates its argument(s) to the current temporary
+# log file.
+#.............................................................................#
+alias EchoThisError 'echo "#### Error ####\n \!:* #### Error ####" >>$LOGFILE_TMP.$LF_CNTR'
+alias EchoThisErrorR 'echo "#### Error ####\n \!:* #### Error ####" >>$LOGFILE.log'
+
+#.............................................................................#
+# This alias concatenates its argument(s) to the current temporary
+# log file.
+#.............................................................................#
+alias EchoThisErrorBoth 'echo "#### Error ####\n \!:* \n#### Error ####" >>$LOGFILE_TMP.$LF_CNTR;echo "#### Error ####\n \!:* \n#### Error ####"'
+alias EchoThisErrorBothR 'echo "#### Error ####\n \!:* \n#### Error ####" >>$LOGFILE.log;echo "#### Error ####\n \!:* \n#### Error ####"'
+
+#.............................................................................#
+# This alias concatenates its argument(s) to the current temporary
+# log file after "decorating" it.
+#.............................................................................#
+alias EchoThisPretty 'echo "\n... \!:* ...\n" >>$LOGFILE_TMP.$LF_CNTR'
+alias EchoThisPrettyR 'echo "\n... \!:* ...\n" >>$LOGFILE.log'
+
+#.............................................................................#
+# This alias concatenates its argument(s) to the current temporary
+# log file after "decorating" it and also prints it to screen.
+#.............................................................................#
+alias EchoThisPrettyBoth 'echo "\n... \!:* ...\n" >>$LOGFILE_TMP.$LF_CNTR;echo "\n... \!:* ...\n"'
+alias EchoThisPrettyBothR 'echo "\n... \!:* ...\n" >>$LOGFILE.log;echo "\n... \!:* ...\n"'
+
+
+#.............................................................................#
+# This alias echoes its argument after "decorating" it.
+#.............................................................................#
+alias EchoToScreen 'echo "\n... \!:* ...\n"'
+
+#.............................................................................#
+# This alias concatenates an empty line to the current temporary
+# log file.
+#.............................................................................#
+alias JustEcho 'echo "" >>$LOGFILE_TMP.$LF_CNTR'
+alias JustEchoR 'echo "" >>$LOGFILE.log'
+
+#.............................................................................#
+# This alias concatenates an empty line to the current temporary
+# log file and prints it to the screen.
+#.............................................................................#
+alias JustEchoBoth 'echo "" >>$LOGFILE_TMP.$LF_CNTR;echo ""'
+alias JustEchoBothR 'echo "" >>$LOGFILE.log;echo ""'
+
+#.............................................................................#
+# This alias prints the contents of the current temporary log file to
+# the screen.
+#.............................................................................#
+alias PrintToScreen 'cat $LOGFILE_TMP.$LF_CNTR'
+alias PrintToScreenR 'cat $LOGFILE.log'
+
+#.............................................................................#
+# Exit aliases
+#.............................................................................#
+alias Exit 'exit \!:^'
+alias RemoveTempsAndExit 'rm -f $LOGFILE_TMP.*;exit \!:^'
+alias PropagateRemoveTempsAndQuit 'rm -f $LOGFILE_TMP.IsRm;rm -rf $LOGFILE_TMP.IsAwk;echo >$LOGFILE.log;cat $LOGFILE_TMP.* >>$LOGFILE.log;rm -f $LOGFILE_TMP.*;exit \!:^ ;echo "\nLogfile $LOGFILE.log written.\n"'
+alias PropagateRemoveTemps 'rm -f $LOGFILE_TMP.IsRm;rm -rf $LOGFILE_TMP.IsAwk;echo >$LOGFILE.log;cat $LOGFILE_TMP.* >>$LOGFILE.log;rm -f $LOGFILE_TMP.*'

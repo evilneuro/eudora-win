@@ -1,0 +1,4 @@
+LIBRARY 	PH
+
+EXPORTS		DllGetClassObject       PRIVATE
+		DllCanUnloadNow         PRIVATE

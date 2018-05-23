@@ -1,0 +1,21 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "JFX", "JFX.vcproj", "{61420EE0-AC1C-4100-851B-0C85E0C20EAA}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{61420EE0-AC1C-4100-851B-0C85E0C20EAA}.Debug.ActiveCfg = Debug|Win32
+		{61420EE0-AC1C-4100-851B-0C85E0C20EAA}.Debug.Build.0 = Debug|Win32
+		{61420EE0-AC1C-4100-851B-0C85E0C20EAA}.Release.ActiveCfg = Release|Win32
+		{61420EE0-AC1C-4100-851B-0C85E0C20EAA}.Release.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,10 @@
+1.0 New Mail Notification
+	1.1 Setting (Ports & Protocols?):
+		1.1.1 [ ] Listen for new mail notification.
+		1.1.2 Help:  When checked, Eudora will listen for server announcements that you have mail, and check mail whenever you do.
+	1.2 Should only be active when Eudora is online and PPP connection not known to be down.
+	1.3 What personality to check?
+		1.3.1 Finger data may have personality name listed.
+		1.3.2 Finger data may have account listed; check mail for “check mail” personalities pointing to that account.
+		1.3.3 If finger source is on host that matches any “check mail” personalities, check those
+		1.3.4 If all else fails, check all “check mail” personalities

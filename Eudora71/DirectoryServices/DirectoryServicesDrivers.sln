@@ -1,0 +1,53 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DirServ", "DirServ\DirServ.vcproj", "{CEE0E1AE-05E0-4D48-9C7C-FAD66D97E764}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "EudoraBk", "EudoraBk\EudoraBk.vcproj", "{37493A6E-91FD-4EF3-BA8D-4CFCBAAE8144}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ISock", "ISock\ISock.vcproj", "{4E762643-D54C-4565-92AB-4BE659EB457C}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LDAP", "LDAP\Ldap.vcproj", "{3002115E-31C3-4E8A-836A-6C38CE9EAD59}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Ph", "Ph\Ph.vcproj", "{5B1367F2-7BF5-4E2A-9962-A677D23A64B1}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{CEE0E1AE-05E0-4D48-9C7C-FAD66D97E764}.Debug.ActiveCfg = Debug|Win32
+		{CEE0E1AE-05E0-4D48-9C7C-FAD66D97E764}.Debug.Build.0 = Debug|Win32
+		{CEE0E1AE-05E0-4D48-9C7C-FAD66D97E764}.Release.ActiveCfg = Release|Win32
+		{CEE0E1AE-05E0-4D48-9C7C-FAD66D97E764}.Release.Build.0 = Release|Win32
+		{37493A6E-91FD-4EF3-BA8D-4CFCBAAE8144}.Debug.ActiveCfg = Debug|Win32
+		{37493A6E-91FD-4EF3-BA8D-4CFCBAAE8144}.Debug.Build.0 = Debug|Win32
+		{37493A6E-91FD-4EF3-BA8D-4CFCBAAE8144}.Release.ActiveCfg = Release|Win32
+		{37493A6E-91FD-4EF3-BA8D-4CFCBAAE8144}.Release.Build.0 = Release|Win32
+		{4E762643-D54C-4565-92AB-4BE659EB457C}.Debug.ActiveCfg = Debug|Win32
+		{4E762643-D54C-4565-92AB-4BE659EB457C}.Debug.Build.0 = Debug|Win32
+		{4E762643-D54C-4565-92AB-4BE659EB457C}.Release.ActiveCfg = Release|Win32
+		{4E762643-D54C-4565-92AB-4BE659EB457C}.Release.Build.0 = Release|Win32
+		{3002115E-31C3-4E8A-836A-6C38CE9EAD59}.Debug.ActiveCfg = Debug|Win32
+		{3002115E-31C3-4E8A-836A-6C38CE9EAD59}.Debug.Build.0 = Debug|Win32
+		{3002115E-31C3-4E8A-836A-6C38CE9EAD59}.Release.ActiveCfg = Release|Win32
+		{3002115E-31C3-4E8A-836A-6C38CE9EAD59}.Release.Build.0 = Release|Win32
+		{5B1367F2-7BF5-4E2A-9962-A677D23A64B1}.Debug.ActiveCfg = Debug|Win32
+		{5B1367F2-7BF5-4E2A-9962-A677D23A64B1}.Debug.Build.0 = Debug|Win32
+		{5B1367F2-7BF5-4E2A-9962-A677D23A64B1}.Release.ActiveCfg = Release|Win32
+		{5B1367F2-7BF5-4E2A-9962-A677D23A64B1}.Release.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

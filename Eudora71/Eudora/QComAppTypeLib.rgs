@@ -1,0 +1,11 @@
+HKCR
+{
+	NoRemove AppID
+	{
+		{EDA00001-AAAA-11d0-B3C5-00805F8AA4FB} = s 'Eudora'
+		'Eudora.exe'
+		{
+			val AppID = s {EDA00001-AAAA-11d0-B3C5-00805F8AA4FB}
+		}
+	}
+}
